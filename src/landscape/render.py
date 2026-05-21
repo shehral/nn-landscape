@@ -25,6 +25,11 @@ AXIS_COLUMNS: list[tuple[Axis, str]] = [
     ("vlm_research", "VLM research"),
 ]
 
+REPO_URL = "https://github.com/shehral/nn-landscape"
+QUESTIONS_FILE_URL = f"{REPO_URL}/blob/main/state/questions_for_team.md"
+QUESTIONS_EDIT_URL = f"{REPO_URL}/edit/main/state/questions_for_team.md"
+CONTEXT_FILE_URL = f"{REPO_URL}/blob/main/data/nanonets_context.md"
+
 
 def _env() -> Environment:
     return Environment(
@@ -111,6 +116,9 @@ def render_view(
         audit_passed=edition.audit_passed,
         built_at_iso=edition.built_at.isoformat(),
         built_at_human=edition.built_at.strftime("%b %d, %Y · %H:%M UTC"),
+        questions_file_url=QUESTIONS_FILE_URL,
+        questions_edit_url=QUESTIONS_EDIT_URL,
+        context_file_url=CONTEXT_FILE_URL,
     )
     out_path.write_text(html, encoding="utf-8")
     return html

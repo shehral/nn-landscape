@@ -31,10 +31,20 @@ output; do not invent intermediate files or skip ahead.
 cat data/nanonets_context.md
 cat data/views.yaml
 cat data/sources.yaml
+cat state/questions_for_team.md   # may not exist on first build
 ```
 
 If the editorial voice rules in `nanonets_context.md` conflict with
 anything in this file, the context file wins.
+
+`state/questions_for_team.md` is an accumulating dialog file. Past
+builds appended their AI-partner questions to it; team members append
+inline replies under the `**Answer:**` line. Scan recent (last 1-2
+build sections) for any answers that should shape this build's
+scoring or framing. If a recent answer changes your behavior, follow
+it. If a recent question is unanswered and you'd ask the same thing
+again, do not repeat it — surface a different one this build, or just
+note in your AI-partner section that the prior question still stands.
 
 ### Step 2 — Acquire the build lock
 

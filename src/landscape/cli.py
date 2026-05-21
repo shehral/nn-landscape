@@ -246,6 +246,38 @@ def _git(*args: str, check: bool = True) -> subprocess.CompletedProcess[str]:
     )
 
 
+QUESTIONS_HEADER = """\
+# Questions for the team
+
+This file accumulates uncertainty questions raised by the build agent each
+cycle. **To reply, append your answer inline below the question.** The
+next build's agent reads this file and acts on guidance you have given.
+
+For permanent rule changes (e.g., "we don't care about pricing rounds
+under $10M"), edit `data/nanonets_context.md` instead — that's the
+agent's editorial grounding.
+
+---
+"""
+
+
+def _append_questions(edition: EditionJSON) -> int:
+    """Append this build's AI-partner questions to state/questions_for_team.md."""
+    if not edition.ai_partner_questions:
+        return 0
+    QUESTIONS_MD.parent.mkdir(parents=True, exist_ok=True)
+    if not QUESTIONS_MD.exists():
+        QUESTIONS_MD.write_text(QUESTIONS_HEADER, encoding="utf-8")
+    existing = QUESTIONS_MD.read_text(encoding="utf-8")
+    audit_tag = "passed" if edition.audit_passed else "partial"
+    block = [f"\n## Build {edition.built_at.isoformat()} (audit: {audit_tag})\n"]
+    for q in edition.ai_partner_questions:
+        block.append(f"\n### Q: {q.question}\n\n**Context:** {q.context}\n\n**Answer:** _add reply here_\n")
+    block.append("\n---\n")
+    QUESTIONS_MD.write_text(existing + "".join(block), encoding="utf-8")
+    return len(edition.ai_partner_questions)
+
+
 @app.command()
 def publish(
     push: bool = typer.Option(False, "--push", help="git push after committing. Default off for safety."),
@@ -272,6 +304,10 @@ def publish(
             new_urls += 1
     _save_seen(seen)
     typer.echo(f"publish: seen.json updated (+{new_urls} new URLs, {len(seen)} total)")
+
+    n_questions = _append_questions(edition)
+    if n_questions:
+        typer.echo(f"publish: appended {n_questions} questions to {QUESTIONS_MD.name}")
 
     _git("add", "docs/", "state/seen.json")
     if QUESTIONS_MD.exists():
