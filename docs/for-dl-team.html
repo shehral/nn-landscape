@@ -6,13 +6,15 @@
   <meta http-equiv="cache-control" content="max-age=300">
   <title>Landscape — Research</title>
   <link rel="stylesheet" href="assets/styles.css">
+  <style>:root { --color-accent: #2d4a2d; }</style>
 </head>
-<body>
+<body data-view="dl_team">
 
 <header class="site-header">
   <div>
     <h1>Landscape — Research</h1>
     <p class="subtitle">Papers, benchmarks, and technical artifacts for the DL team.</p>
+    <p class="emphasis-tag">Research: papers + benchmarks emphasis</p>
   </div>
   <nav class="site-nav" aria-label="Audience views">
     <a href="index.html" >General</a>
@@ -20,426 +22,1579 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built May 21, 2026 · 08:30 UTC</span>
+  <span class="built-at">Built May 21, 2026 · 08:58 UTC · 172 items scored</span>
 </header>
 
-<div class="partial-banner">
-  <strong>Partial build.</strong> This edition was published with at least one
-  pre-publish check failed. See <a href="about.html">about</a> for details.
-</div>
+
+<p class="score-legend">
+  Scores are 0–100 composites weighted by this view's per-axis emphasis. Hover any score chip to see the per-axis breakdown
+  (doc_ai · competitive · frontier · vlm_research, each 0–5). The four-bar sparkline encodes the same info visually.
+</p>
+
+<section class="controls" aria-label="Filter and sort controls">
+  <input type="search" id="filter-text" placeholder="Filter by title…" aria-label="Filter by title">
+  <select id="filter-source" aria-label="Filter by source">
+    <option value="">All sources</option>
+    <option value="arxiv">arxiv</option>
+    <option value="hn">hn</option>
+    <option value="rss">rss</option>
+    <option value="github_trending">github_trending</option>
+  </select>
+  <label>Min score
+    <input type="number" id="filter-min" min="0" max="100" step="5" value="0" aria-label="Minimum composite score">
+  </label>
+  <span id="filter-count" class="filter-count"></span>
+</section>
 
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>A wave of frontier-lab multimodal releases (Gemini 3.5 / Omni, Nemotron 3 Nano Omni, DeepSeek-V4) are being explicitly positioned for document, audio, and video agents, shifting the make-vs-buy calculus for any document-AI buyer.</li>
-    <li>Open-model release cadence is rising sharply (Gemma 4, DeepSeek V4, Kimi K2.6, MiMo 2.5, GLM-5.1, Granite 4.1, Nemotron Super), giving downstream OCR-VLM stacks a wider menu of capable base models.</li>
-    <li>OCR-VLM specifically (not just generic vision) is moving into the HuggingFace mainstream with PaddleOCR 3.5 on a Transformers backend, narrowing the integration gap with hosted document-extraction services.</li>
-    <li>Million-token usable context is becoming a marketing claim across labs (DeepSeek-V4), which is likely to surface new positional-drift / mid-context hallucination modes not yet probed by current Nanonets evaluation harnesses.</li>
-    <li>Several pundits are framing fine-tuning&#39;s role as shrinking relative to in-context methods, which would affect the moat around a fine-tuned Nanonets-OCR2 if the trend holds in the multimodal regime.</li>
+    <li>Frontier-lab releases this build land on agent-action and document-extraction surfaces, not pure capability: Gemini 3.5 with action, Gemini Omni multimodal, Antigravity 2.0, Databricks GPT-5.5 enterprise agents, and Nemotron 3 Nano Omni for documents all bundle agent execution with VLM extraction.</li>
+    <li>Open-weight model releases continue compressing the competitive set on the IDP Leaderboard surface: Gemma 4, DeepSeek V4, Kimi K2.6, MiMo 2.5, GLM-5.1, Qwen3.7-Max and PaddleOCR 3.5 all dropped within the build window.</li>
+    <li>Multimodal evaluation infrastructure is converging on unified harnesses: lmms-eval, evalscope, the Open Agent Leaderboard, and ms-swift all target one-toolkit-many-models VLM evaluation rather than per-benchmark scripts.</li>
+    <li>Long-context multimodal positioning is becoming explicit: Nemotron 3 Nano Omni and DeepSeek-V4 both frame million-token-class context as document-and-agent-usable, raising structural questions about chunked OCR pipelines.</li>
+    <li>Open-source PDF parsing tooling continues to receive momentum: opendataloader-pdf, PyMuPDF, RAGFlow, and UltraRAG all trended on GitHub. The open floor below paid OCR APIs keeps moving up.</li>
   </ul>
 </section>
 
 <section class="axes" aria-label="Items by axis">
-  <div class="axis-col">
-    <h2>Document AI</h2>
-<article class="item ">
+  <div class="axis-col" data-axis="vlm_research">
+    <h2>VLM research</h2>
+<article class="item "
+         data-source="github_trending"
+         data-score="44">
   <div class="item-meta">
-    <span class="item-score">78</span>
-    <span class="item-source">rss</span>
+    <span class="item-score"
+          title="doc_ai 2 · competitive 2 · frontier 1 · vlm_research 3 = 44 (this view's weighting)">44</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://huggingface.co/blog/nvidia/nemotron-3-nano-omni-multimodal-intelligence" target="_blank" rel="nofollow noopener noreferrer">Introducing NVIDIA Nemotron 3 Nano Omni: Long-Context Multimodal Intelligence for Documents, Audio and Video Agents</a>
+    <a href="https://github.com/EvolvingLMMs-Lab/lmms-eval" target="_blank" rel="nofollow noopener noreferrer">EvolvingLMMs-Lab/lmms-eval: One-for-All Multimodal Evaluation Toolkit Across Text, Image, Video, and Audio Tasks</a>
   </p>
-  <p class="item-summary">NVIDIA Nemotron 3 Nano Omni: long-context multimodal model positioned for document, audio, and video agents.</p>
+  <p class="item-summary">EvolvingLMMs-Lab lmms-eval one-for-all multimodal evaluation toolkit relevant for VLM benchmarking.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>NVIDIA explicitly markets Nemotron 3 Nano Omni at document agents; direct overlap with Nanonets-OCR2&#39;s positioning. Worth benchmarking on FUNSD, CORD, and internal extraction sets to map the accuracy and cost gap.</dd>
+      <dd>lmms-eval is a one-for-all multimodal evaluation toolkit covering text, image, video and audio tasks. Useful internally for VLM evaluation infrastructure beyond document-only benchmarks.</dd>
       <dt>Research</dt>
-      <dd>A long-context multimodal model from a major lab makes a clean cross-architecture target for phantom-row and repetition-loop transfer experiments.</dd>
+      <dd>Direct utility for the VLM hallucination research line; could plug into existing evaluation pipelines for OCR-2 and OCR-3 characterization.</dd>
       <dt>Action</dt>
       <dd>reproduce</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive, frontier</p>
-</article><article class="item ">
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="44">
   <div class="item-meta">
-    <span class="item-score">62</span>
-    <span class="item-source">rss</span>
+    <span class="item-score"
+          title="doc_ai 2 · competitive 2 · frontier 1 · vlm_research 3 = 44 (this view's weighting)">44</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://huggingface.co/blog/PaddlePaddle/paddleocr-transformers" target="_blank" rel="nofollow noopener noreferrer">PaddleOCR 3.5: Running OCR and Document Parsing Tasks with a Transformers Backend</a>
+    <a href="https://github.com/modelscope/evalscope" target="_blank" rel="nofollow noopener noreferrer">modelscope/evalscope: A streamlined and customizable framework for efficient large model (LLM, VLM, AIGC) evaluation and performance benchmarking.</a>
   </p>
-  <p class="item-summary">PaddleOCR 3.5 ships a Transformers-backend release for OCR and document parsing; direct adjacent in the OCR-VLM space.</p>
+  <p class="item-summary">modelscope evalscope framework for LLM/VLM/AIGC evaluation; benchmark infrastructure.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Brings PaddleOCR into the HuggingFace Transformers ecosystem, lowering integration friction for teams choosing between Nanonets-OCR2 and an open Paddle stack. Worth running on internal extraction sets to map the accuracy and latency gap.</dd>
+      <dd>evalscope is modelscope&#39;s customizable LLM/VLM/AIGC evaluation framework. Similar utility to lmms-eval; alternative scaffolding for benchmark runs.</dd>
       <dt>Research</dt>
-      <dd>Transformers-backend release makes layer-level interventions and probing on PaddleOCR feasible, which would enable cross-architecture hallucination-transfer experiments against Nanonets-OCR2.</dd>
+      <dd>Comparator for evaluation tooling decisions; the LLM-as-judge support is worth assessing for hallucination-detection evaluation.</dd>
       <dt>Action</dt>
-      <dd>reproduce</dd>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="44">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 2 · frontier 1 · vlm_research 3 = 44 (this view's weighting)">44</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/luxus180/LLaVA-OneVision-1.5" target="_blank" rel="nofollow noopener noreferrer">luxus180/LLaVA-OneVision-1.5: 🛠️ Build and train multimodal models easily with LLaVA-OneVision 1.5, an open framework designed for seamless integration of vision and language tasks.</a>
+  </p>
+  <p class="item-summary">LLaVA-OneVision 1.5 open multimodal framework for vision-language model integration and training.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>LLaVA-OneVision 1.5 is an open multimodal framework for vision-language model integration and training. Useful as an architecture comparator and a vehicle for replicating training experiments.</dd>
+      <dt>Research</dt>
+      <dd>Strong candidate for cross-architecture hallucination-transfer studies; the LLaVA family has a well-documented training recipe.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: competitive</p>
-</article><article class="item ">
+</article><article class="item "
+         data-source="github_trending"
+         data-score="34">
   <div class="item-meta">
-    <span class="item-score">18</span>
+    <span class="item-score"
+          title="doc_ai 1 · competitive 2 · frontier 2 · vlm_research 2 = 34 (this view's weighting)">34</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/modelscope/ms-swift" target="_blank" rel="nofollow noopener noreferrer">modelscope/ms-swift: Use PEFT or Full-parameter to CPT/SFT/DPO/GRPO 600+ LLMs (Qwen3.6, DeepSeek-R1, GLM-5.1, InternLM3, Llama4, ...) and 300+ MLLMs (Qwen3-VL, Qwen3-Omni, InternVL3.5, Ovis2.5, GLM4.5v, Gemma4, Llava, Phi</a>
+  </p>
+  <p class="item-summary">modelscope ms-swift framework adds MLLM PEFT/full-parameter training across 300+ VLMs.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>ms-swift extends to 300+ MLLMs (Qwen3-VL, Qwen3-Omni, InternVL3.5, GLM4.5v, Llava, Phi) with PEFT and full-parameter fine-tuning. Useful infrastructure for replicating fine-tunes of Nanonets-VLM-comparable models.</dd>
+      <dt>Research</dt>
+      <dd>Direct utility for the research line; clean path for ablating VLM training choices on competitor architectures.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="28">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 1 · frontier 1 · vlm_research 2 = 28 (this view's weighting)">28</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+    </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
     <a href="https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2" target="_blank" rel="nofollow noopener noreferrer">Granite Embedding Multilingual R2: Open Apache 2.0 Multilingual Embeddings with 32K Context — Best Sub-100M Retrieval Quality</a>
   </p>
-  <p class="item-summary">IBM Granite Apache-2.0 multilingual embedding model; building block for document retrieval / RAG.</p>
-</article><article class="item ">
+  <p class="item-summary">Granite Embedding Multilingual R2 from IBM; sub-100M retrieval baseline.</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="28">
   <div class="item-meta">
-    <span class="item-score">18</span>
-    <span class="item-source">rss</span>
+    <span class="item-score"
+          title="doc_ai 1 · competitive 1 · frontier 1 · vlm_research 2 = 28 (this view's weighting)">28</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://www.latent.space/p/abridge" target="_blank" rel="nofollow noopener noreferrer">AI-Native Healthcare: 100M Doctor Visits, 10-20 Hours Saved, Prior Auth in Minutes — Janie Lee &amp; Chai Asawa, Abridge</a>
+    <a href="https://github.com/starVLA/starVLA" target="_blank" rel="nofollow noopener noreferrer">starVLA/starVLA: StarVLA: A Lego-like Codebase for Vision-Language-Action Model Developing</a>
   </p>
-  <p class="item-summary">Abridge healthcare-AI interview; partial overlap on healthcare-document workflows and prior-auth processing.</p>
-</article><article class="item ">
+  <p class="item-summary">starVLA Lego-style codebase for Vision-Language-Action model development.</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="26">
   <div class="item-meta">
-    <span class="item-score">12</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://openai.com/index/personal-finance-chatgpt" target="_blank" rel="nofollow noopener noreferrer">A new personal finance experience in ChatGPT</a>
-  </p>
-  <p class="item-summary">ChatGPT personal-finance feature; consumer surface, minor overlap with receipt / statement handling.</p>
-</article>  </div>
-  <div class="axis-col">
-    <h2>Competitive</h2>
-      <p class="item-summary">No items this build.</p>
-  </div>
-  <div class="axis-col">
-    <h2>Frontier</h2>
-<article class="item ">
-  <div class="item-meta">
-    <span class="item-score">60</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://deepmind.google/blog/gemini-3-5-frontier-intelligence-with-action" target="_blank" rel="nofollow noopener noreferrer">Gemini 3.5: frontier intelligence with action</a>
-  </p>
-  <p class="item-summary">Gemini 3.5 launch with action / agent capabilities; potential frontier-baseline shift for document workflows.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Gemini 3.5&#39;s agentic and vision capabilities affect the make-vs-buy calculus for customers comparing Nanonets-OCR to a general Gemini pipeline. Worth re-benchmarking on FUNSD, CORD, and internal extraction sets.</dd>
-      <dt>Research</dt>
-      <dd>If a model card or technical report drops, useful as a cross-architecture baseline for hallucination evaluations and as a foil for phantom-row characterization on a non-open model.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">56</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://deepmind.google/blog/introducing-gemini-omni" target="_blank" rel="nofollow noopener noreferrer">Introducing Gemini Omni</a>
-  </p>
-  <p class="item-summary">Gemini Omni: Google&#39;s new unified multimodal model (text, image, audio, video); potential document-vision baseline shift.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Google&#39;s unified multimodal model raises the floor for general-purpose document understanding via Gemini API. Worth benchmarking on internal extraction sets to track the make-vs-buy gap against Nanonets-OCR2.</dd>
-      <dt>Research</dt>
-      <dd>Architecture details for the unified encoder are not yet public; if released, useful as a cross-architecture reference for hallucination-transfer experiments.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">56</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash" target="_blank" rel="nofollow noopener noreferrer">[AINews] Google I/O 2026: Gemini 3.5 Flash, Omni (NanoBanana for Video), Spark (background agents), and Antigravity 2.0</a>
-  </p>
-  <p class="item-summary">Roundup of Google I/O 2026: Gemini 3.5 Flash, Omni, Spark agents, Antigravity 2.0 — frontier-pricing and multimodal news.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Gemini 3.5 Flash and Omni are positioned at the same enterprise document-AI buyers as Nanonets-OCR2; Flash pricing is the proximate competitive concern.</dd>
-      <dt>Research</dt>
-      <dd>Most Google releases lack technical detail; useful only as comparison baselines for behavioral evaluation.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">54</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://huggingface.co/blog/deepseekv4" target="_blank" rel="nofollow noopener noreferrer">DeepSeek-V4: a million-token context that agents can actually use</a>
-  </p>
-  <p class="item-summary">DeepSeek-V4 release emphasizing usable million-token context; relevant for long-PDF / multi-page document workflows.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Million-token context for an open frontier model lowers the cost of feeding entire long PDFs into a single forward pass. Worth checking whether the long-context recipe survives on document-VLM inputs without table-cell drop.</dd>
-      <dt>Research</dt>
-      <dd>Long-context VLMs are a likely setting for new hallucination modes (positional drift, mid-context loss). Useful baseline for cross-architecture hallucination characterization.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">48</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model" target="_blank" rel="nofollow noopener noreferrer">Latest open artifacts (#21): Open model bonanza! Gemma 4, DeepSeek V4, Kimi K2.6, MiMo 2.5, GLM-5.1 &amp; others. On CAISI&#39;s V4 assessment.</a>
-  </p>
-  <p class="item-summary">Interconnects roundup: Gemma 4, DeepSeek V4, Kimi K2.6, MiMo 2.5, GLM-5.1; open-model release wave summary.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">44</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance" target="_blank" rel="nofollow noopener noreferrer">Reading today&#39;s open-closed performance gap</a>
-  </p>
-  <p class="item-summary">Interconnects analysis of the open-vs-closed model performance gap; informs make-vs-buy reasoning.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">44</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026" target="_blank" rel="nofollow noopener noreferrer">My bets on open models, mid-2026</a>
-  </p>
-  <p class="item-summary">Lambert&#39;s mid-2026 open-model bets essay; strategic outlook relevant to open-VLM base-model planning.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">44</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.interconnects.ai/p/gemma-4-and-what-makes-an-open-model" target="_blank" rel="nofollow noopener noreferrer">Gemma 4 and what makes an open model succeed</a>
-  </p>
-  <p class="item-summary">Interconnects deep-dive on Gemma 4 and open-model dynamics; relevant context for open-VLM base selection.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">36</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://buttondown.com/ainews/archive/ainews-gemini-25-flash-completes-the-total" target="_blank" rel="nofollow noopener noreferrer">[AINews] Gemini 2.5 Flash completes the total domination of the Pareto Frontier</a>
-  </p>
-  <p class="item-summary">AINews framing Gemini 2.5 Flash as cost / capability Pareto winner; pricing-posture signal.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">34</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://stratechery.com/2026/the-inference-shift" target="_blank" rel="nofollow noopener noreferrer">The Inference Shift</a>
-  </p>
-  <p class="item-summary">Stratechery on the inference-cost / inference-economy shift; relevant for serving-cost calculus on VLMs.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">32</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.interconnects.ai/p/the-distillation-panic" target="_blank" rel="nofollow noopener noreferrer">The distillation panic</a>
-  </p>
-  <p class="item-summary">Interconnects piece on distillation policy / detection debate; partial bearing on cross-architecture transfer questions.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">30</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://importai.substack.com/p/importai-449-llms-training-other" target="_blank" rel="nofollow noopener noreferrer">ImportAI 449: LLMs training other LLMs; 72B distributed training run; computer vision is harder than generative text</a>
-  </p>
-  <p class="item-summary">Import AI 449: distributed training + commentary on CV being harder than text; relevant framing for VLM research.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">28</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://openai.com/index/databricks" target="_blank" rel="nofollow noopener noreferrer">Databricks brings GPT-5.5 to enterprise agent workflows</a>
-  </p>
-  <p class="item-summary">Databricks ships GPT-5.5 in enterprise agent workflows; relevant for downstream document-processing integrations.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">28</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound" target="_blank" rel="nofollow noopener noreferrer">How open model ecosystems compound</a>
-  </p>
-  <p class="item-summary">Interconnects essay on open-model ecosystem compounding; strategic-context piece.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">28</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs" target="_blank" rel="nofollow noopener noreferrer">Notes from inside China&#39;s AI labs</a>
-  </p>
-  <p class="item-summary">Interconnects field-notes on Chinese AI labs; strategic-context piece for the open-model competitive map.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">28</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.interconnects.ai/p/latest-open-artifacts-20-new-orgs" target="_blank" rel="nofollow noopener noreferrer">Latest open artifacts (#20): New orgs! New types of models! With Nemotron Super, Sarvam, Cohere Transcribe, &amp; others</a>
-  </p>
-  <p class="item-summary">Interconnects roundup: Nemotron Super, Sarvam, Cohere Transcribe; open-model release wave summary.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">28</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://buttondown.com/ainews/archive/ainews-gpt-41-the-new-openai-workhorse" target="_blank" rel="nofollow noopener noreferrer">[AINews] GPT 4.1: The New OpenAI Workhorse</a>
-  </p>
-  <p class="item-summary">AINews on GPT 4.1 as OpenAI&#39;s enterprise workhorse; relevant for cost / capability benchmarking.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">28</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://stratechery.com/2026/google-i-o-world-models-i-o-spaghetti" target="_blank" rel="nofollow noopener noreferrer">Google I/O, World Models, I/O Spaghetti</a>
-  </p>
-  <p class="item-summary">Stratechery analysis of Google I/O 2026 announcements; strategic frontier-lab framing.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">24</span>
-    <span class="item-source">hn</span>
-<span>×2 sources</span>  </div>
-  <p class="item-title">
-    <a href="https://openai.com/research/gpt-4" target="_blank" rel="nofollow noopener noreferrer">GPT-4</a>
-  </p>
-  <p class="item-summary">Resurfaced GPT-4 launch announcement; reference baseline for frontier-lab document-vision capability.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">24</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://huggingface.co/blog/ibm-research/open-agent-leaderboard" target="_blank" rel="nofollow noopener noreferrer">The Open Agent Leaderboard</a>
-  </p>
-  <p class="item-summary">IBM Research open agent leaderboard; benchmarks agent stacks, partial relevance to document-agent workflows.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">24</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://huggingface.co/blog/ibm-granite/granite-4-1" target="_blank" rel="nofollow noopener noreferrer">Granite 4.1 LLMs: How They&#39;re Built</a>
-  </p>
-  <p class="item-summary">IBM Granite 4.1 LLM family deep-dive; open model relevant as a foundation behind document agents.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">24</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.interconnects.ai/p/the-inevitable-need-for-an-open-model" target="_blank" rel="nofollow noopener noreferrer">The inevitable need for an open model consortium</a>
-  </p>
-  <p class="item-summary">Interconnects essay arguing for an open-model consortium; policy / ecosystem framing.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">24</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.interconnects.ai/p/claude-mythos-and-misguided-open" target="_blank" rel="nofollow noopener noreferrer">Claude Mythos and misguided open-weight fearmongering</a>
-  </p>
-  <p class="item-summary">Interconnects critique of open-weight fearmongering; policy commentary.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">24</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.interconnects.ai/p/the-next-phase-of-open-models" target="_blank" rel="nofollow noopener noreferrer">What comes next with open models</a>
-  </p>
-  <p class="item-summary">Interconnects forecast on the next phase of open-model releases; strategic-context piece.</p>
-</article><article class="item ">
-  <div class="item-meta">
-    <span class="item-score">24</span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://buttondown.com/ainews/archive/ainews-openai-o3-o4-mini-and-codex-cli" target="_blank" rel="nofollow noopener noreferrer">[AINews] OpenAI o3, o4-mini, and Codex CLI</a>
-  </p>
-  <p class="item-summary">AINews on o3 / o4-mini and Codex CLI releases; reasoning-model release wave.</p>
-</article>  </div>
-  <div class="axis-col">
-    <h2>VLM research</h2>
-<article class="item ">
-  <div class="item-meta">
-    <span class="item-score">46</span>
+    <span class="item-score"
+          title="doc_ai 0 · competitive 1 · frontier 2 · vlm_research 2 = 26 (this view's weighting)">26</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 40%"></span>
+    </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
     <a href="https://www.latent.space/p/ainews-the-end-of-finetuning" target="_blank" rel="nofollow noopener noreferrer">[AINews] The End of Finetuning</a>
   </p>
-  <p class="item-summary">AINews argument that fine-tuning is being displaced by in-context / prompting; relevant given Nanonets relies on fine-tunes.</p>
+  <p class="item-summary">AINews thesis that finetuning is becoming obsolete; relevant to research methodology.</p>
+  <p class="secondary-axes">also: frontier</p>
+</article>    <details class="more-items">
+      <summary>Show 6 more in this axis</summary>
+      <ul>
+        <li data-source="rss" data-score="24">
+          <span class="more-score" title="composite 24 (this view's weighting)">24</span>
+          <a href="https://www.interconnects.ai/p/lossy-self-improvement" target="_blank" rel="nofollow noopener noreferrer">Lossy self-improvement</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="20">
+          <span class="more-score" title="composite 20 (this view's weighting)">20</span>
+          <a href="https://huggingface.co/blog/ServiceNow-AI/correctness-before-corrections" target="_blank" rel="nofollow noopener noreferrer">vLLM V0 to V1: Correctness Before Corrections in RL</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://huggingface.co/blog/open-asr-leaderboard-private-data" target="_blank" rel="nofollow noopener noreferrer">Adding Benchmaxxer Repellant to the Open ASR Leaderboard</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="github_trending" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://github.com/ACMarcone86/artseek" target="_blank" rel="nofollow noopener noreferrer">ACMarcone86/artseek: ArtSeek combines late-interaction retrieval over a 5M+ multimodal corpus with LICN-based attribute prediction to understand artists, genres, and styles 🐙.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://github.com/medazizsaaadallah/Knowledge-Infused-Multimodal-Retrieval-A-RAG-Based-Approach-for-Context-Aware-Image-Understanding" target="_blank" rel="nofollow noopener noreferrer">medazizsaaadallah/Knowledge-Infused-Multimodal-Retrieval-A-RAG-Based-Approach-for-Context-Aware-Image-Understanding: 🌟 Enhance image understanding through a RAG-based approach, combining multimodal retrieval and context-aware generation for smarter AI insights.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="8">
+          <span class="more-score" title="composite 8 (this view's weighting)">8</span>
+          <a href="https://github.com/rerun-io/rerun" target="_blank" rel="nofollow noopener noreferrer">rerun-io/rerun: Visualize, query, and stream to train on multimodal robotics data.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+      </ul>
+    </details>
+  </div>
+  <div class="axis-col" data-axis="doc_ai">
+    <h2>Document AI</h2>
+<article class="item "
+         data-source="rss"
+         data-score="60">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 5 · competitive 5 · frontier 1 · vlm_research 2 = 60 (this view's weighting)">60</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://huggingface.co/blog/PaddlePaddle/paddleocr-transformers" target="_blank" rel="nofollow noopener noreferrer">PaddleOCR 3.5: Running OCR and Document Parsing Tasks with a Transformers Backend</a>
+  </p>
+  <p class="item-summary">PaddleOCR 3.5 ships transformers-backend OCR and document parsing; direct OCR-3 competitor.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>The piece argues fine-tuning is losing ground to in-context methods. If the trend is real for VLMs, the competitive moat of a domain-tuned Nanonets-OCR2 narrows; if not, it widens. Worth a structured read.</dd>
+      <dd>PaddleOCR 3.5 ships a transformers-backend version supporting OCR and document parsing under an open license. Existing PaddleOCR users get a closer-to-modern-VLM pipeline that competes with paid OCR-3 access.</dd>
       <dt>Research</dt>
-      <dd>Has implications for whether hallucination patterns observed in fine-tuned VLMs are stable on the underlying base models or specific to the tune; aligns with cross-architecture hallucination-transfer questions.</dd>
+      <dd>PaddleOCR-3.5 is a useful open baseline for the IDP Leaderboard and structural-hallucination evaluations; document-parsing comparisons on FUNSD, CORD and OmniDocBench would be informative.</dd>
+      <dt>Action</dt>
+      <dd>reproduce</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="46">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 5 · competitive 4 · frontier 0 · vlm_research 1 = 46 (this view's weighting)">46</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/opendataloader-project/opendataloader-pdf" target="_blank" rel="nofollow noopener noreferrer">opendataloader-project/opendataloader-pdf: PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.</a>
+  </p>
+  <p class="item-summary">opendataloader-pdf open-source PDF parser for AI-ready data directly competes on the parsing surface.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>opendataloader-pdf is an open-source PDF parser targeting AI-ready output, including accessibility metadata. Sits adjacent to PyMuPDF and Docling as the open-baseline layer below paid OCR-VLM stacks.</dd>
+      <dt>Research</dt>
+      <dd>Useful comparator for measuring the lift OCR-3 provides over open PDF parsers on structured-extraction benchmarks.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="36">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 3 · frontier 1 · vlm_research 1 = 36 (this view's weighting)">36</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/infiniflow/ragflow" target="_blank" rel="nofollow noopener noreferrer">infiniflow/ragflow: RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs</a>
+  </p>
+  <p class="item-summary">RAGFlow open-source RAG engine fusing retrieval with agent capabilities and document ingestion.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>RAGFlow fuses RAG and agent capabilities with document ingestion; an open-source stack that competes for the same agent-pipeline integration slot as Nanonets Agentic Data Extraction.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication; useful reference architecture for end-to-end agent evaluation.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="34">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 2 · frontier 1 · vlm_research 1 = 34 (this view's weighting)">34</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/OpenBMB/UltraRAG" target="_blank" rel="nofollow noopener noreferrer">OpenBMB/UltraRAG: A Low-Code MCP Framework for Building Complex and Innovative RAG Pipelines</a>
+  </p>
+  <p class="item-summary">OpenBMB UltraRAG low-code MCP framework for complex RAG pipelines including document ingestion.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>UltraRAG is a low-code MCP framework for complex RAG pipelines including document ingestion. Adjacent infrastructure to Nanonets Agentic Data Extraction rather than direct competitor.</dd>
+      <dt>Research</dt>
+      <dd>Useful reference for MCP-based pipeline patterns when designing agent integrations.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="30">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 3 · frontier 0 · vlm_research 0 = 30 (this view's weighting)">30</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/pymupdf/PyMuPDF" target="_blank" rel="nofollow noopener noreferrer">pymupdf/PyMuPDF: PyMuPDF is a high performance Python library for data extraction, analysis, conversion &amp; manipulation of PDF (and other) documents.</a>
+  </p>
+  <p class="item-summary">PyMuPDF Python PDF extraction and analysis library; common baseline for document-AI pipelines.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>PyMuPDF remains the de facto open Python PDF baseline. Most RAG and document-AI pipelines run PyMuPDF before any VLM, so its capabilities define the floor of what a paid OCR layer must clear.</dd>
+      <dt>Research</dt>
+      <dd>Useful comparator; the structured-text extraction floor PyMuPDF provides is what hallucination-mode characterization starts above.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article>    <details class="more-items">
+      <summary>Show 26 more in this axis</summary>
+      <ul>
+        <li data-source="github_trending" data-score="22">
+          <span class="more-score" title="composite 22 (this view's weighting)">22</span>
+          <a href="https://github.com/paperless-ngx/paperless-ngx" target="_blank" rel="nofollow noopener noreferrer">paperless-ngx/paperless-ngx: A community-supported supercharged document management system: scan, index and archive all your documents</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="22">
+          <span class="more-score" title="composite 22 (this view's weighting)">22</span>
+          <a href="https://github.com/xushengfeng/eSearch" target="_blank" rel="nofollow noopener noreferrer">xushengfeng/eSearch: 截屏 离线OCR 搜索翻译 以图搜图 贴图 录屏 万向滚动截屏 屏幕翻译   Screenshot  Offline OCR   Search   Translate   Search for picture   Paste the picture on the screen   Screen recorder   Omnidirectional scrolling screenshot   Sc</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="rss" data-score="18">
+          <span class="more-score" title="composite 18 (this view's weighting)">18</span>
+          <a href="https://huggingface.co/blog/continuous_async" target="_blank" rel="nofollow noopener noreferrer">Unlocking asynchronicity in continuous batching</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="github_trending" data-score="18">
+          <span class="more-score" title="composite 18 (this view's weighting)">18</span>
+          <a href="https://github.com/llmsresearch/paperbanana" target="_blank" rel="nofollow noopener noreferrer">llmsresearch/paperbanana: Open source implementation and extension of Google Research’s PaperBanana for automated academic figures, diagrams, and research visuals, expanded to new domains like slide generation.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://github.com/Tommieoxidative416/video-evaluator" target="_blank" rel="nofollow noopener noreferrer">Tommieoxidative416/video-evaluator: Extract grounded evidence from video files to enable automated review and visual understanding for coding agents.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="8">
+          <span class="more-score" title="composite 8 (this view's weighting)">8</span>
+          <a href="https://github.com/safishamsi/graphify" target="_blank" rel="nofollow noopener noreferrer">safishamsi/graphify: AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="6">
+          <span class="more-score" title="composite 6 (this view's weighting)">6</span>
+          <a href="https://github.com/siyuan-note/siyuan" target="_blank" rel="nofollow noopener noreferrer">siyuan-note/siyuan: A privacy-first, self-hosted, fully open source personal knowledge management software, written in typescript and golang.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="6">
+          <span class="more-score" title="composite 6 (this view's weighting)">6</span>
+          <a href="https://github.com/HIllya51/LunaTranslator" target="_blank" rel="nofollow noopener noreferrer">HIllya51/LunaTranslator: 视觉小说翻译器 / Visual Novel Translator</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="hn" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://arxiv.org/abs/2605.17991" target="_blank" rel="nofollow noopener noreferrer">Stable Audio 3</a>
+          <span class="more-source">hn</span>
+        </li>
+        <li data-source="hn" data-score="2">
+          <span class="more-score" title="composite 2 (this view's weighting)">2</span>
+          <a href="https://github.com/shenli/distributed-system-testing" target="_blank" rel="nofollow noopener noreferrer">Testing distributed systems with AI agents</a>
+          <span class="more-source">hn</span>
+        </li>
+        <li data-source="github_trending" data-score="2">
+          <span class="more-score" title="composite 2 (this view's weighting)">2</span>
+          <a href="https://github.com/OpenBB-finance/OpenBB" target="_blank" rel="nofollow noopener noreferrer">OpenBB-finance/OpenBB: Financial data platform for analysts, quants and AI agents.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="2">
+          <span class="more-score" title="composite 2 (this view's weighting)">2</span>
+          <a href="https://github.com/affaan-m/ECC" target="_blank" rel="nofollow noopener noreferrer">affaan-m/ECC: The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="hn" data-score="0">
+          <span class="more-score" title="composite 0 (this view's weighting)">0</span>
+          <a href="https://gwern.net/doc/design/typography/1980-knuth.pdf" target="_blank" rel="nofollow noopener noreferrer">The Letter S, by Donald Knuth (1980) [pdf]</a>
+          <span class="more-source">hn</span>
+        </li>
+        <li data-source="hn" data-score="0">
+          <span class="more-score" title="composite 0 (this view's weighting)">0</span>
+          <a href="https://news.infomaniak.com/en/infomaniak-foundation-sovereign-cloud" target="_blank" rel="nofollow noopener noreferrer">Infomaniak transitions to a foundation model to protect user data privacy</a>
+          <span class="more-source">hn</span>
+        </li>
+        <li data-source="hn" data-score="0">
+          <span class="more-score" title="composite 0 (this view's weighting)">0</span>
+          <a href="https://www.gentoo.org/news/2026/05/19/copy-fail-fragnesia-vulnerabilities.html" target="_blank" rel="nofollow noopener noreferrer">Copy Fail, Dirty Frag, and Fragnesia kernel vulnerabilities</a>
+          <span class="more-source">hn</span>
+        </li>
+        <li data-source="rss" data-score="0">
+          <span class="more-score" title="composite 0 (this view's weighting)">0</span>
+          <a href="https://buttondown.com/ainews/archive/ainews-we-have-moved-please-help-us-move" target="_blank" rel="nofollow noopener noreferrer">[AINews] We have moved!! Please help us move!</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="0">
+          <span class="more-score" title="composite 0 (this view's weighting)">0</span>
+          <a href="https://stratechery.com/2026/personal-day-3" target="_blank" rel="nofollow noopener noreferrer">Personal Day</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="github_trending" data-score="0">
+          <span class="more-score" title="composite 0 (this view's weighting)">0</span>
+          <a href="https://github.com/f/prompts.chat" target="_blank" rel="nofollow noopener noreferrer">f/prompts.chat: f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="0">
+          <span class="more-score" title="composite 0 (this view's weighting)">0</span>
+          <a href="https://github.com/netdata/netdata" target="_blank" rel="nofollow noopener noreferrer">netdata/netdata: The fastest path to AI-powered full stack observability, even for lean teams.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="0">
+          <span class="more-score" title="composite 0 (this view's weighting)">0</span>
+          <a href="https://github.com/scikit-learn/scikit-learn" target="_blank" rel="nofollow noopener noreferrer">scikit-learn/scikit-learn: scikit-learn: machine learning in Python</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="0">
+          <span class="more-score" title="composite 0 (this view's weighting)">0</span>
+          <a href="https://github.com/keras-team/keras" target="_blank" rel="nofollow noopener noreferrer">keras-team/keras: Deep Learning for humans</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="0">
+          <span class="more-score" title="composite 0 (this view's weighting)">0</span>
+          <a href="https://github.com/ShareX/ShareX" target="_blank" rel="nofollow noopener noreferrer">ShareX/ShareX: ShareX is a free and open-source application that enables users to capture or record any area of their screen with a single keystroke. It also supports uploading images, text, and various file types t</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="0">
+          <span class="more-score" title="composite 0 (this view's weighting)">0</span>
+          <a href="https://github.com/apache/seatunnel" target="_blank" rel="nofollow noopener noreferrer">apache/seatunnel: SeaTunnel is a multimodal, high-performance, distributed, massive data integration tool.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="0">
+          <span class="more-score" title="composite 0 (this view's weighting)">0</span>
+          <a href="https://github.com/Air00100/domain-normalizer" target="_blank" rel="nofollow noopener noreferrer">Air00100/domain-normalizer: 🌐 Normalize and parse domain names from messy input, cleaning errors and preserving structure for easier use and analysis.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="0">
+          <span class="more-score" title="composite 0 (this view's weighting)">0</span>
+          <a href="https://github.com/Immunologypinup772/AI-Check" target="_blank" rel="nofollow noopener noreferrer">Immunologypinup772/AI-Check: Provide a checklist to ensure secure, compliant, and well-governed AI and LLM integration for responsible application development.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="0">
+          <span class="more-score" title="composite 0 (this view's weighting)">0</span>
+          <a href="https://github.com/Brainsway1/systems-roadmap" target="_blank" rel="nofollow noopener noreferrer">Brainsway1/systems-roadmap: 🛠️ Build expertise in algorithms and systems with a project-based roadmap for aspiring algorithmic systems engineers. Deep understanding through implementation.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+      </ul>
+    </details>
+  </div>
+  <div class="axis-col" data-axis="frontier">
+    <h2>Frontier</h2>
+<article class="item "
+         data-source="rss"
+         data-score="26">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 1 · frontier 2 · vlm_research 2 = 26 (this view's weighting)">26</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://huggingface.co/blog/nvidia/cosmos-fine-tuning-for-robot-video-generation" target="_blank" rel="nofollow noopener noreferrer">Fine-Tuning NVIDIA Cosmos Predict 2.5 with LoRA/DoRA for Robot Video Generation</a>
+  </p>
+  <p class="item-summary">NVIDIA Cosmos Predict 2.5 LoRA/DoRA fine-tuning for robot video generation.</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="26">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 1 · frontier 2 · vlm_research 2 = 26 (this view's weighting)">26</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://www.interconnects.ai/p/the-distillation-panic" target="_blank" rel="nofollow noopener noreferrer">The distillation panic</a>
+  </p>
+  <p class="item-summary">Interconnects on the distillation panic; training methodology discussion.</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="26">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 2 · frontier 2 · vlm_research 1 = 26 (this view's weighting)">26</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance" target="_blank" rel="nofollow noopener noreferrer">Reading today&#39;s open-closed performance gap</a>
+  </p>
+  <p class="item-summary">Interconnects reading today&#39;s open-closed performance gap.</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="26">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 2 · frontier 2 · vlm_research 1 = 26 (this view's weighting)">26</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026" target="_blank" rel="nofollow noopener noreferrer">My bets on open models, mid-2026</a>
+  </p>
+  <p class="item-summary">Interconnects bets on mid-2026 open-model landscape.</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="26">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 2 · frontier 2 · vlm_research 1 = 26 (this view's weighting)">26</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://www.interconnects.ai/p/the-inevitable-need-for-an-open-model" target="_blank" rel="nofollow noopener noreferrer">The inevitable need for an open model consortium</a>
+  </p>
+  <p class="item-summary">Interconnects argument for an open-model consortium.</p>
+</article>    <details class="more-items">
+      <summary>Show 98 more in this axis</summary>
+      <ul>
+        <li data-source="rss" data-score="26">
+          <span class="more-score" title="composite 26 (this view's weighting)">26</span>
+          <a href="https://www.interconnects.ai/p/the-next-phase-of-open-models" target="_blank" rel="nofollow noopener noreferrer">What comes next with open models</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="hn" data-score="24">
+          <span class="more-score" title="composite 24 (this view's weighting)">24</span>
+          <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture" target="_blank" rel="nofollow noopener noreferrer">An OpenAI model has disproved a central conjecture in discrete geometry</a>
+          <span class="more-source">hn</span>
+        </li>
+        <li data-source="rss" data-score="24">
+          <span class="more-score" title="composite 24 (this view's weighting)">24</span>
+          <a href="https://openai.com/index/dell-codex-enterprise-partnership" target="_blank" rel="nofollow noopener noreferrer">OpenAI and Dell partner to bring Codex to hybrid and on-premise enterprise environments</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="24">
+          <span class="more-score" title="composite 24 (this view's weighting)">24</span>
+          <a href="https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research" target="_blank" rel="nofollow noopener noreferrer">Co-Scientist: A multi-agent AI partner to accelerate research</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="24">
+          <span class="more-score" title="composite 24 (this view's weighting)">24</span>
+          <a href="https://www.latent.space/p/ainews-openai-gpt-next-disproves" target="_blank" rel="nofollow noopener noreferrer">[AINews] OpenAI GPT-next disproves 80 year old Erdős planar unit distance problem for under $1000</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="24">
+          <span class="more-score" title="composite 24 (this view's weighting)">24</span>
+          <a href="https://importai.substack.com/p/import-ai-454-automating-alignment" target="_blank" rel="nofollow noopener noreferrer">Import AI 454: Automating alignment research; safety study of a Chinese model; HiFloat4</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="24">
+          <span class="more-score" title="composite 24 (this view's weighting)">24</span>
+          <a href="https://importai.substack.com/p/importai-449-llms-training-other" target="_blank" rel="nofollow noopener noreferrer">ImportAI 449: LLMs training other LLMs; 72B distributed training run; computer vision is harder than generative text</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="github_trending" data-score="24">
+          <span class="more-score" title="composite 24 (this view's weighting)">24</span>
+          <a href="https://github.com/huggingface/transformers" target="_blank" rel="nofollow noopener noreferrer">huggingface/transformers: 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="24">
+          <span class="more-score" title="composite 24 (this view's weighting)">24</span>
+          <a href="https://github.com/sgl-project/sglang" target="_blank" rel="nofollow noopener noreferrer">sgl-project/sglang: SGLang is a high-performance serving framework for large language models and multimodal models.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="rss" data-score="22">
+          <span class="more-score" title="composite 22 (this view's weighting)">22</span>
+          <a href="https://deepmind.google/blog/simulate-real-world-places-with-project-genie-and-street-view" target="_blank" rel="nofollow noopener noreferrer">Simulate real-world places with Project Genie and Street View</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="22">
+          <span class="more-score" title="composite 22 (this view's weighting)">22</span>
+          <a href="https://deepmind.google/blog/gemini-for-science-ai-experiments-and-tools-for-a-new-era-of-discovery" target="_blank" rel="nofollow noopener noreferrer">Gemini for Science: AI experiments and tools for a new era of discovery</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="22">
+          <span class="more-score" title="composite 22 (this view's weighting)">22</span>
+          <a href="https://www.latent.space/p/ainews-thinking-machines-native-interaction" target="_blank" rel="nofollow noopener noreferrer">[AINews] Thinking Machines&#39; Native Interaction Models - TML-Interaction-Small 276B-A12B - advances SOTA Realtime Voice and kills standard VAD</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="22">
+          <span class="more-score" title="composite 22 (this view's weighting)">22</span>
+          <a href="https://stratechery.com/2026/the-inference-shift" target="_blank" rel="nofollow noopener noreferrer">The Inference Shift</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="20">
+          <span class="more-score" title="composite 20 (this view's weighting)">20</span>
+          <a href="https://huggingface.co/blog/ettin-reranker" target="_blank" rel="nofollow noopener noreferrer">Introducing the Ettin Reranker Family</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="20">
+          <span class="more-score" title="composite 20 (this view's weighting)">20</span>
+          <a href="https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs" target="_blank" rel="nofollow noopener noreferrer">Notes from inside China&#39;s AI labs</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="github_trending" data-score="20">
+          <span class="more-score" title="composite 20 (this view's weighting)">20</span>
+          <a href="https://github.com/ollama/ollama" target="_blank" rel="nofollow noopener noreferrer">ollama/ollama: Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="20">
+          <span class="more-score" title="composite 20 (this view's weighting)">20</span>
+          <a href="https://github.com/screenpipe/screenpipe" target="_blank" rel="nofollow noopener noreferrer">screenpipe/screenpipe: YC (S26) | Give AI the ability to live your experience. Records everything you do, say, hear 24/7, local, private, secure</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="rss" data-score="18">
+          <span class="more-score" title="composite 18 (this view's weighting)">18</span>
+          <a href="https://huggingface.co/blog/ibm-granite/granite-4-1" target="_blank" rel="nofollow noopener noreferrer">Granite 4.1 LLMs: How They’re Built</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="18">
+          <span class="more-score" title="composite 18 (this view's weighting)">18</span>
+          <a href="https://buttondown.com/ainews/archive/ainews-deepcoder-a-fully-open-source-14b-coder-at" target="_blank" rel="nofollow noopener noreferrer">[AINews] DeepCoder: A Fully Open-Source 14B Coder at O3-mini Level</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="18">
+          <span class="more-score" title="composite 18 (this view's weighting)">18</span>
+          <a href="https://importai.substack.com/p/import-ai-453-breaking-ai-agents" target="_blank" rel="nofollow noopener noreferrer">Import AI 453: Breaking AI agents; MirrorCode; and ten views on gradual disempowerment</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="18">
+          <span class="more-score" title="composite 18 (this view's weighting)">18</span>
+          <a href="https://importai.substack.com/p/import-ai-448-ai-r-and-d-bytedances" target="_blank" rel="nofollow noopener noreferrer">Import AI 448: AI R&amp;D; Bytedance&#39;s CUDA-writing agent; on-device satellite AI</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="18">
+          <span class="more-score" title="composite 18 (this view's weighting)">18</span>
+          <a href="https://importai.substack.com/p/import-ai-444-llm-societies-huawei" target="_blank" rel="nofollow noopener noreferrer">Import AI 444: LLM societies; Huawei makes kernels with AI; ChipBench</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="16">
+          <span class="more-score" title="composite 16 (this view's weighting)">16</span>
+          <a href="https://huggingface.co/blog/allenai/olmoearth-v1-1" target="_blank" rel="nofollow noopener noreferrer">OlmoEarth v1.1: A more efficient family of Earth observation models</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="16">
+          <span class="more-score" title="composite 16 (this view's weighting)">16</span>
+          <a href="https://www.latent.space/p/ainews-how-to-land-a-job-at-a-frontier" target="_blank" rel="nofollow noopener noreferrer">[AINews] How to land a job at a frontier lab (on Pretraining)</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="16">
+          <span class="more-score" title="composite 16 (this view's weighting)">16</span>
+          <a href="https://buttondown.com/ainews/archive/ainews-sota-video-gen-veo-2-and-kling-2-are-ga" target="_blank" rel="nofollow noopener noreferrer">[AINews] SOTA Video Gen: Veo 2 and Kling 2 are GA for developers</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="16">
+          <span class="more-score" title="composite 16 (this view's weighting)">16</span>
+          <a href="https://importai.substack.com/p/import-ai-457-ai-stuxnet-cursed-muon" target="_blank" rel="nofollow noopener noreferrer">Import AI 457: AI stuxnet; cursed Muon optimizer; and positive alignment</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="16">
+          <span class="more-score" title="composite 16 (this view's weighting)">16</span>
+          <a href="https://importai.substack.com/p/import-ai-455-automating-ai-research" target="_blank" rel="nofollow noopener noreferrer">Import AI 455: AI systems are about to start building themselves.</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="16">
+          <span class="more-score" title="composite 16 (this view's weighting)">16</span>
+          <a href="https://importai.substack.com/p/import-ai-451-political-superintelligence" target="_blank" rel="nofollow noopener noreferrer">Import AI 451: Political superintelligence; Google&#39;s society of minds, and a robot drummer</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="16">
+          <span class="more-score" title="composite 16 (this view's weighting)">16</span>
+          <a href="https://importai.substack.com/p/import-ai-450-chinas-electronic-warfare" target="_blank" rel="nofollow noopener noreferrer">Import AI 450: China&#39;s electronic warfare model; traumatized LLMs; and a scaling law for cyberattacks</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="16">
+          <span class="more-score" title="composite 16 (this view's weighting)">16</span>
+          <a href="https://importai.substack.com/p/import-ai-445-timing-superintelligence" target="_blank" rel="nofollow noopener noreferrer">Import AI 445: Timing superintelligence; AIs solve frontier math proofs; a new ML research benchmark</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="hn" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://www.cnbc.com/2026/05/20/openai-ipo-filing.html" target="_blank" rel="nofollow noopener noreferrer">OpenAI to confidentially file for IPO as soon as Friday</a>
+          <span class="more-source">hn</span>
+        </li>
+        <li data-source="hn" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://www.wsj.com/tech/ai/openai-is-preparing-to-file-for-an-ipo-very-soon-0ec95af5" target="_blank" rel="nofollow noopener noreferrer">OpenAI Is Preparing to File for an IPO Soon</a>
+          <span class="more-source">hn</span>
+        </li>
+        <li data-source="hn" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://openai.com/index/advancing-content-provenance" target="_blank" rel="nofollow noopener noreferrer">OpenAI Adopts Google&#39;s SynthID Watermark for AI Images with Verification Tool</a>
+          <span class="more-source">hn</span>
+        </li>
+        <li data-source="hn" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://www.vincentschmalbach.com/anthropic-ipo-developers-should-be-worried-v2" target="_blank" rel="nofollow noopener noreferrer">Anthropic Is Preparing for IPO and We Should Be Worried</a>
+          <span class="more-source">hn</span>
+        </li>
+        <li data-source="rss" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://www.latent.space/p/ainews-codex-rises-claude-meters" target="_blank" rel="nofollow noopener noreferrer">[AINews] Codex Rises, Claude Meters Programmatic Usage</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://www.latent.space/p/ainews-gpt-realtime-2-translate-and" target="_blank" rel="nofollow noopener noreferrer">[AINews] GPT-Realtime-2, -Translate, and -Whisper: new SOTA realtime voice APIs</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://www.interconnects.ai/p/gpt-54-is-a-big-step-for-codex" target="_blank" rel="nofollow noopener noreferrer">GPT 5.4 is a big step for Codex</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://buttondown.com/ainews/archive/ainews-grok-3-3-mini-now-api-available" target="_blank" rel="nofollow noopener noreferrer">[AINews] Grok 3 &amp; 3-mini now API Available</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://buttondown.com/ainews/archive/ainews-openai-o3-o4-mini-and-codex-cli" target="_blank" rel="nofollow noopener noreferrer">[AINews] OpenAI o3, o4-mini, and Codex CLI</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://buttondown.com/ainews/archive/ainews-gpt-41-the-new-openai-workhorse" target="_blank" rel="nofollow noopener noreferrer">[AINews] GPT 4.1: The New OpenAI Workhorse</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="github_trending" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://github.com/mem0ai/mem0" target="_blank" rel="nofollow noopener noreferrer">mem0ai/mem0: Universal memory layer for AI Agents</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="hn" data-score="12">
+          <span class="more-score" title="composite 12 (this view's weighting)">12</span>
+          <a href="https://twitter.com/nottombrown/status/2057194829986300375" target="_blank" rel="nofollow noopener noreferrer">Anthropic is expanding to Colossus2. Will use GB200</a>
+          <span class="more-source">hn</span>
+        </li>
+        <li data-source="hn" data-score="12">
+          <span class="more-score" title="composite 12 (this view's weighting)">12</span>
+          <a href="https://twitter.com/karpathy/status/2056753169888334312" target="_blank" rel="nofollow noopener noreferrer">I’ve joined Anthropic</a>
+          <span class="more-source">hn</span>
+        </li>
+        <li data-source="rss" data-score="12">
+          <span class="more-score" title="composite 12 (this view's weighting)">12</span>
+          <a href="https://openai.com/index/sea-david-chen" target="_blank" rel="nofollow noopener noreferrer">Sea&#39;s View on the Future of Agentic Software Development with Codex</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="12">
+          <span class="more-score" title="composite 12 (this view's weighting)">12</span>
+          <a href="https://huggingface.co/blog/openai-privacy-filter-web-apps" target="_blank" rel="nofollow noopener noreferrer">How to build scalable web apps with OpenAI&#39;s Privacy Filter</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="12">
+          <span class="more-score" title="composite 12 (this view's weighting)">12</span>
+          <a href="https://www.latent.space/p/ainews-anthropic-growing-10xyear" target="_blank" rel="nofollow noopener noreferrer">[AINews] Anthropic growing 10x/year while everyone else is laying off &gt;10% of their workforce</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="12">
+          <span class="more-score" title="composite 12 (this view's weighting)">12</span>
+          <a href="https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr" target="_blank" rel="nofollow noopener noreferrer">[AINews] Anthropic-SpaceXai&#39;s 300MW/$5B/yr deal for Colossus I, ARR growth is 8000% annualized</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="12">
+          <span class="more-score" title="composite 12 (this view's weighting)">12</span>
+          <a href="https://stratechery.com/2026/spacex-and-anthropic-xais-two-companies-elon-musk-and-spacexais-future" target="_blank" rel="nofollow noopener noreferrer">SpaceX and Anthropic, xAI’s Two Companies, Elon Musk and SpaceXAI’s Future</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="12">
+          <span class="more-score" title="composite 12 (this view's weighting)">12</span>
+          <a href="https://importai.substack.com/p/import-ai-447-the-agi-economy-testing" target="_blank" rel="nofollow noopener noreferrer">Import AI 447: The AGI economy; testing AIs with generated games; and agent ecologies</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="12">
+          <span class="more-score" title="composite 12 (this view's weighting)">12</span>
+          <a href="https://importai.substack.com/p/import-ai-443-into-the-mist-moltbook" target="_blank" rel="nofollow noopener noreferrer">Import AI 443: Into the mist: Moltbook, agent ecologies, and the internet in transition</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="github_trending" data-score="12">
+          <span class="more-score" title="composite 12 (this view's weighting)">12</span>
+          <a href="https://github.com/genkit-ai/genkit" target="_blank" rel="nofollow noopener noreferrer">genkit-ai/genkit: Open-source framework for building AI-powered apps in JavaScript, Go, and Python, built and used in production by Google</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="hn" data-score="10">
+          <span class="more-score" title="composite 10 (this view's weighting)">10</span>
+          <a href="https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli" target="_blank" rel="nofollow noopener noreferrer">Gemini CLI will stop working from June 18, 2026</a>
+          <span class="more-source">hn</span>
+        </li>
+        <li data-source="rss" data-score="10">
+          <span class="more-score" title="composite 10 (this view's weighting)">10</span>
+          <a href="https://openai.com/index/the-next-phase-of-education-for-countries" target="_blank" rel="nofollow noopener noreferrer">The next phase of OpenAI’s Education for Countries</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="10">
+          <span class="more-score" title="composite 10 (this view's weighting)">10</span>
+          <a href="https://openai.com/index/ramp" target="_blank" rel="nofollow noopener noreferrer">How Ramp engineers accelerate code review with Codex</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="10">
+          <span class="more-score" title="composite 10 (this view's weighting)">10</span>
+          <a href="https://openai.com/index/introducing-openai-for-singapore" target="_blank" rel="nofollow noopener noreferrer">Introducing OpenAI for Singapore</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="10">
+          <span class="more-score" title="composite 10 (this view's weighting)">10</span>
+          <a href="https://openai.com/index/personal-finance-chatgpt" target="_blank" rel="nofollow noopener noreferrer">A new personal finance experience in ChatGPT</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="10">
+          <span class="more-score" title="composite 10 (this view's weighting)">10</span>
+          <a href="https://openai.com/index/work-with-codex-from-anywhere" target="_blank" rel="nofollow noopener noreferrer">Work with Codex from anywhere</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="10">
+          <span class="more-score" title="composite 10 (this view's weighting)">10</span>
+          <a href="https://deepmind.google/blog/making-it-easier-to-understand-how-content-was-created-and-edited" target="_blank" rel="nofollow noopener noreferrer">Making it easier to understand how content was created and edited</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="10">
+          <span class="more-score" title="composite 10 (this view's weighting)">10</span>
+          <a href="https://www.interconnects.ai/p/claude-mythos-and-misguided-open" target="_blank" rel="nofollow noopener noreferrer">Claude Mythos and misguided open-weight fearmongering</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="10">
+          <span class="more-score" title="composite 10 (this view's weighting)">10</span>
+          <a href="https://www.interconnects.ai/p/how-anthropic-vs-dow-impacts-open" target="_blank" rel="nofollow noopener noreferrer">Dean Ball on open models and government control</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="8">
+          <span class="more-score" title="composite 8 (this view's weighting)">8</span>
+          <a href="https://openai.com/index/malta-chatgpt-plus-partnership" target="_blank" rel="nofollow noopener noreferrer">OpenAI and Malta partner to bring ChatGPT Plus to all citizens</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="8">
+          <span class="more-score" title="composite 8 (this view's weighting)">8</span>
+          <a href="https://openai.com/index/chatgpt-recognize-context-in-sensitive-conversations" target="_blank" rel="nofollow noopener noreferrer">Helping ChatGPT better recognize context in sensitive conversations</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="8">
+          <span class="more-score" title="composite 8 (this view's weighting)">8</span>
+          <a href="https://deepmind.google/blog/fast-tracking-genetic-leads-to-reverse-cellular-aging" target="_blank" rel="nofollow noopener noreferrer">Fast-tracking genetic leads to reverse cellular aging</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="8">
+          <span class="more-score" title="composite 8 (this view's weighting)">8</span>
+          <a href="https://deepmind.google/blog/finding-the-molecular-switches-behind-new-infectious-diseases" target="_blank" rel="nofollow noopener noreferrer">Finding the molecular switches behind new infectious diseases</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="8">
+          <span class="more-score" title="composite 8 (this view's weighting)">8</span>
+          <a href="https://deepmind.google/blog/how-weathernext-helped-the-national-hurricane-center-better-predict-hurricane-melissas-historic-landfall-in-jamaica" target="_blank" rel="nofollow noopener noreferrer">How WeatherNext helped the National Hurricane Center better predict Hurricane Melissa’s historic landfall in Jamaica</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="8">
+          <span class="more-score" title="composite 8 (this view's weighting)">8</span>
+          <a href="https://www.latent.space/p/ainews-cerebras-60b-ipo-slowly-then" target="_blank" rel="nofollow noopener noreferrer">[AINews] Cerebras&#39; $60B IPO: Slowly, then All at Once</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="8">
+          <span class="more-score" title="composite 8 (this view's weighting)">8</span>
+          <a href="https://stratechery.com/2026/the-deployment-company-back-to-the-70s-apple-and-intel" target="_blank" rel="nofollow noopener noreferrer">The Deployment Company, Back to the 70s, Apple and Intel</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="8">
+          <span class="more-score" title="composite 8 (this view's weighting)">8</span>
+          <a href="https://importai.substack.com/p/import-ai-452-scaling-laws-for-cyberwar" target="_blank" rel="nofollow noopener noreferrer">Import AI 452: Scaling laws for cyberwar; rising tides of AI automation; and a puzzle over gDP forecasting</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="8">
+          <span class="more-score" title="composite 8 (this view's weighting)">8</span>
+          <a href="https://importai.substack.com/p/import-ai-446-nuclear-llms-chinas" target="_blank" rel="nofollow noopener noreferrer">Import AI 446: Nuclear LLMs; China&#39;s big AI benchmark; measurement and AI policy</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="6">
+          <span class="more-score" title="composite 6 (this view's weighting)">6</span>
+          <a href="https://openai.com/academy/codex-for-work/how-sales-teams-use-codex" target="_blank" rel="nofollow noopener noreferrer">How sales teams use Codex</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="6">
+          <span class="more-score" title="composite 6 (this view's weighting)">6</span>
+          <a href="https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex" target="_blank" rel="nofollow noopener noreferrer">How data science teams use Codex</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="6">
+          <span class="more-score" title="composite 6 (this view's weighting)">6</span>
+          <a href="https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex" target="_blank" rel="nofollow noopener noreferrer">How business operations teams use Codex</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="6">
+          <span class="more-score" title="composite 6 (this view's weighting)">6</span>
+          <a href="https://www.latent.space/p/railway" target="_blank" rel="nofollow noopener noreferrer">Railway: The Agent-Native Cloud — Jake Cooper</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="6">
+          <span class="more-score" title="composite 6 (this view's weighting)">6</span>
+          <a href="https://www.latent.space/p/ainews-everything-is-conductor" target="_blank" rel="nofollow noopener noreferrer">[AINews] Everything is Conductor</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="6">
+          <span class="more-score" title="composite 6 (this view's weighting)">6</span>
+          <a href="https://www.latent.space/p/ainews-silicon-valley-gets-serious" target="_blank" rel="nofollow noopener noreferrer">[AINews] Silicon Valley gets Serious about Services</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="github_trending" data-score="6">
+          <span class="more-score" title="composite 6 (this view's weighting)">6</span>
+          <a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" rel="nofollow noopener noreferrer">Significant-Gravitas/AutoGPT: AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="6">
+          <span class="more-score" title="composite 6 (this view's weighting)">6</span>
+          <a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="nofollow noopener noreferrer">NousResearch/hermes-agent: The agent that grows with you</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="6">
+          <span class="more-score" title="composite 6 (this view's weighting)">6</span>
+          <a href="https://github.com/open-webui/open-webui" target="_blank" rel="nofollow noopener noreferrer">open-webui/open-webui: User-friendly AI Interface (Supports Ollama, OpenAI API, ...)</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="6">
+          <span class="more-score" title="composite 6 (this view's weighting)">6</span>
+          <a href="https://github.com/llm-jp/awesome-japanese-llm" target="_blank" rel="nofollow noopener noreferrer">llm-jp/awesome-japanese-llm: 日本語LLMまとめ - Overview of Japanese LLMs</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://deepmind.google/blog/strengthening-singapores-ai-future-a-new-national-partnership" target="_blank" rel="nofollow noopener noreferrer">Strengthening Singapore’s AI Future: A New National Partnership</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://deepmind.google/blog/opening-new-paths-in-aging-research" target="_blank" rel="nofollow noopener noreferrer">Opening new paths in aging research</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://deepmind.google/blog/accelerating-discovery-of-liver-disease-mechanisms" target="_blank" rel="nofollow noopener noreferrer">Accelerating discovery of liver disease mechanisms</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://deepmind.google/blog/uniting-biological-toolkits-for-a-new-approach-to-als" target="_blank" rel="nofollow noopener noreferrer">Uniting biological toolkits for a new approach to ALS</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://deepmind.google/blog/uncovering-repurposed-medicines-to-fight-liver-fibrosis" target="_blank" rel="nofollow noopener noreferrer">Uncovering repurposed medicines to fight liver fibrosis</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://huggingface.co/blog/amazon/foundation-model-building-blocks" target="_blank" rel="nofollow noopener noreferrer">Building Blocks for Foundation Model Training and Inference on AWS</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://huggingface.co/blog/inference-providers-deepinfra" target="_blank" rel="nofollow noopener noreferrer">DeepInfra on Hugging Face Inference Providers 🔥</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://www.latent.space/p/the-fourth-law" target="_blank" rel="nofollow noopener noreferrer">The Autonomous Drone Tech Stack &amp; Economics of Drones — Yaroslav Azhnyuk, The Fourth Law &amp; Guest Host Noah Smith, Noahpinion</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://www.interconnects.ai/p/what-ive-been-building-atom-report" target="_blank" rel="nofollow noopener noreferrer">What I’ve been building: ATOM Report, post-training course, finishing my book, and ongoing research</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://buttondown.com/ainews/archive/ainews-not-much-happened-today-2885" target="_blank" rel="nofollow noopener noreferrer">[AINews] not much happened today</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://stratechery.com/2026/data-center-discontent-understanding-the-opposition-fixing-the-problem" target="_blank" rel="nofollow noopener noreferrer">Data Center Discontent, Understanding the Opposition, Fixing the Problem</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://stratechery.com/2026/shifting-alliances-in-a-changing-world" target="_blank" rel="nofollow noopener noreferrer">2026.20: Shifting Alliances in a Changing World</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://stratechery.com/2026/an-interview-with-ben-thompson-at-the-moffettnathanson-media-internet-communications-conference" target="_blank" rel="nofollow noopener noreferrer">An Interview with Ben Thompson at the MoffettNathanson Media, Internet &amp; Communications Conference</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://stratechery.com/2026/earning-spending" target="_blank" rel="nofollow noopener noreferrer">2026.19: Earning &amp; Spending</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://stratechery.com/2026/an-interview-with-joanna-stern-about-living-with-ai" target="_blank" rel="nofollow noopener noreferrer">An Interview with Joanna Stern About Living With AI</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="rss" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://importai.substack.com/p/import-ai-456-rsi-and-economic-growth" target="_blank" rel="nofollow noopener noreferrer">Import AI 456: RSI and economic growth; radical optionality for AI regulation; and a neural computer</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="github_trending" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://github.com/tensorflow/tensorflow" target="_blank" rel="nofollow noopener noreferrer">tensorflow/tensorflow: An Open Source Machine Learning Framework for Everyone</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://github.com/pytorch/pytorch" target="_blank" rel="nofollow noopener noreferrer">pytorch/pytorch: Tensors and Dynamic neural networks in Python with strong GPU acceleration</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="4">
+          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
+          <a href="https://github.com/RunanywhereAI/runanywhere-sdks" target="_blank" rel="nofollow noopener noreferrer">RunanywhereAI/runanywhere-sdks: Production ready toolkit to run AI locally</a>
+          <span class="more-source">github_trending</span>
+        </li>
+      </ul>
+    </details>
+  </div>
+  <div class="axis-col" data-axis="competitive">
+    <h2>Competitive</h2>
+<article class="item "
+         data-source="rss"
+         data-score="68">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 5 · competitive 5 · frontier 3 · vlm_research 2 = 68 (this view's weighting)">68</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 60%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://huggingface.co/blog/nvidia/nemotron-3-nano-omni-multimodal-intelligence" target="_blank" rel="nofollow noopener noreferrer">Introducing NVIDIA Nemotron 3 Nano Omni: Long-Context Multimodal Intelligence for Documents, Audio and Video Agents</a>
+  </p>
+  <p class="item-summary">NVIDIA Nemotron 3 Nano Omni targets long-context multimodal intelligence for documents, audio, video agents.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Nemotron 3 Nano Omni targets long-context multimodal documents, audio and video agents, directly overlapping the OCR-3 endpoint surface (parse, extract, vqa). The long-context claim is a sharper differentiator if it lands on multipage filings.</dd>
+      <dt>Research</dt>
+      <dd>Worth benchmarking against OCR-3 on OmniDocBench and the IDP Leaderboard; the explicit document+video agent framing makes it a natural baseline for hallucination-on-long-context experiments.</dd>
+      <dt>Action</dt>
+      <dd>reproduce</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier, doc_ai</p>
+</article><article class="item "
+         data-source="hn"
+         data-score="66">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 5 · frontier 4 · vlm_research 2 = 66 (this view's weighting)">66</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">hn</span>
+  </div>
+  <p class="item-title">
+    <a href="https://deepmind.google/models/gemini-omni" target="_blank" rel="nofollow noopener noreferrer">Gemini Omni</a>
+  </p>
+  <p class="item-summary">Gemini Omni from DeepMind ships multimodal capability directly overlapping OCR-3 document territory.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Gemini Omni is Google&#39;s headline multimodal model and overlaps OCR-3 territory on the document-extraction surface. Customers comparing Nanonets against a general-purpose vision API will fold this into the make-vs-buy decision.</dd>
+      <dt>Research</dt>
+      <dd>Useful baseline for VLM hallucination studies once available; architecture details unknown, so independent reproduction on DocVQA / ChartQA / OmniDocBench is the actionable next step.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
-</article><article class="item ">
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="66">
   <div class="item-meta">
-    <span class="item-score">38</span>
+    <span class="item-score"
+          title="doc_ai 4 · competitive 5 · frontier 4 · vlm_research 2 = 66 (this view's weighting)">66</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 40%"></span>
+    </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://www.interconnects.ai/p/lossy-self-improvement" target="_blank" rel="nofollow noopener noreferrer">Lossy self-improvement</a>
+    <a href="https://deepmind.google/blog/introducing-gemini-omni" target="_blank" rel="nofollow noopener noreferrer">Introducing Gemini Omni</a>
   </p>
-  <p class="item-summary">Interconnects piece on self-improvement losing fidelity; partial bearing on synthetic-data and self-distillation pipelines.</p>
-</article><article class="item ">
+  <p class="item-summary">Gemini Omni from DeepMind ships multimodal capability overlapping OCR-3 document territory.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>DeepMind&#39;s own announcement of Gemini Omni; same product-extraction surface implications as the HN-aggregated coverage. The DeepMind framing emphasizes a unified multimodal API rather than a specialized document endpoint.</dd>
+      <dt>Research</dt>
+      <dd>Worth tracking benchmark numbers as published; if Omni lands near top of IDP Leaderboard or OmniDocBench, it shifts the competitive frame.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="58">
   <div class="item-meta">
-    <span class="item-score">26</span>
+    <span class="item-score"
+          title="doc_ai 4 · competitive 5 · frontier 4 · vlm_research 1 = 58 (this view's weighting)">58</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
+    </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://huggingface.co/blog/continuous_async" target="_blank" rel="nofollow noopener noreferrer">Unlocking asynchronicity in continuous batching</a>
+    <a href="https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash" target="_blank" rel="nofollow noopener noreferrer">[AINews] Google I/O 2026: Gemini 3.5 Flash, Omni (NanoBanana for Video), Spark (background agents), and Antigravity 2.0</a>
   </p>
-  <p class="item-summary">Async continuous-batching write-up; inference-throughput technique, indirect bearing on VLM serving cost.</p>
-</article><article class="item ">
+  <p class="item-summary">Google I/O 2026 stacks Gemini 3.5 Flash, Omni multimodal, Spark background agents and Antigravity 2.0 against Nanonets surfaces.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Google I/O 2026 bundles Gemini 3.5 Flash, Omni multimodal, Spark background agents and Antigravity 2.0 in one event. The combination overlaps document extraction, async agent execution and orchestration simultaneously.</dd>
+      <dt>Research</dt>
+      <dd>The Spark background-agent piece is the most novel architectural signal; comparison against existing Nanonets Agents execution model is the natural follow-up.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="hn"
+         data-score="52">
   <div class="item-meta">
-    <span class="item-score">24</span>
+    <span class="item-score"
+          title="doc_ai 3 · competitive 5 · frontier 4 · vlm_research 1 = 52 (this view's weighting)">52</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">hn</span>
+<span>×2</span>  </div>
+  <p class="item-title">
+    <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5" target="_blank" rel="nofollow noopener noreferrer">Gemini 3.5 Flash: frontier intelligence with action</a>
+  </p>
+  <p class="item-summary">Gemini 3.5 Flash ships agent action capability overlapping Nanonets Agents product surface.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Gemini 3.5 Flash combines a frontier model with explicit agent-action capability. The action surface is where Nanonets Agents operates, making this the most direct platform-level competitive signal in this build.</dd>
+      <dt>Research</dt>
+      <dd>Architecture is closed but the action behavior on document workflows is worth measuring; reuse the existing Nanonets Agents evaluation set as a comparator.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="52">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 5 · frontier 4 · vlm_research 1 = 52 (this view's weighting)">52</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
+    </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://importai.substack.com/p/import-ai-457-ai-stuxnet-cursed-muon" target="_blank" rel="nofollow noopener noreferrer">Import AI 457: AI stuxnet; cursed Muon optimizer; and positive alignment</a>
+    <a href="https://deepmind.google/blog/gemini-3-5-frontier-intelligence-with-action" target="_blank" rel="nofollow noopener noreferrer">Gemini 3.5: frontier intelligence with action</a>
   </p>
-  <p class="item-summary">Import AI 457: Muon optimizer issues, AI security; partial training-methodology bearing.</p>
-</article><article class="item ">
+  <p class="item-summary">Gemini 3.5 frontier intelligence with action; agent surface directly overlaps Nanonets Agents.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>DeepMind&#39;s own framing of Gemini 3.5 frontier-intelligence-with-action. Same competitive implication as the HN coverage; reinforces that Google is positioning multimodal models with agent action as the default.</dd>
+      <dt>Research</dt>
+      <dd>Action latency and document-task accuracy are the two empirical axes worth measuring before committing engineering time.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="52">
   <div class="item-meta">
-    <span class="item-score">20</span>
+    <span class="item-score"
+          title="doc_ai 2 · competitive 4 · frontier 4 · vlm_research 2 = 52 (this view's weighting)">52</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 40%"></span>
+    </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://importai.substack.com/p/import-ai-450-chinas-electronic-warfare" target="_blank" rel="nofollow noopener noreferrer">Import AI 450: China&#39;s electronic warfare model; traumatized LLMs; and a scaling law for cyberattacks</a>
+    <a href="https://huggingface.co/blog/deepseekv4" target="_blank" rel="nofollow noopener noreferrer">DeepSeek-V4: a million-token context that agents can actually use</a>
   </p>
-  <p class="item-summary">Import AI 450: &#39;traumatized LLMs&#39; study; partial bearing on LLM-behavior characterization.</p>
-</article>  </div>
+  <p class="item-summary">DeepSeek-V4 ships a million-token context positioned for agent workloads.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>DeepSeek-V4&#39;s million-token context positioned for agent workloads matters if customers start passing entire document corpora into a context window rather than chunked extraction. Long-context VLMs are a structural threat to the chunked-OCR pipeline.</dd>
+      <dt>Research</dt>
+      <dd>Long-context hallucination behavior on documents is largely uncharacterized; targeted probes for phantom-row and repetition-loop modes at 100k-1M token context would be a clean follow-up.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="48">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 4 · frontier 3 · vlm_research 2 = 48 (this view's weighting)">48</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://www.interconnects.ai/p/gemma-4-and-what-makes-an-open-model" target="_blank" rel="nofollow noopener noreferrer">Gemma 4 and what makes an open model succeed</a>
+  </p>
+  <p class="item-summary">Gemma 4 launch analysis from Interconnects; Gemma is an IDP Leaderboard candidate VLM.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Gemma 4 is Google&#39;s open-weight family on the IDP Leaderboard&#39;s comparison set. Open-weight availability lowers the cost of running document-tuned variants locally.</dd>
+      <dt>Research</dt>
+      <dd>Worth measuring on OmniDocBench and the IDP Leaderboard once weights drop; useful for cross-architecture hallucination-transfer studies versus Qwen-VL and Pixtral families.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="48">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 5 · frontier 3 · vlm_research 1 = 48 (this view's weighting)">48</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://openai.com/index/databricks" target="_blank" rel="nofollow noopener noreferrer">Databricks brings GPT-5.5 to enterprise agent workflows</a>
+  </p>
+  <p class="item-summary">Databricks ships GPT-5.5 to enterprise agent workflows; directly competes with Nanonets Agents enterprise positioning.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Databricks ships GPT-5.5 to enterprise agent workflows on Databricks-managed infrastructure. Directly competes for the enterprise buyers Nanonets Agents targets in AP, OM, and back-office automation.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication; relevant for evaluating where customers will deploy agent workflows alongside their data warehouse.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="40">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 4 · frontier 3 · vlm_research 1 = 40 (this view's weighting)">40</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://buttondown.com/ainews/archive/ainews-gemini-25-flash-completes-the-total" target="_blank" rel="nofollow noopener noreferrer">[AINews] Gemini 2.5 Flash completes the total domination of the Pareto Frontier</a>
+  </p>
+  <p class="item-summary">AINews on Gemini 2.5 Flash completing Pareto-frontier dominance; capability mapping.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Retrospective on Gemini 2.5 Flash dominating the Pareto frontier; relevant context for how Gemini 3.5 and Omni were positioned this week.</dd>
+      <dt>Research</dt>
+      <dd>Capability mapping reference; mostly useful as a baseline for tracking month-over-month frontier shifts.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="38">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 3 · frontier 3 · vlm_research 1 = 38 (this view's weighting)">38</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://stratechery.com/2026/google-i-o-world-models-i-o-spaghetti" target="_blank" rel="nofollow noopener noreferrer">Google I/O, World Models, I/O Spaghetti</a>
+  </p>
+  <p class="item-summary">Stratechery analysis of Google I/O world-models direction shapes competitive context for VLM extraction.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Stratechery&#39;s framing of Google I/O argues world-models are the connective tissue across Gemini, Omni and Antigravity. If accurate, it shifts competitive ground from per-task accuracy to coherent multimodal action.</dd>
+      <dt>Research</dt>
+      <dd>Mostly strategic context; no direct research implication.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="hn"
+         data-score="34">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 4 · frontier 3 · vlm_research 1 = 34 (this view's weighting)">34</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">hn</span>
+  </div>
+  <p class="item-title">
+    <a href="https://qwen.ai/blog?id=qwen3.7" target="_blank" rel="nofollow noopener noreferrer">Qwen3.7-Max: The Agent Frontier</a>
+  </p>
+  <p class="item-summary">Qwen3.7-Max agent frontier release; Alibaba VLM family appears on IDP Leaderboard as competitor.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Qwen3.7-Max is Alibaba&#39;s flagship agent-frontier release and the Qwen-VL family is an explicit IDP Leaderboard competitor. Open availability puts pricing pressure on hosted OCR APIs.</dd>
+      <dt>Research</dt>
+      <dd>Qwen3.7-Max is a useful cross-architecture comparator for hallucination studies; particularly relevant for transfer experiments versus Nanonets-OCR2-3B.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="hn"
+         data-score="34">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 4 · frontier 3 · vlm_research 1 = 34 (this view's weighting)">34</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">hn</span>
+  </div>
+  <p class="item-title">
+    <a href="https://www.emmi.ai/news/mistral-ai-acquires-emmi-ai" target="_blank" rel="nofollow noopener noreferrer">Mistral AI acquires Emmi AI</a>
+  </p>
+  <p class="item-summary">Mistral AI acquires Emmi AI; Mistral is a direct OCR competitor expanding its surface.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Mistral acquiring Emmi AI expands Mistral&#39;s footprint; Mistral OCR and Document AI are direct competitors. The acquisition signals continued Mistral investment in enterprise document workflows.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication; methodology and pricing impact unknown until disclosed.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="32">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 4 · frontier 3 · vlm_research 0 = 32 (this view's weighting)">32</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://deepmind.google/blog/introducing-google-antigravity-2-0" target="_blank" rel="nofollow noopener noreferrer">Introducing Google Antigravity 2.0</a>
+  </p>
+  <p class="item-summary">Google Antigravity 2.0 agent platform release competes with Nanonets Agents orchestration surface.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Antigravity 2.0 is Google&#39;s agent platform release and directly competes with Nanonets Agents on orchestration, workflow definition, and execution surfaces.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication; relevant for orchestration architecture comparison and identifying where Google&#39;s mental model of an agent differs.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="32">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 3 · frontier 3 · vlm_research 1 = 32 (this view's weighting)">32</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model" target="_blank" rel="nofollow noopener noreferrer">Latest open artifacts (#21): Open model bonanza! Gemma 4, DeepSeek V4, Kimi K2.6, MiMo 2.5, GLM-5.1 &amp; others. On CAISI&#39;s V4 assessment.</a>
+  </p>
+  <p class="item-summary">Open-model bonanza roundup: Gemma 4, DeepSeek V4, Kimi K2.6, MiMo 2.5, GLM-5.1 land near competitive benchmarks.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Roundup of open-model releases (Gemma 4, DeepSeek V4, Kimi K2.6, MiMo 2.5, GLM-5.1) — the open-weight competitive set is dense this quarter and several of these appear on the IDP Leaderboard.</dd>
+      <dt>Research</dt>
+      <dd>Useful index for cross-architecture transfer experiments; would inform which open-weight comparators to prioritize.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="30">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 3 · frontier 1 · vlm_research 1 = 30 (this view's weighting)">30</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://huggingface.co/blog/ibm-research/open-agent-leaderboard" target="_blank" rel="nofollow noopener noreferrer">The Open Agent Leaderboard</a>
+  </p>
+  <p class="item-summary">IBM Open Agent Leaderboard launches benchmark for agent platforms parallel to IDP Leaderboard.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>IBM&#39;s Open Agent Leaderboard launches a benchmark for agent platforms that parallels the IDP Leaderboard&#39;s role for OCR. If it gains adoption, the methodology and benchmark set will shape how customers evaluate Nanonets Agents.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication; worth tracking methodology details for benchmark design references.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="rss"
+         data-score="28">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 3 · frontier 2 · vlm_research 1 = 28 (this view's weighting)">28</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://www.interconnects.ai/p/latest-open-artifacts-20-new-orgs" target="_blank" rel="nofollow noopener noreferrer">Latest open artifacts (#20): New orgs! New types of models! With Nemotron Super, Sarvam, Cohere Transcribe, &amp; others</a>
+  </p>
+  <p class="item-summary">Open artifacts #20 covers Nemotron Super, Sarvam, Cohere Transcribe.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Open artifacts #20 covers Nemotron Super, Sarvam and Cohere Transcribe; reinforces the rapid pace of open-weight releases that include doc-AI relevant capabilities.</dd>
+      <dt>Research</dt>
+      <dd>Useful index for cross-architecture comparator selection.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="rss"
+         data-score="26">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 3 · frontier 3 · vlm_research 1 = 26 (this view's weighting)">26</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://buttondown.com/ainews/archive/ainews-googles-agent2agent-protocol-a2a" target="_blank" rel="nofollow noopener noreferrer">[AINews] Google&#39;s Agent2Agent Protocol (A2A)</a>
+  </p>
+  <p class="item-summary">Google&#39;s Agent2Agent (A2A) protocol intersects multi-agent ecosystems including document agents.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Google&#39;s Agent2Agent (A2A) protocol attempts to standardize inter-agent communication. If adoption follows MCP, A2A becomes part of the integration surface customers expect from agent platforms including Nanonets Agents.</dd>
+      <dt>Research</dt>
+      <dd>Strategic standard worth tracking; protocol-level patterns may influence how runtime mitigation hooks fit into agent ecosystems.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article>    <details class="more-items">
+      <summary>Show 7 more in this axis</summary>
+      <ul>
+        <li data-source="rss" data-score="26">
+          <span class="more-score" title="composite 26 (this view's weighting)">26</span>
+          <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound" target="_blank" rel="nofollow noopener noreferrer">How open model ecosystems compound</a>
+          <span class="more-source">rss</span>
+        </li>
+        <li data-source="github_trending" data-score="16">
+          <span class="more-score" title="composite 16 (this view's weighting)">16</span>
+          <a href="https://github.com/langgenius/dify" target="_blank" rel="nofollow noopener noreferrer">langgenius/dify: Production-ready platform for agentic workflow development.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://github.com/dataelement/bisheng" target="_blank" rel="nofollow noopener noreferrer">dataelement/bisheng: BISHENG is an open LLM devops platform for next generation Enterprise AI applications. Powerful and comprehensive features include: GenAI workflow, RAG, Agent, Unified model management, Evaluation, SF</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://github.com/langchain-ai/langchain" target="_blank" rel="nofollow noopener noreferrer">langchain-ai/langchain: The agent engineering platform.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="14">
+          <span class="more-score" title="composite 14 (this view's weighting)">14</span>
+          <a href="https://github.com/FlowiseAI/Flowise" target="_blank" rel="nofollow noopener noreferrer">FlowiseAI/Flowise: Build AI Agents, Visually</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="10">
+          <span class="more-score" title="composite 10 (this view's weighting)">10</span>
+          <a href="https://github.com/Mintplex-Labs/anything-llm" target="_blank" rel="nofollow noopener noreferrer">Mintplex-Labs/anything-llm: The all-in-one AI productivity accelerator. On device and privacy first with no annoying setup or configuration.</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="rss" data-score="8">
+          <span class="more-score" title="composite 8 (this view's weighting)">8</span>
+          <a href="https://www.latent.space/p/abridge" target="_blank" rel="nofollow noopener noreferrer">AI-Native Healthcare: 100M Doctor Visits, 10–20 Hours Saved, Prior Auth in Minutes — Janie Lee &amp; Chai Asawa, Abridge</a>
+          <span class="more-source">rss</span>
+        </li>
+      </ul>
+    </details>
+  </div>
 </section>
 
 <aside class="ai-partner" aria-label="Questions from your AI partner">
@@ -451,28 +1606,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Should NVIDIA Nemotron 3 Nano Omni (item 39c0a1c4f9c26195) be added to the running cross-architecture VLM list for hallucination-transfer experiments?</p>
-    <p class="question-context">It is explicitly marketed at document agents from a major lab. If yes, it changes the priority of the next reproduction queue; if no, the team should record why so future builds don&#39;t re-surface it as a top item.</p>
+    <p class="question-text">Should Gemini Omni and Nemotron 3 Nano Omni get pre-emptive OmniDocBench and IDP Leaderboard runs before they appear on the published leaderboard, or wait for the team operating the leaderboard to add them?</p>
+    <p class="question-context">Both arrived this build with explicit multimodal document positioning. Independent runs would give us a private comparator, but duplicating the leaderboard team&#39;s work has obvious cost.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The current source mix is heavily weighted toward newsletters (Latent Space, Interconnects, Import AI, Stratechery, AINews) and frontier-lab blogs; should we add arXiv document-AI feeds and OCR-specific GitHub trending in the next build?</p>
-    <p class="question-context">This build had 109 of 112 items from RSS and only 3 from HN, with no arXiv or github_trending coverage. The dashboard&#39;s value scales with primary-research sources; without them, the doc_ai and vlm_research axes are starved.</p>
+    <p class="question-text">How should the build separate Google I/O 2026 from the individual Gemini Omni and Gemini 3.5 entries when they cover overlapping material?</p>
+    <p class="question-context">The roundup item, the Omni release across two URLs, and Gemini 3.5 across two URLs all surface separately because dedup keys on canonical URL. Counting all six inflates the competitive column; collapsing them loses per-axis comparability.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">None of the 112 items names Nanonets directly. Is this expected, or is the keyword filter failing to catch Nanonets-OCR2 mentions?</p>
-    <p class="question-context">Two consecutive builds without a hostility flag could mean either genuine quiet or a filter miss. A spot-check on HuggingFace and arXiv for &#39;Nanonets-OCR2&#39; over the last 14 days would resolve this.</p>
+    <p class="question-text">Long-context multimodal models claim agent-usable million-token windows; is the implicit framework that document chunking becomes obsolete, or that chunking still wins on cost and accuracy?</p>
+    <p class="question-context">Nemotron 3 Nano Omni and DeepSeek-V4 both go this direction. The team&#39;s existing infrastructure assumes chunked OCR; understanding whether long-context VLMs eat the pipeline or stack on top of it changes roadmap priors.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">How should PaddleOCR 3.5 (item 0e90042cc61fe001) be scored on the competitive axis given that PaddleOCR is widely used but not listed in the canonical competitive set in data/nanonets_context.md?</p>
-    <p class="question-context">It is treated as competitive-axis relevant here because it directly addresses the same workload (OCR + document parsing) as Nanonets-OCR2. Worth confirming whether the editorial grounding should be amended to list PaddleOCR explicitly.</p>
+    <p class="question-text">Open-weight VLM releases keep landing without explicit IDP Leaderboard runs; should the dashboard automatically queue a leaderboard submission request for any model that names DocVQA, ChartQA, OmniDocBench or OlmOCR-Bench in its release notes?</p>
+    <p class="question-context">Manually triggering a benchmark submission for each release is high-overhead; a queue would feed the leaderboard maintainers without the build agent making editorial calls on which model is worth running.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Is the score ceiling for an item with no direct Nanonets mention but explicit document-AI positioning correctly tuned? Nemotron 3 Nano Omni and PaddleOCR 3.5 are the two highest-scoring items at ~72 and ~65 respectively.</p>
-    <p class="question-context">Neither item names Nanonets, but both are direct substitutes / adjacents. If the team would prefer the ceiling around 50 for non-Nanonets-naming items, the rubric or weights need to be retuned in data/nanonets_context.md.</p>
+    <p class="question-text">arXiv ingestion has been 429-rate-limited for two consecutive builds; should the source path move to a daily ID-list snapshot via OAI-PMH rather than the keyword-search endpoint?</p>
+    <p class="question-context">The hostility-flag scoring rule depends on academic papers in the mix to function; if arXiv stays unavailable, the dashboard structurally over-weights vendor announcements and undercounts research.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -484,10 +1639,43 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered: hn, rss    · failed: 2 · built at 2026-05-21T08:30:00+00:00
+    sources covered: hn, rss, github_trending    · failed: 1 · built at 2026-05-21T08:58:57.842759+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
+
+<script>
+(function() {
+  const filterText = document.getElementById('filter-text');
+  const filterSource = document.getElementById('filter-source');
+  const filterMin = document.getElementById('filter-min');
+  const count = document.getElementById('filter-count');
+  const items = Array.from(document.querySelectorAll('article.item, .more-items li'));
+
+  function apply() {
+    const needle = (filterText.value || '').toLowerCase();
+    const source = filterSource.value;
+    const minScore = parseInt(filterMin.value, 10) || 0;
+    let visible = 0;
+    items.forEach(el => {
+      const score = parseInt(el.dataset.score, 10) || 0;
+      const src = el.dataset.source;
+      const text = (el.textContent || '').toLowerCase();
+      const ok = (!needle || text.indexOf(needle) >= 0)
+              && (!source || src === source)
+              && (score >= minScore);
+      el.style.display = ok ? '' : 'none';
+      if (ok) visible += 1;
+    });
+    count.textContent = visible + ' visible';
+  }
+
+  filterText.addEventListener('input', apply);
+  filterSource.addEventListener('change', apply);
+  filterMin.addEventListener('input', apply);
+  apply();
+})();
+</script>
 
 </body>
 </html>
