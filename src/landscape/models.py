@@ -46,6 +46,7 @@ class Item(BaseModel):
     canonical_url: str
     title: str
     source: SourceName
+    source_count: int = 1  # bumped by dedup when same item surfaces from >1 source
 
     axis_scores: AxisScores | None = None
     composite_score: float | None = None
