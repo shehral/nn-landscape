@@ -111,3 +111,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-21T18:12:27+00:00 (audit: partial)
+
+### Q: MinerU has appeared at the top of the competitive axis across multiple consecutive builds; should it be added to the named competitive set in data/nanonets_context.md alongside Reducto, LlamaParse, and Unstructured.io?
+
+**Context:** MinerU is backed by Shanghai AI Lab (opendatalab), targets the PDF and Office document-to-markdown/JSON extraction interface that Nanonets Agentic Data Extraction occupies, and consistently scores composite=68 — highest item in the build. Without a named entry, future builds evaluate it without pre-established axis weights that would sharpen scoring.
+
+**Answer:** _add reply here_
+
+### Q: BiSheng and RAGFlow both address the enterprise document orchestration layer that Nanonets Agents also occupies; are either of these tracked commercially, and should they be added to the competitive set in data/nanonets_context.md?
+
+**Context:** Both are open-source, Chinese-backed (DataElement and Infiniflow respectively), and have appeared in multiple consecutive builds. They operate above the extraction layer — pipeline orchestrators rather than OCR models — which makes them a different threat profile than Reducto or MinerU. Clarifying whether they belong in the registry would stabilize scoring.
+
+**Answer:** _add reply here_
+
+### Q: Ollama's description now lists Kimi-K2.5 (Moonshot AI) alongside GLM-5 and Qwen; should Moonshot AI or Kimi-K2.5 be added to the competitive or frontier tracking set in data/nanonets_context.md?
+
+**Context:** Moonshot AI is not currently in the editorial grounding. Kimi-K2.5 appears to be a multimodal model; if it includes document extraction capabilities comparable to GLM-OCR or Qwen-VL, it belongs in the competitive registry. If it is a general multimodal model without document focus, it would be frontier-primary. The build cannot resolve this without team input.
+
+**Answer:** _add reply here_
+
+### Q: Two open-source evaluation frameworks (lmms-eval, evalscope) are now trending that cover DocVQA, ChartQA, and IDP Leaderboard-adjacent benchmarks; is either already in use by the team for benchmark runs, or does the team use a custom harness?
+
+**Context:** If the team uses neither and maintains a custom evaluation infrastructure, that gap is worth noting to avoid redundant investment. If one is already in use, these items should be promoted to a higher action recommendation in future builds and the context file updated to reflect that.
+
+**Answer:** _add reply here_
+
+### Q: The trend toward open-source document-parsing commoditization (MinerU, opendataloader-pdf, and the already-listed Docling) is now visible across three consecutive builds; should data/nanonets_context.md be updated to include a paragraph on open-source substitution risk in the competitive section?
+
+**Context:** Docling is the only open-source parser currently named in the competitive registry. MinerU and opendataloader-pdf represent a second and third entrant in the same category. A context-level note on this class of entrants would stabilize scoring across builds without requiring the build agent to make ad hoc judgments about whether each new open-source PDF parser belongs in the competitive axis.
+
+**Answer:** _add reply here_
+
+---
