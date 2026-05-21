@@ -9,13 +9,15 @@
     <meta http-equiv="cache-control" content="max-age=300">
     <title>Nanonets Landscape</title>
     <link rel="stylesheet" href="assets/styles.css">
+    <style>:root { --color-accent: #1f4068; }</style>
   </head>
-  <body>
+  <body data-view="default">
   
   <header class="site-header">
     <div>
       <h1>Nanonets Landscape</h1>
       <p class="subtitle">Continuously-updated AI/ML intelligence for the document-AI stack.</p>
+      <p class="emphasis-tag">Balanced</p>
     </div>
     <nav class="site-nav" aria-label="Audience views">
       <a href="index.html" class="current">General</a>
@@ -23,9 +25,29 @@
       <a href="for-dl-team.html" >Research</a>
       <a href="about.html">About</a>
     </nav>
-    <span class="built-at">Built May 21, 2026 · 12:00 UTC</span>
+    <span class="built-at">Built May 21, 2026 · 12:00 UTC · 2 items scored</span>
   </header>
   
+  
+  <p class="score-legend">
+    Scores are 0–100 composites weighted by this view's per-axis emphasis. Hover any score chip to see the per-axis breakdown
+    (doc_ai · competitive · frontier · vlm_research, each 0–5). The four-bar sparkline encodes the same info visually.
+  </p>
+  
+  <section class="controls" aria-label="Filter and sort controls">
+    <input type="search" id="filter-text" placeholder="Filter by title…" aria-label="Filter by title">
+    <select id="filter-source" aria-label="Filter by source">
+      <option value="">All sources</option>
+      <option value="arxiv">arxiv</option>
+      <option value="hn">hn</option>
+      <option value="rss">rss</option>
+      <option value="github_trending">github_trending</option>
+    </select>
+    <label>Min score
+      <input type="number" id="filter-min" min="0" max="100" step="5" value="0" aria-label="Minimum composite score">
+    </label>
+    <span id="filter-count" class="filter-count"></span>
+  </section>
   
   <section class="brief" aria-label="Today's brief">
     <h2>Patterns this build</h2>
@@ -35,30 +57,42 @@
   </section>
   
   <section class="axes" aria-label="Items by axis">
-    <div class="axis-col">
+    <div class="axis-col" data-axis="doc_ai">
       <h2>Document AI</h2>
-        <p class="item-summary">No items this build.</p>
+        <p class="item-summary">No top-N items this build.</p>
     </div>
-    <div class="axis-col">
+    <div class="axis-col" data-axis="competitive">
       <h2>Competitive</h2>
-  <article class="item ">
+  <article class="item "
+           data-source="hn"
+           data-score="65">
     <div class="item-meta">
-      <span class="item-score">65</span>
+      <span class="item-score"
+            title="doc_ai 4 · competitive 5 · frontier 1 · vlm_research 1 = 65 (this view's weighting)">65</span>
+      <span class="sparkline" aria-hidden="true">
+        <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
+      </span>
       <span class="item-source">hn</span>
     </div>
     <p class="item-title">
       <a href="https://reducto.ai/blog/series-b" target="_blank" rel="nofollow noopener noreferrer">Reducto closes $30M Series B</a>
     </p>
   </article>  </div>
-    <div class="axis-col">
+    <div class="axis-col" data-axis="frontier">
       <h2>Frontier</h2>
-        <p class="item-summary">No items this build.</p>
+        <p class="item-summary">No top-N items this build.</p>
     </div>
-    <div class="axis-col">
+    <div class="axis-col" data-axis="vlm_research">
       <h2>VLM research</h2>
-  <article class="item ">
+  <article class="item "
+           data-source="arxiv"
+           data-score="57">
     <div class="item-meta">
-      <span class="item-score">57</span>
+      <span class="item-score"
+            title="doc_ai 4 · competitive 1 · frontier 2 · vlm_research 5 = 57 (this view's weighting)">57</span>
+      <span class="sparkline" aria-hidden="true">
+        <span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 100%"></span>
+      </span>
       <span class="item-source">arxiv</span>
     </div>
     <p class="item-title">
@@ -105,6 +139,39 @@
       · <a href="about.html">about</a>
     </p>
   </footer>
+  
+  <script>
+  (function() {
+    const filterText = document.getElementById('filter-text');
+    const filterSource = document.getElementById('filter-source');
+    const filterMin = document.getElementById('filter-min');
+    const count = document.getElementById('filter-count');
+    const items = Array.from(document.querySelectorAll('article.item, .more-items li'));
+  
+    function apply() {
+      const needle = (filterText.value || '').toLowerCase();
+      const source = filterSource.value;
+      const minScore = parseInt(filterMin.value, 10) || 0;
+      let visible = 0;
+      items.forEach(el => {
+        const score = parseInt(el.dataset.score, 10) || 0;
+        const src = el.dataset.source;
+        const text = (el.textContent || '').toLowerCase();
+        const ok = (!needle || text.indexOf(needle) >= 0)
+                && (!source || src === source)
+                && (score >= minScore);
+        el.style.display = ok ? '' : 'none';
+        if (ok) visible += 1;
+      });
+      count.textContent = visible + ' visible';
+    }
+  
+    filterText.addEventListener('input', apply);
+    filterSource.addEventListener('change', apply);
+    filterMin.addEventListener('input', apply);
+    apply();
+  })();
+  </script>
   
   </body>
   </html>

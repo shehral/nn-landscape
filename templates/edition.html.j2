@@ -6,13 +6,15 @@
   <meta http-equiv="cache-control" content="max-age=300">
   <title>{{ view.title }}</title>
   <link rel="stylesheet" href="assets/styles.css">
+  <style>:root { --color-accent: {{ view.accent_color }}; }</style>
 </head>
-<body>
+<body data-view="{{ view_name }}">
 
 <header class="site-header">
   <div>
     <h1>{{ view.title }}</h1>
     <p class="subtitle">{{ view.subtitle }}</p>
+    <p class="emphasis-tag">{{ view.emphasis_tag }}</p>
   </div>
   <nav class="site-nav" aria-label="Audience views">
     <a href="index.html" {% if view.audience == 'general' %}class="current"{% endif %}>General</a>
@@ -20,7 +22,7 @@
     <a href="for-dl-team.html" {% if view.audience == 'dl_team' %}class="current"{% endif %}>Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built {{ built_at_human }}</span>
+  <span class="built-at">Built {{ built_at_human }} · {{ total_items }} items scored</span>
 </header>
 
 {% if not audit_passed %}
@@ -29,6 +31,26 @@
   pre-publish check failed. See <a href="about.html">about</a> for details.
 </div>
 {% endif %}
+
+<p class="score-legend">
+  Scores are 0–100 composites weighted by this view's per-axis emphasis. Hover any score chip to see the per-axis breakdown
+  (doc_ai · competitive · frontier · vlm_research, each 0–5). The four-bar sparkline encodes the same info visually.
+</p>
+
+<section class="controls" aria-label="Filter and sort controls">
+  <input type="search" id="filter-text" placeholder="Filter by title…" aria-label="Filter by title">
+  <select id="filter-source" aria-label="Filter by source">
+    <option value="">All sources</option>
+    <option value="arxiv">arxiv</option>
+    <option value="hn">hn</option>
+    <option value="rss">rss</option>
+    <option value="github_trending">github_trending</option>
+  </select>
+  <label>Min score
+    <input type="number" id="filter-min" min="0" max="100" step="5" value="0" aria-label="Minimum composite score">
+  </label>
+  <span id="filter-count" class="filter-count"></span>
+</section>
 
 {% if trend_bullets %}
 <section class="brief" aria-label="Today's brief">
@@ -43,15 +65,30 @@
 
 <section class="axes" aria-label="Items by axis">
   {% for axis_key, axis_label in axis_columns %}
-  <div class="axis-col">
+  <div class="axis-col" data-axis="{{ axis_key }}">
     <h2>{{ axis_label }}</h2>
-    {% set col_items = items_by_axis.get(axis_key, []) %}
-    {% if col_items %}
-      {% for item in col_items %}
+    {% set col_top = items_by_axis.get(axis_key, []) %}
+    {% set col_more = items_more_by_axis.get(axis_key, []) %}
+    {% if col_top %}
+      {% for item in col_top %}
         {% include "partials/item_card.html.j2" %}
       {% endfor %}
     {% else %}
-      <p class="item-summary">No items this build.</p>
+      <p class="item-summary">No top-N items this build.</p>
+    {% endif %}
+    {% if col_more %}
+    <details class="more-items">
+      <summary>Show {{ col_more|length }} more in this axis</summary>
+      <ul>
+        {% for item in col_more %}
+        <li data-source="{{ item.source }}" data-score="{{ item.composite_score|round|int }}">
+          <span class="more-score" title="composite {{ item.composite_score|round|int }} (this view's weighting)">{{ item.composite_score|round|int }}</span>
+          <a href="{{ item.canonical_url }}" target="_blank" rel="nofollow noopener noreferrer">{{ item.title }}</a>
+          <span class="more-source">{{ item.source }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </details>
     {% endif %}
   </div>
   {% endfor %}
@@ -88,6 +125,39 @@
     · <a href="about.html">about</a>
   </p>
 </footer>
+
+<script>
+(function() {
+  const filterText = document.getElementById('filter-text');
+  const filterSource = document.getElementById('filter-source');
+  const filterMin = document.getElementById('filter-min');
+  const count = document.getElementById('filter-count');
+  const items = Array.from(document.querySelectorAll('article.item, .more-items li'));
+
+  function apply() {
+    const needle = (filterText.value || '').toLowerCase();
+    const source = filterSource.value;
+    const minScore = parseInt(filterMin.value, 10) || 0;
+    let visible = 0;
+    items.forEach(el => {
+      const score = parseInt(el.dataset.score, 10) || 0;
+      const src = el.dataset.source;
+      const text = (el.textContent || '').toLowerCase();
+      const ok = (!needle || text.indexOf(needle) >= 0)
+              && (!source || src === source)
+              && (score >= minScore);
+      el.style.display = ok ? '' : 'none';
+      if (ok) visible += 1;
+    });
+    count.textContent = visible + ' visible';
+  }
+
+  filterText.addEventListener('input', apply);
+  filterSource.addEventListener('change', apply);
+  filterMin.addEventListener('input', apply);
+  apply();
+})();
+</script>
 
 </body>
 </html>

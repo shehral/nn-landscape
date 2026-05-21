@@ -92,6 +92,13 @@ def load_views() -> dict[str, dict]:
     return yaml.safe_load(VIEWS_YAML.read_text())["views"]
 
 
+def _ordered_columns(view_config: dict) -> list[tuple[Axis, str]]:
+    """Resolve the view's column_order field against the AXIS_COLUMNS label map."""
+    label_map = dict(AXIS_COLUMNS)
+    order = view_config.get("column_order") or [a for a, _ in AXIS_COLUMNS]
+    return [(axis, label_map[axis]) for axis in order if axis in label_map]
+
+
 def render_view(
     edition: EditionJSON, view_name: str, view_config: dict, out_path: Path
 ) -> str:
@@ -102,13 +109,27 @@ def render_view(
     selected = _select_with_quota(
         scored, view_config["top_n_overall"], view_config["min_per_axis"]
     )
+    selected_ids = {it.id for it in selected}
+
+    # Re-weight every item for this view, including the ones not in `selected`.
+    # The "More items" disclosure exposes everything that was scored.
+    by_axis_top = _group_by_axis(selected)
+    by_axis_more: dict[Axis, list[Item]] = {axis: [] for axis, _ in AXIS_COLUMNS}
+    for score, item in scored:
+        if item.id in selected_ids or item.primary_axis is None:
+            continue
+        by_axis_more[item.primary_axis].append(
+            item.model_copy(update={"composite_score": score})
+        )
 
     env = _env()
     template = env.get_template("edition.html.j2")
     html = template.render(
         view=view_config,
-        items_by_axis=_group_by_axis(selected),
-        axis_columns=AXIS_COLUMNS,
+        view_name=view_name,
+        items_by_axis=by_axis_top,
+        items_more_by_axis=by_axis_more,
+        axis_columns=_ordered_columns(view_config),
         trend_bullets=edition.trend_bullets,
         ai_partner_questions=edition.ai_partner_questions,
         sources_covered=list(edition.sources_covered),
@@ -119,6 +140,7 @@ def render_view(
         questions_file_url=QUESTIONS_FILE_URL,
         questions_edit_url=QUESTIONS_EDIT_URL,
         context_file_url=CONTEXT_FILE_URL,
+        total_items=len(edition.items),
     )
     out_path.write_text(html, encoding="utf-8")
     return html

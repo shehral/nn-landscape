@@ -1,8 +1,17 @@
-<article class="item {% if item.hostility_flag %}hostility{% endif %}">
+{% set ax = item.axis_scores %}
+<article class="item {% if item.hostility_flag %}hostility{% endif %}"
+         data-source="{{ item.source }}"
+         data-score="{{ item.composite_score|round|int }}">
   <div class="item-meta">
-    <span class="item-score">{{ item.composite_score|round|int }}</span>
+    <span class="item-score"
+          title="{% if ax %}doc_ai {{ ax.doc_ai }} · competitive {{ ax.competitive }} · frontier {{ ax.frontier }} · vlm_research {{ ax.vlm_research }} = {{ item.composite_score|round|int }} (this view's weighting){% else %}composite {{ item.composite_score|round|int }}{% endif %}">{{ item.composite_score|round|int }}</span>
+    {% if ax %}
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: {{ (ax.doc_ai * 20)|int }}%"></span><span style="height: {{ (ax.competitive * 20)|int }}%"></span><span style="height: {{ (ax.frontier * 20)|int }}%"></span><span style="height: {{ (ax.vlm_research * 20)|int }}%"></span>
+    </span>
+    {% endif %}
     <span class="item-source">{{ item.source }}</span>
-    {% if item.source_count > 1 %}<span>×{{ item.source_count }} sources</span>{% endif %}
+    {% if item.source_count > 1 %}<span>×{{ item.source_count }}</span>{% endif %}
     {% if item.hostility_flag %}<span title="competitor commentary; descriptive framing">⚐</span>{% endif %}
   </div>
   <p class="item-title">

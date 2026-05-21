@@ -80,7 +80,7 @@ def test_render_dl_team_view_reweights_scores(tmp_path: Path) -> None:
 
     # Score chips appear inside each item card. Extract pairs of (score, title).
     pattern = re.compile(
-        r'<span class="item-score">(\d+)</span>'
+        r'<span class="item-score"[^>]*>(\d+)</span>'
         r'.*?<p class="item-title">\s*<a [^>]+>([^<]+)</a>',
         re.DOTALL,
     )
