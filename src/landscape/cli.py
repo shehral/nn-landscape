@@ -4,6 +4,9 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import subprocess
+import sys
 from collections.abc import Iterable, Iterator
 from datetime import UTC, datetime
 from pathlib import Path
@@ -29,7 +32,11 @@ from .paths import (
     ITEMS_DEDUPED,
     ITEMS_RAW,
     ITEMS_SCORED,
+    LOCK_FILE,
+    QUESTIONS_MD,
+    REPO_ROOT,
     RUN_DIR,
+    SEEN_JSON,
     SOURCES_YAML,
     ensure_dirs,
 )
@@ -169,6 +176,129 @@ def build(
     EDITION_JSON.write_text(edition.model_dump_json(indent=2), encoding="utf-8")
     typer.echo(f"build: edition.json -> {EDITION_JSON}")
     render()
+
+
+@app.command()
+def lock(
+    acquire: bool = typer.Option(False, "--acquire"),
+    release: bool = typer.Option(False, "--release"),
+) -> None:
+    """Acquire or release the build lock (state/.lock).
+
+    Acquire writes the current PID. If the lock exists with a live PID, abort.
+    If the lock exists with a dead PID (e.g., previous build crashed), clear it.
+    Release removes the lock file.
+    """
+    if acquire == release:
+        typer.echo("specify exactly one of --acquire / --release", err=True)
+        raise typer.Exit(2)
+
+    LOCK_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+    if release:
+        LOCK_FILE.unlink(missing_ok=True)
+        typer.echo("lock: released")
+        return
+
+    if LOCK_FILE.exists():
+        try:
+            existing_pid = int(LOCK_FILE.read_text().strip())
+        except (ValueError, OSError):
+            existing_pid = -1
+        if existing_pid > 0:
+            try:
+                os.kill(existing_pid, 0)
+                typer.echo(f"lock: another build is in progress (PID {existing_pid})", err=True)
+                raise typer.Exit(1)
+            except ProcessLookupError:
+                pass  # stale lock — fall through
+        LOCK_FILE.unlink(missing_ok=True)
+
+    LOCK_FILE.write_text(str(os.getpid()))
+    typer.echo(f"lock: acquired (PID {os.getpid()})")
+
+
+def _atomic_write(path: Path, contents: str) -> None:
+    """Write via tempfile + os.replace so readers never see a half-written file."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(contents, encoding="utf-8")
+    os.replace(tmp, path)
+
+
+def _load_seen() -> dict[str, str]:
+    if not SEEN_JSON.exists():
+        return {}
+    return json.loads(SEEN_JSON.read_text())
+
+
+def _save_seen(seen: dict[str, str]) -> None:
+    _atomic_write(SEEN_JSON, json.dumps(seen, indent=2, sort_keys=True))
+
+
+def _git(*args: str, check: bool = True) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        ["git", *args],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        text=True,
+        check=check,
+    )
+
+
+@app.command()
+def publish(
+    push: bool = typer.Option(False, "--push", help="git push after committing. Default off for safety."),
+) -> None:
+    """Validate edition.json, update seen.json, commit. Optionally push.
+
+    Hard-fails on schema drift between agent output and EditionJSON. Updates
+    state/seen.json (atomic) with any new canonical URLs from this build. Commits
+    docs/ + state/. Pushing is gated behind --push so manual smoke tests don't
+    accidentally publish."""
+    if not EDITION_JSON.exists():
+        typer.echo(f"publish: missing {EDITION_JSON}", err=True)
+        raise typer.Exit(1)
+
+    edition = EditionJSON.model_validate_json(EDITION_JSON.read_text())
+    typer.echo(f"publish: edition.json validates ({len(edition.items)} items)")
+
+    seen = _load_seen()
+    new_urls = 0
+    now_iso = datetime.now(UTC).isoformat()
+    for item in edition.items:
+        if item.canonical_url not in seen:
+            seen[item.canonical_url] = now_iso
+            new_urls += 1
+    _save_seen(seen)
+    typer.echo(f"publish: seen.json updated (+{new_urls} new URLs, {len(seen)} total)")
+
+    _git("add", "docs/", "state/seen.json")
+    if QUESTIONS_MD.exists():
+        _git("add", str(QUESTIONS_MD.relative_to(REPO_ROOT)))
+
+    status = _git("status", "--porcelain").stdout.strip()
+    if not status:
+        typer.echo("publish: nothing to commit")
+        LOCK_FILE.unlink(missing_ok=True)
+        return
+
+    msg = f"build: edition {edition.built_at.isoformat()} ({len(edition.items)} items)"
+    commit_result = _git("commit", "-m", msg, check=False)
+    if commit_result.returncode != 0:
+        typer.echo(f"publish: commit failed:\n{commit_result.stderr}", err=True)
+        raise typer.Exit(1)
+    typer.echo(f"publish: committed — {msg}")
+
+    if push:
+        push_result = _git("push", check=False)
+        if push_result.returncode != 0:
+            typer.echo(f"publish: push failed:\n{push_result.stderr}", err=True)
+            raise typer.Exit(1)
+        typer.echo("publish: pushed")
+
+    LOCK_FILE.unlink(missing_ok=True)
+    typer.echo("publish: lock released")
 
 
 if __name__ == "__main__":

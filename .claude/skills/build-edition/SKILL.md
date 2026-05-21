@@ -39,7 +39,7 @@ anything in this file, the context file wins.
 ### Step 2 — Acquire the build lock
 
 ```
-python -m landscape.cli build-lock --acquire
+python -m landscape.cli lock --acquire
 ```
 
 If another build is in progress, abort with a clear error and append a
@@ -93,19 +93,16 @@ Batch items 20-at-a-time. For each batch, dispatch a Haiku subagent via
 the Task tool to keep token cost down. (Haiku 4.5 is sufficient for
 scoring; reserve Sonnet/Opus for framing and trends.)
 
-Write the scored JSONL to `state/run/items_scored.jsonl`. Composite score
-is computed in Python (see Step 5b).
-
-### Step 5b — Apply composite + source boost
+For each item, compute the composite score yourself using the default
+weights below, then apply the source-presence boost:
 
 ```
-python -m landscape.cli composite
+composite = (doc_ai*0.35 + competitive*0.30 + frontier*0.20 + vlm_research*0.15) * 20
+if source_count >= 3: composite = min(composite + 5, 100)
 ```
 
-Reads `items_scored.jsonl`, applies the default weights (Doc-AI 0.35,
-competitive 0.30, frontier 0.20, VLM research 0.15), then applies the
-+5 source-presence boost for items with `source_count >= 3` (capped at
-100). Writes `state/run/items_composite.jsonl`.
+You will write all of this directly into `state/run/edition.json` in
+Step 9 — no intermediate JSONL files needed.
 
 ### Step 6 — Frame the top-N
 
@@ -221,17 +218,25 @@ Surface 3-5 questions where YOU are uncertain. Examples:
 Write to `state/run/ai_partner.jsonl`. Each question has both the
 question text and 1-2 sentences of context.
 
-### Step 9 — Assemble edition.json + run pre-publish audit
+### Step 9 — Assemble edition.json
 
+Write `state/run/edition.json` matching the EditionJSON Pydantic schema
+(see `src/landscape/models.py`):
+
+```json
+{
+  "schema_version": 1,
+  "built_at": "<UTC ISO timestamp>",
+  "sources_covered": ["arxiv", "hn", "rss", "github_trending"],
+  "sources_failed": [],
+  "items": [<all scored + framed Items>],
+  "trend_bullets": [<3-5 from Step 7>],
+  "ai_partner_questions": [<3-5 from Step 8>],
+  "audit_passed": <true/false from the checklist below>
+}
 ```
-python -m landscape.cli assemble
-```
 
-This collects items + trends + AI-partner into a single `EditionJSON`
-and validates it against the Pydantic schema. Any schema mismatch is a
-hard fail.
-
-Then answer the pre-publish checklist (Y/N each):
+Answer the pre-publish checklist (Y/N each):
 
 1. Sources covered this build ≥ 3 of 4? `[Y/N]`
 2. Every hostility_flag=true item was framed with the descriptive (not
@@ -261,10 +266,11 @@ python -m landscape.cli publish
 ```
 
 This:
-1. Updates `state/seen.json` with new canonical URLs.
-2. Commits `docs/` + `state/seen.json` + `state/questions_for_team.md`.
-3. Pushes to `main`.
-4. Releases the build lock.
+1. Validates `state/run/edition.json` against the EditionJSON schema; aborts on drift.
+2. Updates `state/seen.json` with new canonical URLs (atomic tempfile + rename).
+3. Commits `docs/` + `state/seen.json` + `state/questions_for_team.md`.
+4. Pushes to `main`.
+5. Releases the build lock.
 
 GitHub Pages picks up the push within ~60 seconds.
 
