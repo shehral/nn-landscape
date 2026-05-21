@@ -77,3 +77,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-21T12:08:38.941409+00:00 (audit: partial)
+
+### Q: arXiv and HN have returned 403 errors for at least two consecutive builds; should the pipeline switch to a mirror or fallback access path before the next scheduled build?
+
+**Context:** Without arXiv and HN, the doc_ai and vlm_research axes are starved of primary research signal. This build drew 100% of its items from github_trending. The prior build raised the same concern about arXiv rate-limiting; HN 403 is a new regression.
+
+**Answer:** _add reply here_
+
+### Q: opendataloader-pdf is a new open-source PDF parser targeting the same RAG and AI training pipeline use cases as Nanonets Agentic Data Extraction; should it be added to the competitive registry in data/nanonets_context.md?
+
+**Context:** It scored competitive=3 this build and received an 'investigate' recommendation. If the team confirms it is a material entrant, adding it to the competitive set ensures future builds score and frame it correctly from the start.
+
+**Answer:** _add reply here_
+
+### Q: Ollama's description now names GLM-5 as a natively supported model; GLM-OCR is listed in the competitive set but GLM-5 is not — is GLM-5 the same product line or a distinct model that should be added?
+
+**Context:** The two names suggest different products (GLM-5 is a general VLM; GLM-OCR is document-specific). If GLM-5 includes document extraction capabilities comparable to GLM-OCR, it should be in the competitive registry. If not, the scoring on Ollama's GLM-5 mention may be inflated.
+
+**Answer:** _add reply here_
+
+### Q: This build drew entirely from github_trending because arxiv and HN failed; should trend analysis and the framing pass be suppressed or explicitly flagged as 'infrastructure-biased' when fewer than 2 primary research sources contributed?
+
+**Context:** The current signal is weighted entirely toward production tooling (GitHub repos), not research papers. Trends inferred from this mix may not reflect the actual research frontier, and the framing pass lacks the arxiv-based hallucination and VLM internals coverage that grounds the research_implication field.
+
+**Answer:** _add reply here_
+
+### Q: LLaVA-OneVision-1.5 training infrastructure is trending; should the research team actively monitor what document-specific fine-tuned variants are being trained on this base to anticipate new IDP Leaderboard competitive entries?
+
+**Context:** LLaVA-OneVision-based fine-tunes have appeared on the leaderboard in prior builds. A proactive watch on HuggingFace for lmms-eval results on LLaVA-OneVision derivatives would give advance notice before new entries formally submit to the IDP Leaderboard.
+
+**Answer:** _add reply here_
+
+---
