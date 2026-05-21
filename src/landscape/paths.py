@@ -40,8 +40,12 @@ EDITION_JSON: Path = RUN_DIR / "edition.json"
 
 
 def per_audience_html(audience: str) -> Path:
-    """Return the docs/ path for a per-audience HTML view."""
-    return DOCS_DIR / f"for-{audience}.html"
+    """Return the docs/ path for a per-audience HTML view.
+
+    Underscores in YAML keys map to hyphens in URLs (web convention).
+    """
+    slug = audience.replace("_", "-")
+    return DOCS_DIR / f"for-{slug}.html"
 
 
 def ensure_dirs() -> None:
