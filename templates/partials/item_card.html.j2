@@ -1,0 +1,29 @@
+<article class="item {% if item.hostility_flag %}hostility{% endif %}">
+  <div class="item-meta">
+    <span class="item-score">{{ item.composite_score|round|int }}</span>
+    <span class="item-source">{{ item.source }}</span>
+    {% if item.source_count > 1 %}<span>×{{ item.source_count }} sources</span>{% endif %}
+    {% if item.hostility_flag %}<span title="competitor commentary; descriptive framing">⚐</span>{% endif %}
+  </div>
+  <p class="item-title">
+    <a href="{{ item.canonical_url }}" target="_blank" rel="nofollow noopener noreferrer">{{ item.title }}</a>
+  </p>
+  {% if item.one_line_summary %}
+  <p class="item-summary">{{ item.one_line_summary }}</p>
+  {% endif %}
+  {% if item.framing %}
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>{{ item.framing.product_implication }}</dd>
+      <dt>Research</dt>
+      <dd>{{ item.framing.research_implication }}</dd>
+      <dt>Action</dt>
+      <dd>{{ item.framing.action_recommendation }}</dd>
+    </dl>
+  </div>
+  {% endif %}
+  {% if item.secondary_axes %}
+  <p class="secondary-axes">also: {{ item.secondary_axes|join(', ') }}</p>
+  {% endif %}
+</article>

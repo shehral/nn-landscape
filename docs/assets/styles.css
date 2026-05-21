@@ -1,0 +1,299 @@
+/* Nanonets Landscape — analyst-grade typography, restrained palette,
+   no build step. CSS variables + Grid + mobile-first. */
+
+:root {
+  --color-bg: #fafaf7;
+  --color-card: #ffffff;
+  --color-text: #1a1a1a;
+  --color-muted: #6b6b6b;
+  --color-rule: #d8d3c4;
+  --color-accent: #1f4068;
+  --color-accent-soft: #e7eef6;
+  --color-hostility: #8a4a31;
+  --color-hostility-soft: #f5ece5;
+
+  --serif: "Iowan Old Style", "Source Serif Pro", "Charter", Georgia, serif;
+  --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --content-max: 88rem;
+  --gutter: 1.5rem;
+  --line-height: 1.55;
+
+  --shadow-card: 0 1px 0 rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-family: var(--serif);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  line-height: var(--line-height);
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding: 2rem var(--gutter) 5rem;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(31, 64, 104, 0.3);
+  text-underline-offset: 2px;
+}
+
+a:hover { text-decoration-color: currentColor; }
+
+/* ---------- Header ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--color-rule);
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.site-header .subtitle {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  flex-basis: 100%;
+  margin-top: 0.25rem;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--color-muted);
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.site-nav a.current {
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+}
+
+.built-at {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+/* ---------- Brief (trend bullets above fold) ---------- */
+
+.brief {
+  background: var(--color-accent-soft);
+  border-left: 3px solid var(--color-accent);
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.brief h2 {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+}
+
+.brief ul { margin: 0; padding-left: 1.25rem; }
+.brief li { margin-bottom: 0.4rem; }
+.brief li:last-child { margin-bottom: 0; }
+
+/* ---------- Axis columns ---------- */
+
+.axes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1100px) { .axes { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .axes { grid-template-columns: 1fr; } }
+
+.axis-col h2 {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+/* ---------- Item card ---------- */
+
+.item {
+  background: var(--color-card);
+  border: 1px solid var(--color-rule);
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 0.7rem;
+  box-shadow: var(--shadow-card);
+  border-radius: 2px;
+}
+
+.item.hostility {
+  border-left: 3px solid var(--color-hostility);
+  background: var(--color-hostility-soft);
+}
+
+.item-meta {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--color-muted);
+  margin-bottom: 0.35rem;
+}
+
+.item-score {
+  color: var(--color-text);
+  font-weight: 600;
+  background: var(--color-accent-soft);
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+.item.hostility .item-score { background: var(--color-hostility-soft); color: var(--color-hostility); }
+
+.item-source { text-transform: uppercase; letter-spacing: 0.04em; }
+
+.item-title {
+  font-size: 0.97rem;
+  line-height: 1.35;
+  margin: 0 0 0.35rem;
+  font-weight: 500;
+}
+
+.item-title a { color: var(--color-text); text-decoration: none; }
+.item-title a:hover { color: var(--color-accent); }
+
+.item-summary {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  margin: 0 0 0.4rem;
+}
+
+.framing {
+  font-size: 0.82rem;
+  border-top: 1px dashed var(--color-rule);
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.framing dl { margin: 0; }
+.framing dt {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+  margin-top: 0.4rem;
+}
+.framing dt:first-child { margin-top: 0; }
+.framing dd { margin: 0.1rem 0 0; }
+
+.secondary-axes {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--color-muted);
+}
+
+/* ---------- Sidebar (AI-partner channel) ---------- */
+
+.ai-partner {
+  margin-top: 3rem;
+  padding: 1.25rem;
+  background: var(--color-card);
+  border: 1px dashed var(--color-rule);
+}
+
+.ai-partner h2 {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+}
+
+.ai-partner .question {
+  margin-bottom: 1rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--color-rule);
+}
+
+.ai-partner .question:last-child { margin-bottom: 0; }
+
+.ai-partner .question-text { margin: 0 0 0.25rem; font-style: italic; }
+.ai-partner .question-context { font-size: 0.85rem; color: var(--color-muted); margin: 0; }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-rule);
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+.site-footer .disclaimer {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer .provenance {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.partial-banner {
+  background: #fff4d6;
+  border: 1px solid #d6b656;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- About page ---------- */
+
+.about-content {
+  max-width: 42rem;
+}
+
+.about-content h2 {
+  margin-top: 2rem;
+  border-bottom: 1px solid var(--color-rule);
+  padding-bottom: 0.3rem;
+}
+
+.about-content p { font-size: 1rem; }
+.about-content code { font-family: var(--mono); font-size: 0.9em; background: var(--color-accent-soft); padding: 1px 4px; border-radius: 2px; }
