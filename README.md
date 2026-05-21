@@ -58,7 +58,7 @@ to the list. For new source types (e.g., Bluesky), add a new class in
 ## Layout
 
 ```
-agentic-extraction-landscape/
+nn-landscape/
 ├── .claude/skills/build-edition/   # agent playbook + editorial guide
 ├── data/                            # context bundle, sources, weights
 ├── src/landscape/                   # the package

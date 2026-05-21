@@ -18,7 +18,7 @@ from pydantic import BaseModel, Field
 from .models import Item, SourceFailure, SourceName
 from .normalize import canonical_url
 
-USER_AGENT = "landscape-monitor/0.1 (+https://github.com/shehral/agentic-extraction-landscape)"
+USER_AGENT = "nn-landscape/0.1 (+https://github.com/shehral/nn-landscape)"
 
 
 class Source(Protocol):
