@@ -68,16 +68,21 @@ class ArxivSource(BaseModel):
 
 class HNSource(BaseModel):
     type: Literal["hn"] = "hn"
-    min_points: int = 100
-    hits_per_page: int = 50
+    min_points: int = 50
+    hits_per_page: int = 100
+    days_back: int = 3
     keywords: list[str] = Field(default_factory=list)
 
     name: ClassVar[SourceName] = "hn"
 
     def fetch(self, client: httpx.Client) -> Iterable[Item]:
+        """Recent high-scored HN stories. Uses search_by_date (date-sorted) rather
+        than relevance-mix search, then in-Python keyword filter. Lower point floor
+        + 3-day window + 100 hits gives meaningful AI-story recall."""
+        since_ts = int((datetime.now(UTC) - timedelta(days=self.days_back)).timestamp())
         url = (
-            "https://hn.algolia.com/api/v1/search"
-            f"?tags=story&numericFilters=points>={self.min_points}"
+            "https://hn.algolia.com/api/v1/search_by_date"
+            f"?tags=story&numericFilters=points>={self.min_points},created_at_i>{since_ts}"
             f"&hitsPerPage={self.hits_per_page}"
         )
         resp = client.get(url)
@@ -130,28 +135,44 @@ class GitHubTrendingSource(BaseModel):
     topics: list[str] = Field(
         default_factory=lambda: ["machine-learning", "llm", "vlm", "ocr", "rag"]
     )
-    days_back: int = 1
-    per_page: int = 30
+    days_back: int = 7
+    per_topic: int = 8
 
     name: ClassVar[SourceName] = "github_trending"
 
     def fetch(self, client: httpx.Client) -> Iterable[Item]:
+        """One query per topic. GitHub's q= is AND across terms, so a multi-topic
+        query like 'topic:a topic:b topic:c' returns repos that have ALL topics
+        simultaneously — typically zero. Querying per-topic and dedup'ing gives
+        meaningful coverage."""
         since = (datetime.now(UTC) - timedelta(days=self.days_back)).strftime("%Y-%m-%d")
-        topic_query = "+".join(f"topic:{t}" for t in self.topics)
-        url = (
-            "https://api.github.com/search/repositories"
-            f"?q={topic_query}+pushed:>={since}&sort=stars&order=desc&per_page={self.per_page}"
-        )
-        resp = client.get(url, headers={"Accept": "application/vnd.github+json"})
-        resp.raise_for_status()
-        for repo in resp.json().get("items", []):
-            description = (repo.get("description") or "").strip()
-            title = f"{repo['full_name']}: {description[:200]}" if description else repo["full_name"]
-            yield Item(
-                canonical_url=canonical_url(repo["html_url"]),
-                title=title,
-                source=self.name,
+        seen: set[str] = set()
+        for topic in self.topics:
+            url = (
+                "https://api.github.com/search/repositories"
+                f"?q=topic:{topic}+pushed:>={since}&sort=stars&order=desc&per_page={self.per_topic}"
             )
+            try:
+                resp = client.get(url, headers={"Accept": "application/vnd.github+json"}, timeout=30.0)
+                resp.raise_for_status()
+            except Exception:
+                continue  # skip this topic; the others may still produce items
+            for repo in resp.json().get("items", []):
+                url_canon = canonical_url(repo["html_url"])
+                if url_canon in seen:
+                    continue
+                seen.add(url_canon)
+                description = (repo.get("description") or "").strip()
+                title = (
+                    f"{repo['full_name']}: {description[:200]}"
+                    if description
+                    else repo["full_name"]
+                )
+                yield Item(
+                    canonical_url=url_canon,
+                    title=title,
+                    source=self.name,
+                )
 
 
 SourceConfig = Annotated[
@@ -178,9 +199,10 @@ def run_sources(
 ) -> tuple[list[Item], list[SourceFailure], list[SourceName]]:
     """Drive all sources serially. One place owns try/except, timeout, coverage.
 
-    Returns (items, failures, sources_covered). A source that yields zero items
-    is still counted as "covered" if it didn't raise — only raised exceptions
-    become SourceFailure entries.
+    Returns (items, failures, sources_covered). A source is "covered" only if it
+    produced at least one Item; a source that connected but returned zero items
+    is recorded as a SourceFailure with reason='no items in window' so the
+    audit reflects real coverage, not just "didn't raise".
     """
     items: list[Item] = []
     failures: list[SourceFailure] = []
@@ -189,8 +211,13 @@ def run_sources(
     with httpx.Client(timeout=timeout, follow_redirects=True, headers=headers) as client:
         for source in sources:
             try:
-                items.extend(source.fetch(client))
-                covered.append(source.name)
+                fetched = list(source.fetch(client))
             except Exception as exc:  # noqa: BLE001 — boundary
                 failures.append(SourceFailure(source=source.name, error=str(exc)[:200]))
+                continue
+            if fetched:
+                items.extend(fetched)
+                covered.append(source.name)
+            else:
+                failures.append(SourceFailure(source=source.name, error="no items in current window"))
     return items, failures, covered
