@@ -1,0 +1,70 @@
+# Source registry. Each entry has a `type` discriminator (matches a Source class
+# in src/landscape/ingest.py) plus its own configuration knobs.
+#
+# To add a new RSS feed: append to the rss.feeds list.
+# To add a new source type: implement a Source class in ingest.py and add an
+# entry here.
+
+sources:
+  - type: arxiv
+    categories: [cs.CV, cs.CL, cs.LG, cs.AI]
+    keywords:
+      - OCR
+      - document
+      - VLM
+      - vision-language
+      - multimodal
+      - hallucination
+      - layout
+      - table extraction
+      - chart
+      - extraction
+      - structured output
+      - mechanistic interpretability
+      - circuits
+      - probing
+    max_results: 100
+
+  - type: hn
+    min_points: 75
+    hits_per_page: 50
+    keywords:
+      - OCR
+      - document
+      - PDF
+      - VLM
+      - vision
+      - multimodal
+      - LLM
+      - GPT
+      - Claude
+      - Gemini
+      - Mistral
+      - extraction
+      - RAG
+
+  - type: rss
+    per_feed_limit: 15
+    feeds:
+      - https://www.anthropic.com/news/rss.xml
+      - https://openai.com/blog/rss.xml
+      - https://deepmind.google/blog/rss.xml
+      - https://huggingface.co/blog/feed.xml
+      - https://www.latent.space/feed
+      - https://www.interconnects.ai/feed
+      - https://buttondown.com/ainews/rss
+      - https://stratechery.com/feed/
+      - https://importai.substack.com/feed
+      - https://blog.mistral.ai/rss/
+
+  - type: github_trending
+    topics:
+      - machine-learning
+      - llm
+      - vlm
+      - ocr
+      - rag
+      - multimodal
+      - vision-language
+    days_back: 1
+    per_page: 30

@@ -1,0 +1,44 @@
+# Per-audience weight configurations. Same scored items, re-weighted at
+# render time. Three views deploy from one build.
+#
+# Adding a new audience: append an entry. label/title/description show up
+# in the page header; axis_weights must sum to ~1.0 (renderer normalizes).
+# Top-N picks per-axis are also configurable so each view can decide how
+# much research vs competitive intel to surface.
+
+views:
+  default:
+    title: "Nanonets Landscape"
+    subtitle: "Continuously-updated AI/ML intelligence for the document-AI stack."
+    audience: "general"
+    axis_weights:
+      doc_ai: 0.35
+      competitive: 0.30
+      frontier: 0.20
+      vlm_research: 0.15
+    top_n_overall: 30
+    min_per_axis: 5
+
+  prathamesh:
+    title: "Landscape — Strategy"
+    subtitle: "Competitive, frontier, and platform signals for the CTO view."
+    audience: "prathamesh"
+    axis_weights:
+      doc_ai: 0.20
+      competitive: 0.40
+      frontier: 0.30
+      vlm_research: 0.10
+    top_n_overall: 25
+    min_per_axis: 3
+
+  dl_team:
+    title: "Landscape — Research"
+    subtitle: "Papers, benchmarks, and technical artifacts for the DL team."
+    audience: "dl_team"
+    axis_weights:
+      doc_ai: 0.30
+      competitive: 0.10
+      frontier: 0.20
+      vlm_research: 0.40
+    top_n_overall: 35
+    min_per_axis: 5
