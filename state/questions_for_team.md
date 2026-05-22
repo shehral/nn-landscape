@@ -145,3 +145,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-22T00:17:49+00:00 (audit: partial)
+
+### Q: GLM-5 and Kimi-K2.5 have appeared in the Ollama description for multiple consecutive builds; should the IDP Leaderboard team run benchmark evaluations on GLM-5 before deciding whether to add it to the competitive registry alongside GLM-OCR?
+
+**Context:** Prior builds raised whether GLM-5 is distinct from GLM-OCR or a general VLM. No team answer has arrived. If GLM-5 has document extraction capabilities comparable to GLM-OCR, it and Kimi-K2.5 should be named in data/nanonets_context.md; without this, the Ollama item is scored on inference rather than confirmed fact.
+
+**Answer:** _add reply here_
+
+### Q: Should the dashboard render a structural 'infrastructure-biased build' warning when fewer than 2 primary research sources (arxiv, HN) contributed, distinct from the existing partial-build banner?
+
+**Context:** The partial-build banner fires when fewer than 3 of 4 sources succeed, but does not distinguish between losing a newsletter (RSS) and losing arXiv. Four consecutive builds with no arXiv or HN means the vlm_research and doc_ai research_implication fields are being inferred from GitHub repos rather than papers, which changes the epistemic status of the framing.
+
+**Answer:** _add reply here_
+
+### Q: opendataloader-pdf has appeared in two consecutive builds with an 'investigate' recommendation; has the team checked whether it is a material competitive entrant warranting addition to data/nanonets_context.md?
+
+**Context:** It targets the same PDF-to-AI-ready-output interface as the Nanonets Agentic Data Extraction /parse endpoint and is open-source. Without a named entry in the competitive registry, future builds re-evaluate it from scratch each time rather than tracking it as a known entrant.
+
+**Answer:** _add reply here_
+
+### Q: PaperBanana (llmsresearch/paperbanana) automates academic figure and diagram extraction; should it be tracked as research infrastructure relevant to the team's academic paper consumption workflow?
+
+**Context:** Google Research's PaperBanana extracts figures from papers programmatically. An open-source implementation now trending on GitHub suggests growing adoption. If the team consumes academic figures manually today, this could reduce that overhead — but the team is the only one who knows whether that workflow exists.
+
+**Answer:** _add reply here_
+
+---
