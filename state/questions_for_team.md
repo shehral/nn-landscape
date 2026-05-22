@@ -173,3 +173,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-22T06:07:17+00:00 (audit: partial)
+
+### Q: lmms-eval and evalscope are both trending with overlapping benchmark coverage (DocVQA, ChartQA, IDP-adjacent tasks); which, if either, does the team use for internal OCR-3 benchmark runs, and does OCR-3 appear in either framework's model registry?
+
+**Context:** Confirming internal usage would change these items from 'monitor' to a higher-priority integration action; if neither is used, the team should evaluate one before a competitor uses it to publish a head-to-head benchmark against OCR-3.
+
+**Answer:** _add reply here_
+
+### Q: The self-reflective hallucination-aware multimodal RAG approach uses retrieval-side mitigation rather than mechanistic interpretability; does the research team track this paradigm separately, and are the two approaches evaluated on the same benchmarks so results are comparable?
+
+**Context:** If both paradigms are active in the literature but only one is being pursued internally, the team may be missing an opportunity to use retrieval-based mitigation as a cheap baseline or ablation against the interpretability work.
+
+**Answer:** _add reply here_
+
+### Q: RAGFlow has appeared for multiple consecutive builds as an enterprise document orchestration competitor; should it be added to the competitive registry in data/nanonets_context.md alongside Dify as an 'above-extraction-layer' competitor to Nanonets Agents?
+
+**Context:** Both are open-source, target enterprise document workflows, and have different threat profiles than extraction-layer competitors like MinerU or Reducto. A named registry entry would stabilize scoring across builds without the agent making ad hoc judgments each time.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift now explicitly supports GRPO training for Qwen3-VL and GLM-5.1; has the team assessed the likelihood that GRPO-fine-tuned document VLM variants will appear on the IDP Leaderboard within the next 1-2 build cycles?
+
+**Context:** GRPO has produced SOTA improvements on reasoning tasks; if applied to document VLMs, it could narrow the gap to OCR-3. Early awareness would allow the team to prepare benchmark baselines before a new entry lands on the leaderboard.
+
+**Answer:** _add reply here_
+
+### Q: arxiv and HN have returned 403 errors for five or more consecutive builds; has the team investigated whether the failures are network policy, IP blocking, or rate limiting, and is there an alternative access path such as the arXiv OAI-PMH endpoint or the HN Firebase API?
+
+**Context:** Without arxiv and HN, the vlm_research and doc_ai axes are sourced entirely from GitHub trending repos, which skews the dashboard toward tooling and away from primary research. This build is the fifth consecutive infrastructure-biased build with no arXiv or HN coverage.
+
+**Answer:** _add reply here_
+
+---
