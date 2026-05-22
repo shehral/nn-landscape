@@ -207,3 +207,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-22T10:20:00+00:00 (audit: partial)
+
+### Q: MinerU has appeared at the top of the competitive axis for multiple consecutive builds without a team response; should it be added to the named competitive set in data/nanonets_context.md, and if so, with what description and axis weights?
+
+**Context:** Without a registry entry, each build re-evaluates MinerU from first principles. It targets the same PDF-to-markdown/JSON extraction interface as Nanonets Agentic Data Extraction, is backed by Shanghai AI Lab (opendatalab), and consistently scores composite=65 — the highest item in this build.
+
+**Answer:** _add reply here_
+
+### Q: Both lmms-eval and evalscope are now trending with benchmark coverage that includes DocVQA and ChartQA; does the team use either for internal OCR-3 benchmark runs, and does OCR-3 appear in either framework's model registry?
+
+**Context:** If neither is used internally, a competitor could publish a credible head-to-head comparison using one or both before the team has an established rebuttal baseline. The prior question from build 2026-05-22T06:07:17 remains unanswered.
+
+**Answer:** _add reply here_
+
+### Q: arXiv and HN have returned 403 errors for seven consecutive builds; has the team investigated whether the failures are network policy, IP blocking, or rate limiting, and is there an action plan for the OAI-PMH or HN Firebase API alternatives?
+
+**Context:** The pipeline is now structurally limited to github_trending, which skews coverage toward production tooling and away from primary research. Prior builds have surfaced this; no team action has been confirmed. Each build without arXiv degrades the vlm_research and doc_ai axes' epistemic reliability.
+
+**Answer:** _add reply here_
+
+### Q: opendataloader-pdf has appeared in three consecutive builds with an 'investigate' recommendation; has the team checked whether it warrants addition to data/nanonets_context.md as a named competitive entrant?
+
+**Context:** It targets the same /parse interface as Nanonets Agentic Data Extraction and is open-source. Without a registry entry, future builds re-evaluate it from scratch rather than tracking it as a known entrant alongside MinerU and Docling.
+
+**Answer:** _add reply here_
+
+### Q: Should the dashboard render a distinct infrastructure-biased build warning when fewer than 2 primary research sources (arXiv, HN) contribute, distinct from the existing partial-build banner?
+
+**Context:** The partial-build banner fires for any source count below 3 but does not distinguish between losing a newsletter and losing arXiv. Seven consecutive builds without arXiv changes the epistemic status of the vlm_research and doc_ai framing fields in a way the current banner does not communicate.
+
+**Answer:** _add reply here_
+
+---
