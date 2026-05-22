@@ -241,3 +241,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-22T18:17:11+00:00 (audit: partial)
+
+### Q: UltraRAG (OpenBMB) uses the Model Context Protocol to build RAG pipelines; is the Nanonets Agentic Data Extraction API MCP-compatible, or is this a distribution gap that could be addressed to improve developer reach via MCP-native toolchains?
+
+**Context:** MCP has emerged as a standard integration protocol for AI toolchains. If Nanonets lacks an MCP connector, it may be absent from pipelines where developers default to MCP-native parsers, ceding that distribution channel to open-source alternatives like MinerU or opendataloader-pdf.
+
+**Answer:** _add reply here_
+
+### Q: Two retrieval-based multimodal hallucination mitigation projects appeared this build; should the research team formally benchmark a retrieval-side approach on the phantom-row task to establish whether it complements or is redundant to the mechanistic interpretability line?
+
+**Context:** If retrieval-based mitigation achieves comparable phantom-row reduction at lower engineering cost, it could accelerate the production mitigation path while the interpretability work continues. The prior build asked whether the team tracks this paradigm — that question remains unanswered.
+
+**Answer:** _add reply here_
+
+### Q: Paperless-ngx (community-supported DMS for scanning, indexing, archiving) is consistently trending; its user base targets the same document volumes as Nanonets' SME accounts. Is there an integration story where the Nanonets API serves as the AI extraction layer inside paperless-ngx or similar self-hosted DMS workflows?
+
+**Context:** A paperless-ngx plugin or documented integration would reach a community of self-hosted document management users without paid acquisition cost. The overlap in target document types (receipts, invoices, forms) makes this a natural fit for the Nanonets /parse or /extract endpoint.
+
+**Answer:** _add reply here_
+
+### Q: This is the ninth or more consecutive build in which arXiv and HN have been unavailable; should the team add Semantic Scholar or Papers With Code to data/sources.yaml as alternative academic paper sources while the arXiv network issue persists?
+
+**Context:** Semantic Scholar provides an open, rate-limit-friendly API with the same arXiv paper metadata; Papers With Code links papers to code and benchmarks. Either would partially restore the doc_ai and vlm_research research signal. Prior builds have surfaced the arXiv 403 issue repeatedly with no team action confirmed.
+
+**Answer:** _add reply here_
+
+---
