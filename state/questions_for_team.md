@@ -359,3 +359,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-23T18:08:43+00:00 (audit: partial)
+
+### Q: The all-open-source document AI stack (extraction + orchestration + evaluation + fine-tuning) is now fully represented in a single trending cycle. Has the team characterized the accuracy floor of an all-open-source pipeline relative to OCR-3 on a common benchmark (DocVQA, OmniDocBench, or the IDP Leaderboard test set)?
+
+**Context:** lmms-eval, evalscope, Unstructured, opendataloader-pdf, Dify, RAGFlow, and ms-swift all trend this cycle. A concrete accuracy comparison — not just feature coverage — would allow the team to quantify the make-vs-buy gap and communicate it to customers. Without this, the competitive framing defaults to qualitative claims.
+
+**Answer:** _add reply here_
+
+### Q: Both lmms-eval and evalscope are trending without OCR-3 in their model registries. Should the team assign a specific person to submit OCR-3 to one or both framework registries, and is there a publication embargo or quality-gate concern with third-party benchmark access to early results?
+
+**Context:** Competitors can already publish lmms-eval or evalscope comparisons against Qwen3-VL, GLM-5.1, and InternVL3.5 without including OCR-3. The absence is not a filter choice by these frameworks — it is a submission gap. Prior builds asked whether the team uses these frameworks internally; this question is specifically about external-facing registry inclusion.
+
+**Answer:** _add reply here_
+
+### Q: arXiv and HN have returned 403 errors for 13+ consecutive builds. Should this be treated as a resolved infrastructure policy — accept github_trending-only signal as the operating norm — or does the team intend to fix the access path by a specific date?
+
+**Context:** Prior builds proposed Semantic Scholar (build 2026-05-22T18:17:11) and OAI-PMH (build 2026-05-22T00:17:49) as alternatives; neither has been acted on. Without arXiv, the vlm_research and doc_ai research_implication fields across all builds are inferred from GitHub repos rather than papers. Framing it as a resolved policy decision would end the recurring question; framing it as an open issue would clarify who owns the fix.
+
+**Answer:** _add reply here_
+
+### Q: SGLang provides RadixAttention and continuous batching for multimodal model serving. Has the team evaluated SGLang or an equivalent high-throughput serving framework for OCR-3, and is the current serving stack already comparable in throughput and per-token cost?
+
+**Context:** OCR-3 is a 35B MoE model; serving at scale carries concrete per-token costs. Confirming whether the team already uses an equivalent framework would allow the dashboard to stop flagging SGLang as a new item each cycle. If not yet evaluated, a cost comparison against the current stack would determine whether migration is warranted.
+
+**Answer:** _add reply here_
+
+### Q: The orchestration-layer platforms (Dify, RAGFlow, UltraRAG) are trending without confirmed Nanonets Agentic Data Extraction connectors. Has the team established whether any of these platforms has a native or community-maintained Nanonets connector, and if not, is building one a prioritized distribution task?
+
+**Context:** Without a native connector, developers adopting Dify, RAGFlow, or UltraRAG default to bundled open-source parsers (Unstructured, opendataloader-pdf). This is a distribution channel gap, not a product quality gap. A single community connector for the most-adopted platform would be actionable. Prior builds have asked about individual platforms; this consolidates the question.
+
+**Answer:** _add reply here_
+
+---
