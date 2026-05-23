@@ -297,3 +297,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-23T06:08:35+00:00 (audit: partial)
+
+### Q: Dify, BiSheng, and RAGFlow all trend simultaneously this build; does Nanonets Agentic Data Extraction have native connectors in any of these three platforms, and if not, is building one a prioritized distribution task?
+
+**Context:** All three are production-ready open-source document workflow platforms that bundle their own parsing defaults. Without native connectors, Nanonets is absent from the default extraction choice for developers who adopt these orchestration platforms, and each build that shows them trending without a connector represents a growing gap.
+
+**Answer:** _add reply here_
+
+### Q: Does the team have a quantitative accuracy threshold — on DocVQA, OmniDocBench, or the IDP Leaderboard — below which the gap between OCR-3 and open-source alternatives becomes a key retention risk argument for enterprise customers?
+
+**Context:** The open-source stack (Unstructured, opendataloader-pdf, evalscope, ms-swift) now covers every stage of the document AI pipeline. Framing the make-vs-buy question around a specific accuracy differential would allow the dashboard to flag when a competitor crosses the threshold rather than tracking individual releases in isolation.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift now supports GRPO fine-tuning for IDP Leaderboard-proximate models (Qwen3-VL, GLM-5.1, InternVL3.5). At what benchmark performance level on OmniDocBench or DocVQA would the team consider a GRPO-fine-tuned open-weight model a material threat to OCR-3's IDP Leaderboard position?
+
+**Context:** GRPO has produced SOTA improvements on reasoning tasks; applied to document VLMs via an accessible toolchain (ms-swift), it could narrow the gap to OCR-3 on extraction accuracy. Early awareness of an incoming GRPO submission would allow the team to prepare benchmark baselines before the new entry is public.
+
+**Answer:** _add reply here_
+
+### Q: opendataloader-pdf has appeared in at least five consecutive builds with an 'investigate' recommendation; has any team member evaluated its extraction quality on a common test set relative to OCR-3, and should it be added to data/nanonets_context.md?
+
+**Context:** Without a named entry in the competitive registry, each build evaluates opendataloader-pdf from scratch rather than tracking it as a known entrant alongside MinerU, Docling, and Unstructured. The same gap applies to BiSheng and RAGFlow. A single team response would stabilize scoring for all three across future builds.
+
+**Answer:** _add reply here_
+
+### Q: The arXiv and HN 403 failures have persisted for 11+ consecutive builds. Prior questions raised Semantic Scholar (build 2026-05-22T18:17:11) and OAI-PMH (build 2026-05-22T00:17:49) as alternatives, both unanswered. Should this be treated as a resolved policy decision — accept github_trending-only signal — or an unresolved infrastructure issue requiring a team decision by a specific date?
+
+**Context:** Framing it as a policy decision would end the recurring infrastructure question. Without clarity, the build agent will surface the arXiv outage every build. If the team accepts github_trending-only signal as the operating norm, the context file should note this so future builds can adjust their editorial posture accordingly.
+
+**Answer:** _add reply here_
+
+---
