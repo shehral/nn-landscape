@@ -331,3 +331,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-23T12:00:00+00:00 (audit: partial)
+
+### Q: Is HuggingFace Transformers the team's primary VLM training and fine-tuning framework, or does the team use a custom framework?
+
+**Context:** ms-swift's GRPO support for InternVL3.5, Qwen3-VL, and GLM-5.1 is importable via transformers; if the team uses a custom framework, the competitive risk from ms-swift-powered external labs differs substantially from the tooling-ready scenario.
+
+**Answer:** _add reply here_
+
+### Q: Should the team proactively monitor HuggingFace for new LLaVA-OneVision-1.5 document-specific fine-tunes before they formally submit to the IDP Leaderboard?
+
+**Context:** LLaVA-OneVision-1.5 training framework is trending; prior LLaVA-based fine-tunes have appeared on the IDP Leaderboard. Early awareness would allow preparation of benchmark baselines before a new entry is published.
+
+**Answer:** _add reply here_
+
+### Q: Does Nanonets Agentic Data Extraction have a first-party connector in Google's genkit or in any MCP-native framework such as UltraRAG?
+
+**Context:** Both genkit (Google, production-grade) and UltraRAG (OpenBMB, MCP-native) are trending. Anthropic, OpenAI, and Google APIs already have genkit connectors; absence from these distribution channels means developers building on these frameworks default to other extraction services.
+
+**Answer:** _add reply here_
+
+### Q: Would a 1-2 day experiment comparing the knowledge-infused multimodal RAG approach's phantom-row reduction against the mechanistic interpretability baseline be feasible and publishable?
+
+**Context:** A retrieval-based multimodal hallucination mitigation project has appeared in at least three consecutive builds. If retrieval-based mitigation achieves comparable phantom-row reduction at lower engineering cost, it could accelerate the production mitigation path while the interpretability work continues.
+
+**Answer:** _add reply here_
+
+---
