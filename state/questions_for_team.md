@@ -269,3 +269,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-23T00:15:01+00:00 (audit: partial)
+
+### Q: Should Dify be added to the competitive registry in data/nanonets_context.md as an above-extraction-layer agentic workflow competitor to Nanonets Agents?
+
+**Context:** Dify is a production-ready agentic workflow platform with document processing capabilities that has appeared in multiple consecutive builds at composite=36. It is not currently named in the competitive registry. Classifying it consistently with BiSheng and RAGFlow (both pending registry-inclusion questions) would stabilize scoring and avoid per-build ad hoc judgments. Prior builds have not asked specifically about Dify.
+
+**Answer:** _add reply here_
+
+### Q: Should OCR-3 be submitted to the lmms-eval and/or evalscope model registries so it appears in third-party benchmark publications using these toolkits?
+
+**Context:** lmms-eval and evalscope are both trending and cover DocVQA, ChartQA, and IDP-adjacent benchmarks. Without OCR-3 in either framework's model registry, competitors publishing via these toolkits will present comparisons that structurally omit OCR-3. Prior builds asked whether the team uses these frameworks internally; this question is about external-facing registry visibility, which is a distinct publishing decision.
+
+**Answer:** _add reply here_
+
+### Q: Should SGLang be evaluated as a serving infrastructure candidate for OCR-3, given its explicit multimodal model support and high-throughput design for large VLMs?
+
+**Context:** SGLang is trending as a high-performance multimodal serving framework. OCR-3 is a 35B MoE model; serving at scale carries concrete per-token costs that an optimized framework could reduce. Confirming whether the team already uses an equivalent solution would allow the dashboard to score SGLang as either infrastructure-relevant or not applicable in future builds, rather than flagging it each time it trends.
+
+**Answer:** _add reply here_
+
+### Q: Is there a distribution risk where enterprise customers adopt RAGFlow, BiSheng, or Dify and use their bundled open-source parsers (Unstructured.io, opendataloader-pdf) by default, bypassing Nanonets Agentic Data Extraction entirely?
+
+**Context:** This build shows the extraction-layer (Unstructured, opendataloader-pdf) and orchestration-layer (RAGFlow, BiSheng, Dify) open-source ecosystems both trending simultaneously. If orchestration platforms integrate open-source parsers by default, Nanonets loses the parsing tier when customers select full-stack open-source toolchains. The prior builds have tracked each of these individually; this question asks about the combined distribution dynamic.
+
+**Answer:** _add reply here_
+
+---
