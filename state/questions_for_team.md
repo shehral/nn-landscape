@@ -489,3 +489,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-24T18:14:23+00:00 (audit: partial)
+
+### Q: Self-reflective hallucination-aware multimodal RAG has appeared in four or more consecutive builds; should 'read in week' be the standing default action for retrieval-based hallucination mitigation items, or does the team want to explicitly compare this paradigm against the mechanistic interpretability work on a shared benchmark?
+
+**Context:** Without a confirmed stance on retrieval-based mitigation in the research scope, each build must independently decide whether to escalate or dismiss these items. A yes/no answer on whether the team actively tracks this paradigm would stabilize future action recommendations for the entire class of items.
+
+**Answer:** _add reply here_
+
+### Q: Three VLM training frameworks (NeMo Automodel, LLaVA-OneVision-1.5, TinyLLaVA_Factory) trended in a single build cycle; should the build automatically flag GitHub repos that combine any of these frameworks with DocVQA, OmniDocBench, or IDP Leaderboard references as potential upcoming leaderboard submissions requiring escalated tracking?
+
+**Context:** Manual per-item evaluation cannot anticipate submissions; an automated watch rule would provide advance notice before a fine-tune is publicly submitted. The rule would not require editorial judgment from the build agent, only keyword matching at the ingest stage.
+
+**Answer:** _add reply here_
+
+### Q: Genkit (Google-backed) and the Chinese-backed orchestration tier (Dify, BiSheng, JeecgBoot, UltraRAG) both trend this cycle without confirmed Nanonets connectors; should the editorial grounding differentiate these tiers by geographic deployment profile so future builds can score and prioritize connector gaps accurately?
+
+**Context:** Chinese-backed platforms may target on-premise enterprise deployments in different regional markets than Nanonets' typical customer base. Treating both tiers as a single orchestration category may over- or under-estimate the connector gap depending on the team's go-to-market focus. Prior builds asked about individual platforms; this question is about the taxonomic grouping.
+
+**Answer:** _add reply here_
+
+### Q: The Gpt-Agreement-Payment item (ChatGPT subscription protocol replay with hCaptcha solver) has appeared in github_trending for two consecutive builds and scores composite=0. Should sources.yaml add a keyword exclusion list — e.g., 'captcha', 'bypass', 'subscription replay', 'anti-fraud' — to filter payment-circumvention tools at ingest before they appear in state/run files consumed by a public dashboard?
+
+**Context:** These items carry reputational risk if the public dashboard ever links to or surfaces them. The current keyword filter in sources.yaml does not exclude them. A short exclusion list would prevent recurrence without requiring editorial judgment from the build agent.
+
+**Answer:** _add reply here_
+
+### Q: This is the nineteenth or more consecutive build with no arXiv or HN coverage; the two prior proposed alternatives (Semantic Scholar API and arXiv OAI-PMH) remain unanswered. Should the team treat github_trending-only signal as the accepted operating norm and note this in data/nanonets_context.md, or assign an owner and deadline for restoring a primary-research source?
+
+**Context:** Without a policy decision, the build will continue surfacing this as an open infrastructure question every cycle. If github_trending-only is the accepted norm, a note in context.md would allow the build agent to adjust editorial posture — specifically, to set lower confidence priors on vlm_research and doc_ai research_implication fields that currently lack paper-based grounding.
+
+**Answer:** _add reply here_
+
+---
