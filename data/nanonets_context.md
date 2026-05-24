@@ -51,8 +51,9 @@ The team also publicly maintains the **IDP Leaderboard**
 (`idp-leaderboard.org` / `benchmarking.nanonets.com`), an academic
 benchmark on document AI co-developed with IIT Indore. Items that
 publish leaderboard results, contest its methodology, or are released by
-models near the top of it (GPT-5.4, Gemini-3-Pro, Claude 4.6 family,
-Qwen, Pixtral, GLM-OCR, Chandra OCR, LightOn OCR-2) are competitive-axis
+models near the top of it (GPT-5.4, GPT-5.5, Gemini-3-Pro/Flash,
+Gemini 3.5 Flash, Claude 4.6 family, Qwen3-VL, Pixtral, GLM-OCR,
+Chandra OCR 2, LightOn OCR-2, DeepSeek-OCR 2) are competitive-axis
 relevant.
 
 ## Active research direction
@@ -82,33 +83,50 @@ characterization, or runtime mitigation are research-axis relevant.
 Items that name, compare against, or are released by these companies are
 **competitive-axis relevant**:
 
-- **Mistral OCR / Mistral Document AI** — direct competitor on
-  multilingual document extraction; available via Vertex AI and Azure
-  AI Foundry.
+- **Mistral OCR 3 / Mistral Document AI** — direct competitor on
+  multilingual document extraction; Mistral OCR 3 (January 2026)
+  improved accuracy across handwritten and structured documents;
+  Mistral OCR 25.03 is the May 2026 update. Available via Vertex AI
+  and Azure AI Foundry.
 - **Reducto** — competitor on structured extraction with multi-pass
   agentic correction; exposes Parse / Extract / Split / Edit endpoints
-  similar to OCR-3's surface.
+  similar to OCR-3's surface. Raised $75M Series B (Andreessen
+  Horowitz, February 2026); launched Deep Extract agentic product;
+  1 billion pages processed to date.
 - **LlamaParse (LlamaIndex / LlamaCloud)** — managed parsing service
   inside LlamaCloud; RAG-native, multimodal, often paired with or
-  benchmarked against Reducto.
+  benchmarked against Reducto. LlamaParse v2 launched 2026 with
+  simplified tier config and ~50% cost reduction. LlamaIndex also
+  open-sourced LiteParse, a lightweight TypeScript-native local parser
+  (March 2026).
 - **Unstructured.io** — competitor and frequent integration partner;
   document parsing infrastructure.
 - **Docling** (IBM Research) — open-source layout-aware document parser;
   reference architecture and common open-source baseline.
-- **Chandra OCR / LightOn OCR-2** — specialized OCR-VLM models that
-  OCR-3 benchmarks against; LightOn OCR-2 is a 1B end-to-end VLM
+  Granite-Docling-258M (production VLM, January 2026, Apache 2.0)
+  replaced SmolDocling; project donated to Linux Foundation Agentic AI
+  Foundation alongside BeeAI.
+- **Chandra OCR 2 / LightOn OCR-2** — specialized OCR-VLM models that
+  OCR-3 benchmarks against; Chandra OCR 2 (Datalab, March 2026) is a
+  4B-parameter model built on Qwen 3.5, 85.9% on olmOCR benchmark,
+  supporting 90+ languages. LightOn OCR-2 is a 1B end-to-end VLM
   optimized for OlmOCR-Bench.
-- **GLM-OCR** (Zhipu AI), **Pixtral** (Mistral), **Qwen-VL** family
-  (Alibaba), **Llama-3.2-Vision** (Meta) — open-weight VLMs that appear
-  on the IDP Leaderboard as direct comparables.
-- **Rossum**, **Docsumo**, **ABBYY**, **Kofax** — legacy / semi-structured
+- **GLM-OCR** (Zhipu AI, March 2026; 0.9B params, 94.62 on OmniDocBench
+  V1.5 — tops that benchmark), **DeepSeek-OCR 2** (DeepSeek AI, January
+  2026; 3B params, 91.09% on OmniDocBench v1.5), **Pixtral** (Mistral),
+  **Qwen3-VL** family (Alibaba; Qwen 3.6-VL is the 2026-series variant),
+  **Llama-3.2-Vision** (Meta) — open-weight VLMs that appear on the IDP
+  Leaderboard as direct comparables.
+- **Rossum** (acquired by Coupa, announced Inspire 2026), **Docsumo**,
+  **ABBYY**, **Kofax (Tungsten Automation)** — legacy / semi-structured
   document-extraction vendors Nanonets routinely positions against
   publicly.
 - **Firecrawl** (Mendable team) — adjacent: web-to-markdown extraction,
   not document AI proper, but increasingly cited as a data-prep
-  alternative for agent pipelines. Note that **Mendable as a standalone
-  product is effectively deprecated** — the same team has pivoted to
-  Firecrawl.
+  alternative for agent pipelines. PDF Parser v2 (February 2026) and
+  the Fire-PDF Rust engine added OCR-backed PDF parsing, moving closer
+  to document AI. Note that **Mendable as a standalone product is
+  effectively deprecated** — the same team has pivoted to Firecrawl.
 - **Tesseract** — legacy OCR baseline; releases of OCR-VLM models that
   benchmark against Tesseract are worth surfacing.
 - **Frontier-lab vision-for-docs offerings** — see the rule below.
@@ -132,9 +150,11 @@ Examples that are **competitive-primary**:
 
 - Anthropic ships a document-extraction tool inside Claude / the API.
 - Google releases a Gemini-document-mode endpoint or a layout-aware
-  OCR benchmark result.
+  OCR benchmark result (Gemini 3 Pro/Flash; Gemini 3.5 Flash released
+  May 2026 at Google I/O).
 - OpenAI announces GPT-5.x vision improvements on DocVQA / ChartQA /
-  OmniDocBench / IDP Leaderboard.
+  OmniDocBench / IDP Leaderboard (GPT-5.4 March 2026, GPT-5.5 April
+  2026).
 - Mistral OCR is updated with new accuracy or pricing.
 - xAI ships Grok vision document handling.
 - Meta releases a Llama-vision model with explicit document focus.
@@ -255,3 +275,63 @@ Nanonets, do not respond.
 - Added OmniDocBench and OlmOCR-Bench to the benchmark list.
 - Research-direction section unchanged; no public Nanonets-authored
   2026 papers surfaced to justify a rewrite.
+
+---
+
+**Date:** 2026-05-24
+
+**Sources consulted:**
+
+- `nanonets.com`, `nanonets.com/blog`, `benchmarking.nanonets.com` —
+  all returned HTTP 403; fell back to web search for all Nanonets data
+- WebSearch: "Nanonets OCR-3 2026" — confirmed #1 on IDP Leaderboard
+  at 85.9% overall; release date April 2, 2026 verified
+- WebSearch: "site:huggingface.co/nanonets" — model lineup unchanged
+  (OCR-s, OCR2-3B, OCR2-1.5B-exp)
+- WebSearch: "nanonets arxiv 2026" — no team-authored papers surfaced
+- WebSearch: IDP Leaderboard 2026 rankings
+- WebSearch: Mistral OCR 2026 — Mistral OCR 3 (January 2026),
+  Mistral OCR 25.03 (May 2026)
+- WebSearch: Reducto AI 2026 — $75M Series B, Deep Extract, Opennote
+  acquisition
+- WebSearch: LlamaParse / LlamaIndex 2026 — v2, LiteParse
+- WebSearch: Chandra OCR / LightOn OCR 2026 — Chandra OCR 2 (Datalab,
+  March 2026)
+- WebSearch: GLM-OCR Zhipu AI 2026 — March 2026 release confirmed
+- WebSearch: DeepSeek OCR vision 2026 — DeepSeek-OCR 2 (January 2026)
+- WebSearch: Docling IBM 2026 — Granite-Docling-258M, Linux Foundation
+- WebSearch: Qwen-VL 2026 — Qwen3-VL / Qwen 3.6-VL confirmed
+- WebSearch: Rossum Docsumo ABBYY Kofax 2026 — Coupa/Rossum
+  acquisition; Kofax rebranded Tungsten Automation
+- WebSearch: Firecrawl 2026 — PDF Parser v2, Fire-PDF Rust engine
+- WebSearch: OpenAI GPT-5.5 document vision 2026 — April 23, 2026
+- WebSearch: Google Gemini document OCR 2026 — Gemini 3.5 Flash at
+  Google I/O, May 19, 2026
+- WebSearch: xAI Grok vision document 2026 — vision capabilities
+  present but no dedicated document extraction product
+
+**Material changes versus prior version (2026-05-21):**
+
+- Added DeepSeek-OCR 2 (DeepSeek AI, January 2026; 3B params; 91.09%
+  on OmniDocBench v1.5) as a new entrant in the competitive set.
+- Updated Mistral OCR to reflect Mistral OCR 3 (January 2026) and
+  Mistral OCR 25.03 (May 2026) as current versions.
+- Reducto: noted $75M Series B (a16z, February 2026) and Deep Extract
+  product; 1 billion pages processed milestone.
+- Rossum acquired by Coupa (announced Inspire 2026); Kofax rebranded
+  as Tungsten Automation. Both retained in competitive set with notes.
+- Updated LlamaParse to reflect v2 launch and LiteParse open-source
+  release (March 2026).
+- Updated Chandra OCR to v2 (Datalab, March 2026; Qwen 3.5 base).
+- Updated Docling to reflect Granite-Docling-258M (January 2026) and
+  Linux Foundation Agentic AI Foundation donation.
+- Updated Qwen-VL references to Qwen3-VL / Qwen 3.6-VL (2026 series).
+- Added GPT-5.5 (April 2026) and Gemini 3.5 Flash (May 2026) to IDP
+  Leaderboard comparables list and frontier-lab examples.
+- Added Firecrawl PDF Parser v2 and Fire-PDF engine note (February
+  2026); classification as "adjacent" unchanged.
+- GLM-OCR March 2026 release and OmniDocBench V1.5 score (94.62)
+  confirmed and added inline.
+- No changes to research-direction section; no new Nanonets-authored
+  arXiv papers found.
+- Nanonets OCR-3 #1 ranking on IDP Leaderboard confirmed unchanged.
