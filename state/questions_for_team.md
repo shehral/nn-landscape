@@ -393,3 +393,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-24T12:00:00+00:00 (audit: partial)
+
+### Q: Has a structured feature comparison between Unstructured.io's current release and the Nanonets Agentic Data Extraction /parse endpoint been conducted on a common test set?
+
+**Context:** Unstructured.io has appeared in multiple consecutive builds and is the highest-scoring competitive item in this build (composite=58). Without a comparative benchmark, it receives 'monitor' indefinitely. A one-time feature matrix on common document types (invoices, contracts, tables) would allow future builds to score Unstructured releases against a fixed accuracy and feature baseline rather than re-evaluating from scratch.
+
+**Answer:** _add reply here_
+
+### Q: Has the team established an automated HuggingFace watch for new model cards referencing LLaVA-OneVision-1.5 plus document/OCR/IDP benchmarks?
+
+**Context:** LLaVA-OneVision-1.5 training framework is trending this build; prior LLaVA-based fine-tunes have appeared on the IDP Leaderboard. Build 2026-05-23T12 asked whether the team proactively monitors these fine-tunes; that question is unanswered. This build surfaces a new framework version, raising the same concern at the next generation.
+
+**Answer:** _add reply here_
+
+### Q: RSS returned zero items this build for the first time — is the feed list stale, or was this a transient network failure?
+
+**Context:** Prior builds relied on RSS as the sole working newsletter source alongside github_trending; arXiv and HN have been 403-ing for 15+ consecutive builds. If the RSS feeds have moved or discontinued, the current feed list in data/sources.yaml needs updating. Distinguishing stale URLs from a transient fetch timeout would determine whether editorial action is needed.
+
+**Answer:** _add reply here_
+
+### Q: Is there a defined customer segment where Firecrawl and the Nanonets /parse endpoint are directly substitutable, or do they address different document sources (web content vs. scanned/uploaded files)?
+
+**Context:** Firecrawl is named in the editorial context as adjacent-competitive following Mendable's pivot, and this is its third or more consecutive trending appearance. Without a clear substitution boundary, the 'monitor' action persists without a threshold for escalation. A product-level definition of where the two overlap would sharpen future scoring and action recommendations.
+
+**Answer:** _add reply here_
+
+### Q: At what benchmark score on OlmOCR-Bench or DocVQA should a sub-7B document VLM be considered a material IDP Leaderboard entrant warranting escalated tracking?
+
+**Context:** TinyLLaVA Factory enables small-parameter multimodal model training; the IDP Leaderboard currently lists large models. Without an explicit accuracy threshold, each small-model release receives 'monitor' indefinitely. A defined floor would allow future builds to automatically escalate or de-escalate small-model entries without per-build editorial judgment.
+
+**Answer:** _add reply here_
+
+---
