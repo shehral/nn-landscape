@@ -427,3 +427,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-24T18:00:00+00:00 (audit: partial)
+
+### Q: Should genkit-ai/genkit be treated as a priority distribution-connector target, distinct from community platforms like Dify and RAGFlow?
+
+**Context:** Genkit is production-backed by Google with enterprise-grade SDKs in JS, Go, and Python; its connector set already includes Anthropic, OpenAI, and Gemini. Prior questions focused on Dify and RAGFlow; Genkit's Google backing and production-use trajectory make the absence of a Nanonets connector a qualitatively different distribution risk.
+
+**Answer:** _add reply here_
+
+### Q: Has the team established a benchmark baseline for cross-architecture hallucination transfer tests using smaller open VLMs?
+
+**Context:** TinyLLaVA Factory and LLaVA-OneVision 1.5 both trend this cycle as accessible frameworks for training sub-7B document VLMs. Without a published baseline experiment using these model classes, the team cannot determine whether hallucination patterns from OCR-3 propagate to smaller open-weight models, which has direct implications for both research publication and IDP Leaderboard risk.
+
+**Answer:** _add reply here_
+
+### Q: Should SGLang be formally evaluated for OCR-3 serving cost rather than flagged each build?
+
+**Context:** SGLang has appeared in five or more consecutive builds. The question is not whether it is relevant but whether the team has already made an informed decision to use or not use it. A single answer stating the current serving infrastructure and whether it was evaluated against SGLang would close this question permanently.
+
+**Answer:** _add reply here_
+
+### Q: Is the arXiv and HN 403 failure now a resolved policy — github_trending is the accepted source set — or is there an owner and deadline for restoring the other sources?
+
+**Context:** arXiv and HN have returned 403 errors for 16+ consecutive builds; RSS returned zero items again this cycle. Without primary research sources, vlm_research and doc_ai framing fields are inferred from GitHub repository metadata alone. Prior builds proposed Semantic Scholar and OAI-PMH as alternatives; neither has been acted on. A clear policy decision would end the recurring infrastructure question.
+
+**Answer:** _add reply here_
+
+---
