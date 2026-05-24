@@ -455,3 +455,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-24T12:16:50+00:00 (audit: partial)
+
+### Q: Should the team monitor NVIDIA NeMo Automodel's GitHub forks for document-dataset fine-tunes that could produce IDP Leaderboard submissions?
+
+**Context:** NeMo Automodel provides HuggingFace-compatible distributed VLM training backed by NVIDIA. ArXiv has been unavailable for 17+ consecutive builds, removing the primary early-warning channel for academic fine-tune submissions. A GitHub watch on NeMo forks that reference DocVQA, OmniDocBench, or IDP Leaderboard would partially substitute for the missing arXiv signal.
+
+**Answer:** _add reply here_
+
+### Q: UltraRAG and JeecgBoot both reference MCP-native integration in the same cycle. Is there an open-source or planned Nanonets MCP connector, and if not, is building one now prioritized?
+
+**Context:** MCP is consolidating as an integration standard; this is the third consecutive cycle in which MCP-native platforms appear. Prior builds asked about MCP integration (builds 2026-05-23T12 and 2026-05-23T18); both are unanswered. The question is not about technical feasibility but about whether a connector is already in progress or queued.
+
+**Answer:** _add reply here_
+
+### Q: Does Ultralytics YOLO play any role in Nanonets document preprocessing, or does OCR-3 handle layout detection end-to-end?
+
+**Context:** YOLO-family models are a common preprocessing step for document layout detection before VLM-based extraction. If OCR-3 handles layout natively at equivalent or better accuracy, this question can be permanently closed for future builds. If not, a YOLO preprocessing stage could improve table-cell accuracy on dense documents. A one-sentence answer would end recurring low-relevance scoring of YOLO items.
+
+**Answer:** _add reply here_
+
+### Q: The three most-recurring orchestration-layer competitors (Dify, BiSheng, UltraRAG) are all backed by Chinese AI organizations. Does this change the competitive threat profile relative to US-backed platforms like Genkit?
+
+**Context:** Chinese-backed platforms may target different deployment patterns — on-premise enterprise, different regional markets — that partially de-overlap from Nanonets' typical customer base. If the threat is geographically segmented, future builds should reflect that in scoring and action recommendations rather than treating all orchestration platforms as interchangeable.
+
+**Answer:** _add reply here_
+
+### Q: The Gpt-Agreement-Payment repo (ChatGPT subscription protocol replay and hCaptcha bypass) appeared in github_trending this cycle with composite=0. Should such items be filtered at the ingest or scoring stage given potential reputational risk from including them in a public dashboard?
+
+**Context:** The current github_trending keyword filter does not exclude tools designed for payment bypass or CAPTCHA circumvention. These items score zero and have no editorial relevance, but including them in state/run files that feed a public dashboard is a reputational consideration. A keyword exclusion list in sources.yaml would prevent recurrence.
+
+**Answer:** _add reply here_
+
+---
