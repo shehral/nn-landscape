@@ -613,3 +613,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-25T12:15:00+00:00 (audit: partial)
+
+### Q: Does Google's genkit change the connector-gap priority relative to the community platforms (Dify, RAGFlow, UltraRAG) raised in prior builds?
+
+**Context:** genkit is production-backed by Google with established connectors for Anthropic, OpenAI, and Gemini. Prior questions addressed community-maintained platforms; genkit's Google backing, enterprise-grade SDKs in JS/Go/Python, and production usage make the absence of a Nanonets connector a qualitatively different distribution risk — potentially affecting developer defaults at the enterprise tier rather than the open-source self-hosted tier.
+
+**Answer:** _add reply here_
+
+### Q: Does the co-occurrence of ms-swift GRPO fine-tuning and Ollama local inference for the same IDP Leaderboard model families in the same build cycle change the assessment of when a GRPO-fine-tuned IDP Leaderboard submission is likely?
+
+**Context:** Previously, GRPO-tuned document VLMs were a theoretical threat. This build shows the full toolchain — local inference of competitive models via Ollama plus GRPO fine-tuning of the same families via ms-swift — trending simultaneously. The timeline for a credible external GRPO submission has likely shortened from months to weeks. Whether this warrants a proactive benchmark baseline run is a team decision.
+
+**Answer:** _add reply here_
+
+### Q: Should lmms-eval be treated as the priority OCR-3 registry submission target given that it appears to have broader competitive model registration than evalscope in this build?
+
+**Context:** Both lmms-eval and evalscope trend this cycle with IDP-adjacent benchmark coverage; lmms-eval appears to have more established model registry activity for the specific competitive models (Qwen3-VL, GLM-5.1, InternVL3.5). The prior build question about OCR-3 registry submission did not distinguish between the two frameworks. If the team can only prioritize one, which is the higher-leverage first submission?
+
+**Answer:** _add reply here_
+
+### Q: Is late-interaction retrieval (as implemented in ArtSeek for 5M+ multimodal corpora) a paradigm the team has evaluated for document collection retrieval, distinct from the hallucination-mitigation retrieval paradigm in self-reflective-rag and Knowledge-Infused-Multimodal-Retrieval?
+
+**Context:** ArtSeek uses late-interaction retrieval (similar to ColPali-style dense passage retrieval) over a large multimodal corpus. This is a different application from the hallucination mitigation retrieval loop in the other two vlm_research items — it addresses retrieval accuracy for large document collections rather than generation-time hallucination. Whether this paradigm is relevant to OCR-3 document retrieval accuracy is unclear without team input.
+
+**Answer:** _add reply here_
+
+### Q: What is the team's current canonical answer to the make-vs-buy question for an all-open-source document AI pipeline — is the differentiation argument accuracy, API simplicity, support, or something else?
+
+**Context:** This build shows the full open-source stack (MinerU for extraction, opendataloader-pdf for parsing, OCRmyPDF as OCR baseline, RAGFlow and Dify for orchestration, lmms-eval and evalscope for evaluation, ms-swift for fine-tuning) trending in a single cycle. Without a canonical team answer to what the differentiation argument is, future builds cannot reliably calibrate the product_implication framing for open-source competitive items — they receive 'monitor' by default rather than a sharper action.
+
+**Answer:** _add reply here_
+
+---
