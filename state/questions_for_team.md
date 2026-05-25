@@ -523,3 +523,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-25T00:15:46+00:00 (audit: partial)
+
+### Q: Does OCR-3's five-endpoint architecture (/parse, /extract, /split, /chunk, /vqa) map to the omni-modality serving pattern that vllm-omni is optimized for, or is the endpoint structure better served by standard vLLM with separate decode configurations?
+
+**Context:** vllm-omni appeared this cycle as the first item to split from vLLM specifically for omni-modality models. A one-sentence answer about the internal serving architecture would allow future builds to score vllm-omni as directly relevant infrastructure rather than re-evaluating it alongside standard vLLM each cycle.
+
+**Answer:** _add reply here_
+
+### Q: Should retrieval-based VLM hallucination mitigation (self-reflective-rag, knowledge-infused-multimodal-retrieval) receive a standing action recommendation that persists across builds, or does the team want to evaluate each new retrieval-mitigation item independently?
+
+**Context:** Both items address phantom-row and structural hallucination classes via retrieval augmentation rather than mechanistic interpretability. They have appeared in at least four consecutive builds; without a confirmed team stance on whether this paradigm is inside or outside the research scope, each build must make an independent action recommendation for the same class of work.
+
+**Answer:** _add reply here_
+
+### Q: Could a prefilled-extraction-schema approach analogous to Zero-shot-PGT's prefilled-response image detection technique serve as a self-consistency check for phantom-row detection in OCR-3 outputs — specifically, does the model's extraction agree with itself when the target schema is injected at different context positions?
+
+**Context:** Zero-shot-PGT demonstrated that prefilled token sequences improve zero-shot detection of AI-generated content in images. The equivalent question for document extraction is whether prefilling an extraction schema at different positions in the prompt changes which table rows the model hallucinates — if so, the disagreement signal is a cheap phantom-row detector that does not require mechanistic interpretability tooling.
+
+**Answer:** _add reply here_
+
+### Q: With vLLM, SGLang, and vllm-omni all trending simultaneously, should the build adopt a reference serving framework assumption for OCR-3 to avoid re-evaluating all three each cycle?
+
+**Context:** All three frameworks are individually relevant to OCR-3 serving and appear in the same build cycle. If the team has already evaluated or selected one, naming it would allow future builds to score the others as 'monitor' rather than 'read in week' and would end a recurring multi-item review for the same infrastructure decision.
+
+**Answer:** _add reply here_
+
+---
