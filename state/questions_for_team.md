@@ -551,3 +551,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-25T06:05:25.431991+00:00 (audit: partial)
+
+### Q: arxiv, HN, and RSS all failed in this build (403 for arxiv and HN; no items for RSS). Is this a network policy issue in the remote execution environment, or do these endpoints require authentication not yet configured?
+
+**Context:** Three of four sources have now failed in multiple consecutive builds. Without primary-research sources, the dashboard is structurally limited to GitHub Trending and cannot surface academic papers, community discussions, or frontier-lab blog posts. The pattern is consistent enough to suggest an environment-level issue rather than a transient error.
+
+**Answer:** _add reply here_
+
+### Q: opendataloader-pdf appeared in at least two prior builds and scored competitive=3 again here. Should it be added to the competitive registry in data/nanonets_context.md?
+
+**Context:** This question was raised in the 2026-05-21T12:08 build and remains unanswered. Persistent GitHub Trending presence suggests non-trivial developer traction. A confirmed answer would change how future builds score and frame it.
+
+**Answer:** _add reply here_
+
+### Q: GLM-5 now appears in Ollama's supported model description; GLM-OCR is in the competitive set but GLM-5 is not. Is GLM-5 a distinct model from GLM-OCR, or the same product family?
+
+**Context:** This question was raised in the 2026-05-21T12:08 build and remains unanswered. If GLM-5 includes document-extraction capabilities comparable to GLM-OCR, it should be added to the competitive registry. If not, items referencing GLM-5 may be over-scored on the competitive axis.
+
+**Answer:** _add reply here_
+
+### Q: Since all three primary-research sources (arxiv, HN, RSS) are failing across multiple builds, should trend analysis and the framing pass be explicitly flagged as 'infrastructure-biased' when fewer than 2 primary research sources contributed?
+
+**Context:** The current signal derives entirely from GitHub Trending. Trends inferred from this mix reflect production tooling activity, not the research frontier. The framing pass lacks arxiv-based hallucination and VLM internals coverage that grounds the research_implication field.
+
+**Answer:** _add reply here_
+
+---
