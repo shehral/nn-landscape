@@ -579,3 +579,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-25T12:00:00+00:00 (audit: partial)
+
+### Q: arXiv, HN, and RSS have failed for 20+ consecutive builds; should github_trending-only signal be treated as the accepted operating norm, or is there an owner and deadline for restoring a primary-research source?
+
+**Context:** Prior builds proposed Semantic Scholar (build 2026-05-22T18:17) and arXiv OAI-PMH (build 2026-05-22T00:17) as alternatives; neither has been acted on. Without arXiv, the vlm_research and doc_ai research_implication fields are inferred from GitHub repository metadata alone, which changes the epistemic status of all framing. A one-sentence policy decision would end the recurring infrastructure question.
+
+**Answer:** _add reply here_
+
+### Q: Should OCR-3 be submitted to the lmms-eval and/or evalscope model registries before a competitor uses either framework to publish a head-to-head comparison that structurally excludes OCR-3?
+
+**Context:** Both frameworks are trending this cycle with Qwen3-VL, GLM-5.1, and InternVL3.5 registered. Build 2026-05-23T18 first raised OCR-3 registry submission as a distinct publishing decision. This question is specifically about external-facing benchmark visibility — not internal usage. A response stating whether there is an embargo, quality-gate, or assigned owner would close this question permanently.
+
+**Answer:** _add reply here_
+
+### Q: At what OmniDocBench or DocVQA score should a GRPO-fine-tuned open-weight model (Qwen3-VL, InternVL3.5) be classified as a material IDP Leaderboard threat warranting escalated tracking?
+
+**Context:** ms-swift now provides an accessible GRPO pipeline for these model families; the toolchain lowers the submission barrier substantially. Build 2026-05-23T06 asked this question; it remains unanswered. A defined accuracy threshold would allow future builds to automatically escalate or dismiss GRPO-fine-tuned submissions without per-build editorial judgment.
+
+**Answer:** _add reply here_
+
+### Q: Should MinerU be added to the named competitive set in data/nanonets_context.md alongside Reducto, LlamaParse, and Docling?
+
+**Context:** MinerU (opendatalab/Shanghai AI Lab) has appeared at the top of the competitive axis across more than ten consecutive builds and targets the identical PDF-to-LLM-ready markdown/JSON interface as Nanonets Agentic Data Extraction. Build 2026-05-21T18 first raised this question; it has not been answered. A one-word yes/no decision would allow stable scoring across future builds rather than per-build re-evaluation.
+
+**Answer:** _add reply here_
+
+### Q: Should retrieval-based VLM hallucination mitigation (self-reflective-rag, Knowledge-Infused Multimodal Retrieval) receive a standing action recommendation across builds, or does the team want each new retrieval-mitigation item evaluated independently?
+
+**Context:** Both paradigms address phantom-row and structural hallucination classes via retrieval rather than mechanistic interpretability; they have appeared in at least five consecutive builds. Builds 2026-05-23T06 and 2026-05-25T00 both raised this question without a team response. A yes/no on whether retrieval-based mitigation is inside the research scope would stabilize action recommendations for the entire item class.
+
+**Answer:** _add reply here_
+
+---
