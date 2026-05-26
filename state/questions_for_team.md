@@ -743,3 +743,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-26T18:12:45+00:00 (audit: partial)
+
+### Q: The github_trending feed now produces a nearly identical set of repos each cycle — the top competitive items (MinerU, Dify, RAGFlow, ms-swift, lmms-eval) have appeared in every build for 20+ cycles. Should framing for items with no material update since their last appearance be replaced with a brief 'no change since YYYY-MM-DD' note, rather than full re-framing from scratch each build?
+
+**Context:** Re-framing the same items each cycle without new signal does not add editorial value and consumes scoring capacity that would be better spent on genuinely new items. A 'no change' flag would require the build agent to track last-framed dates, which the seen.json already approximates — but the current schema does not expose this to the scoring step.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift, evalscope, and Qwen-VL-Series-Finetune trended together for the first time this cycle, forming a complete GRPO fine-tuning-to-evaluation pipeline for IDP Leaderboard competitors. Is there a GitHub fork-watch or HuggingFace model card filter the team uses to detect when an external lab first combines all three tools in a document-specific training run?
+
+**Context:** Individual tool trending is a weak signal; the combination is a strong one. Without a watch mechanism, the first indication of an incoming leaderboard submission will be the submission itself rather than an advance notice that would allow preparation of benchmark baselines.
+
+**Answer:** _add reply here_
+
+### Q: genkit (Google-backed) has established connectors for Anthropic, OpenAI, and Gemini but not Nanonets; does genkit publish a connector specification or plugin manifest that defines what a third-party connector submission requires?
+
+**Context:** Prior builds asked whether building a genkit connector is a prioritized distribution task; this question is more specific — it asks about the technical barrier (is there a spec?) rather than the prioritization decision. If genkit uses an OpenAI-compatible REST interface as its connector standard, a Nanonets connector may require only a thin adapter.
+
+**Answer:** _add reply here_
+
+### Q: Four orchestration platforms (Dify, RAGFlow, UltraRAG, PySpur) are trending without confirmed Nanonets connectors; should the editorial grounding define a threshold — e.g., 'any orchestration platform exceeding N GitHub stars that lacks a Nanonets connector is scored competitive=3 by default' — to reduce per-build ad hoc scoring judgments for this item class?
+
+**Context:** Without a defined threshold, each build independently evaluates whether each orchestration platform is sufficiently notable to be scored competitive=3 vs. competitive=2. A registry-level threshold in data/nanonets_context.md would stabilize scoring across the entire class and reduce the need for per-build editorial judgment on individual platforms.
+
+**Answer:** _add reply here_
+
+### Q: Has any team member run a head-to-head accuracy comparison between the open-source document AI stack (MinerU + opendataloader-pdf for extraction, ms-swift + evalscope for fine-tuning/evaluation) and OCR-3 on a held-out test set such as DocVQA, FUNSD, or CORD?
+
+**Context:** The full open-source stack is now functionally complete and trending consistently; without a concrete accuracy differential, the product_implication field on all open-source extraction items defaults to qualitative displacement-risk framing rather than a specific accuracy threshold. A single published comparison would allow future builds to frame open-source competitive items against a fixed baseline rather than in qualitative terms.
+
+**Answer:** _add reply here_
+
+---
