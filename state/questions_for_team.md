@@ -647,3 +647,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-26T00:11:06+00:00 (audit: partial)
+
+### Q: Should Xiaomi MiMo be assessed for IDP Leaderboard benchmarks as a new competitive entrant, given that mimo-docagent explicitly positions it as a long-context document analysis VLM?
+
+**Context:** mimo-docagent (trending this build) uses Xiaomi MiMo's vision-reasoning VLM for multi-page PDF analysis. MiMo is not in the editorial grounding. Its long-context document reasoning framing is qualitatively different from current leaderboard models; confirming whether it has document-AI benchmark results would determine whether it belongs in the competitive registry alongside GLM-OCR and Qwen3-VL.
+
+**Answer:** _add reply here_
+
+### Q: Has the team assessed InternLM/xtuner as a fine-tuning or continued-pretraining infrastructure option for OCR-3, given that xtuner is explicitly designed for ultra-large MoE models?
+
+**Context:** XTuner is InternLM's distributed training engine optimized for ultra-large MoE VLMs; OCR-3 is a 35B MoE. If the team already uses an equivalent framework, this item can be permanently scored as non-relevant. If not yet evaluated, a comparison against the current training stack would determine whether migration is warranted. A one-sentence answer would close the question for future builds.
+
+**Answer:** _add reply here_
+
+### Q: Should Flowise (visual AI agent builder) be added to the competitive registry alongside Dify and RAGFlow as an above-extraction-layer orchestration competitor to Nanonets Agents?
+
+**Context:** Flowise has not been raised in prior builds despite trending alongside Dify and RAGFlow across multiple cycles. Its visual-builder positioning targets a developer segment distinct from code-first orchestration platforms. Clarifying whether it belongs in the registry alongside Dify and RAGFlow would stabilize scoring without requiring ad hoc judgments in future builds.
+
+**Answer:** _add reply here_
+
+### Q: Do the four trending orchestration platforms (Dify, RAGFlow, Flowise, UltraRAG) share a common connector API surface — such as OpenAI-compatible REST or MCP — that would allow a single Nanonets integration to serve all four?
+
+**Context:** Prior builds asked about individual connectors for Dify, RAGFlow, and UltraRAG; this build adds Flowise as the fourth trending orchestration platform in a single cycle. If all four platforms support a common connector protocol, a single integration effort would close the distribution gap across all four simultaneously. If each requires a dedicated integration, the team needs to prioritize which platform to address first.
+
+**Answer:** _add reply here_
+
+---
