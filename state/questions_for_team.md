@@ -709,3 +709,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-26T12:18:26+00:00 (audit: partial)
+
+### Q: Should the IDP Leaderboard team run Xiaomi MiMo on the standard benchmark set (DocVQA, OmniDocBench) before deciding whether to add it to the competitive registry?
+
+**Context:** mimo-docagent uses Xiaomi MiMo's vision-reasoning VLM for multi-page PDF analysis; MiMo is not in the editorial grounding and has no published leaderboard results. Its long-context document reasoning framing is qualitatively different from current registry entries — it addresses reasoning over documents rather than structured extraction. Without a benchmark run, future builds cannot determine whether it is a material entrant or a research prototype.
+
+**Answer:** _add reply here_
+
+### Q: At what composite score on OmniDocBench should a GRPO-tuned open-weight submission trigger a public IDP Leaderboard response from the Nanonets team?
+
+**Context:** The GRPO supply chain (ms-swift + lmms-eval/evalscope) has been complete for 2+ consecutive builds. Prior builds asked what accuracy threshold constitutes a material threat; none have been answered. A defined response threshold would convert a recurring ad hoc editorial decision into a standing policy, ending the per-build scoring ambiguity for this item class.
+
+**Answer:** _add reply here_
+
+### Q: Does the team have a preference for which retrieval paradigm to benchmark against the mechanistic interpretability hallucination work — dense passage retrieval, knowledge-graph augmentation, or late-interaction retrieval?
+
+**Context:** Three retrieval-based VLM hallucination mitigation frameworks appeared in this build. Prior builds asked whether the team tracks this paradigm at all; that question remains unanswered. This build escalates: given three distinct retrieval architectures now visible, selecting one for a concrete ablation would reduce editorial ambiguity for the entire class of retrieval-mitigation items and produce a publishable comparison.
+
+**Answer:** _add reply here_
+
+### Q: Is the absence of any hostility_flag=true item across 20+ builds a genuine signal (Nanonets is not being publicly criticized) or a structural artifact of using GitHub Trending as the sole source?
+
+**Context:** GitHub Trending surfaces developer-popular repos but rarely carries critical tech commentary, competitor comparisons, or academic critiques. A monitoring pipeline limited to this source cannot surface blog posts, HN threads, or arXiv papers that name Nanonets in a negative context. Confirming whether the null-hostility signal is genuine would require at least one working non-GitHub source — which ties back to the unresolved arXiv/HN infrastructure question.
+
+**Answer:** _add reply here_
+
+### Q: Should sources.yaml add a keyword exclusion list for GitHub Trending to filter zero-relevance consumer tools and payment-circumvention repos before they enter state/run files?
+
+**Context:** This build contains pot-desktop (consumer OCR/translation), ShareX (screen capture), the Gpt-Agreement-Payment hCaptcha bypass tool, and other zero-scoring items that consumed editorial scoring capacity. A short exclusion list ('captcha', 'bypass', 'subscription replay', 'screen capture', 'translation') would not remove legitimate repos and would reduce per-build scoring noise. The Gpt-Agreement-Payment item has appeared in 3+ consecutive builds with composite=0.
+
+**Answer:** _add reply here_
+
+---
