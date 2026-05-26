@@ -675,3 +675,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-26T06:13:18+00:00 (audit: partial)
+
+### Q: XTuner (ultra-large MoE training) and evalscope (VLM evaluation with ms-swift integration) both trend in the same cycle. Is there evidence — in GitHub fork activity or model card announcements — that an external lab is running a document VLM fine-tuning pipeline combining these two tools that could produce an IDP Leaderboard submission within 1-2 build cycles?
+
+**Context:** Prior builds asked whether the team monitors LLaVA-OneVision fine-tunes for leaderboard submissions. This question is more specific: the XTuner + evalscope combination is a complete MoE fine-tuning and evaluation pipeline that has not appeared together before this build, suggesting a concrete pipeline is forming outside the team's immediate view.
+
+**Answer:** _add reply here_
+
+### Q: The github_trending source has been the sole data source for 21+ consecutive builds, producing a nearly identical set of repos each cycle. Should a freshness filter be added to sources.yaml — e.g., suppress any repo that appeared in the previous 3 builds — to reduce repetition and surface genuinely new signal within the github_trending feed?
+
+**Context:** Without a freshness filter, recurring items like MinerU, Dify, RAGFlow, SGLang, and opendataloader-pdf appear every build regardless of whether there has been a meaningful update. A filter would not remove them permanently but would suppress reruns, giving the build agent a cleaner signal about what is actually new this cycle.
+
+**Answer:** _add reply here_
+
+### Q: The Gpt-Agreement-Payment repository (ChatGPT subscription replay, hCaptcha bypass) has now appeared in at least three consecutive builds with composite=0 and no editorial relevance. Should sources.yaml add a keyword exclusion list — e.g., 'captcha', 'bypass', 'subscription replay' — to filter payment-circumvention tools at the ingest stage before they appear in state/run files?
+
+**Context:** The current github_trending keyword filter does not exclude these items. They score zero and are not framed, but their presence in state/run/items_raw.jsonl and items_deduped.jsonl is a reputational risk if those files are ever read by external parties accessing the public repo.
+
+**Answer:** _add reply here_
+
+### Q: vllm-omni is the first serving framework to explicitly split from vLLM for omni-modality inference. Does OCR-3's five-endpoint architecture (/parse, /extract, /split, /chunk, /vqa) represent the type of omni-serving workload vllm-omni is optimized for, or is OCR-3 better served by standard vLLM with separate decode configurations per endpoint?
+
+**Context:** This question was raised in the 2026-05-25 build and remains unanswered. It is repeated here because vllm-omni has appeared in two consecutive builds and the action recommendation ('read in week') cannot escalate to a concrete infrastructure decision without a one-sentence answer about OCR-3's serving architecture.
+
+**Answer:** _add reply here_
+
+### Q: lmms-eval and evalscope are both trending without OCR-3 in their model registries. Is the barrier to submission a process question (who submits), a compute cost question (running the benchmarks), or a policy question (not publishing results before a controlled announcement)?
+
+**Context:** Prior builds asked whether the team uses these frameworks internally, and whether OCR-3 should be submitted. Neither question has been answered. This reframes it as a root-cause question: knowing which of the three barriers applies would determine the correct action — assign a person, allocate compute, or make a policy decision — rather than continuing to flag the absence each build.
+
+**Answer:** _add reply here_
+
+---
