@@ -839,3 +839,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-27T12:18:52+00:00 (audit: partial)
+
+### Q: The GRPO fine-tuning supply chain (ms-swift training + Qwen-VL-Series-Finetune community implementation + evalscope evaluation) appeared together in a single build cycle for the first time. Is there a designated team member monitoring GitHub for document-specific training runs combining these tools that could produce an IDP Leaderboard submission within 2-3 weeks?
+
+**Context:** Prior builds asked about the GRPO timeline in isolation; this build shows the complete supply chain trending simultaneously for the first time. The combination materially changes the timeline estimate and may warrant proactive benchmark baseline preparation before the submission is public.
+
+**Answer:** _add reply here_
+
+### Q: genkit's connector ecosystem may use an OpenAI-compatible REST interface as its plugin standard. Has the team checked whether genkit's plugin specification is REST-compatible, and if so, is building a Nanonets genkit connector technically feasible in a short-duration engineering effort?
+
+**Context:** Prior builds asked whether a genkit connector is prioritized; this question focuses on the technical barrier. If genkit uses a REST-compatible interface, the effort is a thin adapter rather than a custom integration, which changes the cost-benefit assessment and may resolve the connector gap more quickly than community platform integrations.
+
+**Answer:** _add reply here_
+
+### Q: Knowledge-Infused-Multimodal-Retrieval has appeared in at least five consecutive builds with a 'read in week' recommendation each time. Should retrieval-based hallucination mitigation carry a standing default action recommendation, or is the team explicitly not tracking this paradigm and these items should receive 'no action'?
+
+**Context:** Without a confirmed team stance, each build independently produces a 'read in week' recommendation for the same paradigm. A yes/no response would convert a recurring editorial judgment into a standing policy and prevent this item class from consuming framing capacity every cycle.
+
+**Answer:** _add reply here_
+
+### Q: PaddleOCR now uses the same product framing as OCR-3 ('Turn any PDF or image document into structured data for your AI') with 100+ language support and substantial open-source traction. Has the IDP Leaderboard team run PaddleOCR on the standard benchmark set to establish whether it is an accuracy competitor or only a feature-coverage competitor?
+
+**Context:** Without a benchmark comparison, PaddleOCR can only be framed as a feature-coverage competitor (free, open-source, wide language support). A leaderboard run would determine whether it is also a material accuracy threat and would answer whether it should be added to the competitive registry alongside GLM-OCR and Chandra OCR 2.
+
+**Answer:** _add reply here_
+
+---
