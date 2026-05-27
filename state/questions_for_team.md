@@ -867,3 +867,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-27T18:12:55.338038+00:00 (audit: partial)
+
+### Q: Should data/nanonets_context.md reclassify Firecrawl from 'adjacent' to a named competitive entrant alongside Reducto and LlamaParse?
+
+**Context:** Firecrawl PDF Parser v2 and Fire-PDF Rust engine now directly overlap with the Nanonets /parse use case. Context.md currently classifies Firecrawl as adjacent. Each build must re-derive this judgment ad hoc; a registry entry would stabilize scoring. The current product trajectory supports reclassification.
+
+**Answer:** _add reply here_
+
+### Q: Should the team assign a watch task to monitor GitHub fork activity on ms-swift, Qwen-VL-Series-Finetune, and evalscope for evidence of a document-specific training run that could produce an IDP Leaderboard submission within 2-3 weeks?
+
+**Context:** All three repos in the GRPO fine-tuning supply chain trended together this cycle for the first time, forming a complete fine-tune-to-evaluate pipeline. A leaderboard submission from a GRPO-tuned Qwen3-VL or InternVL3.5 variant could appear with short notice. Advance awareness would allow baseline preparation.
+
+**Answer:** _add reply here_
+
+### Q: arXiv has returned HTTP 403 for 8+ consecutive builds. Is the failure an IP block, a rate limit requiring an API key, or a network-policy issue in the build environment?
+
+**Context:** VLM hallucination research coverage — the team's primary research direction — is structurally absent from the dashboard. Each build degrades research axis coverage without a fix. Prior builds raised the migration question; this build asks the team to diagnose the specific failure mode so the remedy can be targeted.
+
+**Answer:** _add reply here_
+
+### Q: Should PaddleOCR be added to the competitive registry in data/nanonets_context.md?
+
+**Context:** PaddleOCR uses OCR-3's own positioning phrase and matches its language coverage (100+). This build scores it competitive=4, doc_ai=5, composite=65 — the same tier as named competitive-set entries. Without a registry entry, scoring is re-derived ad hoc each cycle. This question was first raised in the 2026-05-21 build; it remains unanswered.
+
+**Answer:** _add reply here_
+
+### Q: Should a housekeeping policy be applied to questions_for_team.md — for example, archiving questions older than 4 builds without a reply under a separate 'closed - no response' section?
+
+**Context:** The file now contains 30+ unanswered questions across 25+ consecutive builds. Its length makes it difficult to distinguish new questions from recurring ones. Several questions (arXiv failure, PaddleOCR registry, GRPO timeline, Knowledge-Infused-Retrieval stance) have been asked verbatim in multiple consecutive builds without resolution.
+
+**Answer:** _add reply here_
+
+---
