@@ -805,3 +805,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-27T06:17:22.191506+00:00 (audit: partial)
+
+### Q: The questions_for_team.md file now contains 800+ lines of unanswered questions from 20+ consecutive builds. Should stale questions (more than 4 builds old with no answer) be archived or marked 'closed - no action' to prevent the file from growing indefinitely and obscuring newly-surfaced questions?
+
+**Context:** The file's length now makes it difficult to distinguish new questions from recurring ones. A housekeeping policy — e.g., any question unanswered after 4 builds is automatically archived to a separate section — would reduce noise without losing historical context.
+
+**Answer:** _add reply here_
+
+### Q: Qwen-VL-Series-Finetune (2U1/Qwen-VL-Series-Finetune) is a community-maintained fine-tuning implementation independent of the official Alibaba/Qwen repository. Does its appearance alongside ms-swift GRPO support in the same cycle indicate that the community fine-tuning ecosystem is now ahead of official tooling in accessibility, and does this change the estimated timeline for a GRPO-tuned Qwen-VL IDP Leaderboard submission?
+
+**Context:** An independent community repo for a competitive model family, combined with official GRPO tooling, suggests that the fine-tuning barrier is lower than it would be if only the official toolchain existed. Timeline estimates matter for benchmark baseline preparation.
+
+**Answer:** _add reply here_
+
+### Q: PaddleOCR's GitHub repository description reads 'Turn any PDF or image document into structured data for your AI' — the same use-case framing as OCR-3 — and supports 100+ languages with high community traction. Should PaddleOCR be added to the competitive registry in data/nanonets_context.md?
+
+**Context:** Prior builds raised PaddleOCR once (build 2026-05-21T08:30); that question was not answered. This build scores it at competitive=4, doc_ai=4, composite=62 — the same tier as explicit competitive-set entries. A registry entry would stabilize scoring across future builds.
+
+**Answer:** _add reply here_
+
+### Q: MinerU (opendatalab/Shanghai AI Lab) and opendataloader-pdf (opendataloader-project) share the 'opendataloader' organizational branding on GitHub. Are these two separate competing projects or affiliated infrastructure from the same organization?
+
+**Context:** If they are affiliated, their combined presence across multiple builds may represent a more coordinated open-source extraction push than two independent competitors would suggest, which would change the competitive threat framing from 'two items to monitor' to 'one coordinated product line to investigate.'
+
+**Answer:** _add reply here_
+
+### Q: LangChain is listed as a named integration partner for Nanonets Agentic Data Extraction but now describes itself as 'the agent engineering platform,' indicating a competitive drift toward the agentic workflow layer that Nanonets Agents also occupies. Should LangChain's future scoring be updated to reflect this drift — from integration partner to above-extraction-layer competitor?
+
+**Context:** The current context.md lists 'LangChain / LlamaIndex integrations' as a distribution feature of Nanonets Agentic Data Extraction. If LangChain is simultaneously a distribution channel and an agentic competitor, its scoring needs to reflect both roles, or the context.md should clarify the boundary.
+
+**Answer:** _add reply here_
+
+---
