@@ -777,3 +777,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-27T06:00:00+00:00 (audit: partial)
+
+### Q: arXiv has returned HTTP 403 for 7+ consecutive builds. Is this an IP block, a rate limit requiring an API key, or a network-policy issue in the build environment?
+
+**Context:** The VLM hallucination research coverage — the team's primary research direction — is structurally absent from the dashboard. Prior builds raised the arXiv migration question; this build asks the team to diagnose the specific failure mode so the fix can be targeted.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift explicitly supports GRPO fine-tuning for Qwen3-VL, GLM-5.1, and InternVL3.5; xtuner targets ultra-large MoE at OCR-3 scale. Should the team assign a watch task to track GRPO-fine-tuned document VLM submissions to the IDP Leaderboard before they are publicly announced?
+
+**Context:** GRPO has produced SOTA improvements on reasoning tasks. Applied to document VLMs with fine-tuning tooling now widely available, new leaderboard entries could appear with short notice. Advance awareness would allow the team to prepare benchmark baselines.
+
+**Answer:** _add reply here_
+
+### Q: Firecrawl has trended for multiple consecutive builds and its PDF Parser v2 plus Fire-PDF engine now overlap with the Nanonets /parse use case. Should context.md reclassify firecrawl from 'adjacent' to a named competitive entrant alongside Reducto and LlamaParse?
+
+**Context:** The current classification treats firecrawl as adjacent because it began as a web scraper. Its product trajectory has moved it into the document AI parsing space. Without a named entry, scoring will continue to underestimate its competitive relevance.
+
+**Answer:** _add reply here_
+
+### Q: Should the dashboard render an explicit 'infrastructure-biased build' badge when zero primary research sources (arXiv, HN) contributed, distinct from the partial-build banner?
+
+**Context:** The current partial-build banner fires when fewer than 3 of 4 sources succeed but does not distinguish between losing a newsletter and losing arXiv. With 7+ consecutive builds drawing exclusively from GitHub trending, the research_implication fields are being inferred from tool READMEs rather than papers, which changes their epistemic status.
+
+**Answer:** _add reply here_
+
+---
