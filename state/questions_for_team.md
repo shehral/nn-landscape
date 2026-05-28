@@ -969,3 +969,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-28T12:16:57+00:00 (audit: partial)
+
+### Q: Has the team run OCR-3 through the lmms-eval harness on its document task suite (DocVQA, ChartQA, OmniDocBench)? If not, OCR-3's absence from this harness creates a benchmark-comparability gap with competitors submitting lmms-eval results.
+
+**Context:** lmms-eval (composite 69, top-scored item this build) is used by Qwen, DeepSeek, and GLM labs to produce the benchmark numbers they submit to the IDP Leaderboard. Running OCR-3 through the same harness would allow direct score comparison without dataset or preprocessing discrepancies. This is distinct from the prior GRPO timeline questions and is specifically about the evaluation infrastructure, not the training pipeline.
+
+**Answer:** _add reply here_
+
+### Q: LangChain updated its GitHub description this build to 'the agent engineering platform,' directly overlapping Nanonets Agents positioning. LangChain is a named Nanonets integration partner. How should future builds classify it: integration partner, competitor, or both? The answer changes scoring and framing.
+
+**Context:** If LangChain is competitor-primary, it should score competitive=4 and receive fuller framing. If it remains partner-primary, framing should note the positioning tension without competitive escalation. The description change is new this build cycle; the prior competitive set in nanonets_context.md does not address this case.
+
+**Answer:** _add reply here_
+
+### Q: IsoCLIP (CVPR 2026) decomposes CLIP projection layers for intra-modal alignment. If OCR-3 uses a CLIP-derived visual encoder, this technique is a candidate for encoder-level interpretability. Is the visual encoder in OCR-3 CLIP-based, and should IsoCLIP be added to the research reading queue?
+
+**Context:** The team's mechanistic interpretability work (activation patching, logit lens, sparse autoencoders) has focused on generation layers. Projector-level analysis would extend coverage to the encoder interface, potentially attributing structural hallucinations to specific encoder components rather than only to generation-side failures.
+
+**Answer:** _add reply here_
+
+### Q: Should Semantic Scholar API be evaluated as an alternative academic preprint source to replace arXiv, which has returned HTTP 403 for 9+ consecutive builds?
+
+**Context:** Without arXiv and rss (both failed again this build), the dashboard has no primary-research or newsletter coverage — only github_trending. Semantic Scholar indexes arXiv papers, is accessible via API key without restrictive IP-based rate limiting, and returns structured metadata. The arXiv failure question has been raised in prior builds; this build proposes a specific alternative rather than restating the problem.
+
+**Answer:** _add reply here_
+
+### Q: The questions_for_team.md file now exceeds 1100 lines with zero team responses across 27+ consecutive builds. Should the AI-partner channel be routed to a different, actively monitored surface (Slack channel, Linear ticket, email digest)? If yes, specify the target in nanonets_context.md so the build agent can route accordingly.
+
+**Context:** The prior build (2026-05-28T06:21) raised an identical housekeeping question; it remains unanswered. The current format is demonstrably write-only: questions on critical topics (arXiv access, competitive registry entries, GRPO preparation, LangChain classification) have accumulated for 5-10 builds each without any team reply. A single sentence confirming whether the channel is being monitored would be sufficient.
+
+**Answer:** _add reply here_
+
+---
