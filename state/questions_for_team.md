@@ -935,3 +935,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-28T06:21:02.628314+00:00 (audit: partial)
+
+### Q: The questions_for_team.md file now exceeds 900 lines with zero team responses across 25+ consecutive builds. Is the AI-partner channel functioning as intended, or has this become a write-only log that no one monitors?
+
+**Context:** Prior questions on critical topics (arXiv access, MinerU registry classification, PaddleOCR registry, GRPO leaderboard timeline, OCR-3 lmms-eval/evalscope registry submission, retrieval-based hallucination stance) have been repeated verbatim across 5-10 builds each without any reply. If the channel is not being read, the build agent should adjust its editorial posture — asking fewer questions and routing decisions to defaults — rather than continuing to accumulate unanswered text. A single sentence from any team member confirming the channel is being monitored would be sufficient.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift, evalscope, and lmms-eval are trending together for the second consecutive build cycle, forming the complete GRPO fine-tune-to-evaluate supply chain for every major IDP Leaderboard competitive model family. Has the team run a proactive benchmark on the held-out OCR-3 test set to establish a baseline before an external GRPO-tuned submission appears?
+
+**Context:** The prior build (2026-05-28T12:00) asked about the GRPO timeline without framing it against a specific preparation deadline. This build's co-occurrence of all three supply-chain tools sharpens the urgency: the barriers to submission have been lowering for 3+ builds. A specific answer — 'baseline prepared' or 'not yet, owner is X' — would end the recurring escalation on this topic.
+
+**Answer:** _add reply here_
+
+### Q: LangChain has updated its GitHub description to 'the agent engineering platform,' directly overlapping the Nanonets Agents positioning. Given that Nanonets Agentic Data Extraction lists LangChain as a named integration partner, does the team intend to maintain the integration-partner framing, reclassify LangChain as a competitor, or distinguish between integration and product tiers?
+
+**Context:** This is distinct from prior questions about connector gaps (Dify, RAGFlow, genkit), which address orchestration platforms without existing Nanonets integration. LangChain is already an integration partner — the question is about its repositioning, which changes the scoring and framing logic for future builds.
+
+**Answer:** _add reply here_
+
+### Q: opendatalab-pdf and MinerU share the 'opendatalab' GitHub organization; prior builds asked whether they are affiliated products from Shanghai AI Lab (opendatalab). If they are the same organization, their co-trending in every cycle should be interpreted as coordinated competitive pressure rather than independent projects.
+
+**Context:** Prior build 2026-05-27T18 raised this question first. It remains unanswered. Knowing the organizational relationship changes how the competitive axis framing should treat their co-occurrence — either as one coordinated product line (score them together as a higher-composite combined entry) or as two independent projects. A one-sentence answer closes the question permanently.
+
+**Answer:** _add reply here_
+
+### Q: This is the first build in which the github_trending source has produced more than 5 items with composite score below 5 that are clearly consumer tools or unrelated repos (ShareX, Easydict, siyuan-note, domain-normalizer, Brainsway systems-roadmap). Should a minimum relevance threshold be added to the ingest filter — for example, requiring at least one of the document-AI keywords from sources.yaml to appear in the repo description — to reduce scoring noise?
+
+**Context:** The current github_trending filter uses topic tags (machine-learning, llm, ocr, etc.) but does not filter by repo description keywords. Consumer tools and generic engineering repos occasionally pass the topic filter and consume scoring capacity without producing editorial value. A description-level keyword gate would not require code changes to the CLI — only a parameter in sources.yaml — and would narrow the scored set to repos with explicit document or ML positioning.
+
+**Answer:** _add reply here_
+
+---
