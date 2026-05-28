@@ -901,3 +901,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-28T12:00:00+00:00 (audit: partial)
+
+### Q: Ollama now lists 'gpt-oss' as a featured model alongside GLM-5 and Kimi-K2.5; the provenance of 'gpt-oss' is unclear. Is this an open-weight OpenAI model, a community alias, or a different artifact — and if it has document extraction capabilities, should it be evaluated for IDP Leaderboard submission?
+
+**Context:** GLM-5 and Qwen are already IDP Leaderboard comparables. If gpt-oss is a new open-weight GPT-based model with vision and document capabilities, it belongs in the competitive registry; if it is a community alias for an existing model, this item can be closed. A one-sentence answer would end recurring uncertainty about the Ollama featured-model list.
+
+**Answer:** _add reply here_
+
+### Q: ArtSeek demonstrates late-interaction retrieval (ColPali-adjacent) over a 5M-item multimodal corpus. Has the team evaluated whether integrating a late-interaction retrieval frontend for OCR-3's /vqa endpoint would improve accuracy on large document corpora compared to the current query architecture?
+
+**Context:** Late-interaction models such as ColPali operate at the patch level and have shown strong performance on document retrieval tasks. If the /vqa endpoint is currently query-only without a retrieval stage, a late-interaction layer could reduce hallucinations on dense multi-page inputs. This is a distinct question from retrieval-based mitigation for generation, which has been raised in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: The video-evaluator approach extracts spatially grounded evidence from video frames. Could an analogous evidence-grounding technique — where the model cites the specific document region supporting each extracted value — serve as a lightweight phantom-row detection mechanism by checking whether extracted rows have a corresponding visual anchor in the source document?
+
+**Context:** Phantom-row hallucinations produce table rows absent from the source document. A visual grounding check would not require mechanistic interpretability tooling: it would flag rows where the model cannot identify the source region, without inspecting internal activations. This is a different approach from the prefilled-schema self-consistency technique raised in build 2026-05-25T00.
+
+**Answer:** _add reply here_
+
+### Q: RunanywhereAI and react-native-executorch both trend toward local and on-device AI deployment. Has the team assessed whether enterprise customers have requested an on-premise or locally deployable version of OCR-3 — for example, a quantized sub-8B variant — and if so, whether there is a product or distribution strategy for that segment?
+
+**Context:** OCR-3 at 35B MoE is cloud-only for most deployments. Data-sovereign enterprise customers (finance, healthcare, government) frequently require on-premise processing. If this segment has been identified or requested, a quantized local model would be a distinct product SKU; if not, this question can be closed permanently.
+
+**Answer:** _add reply here_
+
+### Q: PaddleOCR's GitHub description now uses 'structured data for your AI' language nearly identical to Nanonets Agentic Data Extraction's positioning. Is there a published accuracy comparison between PaddleOCR and OCR-3 on a common benchmark (DocVQA, OmniDocBench, or the IDP Leaderboard test set) that could be used in customer evaluations where PaddleOCR appears as a baseline?
+
+**Context:** When two products use identical positioning language, sales evaluations default to cost and availability rather than accuracy. A published head-to-head on a standard benchmark would give the team a factual differentiator. This is specifically about PaddleOCR, which is distinct from the open-source stack (MinerU, opendataloader-pdf) asked about in prior builds.
+
+**Answer:** _add reply here_
+
+---
