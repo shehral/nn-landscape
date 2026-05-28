@@ -1003,3 +1003,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-28T18:15:12+00:00 (audit: partial)
+
+### Q: GLM-5 (Zhipu AI) and Kimi-K2.5 (Moonshot AI) both appear in Ollama's featured model list this cycle. Are these document-AI capable successors to GLM-OCR and the prior Kimi model? If either has document extraction or VQA capabilities, it would qualify as a new IDP Leaderboard entrant and should be added to the competitive registry in nanonets_context.md.
+
+**Context:** GLM-OCR (Zhipu AI, March 2026) is already a named IDP Leaderboard comparable. If GLM-5 is its successor with comparable or improved document capabilities, the registry entry needs updating. Kimi-K2.5 is new to the competitive radar this cycle. A one-sentence answer per model — 'document-capable: yes/no' — resolves the classification permanently.
+
+**Answer:** _add reply here_
+
+### Q: arXiv has returned HTTP 403 for 10+ consecutive builds; the prior build (2026-05-28T12:16) proposed Semantic Scholar API as a specific alternative. Should the team evaluate Semantic Scholar, CrossRef, or another academic preprint API as a replacement source type for arxiv in sources.yaml?
+
+**Context:** Without arXiv, the dashboard has zero primary-research coverage. The team's primary research line (VLM hallucinations, mechanistic interpretability) is structurally absent from every cycle. Semantic Scholar indexes arXiv content, returns structured metadata, and does not apply IP-based rate limiting by default. The prior build asked this question; this build repeats it because the gap is material and no alternative has been implemented.
+
+**Answer:** _add reply here_
+
+### Q: Four open-source PDF extraction tools trended this cycle (PaddleOCR, MinerU, opendataloader-pdf, OCRmyPDF). Should any be added to the competitive registry in nanonets_context.md, or should the registry remain limited to commercial and venture-backed competitors? A categorical yes/no on open-source tools would eliminate recurring re-derivation each cycle.
+
+**Context:** PaddleOCR has been raised in builds 2026-05-21, 2026-05-27T06, 2026-05-27T12, and 2026-05-27T18 without a response. This build adds MinerU and opendataloader-pdf as distinct additional entrants. A standing policy — 'open-source tools are in scope if their composite score exceeds 50 for two consecutive builds' — would be sufficient and would not require answering each tool individually.
+
+**Answer:** _add reply here_
+
+### Q: This build confirms that opendataloader-pdf (opendataloader-project organization) and MinerU (opendatalab organization, Shanghai AI Lab) are independent projects. Should future builds treat them as separate competitive entries with individual framing, or group them as 'open-source document parsing ecosystem' for trend-level analysis?
+
+**Context:** The organizational separation is now confirmed. Both target identical use cases (PDF to LLM-ready data for agentic workflows) and have appeared in at least five consecutive builds. Independent treatment produces two separate framing blocks per build; grouped treatment would produce one cross-item signal but lose per-project tracking. The editorial choice here is a policy decision, not a judgment call.
+
+**Answer:** _add reply here_
+
+### Q: LangChain, Dify, RAGFlow, and UltraRAG each used agent-layer positioning language this cycle that overlaps with Nanonets Agents. Should LangChain specifically be reclassified from integration-partner to competitive in nanonets_context.md, given its explicit 'agent engineering platform' description change? The question was first raised in build 2026-05-28T06 and repeated in 2026-05-28T12; this build adds the cross-item pattern as supporting evidence.
+
+**Context:** LangChain is currently listed as a named integration partner in nanonets_context.md ('LangChain / LlamaIndex integrations' as a distribution feature of Nanonets Agentic Data Extraction). If LangChain is reclassified as competitive, it would score at the same tier as Reducto and LlamaParse and receive fuller framing. If it remains partner-primary, the positioning tension would be noted in framing but not escalate the competitive score.
+
+**Answer:** _add reply here_
+
+---
