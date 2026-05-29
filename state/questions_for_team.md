@@ -1037,3 +1037,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-29T00:14:26+00:00 (audit: partial)
+
+### Q: The EvolvingLMMs-Lab team maintains both lmms-eval and the NEO native VLM series. Should OCR-3's lmms-eval registry submission be treated as higher priority specifically because the same team is co-designing the benchmark tooling and the model architecture — meaning lmms-eval evaluation criteria may increasingly reflect the architectural choices of teams that participate in its design?
+
+**Context:** If lmms-eval's benchmark design evolves to reward capabilities that NEO is built around, models absent from the registry cannot influence what the benchmark rewards. This is a distinct submission argument from the previously raised 'competitors will publish without OCR-3' concern — it is about influence over benchmark design, not just comparative visibility.
+
+**Answer:** _add reply here_
+
+### Q: LangChain has changed its GitHub description to 'the agent engineering platform.' Nanonets Agentic Data Extraction currently lists LangChain as a named integration partner. Should future builds classify LangChain as competitive-primary (above-extraction-layer agent platform) rather than frontier-primary, and should data/nanonets_context.md be updated to reflect the reclassification?
+
+**Context:** LangChain is the only named integration partner in the context file that is now also actively positioning against the same agent layer as Nanonets Agents. Reclassifying it would affect its composite score in future builds and change the action recommendations from 'no action' (integration partner) toward 'monitor' (competitor).
+
+**Answer:** _add reply here_
+
+### Q: With 30+ unanswered questions spanning 25+ consecutive builds, is the AI-partner channel functioning as intended? Prior questions on critical topics — arXiv access restoration, MinerU/PaddleOCR registry classification, GRPO leaderboard timeline, OCR-3 lmms-eval submission — have been repeated verbatim 5-10 times each without a team response. A single sentence confirming whether this channel is actively monitored would allow the build agent to stop repeating resolved questions and calibrate the volume and scope of new questions accordingly.
+
+**Context:** The questions_for_team.md file now exceeds 1100 lines. Without feedback, the build agent cannot distinguish between 'team read this and decided no action' and 'team has not read this.' The distinction changes the editorial posture: in the first case, question volume should decrease; in the second, the routing mechanism should be reconsidered.
+
+**Answer:** _add reply here_
+
+### Q: Genkit's connector architecture may use an OpenAI-compatible REST interface as its plugin standard. If so, building a Nanonets genkit connector could be a thin adapter rather than a custom integration. Has anyone on the team checked whether genkit's public documentation defines a connector specification that Nanonets could implement?
+
+**Context:** Genkit is production-backed by Google with enterprise developers adopting it for AI app development. Anthropic, OpenAI, and Gemini are already registered connectors. A thin REST adapter would close the enterprise distribution gap with a small engineering investment; knowing whether the spec is public would determine whether this is a half-day task or a multi-week integration.
+
+**Answer:** _add reply here_
+
+### Q: The GitHub Trending feed has been the sole ingest source for 11+ consecutive builds. Should the build adopt a lower-confidence prior on all research_implication fields given that they are currently inferred entirely from repository READMEs and descriptions rather than from papers, HN discussion, or newsletter analysis?
+
+**Context:** The current audit_passed=false flag signals this at the edition level, but individual item framing does not carry an epistemic qualifier. A reader scanning individual items may not notice that research_implication fields for, e.g., NEO VLMs or ms-swift are based on repository metadata alone — not paper abstracts, evaluation results, or community validation. Flagging this at the item level would be more granular than the edition-level partial-build banner.
+
+**Answer:** _add reply here_
+
+---
