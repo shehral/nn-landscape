@@ -1127,3 +1127,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-29T00:00:00+00:00 (audit: partial)
+
+### Q: Should the competitive tracking scope expand explicitly to include open-source document parsers (PaddleOCR, MinerU, opendataloader-pdf), not just commercial and semi-commercial vendors?
+
+**Context:** Three open-source PDF-to-structured-data tools trended simultaneously this build. The current competitive set in nanonets_context.md is focused on commercial and semi-commercial players; if developers are choosing self-hosted parsers as substitutes, that represents a distinct competitive dynamic.
+
+**Answer:** _add reply here_
+
+### Q: This is the second consecutive build where arxiv, HN, and RSS all returned errors (403 or zero items); is there a network policy change or API key issue in the crawler environment?
+
+**Context:** Both the 2026-05-24 build and this build relied solely on github_trending. Without arxiv and HN, the doc_ai and vlm_research axes are structurally underpowered. The team should investigate whether the fetcher configuration needs updating.
+
+**Answer:** _add reply here_
+
+### Q: Should lmms-eval be added to the team's standard VLM benchmark suite given its unified multi-task coverage?
+
+**Context:** lmms-eval scored at the top of vlm_research this build. If it includes DocVQA, ChartQA, or OmniDocBench tasks, integrating it would reduce evaluation overhead while broadening the benchmark surface for hallucination studies.
+
+**Answer:** _add reply here_
+
+### Q: Does the IsoCLIP projector decomposition approach intersect with the team's activation-patching protocols enough to warrant a scheduled read?
+
+**Context:** IsoCLIP (CVPR 2026) applies structured projector analysis for intra-modal alignment; the intersection with causal scrubbing, tuned-lens, and sparse autoencoders in the team's research line is potentially non-trivial but could not be confirmed without reading the paper.
+
+**Answer:** _add reply here_
+
+### Q: No item in this build or the previous build names Nanonets or OCR-3 directly; should github_trending be augmented with an explicit Nanonets-mention search to detect hostility or direct comparisons?
+
+**Context:** Two consecutive github_trending-only builds have produced zero hostility flags and zero direct Nanonets mentions. The keyword filter in sources.yaml does not include 'Nanonets' or 'OCR-3', so direct mentions may be systematically missed.
+
+**Answer:** _add reply here_
+
+---
