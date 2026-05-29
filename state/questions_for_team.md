@@ -1071,3 +1071,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-29T06:00:00+00:00 (audit: partial)
+
+### Q: IsoCLIP (CVPR 2026) decomposes CLIP projection layers for intra-modal alignment. Is OCR-3's visual encoder a CLIP-derived architecture? If yes, IsoCLIP is a direct tool for extending the team's existing mechanistic interpretability work to the encoder interface, enabling attribution of structural hallucinations to specific encoder components rather than only to generation-side failures.
+
+**Context:** The team's current interpretability work (logit lens, activation patching, causal scrubbing) targets generation layers. Projector-level analysis would extend coverage upstream; whether it applies depends on the visual encoder architecture, which has not been stated publicly. A one-sentence answer closes the question permanently.
+
+**Answer:** _add reply here_
+
+### Q: PyMuPDF is the underlying PDF parser that MinerU and other open-source competitors use before passing output to a VLM. Has the team run a controlled comparison on benchmark documents where PyMuPDF's structural parsing succeeds versus fails, to quantify what OCR-3's VLM layer adds beyond programmatic parsing alone?
+
+**Context:** This comparison would produce the most precise version of the make-vs-buy argument: the accuracy gap on documents where baseline parsing already works is different from the gap on documents where it fails. Without this, product_implication framing for open-source extraction items defaults to qualitative displacement risk rather than a quantified accuracy differential.
+
+**Answer:** _add reply here_
+
+### Q: Daft (Eventual-Inc) is a high-performance data engine that natively co-processes images and structured data at scale. Is Daft or an equivalent multimodal data processing library used internally for preparing OCR-3 fine-tuning datasets? If not, and if dataset preparation currently requires separate image and annotation pipelines, evaluating Daft as an infrastructure candidate could reduce preprocessing cost.
+
+**Context:** OCR-3 is a multimodal model; its training data combines document images with structured annotations. If current dataset preparation tools handle each modality separately, a native multimodal engine may reduce pipeline complexity. A yes/no on current tooling closes this question.
+
+**Answer:** _add reply here_
+
+### Q: AngelSlim (model compression) co-trends with ms-swift (GRPO fine-tuning) this cycle. The combination enables an external lab to fine-tune a competitive document VLM on extraction tasks via GRPO and compress it to sub-7B for edge deployment. Has the team assessed whether a compressed GRPO-tuned Qwen3-VL or InternVL3.5 could match OCR-3's accuracy on standard benchmarks at a fraction of OCR-3's serving cost — and if so, what the on-premise product strategy is for data-sovereign enterprise customers?
+
+**Context:** OCR-3 at 35B MoE is cloud-only for most deployments. Data-sovereign segments (finance, healthcare, government) require on-premise processing. If a compressed competitive model closes the accuracy gap on IDP Leaderboard tasks while running locally, the serving-cost advantage shifts against OCR-3. Confirming whether this scenario has been characterized would determine whether a quantized OCR-3 variant is a roadmap priority.
+
+**Answer:** _add reply here_
+
+---
