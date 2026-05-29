@@ -1099,3 +1099,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-29T12:00:00+00:00 (audit: partial)
+
+### Q: Have any of the three GRPO pipeline tools (ms-swift, evalscope, lmms-eval) released a pre-configured recipe specifically targeting document extraction tasks (DocVQA, OmniDocBench)?
+
+**Context:** If such a recipe exists, the barrier to a competitive GRPO-tuned document VLM submission drops to hours. Knowing whether an extraction-specific recipe is public would let the team estimate how many labs are currently preparing IDP Leaderboard submissions via this pipeline — and whether proactive benchmarking is needed before those submissions arrive.
+
+**Answer:** _add reply here_
+
+### Q: Is GLM-5 (Zhipu AI, now featured on Ollama) a document-extraction-capable successor to GLM-OCR, or a general-purpose language model without document-AI focus?
+
+**Context:** GLM-OCR (March 2026) is already an IDP Leaderboard comparable with 94.62 on OmniDocBench V1.5. If GLM-5 inherits or improves those capabilities, it is a new leaderboard entrant that should be added to the competitive registry in nanonets_context.md. A one-word answer per capability — 'yes' or 'no' on document extraction — closes the question permanently.
+
+**Answer:** _add reply here_
+
+### Q: Does the team maintain a current map of which orchestration platforms (LangChain, Dify, RAGFlow, Genkit, UltraRAG) have documented integration with Nanonets' extraction APIs?
+
+**Context:** Four agent-platform frameworks trended in the same cycle with overlapping document-workflow capabilities. If an integration map exists, it would allow the team to prioritize closing the largest distribution gaps (e.g., Genkit has no known Nanonets connector despite being Google-backed with enterprise traction). If no map exists, creating one is a one-time effort that would prevent recurring re-derivation in each build cycle.
+
+**Answer:** _add reply here_
+
+### Q: Is the visual encoder in OCR-3 a CLIP-derived architecture (e.g., CLIP ViT, SigLIP, or similar contrastive-pretrained encoder)?
+
+**Context:** IsoCLIP (CVPR 2026) decomposes CLIP projector layers to enable encoder-level interpretability. If OCR-3 uses a CLIP-derived encoder, IsoCLIP is a direct tool for extending the team's existing mechanistic interpretability work (currently focused on generation layers) upstream to the encoder interface, potentially attributing structural hallucinations to specific encoder components. A one-sentence answer closes the question permanently.
+
+**Answer:** _add reply here_
+
+---
