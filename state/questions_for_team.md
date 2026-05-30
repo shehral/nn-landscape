@@ -1217,3 +1217,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-30T12:00:00+00:00 (audit: partial)
+
+### Q: Is GLM-5 (now featured on Ollama) a document-extraction-capable model or a general-purpose LLM without document-AI focus, and if it has document vision capabilities, should it be added to the IDP Leaderboard evaluation queue?
+
+**Context:** GLM-OCR (Zhipu AI, March 2026) scores 94.62 on OmniDocBench V1.5 and is already an IDP Leaderboard comparable. If GLM-5 inherits or improves those capabilities, it is a new leaderboard entrant that should be added to nanonets_context.md. This question was first raised in build 2026-05-29 and remains unanswered. A one-sentence answer closes it permanently.
+
+**Answer:** _add reply here_
+
+### Q: What is 'gpt-oss', now featured on Ollama alongside GLM-5 and Kimi-K2.5 — is it an open-weight OpenAI model, a community alias, or something else — and if it has document-vision capabilities, should it be evaluated on IDP Leaderboard benchmarks?
+
+**Context:** The provenance of gpt-oss is unclear from the Ollama repository listing. This question was raised in build 2026-05-30T00 and remains unanswered. If gpt-oss is a new open-weight OpenAI release with vision and document capabilities, it would be a material new entrant in the competitive registry. A one-sentence answer ends recurring uncertainty.
+
+**Answer:** _add reply here_
+
+### Q: Should PaddleOCR and opendataloader-pdf be added explicitly to the competitive set in nanonets_context.md, given that both now use positioning language nearly identical to Nanonets Agentic Data Extraction?
+
+**Context:** The current competitive set in nanonets_context.md focuses on commercial and semi-commercial vendors. PaddleOCR and opendataloader-pdf are open-source alternatives that developers evaluate as substitutes; both now explicitly frame themselves as 'PDF/image to structured data for LLM pipelines.' Without a clear editorial decision, the dashboard will continue to score them ambiguously each build cycle.
+
+**Answer:** _add reply here_
+
+### Q: Does the team want to add a 'distribution gap' tracking section to nanonets_context.md listing known agent orchestration platforms (Dify, RAGFlow, LangChain, UltraRAG, Genkit) alongside whether a documented Nanonets OCR-3 integration exists for each?
+
+**Context:** Five agent orchestration tools trended this cycle without any known Nanonets connector. This pattern recurs across consecutive builds. A static integration-tracking list in nanonets_context.md would make this a factual lookup rather than an inference re-derived each cycle, and would allow the dashboard to flag new integration gaps as they appear.
+
+**Answer:** _add reply here_
+
+### Q: Is OCR-3's visual encoder a CLIP-derived architecture (SigLIP, CLIP ViT, or similar contrastive-pretrained encoder)?
+
+**Context:** IsoCLIP (CVPR 2026) decomposes CLIP projector layers to enable encoder-level interpretability. If OCR-3 uses a CLIP-derived encoder, IsoCLIP is a direct tool for extending the team's existing mechanistic interpretability work (currently focused on generation layers) upstream to the encoder interface, potentially attributing structural hallucinations to specific encoder components. This question was raised in builds 2026-05-29T06 and 2026-05-29T12 and remains unanswered. A one-sentence answer closes it permanently.
+
+**Answer:** _add reply here_
+
+---
