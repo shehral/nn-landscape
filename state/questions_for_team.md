@@ -1189,3 +1189,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-30T00:00:00+00:00 (audit: partial)
+
+### Q: This build produced only 8 items — the lowest count on record — entirely from GitHub Trending. At what item count should the build trigger a minimum-coverage warning flag distinct from the partial-build banner, to signal the dashboard may be misleading for this cycle?
+
+**Context:** Prior builds produced 20-30 items. Eight items from a single source means the trend analysis and axis rankings have no competitive or research signal to draw on. The partial-build banner fires at source-count < 3 but does not reflect item-count poverty.
+
+**Answer:** _add reply here_
+
+### Q: The full set of competitive document-AI repos (MinerU, Dify, RAGFlow, ms-swift, lmms-eval) that appeared in all prior 20+ builds is entirely absent from this cycle. Should a pinned-repo watch list be added to sources.yaml to ensure known high-priority competitive repos surface even on low-activity GitHub Trending days?
+
+**Context:** Without a watch list, the dashboard produces zero competitive or research signal on days when foundational repos push application-layer repos off the trending list. A small pinned list of 5-10 repos would provide a consistent competitive baseline regardless of GitHub Trending fluctuations.
+
+**Answer:** _add reply here_
+
+### Q: Should the editorial grounding define a class of 'background fixture' repos (TensorFlow, PyTorch, scikit-learn, HuggingFace Transformers) that receive a standing score and a cached framing rather than per-build re-evaluation, freeing scoring capacity for genuinely new items?
+
+**Context:** These foundational repos trend periodically without releasing new document-AI or VLM capabilities; re-scoring and re-framing them each time they appear adds cost without editorial value. A standing score entry in data/nanonets_context.md would resolve this.
+
+**Answer:** _add reply here_
+
+### Q: The prior unanswered question about arXiv and HN 403 failures (raised since at least build 2026-05-21) still stands. This build is the 25th+ consecutive build without arXiv or HN coverage. The prior build explicitly asked for a diagnosis of the failure mode (IP block, rate limit, or network policy). Has that diagnosis been made?
+
+**Context:** Without a diagnosis, the fix cannot be targeted. The VLM hallucination research coverage — the team's primary research direction — has been structurally absent from the dashboard for weeks. This is noted rather than re-asked as a new question.
+
+**Answer:** _add reply here_
+
+---
