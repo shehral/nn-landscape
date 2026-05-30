@@ -1161,3 +1161,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-30T00:00:00+00:00 (audit: partial)
+
+### Q: Is artseek's late-interaction retrieval (ColPali-adjacent, 5M+ multimodal corpus) relevant to OCR-3's /vqa endpoint for multi-page document collection queries, distinct from the generation-time hallucination mitigation paradigm that has been raised in prior builds?
+
+**Context:** Retrieval-based hallucination mitigation has been raised repeatedly, but artseek addresses a different layer: accurate retrieval across a large corpus rather than reducing hallucinations at generation time. If OCR-3's /vqa endpoint operates without a retrieval stage, a late-interaction layer could improve per-query accuracy on dense multi-document inputs. A one-sentence answer distinguishing the two paradigms would allow the dashboard to frame retrieval-based accuracy items separately from hallucination mitigation items in future builds.
+
+**Answer:** _add reply here_
+
+### Q: Could the video-evaluator's spatially-grounded evidence extraction pattern — requiring the model to cite the specific source region for each extracted value — serve as a lightweight phantom-row detection mechanism for OCR-3 by flagging extracted rows that cannot be spatially anchored to the source document image?
+
+**Context:** Phantom-row hallucinations produce table rows absent from the source document. A spatial grounding check is a post-hoc consistency test that does not require mechanistic interpretability tooling: rows without a verifiable visual anchor would flag as potential hallucinations. This approach is distinct from both the prefilled-schema self-consistency technique raised in build 2026-05-25T00 and the retrieval-based mitigation paradigm raised in multiple prior builds.
+
+**Answer:** _add reply here_
+
+### Q: Ollama now features 'gpt-oss' as a named model alongside GLM-5 and Kimi-K2.5. What is gpt-oss — is it an open-weight OpenAI model, a community alias for an existing model, or something else — and if it has document vision capabilities, should it be evaluated for IDP Leaderboard submission?
+
+**Context:** The provenance of gpt-oss is unclear from the Ollama repository description. GLM-OCR (Zhipu AI) is already an IDP Leaderboard comparable; if gpt-oss is a new open-weight OpenAI model with vision and document capabilities, it would be a material new entrant. A one-sentence answer would end recurring uncertainty about the Ollama featured-model list and determine whether gpt-oss belongs in the competitive registry.
+
+**Answer:** _add reply here_
+
+### Q: With the GRPO fine-tuning supply chain now functionally complete for three IDP Leaderboard model families in a single build cycle (ms-swift for training, evalscope for evaluation, LLaVA-OneVision-1.5 as a third fine-tune base), does the team intend to run a proactive OCR-3 benchmark baseline on the held-out test set before an external submission appears, and is there an assigned owner?
+
+**Context:** Prior builds (2026-05-28T06, 2026-05-28T12, 2026-05-29) raised the GRPO timeline question without this specificity. This build marks the first cycle in which all three supply chain components trend together, which changes the timeline estimate from 'months' toward 'weeks.' The question asks specifically about baseline preparation and ownership, not timeline estimation, to frame it as an action item rather than a forecast.
+
+**Answer:** _add reply here_
+
+---
