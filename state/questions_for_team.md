@@ -1285,3 +1285,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-31T06:13:51+00:00 (audit: partial)
+
+### Q: video-evaluator, artseek, and Knowledge-Infused-Multimodal-Retrieval all address spatially-grounded or retrieval-based hallucination detection in a single cycle — the first time all three paradigms trend together. Should the team run a 1-2 day feasibility experiment comparing spatial grounding (anchoring extracted rows to source document regions) against the current mechanistic interpretability protocols on a common phantom-row benchmark?
+
+**Context:** The spatial grounding approach is post-hoc and tool-independent, requiring no access to internal model activations. It is distinct from both retrieval-based mitigation and mechanistic interpretability. Whether it is complementary or redundant to the existing phantom-row research line cannot be determined without a brief comparative experiment. The three paradigms have not been benchmarked against each other.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift's model list now explicitly names Qwen3-VL (as the 3.6-series variant), InternVL3.5, and GLM-5.1 — specifically the most recent versions of each model family. Is this a qualitative update to ms-swift's GRPO capability (new version support starting now) or a list expansion of existing support that has been available for prior cycles?
+
+**Context:** The distinction changes the timeline estimate for a potential IDP Leaderboard submission: if GRPO for Qwen3-VL 3.6 specifically is new capability, the preparation window starts now. If this is continuity of existing support, the window may have already started several builds ago. A one-sentence answer changes the urgency of a proactive baseline run.
+
+**Answer:** _add reply here_
+
+### Q: Two AI coding assistant tools that use document parsing as a component (Skill_Seekers: PDF-to-Claude-skills; graphify: docs/papers/images-to-queryable-knowledge) trend in the same cycle as the document AI and agent platforms. Should AI coding tools that bundle document parsing be tracked as a distribution-channel competitive threat — distinct from extraction-layer and orchestration-layer categories — where the relevant question is not extraction quality but whether they commoditize the parsing step?
+
+**Context:** Neither tool is a named competitive entrant in data/nanonets_context.md. The pattern suggests developer demand for document-to-AI-context pipelines is being met by coding assistant skills rather than standalone OCR APIs. Whether this is a meaningful channel to track depends on the team's distribution strategy, which this dashboard cannot infer.
+
+**Answer:** _add reply here_
+
+### Q: Should the build begin tracking composite-score trajectories across consecutive builds — flagging items whose score is increasing versus stable — to distinguish genuinely new signal from recurring fixtures? The current schema has no mechanism for inter-build item continuity accessible to the scoring step.
+
+**Context:** The github_trending source produces a similar item set each cycle; the editorial value of re-framing stable items (ms-swift, Dify, LightRAG) from scratch each build is unclear. A trajectory flag would require the build to compare scored items against state/seen.json or a prior edition.json — neither is currently exposed to the scoring step. This is a schema-level question about what the pipeline should expose.
+
+**Answer:** _add reply here_
+
+---
