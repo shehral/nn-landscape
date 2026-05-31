@@ -1313,3 +1313,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-31T18:15:24+00:00 (audit: partial)
+
+### Q: PyMuPDF is the deterministic parsing layer underlying MinerU and opendataloader-pdf. Has the team run a controlled comparison showing OCR-3's accuracy gain over PyMuPDF-only parsing on a held-out set of IDP Leaderboard documents — specifically on the table-dense and handwritten subsets where programmatic parsing is known to fail?
+
+**Context:** PyMuPDF reached composite=46 this build (highest doc_ai score). Without a quantified accuracy differential on the documents where PyMuPDF fails, the make-vs-buy argument against open-source competitors defaults to qualitative claims. A one-page table comparing PyMuPDF baseline versus OCR-3 on FUNSD, CORD, and a dense-table subset would provide a customer-facing differentiator.
+
+**Answer:** _add reply here_
+
+### Q: LightRAG (EMNLP 2025) uses graph-augmented retrieval combining entity and relationship extraction; does graph-structured retrieval over OCR-3 structured output offer a measurable accuracy advantage over flat-vector RAG for document QA tasks on the IDP Leaderboard's document-reasoning subset?
+
+**Context:** LightRAG reached composite=34 and is distinct from the retrieval-based hallucination mitigation items raised in prior builds — it addresses retrieval accuracy across a structured document collection, not generation-time hallucination. Whether graph-structured retrieval of OCR-3 output provides a measurable improvement on multi-hop document questions is an empirical question the team could answer with a one-day experiment on a public benchmark.
+
+**Answer:** _add reply here_
+
+### Q: NeMo Automodel (NVIDIA distributed training) and AngelSlim (Tencent model compression) both trend this cycle alongside ms-swift GRPO. If an external lab fine-tunes a competitive document VLM using NeMo with GRPO supervision and then compresses it to sub-8B using AngelSlim, what is the team's current estimate of whether the compressed model could match OCR-3's accuracy on the IDP Leaderboard's standard benchmark set?
+
+**Context:** This is a specific scenario question rather than a timeline question. The combination of NeMo + ms-swift GRPO + AngelSlim trending together means the complete pipeline for this scenario exists in public tooling. Knowing whether the team has stress-tested this scenario on their private test set would determine whether a proactive response — a quantized OCR-3 variant, a compressed-model benchmark run — is warranted.
+
+**Answer:** _add reply here_
+
+### Q: genkit (Google) is production-backed with enterprise-grade SDKs and registers Anthropic, OpenAI, and Gemini as native connectors. Has anyone checked whether genkit's plugin specification requires a custom integration or uses an OpenAI-compatible REST interface that would allow a Nanonets connector to be built as a thin adapter?
+
+**Context:** This question was last raised in build 2026-05-29T00 and remains unanswered. It is repeated once more because genkit has now trended for multiple consecutive builds and the technical barrier question — custom vs. REST-adapter — determines whether this is a half-day task or a multi-week integration. Knowing the answer ends the recurring distribution-gap question for genkit specifically.
+
+**Answer:** _add reply here_
+
+### Q: Dify, BiSheng, LangChain, Flowise, and genkit all trend without confirmed Nanonets connectors. Do these orchestration platforms set their document parsing defaults at the platform level (i.e., a configuration the developer changes per-project) or at an organization or distribution level that a community connector cannot override?
+
+**Context:** If parsing defaults are set per-project, a community connector immediately closes the gap. If they are set at the distribution level — bundled at install time, requiring the platform vendor's action — then connectors are insufficient and a partnership or co-marketing arrangement is the relevant mechanism. This distinction changes the type of action required and has not been asked in this form in prior builds.
+
+**Answer:** _add reply here_
+
+---
