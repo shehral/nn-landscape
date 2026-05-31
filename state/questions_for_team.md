@@ -1251,3 +1251,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-05-31T12:00:00+00:00 (audit: partial)
+
+### Q: Is there an assigned owner for a proactive OCR-3 benchmark baseline run before an external GRPO-tuned IDP Leaderboard submission arrives?
+
+**Context:** ms-swift, lmms-eval, and LLaVA-OneVision-1.5 now form a complete fine-tune-to-evaluate supply chain for three IDP Leaderboard model families in a single cycle, lowering the submission timeline from months to weeks. This question was first raised in build 2026-05-28 and is not repeated from a new angle — it is the same urgent ask, now with a complete supply chain as evidence.
+
+**Answer:** _add reply here_
+
+### Q: What is the barrier to OCR-3 registry submission in lmms-eval: a process question (who submits), a compute question (running the benchmarks), or a policy question about not publishing before a controlled announcement?
+
+**Context:** lmms-eval registers Qwen3-VL, GLM-5.1, and InternVL3.5 but not OCR-3. Competitors publish benchmark comparisons using this framework without OCR-3 as a reference point. Knowing which of the three barriers applies determines the correct action — assign a person, allocate compute, or make a policy decision. Prior builds raised whether the team uses lmms-eval internally; this build asks the root-cause question instead.
+
+**Answer:** _add reply here_
+
+### Q: Should LangChain be reclassified from integration partner to competitive-primary in nanonets_context.md, given its 'agent engineering platform' repositioning that directly overlaps Nanonets Agents?
+
+**Context:** LangChain is currently listed as a named integration partner. Its GitHub description now reads 'the agent engineering platform.' This dual status means future builds must independently re-derive whether to score it competitive=2 (partner) or competitive=4 (direct competitor) each cycle. A one-sentence policy decision resolves this permanently.
+
+**Answer:** _add reply here_
+
+### Q: Should github_trending-only signal be treated as the accepted operating norm and noted in nanonets_context.md, or is there an owner and deadline for restoring arXiv or HN access?
+
+**Context:** This is the 30th+ consecutive build with no arXiv, HN, or RSS coverage. Without primary research sources, vlm_research and doc_ai research_implication fields are inferred from repository metadata alone, which changes their epistemic status. A policy decision in either direction would end the recurring infrastructure question — this is the final time this build will surface it as a new question.
+
+**Answer:** _add reply here_
+
+### Q: Should the questions_for_team.md channel be routed to a different surface — Slack, Linear, or email digest — given that it now exceeds 1,250 lines with zero team responses across 30+ consecutive builds?
+
+**Context:** Questions on critical topics (arXiv access, MinerU/PaddleOCR registry, GRPO timeline, LangChain reclassification, OCR-3 lmms-eval submission) have been repeated verbatim 5-10 times each without resolution. If the channel is not being read, routing it to an actively monitored surface would restore its value; if it is being read and no action was warranted, a single confirmation would allow the build agent to reduce question volume accordingly.
+
+**Answer:** _add reply here_
+
+---
