@@ -1415,3 +1415,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-01T08:00:00+00:00 (audit: partial)
+
+### Q: ms-swift's supported model list now explicitly includes Qwen3-Omni alongside Qwen3-VL. Is Qwen3-Omni a document-AI capable model warranting IDP Leaderboard evaluation, or is it speech/audio-focused without document-parsing depth?
+
+**Context:** Qwen3-Omni is a new addition to ms-swift's MLLM support list this cycle; prior builds tracked Qwen3-VL but not the Omni variant. If Qwen3-Omni handles document inputs with accuracy comparable to Qwen3-VL, it is a new leaderboard entrant. A one-sentence answer per capability — document-extraction capable: yes/no — closes the question permanently and determines whether it should be added to nanonets_context.md alongside Qwen3-VL.
+
+**Answer:** _add reply here_
+
+### Q: Mem0, RAGFlow, and Dify trend together this cycle, forming a multi-layer agent stack: memory (Mem0), retrieval-augmented orchestration (RAGFlow), and workflow execution (Dify). Is there a confirmed or planned Nanonets OCR-3 integration at the document-ingestion step of this stack, or does Nanonets Agents compete at the full-stack level where these tools are already bundled?
+
+**Context:** The three tools address different layers of the same enterprise document workflow: Mem0 provides long-term agent memory, RAGFlow handles retrieval and orchestration, and Dify handles workflow execution. If these are being adopted as a combined stack by enterprise customers, a Nanonets connector at the RAGFlow document-ingestion layer would propagate through the full stack. If Nanonets Agents targets the same workflow at the full-stack level, the connector opportunity and the competitive threat are the same.
+
+**Answer:** _add reply here_
+
+### Q: Skill_Seekers and graphify both use 'PDFs to AI context' framing specifically in the context of AI coding assistants (Claude Code, Codex, Cursor). Is there developer demand for a Nanonets /parse-backed Claude Code skill or Cursor plugin that parses uploaded documents into structured context — a distribution channel distinct from enterprise document processing?
+
+**Context:** Both tools co-trend this cycle as GitHub-hosted AI coding skills that treat document parsing as an ingestion step. This is a different developer segment from the enterprise document AI buyer; it suggests developers are solving document-to-context problems within their coding workflows. A Nanonets-backed skill in this category would reach developers who already use Claude Code or Cursor without a separate procurement process.
+
+**Answer:** _add reply here_
+
+### Q: The NVIDIA VSS Blueprint requires vision agents to cite specific source regions for each extracted value. Has the team considered applying an equivalent spatial-anchoring constraint as a post-hoc phantom-row check for OCR-3 — specifically, verifying that each extracted table row corresponds to a locatable region in the source document image — and if so, is there an existing spatial grounding capability in OCR-3's /parse output that could serve this role?
+
+**Context:** This is distinct from the retrieval-based mitigation and mechanistic interpretability paradigms raised in prior builds. It is a behavioral consistency check: rows the model cannot spatially anchor would flag as candidate hallucinations without requiring access to model activations or a retrieval index. Whether OCR-3's current output format includes bounding box or region data that would enable this check determines whether it is a half-day experiment or a capability gap.
+
+**Answer:** _add reply here_
+
+---
