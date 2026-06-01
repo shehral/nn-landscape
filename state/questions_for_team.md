@@ -1381,3 +1381,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-01T06:14:06+00:00 (audit: partial)
+
+### Q: Is there a confirmed Nanonets OCR-3 document loader in the official LangChain integration hub (langchain.com/docs/integrations/document_loaders)?
+
+**Context:** LangChain is listed as a named integration partner in nanonets_context.md, but its GitHub description now reads 'the agent engineering platform,' directly overlapping Nanonets Agents. A yes/no on whether a confirmed OCR-3 loader exists in the integration hub would immediately resolve whether the 'investigate' action recommendation requires engineering effort or is already addressed. This question is distinct from the LangChain reclassification question raised in prior builds — it asks about a specific integration artifact, not editorial taxonomy.
+
+**Answer:** _add reply here_
+
+### Q: What is OCR-3's current production serving framework — SGLang, standard vLLM, custom infrastructure, or another option?
+
+**Context:** SGLang, NeMo Automodel, and XTuner have each trended in consecutive builds as serving and training infrastructure applicable at OCR-3's scale. Without knowing the current serving framework, the build cannot determine whether these items represent gaps to evaluate or infrastructure already in place. A single sentence naming the framework would permanently close the serving-infrastructure question for all future builds.
+
+**Answer:** _add reply here_
+
+### Q: Is there an assigned owner for an OCR-3 baseline run on the evalscope harness before an external GRPO-tuned IDP Leaderboard submission arrives from ms-swift + evalscope users?
+
+**Context:** ms-swift, evalscope, and LLaVA-OneVision-1.5 trend together this cycle, completing the fine-tune-to-evaluate pipeline for Qwen3.6, GLM-5.1, and InternVL3.5. OCR-3 is absent from the evalscope model registry. The question is not about timeline estimation but about preparation: a specific person assigned to run OCR-3 through evalscope on DocVQA and OmniDocBench would allow a published rebuttal baseline before external submissions arrive. This question was first raised in build 2026-05-28 and has not been answered.
+
+**Answer:** _add reply here_
+
+### Q: Should opendataloader-pdf and MinerU be added to the named competitive set in nanonets_context.md — either individually or as a class entry for 'open-source LLM-ready document parsers'?
+
+**Context:** Both projects use the same positioning language as Nanonets Agentic Data Extraction, have appeared in every build for 30+ consecutive cycles, and score at competitive=4 and doc_ai=5 this build. The organizational relationship between opendataloader-project (opendataloader-pdf) and opendatalab (MinerU, Shanghai AI Lab) remains unconfirmed from prior builds. A registry entry — or a categorical yes/no on whether open-source parsers belong in the competitive set — would eliminate per-build re-derivation. This question was first raised in build 2026-05-21 with no response across 20+ build cycles.
+
+**Answer:** _add reply here_
+
+### Q: Is github_trending-only signal the accepted operating norm for this dashboard, or is there an owner and deadline for restoring arXiv, HN, or RSS access?
+
+**Context:** arXiv and HN have returned HTTP 403 for 30+ consecutive builds; RSS has returned zero items for multiple consecutive builds. This build operates on github_trending alone, meaning the vlm_research and doc_ai research_implication fields are inferred entirely from repository metadata rather than papers or community discussion. This is the final time this specific question will be raised as new; if no answer arrives, the build will proceed with github_trending-only signal as the de facto norm and adjust the epistemic framing of research_implication fields accordingly in future editions.
+
+**Answer:** _add reply here_
+
+---
