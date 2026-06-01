@@ -1347,3 +1347,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-01T00:00:00+00:00 (audit: partial)
+
+### Q: SGLang implements constrained decoding and prefix caching at the serving layer. Is there a benchmark result comparing SGLang-constrained OCR-3 inference against unconstrained output on the phantom-row subset of the IDP Leaderboard test set, or is serving-layer constraint-based hallucination mitigation outside the current research scope?
+
+**Context:** SGLang's structured output constraints can prevent repetition loops and potentially reduce phantom-row rates without model weight changes. If OCR-3 already uses SGLang as its serving backend, this is an existing lever; if not, the gap between serving-layer and weight-level mitigation is the relevant question. This angle has not appeared in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift's current supported model list names Qwen3.6, GLM-5.1, and InternVL3.5 — the 2026-series successors to current IDP Leaderboard comparables. Are these model versions already registered on the IDP Leaderboard, or are they pending entrants whose submission would change current standings?
+
+**Context:** The IDP Leaderboard was last confirmed to show OCR-3 at #1 with 85.9% overall. If 2026-series model variants with GRPO fine-tuning have already been submitted or are in progress, the competitive landscape may have shifted since the most recent context.md update (2026-05-31). A one-sentence answer closes the question permanently.
+
+**Answer:** _add reply here_
+
+### Q: DataChain (datachain-ai) describes itself as 'the context layer for unstructured data' with versioned datasets over cloud storage. Should it be classified as a competitive entrant on the extraction pipeline layer, an integration-partner opportunity for OCR-3 as an ingestion step, or noise for this dashboard?
+
+**Context:** DataChain is not in the current competitive registry. Its framing overlaps with Nanonets Agentic Data Extraction on pipeline positioning, but the scope is storage abstraction rather than extraction accuracy. Without a policy decision, future builds will re-derive the classification each cycle.
+
+**Answer:** _add reply here_
+
+### Q: MinerU, Skill_Seekers, DataChain, and Paperless-ngx all used 'LLM-ready' or 'agentic workflows' framing this cycle — identical to Nanonets Agentic Data Extraction's positioning. Has the team run an accuracy comparison between MinerU's output and OCR-3's /parse output on a held-out document set, specifically on table-dense and handwritten subsets where rule-based parsing is known to degrade?
+
+**Context:** The competitive risk from open-source tools using identical positioning language may be primarily reputational (messaging confusion) or functional (genuine accuracy competition). A one-page accuracy comparison on FUNSD, CORD, or a dense-table subset resolves which risk is primary and what the correct counter-positioning should be.
+
+**Answer:** _add reply here_
+
+### Q: LangChain and LangGraph trended together this cycle, forming a full-stack agent platform. The prior build raised LangChain's reclassification from integration partner to competitive-primary; LangGraph adds the stateful orchestration layer that makes the full stack complete. Is there a confirmed Nanonets OCR-3 document loader in the official LangChain integration hub, and if not, is building one a half-day task or a multi-week integration?
+
+**Context:** LangChain document extraction defaults propagate through all LangGraph-based applications. The prior reclassification question (raised 2026-05-31T12) remains unanswered; this version asks the integration-status question instead, which is actionable regardless of the classification decision.
+
+**Answer:** _add reply here_
+
+---
