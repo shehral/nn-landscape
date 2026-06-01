@@ -1443,3 +1443,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-01T12:00:00+00:00 (audit: partial)
+
+### Q: Does the AI-Check governance compliance checklist address the specific regulatory requirements for document AI in finance and healthcare contexts where OCR-3 customers operate — and if so, does OCR-3's current compliance documentation cover these requirements?
+
+**Context:** AI-Check (trending this cycle, first appearance) provides a compliance checklist for secure, compliant LLM integration. Document AI for accounts payable, healthcare RCM, and contracts involves jurisdictional data-handling requirements (SOC 2, HIPAA, GDPR). Whether OCR-3 already satisfies this checklist's demands — or whether it reveals a documentation gap — would determine whether this is an operational risk item or noise for this dashboard.
+
+**Answer:** _add reply here_
+
+### Q: screenpipe (YC S26) captures everything a user sees, hears, and says continuously, locally and privately. Is there a distribution use case where OCR-3's /parse or /extract endpoint serves as screenpipe's document understanding layer for continuously-captured PDF and form images — a consumer/prosumer segment distinct from Nanonets' current enterprise API customer base?
+
+**Context:** screenpipe is locally hosted with privacy-first framing, targeting individuals rather than enterprise document processing. If screenpipe or its SDK partners adopt OCR-3 as the structured-extraction step for captured documents, it would represent a new distribution channel without a traditional procurement process. Whether this segment fits Nanonets' distribution strategy is a team decision; this is the first time screenpipe has appeared in this build series.
+
+**Answer:** _add reply here_
+
+### Q: AngelSlim (compression), ms-swift GRPO (training), and LLaVA-OneVision-1.5 (fine-tune base) trend together for the first time in a single cycle as a complete compress-train-deploy pipeline. Has the team stress-tested the worst-case scenario — a GRPO-fine-tuned, AngelSlim-compressed Qwen3-VL sub-8B model on the IDP Leaderboard's table-dense subset — to estimate the accuracy gap it would need to close against OCR-3 before it becomes a material on-premise threat?
+
+**Context:** This specific three-way combination (all three components in one cycle) is new. The scenario removes both the cloud-access and serving-cost barriers for data-sovereign customers. Prior builds asked about GRPO timelines and AngelSlim individually; this question is specifically about the combined pipeline's accuracy ceiling on the document-extraction task, which is an empirical question the team could stress-test privately.
+
+**Answer:** _add reply here_
+
+### Q: OpenBB (financial data platform for quants, analysts, and AI agents) appeared for the first time this build. Is there a documented OCR-3 integration for financial document ingestion — earnings releases, fund prospectuses, SEC filings, contracts — that feeds OpenBB's structured data pipeline, or is this a distribution gap in the quantitative finance segment?
+
+**Context:** OpenBB targets a user segment processing large volumes of financial documents requiring structured extraction. The overlap with Nanonets' accounts payable and contract use cases suggests a natural integration, but the direction — OCR-3 as the ingestion step for OpenBB, or OpenBB as a display layer for OCR-3 output — determines the correct distribution strategy. This is OpenBB's first appearance in this build series.
+
+**Answer:** _add reply here_
+
+### Q: LLaVA-OneVision-1.5 provides a non-MoE open architecture at a different parameter count from OCR-3. Has the team assessed it as a candidate for cross-architecture hallucination transfer experiments — specifically, whether phantom-row hallucinations observed in OCR-3 (35B MoE) transfer to the LLaVA-OneVision architecture class?
+
+**Context:** The team's published research line includes cross-architecture hallucination transfer. A non-MoE architecture at lower parameter count would test whether phantom-row modes are architecture-class-specific or architecture-agnostic. Prior builds asked about LLaVA-based IDP Leaderboard submissions; this question is specifically about research utility for the hallucination transfer work, not the competitive threat, and has not been asked in this form before.
+
+**Answer:** _add reply here_
+
+---
