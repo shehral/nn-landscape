@@ -1511,3 +1511,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-02T12:00:00+00:00 (audit: partial)
+
+### Q: ms-swift's updated MLLM support list now names GLM4.5v explicitly — a variant distinct from GLM-OCR. Is GLM4.5v a document-extraction-capable successor or peer to GLM-OCR (which scores 94.62 on OmniDocBench V1.5), and if so, should it be queued for IDP Leaderboard evaluation before a community GRPO fine-tune is submitted using ms-swift?
+
+**Context:** GLM-OCR is already a named IDP Leaderboard comparable. If GLM4.5v inherits or extends those document capabilities, its addition to ms-swift's GRPO support list means the external lab fine-tuning pipeline is already available. A one-sentence yes/no on document-extraction capability closes the question permanently and determines whether it should be added to nanonets_context.md.
+
+**Answer:** _add reply here_
+
+### Q: genkit has now trended in multiple consecutive builds without a confirmed Nanonets connector. Does genkit publish a plugin contribution guide or connector specification that defines what a third-party connector submission requires, and is the technical barrier a REST adapter (likely a half-day effort if genkit uses OpenAI-compatible REST) or a custom integration (multi-week)?
+
+**Context:** Anthropic, OpenAI, and Gemini connectors are already registered in genkit. Prior builds asked whether building a Nanonets connector is prioritized; this question asks specifically about the technical specification, which determines the cost estimate. Knowing the barrier type converts a recurring monitoring action into either a concrete engineering task or a confirmed no-priority decision.
+
+**Answer:** _add reply here_
+
+### Q: Does OCR-3's /parse endpoint currently return bounding box or coordinate data for extracted table rows and cells, and if so, has spatial consistency (requiring each extracted row to have a verifiable visual anchor in the source document) been tested internally as a lightweight phantom-row detection filter?
+
+**Context:** The NVIDIA VSS Blueprint and video-evaluator both implement spatial evidence anchoring — extracted values must cite the source region. Applied to document extraction, rows without a verifiable anchor are candidate phantom rows. This is a behavioral check requiring no model internals; whether it is already in use or available to implement depends entirely on OCR-3's output format, which has not been confirmed publicly.
+
+**Answer:** _add reply here_
+
+### Q: Should nanonets_context.md define a list of background-fixture repositories — specifically TensorFlow, PyTorch, scikit-learn, and Tesseract — that receive a standing composite score and cached one-line summary rather than per-build re-scoring, to free scoring capacity for genuinely new items?
+
+**Context:** These four foundational repositories trend periodically without releasing document-AI or VLM-relevant updates; re-scoring them each cycle adds overhead without editorial value. A standing entry in context.md would reduce per-build scoring cost for background noise while preserving tracking for any future release that does include a relevant update.
+
+**Answer:** _add reply here_
+
+### Q: Does Nanonets Agentic Data Extraction have a documented, maintained integration with RAGFlow specifically — not just LangChain — that a developer would find when searching RAGFlow's documentation for extraction providers?
+
+**Context:** Unstructured.io appears to be RAGFlow's default extraction option. If a Nanonets connector exists but is not surfaced in RAGFlow's documentation, the distribution gap is a discoverability problem rather than a missing integration; if no connector exists, it is an engineering gap. The distinction determines the correct action. This question is narrower than prior builds' connector-gap questions, which addressed multiple platforms simultaneously.
+
+**Answer:** _add reply here_
+
+---
