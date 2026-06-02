@@ -1477,3 +1477,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-02T06:00:00+00:00 (audit: partial)
+
+### Q: ms-swift this cycle adds Qwen3-Omni to its GRPO MLLM support list. Is Qwen3-Omni document-extraction capable — i.e., does it handle structured extraction from PDFs and images at a level comparable to Qwen3-VL? A yes/no per capability would determine whether it should be added to the IDP Leaderboard evaluation queue alongside GLM-5.
+
+**Context:** Qwen3-Omni is the first new model addition to ms-swift's supported list this cycle. Qwen3-VL is already tracked as an IDP Leaderboard comparable. If Qwen3-Omni adds document extraction depth on top of audio/video, it is a new leaderboard entrant in the making; if it is speech/audio-focused only, it does not warrant tracking on the competitive axis.
+
+**Answer:** _add reply here_
+
+### Q: LangChain's description reads 'the agent engineering platform,' directly overlapping Nanonets Agents positioning. LangChain is currently a named Nanonets integration partner. Should it be reclassified from integration partner to competitive-primary in nanonets_context.md? A yes/no would end six consecutive builds of per-build re-derivation on this item.
+
+**Context:** The dual status creates scoring ambiguity: integration partners score competitive=1–2, named competitors score competitive=3–4. LangChain currently receives competitive=3 in this build's scoring based on the 'agent engineering platform' repositioning, but without a confirmed editorial policy, each build independently re-derives this. This is the sixth consecutive build asking the same classification question.
+
+**Answer:** _add reply here_
+
+### Q: PaddleOCR has appeared for 15+ consecutive builds at composite >= 60 using OCR-3's exact positioning phrase. Should it be added to the competitive set in nanonets_context.md? A single yes/no ends recurring re-derivation. If yes, include a one-sentence description and any accuracy data the team has for scoring calibration.
+
+**Context:** This question was first raised in the build 2026-05-21T08:30 and has not been answered across 15+ cycles. Without a registry entry, PaddleOCR receives competitive=4 based on ad hoc scoring each build. The only new information this cycle is its doc_ai=5 score — the same product phrase, same language coverage, same open-source licensing.
+
+**Answer:** _add reply here_
+
+### Q: lmms-eval registers Qwen3-VL, InternVL3.5, and GLM4.5v but not OCR-3. What is the barrier to an OCR-3 registry submission: process (who files the PR), compute (running the benchmark harness), or policy (not publishing before a controlled announcement)?
+
+**Context:** This root-cause question was first raised in build 2026-05-28T12:16 and remains unanswered. Competitive labs are already using lmms-eval to publish comparisons that structurally exclude OCR-3. Knowing which of the three barriers applies determines the correct action — assign a person, allocate compute, or make a policy decision — rather than flagging the absence each cycle.
+
+**Answer:** _add reply here_
+
+### Q: Four complementary VLM hallucination detection paradigms are now visible in one cycle: mechanistic interpretability (team's current work), NVIDIA-VSS spatial grounding, video-evaluator evidence anchoring, and Knowledge-Infused-Multimodal-Retrieval. Has the team assessed whether any of these behavioral paradigms (which require no access to internal activations) is worth running as a 1-day ablation alongside the interpretability work on the phantom-row benchmark?
+
+**Context:** Prior builds asked whether retrieval-based mitigation is inside or outside the research scope; that question remains unanswered. This build reframes it: the behavioral paradigms do not compete with mechanistic interpretability — they require no weight inspection — so the question is whether any provides a cheap complementary signal worth quantifying before committing to a full parallel research line.
+
+**Answer:** _add reply here_
+
+---
