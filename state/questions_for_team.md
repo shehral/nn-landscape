@@ -1545,3 +1545,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-02T18:19:42+00:00 (audit: partial)
+
+### Q: Ollama added GLM-5 (Zhipu AI) to its supported model list this cycle, distinct from GLM-OCR (which scores 94.62 on OmniDocBench V1.5 and is an IDP Leaderboard comparable). Is GLM-5 a vision-capable model with document extraction depth comparable to GLM-OCR, or is it a language-only model? A one-sentence yes/no per capability — vision-capable, document-extraction capable — would determine whether GLM-5 should be queued for IDP Leaderboard evaluation alongside GLM-OCR.
+
+**Context:** GLM-5 appears in Ollama's supported model list for the first time this cycle alongside Kimi-K2.5 and MiniMax. If GLM-5 inherits or extends GLM-OCR's document extraction capability, its local availability via Ollama means it is already accessible for on-premise competitive evaluation without API access. This question has not been asked in prior builds because GLM-5 is new to Ollama's model list this cycle.
+
+**Answer:** _add reply here_
+
+### Q: evalscope supports DocVQA and OmniDocBench evaluations and serves as the evaluation frontend for the ms-swift GRPO fine-tuning pipeline. OCR-3 is absent from evalscope's model registry. What is the technical process for submitting a new model entry to evalscope — specifically, is it a pull request to the ModelScope evalscope repository with a configuration file, or does it require a ModelScope API account and integration work? The process type determines whether registry submission is a half-day engineering task or a multi-week effort.
+
+**Context:** The parallel absence of OCR-3 from both lmms-eval (asked in prior builds, unanswered) and evalscope means competitive labs can publish DocVQA and OmniDocBench results from both harnesses without a named OCR-3 baseline. This is the first build to raise the evalscope registry question specifically; prior questions addressed only lmms-eval.
+
+**Answer:** _add reply here_
+
+### Q: AngelSlim compresses Qwen3-VL and InternVL3.5 for on-premise deployment. No public benchmark reports the accuracy degradation from AngelSlim compression on DocVQA or OmniDocBench specifically. Has the team run any internal compression evaluation of an IDP Leaderboard comparable using AngelSlim on the table-dense OmniDocBench subset, to bound the accuracy gap against OCR-3? The outcome determines whether a compressed sub-8B Qwen3-VL is a material on-premise threat within the current IDP Leaderboard margin.
+
+**Context:** The compress-train-deploy pipeline (AngelSlim + ms-swift GRPO + evalscope) has been visible across multiple consecutive build cycles. Prior builds asked about the pipeline at the strategic level; this question is specifically about AngelSlim's accuracy cost on the document extraction task, which is an empirical question the team could bound with an existing model checkpoint and has not been asked in this form before.
+
+**Answer:** _add reply here_
+
+### Q: The RAGFlow + Dify + Unstructured.io open-source enterprise document stack trends together for the second consecutive build cycle. Of the three tools — RAGFlow, Dify, and Unstructured.io — which has the most accessible connector contribution path for a third-party extraction provider, defined as: a documented plugin API, active connector PRs from non-core contributors, and maintainer responsiveness? Identifying the single lowest-barrier tool would convert recurring monitoring of this stack into a one-tool investigation with a concrete deliverable.
+
+**Context:** Prior builds asked about RAGFlow specifically and Dify separately in different cycles; this build combines them because all three co-trend and form a unified stack. The question has not been asked in this combined form before. Unstructured.io's pipeline API also warrants investigation as the component that directly handles extraction in the stack.
+
+**Answer:** _add reply here_
+
+### Q: LLaVA-OneVision-1.5 provides a documented build-and-train framework for multimodal models and is in the ms-swift GRPO fine-tuning pipeline. For the team's cross-architecture hallucination transfer research, the key prerequisite is whether LLaVA-OneVision-1.5's training configuration — dataset composition, document task mix, image resolution settings — is publicly documented in enough detail to replicate OCR-3's document fine-tuning distribution at a smaller scale. Is this configuration public, and if so, is there an owner for a one-GPU-day phantom-row transfer experiment using test cases from OCR-3's evaluation set?
+
+**Context:** Prior builds asked about the team's strategic interest in using LLaVA-based architectures for cross-architecture comparison; this question asks the concrete first-step question — whether the training configuration is available — which determines whether a transfer experiment is a half-day setup or a multi-week data reconstruction effort. LLaVA-OneVision-1.5 is in ms-swift's supported list this cycle for the first time at this version.
+
+**Answer:** _add reply here_
+
+---
