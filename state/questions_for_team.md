@@ -1613,3 +1613,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-03T06:10:12+00:00 (audit: partial)
+
+### Q: The github_trending source returned zero items this build for the first time across 30+ consecutive builds. Is this a GitHub API change, a topic-filter exhaustion, or a network policy change in the build environment?
+
+**Context:** github_trending was the sole working source for the past 30+ builds. Its first-ever failure eliminates the last remaining signal source. Prior builds' 'no items in current window' for RSS was attributed to stale feeds; the same phrase for github_trending points to a different root cause — the topics filter (machine-learning, llm, vlm, ocr, rag, multimodal, vision-language) may have been de-indexed or the API endpoint changed. Diagnosing this is now critical because all four sources are failing simultaneously.
+
+**Answer:** _add reply here_
+
+### Q: Should the build environment be validated for outbound network access to GitHub, arXiv, HN, and the RSS feed domains before the next scheduled build runs?
+
+**Context:** This is the first build where all four sources failed simultaneously. The combination of persistent 403s (arxiv, HN), RSS zero-items, and now github_trending zero-items suggests a systemic environment-level network issue rather than individual source failures. A one-line connectivity check (curl -I github.com export.arxiv.org hn.algolia.com) would confirm whether outbound access is intact or whether the build environment has been network-restricted.
+
+**Answer:** _add reply here_
+
+### Q: Should sources.yaml add a GitHub search-based fallback source (using the GitHub REST API's /search/repositories endpoint) that is independent of the GitHub Trending page, to ensure at least one source remains available when the Trending page returns no results?
+
+**Context:** The github_trending source scrapes or polls the GitHub Trending page, which resets its window daily and can return empty results on low-activity days or after filter changes. A /search/repositories query with fixed keywords (e.g., 'topic:ocr created:>2026-06-01') would return results regardless of trending-page state, providing a deterministic fallback. This is the first build to raise this specific resilience gap.
+
+**Answer:** _add reply here_
+
+### Q: Given that this is the first build in the series to produce zero items from all four sources simultaneously, should a build-health alert be sent to a monitored channel (email, Slack) when item_count == 0 at the post-dedup stage?
+
+**Context:** The dashboard currently surfaces audit failures via audit_passed=false and a partial-build banner in the rendered HTML, but those signals require someone to visit the dashboard. A zero-item build produces an empty page that could persist for multiple cycles unnoticed. A direct out-of-band alert (configurable in sources.yaml or environment variables) would ensure the team is notified before the next scheduled build cycle. This is not a question about editorial content but about system reliability monitoring.
+
+**Answer:** _add reply here_
+
+### Q: Should the build agent attempt a direct HTTP GET to one or two known recent arXiv paper URLs as a connectivity probe during the lock-acquire step, to distinguish 'build environment has no outbound network' from 'this specific endpoint is blocked'?
+
+**Context:** Both arxiv and HN return 403, while github_trending and RSS return 'no items' rather than 403. A quick probe of an arbitrary known-good arXiv abstract URL (e.g., a URL the team confirms is currently publicly accessible) would distinguish a blanket network block from endpoint-specific blocks, targeting the fix more precisely. This diagnostic has not been proposed in prior builds.
+
+**Answer:** _add reply here_
+
+---
