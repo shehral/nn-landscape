@@ -1647,3 +1647,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-03T12:16:48+00:00 (audit: partial)
+
+### Q: Should a developer be tasked with adding arXiv OAI-PMH and HN Firebase API as fallback ingest endpoints in src/landscape/ingest.py before the next build cycle?
+
+**Context:** arXiv and HN have returned 403 errors for 10+ consecutive builds. The arXiv OAI-PMH endpoint (export.arxiv.org/oai2) and HN Firebase API (hacker-news.firebaseio.com/v0/) are documented, no-auth alternatives. Without them, the vlm_research and doc_ai axes draw entirely from GitHub trending repos rather than primary research papers, reducing the epistemic reliability of research_implication fields. Prior builds have raised this question; this build asks for a specific assignee and timeline.
+
+**Answer:** _add reply here_
+
+### Q: Who owns the decision to submit OCR-3 to the lmms-eval and EvalScope model registries, and is there a process for it?
+
+**Context:** Both lmms-eval and EvalScope are trending for the third or more consecutive build and produce published comparison tables that exclude models not in their registries. Prior builds asked whether OCR-3 should be added; this build notes that without a named owner the decision remains blocked. The publishing-channel risk is concrete: competitors can now publish head-to-head benchmarks that structurally omit OCR-3.
+
+**Answer:** _add reply here_
+
+### Q: Should the team commission a structured feature comparison between OCR-3 and the top open-source document-extraction alternatives (MinerU, PaddleOCR, Unstructured.io) on a shared test set?
+
+**Context:** MinerU, PaddleOCR, and Unstructured.io have all trended simultaneously for multiple consecutive builds without being added to the competitive registry. A one-time structured evaluation (format support, language coverage, table accuracy, schema extraction) on a shared set of Nanonets canonical test documents would both resolve the registry question and produce a public artifact the team can reference when customers ask about open-source alternatives.
+
+**Answer:** _add reply here_
+
+### Q: Has the team assessed whether a Nanonets plugin for Genkit would provide a comparable distribution channel to Google's own Gemini integration?
+
+**Context:** Genkit is built and actively used in production by Google and is gaining adoption as a default AI app framework for JavaScript, Go, and Python. As Genkit grows, it positions Gemini document capabilities as the zero-friction default for developers building on it. A Nanonets Genkit adapter would reach the same developer cohort at the framework selection moment, before they default to the bundled Google model.
+
+**Answer:** _add reply here_
+
+### Q: Does the team have a public developer documentation page that articulates the accuracy, latency, and schema-conformance advantages of the Nanonets /vqa endpoint over open-source VLM combinations such as LLaVA + LlamaIndex?
+
+**Context:** The multimodal-doc-qa repo demonstrates that implementing the /vqa pattern in open-source is straightforward. Developers evaluating build-vs-buy for document QA are likely to encounter this repo as a reference. Without a clear, quantitative articulation of the managed API's advantages at the moment of comparison, the default choice becomes the open-source implementation.
+
+**Answer:** _add reply here_
+
+---
