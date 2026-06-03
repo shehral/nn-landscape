@@ -1681,3 +1681,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-03T18:17:31+00:00 (audit: partial)
+
+### Q: Does OCR-3 /parse or /extract output currently include bounding-box or coordinate data for extracted table rows and cells?
+
+**Context:** Three independent spatial-evidence grounding tools appeared in this cycle (NVIDIA VSS Blueprint, video-evaluator, artseek), each requiring extracted values to cite their source region. Applied to document tables, rows without a verifiable visual anchor would flag as candidate phantom-row hallucinations without requiring model internals access. If OCR-3 already returns bounding-box data, this check is a one-day experiment; if not, the output format is the prerequisite to address first.
+
+**Answer:** _add reply here_
+
+### Q: Is GLM-5.1 (now featured in Ollama and as ms-swift's GRPO target) a document-extraction-capable model with accuracy comparable to GLM-OCR (94.62 on OmniDocBench V1.5), or a general-purpose VLM successor without document AI depth?
+
+**Context:** GLM-OCR is an IDP Leaderboard comparable. If GLM-5.1 inherits or improves those capabilities and is now accessible via Ollama for local inference and via ms-swift for GRPO fine-tuning, it represents a new leaderboard entrant with a ready fine-tuning pipeline. A one-sentence yes/no per capability — vision-capable, document-extraction capable — ends recurring uncertainty and determines whether it belongs in nanonets_context.md.
+
+**Answer:** _add reply here_
+
+### Q: Is LLaVA-OneVision-1.5's training configuration — dataset composition, document task mix, image resolution settings — publicly documented in enough detail to enable a cross-architecture phantom-row transfer experiment without reconstructing the training data from scratch?
+
+**Context:** LLaVA-OneVision-1.5 now has explicit GRPO support in ms-swift and co-trends with evalscope, forming the complete supply chain. As a non-MoE architecture at lower parameter count, it is a natural candidate for testing whether phantom-row hallucination modes in OCR-3 are architecture-specific. The training configuration's public availability determines whether the experiment is a half-day setup or a multi-week data reconstruction effort.
+
+**Answer:** _add reply here_
+
+### Q: Has the team run PaddleOCR, MinerU, or Unstructured through the IDP Leaderboard test set to establish an open-source accuracy floor — the factual baseline for customer make-vs-buy conversations?
+
+**Context:** PaddleOCR, MinerU, and opendataloader-pdf all trend in this cycle using identical positioning language to Nanonets Agentic Data Extraction. Without a published accuracy comparison on a shared benchmark such as FUNSD, CORD, or a dense-table subset, the make-vs-buy argument against open-source alternatives defaults to qualitative claims about support and integration rather than quantified accuracy differentials.
+
+**Answer:** _add reply here_
+
+### Q: Is Kimi-K2.6 a version bump from Kimi-K2.5 with new multimodal or document-extraction capabilities, and if so, does it warrant IDP Leaderboard evaluation?
+
+**Context:** Ollama's supported model list this cycle features Kimi-K2.6, a version increment from Kimi-K2.5 seen in prior builds. Prior builds raised Kimi-K2.5 as an unresolved document-capability question; if K2.6 adds document extraction depth, it may represent a new leaderboard entrant with a different capability profile from Kimi-K2.5. A one-sentence answer distinguishing version bump from capability change closes the question.
+
+**Answer:** _add reply here_
+
+---
