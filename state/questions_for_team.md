@@ -1579,3 +1579,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-03T00:15:43+00:00 (audit: partial)
+
+### Q: Has the team run GLM-5 on any document benchmark to confirm whether it carries extraction capabilities comparable to GLM-OCR, or is it a general-purpose VLM?
+
+**Context:** GLM-5 has appeared in Ollama's description across multiple consecutive builds but has never been confirmed as a document-extraction competitor or a general VLM. Without confirmation, the build scores Ollama items on inference rather than fact, and the competitive axis may be over- or under-weighted.
+
+**Answer:** _add reply here_
+
+### Q: Is OCR-3 registered in the lmms-eval and evalscope model registries, and if not, is there a plan to add it before a competitor uses either framework to publish a head-to-head comparison?
+
+**Context:** Both lmms-eval and evalscope are now broadly used for DocVQA and ChartQA benchmarks and are trending in this build. Without OCR-3 in either registry, practitioners using these frameworks for third-party comparisons will structurally omit it. This question concerns external registry visibility, not internal usage.
+
+**Answer:** _add reply here_
+
+### Q: Should MinerU, opendataloader-pdf, RAGFlow, and Dify each receive a named entry in data/nanonets_context.md to stabilize scoring across future builds?
+
+**Context:** All four have appeared in five or more consecutive builds. Without named registry entries, each build re-evaluates them from first principles. Adding them to the context file would set stable axis weights and descriptions, reducing per-build ad hoc scoring variance.
+
+**Answer:** _add reply here_
+
+### Q: What is the team's estimated timeline before GRPO-fine-tuned document VLM variants begin appearing on the IDP Leaderboard?
+
+**Context:** ms-swift now enables GRPO fine-tuning for Qwen3-VL, GLM-5.1, InternVL3.5, and others at accessible compute cost. GRPO has materially improved reasoning benchmarks; if applied to document VLMs it could narrow the accuracy gap to OCR-3. Advance awareness would allow the team to prepare updated benchmark baselines.
+
+**Answer:** _add reply here_
+
+### Q: Can the team verify whether RSS feed failures in sources.yaml are caused by paywall redirects or non-standard MIME types that the ingest parser rejects?
+
+**Context:** RSS has returned zero items for multiple consecutive builds alongside persistent arXiv and HN 403 errors. The prior builds have surfaced the arXiv/HN issue repeatedly without team action; this question focuses specifically on the RSS failure mode, which has a different likely root cause and has not been asked in isolation before.
+
+**Answer:** _add reply here_
+
+---
