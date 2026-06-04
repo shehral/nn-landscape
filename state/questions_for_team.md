@@ -1715,3 +1715,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-04T00:00:00+00:00 (audit: partial)
+
+### Q: EduFig-IC uses an L1/L2/L3 graded severity methodology for STEM figure hallucination. Has the team formalized a comparable multi-level grading for structural hallucinations in document tables — e.g., distinguishing phantom-row (fabricated row), structural hallucination (fabricated header), and mis-attributed field — that would allow cross-study comparison with emerging hallucination benchmarks?
+
+**Context:** EduFig-IC's graded consistency framing is methodologically distinct from binary correct/incorrect evaluation and appears compatible with the team's hallucination taxonomy. A confirmed yes/no on whether such a severity grading is already in use would determine whether EduFig-IC's methodology is directly applicable or only analogous.
+
+**Answer:** _add reply here_
+
+### Q: Is there observable evidence in public GitHub activity — forks, model cards, or issue discussions on ms-swift, evalscope, or LLaVA-OneVision-1.5 — of an external lab actively running a document-specific GRPO fine-tuning pipeline that could produce an IDP Leaderboard submission in the next 2-4 weeks?
+
+**Context:** ms-swift, evalscope, and LLaVA-OneVision-1.5 form a complete GRPO fine-tune-to-evaluate pipeline for every IDP Leaderboard competitor family and are trending simultaneously this cycle. Knowing whether an active run is underway changes the urgency of proactive baseline preparation.
+
+**Answer:** _add reply here_
+
+### Q: Is OCR-3's /vqa endpoint differentiated from the LLaVA + LlamaIndex open-source pattern (as demonstrated by multimodal-doc-qa) in a way that is documented publicly enough for a developer comparing both approaches to find the quantitative advantage without contacting Nanonets?
+
+**Context:** multimodal-doc-qa provides a working open-source reference implementation of the /vqa use case. Developers evaluating build-vs-buy who find this repository before finding Nanonets' documentation will default to the open-source path unless a concrete accuracy or reliability comparison is findable without a sales conversation.
+
+**Answer:** _add reply here_
+
+### Q: Has the team run an AngelSlim compression evaluation of any IDP Leaderboard comparable (Qwen3-VL, InternVL3.5) on the table-dense OmniDocBench subset, to bound the accuracy cost of sub-8B compression on the document extraction task?
+
+**Context:** AngelSlim, ms-swift GRPO, and Ollama local inference for IDP Leaderboard competitor families all trend in a single cycle, completing the pipeline for a GRPO-fine-tuned, compressed, on-premise document VLM. The accuracy trade-off of AngelSlim compression on document extraction specifically has not been published; without it, the on-premise threat level to data-sovereign enterprise customers cannot be quantified.
+
+**Answer:** _add reply here_
+
+### Q: Should question volume in this channel be capped at three questions per build going forward, prioritizing only genuinely new or escalated items, until a team response confirms the channel is being monitored?
+
+**Context:** This file now exceeds 1,700 lines with zero team responses across 35+ consecutive builds. Questions on critical topics — arXiv access, MinerU/PaddleOCR registry classification, GRPO leaderboard timeline, OCR-3 lmms-eval submission, LangChain reclassification — have been repeated verbatim 5-10 times each. Without feedback, the build cannot distinguish 'team read and decided no action' from 'team has not read this.' Capping volume would reduce noise while preserving the most urgent escalations.
+
+**Answer:** _add reply here_
+
+---
