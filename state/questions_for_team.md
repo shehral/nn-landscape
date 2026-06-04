@@ -1793,3 +1793,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-04T18:17:11+00:00 (audit: partial)
+
+### Q: The multimodal-doc-qa repository provides a working open-source implementation of the /vqa use case (LLaVA + LlamaIndex). Has the team run a head-to-head accuracy comparison between this open-source pattern and OCR-3's /vqa endpoint on a standard benchmark, and is that comparison findable by developers without a sales conversation?
+
+**Context:** Developers evaluating build-vs-buy for document QA will encounter this repo as the first functional reference. Without a published accuracy differential at the point of comparison, the default path is the open-source implementation. This is distinct from prior questions about MinerU/PaddleOCR accuracy — it is specifically about the /vqa endpoint and retrieval-augmented document QA.
+
+**Answer:** _add reply here_
+
+### Q: EduFig-IC introduces an L1/L2/L3 graded severity methodology for STEM figure hallucinations. Does the team's existing phantom-row benchmark already use a comparable multi-level severity taxonomy (e.g., distinguishing partial phantom rows from fully fabricated rows), and if not, would adopting a similar grading enable cross-study comparisons with emerging hallucination benchmarks like EduFig-IC?
+
+**Context:** A shared severity taxonomy would allow the team's structural hallucination research to be directly compared against external benchmark results, potentially increasing the public reproducibility and citation impact of the phantom-row work. This is the first time EduFig-IC's specific methodology has been asked about in relation to the team's own taxonomy design.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift now lists Qwen3-Omni (not only Qwen3-VL) in its GRPO MLLM support. Is Qwen3-Omni document-extraction capable at a level comparable to Qwen3-VL — specifically, does it handle structured extraction from PDFs and table-dense images — and if so, should it be queued for IDP Leaderboard evaluation alongside Qwen3-VL?
+
+**Context:** Qwen3-Omni is a new addition to ms-swift's supported model list this cycle. If it carries document extraction capabilities on top of its audio/video modalities, it represents a new competitive entrant with an accessible GRPO fine-tuning pipeline already in place. A yes/no per capability — document-extraction capable — closes the classification permanently.
+
+**Answer:** _add reply here_
+
+---
