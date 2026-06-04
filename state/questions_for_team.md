@@ -1749,3 +1749,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-04T06:00:00+00:00 (audit: partial)
+
+### Q: Has the team run PaddleOCR or MinerU through the IDP Leaderboard test set or an equivalent shared benchmark to establish a quantitative accuracy differential?
+
+**Context:** Both have trended for multiple consecutive build cycles with positioning language nearly identical to Nanonets Agentic Data Extraction. Without a published comparison on a shared benchmark (FUNSD, CORD, or a dense-table subset), the competitive argument against these open-source alternatives defaults to qualitative claims about support and integration. A single benchmark run would produce a citable public artifact.
+
+**Answer:** _add reply here_
+
+### Q: Is GLM-5.1 (now in Ollama's default model list) document-extraction capable at a level comparable to GLM-OCR (94.62 on OmniDocBench V1.5), or is it a general-purpose VLM successor without document AI depth?
+
+**Context:** GLM-OCR is an IDP Leaderboard comparable. If GLM-5.1 inherits or improves those capabilities and is now accessible via Ollama for local inference, it represents a new leaderboard-submittable architecture with a trivial deployment path. A one-sentence yes/no per capability closes a question that has been raised across multiple prior builds.
+
+**Answer:** _add reply here_
+
+### Q: Is this channel still being actively monitored?
+
+**Context:** This file contains 35+ consecutive builds with no team replies. Without any feedback, the build agent cannot distinguish editorial drift from expected behavior. A single tagged reply on any prior question would confirm the channel is live; absent that, the next build will reduce to three priority-only escalations and stop repeating unanswered questions verbatim.
+
+**Answer:** _add reply here_
+
+---
