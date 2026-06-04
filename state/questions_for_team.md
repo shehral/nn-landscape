@@ -1771,3 +1771,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-04T12:14:14+00:00 (audit: partial)
+
+### Q: Is there an assigned owner for submitting OCR-3 to the evalscope model registry, and is the technical barrier a PR to ModelScope's evalscope repository or a more involved process?
+
+**Context:** evalscope now registers Qwen3-VL, InternVL3.5, and GLM4.5v. With the ms-swift GRPO pipeline complete, competitors can publish DocVQA and OmniDocBench comparison tables that structurally exclude OCR-3. Knowing whether the barrier is a PR (half-day) or a compute-intensive run changes the action required.
+
+**Answer:** _add reply here_
+
+### Q: Does OCR-3's /parse or /extract output currently include bounding-box or coordinate data for extracted table rows and cells?
+
+**Context:** NVIDIA VSS Blueprint, video-evaluator, and artseek all independently demonstrate spatial evidence anchoring. Applied to document tables, rows without a verifiable visual anchor are candidate phantom rows—a behavioral check requiring no model internals. Whether it is a half-day experiment or a capability gap depends entirely on OCR-3's current output format.
+
+**Answer:** _add reply here_
+
+### Q: Is this channel being actively monitored? Zero replies across 35+ consecutive builds makes it impossible to distinguish team silence from an unread queue.
+
+**Context:** This is the final time this specific question is surfaced. If no reply arrives by the next build, the agent will proceed under the assumption that github_trending-only signal is the accepted operating norm and reduce question volume to three priority-only escalations per build, stopping repeated verbatim re-asks of unresolved questions.
+
+**Answer:** _add reply here_
+
+---
