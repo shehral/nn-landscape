@@ -1815,3 +1815,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-05T00:00:00+00:00 (audit: partial)
+
+### Q: Should the arXiv, HN, and RSS source failures now be treated as a resolved policy — github_trending is the accepted source set — or is there a named owner and deadline for restoring primary research sources?
+
+**Context:** All three primary research sources have returned errors for 20+ consecutive builds. Semantic Scholar and arXiv OAI-PMH were proposed as alternatives in prior builds; neither has been acted on. Without primary research sources, all vlm_research and doc_ai research_implication framings are inferred from GitHub repository metadata. A one-sentence policy decision would end this recurring question permanently.
+
+**Answer:** _add reply here_
+
+### Q: opendataloader-pdf has appeared in 7+ consecutive builds with an 'investigate' recommendation each time. Has any team member evaluated it against OCR-3 on a common benchmark, and should it be added to data/nanonets_context.md?
+
+**Context:** Without a named registry entry, each build re-evaluates it from scratch rather than tracking it as a known competitive entrant alongside MinerU and Docling. A confirmed accuracy comparison or a team statement that it is not material would close this question permanently.
+
+**Answer:** _add reply here_
+
+### Q: Kimi-K2.6 (Moonshot AI) now appears in Ollama's supported model list alongside GLM-5.1 and Qwen. Is Kimi-K2.6 a general multimodal model or does it include document-extraction capabilities comparable to GLM-OCR or Qwen-VL?
+
+**Context:** GLM-OCR is in the competitive registry but GLM-5.1 and Kimi-K2.6 are not. If Kimi-K2.6 includes document extraction, the competitive registry needs updating; if not, current items referencing it via Ollama may be scored on inference rather than confirmed capability.
+
+**Answer:** _add reply here_
+
+### Q: lmms-eval and evalscope both trended this cycle with DocVQA and document-AI benchmark coverage, and competitors are already registered in both frameworks while OCR-3 is not. Is there a quality-gate, publication embargo, or assigned owner for OCR-3 registry submission?
+
+**Context:** A competitor publishing via either framework would structurally exclude OCR-3 from the comparison. This question was raised in prior builds (2026-05-23T18, 2026-05-25T12) without a team response. A single answer stating the current status — in-progress, embargoed, not prioritized — would end the recurring flag.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift now supports GRPO training for Qwen3-VL, InternVL3.5, and GLM-5.1. At what OmniDocBench or IDP Leaderboard accuracy threshold would a GRPO fine-tuned open-weight model be considered a material threat warranting escalated tracking?
+
+**Context:** The accessible GRPO pipeline via ms-swift substantially lowers the submission barrier. Without a defined accuracy threshold, each new fine-tuned model receives a 'monitor' recommendation indefinitely rather than an automatic escalation. This question was raised in builds 2026-05-23T06 and 2026-05-25T12 without a team response.
+
+**Answer:** _add reply here_
+
+---
