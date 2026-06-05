@@ -1849,3 +1849,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-05T09:00:00+00:00 (audit: partial)
+
+### Q: MinerU, Unstructured, PaddleOCR, and opendataloader-pdf have all been trending for multiple consecutive builds without registry additions or a formal accuracy audit. Should this build trigger a team decision: either add these to data/nanonets_context.md with established competitive descriptions, or document a deliberate policy of not tracking them, so future builds stop flagging them as novel?
+
+**Context:** Each build re-evaluates these tools from first principles because they lack named registry entries. The cost compounds across builds; a one-time team decision would resolve it. MinerU and opendataloader-pdf have each received investigate or monitor recommendations for 5+ consecutive cycles with no team response recorded.
+
+**Answer:** _add reply here_
+
+### Q: lmms-eval and evalscope both trend this cycle with OCR-3 absent from their model registries. Is there a quality gate, embargo concern, or responsible-disclosure reason preventing OCR-3 registration, or is this a backlog item that could be closed with a one-time registry submission?
+
+**Context:** The submission gap is a publishing decision, not a product quality issue. Competitors can and do publish lmms-eval and evalscope comparisons against Qwen3-VL, GLM-OCR, and InternVL3.5 without OCR-3 as a baseline. Prior builds asked about internal use of these frameworks; this question is specifically about external-facing registry visibility.
+
+**Answer:** _add reply here_
+
+### Q: Kimi-K2.6 (Moonshot AI) now appears in Ollama's description — an update from Kimi-K2.5 referenced in prior builds. Prior questions about whether Kimi-K2.x should be tracked as competitive or frontier have not been answered. Has the team assessed whether Kimi-K2.6 has document extraction capabilities placing it in the competitive set alongside GLM-OCR and Qwen3-VL?
+
+**Context:** Without a team answer, each build that surfaces Kimi-K2.x via Ollama scores it on inference rather than confirmed capability. A one-sentence answer (general VLM, no document focus vs. document-capable, add to registry) would stabilize scoring permanently.
+
+**Answer:** _add reply here_
+
+### Q: The Janus CVPR 2025 model decouples visual encoding from language decoding for unified multimodal understanding. Has the research team assessed whether decoupled visual encoding architectures exhibit systematically different hallucination rates on document tasks compared to joint-encoding VLMs?
+
+**Context:** If architecture type (decoupled vs. joint encoding) is a predictor of hallucination patterns, it would affect which model families to prioritize in cross-architecture hallucination transfer experiments. Janus is now available as an unofficial community implementation, making it accessible for rapid experimental comparison.
+
+**Answer:** _add reply here_
+
+### Q: UltraRAG, Dify, and RAGFlow all trend this cycle without confirmed Nanonets Agentic Data Extraction connectors. Has any team member assessed whether a community-maintained Nanonets connector for the most-adopted of these three platforms exists or is in progress, and if not, is building one a prioritized distribution task?
+
+**Context:** The connector gap means developers adopting any of these orchestration platforms default to bundled open-source parsers (Unstructured, opendataloader-pdf, PaddleOCR) for document extraction. This is a distribution channel gap rather than a product quality gap. A single connector for the highest-traffic platform would be the minimum addressable action.
+
+**Answer:** _add reply here_
+
+---
