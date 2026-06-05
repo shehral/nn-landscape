@@ -1905,3 +1905,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-05T18:00:00+00:00 (audit: partial)
+
+### Q: Has the team run PaddleOCR, MinerU, or opendataloader-pdf through the IDP Leaderboard test set or a shared benchmark (FUNSD, CORD, OmniDocBench table-dense subset) to establish a quantitative accuracy differential against OCR-3?
+
+**Context:** PaddleOCR uses OCR-3's verbatim product framing with 100+ language support at zero cost; MinerU and opendataloader-pdf represent a coordinated push from opendatalab (Shanghai AI Lab). Without a published comparison, the competitive argument against all three defaults to qualitative displacement-risk framing. A single benchmark run produces a citable public artifact that changes every future framing for this item class. This is the highest-leverage open question in this series and is asked here for the last time before being retired — if no answer arrives, future builds will note 'no benchmark comparison available' without repeating the ask.
+
+**Answer:** _add reply here_
+
+### Q: Is the evalscope/lmms-eval OCR-3 registry absence a process gap (no assigned owner), a compute gap (running the benchmark harness is resource-constrained), or a policy decision (no pre-announcement publishing)?
+
+**Context:** Evalscope now registers Qwen3-VL, InternVL3.5, and GLM4.5v; lmms-eval has a broad competitive model registry. A competitor can publish a DocVQA or OmniDocBench comparison table via either framework that structurally omits OCR-3 today. Knowing which of the three barrier types applies determines the correct action. This question was first raised in build 2026-05-23T18 and has not been answered across 15+ cycles; it will not be repeated after this build regardless of whether an answer arrives.
+
+**Answer:** _add reply here_
+
+### Q: Should arXiv, HN, and RSS source failures now be treated as a resolved policy — github_trending is the accepted source set — or is there a named owner and deadline for restoring a primary research source?
+
+**Context:** All three primary research sources have returned errors for 20+ consecutive builds. Without primary research sources, all vlm_research and doc_ai research_implication framings are inferred from GitHub repository metadata, which changes their epistemic status. Per a prior build's commitment, this is the final cycle in which this question is surfaced. If no answer arrives, future builds will apply explicit lower-confidence priors to research_implication fields and stop asking about source restoration.
+
+**Answer:** _add reply here_
+
+---
