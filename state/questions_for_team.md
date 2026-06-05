@@ -1883,3 +1883,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-05T13:00:00+00:00 (audit: partial)
+
+### Q: Has the team run PaddleOCR, MinerU, or Unstructured through the IDP Leaderboard test set or a shared benchmark (FUNSD, CORD, OmniDocBench table-dense subset) to establish a quantitative accuracy differential?
+
+**Context:** PaddleOCR uses OCR-3's exact product framing and has trended for 15+ consecutive builds; MinerU and opendataloader-pdf represent a coordinated open-source push from opendatalab (Shanghai AI Lab). Without a published benchmark comparison, the competitive argument against these tools defaults to qualitative displacement risk rather than a citable accuracy differential. This is the single highest-leverage open question in the current series. Capping to three priority escalations this build per the prior build's self-imposed limit.
+
+**Answer:** _add reply here_
+
+### Q: Is the evalscope/lmms-eval OCR-3 registry absence a process gap (no assigned owner), a compute gap (running the benchmark harness is resource-constrained), or a policy decision (no pre-announcement publishing)?
+
+**Context:** Both evalscope and lmms-eval trend this cycle with Qwen3-VL, GLM-OCR, InternVL3.5, and GLM4.5v registered. A competitor publishing via either framework produces a comparison table that structurally excludes OCR-3. Knowing which of the three barrier types applies determines the correct action: assign a person, allocate compute, or make a policy decision. This question was first raised in build 2026-05-23T18 and has not been answered across 15+ cycles.
+
+**Answer:** _add reply here_
+
+### Q: Should github_trending-only signal now be treated as the accepted operating norm, with research_implication fields in future builds framed with explicit lower-confidence priors given the absence of primary research sources?
+
+**Context:** arXiv, HN, and RSS have all been unavailable for 20+ consecutive builds. This question has been raised in every build during that period without a team response. Treating github_trending as the accepted norm would adjust editorial framing — specifically, research_implication fields would note that they are inferred from repository metadata rather than papers — and would end this recurring infrastructure question. The alternative is to confirm there is an owner and deadline for restoring a primary research source.
+
+**Answer:** _add reply here_
+
+---
