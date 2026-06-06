@@ -1993,3 +1993,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-06T18:02:51.790384+00:00 (audit: partial)
+
+### Q: Should the build cadence switch from 6-hourly to daily or weekly until at least one primary research source (arXiv, HN) is restored, to reduce operational overhead from repeated empty-build cycles?
+
+**Context:** This build produced zero items from all four sources — arXiv and HN have been blocked for 30+ consecutive builds, RSS returns no items, and github_trending returned nothing this cycle. The dashboard is producing a sequence of blank editions. A cadence reduction would not fix the source issue but would reduce the frequency of empty commits and build-lock overhead until the infrastructure is resolved.
+
+**Answer:** _add reply here_
+
+### Q: Is there a single OpenAI-compatible REST adapter layer that would simultaneously serve as a Nanonets connector for Genkit, LangChain, and the major orchestration platforms (Dify, RAGFlow, UltraRAG), or does each platform require a dedicated integration?
+
+**Context:** Prior builds raised connector gaps for each platform individually. If these platforms converge on OpenAI-compatible REST as a plugin standard, a single thin adapter would close multiple distribution gaps in one engineering effort rather than requiring sequential per-platform integrations. Knowing the answer converts the connector question from a monitoring item to either a scoped engineering task or a confirmed non-priority.
+
+**Answer:** _add reply here_
+
+### Q: Does the team's phantom-row benchmark already use a multi-level severity taxonomy (e.g., distinguishing partial phantom rows from fully fabricated rows), and if not, would adopting a graded taxonomy enable cross-study comparison with emerging external hallucination benchmarks such as EduFig-IC?
+
+**Context:** EduFig-IC introduced an L1/L2/L3 graded severity methodology for STEM figure hallucinations in a prior build cycle. A shared severity taxonomy between the team's structural hallucination work and external benchmarks would increase the public reproducibility and citation potential of the phantom-row research. This is a methodological question that does not depend on source availability and is asked here for the first time in this specific form.
+
+**Answer:** _add reply here_
+
+---
