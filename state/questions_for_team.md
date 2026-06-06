@@ -1949,3 +1949,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-06T12:00:00+00:00 (audit: partial)
+
+### Q: Is there an assigned owner for submitting OCR-3 to the lmms-eval and evalscope model registries, and which of the three barriers applies: process (who files the PR), compute (running the benchmark harness), or policy (not publishing before a controlled announcement)?
+
+**Context:** Both lmms-eval and evalscope trend this cycle with Qwen3-VL, InternVL3.5, and GLM4.5v registered. The ms-swift GRPO pipeline is now complete, meaning competitors can publish DocVQA or OmniDocBench comparisons that structurally omit OCR-3. This question has not been answered across 15+ build cycles; a single response stating which barrier applies determines the correct action.
+
+**Answer:** _add reply here_
+
+### Q: Should MinerU and opendataloader-pdf be added to the named competitive set in data/nanonets_context.md — either individually or as a class entry for open-source LLM-ready document parsers?
+
+**Context:** Both have scored doc_ai=5 and composite >= 60 across 30+ consecutive builds. Without named registry entries, each build re-derives their scoring from first principles. MinerU (opendatalab/Shanghai AI Lab) and opendataloader-pdf (opendataloader-project) target identical use cases to the Nanonets /parse endpoint. A yes/no would eliminate per-build ad hoc scoring for the entire class.
+
+**Answer:** _add reply here_
+
+### Q: Does Qwen3-Omni (now in ms-swift's GRPO MLLM support list alongside Qwen3-VL) have published document-AI benchmark results — specifically structured extraction from PDFs and table-dense images — and if so, should it be queued for IDP Leaderboard evaluation?
+
+**Context:** Qwen3-Omni is a new addition to ms-swift's supported model list this cycle. Qwen3-VL is already tracked as an IDP Leaderboard comparable. If Qwen3-Omni carries document extraction capabilities on top of its audio/video modalities, it represents a new leaderboard entrant with an accessible GRPO fine-tuning pipeline already in place.
+
+**Answer:** _add reply here_
+
+---
