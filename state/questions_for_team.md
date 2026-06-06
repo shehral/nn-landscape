@@ -1927,3 +1927,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-06T00:09:29.642605+00:00 (audit: partial)
+
+### Q: ms-swift now explicitly lists Qwen3-Omni (not only Qwen3-VL) in its GRPO MLLM support. Does Qwen3-Omni have published document-AI benchmark results — specifically, structured extraction from PDFs and table-dense images — and if so, should it be queued for IDP Leaderboard evaluation alongside Qwen3-VL?
+
+**Context:** Qwen3-Omni is a new addition to ms-swift's supported model list this cycle, distinct from prior Qwen3-VL questions. If it carries document extraction capabilities on top of its audio/video modalities, it represents a new competitive entrant with an accessible GRPO fine-tuning pipeline already in place. A yes/no per capability closes the classification permanently and affects how future builds score every Qwen3-Omni item.
+
+**Answer:** _add reply here_
+
+### Q: Is LLaVA-OneVision-1.5's training configuration — dataset composition, document task mix, image resolution settings — publicly documented in enough detail to enable a cross-architecture phantom-row transfer experiment in under one week of setup?
+
+**Context:** LLaVA-OneVision-1.5 now has a community training framework and ms-swift GRPO support; as a non-MoE architecture at lower parameter count than OCR-3, it is a natural candidate for testing whether phantom-row hallucination modes in OCR-3 are architecture-specific. The training configuration's public availability is the rate-limiting factor for a half-day setup vs. a multi-week data reconstruction effort.
+
+**Answer:** _add reply here_
+
+### Q: LangChain now describes itself as 'the agent engineering platform' while it is still listed in the editorial grounding as a Nanonets Agentic Data Extraction integration partner. Should LangChain's classification in data/nanonets_context.md be updated to reflect both roles (integration partner and above-extraction-layer competitor), and if so, how should the product_implication field be framed in future builds?
+
+**Context:** The current context.md lists 'LangChain / LlamaIndex integrations' as a distribution feature of Nanonets Agentic Data Extraction. If LangChain is simultaneously a distribution channel and an agentic competitor, its scoring needs to reflect both roles, or the context.md should clarify the boundary. Without an explicit classification, future builds apply an ad hoc judgment each cycle.
+
+**Answer:** _add reply here_
+
+---
