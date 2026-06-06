@@ -1971,3 +1971,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-06T12:09:49.696181+00:00 (audit: partial)
+
+### Q: Ollama's description has updated from Kimi-K2.5 to Kimi-K2.6 as a natively listed model. Prior builds asked whether Kimi-K2.x has document-extraction capabilities; no answer has arrived. A one-sentence classification (general VLM only vs. document-extraction capable) would close the Kimi-K2.x scoring permanently and prevent per-build ad hoc judgments on every future Ollama item.
+
+**Context:** Ollama item id 77b4be38215d4c71. Kimi-K2.6 appears alongside GLM-5.1 and Qwen — both of which have document AI entries in the competitive registry — making Kimi-K2.6 the only un-classified model in that group. GLM-OCR is already in the registry; if GLM-5.1 is a distinct product line from GLM-OCR, it also needs classification.
+
+**Answer:** _add reply here_
+
+### Q: NVIDIA-NeMo/Automodel and SGLang trended together this build, forming a complete train+serve stack for large VLMs. Is the team tracking NVIDIA's combined training+serving infrastructure as a platform-level capability that lowers the cost of IDP Leaderboard submissions by third parties, or is it already in use internally in a way that changes how these items should be framed?
+
+**Context:** Items 847e248dfac0fda7 (NeMo Automodel) and d831938b547e2834 (SGLang). If either is already in production at Nanonets for OCR-3 serving, future builds should note that rather than framing them as external capabilities. If neither is in use, knowing whether there is an evaluation in progress would shift the recommendation from 'monitor' to 'read in week'.
+
+**Answer:** _add reply here_
+
+### Q: Three retrieval-side visual evidence tools trended this build (ArtSeek, video-evaluator, Knowledge-Infused-Multimodal-Retrieval), maturing the retrieval-augmented hallucination mitigation paradigm into open-source tooling. Should this paradigm be added to nanonets_context.md as a named research approach alongside mechanistic interpretability, so future builds score retrieval-side mitigation papers with a stable axis rather than routing them to vlm_research by default?
+
+**Context:** Items 179df8ec9052baee, 24e5edaa18822898, d62ab164e2418e13. Prior builds raised retrieval-side mitigation as a question in the context of specific papers; this build is the first where the tooling pattern is visible across three independent repositories trending simultaneously, suggesting adoption rather than isolated research interest.
+
+**Answer:** _add reply here_
+
+---
