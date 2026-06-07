@@ -2049,3 +2049,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-07T12:00:00+00:00 (audit: partial)
+
+### Q: Mindee docTR appears in this build series for the first time. Has the team benchmarked docTR on FUNSD, CORD, or OmniDocBench relative to OCR-3?
+
+**Context:** docTR is maintained by Mindee (makers of the Mindee OCR API) and provides a fully open-source deep-learning OCR pipeline. Without a published accuracy comparison, the make-vs-buy argument against docTR defaults to qualitative claims about support and integration rather than quantified accuracy differentials on standard benchmarks.
+
+**Answer:** _add reply here_
+
+### Q: What is gpt-oss, now featured in Ollama's headline model list alongside GLM-5.1 and Kimi-K2.6 — an open-weight OpenAI vision model, a community alias, or something else?
+
+**Context:** If gpt-oss is an open-weight OpenAI model with document vision capabilities, it would be the first open-weight frontier-lab model in this category and a material new IDP Leaderboard entrant. Its appearance in Ollama alongside confirmed IDP Leaderboard competitors raises the question without resolving it. A one-sentence answer closes the classification permanently.
+
+**Answer:** _add reply here_
+
+### Q: Should the build agent cap AI-partner questions at three per cycle until a team response confirms this channel is being monitored?
+
+**Context:** This file exceeds 1,600 lines with zero team responses across 30+ consecutive builds. Questions on critical topics — arXiv access restoration, MinerU and PaddleOCR registry classification, OCR-3 lmms-eval submission, LangChain reclassification — have been repeated verbatim 5-10 times each. A single sentence confirming the channel is monitored or redirecting to Slack/Linear would allow the build agent to calibrate volume accordingly.
+
+**Answer:** _add reply here_
+
+### Q: Has the team run an AngelSlim-compressed IDP Leaderboard comparable (Qwen3-VL or InternVL3.5) on the table-dense OmniDocBench subset to quantify accuracy degradation from compression?
+
+**Context:** AngelSlim and Ollama together complete the on-premise pipeline for compressed IDP Leaderboard competitors without cloud API access. The accuracy trade-off of sub-8B compression on document extraction tasks specifically has not been published. Knowing the degradation bounds whether a data-sovereign enterprise customer evaluating self-hosted alternatives represents a near-term or long-term competitive risk.
+
+**Answer:** _add reply here_
+
+### Q: Should the build begin appending a rolling summary of the 5 highest-priority unresolved questions from prior builds rather than introducing new questions each cycle, to reduce noise in a write-only channel?
+
+**Context:** The current format generates 3-5 new questions per build regardless of response rate. With 30+ consecutive builds unanswered, the incremental question volume adds noise without editorial value. A rolling summary of high-priority open questions would reduce file growth and make the critical items more findable if someone does open the file.
+
+**Answer:** _add reply here_
+
+---
