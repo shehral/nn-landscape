@@ -30,8 +30,8 @@ two-pronged:
 
 The current flagship public model is **`Nanonets OCR-3`** — a
 ~35B-parameter Mixture-of-Experts VLM released April 2, 2026, ranked #1
-on the IDP Leaderboard (above GPT-5, Gemini 3, Claude vision). It
-exposes five canonical endpoints (`/parse`, `/extract`, `/split`,
+on the IDP Leaderboard (85.9), OLM-OCR (87.4), and OmniDocBench (90.5)
+as of launch. It exposes five canonical endpoints (`/parse`, `/extract`, `/split`,
 `/chunk`, `/vqa`) and is positioned as "the only OCR model you need for
 your entire agentic stack." Items that name OCR-3 directly, evaluate it,
 or compare against it are **highest-priority relevant**.
@@ -84,30 +84,39 @@ Items that name, compare against, or are released by these companies are
 **competitive-axis relevant**:
 
 - **Mistral OCR 3 / Mistral Document AI** — direct competitor on
-  multilingual document extraction; Mistral OCR 3 (January 2026)
-  improved accuracy across handwritten and structured documents;
-  Mistral OCR 25.03 is the May 2026 update. Available via Vertex AI
-  and Azure AI Foundry.
+  multilingual document extraction; Mistral OCR 3 (January 2026;
+  model ID mistral-ocr-2512) improved accuracy across handwritten
+  and structured documents; Mistral OCR 25.03 is available on Azure
+  AI Foundry; Mistral OCR 25.05 on Vertex AI (May 2026). Available
+  via both platforms.
 - **Reducto** — competitor on structured extraction with multi-pass
   agentic correction; exposes Parse / Extract / Split / Edit endpoints
   similar to OCR-3's surface. Raised $75M Series B (Andreessen
   Horowitz, February 2026); launched Deep Extract agentic product;
-  1 billion pages processed to date; acquired Opennote (May 2026), an
-  AI-notebook startup, to strengthen agentic document-retrieval
-  workflows.
+  released Classification endpoint (May 2026) for lightweight document
+  categorization before downstream processing; Smart Schema in Studio
+  (April 2026) for autonomous schema creation; 1 billion pages processed
+  to date; acquired Opennote (May 2026), an AI-notebook startup, to
+  strengthen agentic document-retrieval workflows.
 - **LlamaParse (LlamaIndex / LlamaCloud)** — managed parsing service
   inside LlamaCloud; RAG-native, multimodal, often paired with or
   benchmarked against Reducto. LlamaParse v2 launched 2026 with
   simplified tier config and ~50% cost reduction. LlamaIndex also
   open-sourced LiteParse, a lightweight TypeScript-native local parser
-  (March 2026).
+  (March 2026). ParseBench launched April 2026 as a LlamaIndex-run
+  document-OCR benchmark for AI agents. LlamaParse Agentic Plus mode
+  adds bounding-box citations for complex formulas, handwriting, and
+  infographics.
 - **Unstructured.io** — competitor and frequent integration partner;
   document parsing infrastructure.
 - **Docling** (IBM Research) — open-source layout-aware document parser;
   reference architecture and common open-source baseline.
   Granite-Docling-258M (production VLM, January 2026, Apache 2.0)
   replaced SmolDocling; project donated to Linux Foundation Agentic AI
-  Foundation alongside BeeAI.
+  Foundation alongside BeeAI. IBM released the Heron layout model (IBM
+  Think 2026; 23.5% mAP improvement over prior Docling baseline; Heron-101
+  variant processes pages at 28ms on A100). Docling for IBM watsonx
+  launched as an enterprise document-intelligence platform.
 - **Chandra OCR 2 / LightOn OCR-2** — specialized OCR-VLM models that
   OCR-3 benchmarks against; Chandra OCR 2 (Datalab, March 2026) is a
   4B-parameter model built on Qwen 3.5, 85.9% on olmOCR benchmark,
@@ -128,9 +137,11 @@ Items that name, compare against, or are released by these companies are
   publicly.
 - **Firecrawl** (Mendable team) — adjacent: web-to-markdown extraction,
   not document AI proper, but increasingly cited as a data-prep
-  alternative for agent pipelines. PDF Parser v2 (February 2026) and
-  the Fire-PDF Rust engine added OCR-backed PDF parsing, moving closer
-  to document AI. Note that **Mendable as a standalone product is
+  alternative for agent pipelines. PDF Parser v2 (February 2026), the
+  Fire-PDF Rust engine (April 2026), and a dedicated /parse endpoint
+  (May 2026; supports PDFs, Word docs, spreadsheets up to 50MB; 5×
+  faster than prior engine) continue moving Firecrawl closer to
+  document AI proper. Note that **Mendable as a standalone product is
   effectively deprecated** — the same team has pivoted to Firecrawl.
 - **Tesseract** — legacy OCR baseline; releases of OCR-VLM models that
   benchmark against Tesseract are worth surfacing.
@@ -414,3 +425,65 @@ Nanonets, do not respond.
   public sources; 25.03 appears on Azure AI Foundry as an earlier
   checkpoint (naming convention YY.VV or YY.MM), not a May 2026
   release. Team should verify and correct if needed.
+
+---
+
+**Date:** 2026-06-07
+
+**Sources consulted:**
+
+- `nanonets.com`, `nanonets.com/blog`, `benchmarking.nanonets.com`,
+  `idp-leaderboard.org` — all returned HTTP 403; fell back to web
+  search for all Nanonets data
+- WebSearch: "Nanonets OCR-3 IDP leaderboard 2026 ranking" — #1 at
+  85.9% confirmed; official Nanonets X post (@nanonets) provides
+  additional scores: 87.4 on OLM-OCR (Global #1), 90.5 on OmniDocBench
+- WebSearch: "Nanonets product announcement blog June 2026" — no June
+  2026 announcements indexed; most recent posts from March 2026
+- WebSearch: "site:huggingface.co/nanonets" — open-weight model lineup
+  unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains API-only
+- WebSearch: "nanonets arxiv 2026" — no team-authored papers surfaced
+- WebSearch: Mistral OCR 2026 — Mistral OCR 25.05 confirmed on Vertex AI
+  (Google Cloud docs last updated May 8, 2026; model ID mistral-ocr-2505);
+  Mistral OCR 25.03 confirmed on Azure AI Foundry; prior label "25.03
+  is the May 2026 update" corrected
+- WebSearch: Reducto AI 2026 — Classification endpoint (May 21, 2026)
+  and Smart Schema in Studio (April 2026) confirmed from reducto.ai blog
+- WebSearch: LlamaParse / LlamaIndex 2026 — ParseBench (April 2026)
+  and LlamaParse Agentic Plus visual grounding confirmed from
+  llamaindex.ai newsletters
+- WebSearch: Docling IBM 2026 — Heron layout model (IBM Think 2026;
+  23.5% mAP; 28ms/page Heron-101) and Docling for IBM watsonx confirmed
+- WebSearch: Firecrawl 2026 — /parse endpoint (May 2026; PDFs/Word/
+  spreadsheets up to 50MB; 5× faster) confirmed from firecrawl.dev blog
+- WebSearch: Chandra OCR / LightOn OCR / GLM-OCR / DeepSeek-OCR /
+  HunyuanOCR 2026 — all confirmed still operating; no renames or pivots
+- WebSearch: Qwen3-VL 2026 — confirmed current; 32-language OCR support
+- WebSearch: Rossum / Docsumo / ABBYY / Kofax (Tungsten Automation)
+  2026 — all confirmed operating
+- WebSearch: Anthropic Claude document extraction 2026 — PDF support via
+  Files API confirmed; no new dedicated document-extraction product
+- WebSearch: OpenAI GPT-5 vision document 2026 — GPT-5.4 confirmed
+  active for document understanding; no new extraction product
+- WebSearch: Google Gemini 3.5 document OCR 2026 — Gemini 3.5 Flash
+  (May 2026) confirmed; "Gemini 3.1 Pro" name appears in OmniDocBench
+  rankings but relationship to "Gemini 3 Pro" in existing text could
+  not be independently confirmed; existing text left unchanged
+- WebSearch: xAI Grok vision document 2026 — multimodal capabilities
+  present; no dedicated document-extraction product; no material change
+
+**Material changes versus prior version (2026-05-31):**
+
+- Added OCR-3 additional benchmark scores confirmed from official
+  Nanonets X post: 87.4 on OLM-OCR (Global #1), 90.5 on OmniDocBench.
+- Corrected Mistral OCR versioning: 25.05 is on Vertex AI (May 2026);
+  25.03 remains on Azure AI Foundry. Removes the prior flagged
+  uncertainty about "25.03 is the May 2026 update."
+- Updated Reducto: Classification endpoint (May 2026) and Smart Schema
+  (April 2026) added.
+- Updated LlamaParse: ParseBench (April 2026) and Agentic Plus
+  bounding-box visual grounding added.
+- Updated Docling: Heron layout model (IBM Think 2026; 23.5% mAP; 28ms/
+  page) and Docling for IBM watsonx enterprise platform added.
+- Updated Firecrawl: /parse endpoint (May 2026; multi-format, 50MB
+  limit, 5× speed) added; classification as "adjacent" unchanged.
