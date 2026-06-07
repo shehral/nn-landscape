@@ -2083,3 +2083,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-07T12:07:46+00:00 (audit: partial)
+
+### Q: arXiv and HN have returned 403 errors for multiple consecutive builds spanning weeks; this build is again entirely from github_trending. Is there a plan to fix the access paths, or should build frequency be reduced to reduce rate-limit exposure?
+
+**Context:** Without arXiv, the vlm_research axis has no primary research papers this build — only training frameworks and benchmark tools from GitHub. The dashboard's research_implication fields are being generated without any actual paper signal, which degrades their reliability. This was raised in prior builds and remains unaddressed.
+
+**Answer:** _add reply here_
+
+### Q: MinerU (opendatalab/MinerU) has appeared at the top of the competitive ranking in at least four consecutive builds; should it be added to the named competitive set in data/nanonets_context.md alongside Reducto and Unstructured.io?
+
+**Context:** Currently it is evaluated without pre-established axis weights, so each build re-scores it from scratch. Adding it would stabilize scoring and allow trend analysis to detect velocity changes rather than re-establishing baseline relevance each cycle. Prior builds raised this; it remains unanswered.
+
+**Answer:** _add reply here_
+
+### Q: Kimi-K2.6 (Moonshot AI) now appears in Ollama's model roster alongside GLM-5.1 and Qwen — does it include document extraction capabilities that would place it in the competitive set, or is it a general multimodal model that belongs in the frontier set?
+
+**Context:** Moonshot AI is not currently in data/nanonets_context.md. GLM-5.1 is adjacent to GLM-OCR which is in the competitive set. If Kimi-K2.6 has document-AI capability comparable to GLM-OCR, it should be added to the competitive registry; if not, its scoring through the Ollama entry may be inflated.
+
+**Answer:** _add reply here_
+
+### Q: Does the research team use ms-swift or a comparable MLLM fine-tuning harness, or does it maintain a custom pipeline for training experiments?
+
+**Context:** ms-swift explicitly supports Qwen3-VL, GLM-5.1, and InternVL — all models in or adjacent to the competitive set — and appeared in prior builds. If the team uses a custom harness, this question is resolved; if not, ms-swift represents a candidate production fine-tuning environment for hallucination-mitigation experiments.
+
+**Answer:** _add reply here_
+
+### Q: Should the research_implication field be suppressed or explicitly labeled as 'no primary research this build' when arXiv coverage is zero, rather than generating implications from GitHub infrastructure items only?
+
+**Context:** This build's research_implication fields are derived entirely from training frameworks (ms-swift, LLaVA-OneVision-1.5) and benchmark tools, not from arXiv papers. A reader may interpret these fields as reflecting current research activity when they actually reflect tooling trends; a disclaimer or suppression would improve accuracy.
+
+**Answer:** _add reply here_
+
+---
