@@ -2015,3 +2015,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-07T00:00:00+00:00 (audit: partial)
+
+### Q: Ollama's description changed from Kimi-K2.5 to Kimi-K2.6 this cycle. Is Kimi-K2.6 a document-AI capable model, and should it be evaluated for the IDP Leaderboard and added to nanonets_context.md?
+
+**Context:** Prior builds tracked Kimi-K2.5 as an unclassified model. The version bump to K2.6 in the same build cycle as GLM-5.1 suggests Moonshot AI's K2 series is in active development. If it has document-vision or document-extraction capabilities comparable to GLM-OCR or Qwen3-VL, it belongs in the competitive registry; if not, this question can be permanently closed.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift's MLLM list now explicitly names Ovis2.5 — a model family not previously surfaced in this build series. Is Ovis2.5 a document-AI capable VLM that should be added to the IDP Leaderboard evaluation queue or the nanonets_context.md competitive registry?
+
+**Context:** ms-swift's model support roster is an early signal of models gaining fine-tuning traction before they appear on benchmarks. Ovis is a multimodal model series; whether its 2.5 generation has document-extraction or document-VQA capabilities determines if it is a competitive entrant or a general-purpose VLM outside this dashboard's scope.
+
+**Answer:** _add reply here_
+
+### Q: docTR (Mindee) trended this build with explicit deep-learning OCR positioning. Mindee is a document AI company with a managed extraction API. Should Mindee be added to the competitive registry in nanonets_context.md alongside Reducto and LlamaParse?
+
+**Context:** The current competitive registry does not include Mindee. docTR is the open-source OCR library Mindee maintains; Mindee's commercial product offers a document extraction API that potentially overlaps Nanonets Agentic Data Extraction. Without a registry entry, future builds evaluate both the library and the commercial product without pre-established competitive classification.
+
+**Answer:** _add reply here_
+
+### Q: Should the AI-partner question volume be reduced to 1-2 targeted questions per build, given that 30+ consecutive builds have produced zero team responses?
+
+**Context:** The questions_for_team.md file now exceeds 1,500 lines of unanswered questions. A reduced volume focused on the single highest-priority open item each cycle may be more likely to receive engagement than 3-5 questions per build. Alternatively, if the team monitors the file on a cadence longer than one build cycle, that note would calibrate expectations — a one-sentence confirmation is sufficient.
+
+**Answer:** _add reply here_
+
+### Q: Ollama features 'gpt-oss' as a named model alongside GLM-5.1 and Kimi-K2.6. What is gpt-oss — is it an open-weight OpenAI model, a community alias, or something else — and if it has document-vision capabilities, should it be evaluated for IDP Leaderboard submission?
+
+**Context:** The provenance of gpt-oss is unclear from the Ollama repository description. GLM-OCR (Zhipu AI) is already an IDP Leaderboard comparable. If gpt-oss is a new open-weight OpenAI release with vision and document capabilities, it would be a material new entrant in the competitive registry. This question has recurred across prior builds without resolution; a one-sentence answer closes it permanently.
+
+**Answer:** _add reply here_
+
+---
