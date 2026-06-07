@@ -2117,3 +2117,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-07T18:05:00+00:00 (audit: partial)
+
+### Q: Ollama's headline description now names 'gpt-oss' alongside GLM-5.1 and Kimi-K2.6. Is gpt-oss OpenAI's recently released open-weight model, and if so, does it have published document-extraction benchmarks that would make it a material IDP Leaderboard entrant to track?
+
+**Context:** If gpt-oss includes document-extraction capabilities benchmarked on DocVQA, ChartQA, or OmniDocBench, it should be added to the competitive registry alongside GLM-5.1 and DeepSeek-OCR 2. Without this clarification, future builds will score gpt-oss items inconsistently.
+
+**Answer:** _add reply here_
+
+### Q: AngelSlim (Tencent model compression) appeared this cycle but has not been raised in prior questions. OCR-3 is a 35B MoE model with per-token inference cost as a key pricing variable. Does the team use an active model compression or quantization program, and if so, which toolkit?
+
+**Context:** If the team does not currently use a structured compression program, AngelSlim is a candidate for evaluation. If a toolkit is already in use, the dashboard can permanently score AngelSlim and similar items as non-relevant to avoid re-evaluation each cycle.
+
+**Answer:** _add reply here_
+
+### Q: The cxr-text-bridge-retrieval benchmark appeared this cycle, studying contrastive retrieval failure modes between medical images and text reports. Its failure-mode taxonomy (retrieval collapse, false-positive alignment) closely parallels phantom-row hallucination in document VLMs. Does the team track cross-domain hallucination failure taxonomies from medical imaging as a source of test-case design for the phantom-row research line?
+
+**Context:** Medical-imaging retrieval benchmarks often identify failure modes that precede their discovery in document AI. A confirmed yes/no would allow future builds to route medical imaging retrieval items to either vlm_research (relevant) or no-action status without per-build judgment.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift this cycle explicitly supports DeepSeek-V4 in its headline alongside GLM-5.1 and Qwen3-VL. DeepSeek-OCR 2 is in the competitive registry; is DeepSeek-V4 a distinct model from DeepSeek-OCR 2, and does it have document-extraction capabilities that would make it a separate IDP Leaderboard entrant?
+
+**Context:** DeepSeek-V4 may be a general VLM while DeepSeek-OCR 2 is document-specific. If they are distinct, DeepSeek-V4 should be added to the competitive registry. If DeepSeek-V4 is the same family, the current registry entry is sufficient and future builds can score DeepSeek-V4 mentions as covered.
+
+**Answer:** _add reply here_
+
+### Q: This is the first build cycle showing the complete open-source document AI stack (extraction + orchestration + DMS) trending simultaneously without any intervening gap between tiers. Has any team member or customer reported a case where a prospect chose this open-source stack over Nanonets? If yes, which tier drove the decision — extraction quality, cost, or integration breadth?
+
+**Context:** A confirmed competitive loss to the open-source stack would sharpen future competitive framing from qualitative displacement-risk to a specific customer-facing objection. Without this data, the product_implication field on open-source items defaults to generic displacement language that cannot inform a concrete response.
+
+**Answer:** _add reply here_
+
+---
