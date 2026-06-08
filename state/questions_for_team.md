@@ -2173,3 +2173,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-08T06:00:00+00:00 (audit: partial)
+
+### Q: ms-swift's MLLM list now includes Ovis2.5 — a model family not previously addressed in this build series. Does Ovis2.5 have published document-VQA or structured-extraction benchmarks, and should it be queued for IDP Leaderboard evaluation?
+
+**Context:** ms-swift is an accurate early-warning signal for models gaining fine-tuning community traction. Ovis2.5 appears alongside confirmed competitive-set models (Qwen3-VL, GLM4.5v, InternVL3.5), making it the first new unclassified MLLM entrant in this cycle. A yes/no per capability closes the classification permanently.
+
+**Answer:** _add reply here_
+
+### Q: Is LLaVA-OneVision-1.5's architecture and training configuration — dataset composition, document task mix, image resolution settings — publicly documented in enough detail to enable a cross-architecture phantom-row transfer experiment in under one week of setup?
+
+**Context:** LLaVA-OneVision-1.5 is a non-MoE VLM at lower parameter count than OCR-3; it is a natural candidate for testing whether phantom-row hallucination modes transfer across architectures. A community training framework and ms-swift GRPO support are now both available. The setup cost depends entirely on whether the training configuration is public.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift lists GLM4.5v as a supported MLLM while the competitive registry lists GLM-OCR. Are these the same product line or distinct models — specifically, does GLM4.5v include the document-extraction benchmarks that qualified GLM-OCR as an IDP Leaderboard comparable?
+
+**Context:** Prior builds asked about GLM-5 vs GLM-OCR without resolution. GLM4.5v is a different designation than GLM-5. Without disambiguation, every GLM-named item must be scored with high uncertainty. A one-sentence answer closes this permanently for the entire GLM family.
+
+**Answer:** _add reply here_
+
+### Q: Rolling summary of three standing high-priority questions unanswered for 15+ consecutive builds: (1) OCR-3 lmms-eval/evalscope registry submission — is the barrier a process gap, compute gap, or policy embargo? (2) MinerU and opendataloader-pdf accuracy comparison against OCR-3 on FUNSD, CORD, or OmniDocBench. (3) arXiv/HN access restoration vs. accepted github_trending-only operating norm.
+
+**Context:** No new framing is offered; this is a standing priority summary. A single tagged reply on any one of these three would confirm the channel is monitored and allow future builds to adjust editorial posture on the relevant item class.
+
+**Answer:** _add reply here_
+
+---
