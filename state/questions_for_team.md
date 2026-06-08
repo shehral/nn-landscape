@@ -2223,3 +2223,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-08T18:00:00+00:00 (audit: partial)
+
+### Q: Rolling summary of three standing high-priority unresolved questions (15+ build cycles unanswered): (1) OCR-3 lmms-eval/evalscope registry submission — process gap, compute gap, or policy embargo? (2) MinerU and opendataloader-pdf accuracy comparison against OCR-3 on FUNSD, CORD, or OmniDocBench. (3) arXiv/HN access restoration vs. accepted github_trending-only operating norm.
+
+**Context:** None of these questions are re-asked in full. A single tagged reply on any one would confirm the channel is active and allow future builds to adjust editorial posture. This is the fourth consecutive build with this rolling summary; question volume is held to four this cycle.
+
+**Answer:** _add reply here_
+
+### Q: lmms-eval is trending alongside Ollama's competitive model roster. If third parties publish lmms-eval OCR comparisons that exclude OCR-3 because it is absent from the model registry, the IDP Leaderboard becomes a secondary benchmark. Is OCR-3 in the lmms-eval registry, and if not, what is the blocking factor?
+
+**Context:** Item 622e4c1e824e2555. lmms-eval covers DocVQA, ChartQA, and IDP-adjacent benchmarks. The IDP Leaderboard submission question has been raised for 15+ cycles; this framing emphasizes the bypass risk — competitors can publish structured comparisons without OCR-3 appearing as a data point.
+
+**Answer:** _add reply here_
+
+### Q: Four open-source document parsers trended simultaneously this build (MinerU, Unstructured, opendataloader-pdf, OCRmyPDF). Is there customer-facing evidence — from sales discovery or churn analysis — of any of these being the alternative evaluated before choosing Nanonets Agentic Data Extraction?
+
+**Context:** The dashboard can flag competitive risk at the technical level but cannot determine whether these open-source projects convert to commercial alternatives in practice. A yes/no from any customer-facing team member would sharpen the competitive framing for this entire class of item in future builds.
+
+**Answer:** _add reply here_
+
+### Q: gpt-oss appears in Ollama's model description for the third consecutive build alongside confirmed IDP Leaderboard-comparable models (GLM-5.1, DeepSeek, Qwen). Its provenance is unknown. A one-sentence classification — open-weight OpenAI model, community alias, or other — would close this permanently and determine whether future items referencing it require competitive-primary scoring.
+
+**Context:** Item 77b4be38215d4c71. Per the strict frontier-lab rule: if gpt-oss is an open-weight OpenAI model with document vision capabilities, its primary_axis must be competitive, not frontier. Without classification, each build assigns ad hoc scores.
+
+**Answer:** _add reply here_
+
+---
