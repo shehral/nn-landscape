@@ -2151,3 +2151,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-08T00:13:49.439679+00:00 (audit: partial)
+
+### Q: What is gpt-oss, now featured in Ollama's headline model list alongside GLM-5.1 and Kimi-K2.6 — an open-weight OpenAI vision model, a community alias, or something else — and does it include published document-extraction benchmarks?
+
+**Context:** If gpt-oss is an open-weight OpenAI model with document-vision capabilities, it would be the first open-weight frontier-lab model in this category and a material new IDP Leaderboard entrant. Its appearance in Ollama alongside confirmed competitive-set models raises the question without resolving it. A one-sentence classification closes this permanently.
+
+**Answer:** _add reply here_
+
+### Q: Does Qwen3-Omni (now in ms-swift's GRPO MLLM support list alongside Qwen3-VL) have published structured document extraction benchmarks — PDFs and table-dense images specifically — and if so, should it be queued for IDP Leaderboard evaluation?
+
+**Context:** Qwen3-Omni is a new addition to ms-swift's supported model list this cycle, distinct from prior Qwen3-VL questions. If it carries document extraction capabilities on top of audio/video modalities, it is a competitive-primary entrant with an accessible GRPO pipeline already in place. A yes/no per capability closes the classification permanently.
+
+**Answer:** _add reply here_
+
+### Q: Rolling summary of the three highest-priority unresolved questions from prior builds: (1) OCR-3 evalscope/lmms-eval submission status — is the barrier a process gap, compute gap, or policy embargo? (15+ cycles unanswered). (2) MinerU and opendataloader-pdf accuracy comparison on FUNSD, CORD, or OmniDocBench — no benchmark comparison published despite 10+ cycles of flagging. (3) arXiv/HN access restoration vs. accepted github_trending-only norm — 25+ cycles unanswered, actively degrading research_implication field reliability.
+
+**Context:** These questions are not re-asked in full; this note summarizes standing priority for any reader who opens the file. A single tagged reply on any one would confirm the channel is monitored and allow future builds to adjust accordingly.
+
+**Answer:** _add reply here_
+
+---
