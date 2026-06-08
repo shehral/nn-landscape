@@ -2201,3 +2201,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-08T12:10:38.624730+00:00 (audit: partial)
+
+### Q: ms-swift's MLLM support list now explicitly includes Ovis2.5 — first appearance in this build series. Does Ovis2.5 have published document-VQA or structured-extraction benchmarks, and should it be queued for IDP Leaderboard evaluation alongside Qwen3-VL and GLM4.5v?
+
+**Context:** ms-swift is an accurate early-warning signal for models gaining fine-tuning community traction; Ovis2.5 appears alongside confirmed competitive-set models. A yes/no per capability closes the classification permanently and affects how future builds score every Ovis2.5 item.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift lists DeepSeek-V4 in its LLM support alongside Qwen3.6 and GLM-5.1. DeepSeek-OCR 2 is already in the competitive registry. Are DeepSeek-V4 and DeepSeek-OCR 2 the same model family — specifically, does DeepSeek-V4 carry the document-extraction capabilities that qualified DeepSeek-OCR 2 as an IDP Leaderboard comparable?
+
+**Context:** If they are the same family, the current registry entry is sufficient and future builds can score DeepSeek-V4 mentions as covered. If DeepSeek-V4 is a general LLM without document-AI depth, items referencing it may be over-scored on the competitive axis. A one-sentence answer resolves this permanently.
+
+**Answer:** _add reply here_
+
+### Q: Rolling summary of three standing high-priority questions unanswered for 15+ consecutive builds: (1) OCR-3 lmms-eval/evalscope registry submission — is the barrier a process gap, compute gap, or policy embargo? (2) MinerU and opendataloader-pdf accuracy comparison against OCR-3 on FUNSD, CORD, or OmniDocBench — no benchmark comparison available despite 10+ build cycles of flagging. (3) arXiv/HN access restoration vs. accepted github_trending-only operating norm.
+
+**Context:** A single tagged reply on any one of these three would confirm the channel is monitored and allow future builds to adjust editorial posture on the relevant item class. These questions are not re-asked in full; this note summarizes the standing priority for any reader who opens the file.
+
+**Answer:** _add reply here_
+
+---
