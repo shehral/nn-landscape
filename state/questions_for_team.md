@@ -2285,3 +2285,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-09T06:08:12.336469+00:00 (audit: partial)
+
+### Q: Rolling summary of three standing high-priority questions unanswered for 15+ consecutive builds: (1) OCR-3 lmms-eval/evalscope registry submission — process gap, compute gap, or policy embargo? (2) MinerU and opendataloader-pdf accuracy comparison against OCR-3 on FUNSD, CORD, or OmniDocBench. (3) arXiv/HN access restoration vs. accepted github_trending-only operating norm.
+
+**Context:** A single tagged reply on any one of these three would confirm the channel is monitored and allow future builds to adjust editorial posture on the relevant item class. These are not re-asked in full; this is a standing priority summary. This is the sixth consecutive build including this rolling summary.
+
+**Answer:** _add reply here_
+
+### Q: Does Genkit use an OpenAI-compatible REST interface as its connector specification — and if so, would a Nanonets genkit connector require only a thin adapter rather than a custom integration?
+
+**Context:** Genkit has trended for multiple consecutive builds with registered connectors for Anthropic, OpenAI, and Gemini but not Nanonets. Knowing whether the technical barrier is a REST adapter (half-day effort) or a custom integration (multi-week) converts a recurring monitoring action into either a scoped engineering task or a confirmed no-priority decision.
+
+**Answer:** _add reply here_
+
+### Q: Should LangChain be reclassified in data/nanonets_context.md to reflect its 'agent engineering platform' repositioning as both an integration partner and an above-extraction-layer competitor to Nanonets Agents?
+
+**Context:** LangChain is currently listed as a named Nanonets integration partner ('LangChain / LlamaIndex integrations') while its GitHub description reads 'the agent engineering platform,' directly overlapping Nanonets Agents positioning. Without a classification decision, future builds assign ad hoc competitive scores each cycle. A yes/no with a one-sentence description update to context.md would stabilize scoring permanently.
+
+**Answer:** _add reply here_
+
+### Q: Is GLM4.5v (now in ms-swift's GRPO support list) the same product line as GLM-OCR (Zhipu AI, 94.62 on OmniDocBench V1.5 and an IDP Leaderboard comparable), or a distinct model? If distinct, does GLM4.5v carry document-extraction benchmark results that would qualify it for a separate registry entry?
+
+**Context:** Prior builds have asked about GLM-5 vs GLM-OCR without resolution. GLM4.5v is a different model designation than both. Without disambiguation, every GLM-named item must be scored with uncertainty. A one-sentence answer resolves the entire GLM family scoring permanently.
+
+**Answer:** _add reply here_
+
+### Q: Should the retrieval-based VLM hallucination mitigation paradigm (Knowledge-Infused-Multimodal-Retrieval, artseek, video-evaluator) receive a standing default action recommendation — either 'read in week' or 'no action' — for this entire item class, given that three distinct implementations now co-trend simultaneously?
+
+**Context:** Without a confirmed team stance on whether retrieval-based mitigation is inside or outside the research scope, each build assigns independent action recommendations for the same paradigm. A single yes/no on whether the team actively tracks this class would convert recurring per-build editorial judgment into a standing policy.
+
+**Answer:** _add reply here_
+
+---
