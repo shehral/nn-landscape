@@ -2353,3 +2353,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-09T18:08:16+00:00 (audit: partial)
+
+### Q: arXiv, HN, and RSS all failed this build — for the first time, RSS also returned zero items, leaving github_trending as the sole source. Has the team investigated alternative access paths (arXiv OAI-PMH, HN Firebase API, Semantic Scholar) before the next build cycle?
+
+**Context:** arXiv and HN have returned 403 errors across more than ten consecutive builds. RSS returning zero items is a new regression. With all three failing simultaneously, the vlm_research and doc_ai axes are sourced entirely from GitHub trending, which structurally skews coverage toward production tooling and away from primary research papers.
+
+**Answer:** _add reply here_
+
+### Q: MinerU has appeared at or near the top of the competitive axis across every build without a registry entry in data/nanonets_context.md. Should it be added alongside Reducto and Unstructured.io, and if so, with what threat-profile description?
+
+**Context:** MinerU is backed by Shanghai AI Lab (opendatalab), targets the same PDF/Office-to-LLM-ready markdown/JSON interface as Nanonets Agentic Data Extraction, and scored composite=62 in this build — the second highest item. A named registry entry would stabilize scoring and remove per-build ad hoc judgment about its relevance.
+
+**Answer:** _add reply here_
+
+### Q: Is OCR-3 registered in the lmms-eval and evalscope model registries? Both frameworks trended this build with DocVQA and ChartQA coverage, and competitors publishing via these toolkits will structurally omit OCR-3 from head-to-head comparisons if it is absent.
+
+**Context:** lmms-eval and evalscope are both GitHub trending projects with overlapping benchmark coverage that includes IDP-adjacent tasks. This is the third or fourth build in which both have appeared together. No team response to prior questions on this topic has been received.
+
+**Answer:** _add reply here_
+
+### Q: RSS ingestion returned zero items this build, which has not occurred in prior builds where RSS was the dominant source. Should the feed list or per_feed_limit in data/sources.yaml be reviewed, or is this a transient fetch window issue?
+
+**Context:** Prior builds consistently drew the majority of items from the RSS feed set (Anthropic, OpenAI, HuggingFace, Latent Space, Interconnects, etc.). A zero-item return from all ten feeds simultaneously suggests either a network policy change in this environment or all feeds falling outside the recency window.
+
+**Answer:** _add reply here_
+
+### Q: The open-source orchestration layer (RAGFlow, BiSheng, Dify) is trending alongside extraction-layer tools (Unstructured, MinerU, opendataloader-pdf). Is there a defined integration story where Nanonets Agentic Data Extraction serves as the extraction layer inside these platforms, or does each platform currently default to bundled open-source parsers?
+
+**Context:** If orchestration platforms integrate open-source parsers by default, Nanonets loses the extraction tier when customers select full-stack open-source toolchains. A published integration path or connector would address the distribution gap; the team is the only party who knows whether this exists.
+
+**Answer:** _add reply here_
+
+---
