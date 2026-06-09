@@ -2319,3 +2319,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-09T12:09:21+00:00 (audit: partial)
+
+### Q: Should opendataloader-pdf be added to data/nanonets_context.md as a named competitive entrant?
+
+**Context:** It has appeared in at least six consecutive builds with an 'investigate' recommendation and directly targets the Nanonets Agentic Data Extraction /parse endpoint use case. No team answer has arrived across all prior builds. Without a named entry, each build re-evaluates it from scratch rather than applying established axis weights.
+
+**Answer:** _add reply here_
+
+### Q: Is the arXiv/HN 403 failure a resolved infrastructure policy, or is there an owner and deadline for restoration?
+
+**Context:** The failure has persisted for 20+ consecutive builds. Two proposed alternatives — Semantic Scholar API and arXiv OAI-PMH — were raised in earlier builds and went unanswered. A definitive answer would either trigger a sources.yaml configuration change or permanently scope the dashboard to github_trending-only signal, which should then be noted in data/nanonets_context.md.
+
+**Answer:** _add reply here_
+
+### Q: Should OCR-3 be submitted to the lmms-eval and evalscope model registries before competitors use these toolkits to publish benchmark tables that omit it?
+
+**Context:** Both frameworks are trending and widely used by labs to produce third-party benchmark publications. OCR-3's absence means it is not included by default in competitor benchmark tables. This question appeared in prior builds and has not been answered.
+
+**Answer:** _add reply here_
+
+### Q: At what performance threshold on OmniDocBench or DocVQA would a GRPO-fine-tuned open-weight model (Qwen3-VL, GLM4.5v via ms-swift) be considered a material IDP Leaderboard threat requiring an escalated action recommendation?
+
+**Context:** ms-swift now supports GRPO for all three primary competitive-set models; evalscope provides the evaluation side. A threshold answer would let the build agent apply the correct action recommendation when such a model appears rather than defaulting to 'monitor' without context.
+
+**Answer:** _add reply here_
+
+### Q: Has the team evaluated SGLang for OCR-3 serving cost relative to the current serving infrastructure, and if so, what were the findings?
+
+**Context:** SGLang has appeared in multiple consecutive builds with an 'investigate' recommendation. A one-time evaluation would resolve the question permanently and remove it from the recurring AI-partner queue. If the current stack is already comparable, noting that in data/nanonets_context.md would close it.
+
+**Answer:** _add reply here_
+
+---
