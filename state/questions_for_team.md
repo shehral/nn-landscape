@@ -2251,3 +2251,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-09T06:00:00+00:00 (audit: partial)
+
+### Q: Rolling summary of three standing high-priority questions unanswered for 15+ consecutive builds: (1) OCR-3 lmms-eval/evalscope registry submission — process gap, compute gap, or policy embargo? (2) MinerU and opendataloader-pdf accuracy comparison against OCR-3 on FUNSD, CORD, or OmniDocBench. (3) arXiv/HN access restoration vs. accepted github_trending-only operating norm.
+
+**Context:** A single tagged reply on any one of these three would confirm the channel is monitored and allow future builds to adjust editorial posture on the relevant item class. These are not re-asked in full; this is a standing priority summary. This is the fifth consecutive build including this rolling summary.
+
+**Answer:** _add reply here_
+
+### Q: crossroute-audit (explanation-faithfulness auditing for VLMs) appeared this build. Does the team's current phantom-row and structural-hallucination research include explanation-faithfulness evaluation — that is, checking whether the model's stated justification for why a row exists matches the document content?
+
+**Context:** If not, crossroute-audit's methodology could extend the existing hallucination taxonomy without requiring interpretability tooling; it would flag cases where the model produces a coherent but visually unfaithful explanation for a phantom row. A yes/no on whether the team tracks this dimension would close the question permanently.
+
+**Answer:** _add reply here_
+
+### Q: A community GitHub repo (multimodal-vision-language-model) now implements document VQA and chart-to-insights using Gemini 1.5 Pro plus PaliGemma without a dedicated document AI service. At what point should the dashboard treat community adoption of frontier-lab vision APIs for document tasks as a distinct competitive category, separate from the dedicated document AI competitors already in the registry?
+
+**Context:** The current competitive registry covers dedicated document AI services (Reducto, LlamaParse, Unstructured) and frontier labs (Gemini, GPT-5.x, Claude) separately. A third category — community pipelines built on top of frontier APIs and published as open-source alternatives — is now visible in GitHub trending and may represent a different distribution threat profile.
+
+**Answer:** _add reply here_
+
+### Q: Ollama's headline description includes gpt-oss for the fourth or more consecutive build alongside confirmed IDP Leaderboard-comparable models (GLM-5.1, Kimi-K2.6). Is gpt-oss an open-weight OpenAI model with document-vision capabilities, a community alias, or something else?
+
+**Context:** Per the strict frontier-lab disambiguation rule: if gpt-oss is an open-weight OpenAI model with document-extraction benchmarks, its primary_axis must be competitive. Without classification, every future Ollama item is scored with high uncertainty on the competitive axis. A one-sentence answer closes this permanently.
+
+**Answer:** _add reply here_
+
+### Q: The retrieval-side VLM grounding paradigm (ArtSeek, video-evaluator, Knowledge-Infused-Multimodal-Retrieval) has appeared across multiple consecutive builds, and three distinct implementations now co-trend. Should the team establish a standing action recommendation — either 'read in week' or 'no action' — for this entire item class?
+
+**Context:** Without a confirmed team stance on whether retrieval-based hallucination mitigation is inside or outside the research scope, each build must independently assign action recommendations for the same paradigm. A single yes/no on whether the team actively tracks retrieval-based mitigation would convert a per-build editorial judgment into a standing policy for all future items in this class.
+
+**Answer:** _add reply here_
+
+---
