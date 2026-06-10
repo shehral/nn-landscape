@@ -2387,3 +2387,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-10T00:07:17.521953+00:00 (audit: partial)
+
+### Q: Rolling summary: three high-priority questions unanswered for 20+ consecutive builds. (1) arXiv/HN 403 errors — environment firewall, rate-limit, or policy decision? (2) OCR-3 registration in lmms-eval and evalscope model registries — process gap, compute gap, or policy embargo? (3) MinerU and opendataloader-pdf accuracy comparison against OCR-3 on FUNSD, CORD, or OmniDocBench.
+
+**Context:** arXiv and HN have returned 403 errors for more than 20 consecutive builds; RSS also returned zero items in the last two builds. The research_implication fields in this build are derived entirely from GitHub infrastructure tooling, not primary research papers. evalscope trended this cycle with DocVQA coverage — an absent OCR-3 registry entry means competitors can publish structured comparisons without OCR-3 as a data point.
+
+**Answer:** _add reply here_
+
+### Q: Should PaddleOCR be added to the named competitive set in data/nanonets_context.md alongside Unstructured.io and Reducto?
+
+**Context:** PaddleOCR explicitly targets the same PDF-to-structured-data-for-LLMs use case as Nanonets Agentic Data Extraction, supports 100+ languages, and has trended at or near the top of the doc_ai axis across multiple consecutive builds. Without a named registry entry, its scoring is re-evaluated from scratch each cycle rather than applying stable axis weights. It is not currently in the competitive registry.
+
+**Answer:** _add reply here_
+
+### Q: Is gpt-oss in Ollama's headline model list an open-weight OpenAI model with document-extraction capabilities, or a community alias for something else?
+
+**Context:** Per the strict frontier-lab disambiguation rule: if gpt-oss is an open-weight OpenAI model with document-vision or extraction capabilities, its primary_axis must be competitive, not frontier. It has appeared in Ollama's headline for five or more consecutive builds alongside confirmed IDP Leaderboard-comparable models (GLM-5.1, DeepSeek, Qwen). Without classification, every Ollama item carries axis-score uncertainty on the competitive dimension.
+
+**Answer:** _add reply here_
+
+### Q: The complete open-source extraction stack (PaddleOCR + PyMuPDF + opendataloader-pdf + Unstructured + OCRmyPDF) trended simultaneously this build for at least the second time. Is there any customer-facing evidence of a prospect evaluating this stack as an alternative to Nanonets Agentic Data Extraction?
+
+**Context:** The dashboard can identify the technical substitution risk but cannot determine whether these tools convert to commercial-alternative decisions in practice. A yes/no from any customer-facing team member would sharpen the competitive framing from generic displacement risk to a specific documented objection pattern, and would calibrate action recommendations for this entire item class.
+
+**Answer:** _add reply here_
+
+### Q: Should LangChain be reclassified in data/nanonets_context.md from 'integration partner' to 'above-extraction-layer competitor', given its current self-description as 'the agent engineering platform'?
+
+**Context:** LangChain is currently described in context.md as a named Nanonets integration (LangChain/LlamaIndex integrations). Its GitHub description now reads 'the agent engineering platform,' directly overlapping Nanonets Agents' positioning. The same platform that enables Nanonets integrations also competes at the orchestration tier. Without a classification decision, future builds assign ad hoc competitive scores each cycle rather than applying a stable policy.
+
+**Answer:** _add reply here_
+
+---
