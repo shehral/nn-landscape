@@ -2483,3 +2483,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-10T18:11:21.406552+00:00 (audit: partial)
+
+### Q: Rolling summary — three standing questions unanswered for 20+ consecutive builds: (1) OCR-3 lmms-eval/evalscope registry submission: process gap, compute gap, or policy embargo? (2) MinerU and opendataloader-pdf accuracy comparison against OCR-3 on FUNSD, CORD, or OmniDocBench. (3) arXiv/HN 403 errors: environment firewall, rate-limit, or resolved policy decision?
+
+**Context:** lmms-eval trended this cycle with DocVQA coverage; competitors can publish structured comparisons that exclude OCR-3 today. MinerU scored doc_ai=5 and composite=62 again with no published accuracy comparison. arXiv and HN have been unavailable for 20+ consecutive builds; all research_implication fields in this edition are inferred from repository metadata, not paper abstracts.
+
+**Answer:** _add reply here_
+
+### Q: What is gpt-oss in Ollama's headline model list — open-weight OpenAI model, community alias, or something else — and does it carry published document-extraction benchmarks?
+
+**Context:** gpt-oss appears in Ollama's headline alongside GLM-5.1, DeepSeek, and Qwen — all confirmed IDP Leaderboard comparables. Per the strict frontier-lab rule, if gpt-oss is an open-weight OpenAI model with document-extraction capabilities, its primary_axis must be competitive. Without classification, every Ollama item carries axis-score uncertainty on the competitive dimension.
+
+**Answer:** _add reply here_
+
+### Q: Is GLM4.5v (now in ms-swift's GRPO MLLM support list) a document-extraction-capable model with OmniDocBench or IDP Leaderboard benchmark results, and is it distinct from GLM-5.1 in its document-AI capability profile?
+
+**Context:** GLM-OCR (Zhipu AI, March 2026) scores 94.62 on OmniDocBench V1.5 and is a named IDP Leaderboard comparable. ms-swift now lists GLM4.5v as a separate supported MLLM alongside GLM-5.1. Without disambiguation, every GLM-named item carries competitive-axis uncertainty. A one-sentence answer resolves the entire GLM family permanently.
+
+**Answer:** _add reply here_
+
+### Q: Should LangChain be reclassified in data/nanonets_context.md from 'integration partner' to 'above-extraction-layer competitor' given its current 'agent engineering platform' description?
+
+**Context:** LangChain is currently described in context.md as a named Nanonets integration partner. Its GitHub description now reads 'the agent engineering platform,' directly overlapping Nanonets Agents positioning. Without a classification decision, future builds assign ad hoc competitive scores each cycle rather than applying a stable policy.
+
+**Answer:** _add reply here_
+
+---
