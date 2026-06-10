@@ -2449,3 +2449,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-10T12:09:45.659541+00:00 (audit: partial)
+
+### Q: ms-swift's MLLM list now includes GLM4.5v alongside GLM-5.1 — a model designation not previously seen in this channel. Prior builds asked about GLM-5 vs GLM-OCR disambiguation without resolution. Is GLM4.5v a vision-capable document extraction model with OmniDocBench or IDP Leaderboard benchmark results, and is it distinct from GLM-5.1 in its document-AI capability profile?
+
+**Context:** GLM-OCR (Zhipu AI, March 2026) scores 94.62 on OmniDocBench V1.5 and is a named IDP Leaderboard comparable. GLM4.5v is a new model designation that appears in ms-swift's GRPO support list. Without classification, every future GLM-named item carries axis-score uncertainty on the competitive dimension.
+
+**Answer:** _add reply here_
+
+### Q: Do the team's current phantom-row experiments include any explanation-faithfulness check — verifying that the model's stated justification for an extracted row corresponds to a visual anchor in the source document? crossroute-audit implements exactly this dimension and appeared in this build; a yes/no on whether the team already has this in the hallucination taxonomy would determine whether crossroute-audit extends the current methodology or duplicates it.
+
+**Context:** The team's published hallucination methodology covers phantom rows, repetition loops, infinite generation, and structural hallucinations using mechanistic interpretability tools (logit lens, activation patching, sparse autoencoders). Explanation faithfulness — where the model produces a visually unfaithful justification for a hallucinated row — is a distinct dimension not addressed by weight-level interpretability alone.
+
+**Answer:** _add reply here_
+
+### Q: Janus-Pro is DeepSeek-affiliated (DeepSeek-OCR 2 is an IDP Leaderboard comparable at 91.09% on OmniDocBench v1.5). Does Janus-Pro's unified multimodal understanding-and-generation architecture share the visual encoder or extraction pipeline with DeepSeek-OCR 2, and if so, would a Janus-Pro IDP Leaderboard submission represent a new competitive entrant or an architectural variant of an existing one?
+
+**Context:** An unofficial PyTorch reproduction of Janus-Pro trended this cycle, providing local access without DeepSeek API dependencies. If the architecture overlaps with DeepSeek-OCR 2 in document-extraction evaluation, cross-architecture hallucination transfer experiments are immediately feasible.
+
+**Answer:** _add reply here_
+
+### Q: The genkit connector specification is the most tractable short-term connector gap this build: it is Google-backed, has established connectors for Anthropic/OpenAI/Gemini, and its plugin architecture may use an OpenAI-compatible REST interface. Has anyone on the team checked genkit's public plugin documentation to determine whether a Nanonets connector is a REST adapter (half-day effort) or a custom SDK integration (multi-week)?
+
+**Context:** This question is narrower than prior genkit questions, which asked whether the connector is a priority. This asks specifically about the technical barrier. Knowing the answer converts the recurring 'investigate' recommendation to either a scoped engineering task or a confirmed no-priority decision — and ends the recurring appearance of genkit in the AI-partner queue.
+
+**Answer:** _add reply here_
+
+### Q: This build contains no items from arxiv, HN, or RSS for the 20th+ consecutive cycle. The open-source extraction stack, GRPO pipeline, and VLM grounding paradigms all trended this cycle — but the team's primary research direction (VLM hallucinations, mechanistic interpretability) produced zero paper-level signal. Should data/nanonets_context.md note that research_implication fields in github_trending-only builds carry lower epistemic confidence, so readers apply appropriate priors to those fields rather than treating them equivalently to paper-grounded assessments?
+
+**Context:** The research_implication fields for ms-swift, evalscope, and LLaVA-OneVision 1.5 in this build are inferred from repository READMEs and descriptions, not from paper abstracts, evaluation results, or community discussion. The epistemic status differs from prior builds where arXiv papers grounded those fields, but the rendered HTML does not currently distinguish between the two.
+
+**Answer:** _add reply here_
+
+---
