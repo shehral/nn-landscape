@@ -2421,3 +2421,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-10T06:13:22.131294+00:00 (audit: partial)
+
+### Q: Rolling summary: three high-priority questions unanswered for 20+ consecutive builds. (1) arXiv/HN 403 errors — environment firewall, rate-limit, or resolved policy? (2) OCR-3 registration in lmms-eval and evalscope model registries — process gap, compute gap, or policy embargo? (3) MinerU and opendataloader-pdf accuracy comparison against OCR-3 on FUNSD, CORD, or OmniDocBench.
+
+**Context:** arXiv and HN have returned 403 errors for more than 20 consecutive builds; RSS returned zero items in this cycle. evalscope trended with DocVQA coverage while OCR-3 is absent — competitors can publish structured comparisons that exclude it. MinerU and opendataloader-pdf are in the top-three competitive items by composite score with no published accuracy differential.
+
+**Answer:** _add reply here_
+
+### Q: Does OCR-3's /parse or /extract output currently include bounding-box or coordinate data for extracted table rows and cells?
+
+**Context:** ArtSeek, video-evaluator, and crossroute-audit all demonstrated grounded evidence anchoring in this cycle — checking whether generated content corresponds to a visual region in the source. If OCR-3 returns bounding boxes, a spatial phantom-row check is a half-day experiment. If not, it is a capability gap relative to what retrieval-grounding pipelines now demonstrate.
+
+**Answer:** _add reply here_
+
+### Q: Does the team's current phantom-row benchmark include explanation-faithfulness checks — i.e., does the model's stated justification for why a row exists correspond to a visual region in the source document?
+
+**Context:** crossroute-audit implements explanation-faithfulness auditing for VLMs and is directly applicable to OCR-3's structural hallucination taxonomy. A yes/no would determine whether crossroute-audit extends the team's existing methodology (reproduce) or overlaps it (no action).
+
+**Answer:** _add reply here_
+
+### Q: Is Genkit's connector specification REST-compatible at the level where a Nanonets adapter would be a half-day engineering effort, or does it require a custom SDK integration?
+
+**Context:** Genkit is production-backed by Google with connectors for Anthropic, OpenAI, and Gemini. Unlike community-maintained platforms (Dify, RAGFlow), its enterprise backing makes the connector gap qualitatively different. Knowing the technical barrier converts this from a recurring monitoring item to either a scoped engineering task or a confirmed no-priority decision.
+
+**Answer:** _add reply here_
+
+---
