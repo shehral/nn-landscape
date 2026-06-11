@@ -2539,3 +2539,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-11T12:00:00+00:00 (audit: partial)
+
+### Q: The full extraction stack (PaddleOCR, MinerU, opendataloader-pdf, Unstructured) and full orchestration stack (RAGFlow, BiSheng, Dify) co-trended simultaneously for the first time as a potential integrated self-hosted alternative to Nanonets. Has any prospect specifically evaluated this combined stack rather than a single layer? The dashboard can identify technical substitution potential but not whether commercial conversion patterns have emerged.
+
+**Context:** Prior builds have asked about individual layers; this is the first build where both tiers appeared together in the same 24-hour window. Knowing whether the risk is at the extraction tier, orchestration tier, or integrated-stack level would let the build agent apply differentiated action recommendations to each layer rather than treating them identically.
+
+**Answer:** _add reply here_
+
+### Q: Janus-Pro-Unofficial provides a locally runnable PyTorch reproduction of the DeepSeek-affiliated Janus-Pro model. DeepSeek-OCR 2 is a named IDP Leaderboard comparable at 91.09% on OmniDocBench v1.5. Does Janus-Pro share its visual encoder with DeepSeek-OCR 2 at any level, and if so, does the unofficial reproduction make cross-architecture phantom-row hallucination transfer experiments immediately feasible without API dependency?
+
+**Context:** The unofficial reproduction removes the API access barrier. If the architecture overlap is confirmed, a transfer experiment between Janus-Pro and OCR-3 could be run locally. The architectural relationship between Janus-Pro and DeepSeek-OCR 2 is not publicly documented; the team may know from prior competitive research.
+
+**Answer:** _add reply here_
+
+### Q: Ollama's headline now lists Kimi-K2.6, an update from Kimi-K2.5 in prior builds. Has the Kimi-K2.x model family been evaluated on document extraction benchmarks, and does K2.6 carry OmniDocBench, DocVQA, or IDP Leaderboard performance numbers that would place it in the competitive registry?
+
+**Context:** Moonshot AI has not previously been added to the competitive registry despite Kimi-K2.x appearing in ollama's headline for multiple builds. A version increment suggests continued active development. If K2.6 has published document-extraction benchmarks, it should be registered; if it is a general multimodal model without document focus, it should be classified frontier-primary and the Ollama item's competitive score should be adjusted.
+
+**Answer:** _add reply here_
+
+---
