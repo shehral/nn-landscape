@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jun 11, 2026 · 18:00 UTC · 47 items scored</span>
+  <span class="built-at">Built Jun 11, 2026 · 18:09 UTC · 47 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,11 +53,11 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Four open-source extraction tools (PaddleOCR, MinerU, opendataloader-pdf, Unstructured) appear in the same build cycle with functionally identical product positioning — PDF/image to structured data for LLMs — representing a commoditizing alternative to Nanonets Agentic Data Extraction with zero licensing cost.</li>
-    <li>The complete external IDP Leaderboard submission pipeline is trending simultaneously: ms-swift provides GRPO fine-tuning for Qwen3-VL, GLM-5.1, InternVL3.5, and Ovis2.5; lmms-eval provides the evaluation side. The toolchain lowers the barrier for new competitive leaderboard submissions to weeks rather than months.</li>
-    <li>Retrieval-side VLM visual grounding is maturing from research papers to open-source tooling: artseek (late-interaction retrieval), Knowledge-Infused-Multimodal-Retrieval (RAG-based context-aware image understanding), and crossroute-audit (explanation-faithfulness auditing) all trend simultaneously as distinct implementations of the same paradigm.</li>
-    <li>Orchestration-layer platforms (Dify, RAGFlow, LangChain) and extraction-layer tools (MinerU, opendataloader-pdf, Unstructured) co-trend without confirmed Nanonets connectors, suggesting a self-reinforcing open-source full-stack that routes document extraction away from managed APIs by default.</li>
-    <li>Local inference infrastructure for competitive VLMs (Ollama, Nexa SDK, RunAnywhere) and GRPO fine-tuning tooling trend together, completing an end-to-end pipeline where external labs can download, fine-tune, evaluate, and submit document VLMs to benchmarks without cloud API access.</li>
+    <li>Open-source document extraction is now fully commoditized in a single build cycle: MinerU, PaddleOCR, opendataloader-pdf, and Unstructured all trended simultaneously, each targeting the same PDF-to-LLM-ready-output interface as Nanonets Agentic Data Extraction with no licensing cost.</li>
+    <li>The GRPO fine-tuning supply chain for IDP Leaderboard competitors is now complete: ms-swift provides GRPO training for Qwen3-VL, InternVL3.5, and GLM4.5v; lmms-eval provides the evaluation harness. All components trended in a single cycle, materially shortening the timeline for an externally-produced document VLM leaderboard submission.</li>
+    <li>Above-extraction-layer orchestration platforms are converging on agentic document workflows: Dify, RAGFlow, LangChain, and UltraRAG all trended in a single cycle, each bundling or connecting to open-source extraction defaults. The orchestration tier is increasingly the distribution gatekeeper — customers who select these platforms will default to bundled parsers unless a native Nanonets connector exists.</li>
+    <li>VLM faithfulness and explanation auditing is consolidating as a distinct sub-field alongside the mechanistic interpretability mainstream: crossroute-audit (explanation faithfulness) and Knowledge-Infused-Multimodal-Retrieval (retrieval-augmented mitigation) both appeared in the same build, addressing post-hoc VLM reliability from different methodological angles.</li>
+    <li>Ollama&#39;s model list expanded to include Kimi-K2.6 (Moonshot AI) and GLM-5.1 alongside Qwen, DeepSeek, and gpt-oss — broadening free local inference access to competitive document-capable VLMs and enabling any developer to run head-to-head document accuracy tests without API costs.</li>
   </ul>
 </section>
 
@@ -66,184 +66,194 @@
     <h2>VLM research</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="62">
+         data-score="60">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 0 · frontier 1 · vlm_research 5 = 62 (this view's weighting)">62</span>
+          title="doc_ai 3 · competitive 3 · frontier 1 · vlm_research 4 = 60 (this view's weighting)">60</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 100%"></span>
+      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/umynameislove/crossroute-audit" target="_blank" rel="nofollow noopener noreferrer">umynameislove/crossroute-audit: Explanation-faithfulness auditing for vision-language models</a>
+    <a href="https://github.com/modelscope/ms-swift" target="_blank" rel="nofollow noopener noreferrer">modelscope/ms-swift: Use PEFT or Full-parameter to CPT/SFT/DPO/GRPO 600+ LLMs and 300+ MLLMs (Qwen3-VL, InternVL3.5, GLM4.5v, Gemma4, Llava, ...)</a>
   </p>
-  <p class="item-summary">Explanation-faithfulness auditing for VLMs: verifies model justifications correspond to visual anchors.</p>
+  <p class="item-summary">ms-swift provides GRPO/PEFT fine-tuning for 300+ MLLMs including Qwen3-VL, InternVL3.5, GLM4.5v — full toolchain for IDP Leaderboard competitor training.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>crossroute-audit addresses an explanation-faithfulness dimension distinct from existing mechanistic interpretability methods: it checks whether a model&#39;s stated justification for an extracted field corresponds to a visual region in the source document. This could be applied directly to phantom-row cases where OCR-3 produces a row with an explanation that does not map to any document region.</dd>
+      <dd>ms-swift&#39;s GRPO support for Qwen3-VL, InternVL3.5, and GLM4.5v — all IDP Leaderboard competitive models — completes the external toolchain for producing a fine-tuned document VLM submission at low cost. Combined with lmms-eval for evaluation, the barrier to a credible IDP Leaderboard submission from an external lab has materially decreased.</dd>
       <dt>Research</dt>
-      <dd>The approach complements rather than overlaps logit lens and activation patching; it is behavioral rather than weight-level. If the team&#39;s hallucination taxonomy does not currently include explanation-faithfulness checks, this is the most direct extension available without new training infrastructure.</dd>
-      <dt>Action</dt>
-      <dd>reproduce</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="56">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 2 · frontier 2 · vlm_research 4 = 56 (this view's weighting)">56</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/luxus180/LLaVA-OneVision-1.5" target="_blank" rel="nofollow noopener noreferrer">luxus180/LLaVA-OneVision-1.5: 🛠️ Build and train multimodal models easily with LLaVA-OneVision 1.5, an open framework designed for seamless integration of vision and language tasks.</a>
-  </p>
-  <p class="item-summary">Community training framework for multimodal VLMs; non-MoE architecture, candidate for cross-architecture hallucination experiments.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication; this is a training infrastructure tool, not a deployed document extraction service.</dd>
-      <dt>Research</dt>
-      <dd>LLaVA-OneVision-1.5 is a non-MoE architecture at lower parameter count than OCR-3 with an accessible community training framework and ms-swift GRPO support. This makes it a practical candidate for testing whether phantom-row hallucination modes from OCR-3 transfer to smaller non-MoE VLMs — a cross-architecture transfer experiment that could be set up in days rather than weeks.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="54">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 3 · frontier 1 · vlm_research 4 = 54 (this view's weighting)">54</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/StaryMoon/Janus-Pro-Unofficial" target="_blank" rel="nofollow noopener noreferrer">StaryMoon/Janus-Pro-Unofficial: Unofficial PyTorch reproduction for Janus-Pro: Unified Multimodal Understanding and Generation with Data and Model Scaling.</a>
-  </p>
-  <p class="item-summary">Unofficial PyTorch reproduction of DeepSeek-affiliated Janus-Pro unified multimodal model.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No immediate product implication. Janus-Pro is an unofficial reproduction of a DeepSeek-affiliated unified multimodal model, not a deployed document extraction service.</dd>
-      <dt>Research</dt>
-      <dd>DeepSeek-OCR 2 is a named IDP Leaderboard comparable at 91.09% on OmniDocBench v1.5. If Janus-Pro shares visual encoder components with DeepSeek-OCR 2, locally running the unofficial reproduction enables cross-architecture phantom-row transfer experiments without API dependency. The architectural overlap is unconfirmed from public documentation.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="46">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 2 · vlm_research 3 = 46 (this view's weighting)">46</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/huggingface/transformers" target="_blank" rel="nofollow noopener noreferrer">huggingface/transformers: 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.</a>
-  </p>
-  <p class="item-summary">HuggingFace Transformers: foundational VLM and multimodal training infrastructure.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="46">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 2 · vlm_research 3 = 46 (this view's weighting)">46</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/sgl-project/sglang" target="_blank" rel="nofollow noopener noreferrer">sgl-project/sglang: SGLang is a high-performance serving framework for large language models and multimodal models.</a>
-  </p>
-  <p class="item-summary">High-performance LLM/VLM serving framework with RadixAttention; relevant to large-VLM serving cost.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>SGLang offers RadixAttention and continuous batching for large VLM serving. OCR-3 is a 35B MoE model; whether the current serving stack is already comparable in per-token cost is the relevant question before committing to an evaluation.</dd>
-      <dt>Research</dt>
-      <dd>No research implication beyond infrastructure cost considerations for running large-scale hallucination experiments.</dd>
+      <dd>GRPO fine-tuning applied to document VLMs has produced SOTA improvements on reasoning tasks; the same technique applied to table extraction or structured output tasks could narrow the accuracy gap to OCR-3. The team should assess whether any GRPO-tuned submissions targeting the IDP Leaderboard are in preparation.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
 </article><article class="item "
          data-source="github_trending"
-         data-score="40">
+         data-score="46">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 1 · vlm_research 3 = 40 (this view's weighting)">40</span>
+          title="doc_ai 2 · competitive 1 · frontier 2 · vlm_research 3 = 46 (this view's weighting)">46</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 60%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/medazizsaaadallah/Knowledge-Infused-Multimodal-Retrieval-A-RAG-Based-Approach-for-Context-Aware-Image-Understanding" target="_blank" rel="nofollow noopener noreferrer">medazizsaaadallah/Knowledge-Infused-Multimodal-Retrieval-A-RAG-Based-Approach-for-Context-Aware-Image-Understanding: 🌟 Enhance image understanding through a RAG-based approach, combining multimodal retrieval and context-aware generation for smarter AI insights.</a>
+    <a href="https://github.com/huggingface/transformers" target="_blank" rel="nofollow noopener noreferrer">huggingface/transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models</a>
   </p>
-  <p class="item-summary">RAG-based approach for context-aware image understanding; retrieval-side VLM hallucination mitigation.</p>
+  <p class="item-summary">HuggingFace Transformers: canonical VLM training and inference framework used by all IDP Leaderboard competitive models.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct product implication; retrieval-augmented image understanding is an academic approach, not a deployed extraction service.</dd>
+      <dd>All competitive document VLMs (Qwen3-VL, InternVL3.5, GLM-series) are distributed through this framework; it is the primary vector by which competitive model releases become usable. No direct product substitution risk.</dd>
       <dt>Research</dt>
-      <dd>The approach combines multimodal retrieval with context-aware generation to reduce hallucinations — a retrieval-side mitigation paradigm distinct from mechanistic interpretability. It addresses the same hallucination classes (phantom rows, structural fabrication) through a different mechanism and has appeared across 5+ consecutive builds.</dd>
+      <dd>Direct infrastructure dependency for VLM fine-tuning and mechanistic interpretability tooling; breaking API changes would affect the team&#39;s evaluation and training harnesses. Tracking major releases is low-cost insurance.</dd>
       <dt>Action</dt>
-      <dd>read in week</dd>
+      <dd>monitor</dd>
     </dl>
   </div>
 </article><article class="item "
          data-source="github_trending"
-         data-score="38">
+         data-score="46">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 2 · vlm_research 3 = 38 (this view's weighting)">38</span>
+          title="doc_ai 2 · competitive 1 · frontier 0 · vlm_research 4 = 46 (this view's weighting)">46</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 60%"></span>
+      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/ALEEEHU/World-Simulator" target="_blank" rel="nofollow noopener noreferrer">ALEEEHU/World-Simulator: [IEEE TPAMI 2026] Simulating the Real World: Survey &amp; Resources, which contains our survey &#34;Simulating the Real World: A Unified Survey of Multimodal Generative Models&#34; (IEEE TPAMI, 2026) and Awesome-</a>
+    <a href="https://github.com/medazizsaaadallah/Knowledge-Infused-Multimodal-Retrieval-A-RAG-Based-Approach-for-Context-Aware-Image-Understanding" target="_blank" rel="nofollow noopener noreferrer">medazizsaaadallah/Knowledge-Infused-Multimodal-Retrieval-A-RAG-Based-Approach-for-Context-Aware-Image-Understanding</a>
   </p>
-  <p class="item-summary">IEEE TPAMI 2026 unified survey of multimodal generative models; broad research survey.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="34">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 3 = 34 (this view's weighting)">34</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/ACMarcone86/artseek" target="_blank" rel="nofollow noopener noreferrer">ACMarcone86/artseek: ArtSeek combines late-interaction retrieval over a 5M+ multimodal corpus with LICN-based attribute prediction to understand artists, genres, and styles 🐙.</a>
-  </p>
-  <p class="item-summary">Late-interaction retrieval over 5M+ multimodal corpus with LICN attribute prediction; visual grounding paradigm.</p>
+  <p class="item-summary">RAG-based multimodal retrieval for context-aware image understanding; retrieval-augmented hallucination mitigation paradigm.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
       <dd>No direct product implication.</dd>
       <dt>Research</dt>
-      <dd>ArtSeek demonstrates late-interaction retrieval (ColPali-style) over a large multimodal corpus for visual attribute understanding. The same late-interaction paradigm could enable precise visual region anchoring for phantom-row detection in OCR-3 outputs — checking whether extracted rows have a corresponding visual anchor in the source document.</dd>
+      <dd>RAG-based approach for context-aware multimodal understanding addresses phantom-row and structural hallucination modes via retrieval augmentation rather than mechanistic interpretability. This paradigm has appeared across multiple consecutive builds; whether it is complementary or redundant to the team&#39;s interpretability work depends on a shared benchmark comparison.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="44">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 4 = 44 (this view's weighting)">44</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/umynameislove/crossroute-audit" target="_blank" rel="nofollow noopener noreferrer">umynameislove/crossroute-audit: Explanation-faithfulness auditing for vision-language models</a>
+  </p>
+  <p class="item-summary">crossroute-audit: explanation-faithfulness auditing for VLMs — evaluates whether model explanations match internal computations.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Explanation-faithfulness auditing for VLMs directly addresses a key problem in the team&#39;s hallucination research: whether the model&#39;s stated reasoning is faithful to its internal computations. The methodology overlaps with the mechanistic interpretability tools (logit lens, activation patching) the team already uses and could provide a complementary post-hoc auditing layer.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="42">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 1 · frontier 1 · vlm_research 3 = 42 (this view's weighting)">42</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/ALEEEHU/World-Simulator" target="_blank" rel="nofollow noopener noreferrer">ALEEEHU/World-Simulator: [IEEE TPAMI 2026] Simulating the Real World: Survey &amp; Resources — Unified Survey of Multimodal Generative Models</a>
+  </p>
+  <p class="item-summary">IEEE TPAMI 2026 survey of multimodal generative model architectures and capabilities at scale.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Comprehensive IEEE TPAMI 2026 survey of multimodal generative models; useful background reading for the team&#39;s VLM hallucination and structural understanding work, covering architecture taxonomy relevant to cross-architecture hallucination transfer analysis.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="42">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 1 · frontier 1 · vlm_research 3 = 42 (this view's weighting)">42</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/StaryMoon/Janus-Pro-Unofficial" target="_blank" rel="nofollow noopener noreferrer">StaryMoon/Janus-Pro-Unofficial: Unofficial PyTorch reproduction for Janus-Pro: Unified Multimodal Understanding and Generation with Data and Model Scaling.</a>
+  </p>
+  <p class="item-summary">Unofficial PyTorch reproduction of Janus-Pro (DeepSeek unified multimodal understanding and generation model).</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>An open PyTorch reproduction of Janus-Pro makes a DeepSeek competitive model architecture accessible for local experimentation without API access, enabling fine-tuning and architectural analysis without commercial costs.</dd>
+      <dt>Research</dt>
+      <dd>Janus-Pro&#39;s unified understanding and generation architecture — trained with data and model scaling — is relevant to cross-architecture hallucination transfer research; a reproducible implementation lowers the cost of mechanistic interpretability experiments on this model family.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="30">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 3 = 30 (this view's weighting)">30</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/ACMarcone86/artseek" target="_blank" rel="nofollow noopener noreferrer">ACMarcone86/artseek: ArtSeek combines late-interaction retrieval over a 5M+ multimodal corpus with LICN-based attribute prediction.</a>
+  </p>
+  <p class="item-summary">ArtSeek: late-interaction retrieval over 5M+ multimodal corpus for artist and style attribute prediction.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Late-interaction retrieval over large multimodal corpora demonstrates scalable document-collection retrieval; the LICN-based attribute prediction approach may inform retrieval-augmented phantom-row mitigation strategies at corpus scale, as a complement to the mechanistic interpretability line.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="26">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 2 = 26 (this view's weighting)">26</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/Hunyuan-PromptEnhancer/PromptEnhancer" target="_blank" rel="nofollow noopener noreferrer">Hunyuan-PromptEnhancer/PromptEnhancer: [CVPR 2026] Prompt-rewriting tool for better image generation.</a>
+  </p>
+  <p class="item-summary">CVPR 2026 prompt-rewriting tool for image generation; no document extraction relevance.</p>
 </article><article class="item "
          data-source="github_trending"
          data-score="26">
@@ -258,22 +268,7 @@
   <p class="item-title">
     <a href="https://github.com/xlang-ai/OSWorld" target="_blank" rel="nofollow noopener noreferrer">xlang-ai/OSWorld: [NeurIPS 2024] OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments</a>
   </p>
-  <p class="item-summary">NeurIPS 2024 multimodal benchmark for computer-use agents; not document-AI specific.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="26">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 2 = 26 (this view's weighting)">26</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/Tommieoxidative416/video-evaluator" target="_blank" rel="nofollow noopener noreferrer">Tommieoxidative416/video-evaluator: Extract grounded evidence from video files to enable automated review and visual understanding for coding agents.</a>
-  </p>
-  <p class="item-summary">Grounded evidence extractor from video files for automated review; adjacent to VLM evidence anchoring.</p>
+  <p class="item-summary">OSWorld NeurIPS 2024 benchmark for multimodal agents in computer environments; not document-extraction focused.</p>
 </article><article class="item "
          data-source="github_trending"
          data-score="22">
@@ -288,33 +283,28 @@
   <p class="item-title">
     <a href="https://github.com/pytorch/pytorch" target="_blank" rel="nofollow noopener noreferrer">pytorch/pytorch: Tensors and Dynamic neural networks in Python with strong GPU acceleration</a>
   </p>
-  <p class="item-summary">PyTorch tensor library; foundational infrastructure with no document-AI focus.</p>
+  <p class="item-summary">PyTorch general deep learning framework; no document-AI specificity.</p>
 </article><article class="item "
          data-source="github_trending"
-         data-score="8">
+         data-score="22">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 0 · vlm_research 1 = 8 (this view's weighting)">8</span>
+          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 2 = 22 (this view's weighting)">22</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/tensorflow/tensorflow" target="_blank" rel="nofollow noopener noreferrer">tensorflow/tensorflow: An Open Source Machine Learning Framework for Everyone</a>
+    <a href="https://github.com/Tommieoxidative416/video-evaluator" target="_blank" rel="nofollow noopener noreferrer">Tommieoxidative416/video-evaluator: Extract grounded evidence from video files to enable automated review and visual understanding for coding agents.</a>
   </p>
-  <p class="item-summary">TensorFlow ML framework; no document-AI or VLM-specific focus this cycle.</p>
+  <p class="item-summary">Video-evaluator extracts grounded evidence from video for automated review; not document-extraction relevant.</p>
 </article>    <details class="more-items">
-      <summary>Show 2 more in this axis</summary>
+      <summary>Show 1 more in this axis</summary>
       <ul>
         <li data-source="github_trending" data-score="8">
           <span class="more-score" title="composite 8 (this view's weighting)">8</span>
           <a href="https://github.com/scikit-learn/scikit-learn" target="_blank" rel="nofollow noopener noreferrer">scikit-learn/scikit-learn: scikit-learn: machine learning in Python</a>
-          <span class="more-source">github_trending</span>
-        </li>
-        <li data-source="github_trending" data-score="8">
-          <span class="more-score" title="composite 8 (this view's weighting)">8</span>
-          <a href="https://github.com/rerun-io/rerun" target="_blank" rel="nofollow noopener noreferrer">rerun-io/rerun: Visualize, query, and stream to train on multimodal robotics data.</a>
           <span class="more-source">github_trending</span>
         </li>
       </ul>
@@ -324,82 +314,80 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="72">
+         data-score="62">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 2 · vlm_research 4 = 72 (this view's weighting)">72</span>
+          title="doc_ai 4 · competitive 3 · frontier 2 · vlm_research 3 = 62 (this view's weighting)">62</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 80%"></span>
+      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 60%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
     <a href="https://github.com/EvolvingLMMs-Lab/lmms-eval" target="_blank" rel="nofollow noopener noreferrer">EvolvingLMMs-Lab/lmms-eval: One-for-All Multimodal Evaluation Toolkit Across Text, Image, Video, and Audio Tasks</a>
   </p>
-  <p class="item-summary">Unified multimodal evaluation toolkit covering DocVQA, ChartQA, OCR tasks; OCR-3 absent from model registry.</p>
+  <p class="item-summary">lmms-eval multimodal evaluation toolkit covers DocVQA, ChartQA, and IDP-adjacent benchmarks; OCR-3 not in its model registry.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>lmms-eval covers DocVQA, ChartQA, and OCR tasks in a unified framework widely used for community benchmark publications. OCR-3&#39;s absence means third parties can publish structured comparisons against Qwen3-VL, GLM-5.1, and InternVL3.5 without OCR-3 appearing as a data point.</dd>
+      <dd>lmms-eval has registered competitive models (Qwen3-VL, InternVL3.5, GLM-series) and covers DocVQA, ChartQA, and IDP-adjacent benchmarks; OCR-3 is absent. Third-party publications using this toolkit will structurally exclude OCR-3 from model comparisons.</dd>
       <dt>Research</dt>
-      <dd>The evaluation framework is directly applicable to the team&#39;s VLM hallucination benchmarking work; a registry submission would make OCR-3 a default comparator in externally-run evaluations of document-AI capabilities.</dd>
+      <dd>The evaluation harness covers the same benchmarks the team uses for hallucination evaluation; integrating it would allow reproducible cross-model hallucination comparisons in a single framework rather than per-model custom harnesses.</dd>
       <dt>Action</dt>
-      <dd>monitor</dd>
+      <dd>investigate</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive, vlm_research</p>
 </article><article class="item "
          data-source="github_trending"
-         data-score="56">
+         data-score="54">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 5 · competitive 5 · frontier 0 · vlm_research 2 = 56 (this view's weighting)">56</span>
+          title="doc_ai 5 · competitive 4 · frontier 0 · vlm_research 2 = 54 (this view's weighting)">54</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
     <a href="https://github.com/PaddlePaddle/PaddleOCR" target="_blank" rel="nofollow noopener noreferrer">PaddlePaddle/PaddleOCR: Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.</a>
   </p>
-  <p class="item-summary">Open-source OCR toolkit using OCR-3&#39;s exact product framing; 100+ languages, PDF-to-structured-data for LLMs.</p>
+  <p class="item-summary">PaddleOCR uses OCR-3&#39;s exact positioning (&#39;Turn any PDF or image document into structured data for your AI&#39;) with 100+ language support, free and open-source.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>PaddleOCR uses OCR-3&#39;s exact product framing (&#39;Turn any PDF or image document into structured data for your AI&#39;) with 100+ language support at zero cost. Without a published accuracy differential on FUNSD, CORD, or OmniDocBench, the competitive argument defaults to qualitative displacement risk.</dd>
+      <dd>PaddleOCR&#39;s description language is nearly identical to OCR-3&#39;s product positioning; it supports 100+ languages, is free and open-source, and has strong community traction. It is the most directly substitutable open-source alternative for cost-sensitive customers and removes the price-differential argument in evaluation discussions.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication; PaddleOCR is a rule-based and CNN-hybrid system, not a VLM, so its hallucination profile differs structurally from OCR-3&#39;s.</dd>
+      <dd>PaddleOCR is a rule-based and CNN/Transformer hybrid pipeline, not a VLM-based extractor, so it does not publish on the hallucination benchmarks the team tracks. Accuracy comparisons on complex table and form extraction would be the relevant signal.</dd>
       <dt>Action</dt>
-      <dd>monitor</dd>
+      <dd>investigate</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: competitive</p>
 </article><article class="item "
          data-source="github_trending"
-         data-score="48">
+         data-score="50">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 5 · competitive 5 · frontier 0 · vlm_research 1 = 48 (this view's weighting)">48</span>
+          title="doc_ai 3 · competitive 2 · frontier 1 · vlm_research 3 = 50 (this view's weighting)">50</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/opendatalab/MinerU" target="_blank" rel="nofollow noopener noreferrer">opendatalab/MinerU: Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.</a>
+    <a href="https://github.com/luxus180/LLaVA-OneVision-1.5" target="_blank" rel="nofollow noopener noreferrer">luxus180/LLaVA-OneVision-1.5: Build and train multimodal models easily with LLaVA-OneVision 1.5, an open framework for seamless integration of vision and language tasks.</a>
   </p>
-  <p class="item-summary">Shanghai AI Lab open-source PDF/Office-to-LLM markdown+JSON extractor; direct substitute for Nanonets /parse.</p>
+  <p class="item-summary">LLaVA-OneVision 1.5 open multimodal training framework; prior LLaVA fine-tunes have submitted to the IDP Leaderboard.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>MinerU (Shanghai AI Lab / opendatalab) targets the identical PDF/Office-to-LLM-ready markdown+JSON interface as the Nanonets Agentic Data Extraction /parse and /extract endpoints. It is open-source, actively maintained, and has appeared at the top of this build&#39;s competitive axis across 30+ consecutive builds.</dd>
+      <dd>LLaVA-OneVision-1.5 lowers the barrier for training document-specific VLM variants; prior LLaVA-based fine-tunes have submitted to the IDP Leaderboard. A 1.5-generation framework with architectural updates increases the likelihood of new document-specific fine-tune submissions in the near term.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication. Its extraction methodology is heuristic-plus-VLM, not mechanistic interpretability-based, so hallucination patterns are structurally different.</dd>
+      <dd>The framework&#39;s updated architecture may introduce new attention patterns or position encoding schemes relevant to the team&#39;s phantom-row and structural hallucination work; its open-weight training approach would allow direct mechanistic interpretability experiments on trained variants.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive</p>
 </article><article class="item "
          data-source="github_trending"
          data-score="46">
@@ -412,15 +400,15 @@
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/opendataloader-project/opendataloader-pdf" target="_blank" rel="nofollow noopener noreferrer">opendataloader-project/opendataloader-pdf: PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.</a>
+    <a href="https://github.com/opendatalab/MinerU" target="_blank" rel="nofollow noopener noreferrer">opendatalab/MinerU: Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.</a>
   </p>
-  <p class="item-summary">Open-source PDF parser for AI-ready data from opendatalab; targets identical use case as Nanonets /parse.</p>
+  <p class="item-summary">MinerU (Shanghai AI Lab/opendatalab) converts PDFs and Office docs to LLM-ready markdown/JSON for agentic workflows, directly overlapping Nanonets Agentic Data Extraction.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>opendataloader-pdf (opendatalab) directly substitutes for the Nanonets /parse endpoint: open-source, PDF-focused, AI-ready output. It shares organizational branding with MinerU and has appeared in this build series for 7+ consecutive cycles.</dd>
+      <dd>MinerU targets an identical interface: PDF and Office document to LLM-ready markdown/JSON for agentic workflows. Backed by Shanghai AI Lab (opendatalab), it competes directly on the /parse and /extract endpoints of Nanonets Agentic Data Extraction with a free, institutionally maintained open-source offering.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication; heuristic extraction pipeline, not VLM-based.</dd>
+      <dd>No direct research implication; MinerU is a production extraction tool without published hallucination or VLM internals work.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
@@ -428,25 +416,25 @@
   <p class="secondary-axes">also: competitive</p>
 </article><article class="item "
          data-source="github_trending"
-         data-score="40">
+         data-score="38">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 0 · vlm_research 1 = 40 (this view's weighting)">40</span>
+          title="doc_ai 5 · competitive 4 · frontier 0 · vlm_research 0 = 38 (this view's weighting)">38</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/Unstructured-IO/unstructured" target="_blank" rel="nofollow noopener noreferrer">Unstructured-IO/unstructured: Convert documents to structured data effortlessly. Unstructured is open-source ETL solution for transforming complex documents into clean, structured formats for language models.  Visit our website to</a>
+    <a href="https://github.com/Unstructured-IO/unstructured" target="_blank" rel="nofollow noopener noreferrer">Unstructured-IO/unstructured: Convert documents to structured data effortlessly. Open-source ETL for complex documents into clean, structured formats for language models.</a>
   </p>
-  <p class="item-summary">Named Nanonets competitive entrant: open-source ETL converting complex documents to LLM-ready formats.</p>
+  <p class="item-summary">Unstructured.io open-source document ETL converts complex documents to LLM-ready formats; named competitor and integration partner.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Unstructured is a named Nanonets competitive entrant and also an integration partner. It is the most feature-complete open-source document ETL and is increasingly bundled as a default parser inside orchestration platforms (RAGFlow, BiSheng).</dd>
+      <dd>Unstructured&#39;s continued GitHub Trending presence indicates growing developer adoption of its free ETL alternative for the RAG-pipeline use case that Nanonets Agentic Data Extraction also serves. As a named competitor with both free and enterprise tiers, it directly competes on the /parse and /extract endpoints.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication beyond its role as a baseline extraction tool.</dd>
+      <dd>No direct research implication.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
@@ -457,45 +445,96 @@
          data-score="36">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 3 · frontier 1 · vlm_research 1 = 36 (this view's weighting)">36</span>
+          title="doc_ai 2 · competitive 0 · frontier 2 · vlm_research 2 = 36 (this view's weighting)">36</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/infiniflow/ragflow" target="_blank" rel="nofollow noopener noreferrer">infiniflow/ragflow: RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs</a>
+    <a href="https://github.com/sgl-project/sglang" target="_blank" rel="nofollow noopener noreferrer">sgl-project/sglang: SGLang is a high-performance serving framework for large language models and multimodal models.</a>
   </p>
-  <p class="item-summary">Open-source RAG engine with agentic capabilities; orchestration-layer competitor to Nanonets Agents.</p>
+  <p class="item-summary">SGLang high-throughput serving framework for LLMs and multimodal models with RadixAttention and continuous batching.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>RAGFlow is a leading open-source RAG engine with agentic capabilities, directly competing with Nanonets Agents on the document automation layer. Like Dify, it bundles open-source parsers. The co-occurrence of RAGFlow and Dify in the same build cycle, both without Nanonets connectors, represents a cumulative distribution gap.</dd>
+      <dd>SGLang provides RadixAttention and continuous batching for multimodal model serving; relevant to OCR-3&#39;s 35B MoE serving cost at scale. Has appeared across multiple consecutive build cycles without a confirmed team evaluation.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication.</dd>
+      <dd>No direct research implication; infrastructure serving optimization.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
 </article><article class="item "
          data-source="github_trending"
-         data-score="28">
+         data-score="32">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 3 · frontier 1 · vlm_research 0 = 28 (this view's weighting)">28</span>
+          title="doc_ai 2 · competitive 2 · frontier 2 · vlm_research 1 = 32 (this view's weighting)">32</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+      <span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/langgenius/dify" target="_blank" rel="nofollow noopener noreferrer">langgenius/dify: Production-ready platform for agentic workflow development.</a>
+    <a href="https://github.com/qualcomm/nexa-sdk" target="_blank" rel="nofollow noopener noreferrer">qualcomm/nexa-sdk: Run frontier LLMs and VLMs with day-0 model support across GPU, NPU, and CPU, with comprehensive runtime coverage for PC, mobile, and Linux/IoT.</a>
   </p>
-  <p class="item-summary">Production agentic workflow platform; above-extraction-layer competitor to Nanonets Agents.</p>
+  <p class="item-summary">Qualcomm Nexa SDK enables VLM inference on GPU/NPU/CPU and mobile with day-0 frontier model support.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Dify is an above-extraction-layer agentic workflow platform that competes with Nanonets Agents on end-to-end document automation. It bundles open-source parsers (Unstructured, opendataloader-pdf) as defaults, creating a distribution gap where developers adopting Dify may never evaluate Nanonets extraction.</dd>
+      <dd>Nexa SDK enables frontier VLMs — including document-capable models — on edge hardware (NPU, mobile, IoT), opening a distribution tier outside Nanonets&#39; current server-side architecture. Relevant if customers require on-device document processing.</dd>
+      <dt>Research</dt>
+      <dd>Mobile and edge inference may introduce hardware-specific hallucination modes not observed in server GPU runs; no current research implication unless the team studies cross-hardware hallucination behavior.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="32">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 4 · frontier 0 · vlm_research 0 = 32 (this view's weighting)">32</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/opendataloader-project/opendataloader-pdf" target="_blank" rel="nofollow noopener noreferrer">opendataloader-project/opendataloader-pdf: PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.</a>
+  </p>
+  <p class="item-summary">opendataloader-pdf open-source PDF parser targeting AI-ready structured output, overlapping Nanonets Agentic Data Extraction /parse endpoint.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>opendataloader-pdf is an open-source PDF parser explicitly targeting AI-ready structured output and PDF accessibility, directly overlapping the Nanonets Agentic Data Extraction /parse endpoint. It shares organizational branding with MinerU (opendatalab), suggesting a coordinated open-source extraction push rather than two independent competitors.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="32">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 3 · frontier 0 · vlm_research 1 = 32 (this view's weighting)">32</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/infiniflow/ragflow" target="_blank" rel="nofollow noopener noreferrer">infiniflow/ragflow: RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities</a>
+  </p>
+  <p class="item-summary">RAGFlow open-source RAG-plus-agent engine for document workflows; competes with Nanonets Agents at the orchestration layer.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>RAGFlow combines RAG and agent capabilities for document orchestration and connects to open-source extraction defaults by default. Enterprise customers adopting RAGFlow for document workflows will reach for bundled parsers rather than Nanonets Agentic Data Extraction unless a native connector exists.</dd>
       <dt>Research</dt>
       <dd>No direct research implication.</dd>
       <dt>Action</dt>
@@ -516,7 +555,47 @@
   <p class="item-title">
     <a href="https://github.com/OpenBMB/UltraRAG" target="_blank" rel="nofollow noopener noreferrer">OpenBMB/UltraRAG: A Low-Code MCP Framework for Building Complex and Innovative RAG Pipelines</a>
   </p>
-  <p class="item-summary">MCP-native low-code RAG pipeline builder; potential distribution-connector gap for Nanonets.</p>
+  <p class="item-summary">UltraRAG low-code MCP-native framework for RAG pipelines; competes with Nanonets Agents at the orchestration layer.</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="26">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 1 · frontier 1 · vlm_research 1 = 26 (this view's weighting)">26</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/safishamsi/graphify" target="_blank" rel="nofollow noopener noreferrer">safishamsi/graphify: AI coding assistant skill. Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph.</a>
+  </p>
+  <p class="item-summary">Graphify converts code, docs, papers, and images into a queryable knowledge graph for coding agents.</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="24">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 2 · frontier 2 · vlm_research 0 = 24 (this view's weighting)">24</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/genkit-ai/genkit" target="_blank" rel="nofollow noopener noreferrer">genkit-ai/genkit: Open-source framework for building AI-powered apps in JavaScript, Go, and Python, built and used in production by Google</a>
+  </p>
+  <p class="item-summary">Google-backed genkit framework for AI apps (JS/Go/Python) has connectors for Anthropic, OpenAI, Gemini — but not Nanonets.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>genkit is production-backed by Google with established connectors for Anthropic, OpenAI, and Gemini in JS, Go, and Python. Absence of a Nanonets connector means enterprise developers building on genkit will default to other extraction services. The Google backing gives this a different distribution risk profile than community-maintained platforms like Dify or RAGFlow.</dd>
+      <dt>Research</dt>
+      <dd>No research implication.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
 </article><article class="item "
          data-source="github_trending"
          data-score="22">
@@ -531,73 +610,153 @@
   <p class="item-title">
     <a href="https://github.com/paperless-ngx/paperless-ngx" target="_blank" rel="nofollow noopener noreferrer">paperless-ngx/paperless-ngx: A community-supported supercharged document management system: scan, index and archive all your documents</a>
   </p>
-  <p class="item-summary">Community-supported self-hosted document management system for scanning, indexing, and archiving.</p>
+  <p class="item-summary">Paperless-ngx community document management system for scanning, indexing, and archiving; targets document workflows adjacent to Nanonets.</p>
 </article><article class="item "
          data-source="github_trending"
-         data-score="12">
+         data-score="20">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 1 · competitive 1 · frontier 1 · vlm_research 0 = 12 (this view's weighting)">12</span>
+          title="doc_ai 2 · competitive 2 · frontier 1 · vlm_research 0 = 20 (this view's weighting)">20</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+      <span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/open-webui/open-webui" target="_blank" rel="nofollow noopener noreferrer">open-webui/open-webui: User-friendly AI Interface (Supports Ollama, OpenAI API, ...)</a>
+    <a href="https://github.com/Mintplex-Labs/anything-llm" target="_blank" rel="nofollow noopener noreferrer">Mintplex-Labs/anything-llm: Stop renting your intelligence. Own it with AnythingLLM.</a>
   </p>
-  <p class="item-summary">User-friendly UI for Ollama and OpenAI APIs; not document-AI specific.</p>
+  <p class="item-summary">AnythingLLM local-first agent experience with document ingestion; competes at the orchestration layer.</p>
 </article><article class="item "
          data-source="github_trending"
-         data-score="12">
+         data-score="18">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 1 · competitive 1 · frontier 1 · vlm_research 0 = 12 (this view's weighting)">12</span>
+          title="doc_ai 2 · competitive 1 · frontier 1 · vlm_research 0 = 18 (this view's weighting)">18</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/Mintplex-Labs/anything-llm" target="_blank" rel="nofollow noopener noreferrer">Mintplex-Labs/anything-llm: Stop renting your intelligence. Own it with AnythingLLM. Everything you need for a powerful local-first agent experience</a>
-  </p>
-  <p class="item-summary">Local-first AI agent platform with document support; not document-AI specific.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="10">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 0 = 10 (this view's weighting)">10</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
     <a href="https://github.com/yusufkaraaslan/Skill_Seekers" target="_blank" rel="nofollow noopener noreferrer">yusufkaraaslan/Skill_Seekers: Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with automatic conflict detection</a>
   </p>
-  <p class="item-summary">Converts documentation websites, GitHub repos, and PDFs into Claude AI skills; adjacent to document parsing.</p>
+  <p class="item-summary">Tool converting docs, repos, and PDFs into Claude AI skills; adjacent to document parsing workflows.</p>
 </article><article class="item "
          data-source="github_trending"
-         data-score="10">
+         data-score="18">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 0 = 10 (this view's weighting)">10</span>
+          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 1 = 18 (this view's weighting)">18</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/safishamsi/graphify" target="_blank" rel="nofollow noopener noreferrer">safishamsi/graphify: AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable</a>
+    <a href="https://github.com/rerun-io/rerun" target="_blank" rel="nofollow noopener noreferrer">rerun-io/rerun: Visualize, query, and stream to train on multimodal robotics data.</a>
   </p>
-  <p class="item-summary">Converts code/SQL/docs/images/videos into queryable knowledge graphs; adjacent to document-processing workflows.</p>
+  <p class="item-summary">Rerun visualization and querying tool for multimodal robotics data; not document extraction relevant.</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="14">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 1 = 14 (this view's weighting)">14</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/tensorflow/tensorflow" target="_blank" rel="nofollow noopener noreferrer">tensorflow/tensorflow: An Open Source Machine Learning Framework for Everyone</a>
+  </p>
+  <p class="item-summary">TensorFlow general ML framework; no document-AI specificity this cycle.</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="14">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 1 · frontier 0 · vlm_research 0 = 14 (this view's weighting)">14</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/apache/seatunnel" target="_blank" rel="nofollow noopener noreferrer">apache/seatunnel: SeaTunnel is a multimodal, high-performance, distributed, massive data integration tool.</a>
+  </p>
+  <p class="item-summary">Apache SeaTunnel distributed data integration; &#39;multimodal&#39; refers to data sources, not AI modalities.</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="12">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 1 · frontier 1 · vlm_research 0 = 12 (this view's weighting)">12</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/affaan-m/ECC" target="_blank" rel="nofollow noopener noreferrer">affaan-m/ECC: The agent harness performance optimization system for Claude Code, Codex, Opencode, Cursor and beyond.</a>
+  </p>
+  <p class="item-summary">Agent harness optimization for Claude Code and coding assistants; not document-extraction relevant.</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="12">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 1 · frontier 1 · vlm_research 0 = 12 (this view's weighting)">12</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="nofollow noopener noreferrer">NousResearch/hermes-agent: The agent that grows with you</a>
+  </p>
+  <p class="item-summary">NousResearch general-purpose agent framework; no document-AI specificity.</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="12">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 1 · frontier 1 · vlm_research 0 = 12 (this view's weighting)">12</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" rel="nofollow noopener noreferrer">Significant-Gravitas/AutoGPT: AutoGPT is the vision of accessible AI for everyone, to use and to build on.</a>
+  </p>
+  <p class="item-summary">AutoGPT general agent platform; above-extraction-layer, no document-AI focus.</p>
 </article>    <details class="more-items">
-      <summary>Show 1 more in this axis</summary>
+      <summary>Show 5 more in this axis</summary>
       <ul>
+        <li data-source="github_trending" data-score="12">
+          <span class="more-score" title="composite 12 (this view's weighting)">12</span>
+          <a href="https://github.com/open-webui/open-webui" target="_blank" rel="nofollow noopener noreferrer">open-webui/open-webui: User-friendly AI Interface (Supports Ollama, OpenAI API, ...)</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="12">
+          <span class="more-score" title="composite 12 (this view's weighting)">12</span>
+          <a href="https://github.com/RunanywhereAI/runanywhere-sdks" target="_blank" rel="nofollow noopener noreferrer">RunanywhereAI/runanywhere-sdks: Production ready toolkit to run AI locally</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="10">
+          <span class="more-score" title="composite 10 (this view's weighting)">10</span>
+          <a href="https://github.com/thedotmack/claude-mem" target="_blank" rel="nofollow noopener noreferrer">thedotmack/claude-mem: Persistent Context Across Sessions for Every Agent</a>
+          <span class="more-source">github_trending</span>
+        </li>
+        <li data-source="github_trending" data-score="10">
+          <span class="more-score" title="composite 10 (this view's weighting)">10</span>
+          <a href="https://github.com/screenpipe/screenpipe" target="_blank" rel="nofollow noopener noreferrer">screenpipe/screenpipe: YC (S26) | AI that knows what you&#39;ve seen, said, or heard. Records everything you do, say, hear 24/7, local, private, secure</a>
+          <span class="more-source">github_trending</span>
+        </li>
         <li data-source="github_trending" data-score="6">
           <span class="more-score" title="composite 6 (this view's weighting)">6</span>
-          <a href="https://github.com/apache/seatunnel" target="_blank" rel="nofollow noopener noreferrer">apache/seatunnel: SeaTunnel is a multimodal, high-performance, distributed, massive data integration tool.</a>
+          <a href="https://github.com/OpenBB-finance/OpenBB" target="_blank" rel="nofollow noopener noreferrer">OpenBB-finance/OpenBB: Financial data platform for analysts, quants and AI agents.</a>
           <span class="more-source">github_trending</span>
         </li>
       </ul>
@@ -605,156 +764,31 @@
   </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
-<article class="item "
-         data-source="github_trending"
-         data-score="32">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 1 · frontier 2 · vlm_research 2 = 32 (this view's weighting)">32</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/qualcomm/nexa-sdk" target="_blank" rel="nofollow noopener noreferrer">qualcomm/nexa-sdk: Run frontier LLMs and VLMs with day-0 model support across GPU, NPU, and CPU, with comprehensive runtime coverage for PC (Python/C++), mobile (Android &amp; iOS), and Linux/IoT (Arm64 &amp; x86 Docker). Suppo</a>
-  </p>
-  <p class="item-summary">Edge inference SDK for frontier LLMs/VLMs on GPU/NPU/CPU; not document-AI specific.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="22">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 2 · frontier 3 · vlm_research 0 = 22 (this view's weighting)">22</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/genkit-ai/genkit" target="_blank" rel="nofollow noopener noreferrer">genkit-ai/genkit: Open-source framework for building AI-powered apps in JavaScript, Go, and Python, built and used in production by Google</a>
-  </p>
-  <p class="item-summary">Google-backed AI app framework (JS/Go/Python) with Anthropic/OpenAI/Gemini connectors; no Nanonets connector.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Genkit is a production-grade AI app framework from Google with registered connectors for Anthropic, OpenAI, and Gemini but not Nanonets. Developers building AI-powered applications in Google&#39;s ecosystem default to registered connectors; the absence of a Nanonets connector is a qualitatively different distribution risk than community-maintained platforms.</dd>
-      <dt>Research</dt>
-      <dd>No direct research implication.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="12">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 1 = 12 (this view's weighting)">12</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/RunanywhereAI/runanywhere-sdks" target="_blank" rel="nofollow noopener noreferrer">RunanywhereAI/runanywhere-sdks: Production ready toolkit to run AI locally</a>
-  </p>
-  <p class="item-summary">Production-ready toolkit for running AI locally; not document-AI specific.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="12">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 1 = 12 (this view's weighting)">12</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/Hunyuan-PromptEnhancer/PromptEnhancer" target="_blank" rel="nofollow noopener noreferrer">Hunyuan-PromptEnhancer/PromptEnhancer: [CVPR 2026] PromptEnhancer is a prompt-rewriting tool, refining prompts into clearer, structured versions for better image generation.</a>
-  </p>
-  <p class="item-summary">CVPR 2026 prompt-rewriting tool for image generation; not relevant to document AI.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="4">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 0 = 4 (this view's weighting)">4</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/affaan-m/ECC" target="_blank" rel="nofollow noopener noreferrer">affaan-m/ECC: The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</a>
-  </p>
-  <p class="item-summary">Agent harness for Claude Code/Codex; not directly relevant to document AI.</p>
-</article>    <details class="more-items">
-      <summary>Show 2 more in this axis</summary>
-      <ul>
-        <li data-source="github_trending" data-score="4">
-          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
-          <a href="https://github.com/thedotmack/claude-mem" target="_blank" rel="nofollow noopener noreferrer">thedotmack/claude-mem: Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Cla</a>
-          <span class="more-source">github_trending</span>
-        </li>
-        <li data-source="github_trending" data-score="4">
-          <span class="more-score" title="composite 4 (this view's weighting)">4</span>
-          <a href="https://github.com/screenpipe/screenpipe" target="_blank" rel="nofollow noopener noreferrer">screenpipe/screenpipe: YC (S26) | AI that knows what you&#39;ve seen, said, or heard. Records everything you do, say, hear 24/7, local, private, secure</a>
-          <span class="more-source">github_trending</span>
-        </li>
-      </ul>
-    </details>
+      <p class="item-summary">No top-N items this build.</p>
   </div>
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="66">
+         data-score="42">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 4 · frontier 2 · vlm_research 4 = 66 (this view's weighting)">66</span>
+          title="doc_ai 2 · competitive 3 · frontier 2 · vlm_research 2 = 42 (this view's weighting)">42</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/modelscope/ms-swift" target="_blank" rel="nofollow noopener noreferrer">modelscope/ms-swift: Use PEFT or Full-parameter to CPT/SFT/DPO/GRPO 600+ LLMs (Qwen3.6, DeepSeek-V4, GLM-5.1, InternLM3, Llama4, ...) and 300+ MLLMs (Qwen3-VL, Qwen3-Omni, InternVL3.5, Ovis2.5, GLM4.5v, Gemma4, Llava, Phi</a>
-  </p>
-  <p class="item-summary">ModelScope PEFT/GRPO fine-tuning for 600+ LLMs/MLLMs including Qwen3-VL, GLM-5.1, Ovis2.5, InternVL3.5.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>ms-swift now supports GRPO for all primary IDP Leaderboard competitive models (Qwen3-VL, GLM-5.1, InternVL3.5, Ovis2.5, GLM4.5v). An external lab can now run a complete GRPO document-VLM fine-tuning pipeline and submit to the IDP Leaderboard with lower barrier than standard SFT.</dd>
-      <dt>Research</dt>
-      <dd>GRPO&#39;s post-training lift on reasoning tasks is well-documented; whether it transfers to document extraction benchmarks (DocVQA, OmniDocBench) at comparable magnitude is an open question that determines how quickly the leaderboard gap to OCR-3 can narrow.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: vlm_research</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="50">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 4 · frontier 2 · vlm_research 2 = 50 (this view's weighting)">50</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 40%"></span>
+      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
     <a href="https://github.com/ollama/ollama" target="_blank" rel="nofollow noopener noreferrer">ollama/ollama: Get up and running with Kimi-K2.6, GLM-5.1, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.</a>
   </p>
-  <p class="item-summary">Local inference platform listing Kimi-K2.6, GLM-5.1, gpt-oss, Qwen, DeepSeek; gpt-oss classification unresolved.</p>
+  <p class="item-summary">Ollama local inference now lists Kimi-K2.6, GLM-5.1, gpt-oss as first-class models alongside Qwen and DeepSeek.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Ollama&#39;s headline model list includes GLM-5.1, Kimi-K2.6, DeepSeek, Qwen, and gpt-oss — all either in the competitive registry or unclassified. gpt-oss in particular has now appeared for 5+ builds with undetermined document-extraction capability; if it is an open-weight OpenAI model with vision, it belongs in the competitive registry and its primary_axis must be competitive per the strict frontier-lab rule.</dd>
+      <dd>Ollama&#39;s model list expansion to include Kimi-K2.6 (Moonshot AI) and GLM-5.1 makes local inference of competitive document-capable VLMs accessible without API costs, enabling any developer to run head-to-head accuracy tests against OCR-3. This lowers the barrier for third-party competitive benchmarks.</dd>
       <dt>Research</dt>
-      <dd>Access to these models locally removes API dependencies for cross-architecture hallucination transfer experiments. GLM-5.1 and Qwen in particular are IDP Leaderboard comparables accessible without cloud API cost.</dd>
+      <dd>GLM-5.1 and Kimi-K2.6 running locally enable low-cost cross-architecture hallucination transfer experiments without API spend; whether either model has document-specific benchmark results is unconfirmed.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
@@ -773,11 +807,11 @@
   <p class="item-title">
     <a href="https://github.com/langchain-ai/langchain" target="_blank" rel="nofollow noopener noreferrer">langchain-ai/langchain: The agent engineering platform.</a>
   </p>
-  <p class="item-summary">LangChain now describes itself as &#39;the agent engineering platform&#39;; overlaps Nanonets Agents&#39; positioning.</p>
+  <p class="item-summary">LangChain repositions as &#39;the agent engineering platform,&#39; shifting from distribution partner toward above-extraction-layer competitor to Nanonets Agents.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>LangChain is listed in the editorial grounding as a Nanonets integration partner, but its current self-description reads &#39;the agent engineering platform&#39; — directly overlapping Nanonets Agents&#39; positioning. The same distribution channel is now simultaneously a competitor at the orchestration tier.</dd>
+      <dd>LangChain&#39;s self-description as &#39;the agent engineering platform&#39; signals a competitive drift from distribution partner toward agentic orchestration competitor. Its large installed developer base means this repositioning has immediate reach; the LangChain / LlamaIndex integration listed as a Nanonets Agentic Data Extraction feature may need to be re-evaluated as the relationship becomes more competitive.</dd>
       <dt>Research</dt>
       <dd>No direct research implication.</dd>
       <dt>Action</dt>
@@ -786,34 +820,29 @@
   </div>
 </article><article class="item "
          data-source="github_trending"
-         data-score="6">
+         data-score="18">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 0 · competitive 1 · frontier 1 · vlm_research 0 = 6 (this view's weighting)">6</span>
+          title="doc_ai 2 · competitive 3 · frontier 0 · vlm_research 0 = 18 (this view's weighting)">18</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="nofollow noopener noreferrer">NousResearch/hermes-agent: The agent that grows with you</a>
+    <a href="https://github.com/langgenius/dify" target="_blank" rel="nofollow noopener noreferrer">langgenius/dify: Production-ready platform for agentic workflow development.</a>
   </p>
-  <p class="item-summary">NousResearch agent framework; above-extraction-layer, not document-AI specific.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="6">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 0 · competitive 1 · frontier 1 · vlm_research 0 = 6 (this view's weighting)">6</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
+  <p class="item-summary">Dify production agentic workflow platform competes with Nanonets Agents at the orchestration layer.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Dify is a production-ready agentic workflow platform that connects to open-source extraction defaults, competing with Nanonets Agents at the orchestration layer. Its broad developer adoption means customers selecting Dify as their workflow runtime will default to bundled parsers rather than Nanonets Agentic Data Extraction.</dd>
+      <dt>Research</dt>
+      <dd>No research implication.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
   </div>
-  <p class="item-title">
-    <a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" rel="nofollow noopener noreferrer">Significant-Gravitas/AutoGPT: AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.</a>
-  </p>
-  <p class="item-summary">AutoGPT autonomous agent platform; above-extraction-layer, not document-AI specific.</p>
 </article>  </div>
 </section>
 
@@ -826,18 +855,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Rolling summary — three standing questions unanswered for 20+ consecutive builds: (1) OCR-3 registration in lmms-eval and evalscope model registries — is the barrier a process gap, compute gap, or policy embargo? (2) MinerU and opendataloader-pdf accuracy comparison against OCR-3 on FUNSD, CORD, or OmniDocBench. (3) arXiv/HN 403 access — environment firewall, rate-limit, or resolved policy decision?</p>
-    <p class="question-context">lmms-eval trended this cycle covering DocVQA and OCR tasks; OCR-3&#39;s absence means any third-party benchmark publication using this toolkit omits OCR-3 as a comparator. MinerU scored doc_ai=5 and composite=68 with no published accuracy differential for the 30th+ consecutive build. arXiv and HN have both been unavailable for 20+ builds; all research_implication fields in this edition are inferred from GitHub repository metadata, not paper abstracts.</p>
+    <p class="question-text">The arXiv, HN, and RSS sources have all failed for 20+ consecutive builds. Is github_trending-only signal the accepted operating norm, or is there an owner and deadline for restoring a primary research source?</p>
+    <p class="question-context">Without arXiv and HN, the vlm_research and doc_ai research_implication fields are inferred from GitHub repository metadata alone. Prior builds proposed Semantic Scholar, arXiv OAI-PMH, and HN Firebase API as alternatives; none has been acted on. A one-sentence policy decision would end this recurring infrastructure question and allow the build agent to adjust its editorial posture for research-implication fields accordingly.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">crossroute-audit (explanation-faithfulness auditing for VLMs) scored vlm_research=5 this build. Does the team&#39;s current hallucination evaluation harness include explanation-faithfulness checks — verifying that the model&#39;s stated justification for an extracted row corresponds to a visual region in the source document?</p>
-    <p class="question-context">crossroute-audit addresses a behavioral dimension distinct from existing weight-level interpretability methods (logit lens, activation patching, sparse autoencoders). It would extend the team&#39;s phantom-row taxonomy to include cases where OCR-3 produces a visually unfaithful justification for a hallucinated row, without requiring new training infrastructure. A yes/no on whether this dimension is already covered would determine whether to reproduce or deprioritize.</p>
+    <p class="question-text">PaddleOCR scored doc_ai=5, competitive=4, composite=65 in this build using language nearly identical to OCR-3&#39;s product framing. Should it be added to the named competitive set in data/nanonets_context.md?</p>
+    <p class="question-context">PaddleOCR has appeared at high composite scores across multiple consecutive builds and uses the same &#39;Turn any PDF or image document into structured data for your AI&#39; framing as OCR-3, with 100+ language support and free open-source licensing. Without a registry entry, each build re-evaluates it from first principles. A yes/no answer would stabilize scoring permanently.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Janus-Pro-Unofficial provides a locally runnable PyTorch reproduction of the DeepSeek-affiliated Janus-Pro model. DeepSeek-OCR 2 is a named IDP Leaderboard comparable at 91.09% on OmniDocBench v1.5. Has the team assessed the architectural relationship between Janus-Pro and DeepSeek-OCR 2, and if visual encoder components are shared, would a cross-architecture phantom-row transfer experiment on the local reproduction be feasible in under one week?</p>
-    <p class="question-context">The unofficial reproduction removes the API access barrier for Janus-Pro. If the architecture overlaps with DeepSeek-OCR 2&#39;s visual encoder, this is the fastest available path to a cross-architecture hallucination transfer experiment using a model near the top of the IDP Leaderboard. The architectural relationship is not confirmed from public documentation.</p>
+    <p class="question-text">crossroute-audit (explanation-faithfulness auditing for VLMs) is methodologically adjacent to the team&#39;s mechanistic interpretability work. Does the team track faithfulness auditing as a methodology distinct from activation patching, and should items in this class carry a standing action recommendation?</p>
+    <p class="question-context">This is the first build in which crossroute-audit appeared; it scored vlm_research=4. Faithfulness auditing evaluates whether model explanations match internal computations — complementary to causal scrubbing and logit lens, but not identical. Knowing whether this paradigm is inside or outside the research scope would let future builds apply a consistent action recommendation rather than re-evaluating each new faithfulness-auditing item independently.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Ollama now lists Kimi-K2.6 (Moonshot AI) as a first-class local inference model. Moonshot AI is not in the editorial grounding. Does Kimi-K2.6 include document extraction capabilities that would place it on the IDP Leaderboard, and should it be added to the competitive registry?</p>
+    <p class="question-context">Prior builds raised GLM-5 vs. GLM-OCR disambiguation; that question is unresolved. This build adds Kimi-K2.6 as a new name in the Ollama model list. If Kimi-K2.6 has structured document extraction capability comparable to Qwen3-VL or GLM-OCR, it should be in the registry; if it is a general VLM without document focus, items referencing it may be over-scored on the competitive axis.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">lmms-eval trends again without OCR-3 in its model registry, while Qwen3-VL, InternVL3.5, and GLM-series are registered. Is the barrier to OCR-3 submission a process question (who owns the submission), a compute question (running the benchmarks), or a policy question (publication timing)?</p>
+    <p class="question-context">Third-party publications using lmms-eval will structurally exclude OCR-3 from comparisons until it is registered. Prior builds asked whether the team uses these frameworks internally; this question focuses on the specific barrier to external-facing registry submission. A one-sentence answer identifying the root cause would allow the correct corrective action rather than continuing to flag the absence each build.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -849,7 +888,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered: github_trending    · failed: 3 · built at 2026-06-11T18:00:00+00:00
+    sources covered: github_trending    · failed: 3 · built at 2026-06-11T18:09:51+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

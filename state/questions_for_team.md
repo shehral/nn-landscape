@@ -2583,3 +2583,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-11T18:09:51+00:00 (audit: partial)
+
+### Q: The arXiv, HN, and RSS sources have all failed for 20+ consecutive builds. Is github_trending-only signal the accepted operating norm, or is there an owner and deadline for restoring a primary research source?
+
+**Context:** Without arXiv and HN, the vlm_research and doc_ai research_implication fields are inferred from GitHub repository metadata alone. Prior builds proposed Semantic Scholar, arXiv OAI-PMH, and HN Firebase API as alternatives; none has been acted on. A one-sentence policy decision would end this recurring infrastructure question and allow the build agent to adjust its editorial posture for research-implication fields accordingly.
+
+**Answer:** _add reply here_
+
+### Q: PaddleOCR scored doc_ai=5, competitive=4, composite=65 in this build using language nearly identical to OCR-3's product framing. Should it be added to the named competitive set in data/nanonets_context.md?
+
+**Context:** PaddleOCR has appeared at high composite scores across multiple consecutive builds and uses the same 'Turn any PDF or image document into structured data for your AI' framing as OCR-3, with 100+ language support and free open-source licensing. Without a registry entry, each build re-evaluates it from first principles. A yes/no answer would stabilize scoring permanently.
+
+**Answer:** _add reply here_
+
+### Q: crossroute-audit (explanation-faithfulness auditing for VLMs) is methodologically adjacent to the team's mechanistic interpretability work. Does the team track faithfulness auditing as a methodology distinct from activation patching, and should items in this class carry a standing action recommendation?
+
+**Context:** This is the first build in which crossroute-audit appeared; it scored vlm_research=4. Faithfulness auditing evaluates whether model explanations match internal computations — complementary to causal scrubbing and logit lens, but not identical. Knowing whether this paradigm is inside or outside the research scope would let future builds apply a consistent action recommendation rather than re-evaluating each new faithfulness-auditing item independently.
+
+**Answer:** _add reply here_
+
+### Q: Ollama now lists Kimi-K2.6 (Moonshot AI) as a first-class local inference model. Moonshot AI is not in the editorial grounding. Does Kimi-K2.6 include document extraction capabilities that would place it on the IDP Leaderboard, and should it be added to the competitive registry?
+
+**Context:** Prior builds raised GLM-5 vs. GLM-OCR disambiguation; that question is unresolved. This build adds Kimi-K2.6 as a new name in the Ollama model list. If Kimi-K2.6 has structured document extraction capability comparable to Qwen3-VL or GLM-OCR, it should be in the registry; if it is a general VLM without document focus, items referencing it may be over-scored on the competitive axis.
+
+**Answer:** _add reply here_
+
+### Q: lmms-eval trends again without OCR-3 in its model registry, while Qwen3-VL, InternVL3.5, and GLM-series are registered. Is the barrier to OCR-3 submission a process question (who owns the submission), a compute question (running the benchmarks), or a policy question (publication timing)?
+
+**Context:** Third-party publications using lmms-eval will structurally exclude OCR-3 from comparisons until it is registered. Prior builds asked whether the team uses these frameworks internally; this question focuses on the specific barrier to external-facing registry submission. A one-sentence answer identifying the root cause would allow the correct corrective action rather than continuing to flag the absence each build.
+
+**Answer:** _add reply here_
+
+---
