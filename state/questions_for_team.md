@@ -2511,3 +2511,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-11T06:00:00+00:00 (audit: partial)
+
+### Q: Is OCR-3 registered in lmms-eval's model registry, and if not, should the team submit it so community benchmark runs include it?
+
+**Context:** lmms-eval (composite 66) covers DocVQA, ChartQA, and OCR tasks in a widely used unified evaluation framework. If OCR-3 is absent from its registry, head-to-head evaluations published by the community will not include it, ceding competitive visibility to models that are registered. Adding OCR-3 requires only a model-integration PR; the team is best placed to decide if that visibility trade-off is worth the maintenance overhead.
+
+**Answer:** _add reply here_
+
+### Q: Has the team assessed whether GRPO fine-tuning on document tasks yields benchmark improvements comparable to what GRPO achieved on reasoning tasks?
+
+**Context:** ms-swift (composite 59) now supports GRPO for Qwen3-VL, GLM-5.1, and InternVL3.5 out-of-the-box. If GRPO offers the same kind of post-training lift on DocVQA and OmniDocBench that it produced on math/reasoning, competitors running these tools could close the gap to OCR-3 faster than standard SFT would allow. A quick literature check on GRPO + document benchmarks would bound this risk.
+
+**Answer:** _add reply here_
+
+### Q: crossroute-audit targets explanation-faithfulness auditing for VLMs and scores vlm_research=5 this build. Is this project known to the research team, and does it overlap with or complement the existing hallucination evaluation harness?
+
+**Context:** If the team already has a comparable faithfulness-auditing tool internally, crossroute-audit's framing should be downgraded in future builds. If not, it may be the fastest path to adding behavioral faithfulness checks alongside the team's mechanistic work on phantom rows and repetition loops.
+
+**Answer:** _add reply here_
+
+### Q: The arXiv/HN 403 failure question (first raised in Build 2026-05-21) has now been open for 6+ consecutive builds without a team reply. This is the sixth build drawing exclusively from github_trending. Should the dashboard explicitly retire arXiv and HN from the source manifest until the 403 issues are resolved, rather than logging them as failures each build?
+
+**Context:** The current behavior logs both sources as failed every run, inflating the sources_failed count and setting audit_passed=false on every build regardless of content quality. If the 403s are permanent (e.g., API credential issues, IP-level blocks), formally removing them from sources.yaml and documenting the reason in questions_for_team.md would give a cleaner signal. If the 403s are transient, the team should investigate the root cause before the next build cycle.
+
+**Answer:** _add reply here_
+
+---
