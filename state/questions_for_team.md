@@ -2561,3 +2561,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-11T18:00:00+00:00 (audit: partial)
+
+### Q: Rolling summary — three standing questions unanswered for 20+ consecutive builds: (1) OCR-3 registration in lmms-eval and evalscope model registries — is the barrier a process gap, compute gap, or policy embargo? (2) MinerU and opendataloader-pdf accuracy comparison against OCR-3 on FUNSD, CORD, or OmniDocBench. (3) arXiv/HN 403 access — environment firewall, rate-limit, or resolved policy decision?
+
+**Context:** lmms-eval trended this cycle covering DocVQA and OCR tasks; OCR-3's absence means any third-party benchmark publication using this toolkit omits OCR-3 as a comparator. MinerU scored doc_ai=5 and composite=68 with no published accuracy differential for the 30th+ consecutive build. arXiv and HN have both been unavailable for 20+ builds; all research_implication fields in this edition are inferred from GitHub repository metadata, not paper abstracts.
+
+**Answer:** _add reply here_
+
+### Q: crossroute-audit (explanation-faithfulness auditing for VLMs) scored vlm_research=5 this build. Does the team's current hallucination evaluation harness include explanation-faithfulness checks — verifying that the model's stated justification for an extracted row corresponds to a visual region in the source document?
+
+**Context:** crossroute-audit addresses a behavioral dimension distinct from existing weight-level interpretability methods (logit lens, activation patching, sparse autoencoders). It would extend the team's phantom-row taxonomy to include cases where OCR-3 produces a visually unfaithful justification for a hallucinated row, without requiring new training infrastructure. A yes/no on whether this dimension is already covered would determine whether to reproduce or deprioritize.
+
+**Answer:** _add reply here_
+
+### Q: Janus-Pro-Unofficial provides a locally runnable PyTorch reproduction of the DeepSeek-affiliated Janus-Pro model. DeepSeek-OCR 2 is a named IDP Leaderboard comparable at 91.09% on OmniDocBench v1.5. Has the team assessed the architectural relationship between Janus-Pro and DeepSeek-OCR 2, and if visual encoder components are shared, would a cross-architecture phantom-row transfer experiment on the local reproduction be feasible in under one week?
+
+**Context:** The unofficial reproduction removes the API access barrier for Janus-Pro. If the architecture overlaps with DeepSeek-OCR 2's visual encoder, this is the fastest available path to a cross-architecture hallucination transfer experiment using a model near the top of the IDP Leaderboard. The architectural relationship is not confirmed from public documentation.
+
+**Answer:** _add reply here_
+
+---
