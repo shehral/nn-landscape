@@ -2713,3 +2713,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-12T18:07:37+00:00 (audit: partial)
+
+### Q: Should MinerU be added to the named competitive set in data/nanonets_context.md?
+
+**Context:** MinerU (composite=62) is the highest-scoring item for multiple consecutive builds and directly targets the Nanonets Agentic Data Extraction /parse and /extract endpoints with an identical output format (markdown/JSON). This question was first raised in build 2026-05-21T18 and remains unanswered. A one-word yes/no decision would stabilize scoring across future builds rather than requiring per-build re-evaluation.
+
+**Answer:** _add reply here_
+
+### Q: Has Kimi-K2.6 (Moonshot AI, now named in Ollama) been benchmarked on OmniDocBench or the IDP Leaderboard, and should it be added to the competitive registry?
+
+**Context:** Ollama's model description now names Kimi-K2.6, an update from Kimi-K2.5 surfaced in prior builds. Prior questions about whether Moonshot AI / Kimi should be in the competitive registry remain unanswered. With the model generation advancing, the question shifts from 'should we track Kimi' to 'does Kimi-K2.6 have documented document-extraction performance that warrants registry inclusion alongside GLM-OCR and Qwen3-VL'.
+
+**Answer:** _add reply here_
+
+### Q: Is there a publication embargo or unassigned task blocking OCR-3 submission to the lmms-eval model registry?
+
+**Context:** lmms-eval and evalscope both appear this cycle without OCR-3 in their registries; competitors (Qwen3-VL, InternVL3.5, GLM-5.1) are registered. Prior builds noted this submission gap; no team response has been logged. A one-sentence answer stating whether there is an embargo, quality-gate concern, or assigned owner would end this recurring question permanently.
+
+**Answer:** _add reply here_
+
+### Q: Is crossroute-audit's explanation-faithfulness auditing methodology novel relative to the team's existing mechanistic interpretability toolset, or an implementation of known techniques?
+
+**Context:** crossroute-audit (explanation-faithfulness auditing for VLMs) is a new item not seen in prior builds. Its stated goal — auditing whether a VLM's stated reasoning aligns with its actual computation — may complement or duplicate the team's causal scrubbing and activation patching work. Reading the source before the next build would confirm whether it introduces a new diagnostic capability or restates existing methods.
+
+**Answer:** _add reply here_
+
+### Q: Is there a monitoring mechanism — such as a HuggingFace watch for model cards combining ms-swift GRPO with DocVQA or OmniDocBench references — that would provide early warning of an incoming IDP Leaderboard submission?
+
+**Context:** ms-swift GRPO now explicitly supports Qwen3-VL, InternVL3.5, and GLM-4.5v; evalscope provides evaluation; Ollama provides local deployment. The full external-lab submission pipeline is assembled and trending simultaneously. The concern is not whether this toolchain exists but whether a submission is already in progress and the team would know before it is publicly announced.
+
+**Answer:** _add reply here_
+
+---
