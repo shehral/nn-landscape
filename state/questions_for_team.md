@@ -2679,3 +2679,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-12T12:08:09+00:00 (audit: partial)
+
+### Q: Should arXiv, HN, and RSS be formally removed from sources.yaml until access is restored, rather than logging them as failed on every build?
+
+**Context:** All three have failed for 20+ consecutive builds (arXiv and HN return 403; RSS returns zero items). The current behavior sets audit_passed=false on every edition regardless of content quality. A one-sentence policy decision — remove them temporarily or investigate the root cause — would end this recurring infrastructure question and give the audit flag meaningful signal again.
+
+**Answer:** _add reply here_
+
+### Q: What is gpt-oss in Ollama's headline model list, and does it have document-extraction or vision capabilities?
+
+**Context:** gpt-oss appears alongside GLM-5.1 and Kimi-K2.6 in Ollama's description for the second consecutive build. Per the strict frontier-vs-competitive rule, any OpenAI model with document-extraction capability must be classified primary_axis=competitive. The build cannot verify from the repo description alone whether gpt-oss is an open-weight model, a community alias, or an unrelated tool.
+
+**Answer:** _add reply here_
+
+### Q: What is the specific barrier to registering OCR-3 in lmms-eval's model registry — process gap (no owner), compute gap (benchmark runs not yet run), or policy gap (publication timing)?
+
+**Context:** lmms-eval trended for the fourth or fifth consecutive build. Qwen3-VL, InternVL3.5, and GLM-series are registered; publications using this toolkit will exclude OCR-3 from comparison tables. Identifying the barrier type is the minimum information needed to route to the correct corrective action — the same question applies to evalscope.
+
+**Answer:** _add reply here_
+
+### Q: Has anyone assessed whether GRPO post-training yields benchmark gains on DocVQA and OmniDocBench comparable to what it achieved on reasoning tasks?
+
+**Context:** ms-swift now provides out-of-the-box GRPO support for all major OCR-3 competitors. If GRPO closes the benchmark gap at a similar rate on document tasks (where it produced SOTA improvements on math/reasoning), competitors could reach OCR-3's leaderboard position without new architecture. A literature scan on GRPO + document benchmarks would bound the timeline.
+
+**Answer:** _add reply here_
+
+### Q: Does Genkit's plugin architecture use a REST adapter pattern that would make a Nanonets OCR-3 connector a half-day engineering effort, or does it require a custom SDK integration?
+
+**Context:** Genkit is Google-backed with established connectors for Anthropic, OpenAI, and Gemini. Its enterprise backing distinguishes it from community platforms. Knowing the technical barrier converts the recurring 'investigate' recommendation into either a scoped task or a confirmed no-priority decision — and ends the recurring appearance of this item in the AI-partner queue.
+
+**Answer:** _add reply here_
+
+---
