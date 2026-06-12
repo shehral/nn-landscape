@@ -2617,3 +2617,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-12T00:00:00+00:00 (audit: partial)
+
+### Q: Ollama now lists 'gpt-oss' in its description alongside GLM-5.1 and Kimi-K2.6 — is gpt-oss the OpenAI open-weight model, and does it have document extraction or vision capabilities that would place it in the competitive registry?
+
+**Context:** This is the first appearance of 'gpt-oss' in any build. If it has multimodal or document-parsing capabilities, it belongs in the competitive set alongside Qwen-VL and DeepSeek-OCR 2. The build cannot verify capabilities from the Ollama repo description alone.
+
+**Answer:** _add reply here_
+
+### Q: Ollama now shows Kimi-K2.6 where prior builds showed Kimi-K2.5 — has Moonshot AI incremented Kimi to K2.6, and does the newer version have OCR or document extraction capabilities that would warrant adding it to the competitive registry?
+
+**Context:** The question about Kimi-K2.5's document capabilities was first raised in the build of 2026-05-21 and remains unanswered. The version has now incremented. Resolving the underlying question would stabilize competitive-axis scoring across all future Ollama-related items.
+
+**Answer:** _add reply here_
+
+### Q: Four mature ML frameworks (TensorFlow, PyTorch, Keras, scikit-learn) consumed 4 of 14 github_trending slots this build; should data/sources.yaml add an exclude_repos list to suppress these stable-infrastructure repos?
+
+**Context:** These repos provide near-zero Nanonets-relevant signal but consistently appear in trending topics like machine-learning and llm. An exclude list in sources.yaml is a config-only change that would not require code modifications and would improve signal-to-noise on the github_trending source.
+
+**Answer:** _add reply here_
+
+### Q: Dify has appeared in every build for at least six consecutive cycles with an unanswered question about registry inclusion; should the 'monitor' recommendation escalate to 'investigate', and should Dify be classified as an orchestration-layer competitor (vs. Nanonets Agents) rather than an extraction-layer competitor (vs. OCR-3)?
+
+**Context:** Unlike MinerU or Reducto, Dify targets the workflow orchestration layer rather than the extraction layer. Distinguishing these two threat profiles at the registry level would resolve the per-build ambiguity about whether Dify's competitive score should be 3 (current, treating it as a direct Agent competitor) or lower.
+
+**Answer:** _add reply here_
+
+---
