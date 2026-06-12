@@ -2645,3 +2645,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-12T06:00:00+00:00 (audit: partial)
+
+### Q: All four tiers of a self-hosted Nanonets alternative trended simultaneously this build (extraction, structured output, RAG+parsing, orchestration). Should the dashboard add a 'stack_tier' field to items so readers can distinguish extraction-layer from orchestration-layer competitive signals rather than treating all competitive items identically?
+
+**Context:** Currently doc_ai and competitive scores are applied uniformly whether an item competes at the OCR/extraction layer (PaddleOCR, MinerU) or the workflow layer (Dify, RAGFlow). A one-word tier field would let Prathamesh and the DL team apply different response playbooks to each tier without re-reading the framing each cycle.
+
+**Answer:** _add reply here_
+
+### Q: lmms-eval has now trended for multiple consecutive builds with OCR-3 absent from its model registry while Qwen3-VL, InternVL3.5, and GLM-series are registered. Is there a named owner for the OCR-3 lmms-eval submission, and is the barrier a process gap, compute gap, or policy embargo?
+
+**Context:** Third-party publications using lmms-eval will structurally exclude OCR-3 from comparisons until it is registered. Prior builds have flagged this 3+ times; identifying the specific barrier type (process vs. compute vs. policy) is the minimum information needed to route to the correct corrective action.
+
+**Answer:** _add reply here_
+
+### Q: LLaVA-OneVision 1.5 provides a publicly available training codebase for a multimodal VLM architecture distinct from Qwen-VL and InternVL3.5. Should the research team use it to expand cross-architecture phantom-row hallucination experiments to the LLaVA-OneVision family?
+
+**Context:** The team's published hallucination methodology covers cross-architecture transfer but the current comparison set has not been specified publicly. LLaVA-OneVision 1.5's public codebase removes the access barrier. A yes/no on whether this architecture is inside or outside the current cross-architecture scope would let future builds assign a stable action recommendation to LLaVA family items.
+
+**Answer:** _add reply here_
+
+### Q: Should data/sources.yaml add an exclude_repos list to suppress TensorFlow, PyTorch, Keras, and scikit-learn from github_trending results?
+
+**Context:** These four repos consumed 4 of 47 trending slots this build with zero Nanonets-relevant signal. An exclude list is a config-only change requiring no code modifications. Prior builds asked an open-ended version of this question; this formulation is actionable: the team can approve or decline the specific change.
+
+**Answer:** _add reply here_
+
+### Q: gpt-oss appears in Ollama's headline model list alongside GLM-5.1 and Kimi-K2.6. If gpt-oss is an open-weight OpenAI model with vision or document-extraction capabilities, it belongs in the competitive registry; if it is a general-purpose model, it should be classified frontier-primary. Has anyone on the team verified what gpt-oss is?
+
+**Context:** This is the second consecutive build in which gpt-oss has appeared without classification. Per the strict frontier-vs-competitive disambiguation rule, any OpenAI model with document-extraction capability must be primary_axis=competitive. The build cannot verify capabilities from the Ollama repo description alone.
+
+**Answer:** _add reply here_
+
+---
