@@ -2843,3 +2843,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-13T18:08:10+00:00 (audit: partial)
+
+### Q: PaddleOCR and opendataloader-pdf have been the top-ranking items across multiple consecutive builds; neither is in the canonical competitive set in data/nanonets_context.md. The prior question about PaddleOCR from Build 2026-05-21 remains unanswered. Should both be added to the competitive registry now?
+
+**Context:** PaddleOCR explicitly targets PDF-to-structured-data extraction for AI pipelines with 100+ language support, matching the Nanonets Agentic Data Extraction interface. opendataloader-pdf directly parallels the /parse endpoint as an open-source self-hostable alternative. Without a registry entry, each build rescores them from scratch rather than treating them as known competitors. This is the second consecutive build raising this question.
+
+**Answer:** _add reply here_
+
+### Q: arxiv, HN, and RSS have all failed for this build — producing a 100% github_trending source mix for what appears to be the sixth or more consecutive build. Is there an alternative ingest path (arxiv OAI-PMH, HN Firebase API, direct blog scraping) the team wants to enable, or is the current source mix acceptable for now?
+
+**Context:** The vlm_research and doc_ai research_implication framings in the dashboard rely on primary research signals; limited to GitHub trending, the build is structurally biased toward production tooling and misses academic paper launches, competitive product announcements via blog, and HN discussions. The partial-build banner has been active across all recent builds. This structural issue has been flagged in every build since May 21.
+
+**Answer:** _add reply here_
+
+### Q: crossroute-audit (explanation-faithfulness auditing for VLMs) appeared for the first time this build; should the team evaluate whether its explanation-faithfulness framework is compatible with the mechanistic interpretability methods the research line uses?
+
+**Context:** Faithfulness auditing and mechanistic interpretability are adjacent approaches to the same problem — understanding where VLMs generate outputs unsupported by the visual input. If the frameworks are composable, crossroute-audit could reduce the manual overhead of attribution analysis on hallucinated document outputs. The tool is open source and trending, suggesting active community interest.
+
+**Answer:** _add reply here_
+
+### Q: evalscope provides standardized benchmark coverage for DocVQA, ChartQA, and IDP-adjacent tasks. Is OCR-3 registered in its model catalog? If not, competitors with ModelScope backing could publish evalscope comparisons that exclude OCR-3 as a reference model.
+
+**Context:** evalscope has trended in multiple consecutive builds. Its ModelScope backing gives it broad adoption among Chinese AI teams, several of which (Zhipu, Qwen/Alibaba, DeepSeek) operate models that appear on the IDP Leaderboard. Absence from the model catalog would put OCR-3 at a reporting disadvantage in community benchmark runs. This question was also raised in an earlier build.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift now supports GRPO fine-tuning for Qwen3-VL, GLM-5.1, and InternVL3.5; should the team set up a watch query on HuggingFace for GRPO-tuned document VLM variants that might submit to the IDP Leaderboard within the next one to two build cycles?
+
+**Context:** GRPO has produced SOTA improvements on reasoning benchmarks; if applied to document VLMs, GRPO fine-tunes could narrow the accuracy gap to OCR-3 on OmniDocBench or OLM-OCR before the team is aware of the new entrant. This question was raised in Build 2026-05-22 and remains unanswered. A HuggingFace watch on models mentioning GRPO with document benchmarks would provide early warning.
+
+**Answer:** _add reply here_
+
+---
