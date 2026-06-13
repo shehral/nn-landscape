@@ -2781,3 +2781,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-13T00:00:00+00:00 (audit: partial)
+
+### Q: Is explanation-faithfulness auditing (as implemented in crossroute-audit) within scope of the team's VLM interpretability protocol, or does the team's current focus remain on mechanistic methods (logit lens, activation patching, causal scrubbing)?
+
+**Context:** crossroute-audit (vlm_research=5) is a new appearance this cycle. Knowing whether behavioral faithfulness auditing is in scope would change this item's action recommendation from 'read in week' to 'no action' in future builds, and would clarify whether the three behavioral hallucination detection paradigms trending this cycle (crossroute-audit, NVIDIA-VSS, video-evaluator) are complementary to the existing interpretability work or outside its scope.
+
+**Answer:** _add reply here_
+
+### Q: Is Qwen3-Omni document-extraction capable — does it handle structured PDF/image extraction at accuracy comparable to Qwen3-VL — or is it audio/video-focused without document-parsing depth?
+
+**Context:** Qwen3-Omni appears in ms-swift's supported MLLM list this cycle for the first time alongside Qwen3-VL. Qwen3-VL is already tracked as an IDP Leaderboard comparable. If Qwen3-Omni matches Qwen3-VL on document extraction, it is a new leaderboard entrant that should be added to nanonets_context.md; if it is audio/speech-focused, the ms-swift item can be scored without the Omni addition changing the competitive framing.
+
+**Answer:** _add reply here_
+
+### Q: Is there a technical barrier — ModelScope account requirement, compute access, or API key — preventing OCR-3 registry submission to evalscope specifically?
+
+**Context:** Prior builds asked who owns the decision (process) and whether there is a publication policy concern. This question targets the technical prerequisite, which is distinct: if the barrier is a ModelScope account, it is a half-hour setup; if it is compute access for running DocVQA and OmniDocBench, it is a resource allocation question. Knowing which barrier applies determines the correct next action and would end recurring flagging of the evalscope registry gap.
+
+**Answer:** _add reply here_
+
+### Q: Kimi-K2.6 (Moonshot AI) replaces Kimi-K2.5 in Ollama's featured model list this cycle. Is this a meaningful architecture update with improved document vision capabilities, or a minor version bump with no material capability change?
+
+**Context:** Prior builds raised Kimi-K2.5 without a team response. Kimi-K2.6 is a new version and the question recurs at each major version update. If Kimi-K2.6 has document extraction depth comparable to GLM-OCR (94.62 on OmniDocBench V1.5), it warrants IDP Leaderboard evaluation and addition to nanonets_context.md. A one-sentence yes/no on document-extraction capability closes the question permanently for this version.
+
+**Answer:** _add reply here_
+
+### Q: This cycle is the first where crossroute-audit (explanation faithfulness), NVIDIA-VSS (spatial evidence anchoring), and Knowledge-Infused-Multimodal-Retrieval (retrieval-based mitigation) all appear together. Has the team considered running any of these as a one-day ablation alongside the mechanistic interpretability protocol on a common phantom-row benchmark?
+
+**Context:** All three paradigms are behavioral — they require no access to model weights or activations — which means any one of them could be run independently of the interpretability work as a comparative baseline. Prior builds asked whether retrieval-based mitigation is in scope; this question is about the combined behavioral class, which is new this cycle, and specifically about a bounded 1-day experiment rather than a full parallel research line.
+
+**Answer:** _add reply here_
+
+---
