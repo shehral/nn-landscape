@@ -2815,3 +2815,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-13T12:10:40+00:00 (audit: partial)
+
+### Q: evalscope and lmms-eval have now trended for five or more consecutive builds with Qwen3-VL, InternVL3.5, and GLM-4.5v registered and OCR-3 absent. Is there a named owner and a concrete barrier — technical, process, or policy — preventing OCR-3 submission to these registries?
+
+**Context:** Third-party benchmark publications using evalscope or lmms-eval will structurally exclude OCR-3 from comparison tables until it is registered. Prior builds have asked this question in multiple formulations without a recorded answer. A one-sentence answer specifying the barrier type (ModelScope account, compute access, or publication policy) would end this recurring question and enable a scoped corrective action.
+
+**Answer:** _add reply here_
+
+### Q: gpt-oss appears in Ollama's headline model description for a third or more consecutive build. Is it an open-weight OpenAI model with document-extraction or vision capabilities that should be added to the IDP Leaderboard competitive registry?
+
+**Context:** The strict frontier-vs-competitive disambiguation rule requires any OpenAI model with document-extraction capability to be classified primary_axis=competitive. The repository description alone does not confirm whether gpt-oss has these capabilities. A one-sentence classification would allow stable scoring in every future build where Ollama trends.
+
+**Answer:** _add reply here_
+
+### Q: The arXiv, HN, and RSS source failures have persisted for 25 or more consecutive builds with no policy decision recorded. Should these sources be temporarily removed from data/sources.yaml to give the audit_passed flag meaningful signal, or is there an active investigation with an expected resolution date?
+
+**Context:** Every build currently sets audit_passed=false because fewer than 3 of 4 sources produce items, regardless of the quality of content from github_trending. A documented policy decision in data/nanonets_context.md would reset the audit baseline and clarify whether github_trending-only builds are an accepted operating mode or a temporary degraded state.
+
+**Answer:** _add reply here_
+
+### Q: opendataloader-pdf is a new item this cycle with a description that matches Nanonets Agentic Data Extraction's exact positioning. Is it a funded startup, a corporate project, or an independent open-source effort — and does the team consider it a material addition to the competitive monitoring set?
+
+**Context:** The repository description is too brief to determine the project's scale, backing, or technical depth. A five-minute review of the repository and any linked team page would establish whether this is a passing GitHub trend or a new entrant warranting ongoing tracking alongside MinerU, Reducto, and LlamaParse.
+
+**Answer:** _add reply here_
+
+---
