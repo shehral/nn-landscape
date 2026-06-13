@@ -2747,3 +2747,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-13T08:00:00+00:00 (audit: partial)
+
+### Q: crossroute-audit (explanation-faithfulness auditing for VLMs) is new to this build. Has the team compared its methodology against the causal scrubbing and logit lens approaches used for hallucination localization, and do the two address complementary failure modes or overlapping ones?
+
+**Context:** Explanation-faithfulness auditing examines whether a VLM's stated reasoning matches its generative path. This is adjacent to the team's causal scrubbing and logit lens work but operates at a different level of the model. A quick technical read would determine whether crossroute-audit complements the existing toolkit or duplicates it.
+
+**Answer:** _add reply here_
+
+### Q: Ollama's supported model description now lists 'gpt-oss' alongside Kimi-K2.6 and GLM-5.1. Is gpt-oss OpenAI's open-source model release, and if so, does it have documented document extraction capabilities that warrant adding it to the IDP Leaderboard competitive set?
+
+**Context:** The identifier 'gpt-oss' has not appeared in prior builds or in the editorial grounding. If it is an open-weight OpenAI model with document AI capabilities comparable to GPT-5.x, it belongs in the competitive registry and potentially as a leaderboard submission target.
+
+**Answer:** _add reply here_
+
+### Q: Kimi-K2.6 has replaced Kimi-K2.5 in Ollama's model description this cycle. Build 2026-05-26 first raised Moonshot AI and Kimi-K2.5 as a potential competitive entry; that question remains unanswered. Does the K2.6 version increment reflect a new capability release, and has the team assessed Kimi-K2.6's document extraction performance?
+
+**Context:** Moonshot AI is not currently in the editorial grounding. If Kimi-K2.6 includes document extraction capabilities comparable to GLM-OCR or Qwen3-VL, it should be added to the competitive registry. The version increment from K2.5 to K2.6 in a single build cycle suggests an active release cadence.
+
+**Answer:** _add reply here_
+
+### Q: PaddleOCR, LiteParse, opendataloader-pdf, and OCRmyPDF all trended in the same github_trending cycle. Was there a specific upstream event — a benchmark publication, a conference, or a dataset release — driving the co-occurrence, or is this a coincidental alignment of unrelated upgrade cycles?
+
+**Context:** The simultaneous trending of four distinct OCR/document parsing tools is unusual. If a shared event (e.g., a new benchmark or dataset) is driving the activity, that event is itself a higher-priority item that was not captured because arXiv and HN are down. Identifying the driver would sharpen the scoring context for this cluster.
+
+**Answer:** _add reply here_
+
+### Q: The arXiv, HN, and RSS source failures have now persisted for at least 25 consecutive builds with no team action confirmed. Should this be treated as a resolved policy decision — github_trending is the accepted operating norm — and documented in data/nanonets_context.md to end the recurring question, or is there an owner and deadline for restoring a primary research source?
+
+**Context:** Without arXiv or HN, the vlm_research and doc_ai research_implication fields are inferred from GitHub repository metadata alone, which changes the epistemic status of all framing in every build. A one-sentence policy decision in nanonets_context.md would permanently close this question; a named owner and date would clarify the timeline for restoration.
+
+**Answer:** _add reply here_
+
+---
