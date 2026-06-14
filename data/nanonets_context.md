@@ -52,9 +52,9 @@ The team also publicly maintains the **IDP Leaderboard**
 benchmark on document AI co-developed with IIT Indore. Items that
 publish leaderboard results, contest its methodology, or are released by
 models near the top of it (GPT-5.4, GPT-5.5, Gemini-3-Pro/Flash,
-Gemini 3.5 Flash, Claude 4.6 family, Qwen3-VL, Pixtral, GLM-OCR,
-Chandra OCR 2, LightOn OCR-2, DeepSeek-OCR 2) are competitive-axis
-relevant.
+Gemini 3.5 Flash, Claude 4.6 family, Claude Fable 5, Qwen3-VL, Pixtral,
+GLM-OCR, Chandra OCR 2, LightOn OCR-2, DeepSeek-OCR 2) are
+competitive-axis relevant.
 
 ## Active research direction
 
@@ -84,11 +84,12 @@ Items that name, compare against, or are released by these companies are
 **competitive-axis relevant**:
 
 - **Mistral OCR 3 / Mistral Document AI** — direct competitor on
-  multilingual document extraction; Mistral OCR 3 (January 2026;
-  model ID mistral-ocr-2512) improved accuracy across handwritten
-  and structured documents; Mistral OCR 25.03 is available on Azure
-  AI Foundry; Mistral OCR 25.05 on Vertex AI (May 2026). Available
-  via both platforms.
+  multilingual document extraction; Mistral OCR 3 (announced January
+  2026; model ID mistral-ocr-2512) improved accuracy across handwritten
+  and structured documents; 74% win rate over Mistral OCR 2 in internal
+  evaluations; priced at $2 per 1,000 pages (50% batch discount = $1
+  per 1,000 pages); Mistral OCR 2 retiring June 30, 2026; Mistral OCR
+  25.03 on Azure AI Foundry; Mistral OCR 25.05 on Vertex AI (May 2026).
 - **Reducto** — competitor on structured extraction with multi-pass
   agentic correction; exposes Parse / Extract / Split / Edit endpoints
   similar to OCR-3's surface. Raised $75M Series B (Andreessen
@@ -104,11 +105,16 @@ Items that name, compare against, or are released by these companies are
   simplified tier config and ~50% cost reduction. LlamaIndex also
   open-sourced LiteParse, a lightweight TypeScript-native local parser
   (March 2026). ParseBench launched April 2026 as a LlamaIndex-run
-  document-OCR benchmark for AI agents. LlamaParse Agentic Plus mode
-  adds bounding-box citations for complex formulas, handwriting, and
-  infographics.
+  document-OCR benchmark for AI agents; ParseBench accepted to CVPR
+  2026. LlamaParse Agentic Plus mode adds bounding-box citations for
+  complex formulas, handwriting, and infographics; word-, line-, and
+  cell-level bounding boxes added for audit-grade citation trails.
+  Parse-Flow launched June 2026 for visual document intelligence
+  workflows.
 - **Unstructured.io** — competitor and frequent integration partner;
-  document parsing infrastructure.
+  document parsing infrastructure. Expanded Microsoft Azure integration
+  announced June 3, 2026, covering Azure AI Search and Blob Storage
+  pipelines for enterprise RAG and agentic workflows.
 - **Docling** (IBM Research) — open-source layout-aware document parser;
   reference architecture and common open-source baseline.
   Granite-Docling-258M (production VLM, January 2026, Apache 2.0)
@@ -164,7 +170,11 @@ frontier lab is, on that specific item, a competitor.
 
 Examples that are **competitive-primary**:
 
-- Anthropic ships a document-extraction tool inside Claude / the API.
+- Anthropic ships a document-extraction tool inside Claude / the API;
+  Claude Fable 5 (June 9, 2026; model ID claude-fable-5) and Claude
+  Mythos 5 (limited availability, Project Glasswing) include advanced
+  vision understanding for diagrams and nested tables and appear on
+  ParseBench.
 - Google releases a Gemini-document-mode endpoint or a layout-aware
   OCR benchmark result (Gemini 3 Pro/Flash; Gemini 3.5 Flash released
   May 2026 at Google I/O).
@@ -487,3 +497,70 @@ Nanonets, do not respond.
   page) and Docling for IBM watsonx enterprise platform added.
 - Updated Firecrawl: /parse endpoint (May 2026; multi-format, 50MB
   limit, 5× speed) added; classification as "adjacent" unchanged.
+
+---
+
+**Date:** 2026-06-14
+
+**Sources consulted:**
+
+- `nanonets.com`, `nanonets.com/blog`, `benchmarking.nanonets.com`,
+  `idp-leaderboard.org` — all returned HTTP 403; fell back to web
+  search for all Nanonets data
+- WebSearch: "Nanonets OCR-3 IDP leaderboard June 2026 ranking" —
+  #1 at 85.9% confirmed; benchmarking.nanonets.com and
+  idp-leaderboard.org URLs surfaced; ranking unchanged
+- WebSearch: "site:huggingface.co/nanonets" — open-weight lineup
+  unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains API-only
+- WebSearch: "nanonets arxiv 2026" — no team-authored papers surfaced;
+  nanoindex (agentic RAG for long documents) noted but no arXiv paper
+- WebSearch: Mistral OCR 2026 — Mistral OCR 3 pricing ($2/1,000 pages,
+  50% batch discount) and 74% win rate over OCR 2 confirmed from
+  VentureBeat and CloudPrice; Mistral OCR 2 retiring June 30, 2026
+  confirmed from Xentoo blog (May 30, 2026 email)
+- WebSearch: Reducto AI 2026 — no new June 2026 announcements; all
+  prior entries (Series B, Deep Extract, Opennote, Classification,
+  Smart Schema) confirmed current
+- WebSearch: LlamaParse / LlamaIndex 2026 June — Parse-Flow launch
+  (June 2026, visual document intelligence workflows) and ParseBench
+  at CVPR 2026 confirmed from llamaindex.ai blog results; bounding-box
+  granularity update confirmed
+- WebSearch: Unstructured.io June 2026 — Microsoft Azure collaboration
+  announced June 3, 2026 (Azure AI Search + Blob Storage pipelines)
+  confirmed from multiple trade sources (HPC Wire, Yahoo Finance, etc.)
+- WebSearch: Anthropic Claude document extraction June 2026 — Claude
+  Fable 5 (June 9, 2026; claude-fable-5) and Claude Mythos 5 (limited
+  availability, Project Glasswing) confirmed from Anthropic news and
+  multiple review sites; advanced vision for diagrams/nested tables noted;
+  ParseBench participation confirmed from LlamaIndex search results
+- WebSearch: OpenAI GPT-5 document vision 2026 — GPT-5.4 (March 2026)
+  and GPT-5.5 (April 2026) confirmed active; no new June 2026 models
+- WebSearch: Google Gemini document OCR June 2026 — no major new
+  announcement beyond Gemini 3.5 Flash already in context; Document AI
+  OCR v2.1 migration recommended (minor)
+- WebSearch: Chandra OCR / LightOn OCR / GLM-OCR / DeepSeek-OCR /
+  HunyuanOCR / Qwen3-VL / Rossum / Docsumo / ABBYY / Kofax
+  (Tungsten Automation) / Firecrawl 2026 — all confirmed operating;
+  no renames, pivots, or closures since last refresh
+- WebSearch: xAI Grok vision document 2026 — no new dedicated document
+  extraction product; no change
+
+**Material changes versus prior version (2026-06-07):**
+
+- Added **Claude Fable 5** (June 9, 2026; claude-fable-5) and Claude
+  Mythos 5 (limited availability) to the IDP Leaderboard comparables
+  list and frontier-lab competitive-primary examples; Fable 5 includes
+  advanced vision understanding for diagrams and nested tables and
+  appears on ParseBench.
+- Updated **Mistral OCR 3** entry: added confirmed pricing ($2/1,000
+  pages; $1 with 50% batch discount), 74% win rate over OCR 2 in
+  internal evaluations, and Mistral OCR 2 retirement by June 30, 2026.
+- Updated **Unstructured.io** entry: added Microsoft Azure collaboration
+  (June 3, 2026) covering Azure AI Search and Blob Storage pipelines
+  for enterprise RAG and agentic workflows.
+- Updated **LlamaParse** entry: added Parse-Flow (visual document
+  intelligence workflows, June 2026) and ParseBench acceptance to
+  CVPR 2026; word/line/cell-level bounding boxes confirmed.
+- Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed
+  unchanged. No new Nanonets-authored arXiv papers. No June 2026
+  Nanonets blog posts indexed.
