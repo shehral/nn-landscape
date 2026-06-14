@@ -2911,3 +2911,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-14T00:00:00+00:00 (audit: partial)
+
+### Q: crossroute-audit is an explanation-faithfulness auditing tool for VLMs that scored vlm_research=5 this build. Is this paradigm — checking whether model explanations are faithful to internal activations — within scope for the team's mechanistic interpretability work on phantom-row hallucinations?
+
+**Context:** Explanation-faithfulness auditing is distinct from activation patching: it evaluates whether the model's stated reasoning for an extracted value aligns with its attention and activation patterns, rather than tracing which layer causes the error. If within scope, it extends the interpretability toolkit beyond raw hallucination frequency to explanation-generation consistency.
+
+**Answer:** _add reply here_
+
+### Q: Ollama's featured model list now includes Kimi-K2.6 (Moonshot AI update from K2.5), MiniMax, and gpt-oss alongside existing comparables. Have any of these three models been evaluated on DocVQA, OmniDocBench, or the IDP Leaderboard test set?
+
+**Context:** Kimi-K2.5 was raised in prior builds without a team response on its document extraction capabilities. Kimi-K2.6 is now the active version. MiniMax and gpt-oss are new entrants whose document AI benchmark positions are unknown. A one-sentence answer per model — 'benchmarked, score is X' or 'not a document AI model' — would close recurring uncertainty on the Ollama featured-model list.
+
+**Answer:** _add reply here_
+
+### Q: The RSS feeds in data/sources.yaml have returned zero items across multiple consecutive builds. Are the configured newsletter URLs (Interconnects, Latent Space, AINews, Stratechery, Anthropic blog, OpenAI blog) still pointing to active feeds, or have some moved to new endpoints?
+
+**Context:** RSS failure means the dashboard has no access to VLM research newsletters or frontier-lab blog posts. Unlike the arXiv 403 (a network policy issue), RSS failure may be a simple case of stale feed URLs. A verification sweep of the ten URLs in sources.yaml would determine which, if any, need updating. This is distinct from the arXiv/HN infrastructure question that has been open for 30+ builds.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift's GRPO support now explicitly lists DeepSeek-V4 as a fine-tunable model alongside Qwen3-VL and InternVL3.5. DeepSeek-OCR 2 is already in the competitive registry; does DeepSeek-V4 represent a separate model in the same family, and if so, does it warrant an independent IDP Leaderboard evaluation?
+
+**Context:** DeepSeek-OCR 2 (January 2026, 3B params) is the current registry entry. DeepSeek-V4 appears as a distinct model in ms-swift's GRPO configuration. If DeepSeek-V4 is a general-purpose model rather than a document-specific variant, it may not belong in the competitive registry; if it includes vision and document capabilities, it should be evaluated alongside DeepSeek-OCR 2 on OmniDocBench.
+
+**Answer:** _add reply here_
+
+### Q: This file now contains 1200+ lines with no team replies across 30+ consecutive builds. If this channel is not being actively monitored, should the AI-partner section be reduced to a single most-urgent question per build to reduce noise, or routed to a different artifact (a Linear ticket, a Slack digest, or a separate file)?
+
+**Context:** The build agent cannot determine from the file alone whether questions are being read but not answered, or not being read at all. A single reply — even 'questions received, will address in bulk' — would confirm the channel is functioning and allow the agent to calibrate question frequency accordingly.
+
+**Answer:** _add reply here_
+
+---
