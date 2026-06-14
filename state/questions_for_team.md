@@ -2877,3 +2877,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-14T06:00:00+00:00 (audit: partial)
+
+### Q: Should vlm_research and doc_ai research_implication fields carry an explicit 'inferred from tooling activity' qualifier, given that github_trending has been the sole source for 20+ consecutive builds?
+
+**Context:** Without arXiv or HN, research_implication fields are grounded in GitHub repository metadata rather than papers. Readers of the for-dl-team view expect paper-backed analysis; the current rendering does not communicate that the epistemic basis is structurally different. A one-word note on source paucity, or a partial-build variant of the framing template, would set accurate expectations.
+
+**Answer:** _add reply here_
+
+### Q: At what OmniDocBench or DocVQA score should a GRPO-fine-tuned open-weight model (Qwen3-VL, InternVL3.5, or GLM-5.1 via ms-swift) be classified as a material IDP Leaderboard threat warranting escalated action from 'monitor' to 'investigate'?
+
+**Context:** ms-swift now makes GRPO fine-tuning accessible for all three model families that compete with OCR-3 on IDP-adjacent benchmarks. Without a defined threshold, each new submission receives 'monitor' indefinitely. A score floor — e.g., 'any model that crosses 88 on OmniDocBench' — would allow the build to auto-escalate without per-build editorial judgment.
+
+**Answer:** _add reply here_
+
+### Q: Has crossroute-audit (explanation-faithfulness auditing for VLMs) been evaluated against the team's existing mechanistic interpretability toolset on the phantom-row task, and is 'reproduce' the correct action or should it route to a specific team member?
+
+**Context:** Crossroute-audit directly addresses the faithfulness audit problem for VLMs and scored vlm_research=4 this build — the highest research-axis score. The 'reproduce' recommendation sends it to the research queue, but if the team has an assigned owner for hallucination tooling evaluation, a more directed routing would be more efficient.
+
+**Answer:** _add reply here_
+
+### Q: Should RAGFlow, Dify, and UltraRAG receive a standing 'monitor' action recommendation across all future builds, treating the orchestration-layer distribution gap as a known open issue until a connector is built?
+
+**Context:** All three have appeared in multiple consecutive builds without a team response. Repeating 'monitor' each build uses editorial budget without adding new signal. If the team has decided the connector gap is not a current priority, noting that in data/nanonets_context.md would allow future builds to score them at competitive=2 max and stop escalating the distribution question.
+
+**Answer:** _add reply here_
+
+### Q: Has any team member assessed the feasibility of a Nanonets /parse or /extract integration with paperless-ngx as a community plugin or documented workflow?
+
+**Context:** Paperless-ngx handles the same document types (invoices, receipts, forms) Nanonets targets in its SME segment, and its user base would be reachable without paid acquisition. This is the first build to frame it as a concrete integration opportunity rather than a general adjacency; a yes/no on feasibility would either close the question permanently or convert it to an action item.
+
+**Answer:** _add reply here_
+
+---
