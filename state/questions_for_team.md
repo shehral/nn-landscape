@@ -2973,3 +2973,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-14T18:07:31+00:00 (audit: partial)
+
+### Q: Four behavioral VLM hallucination evaluation tools (crossroute-audit, NVIDIA-VSS, video-evaluator, Knowledge-Infused-Multimodal-Retrieval) trended simultaneously this build. Is there a shared academic event — a VLM benchmarking workshop, dataset release, or invited tutorial — driving this cluster that arXiv would have captured if the source were operational?
+
+**Context:** Behavioral faithfulness and grounded evidence tools rarely trend together without a common trigger. If a workshop or dataset is the cause, that event is a higher-priority item absent from this build. Identifying the driver would sharpen the research_implication framing for the entire cluster and confirm whether this is a one-cycle spike or a sustained research direction.
+
+**Answer:** _add reply here_
+
+### Q: Five distribution-layer frameworks (Genkit, Dify, UltraRAG, RAGFlow, BiSheng) trended in one cycle, each embedding a default document parser in their onboarding flow. Is there a specific framework among these where publishing a Nanonets OCR-3 integration guide or plugin connector would reach the highest volume of enterprise developers before they default to Gemini or an open-source alternative?
+
+**Context:** This is not a general monitoring question — it targets a discrete, bounded action. Each of these frameworks has a different primary adoption base (Genkit: Firebase/Cloud developers; Dify: workflow builders; UltraRAG: MCP/research; RAGFlow: enterprise RAG; BiSheng: Chinese enterprise AI). Knowing which one has the highest reachable buyer concentration would convert the recurring 'monitor' recommendation into a scoped integration task.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift's GRPO-supported MLLM list now includes InternLM3 and Llama4 alongside the IDP Leaderboard-ranked families (Qwen3-VL, GLM4.5v, InternVL3.5). Is there a specific model-training combination — for example, InternVL3.5 + GRPO on a document-focused dataset — that the team believes is most likely to produce a leaderboard submission before the team is aware of it, and should that combination be added to a monitoring watch?
+
+**Context:** Prior builds asked whether GRPO yields benchmark gains on document tasks comparable to reasoning tasks. This question is narrower: not whether GRPO is effective, but which specific model-family combination is highest risk for a near-term surprise submission on OmniDocBench or the IDP Leaderboard. A one-sentence answer per family (likely/unlikely/unknown) would allow the build agent to adjust action recommendations without per-build re-evaluation.
+
+**Answer:** _add reply here_
+
+### Q: opendataloader-pdf has appeared across multiple consecutive builds as the second-highest-scoring item after ms-swift. Neither the project's organizational backing nor its technical depth is apparent from the GitHub repository description alone. Has any team member reviewed the repository, linked team page, or documentation to determine whether this is a funded startup, corporate project, or independent effort?
+
+**Context:** Without this classification, each build reassigns the same 'investigate' recommendation without adding new signal. A one-sentence answer — 'independent developer, no organizational backing' or 'backed by X company' — would allow the build to either archive the question permanently or add the project to the competitive registry alongside MinerU and Reducto.
+
+**Answer:** _add reply here_
+
+### Q: LLaVA-OneVision 1.5 is trending as a VLM training framework distinct from the Qwen3-VL and InternVL families currently tracked in the competitive registry. Has the team observed LLaVA-based model submissions on the IDP Leaderboard or OmniDocBench that would warrant tracking this family as a new class of competitive entrants?
+
+**Context:** If LLaVA-based fine-tunes have not appeared on document benchmarks, the trending activity likely reflects general multimodal research interest without document-AI specificity. If they have appeared, it represents a third model family capable of IDP Leaderboard entries, and the competitive registry should be updated. A binary yes/no closes the question permanently for this generation of the framework.
+
+**Answer:** _add reply here_
+
+---
