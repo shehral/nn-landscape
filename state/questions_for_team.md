@@ -2945,3 +2945,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-14T12:00:00+00:00 (audit: partial)
+
+### Q: Tesseract has trended on GitHub in multiple recent cycles. Is this driven by a specific benchmark publication, a course curriculum, or organic developer interest in cost-sensitive OCR fallbacks?
+
+**Context:** Understanding the driver would clarify whether Tesseract's trend signals a new round of VLM-vs-legacy-OCR benchmark comparisons (which OCR-3 would participate in implicitly as the ceiling) or simply reflects tutorial activity. If a benchmark publication is the cause, that publication is a higher-priority item missing from this build because arXiv is unavailable. A one-sentence answer would close the question.
+
+**Answer:** _add reply here_
+
+### Q: vllm-omni is a new inference framework for omni-modality models (audio + vision + text + document in a single pipeline). Does the team view omni-modality serving as a deployment pattern OCR-3 should target, or is the current vision-document-only positioning intentional?
+
+**Context:** If enterprise customers begin building omni-modal pipelines that route document parsing, voice input, and video retrieval through a single inference stack, single-modality document APIs face a switching-cost barrier rather than a direct accuracy comparison. A yes/no on whether this is in scope would change the action recommendation for vllm-omni from 'monitor' to 'investigate' in future builds.
+
+**Answer:** _add reply here_
+
+### Q: Google's Genkit framework is production-used by Google and is the most natural integration point for Gemini Vision document capabilities. Does the team view Genkit's growing adoption as a structural distribution risk — i.e., enterprise developers building on Genkit may default to Gemini for document parsing without evaluating dedicated OCR APIs?
+
+**Context:** Genkit lowers the Gemini integration barrier to a few lines of code, which compresses the evaluation window for alternatives at the point of initial build. This is a different competitive dynamic than direct benchmark comparison: it affects developer choices before an accuracy benchmark is run. A view on whether this is worth proactive engagement (e.g., a Genkit plugin or documented integration) would shape how aggressively to track Genkit in future builds.
+
+**Answer:** _add reply here_
+
+### Q: LLaVA-OneVision 1.5 is trending as a training framework for open multimodal models. Has the team observed any IDP Leaderboard submissions trained on LLaVA-OneVision as a base, and is this framework a meaningful source of future document-VLM challengers distinct from the Qwen3-VL and InternVL families?
+
+**Context:** ms-swift supports GRPO specifically for Qwen3-VL, InternVL3.5, and GLM-4.5v; LLaVA-OneVision represents a different training community that may not overlap. If LLaVA-based fine-tunes have not appeared on the leaderboard, it indicates the framework is not used for document tasks; if they have, it is a new entrant class not currently tracked in nanonets_context.md.
+
+**Answer:** _add reply here_
+
+---
