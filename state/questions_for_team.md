@@ -3075,3 +3075,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-15T18:30:00+00:00 (audit: partial)
+
+### Q: Is GLM-5.1 (now in Ollama's featured-model list) vision-capable and has it been evaluated on OmniDocBench, DocVQA, or the IDP Leaderboard test set?
+
+**Context:** The competitive registry tracks GLM-OCR (Zhipu AI, March 2026; 0.9B params; 94.62 on OmniDocBench V1.5). GLM-5.1 appears in Ollama as a separate entry from the same organization. If GLM-5.1 includes vision capabilities and has document-benchmark scores, it warrants an independent registry entry; if not, this question can be closed for all future builds.
+
+**Answer:** _add reply here_
+
+### Q: Has MinerU (OpenDataLab) been evaluated on OmniDocBench or the IDP Leaderboard test set, and if so, what is its score gap versus OCR-3?
+
+**Context:** MinerU has appeared across multiple consecutive builds as the highest doc_ai-scored item outside the canonical competitive set. Its institutional backing from Shanghai AI Laboratory suggests resources for systematic benchmarking. A one-sentence answer — with or without a benchmark number — would allow the build to assign a stable competitive score and determine whether it warrants a registry entry alongside Reducto and Docling.
+
+**Answer:** _add reply here_
+
+### Q: Should the competitive registry in data/nanonets_context.md distinguish between accuracy-layer competitors (MinerU, opendataloader-pdf, Reducto) and distribution-layer competitors (Dify, RAGFlow, BiSheng, Genkit, UltraRAG)?
+
+**Context:** These two categories represent structurally different competitive mechanisms: accuracy-layer competitors affect benchmark comparison; distribution-layer competitors capture developer adoption before accuracy is evaluated. Without the distinction, all receive the same 'monitor' recommendation, but the team response required differs — benchmarking versus integration outreach. Adding this taxonomy to context.md would allow the build to assign more targeted action recommendations.
+
+**Answer:** _add reply here_
+
+### Q: This is the 36th+ consecutive build where arXiv, HN, and RSS have returned zero items. If the team has decided to accept GitHub Trending as the sole ingest source, should audit_passed be retired from false and the partial-build banner removed?
+
+**Context:** The partial-build state has been flagged in every build since May 2026 with no team response. Marking builds as partial incorrectly signals quality degradation rather than a deliberate configuration choice. Restoring arXiv/HN/RSS requires network-policy changes the build agent cannot make. A single confirmation that the current source mix is accepted would allow the build to retire the partial banner and stop raising this question.
+
+**Answer:** _add reply here_
+
+### Q: Of the five distribution-layer platforms trending this cycle (Dify, RAGFlow, BiSheng, Genkit, UltraRAG), which has the highest reachable enterprise developer concentration where an OCR-3 integration guide or plugin would arrive before a competing parser is selected by default?
+
+**Context:** Each platform has a different primary adoption base: Genkit (Firebase/Cloud developers), Dify (workflow builders), UltraRAG (MCP/research), RAGFlow (enterprise RAG), BiSheng (Chinese enterprise AI). A one-sentence view on which platform is highest-priority for integration outreach would convert the recurring 'monitor' recommendation into a scoped action item and end this question series.
+
+**Answer:** _add reply here_
+
+---
