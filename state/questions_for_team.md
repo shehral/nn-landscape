@@ -3007,3 +3007,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-15T12:05:00+00:00 (audit: partial)
+
+### Q: Is OCR-3's inference serving architecture omni-modality-aware in a way that vllm-omni's dedicated omni-modal batching would benefit, or does OCR-3 ingest through a standard VLM path that existing vLLM handles correctly?
+
+**Context:** vllm-omni is the first split from the vLLM project explicitly targeting omni-modality models. If OCR-3 uses non-standard modality handling (separate encode paths, multi-stage decoding), vllm-omni may offer throughput improvements specific to its architecture; if not, this item should be downgraded to 'monitor' permanently rather than resurfaced each build.
+
+**Answer:** _add reply here_
+
+### Q: Should sim (simstudioai) and/or NousResearch/hermes-agent be added to the competitive registry in data/nanonets_context.md as above-extraction-layer competitors to Nanonets Agents?
+
+**Context:** sim positions as 'the central intelligence layer for your AI workforce' and hermes-agent as 'the agent that grows with you' — both are new orchestration-tier entrants this build that use language directly overlapping with Nanonets Agents' process-automation positioning. Neither is currently in the editorial grounding, causing per-build ad hoc scoring. A yes/no would stabilize future builds.
+
+**Answer:** _add reply here_
+
+### Q: Does the team currently use a versioned-dataset management system for OCR-3 training data and evaluation sets, and if not, is the absence a known overhead cost for the hallucination evaluation suite?
+
+**Context:** DataChain provides typed versioned-dataset management over cloud storage (S3/GCS/Azure). If the team already has an equivalent, DataChain can be permanently downgraded. If not, a tooling gap exists that DataChain could close, reducing checkpoint-comparison overhead for the VLM hallucination research line.
+
+**Answer:** _add reply here_
+
+### Q: Is there an automated watch (GitHub, HuggingFace model hub) for new model cards referencing LLaVA-OneVision-1.5 plus DocVQA, OmniDocBench, or IDP Leaderboard benchmarks?
+
+**Context:** LLaVA-OneVision-1.5 has appeared in multiple consecutive builds; the 1.5 generation's cleaner training interface lowers the IDP Leaderboard submission barrier further. Prior builds (2026-05-23T12, 2026-05-24T12) asked whether the team proactively monitors LLaVA fine-tunes; both questions are unanswered. A watch rule would give advance notice before a new entry is published rather than detecting it post-submission.
+
+**Answer:** _add reply here_
+
+### Q: The retrieval-based VLM hallucination mitigation paradigm (Knowledge-Infused-Multimodal-Retrieval, self-reflective-rag) has appeared in at least six consecutive builds without a team response. Should it receive a standing 'read in week' action recommendation across all future builds, or does the team want each new retrieval-mitigation item evaluated independently?
+
+**Context:** This question was raised in builds 2026-05-23T06, 2026-05-25T00, 2026-05-25T12, and others — all unanswered. The absence of a response is itself a signal; if the team has decided this paradigm is outside the research scope, a one-sentence note in data/nanonets_context.md would end the recurring question. If inside scope, a standing action recommendation would reduce per-build overhead.
+
+**Answer:** _add reply here_
+
+---
