@@ -3041,3 +3041,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-15T18:20:00+00:00 (audit: partial)
+
+### Q: Has the team evaluated MinerU's extraction accuracy on OmniDocBench, the IDP Leaderboard test set, or FUNSD/CORD? If so, what is the score gap versus OCR-3?
+
+**Context:** MinerU (OpenDataLab) has appeared across multiple builds as the highest-scoring competitive item outside the canonical competitive set in data/nanonets_context.md. Its institutional backing from OpenDataLab suggests resources for systematic benchmarking. Without a benchmark comparison, it is unclear whether MinerU competes at the OCR-3 accuracy tier or serves a simpler extraction use case. A one-sentence answer would allow future builds to set its competitive score appropriately and determine whether it warrants a registry entry.
+
+**Answer:** _add reply here_
+
+### Q: This is the 30th+ consecutive build in which arXiv, HN, and RSS have returned zero items. If the team has decided to accept GitHub Trending as the sole ingest source indefinitely, should the partial-build banner and audit_passed=false status be retired and data/nanonets_context.md updated to document this?
+
+**Context:** The structural ingest failure has been flagged in every build since May 2026 with no team response. Marking builds as partial incorrectly signals quality degradation rather than a deliberate configuration choice. If the team wants to restore arXiv/HN/RSS, the fix requires environment-level network policy changes the build agent cannot make. If the team has decided to accept the current source mix, a one-sentence confirmation would allow the build to retire the partial banner and stop raising this question.
+
+**Answer:** _add reply here_
+
+### Q: Is GLM-5.1 (now in Ollama's featured-model list) a document-capable model distinct from GLM-OCR (Zhipu AI, March 2026; 0.9B params; 94.62 on OmniDocBench V1.5), and if so, does it warrant an independent competitive registry entry?
+
+**Context:** The competitive registry tracks GLM-OCR as a dedicated OCR-VLM. GLM-5.1 appears in Ollama's featured-model list as a separate entrant from Zhipu AI. If GLM-5.1 includes vision capabilities and has been evaluated on document benchmarks, it represents a new competitive entrant with different capability and cost profiles than GLM-OCR. A binary yes/no on whether GLM-5.1 is document-capable would close this question for future builds.
+
+**Answer:** _add reply here_
+
+### Q: Should the competitive registry in data/nanonets_context.md distinguish between accuracy-layer competitors (dedicated OCR/parsing APIs: MinerU, opendataloader-pdf, Reducto) and distribution-layer competitors (workflow platforms bundling parsing: RAGFlow, Dify, BiSheng, UltraRAG)?
+
+**Context:** These represent different competitive mechanisms: accuracy-layer competitors affect benchmark comparison; distribution-layer competitors affect adoption before accuracy is evaluated. Without the distinction, all receive the same 'monitor' action recommendation, but the team response needed differs — benchmarking vs. integration outreach. Adding this taxonomy to context.md would allow the build to assign more targeted action recommendations and reduce per-build editorial ambiguity.
+
+**Answer:** _add reply here_
+
+### Q: The questions_for_team.md file now contains 1300+ lines with no team replies across 35+ consecutive builds. Is this channel actively monitored, and if not, should the AI-partner section be restructured — for example, a single highest-priority question per build, a Linear ticket per question, or a separate digest file?
+
+**Context:** Without a reply confirming the channel is read, the build agent cannot calibrate question frequency or topic selection. Unanswered recurring questions (MinerU benchmark position, evalscope OCR-3 registration, PaddleOCR classification, GRPO fine-tune watch, retrieval-based mitigation scope) accumulate without closure. A single 'channel received' reply would allow recalibration; a routing change would structurally resolve it.
+
+**Answer:** _add reply here_
+
+---
