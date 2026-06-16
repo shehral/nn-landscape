@@ -3109,3 +3109,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-16T00:06:46+00:00 (audit: partial)
+
+### Q: Six document-parsing tools (MinerU, Unstructured, opendataloader-pdf, OCRmyPDF, paperless-ngx, Tesseract) trended in one cycle. Is there a known document AI event — a community competition, CVPR/ICDAR workshop, or dataset release — around mid-June 2026 driving this cluster?
+
+**Context:** If a shared upstream event is the cause, that event is a higher-priority item absent from this build given arXiv and HN unavailability. Identifying the trigger would sharpen research_implication framings for this document-parser item class without requiring primary research sources to be restored.
+
+**Answer:** _add reply here_
+
+### Q: Should Daft (Eventual-Inc) be classified as data infrastructure (competitive=0) or as a potential integration layer for Nanonets Agentic Data Extraction pipelines (competitive=2+)?
+
+**Context:** Daft targets 'multimodal workloads at scale' with Python-native semantics; its primary user base (teams building data pipelines for model training and annotation) overlaps with teams that also evaluate /extract for ground-truth labeling. A one-sentence classification would stabilize Daft's scoring across future builds without per-build re-evaluation.
+
+**Answer:** _add reply here_
+
+### Q: Has the team evaluated local pre-compression techniques (e.g., VL-JEPA-style compact visual representations sent to the API instead of full-resolution images) for OCR-3 inference, and is the approach architecturally compatible with OCR-3's visual encoding pipeline?
+
+**Context:** latent-gate claims ~80% token cost reduction via local compression before API calls. If compression degrades table-cell extraction accuracy on high-resolution structured documents, it is not viable for document AI; if it does not, it could reduce per-document inference costs materially. A binary answer (compatible/incompatible/untested) would allow the build to assign a stable action recommendation for compression tools rather than recurring 'monitor'.
+
+**Answer:** _add reply here_
+
+### Q: Does Nanonets' /vqa endpoint currently implement dense+sparse hybrid retrieval, or is it dense-only? This determines whether speaklar_rag's hybrid search pattern represents a capability gap or a solved problem.
+
+**Context:** speaklar_rag implements dense+sparse hybrid search with coreference resolution for multimodal RAG; hybrid retrieval typically outperforms dense-only on structured document tasks where exact-match keyword signals are informative. A one-sentence technical answer would permanently resolve the action recommendation for this class of hybrid retrieval items.
+
+**Answer:** _add reply here_
+
+### Q: Is OCR-3's 35B MoE architecture compatible with standard post-hoc model compression approaches (quantization, pruning, distillation as in AngelSlim), or does MoE routing make these techniques structurally incompatible?
+
+**Context:** AngelSlim (Tencent) is a comprehensive compression toolkit now trending alongside OCR-competitor model compression activity. If OCR-3's MoE design is compatible with standard compression, there may be a path to lower serving costs; if not, AngelSlim and similar tools can be permanently downscored for this build and the compression trend noted as competitor-only relevant.
+
+**Answer:** _add reply here_
+
+---
