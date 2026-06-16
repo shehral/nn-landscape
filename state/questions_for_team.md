@@ -3205,3 +3205,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-16T18:08:01+00:00 (audit: partial)
+
+### Q: Does GRPO-tuned VLM fine-tuning produce distinct hallucination artifact patterns compared to SFT-tuned VLMs on structured document tasks, and if so, should the team's hallucination research characterize GRPO-specific subtypes before GRPO-fine-tuned document VLMs appear on the IDP Leaderboard?
+
+**Context:** ms-swift now enables GRPO fine-tuning for Qwen3-VL, GLM-5.1, InternVL3.5, and Ovis2.5. GRPO has produced SOTA improvements on reasoning tasks; its artifact profile on structured document extraction (phantom rows, structural hallucinations) is unknown. If GRPO fine-tuned document VLMs begin submitting to the IDP Leaderboard, the team will need a hallucination characterization baseline for this training class.
+
+**Answer:** _add reply here_
+
+### Q: Does high-resolution structured document content (multi-column layouts, small-font tables, ID cards) degrade materially at VL-JEPA-style compressed resolutions, and is the degradation specific to structured document extraction versus prose extraction?
+
+**Context:** latent-gate claims ~80% API token cost reduction via local compression before LLM API calls. If compression degrades table-cell and small-font field accuracy on structured documents selectively (relative to prose), the approach is not viable for Nanonets document extraction use cases even if it works for general VQA. A binary answer (compatible/incompatible/untested) would allow stable action recommendations for this class of compression tools.
+
+**Answer:** _add reply here_
+
+### Q: The five open-source document parsers that co-trended this cycle (MinerU, PaddleOCR, opendataloader-pdf, OCRmyPDF, Tesseract) suggest a shared upstream trigger. Is the team aware of a specific mid-June 2026 event — a benchmark publication, CVPR/ICDAR workshop, or viral tutorial — that arXiv would have surfaced if operational?
+
+**Context:** With arXiv, HN, and RSS all non-operational, this build cannot identify an upstream cause for the parser cluster. If a shared event exists (e.g., a new document AI dataset release, a CVPR 2026 workshop paper), that event is higher-priority signal than what GitHub Trending alone conveys, and knowing it would sharpen research_implication framings across all five items.
+
+**Answer:** _add reply here_
+
+### Q: Would integrating a faithfulness auditing step (similar to crossroute-audit) into OCR-3's extraction quality reporting provide a useful customer-facing confidence signal, or does the team's current hallucination research provide an equivalent signal through a different channel?
+
+**Context:** crossroute-audit provides machine-readable explanation-faithfulness scores for VLMs. If OCR-3 customers currently have no per-extraction confidence signal beyond accuracy metrics, a faithfulness audit layer could differentiate OCR-3's output quality reporting. If the team's mechanistic interpretability work already produces such a signal internally, this item can be permanently downgraded.
+
+**Answer:** _add reply here_
+
+### Q: Of the IDP-Leaderboard-adjacent models now available via Ollama (GLM-5.1, Kimi-K2.6, MiniMax, gpt-oss, Qwen), which has the team identified as the highest-priority candidate for a proactive IDP Leaderboard evaluation run — and is there an operational plan to run it before a third party submits it independently?
+
+**Context:** Ollama now makes GLM-5.1, Kimi-K2.6, MiniMax, and gpt-oss accessible as single-command local models. Third-party IDP Leaderboard submissions for these models could appear without OCR-3's scores being in the same evaluation run, weakening head-to-head positioning. A prioritization decision would close this question for the next 2-3 build cycles.
+
+**Answer:** _add reply here_
+
+---
