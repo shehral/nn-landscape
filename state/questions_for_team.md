@@ -3143,3 +3143,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-16T06:00:00+00:00 (audit: partial)
+
+### Q: Questions about adding MinerU, opendataloader-pdf, RAGFlow, and BiSheng to the competitive registry have appeared across 10+ consecutive builds with no reply. Should this be treated as a resolved policy decision (do not add open-source tool repos to the registry), or is there intent to respond?
+
+**Context:** Without confirmed registry entries, each build evaluates these tools from first principles and produces nearly identical action recommendations. A one-sentence policy answer would end this recurring cycle and allow the build agent to score these items against a stable baseline.
+
+**Answer:** _add reply here_
+
+### Q: Should the team assign someone to submit OCR-3 to the evalscope and lmms-eval model registries before a competitor uses either framework to publish a benchmark comparison that structurally excludes OCR-3?
+
+**Context:** Evalscope currently includes Qwen3-VL, GLM-5.1, and InternVL3.5 but not OCR-3. Any evalscope-based benchmark report will implicitly omit OCR-3. This is a distribution and visibility gap independent of internal benchmark usage.
+
+**Answer:** _add reply here_
+
+### Q: Does the research team have a standing read-list or owner for items scored primarily on the vlm_research axis, and if so, is the dashboard's 'read in week' recommendation actually reaching that person?
+
+**Context:** crossroute-audit and Knowledge-Infused-Multimodal-Retrieval both received 'read in week' this build; the dashboard has no feedback loop confirming these items are consumed. If the vlm_research axis has no designated reader, the action recommendation is an empty signal.
+
+**Answer:** _add reply here_
+
+### Q: The Gpt-Agreement-Payment item (ChatGPT subscription protocol replay with hCaptcha bypass) has appeared in GitHub Trending for multiple consecutive builds and scores composite=0. Should sources.yaml add a keyword exclusion list to filter payment-circumvention and anti-fraud tools at ingest?
+
+**Context:** These items carry reputational risk if the public dashboard ever surfaces them. The current keyword filter does not exclude them. A short exclusion list (e.g., 'captcha', 'bypass', 'subscription replay') would prevent recurrence without requiring editorial judgment each build.
+
+**Answer:** _add reply here_
+
+### Q: Should SGLang's serving framework evaluation for OCR-3 be formally assigned to someone, or has the team already made a serving infrastructure decision that would close this recurring item?
+
+**Context:** SGLang has appeared in 6+ consecutive builds at a stable composite score. A single answer stating the current serving stack and whether SGLang was evaluated would remove it from future build framing permanently.
+
+**Answer:** _add reply here_
+
+---
