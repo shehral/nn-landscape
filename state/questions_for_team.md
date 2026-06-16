@@ -3177,3 +3177,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-16T12:06:14+00:00 (audit: partial)
+
+### Q: MiniMax now appears in Ollama's featured model list alongside Kimi-K2.6 and gpt-oss for the first time this cycle. Has the team assessed whether MiniMax has document-extraction or structured-output capabilities that would warrant IDP Leaderboard evaluation?
+
+**Context:** Prior builds asked about Kimi-K2.5/K2.6 and gpt-oss; MiniMax has not been specifically evaluated. If MiniMax includes vision and document capabilities comparable to GLM-OCR (94.62 on OmniDocBench V1.5), it warrants addition to the nanonets_context.md competitive registry; if it is a general-purpose text model, it does not.
+
+**Answer:** _add reply here_
+
+### Q: Tesseract and OCRmyPDF trend simultaneously this cycle alongside modern VLM parsers. Is there a known driving event — a benchmark publication, viral tutorial, or course curriculum update — that the team is aware of which arXiv would have surfaced if operational?
+
+**Context:** This build cannot distinguish between organic developer interest in cost-sensitive OCR stacks and a specific publication or event driving the trend. If the team is aware of a concrete OCR benchmark paper being discussed externally, that publication would be higher-priority signal than what GitHub Trending alone conveys, and would be worth surfacing directly to the DL team.
+
+**Answer:** _add reply here_
+
+### Q: graphify (first appearance this build) converts code, SQL schemas, docs, images, and videos into queryable knowledge graphs for AI coding assistants. Is the multimodal-document-to-graph extraction paradigm one the research team monitors as a potential complement or competitor to the Nanonets /chunk and /vqa endpoints for multi-modal document RAG use cases?
+
+**Context:** graphify scored doc_ai=2, composite=27. Its multimodal scope (images, videos, PDFs, code) is broader than current Nanonets endpoints but overlaps on the /chunk and /vqa surface. A yes/no on whether this paradigm is within the research or product scope would stabilize scoring for this class of items in future builds.
+
+**Answer:** _add reply here_
+
+### Q: This file now has 1300+ lines with no recorded replies across 30+ consecutive builds. Should the AI-partner section be reduced to a maximum of one open question per build — the single highest-priority unanswered item — until the backlog is reviewed, rather than continuing to surface 4-5 questions per cycle that compound without closure?
+
+**Context:** The three most operationally bounded open questions from prior builds, none yet answered: (1) evalscope OCR-3 registry — a concrete half-hour action if the only barrier is a ModelScope account; (2) arXiv/HN/RSS access policy decision — audit_passed has been false for 30+ builds and a yes/no policy decision would close it; (3) MinerU/PaddleOCR/opendataloader-pdf competitive registry classification — a yes/no decision per tool. Framing the channel question as a single meta-question may surface whether the channel is being read at all.
+
+**Answer:** _add reply here_
+
+---
