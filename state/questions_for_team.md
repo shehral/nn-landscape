@@ -3295,3 +3295,30 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-17T12:03:15+00:00 (FAILED — zero items, no output published)
+
+### INFRASTRUCTURE ALERT: All four ingest sources failed this build
+
+**What failed:**
+- `arxiv`: HTTP 403 Forbidden from `export.arxiv.org` (same as prior builds)
+- `hn`: HTTP 403 Forbidden from `hn.algolia.com` (same as prior builds)
+- `rss`: "no items in current window" — **NEW REGRESSION** (RSS was producing items in prior builds)
+- `github_trending`: "no items in current window" — **NEW REGRESSION** (github_trending was the sole surviving source in most prior builds)
+
+**What this means:** Zero items were ingested. No scoring, framing, rendering, or publishing was done. The docs/ HTML was NOT updated. The build lock was released cleanly.
+
+**Prior pattern:** arxiv and HN have been returning 403 for 12+ consecutive builds. github_trending has been the fallback data source for all those partial builds. As of this build, github_trending is also returning zero items, eliminating the last working source.
+
+**Probable cause:** The remote execution environment's outbound network policy may now block all external HTTP requests. The RSS feeds and GitHub Trending endpoint returned zero items rather than 403, suggesting requests may be silently dropped or responses are empty.
+
+**Recommended action:** The team needs to verify and fix the network policy for this cron environment before the next build. Options:
+1. Check the Claude Code on the web environment configuration (code.claude.com/docs) for outbound network policy — the environment may have been set to a restrictive policy that blocks all external requests.
+2. If the policy is correct, check whether the RSS feeds and GitHub Trending API response format changed.
+3. As a fallback, configure a data-injection mechanism where the team drops a pre-fetched `state/run/items_raw.jsonl` file and the cron runs only scoring/render/publish steps.
+
+### Q: The remote execution environment appears to block ALL outbound HTTP — arxiv, HN, RSS, and GitHub Trending all return zero items this build. Was the environment's network policy recently changed, and if so, can it be restored to allow the external source endpoints?
+
+**Context:** Prior builds had 403 errors on arxiv and HN but github_trending was the surviving fallback. This build has no surviving source. The environment network policy set when the session was created governs outbound access (see code.claude.com/docs). If the policy was set to block all outbound for cost or security reasons, the pipeline needs either a policy change or a manual data-injection workaround.
+
+**Answer:** _add reply here_
