@@ -3267,3 +3267,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-17T06:06:47+00:00 (audit: partial)
+
+### Q: Ollama's headline model list now names 'Kimi-K2.6' rather than 'Kimi-K2.5' seen in prior builds — is this a renamed or distinct new model, and does the team know whether Kimi-K2.6 includes document extraction capabilities that would warrant adding it to the competitive registry?
+
+**Context:** Kimi-K2.5 appeared in several prior builds; the version bump to K2.6 is new this cycle. If Kimi-K2.6 is a materially improved model with document-AI relevance, it should be tracked separately from Kimi-K2.5 in the competitive registry rather than treated as a cosmetic rename.
+
+**Answer:** _add reply here_
+
+### Q: Does the team have a confirmed position on whether OCR-3's 35B MoE scale structurally excludes it from on-device deployment scenarios, and if so, is there a planned smaller distilled OCR model intended to compete in that tier?
+
+**Context:** Qualcomm Nexa SDK (this build) and prior Ollama items both signal a near-term path for running smaller competitive OCR VLMs (GLM-OCR 0.9B, LightOn OCR-2 1B, Chandra OCR 2 4B) on edge hardware without cloud APIs. Without a sub-7B Nanonets model, this segment is structurally unaddressed. A one-sentence team answer would close this for future builds.
+
+**Answer:** _add reply here_
+
+### Q: GitHub Trending consistently surfaces perma-trending platform repos (TensorFlow, PyTorch, scikit-learn) that score below composite=5 on every build; should data/sources.yaml add an explicit repo exclusion list for these items to improve signal-to-noise?
+
+**Context:** Four of 21 items this build are general ML infrastructure repos with no document AI relevance. They consume editorial attention and inflate item counts without contributing to any axis. A short exclusion list in sources.yaml (canonically at github.com/tensorflow/tensorflow, github.com/pytorch/pytorch, github.com/scikit-learn/scikit-learn) would permanently suppress these without changing the keyword filter logic.
+
+**Answer:** _add reply here_
+
+### Q: Should VLA (Vision-Language-Action) model items be treated as vlm_research-axis relevant or dropped as out-of-scope, given that the action-agent architecture diverges structurally from document extraction?
+
+**Context:** StarVLA appears this build as a VLA model codebase; it shares the 'vision-language' keyword but targets robotic action tasks rather than document parsing. Without a policy decision, future builds will continue scoring VLA items against the vlm_research axis and generating 'no action' framings that add no editorial value. A one-line answer in this file would allow the keyword filter or scoring rubric to be tuned accordingly.
+
+**Answer:** _add reply here_
+
+---
