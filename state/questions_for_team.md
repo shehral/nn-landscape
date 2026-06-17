@@ -3239,3 +3239,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-17T00:00:00+00:00 (audit: partial)
+
+### Q: Does the team's hallucination characterization protocol include an explanation-faithfulness audit — verifying that the model's visual attention aligns with its text output — or is this a gap relative to crossroute-audit's methodology?
+
+**Context:** crossroute-audit introduces faithfulness auditing as a distinct VLM reliability dimension. The team's existing taxonomy covers phantom-row, repetition loops, structural hallucinations, and infinite generation, but it is unclear whether faithfulness of visual attention is tested. If not, crossroute-audit provides a ready-made methodology that could be applied to OCR-3 immediately.
+
+**Answer:** _add reply here_
+
+### Q: Should the team proactively run a short GRPO fine-tuning experiment on an open-weight document VLM base (e.g., Qwen3-VL via ms-swift) to characterize whether GRPO training improves extraction accuracy or degrades hallucination rates — before a competitor publishes those results against OCR-3?
+
+**Context:** ms-swift now makes GRPO fine-tuning accessible for the specific models adjacent to OCR-3 on the IDP Leaderboard. The question is not whether competitors will use this — they likely will — but whether the team can establish a preemptive characterization of the effect on hallucination rates and document extraction accuracy before the first GRPO submission appears on the leaderboard.
+
+**Answer:** _add reply here_
+
+### Q: Is Kimi-K2.6 (Moonshot AI) a multimodal model with document extraction capabilities, or a general-purpose LLM? A single sentence would allow the build agent to score all Ollama items that reference it against the correct axis permanently.
+
+**Context:** Kimi-K2.6 appears for the first time in Ollama's model description this cycle. Prior builds asked whether Kimi-K2.5 belonged in the competitive or frontier tracking set; that question is unanswered. Kimi-K2.6 is a new model name from the same lab. Without a classification, the build agent must infer from context each cycle.
+
+**Answer:** _add reply here_
+
+### Q: For customers with edge deployment or data-sovereignty requirements, does OCR-3 have a deployment path that does not require cloud API access, or is the Qualcomm Nexa SDK's on-device VLM support representing an unaddressed customer segment?
+
+**Context:** The Qualcomm Nexa SDK enables day-0 on-device VLM inference across GPU/NPU/CPU. If OCR-3 is API-only with no on-device option, customers in regulated industries or with connectivity constraints are structurally excluded from using it and will default to models available via on-device SDKs. This is a distribution question, not a product quality question.
+
+**Answer:** _add reply here_
+
+---
