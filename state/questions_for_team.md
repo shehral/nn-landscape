@@ -3322,3 +3322,37 @@ agent's editorial grounding.
 **Context:** Prior builds had 403 errors on arxiv and HN but github_trending was the surviving fallback. This build has no surviving source. The environment network policy set when the session was created governs outbound access (see code.claude.com/docs). If the policy was set to block all outbound for cost or security reasons, the pipeline needs either a policy change or a manual data-injection workaround.
 
 **Answer:** _add reply here_
+
+## Build 2026-06-17T18:09:12+00:00 (audit: partial)
+
+### Q: MinerU and opendataloader-pdf have each appeared in the top competitive slots for multiple consecutive builds with 'monitor' and 'investigate' recommendations; has anyone on the team investigated either, and should either be added as a named entrant in data/nanonets_context.md?
+
+**Context:** Without named entries in the competitive registry, these are re-evaluated from scratch every build. A single team note confirming or rejecting each as a material entrant would stabilize scoring. Prior builds have raised this; no answer has appeared in questions_for_team.md.
+
+**Answer:** _add reply here_
+
+### Q: GRPO-fine-tuning support for Qwen3-VL, GLM-5.1, and InternVL3.5 is now mainstream via ms-swift; does the team maintain a watch list of expected IDP Leaderboard submissions so that a GRPO-tuned OCR variant does not arrive as a surprise?
+
+**Context:** Prior builds noted that GRPO has produced SOTA gains on reasoning tasks and that the technique may be applied to document VLMs. ms-swift's broad MLLM coverage (300+ models) makes it the most likely pathway. An informal watch list of known labs training on document benchmarks would allow advance baseline preparation.
+
+**Answer:** _add reply here_
+
+### Q: Crossroute-audit's explanation-faithfulness auditing methodology appears directly applicable to characterizing phantom-row and structural hallucinations; should it be assigned for reproduction before the next build?
+
+**Context:** The tool tests whether VLM explanation outputs are grounded in the visual evidence actually present in the image — the same diagnostic question the team's hallucination taxonomy addresses. The action recommendation this build is 'reproduce'; team confirmation would either advance it or clarify why it does not fit the current methodology.
+
+**Answer:** _add reply here_
+
+### Q: The prior open question about which evaluation framework (lmms-eval or evalscope) the team uses for internal OCR-3 benchmark runs remains unanswered across at least three builds; can a team member confirm or deny usage so that future builds score these items accurately?
+
+**Context:** If neither is used, future builds should escalate eval-framework items as potential integration targets rather than generic 'monitor'. If one is in use, items featuring it should receive higher action recommendations. The current default of 'investigate' is conservative but accumulates noise without a team answer.
+
+**Answer:** _add reply here_
+
+### Q: arXiv has returned HTTP 403 for at least six consecutive builds and HN for at least four; the prior build raised the OAI-PMH mirror option for arXiv and the team has not responded. Should the pipeline switch to OAI-PMH for arXiv and an alternative endpoint for HN before the next build?
+
+**Context:** Without these two sources, the vlm_research and frontier axes are structurally biased toward GitHub repositories rather than academic papers. The dashboard's value for the research team scales with primary research signal; the current mix effectively monitors open-source production tooling only. This is flagged as a prior standing question, not a new one.
+
+**Answer:** _add reply here_
+
+---
