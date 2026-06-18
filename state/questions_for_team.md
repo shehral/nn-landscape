@@ -3384,3 +3384,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-18T06:04:28+00:00 (audit: partial)
+
+### Q: Six consecutive builds have drawn from only 1 of 4 sources because arxiv and HN return HTTP 403 on every run. Should the publishing threshold be adjusted for github_trending-only builds — for example, hold and skip publication — or is the current partial-build banner sufficient disclosure to readers?
+
+**Context:** Prior builds raised the arXiv/HN failure multiple times without team resolution. The editorial question is no longer about the fix (infrastructure) but about the editorial policy: should a single-source build publish at all, or should it wait for at least two sources to succeed before rendering?
+
+**Answer:** _add reply here_
+
+### Q: Ollama's description now names GLM-5.1 specifically (a versioned bump from GLM-5.0 seen in prior builds). Is GLM-5.1 a document-extraction-capable update to the same model family as GLM-OCR (Zhipu AI), or a separate general-purpose release? The answer determines whether the competitive registry entry for GLM-OCR should note a version update.
+
+**Context:** Prior builds raised the GLM-5 vs GLM-OCR disambiguation without team reply. The model version has now advanced to 5.1. If GLM-5.1 bundles document extraction capabilities comparable to GLM-OCR, the competitive registry should reflect the version bump; if it is a general-purpose VLM without document focus, the existing GLM-OCR entry remains accurate and this item scores frontier-primary.
+
+**Answer:** _add reply here_
+
+### Q: LiteParse (run-llama/liteparse) is now trending on GitHub independently of LlamaCloud. It is LlamaIndex's open-source TypeScript document parser and the self-hosted counterpart to managed LlamaParse. Should LiteParse be tracked as a distinct sub-entry under the LlamaParse/LlamaIndex competitive node, or is the existing LlamaParse entry already intended to cover it?
+
+**Context:** The current competitive registry lists LlamaParse (LlamaCloud managed service). LiteParse's independent trending suggests self-hosted deployment outside the managed context — a different threat profile (zero marginal cost, full user control). Clarifying registry scope would stabilize scoring across future builds.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift now supports GRPO fine-tuning for Qwen3-VL, GLM-5.1, and InternVL3.5, all IDP Leaderboard competitive models. Should the team prepare evaluation baselines now in anticipation of GRPO-fine-tuned document VLM variants appearing on the leaderboard within 1-2 build cycles?
+
+**Context:** GRPO has produced measurable accuracy improvements on reasoning tasks when applied to base models. The fine-tuning infrastructure for document-capable VLMs is now open-source and accessible. Whether GRPO translates to accuracy gains on DocVQA/OmniDocBench is a research question the team is best positioned to estimate; if yes, early baseline preparation would provide advance warning before a competitor submission lands.
+
+**Answer:** _add reply here_
+
+---
