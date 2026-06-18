@@ -3356,3 +3356,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-18T06:00:00+00:00 (audit: partial)
+
+### Q: LiteParse (run-llama/liteparse) appeared on GitHub Trending for the first time this cycle. LlamaIndex now maintains two distinct parsing products: LiteParse (open-source, local, lightweight) and LlamaParse (managed API). Should these be tracked separately in the competitive registry, given their divergent pricing and deployment models?
+
+**Context:** LiteParse and LlamaParse have different competitive implications: LiteParse competes with free/open-source tools (MinerU, opendataloader-pdf, PyMuPDF) while LlamaParse competes more directly with OCR-3's managed API. Tracking them as a single entity conflates two different market segments. A yes/no answer here would sharpen future competitive framing for all LlamaIndex items.
+
+**Answer:** _add reply here_
+
+### Q: Tesseract, OCRmyPDF, opendataloader-pdf, MinerU, and LiteParse all co-trended this cycle. Is the team aware of a specific CVPR 2026 workshop paper, ICDAR 2026 event, or benchmark publication that would explain this simultaneous surge in open-source OCR tooling?
+
+**Context:** With arXiv and HN blocked, this build cannot identify whether the co-trend has an upstream academic or event-driven cause. If a specific paper is driving developer interest in legacy OCR baselines and open-source parsers, that publication would be higher-priority signal than what GitHub Trending alone conveys — and knowing it would sharpen the research_implication framings for the entire OCR cluster.
+
+**Answer:** _add reply here_
+
+### Q: GLM-5.1 (Zhipu AI, successor to GLM-OCR which scored 94.62 on OmniDocBench V1.5) is now a single-command Ollama download. Does GLM-5.1 retain or improve GLM-OCR's document extraction capabilities, and if so, should it be added to the competitive registry separately from GLM-OCR?
+
+**Context:** GLM-OCR is listed in the competitive registry with a confirmed OmniDocBench V1.5 score of 94.62. GLM-5.1 is a newer model from the same lab now featured in Ollama's headline list. Without confirmation that GLM-5.1 is a document-capable VLM (versus a general LLM successor), the build agent cannot score Ollama items that reference it with accuracy. A one-sentence team answer would close this permanently.
+
+**Answer:** _add reply here_
+
+### Q: Two standing open questions from prior builds: (a) Has any team member consumed the ms-swift GRPO fine-tuning item that has received 'read in week' recommendations for 5+ consecutive builds? (b) Has any team member answered the open question about the internal evaluation framework (lmms-eval vs. evalscope)? Both have been open for 6+ build cycles with no recorded reply.
+
+**Context:** These are not new questions — they appear in the prior build section of this file. Surfacing them together as a meta-question to flag that the AI-partner channel currently has no closure signal. If the team is not reading this file, the per-build questions are generating noise without editorial value. A single reply confirming the file is being read (even 'noted') would confirm the channel is active.
+
+**Answer:** _add reply here_
+
+---
