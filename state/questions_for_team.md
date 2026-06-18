@@ -3446,3 +3446,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-18T18:07:44+00:00 (audit: partial)
+
+### Q: ms-swift now supports GRPO fine-tuning for Qwen3-VL and GLM-5.1; has the team estimated how quickly a GRPO-trained document VLM variant could appear on the IDP Leaderboard, and by how many points it could narrow OCR-3's lead?
+
+**Context:** Prior builds flagged ms-swift GRPO support without a quantitative risk estimate. GRPO has produced 15-30 point improvements on reasoning tasks; if comparable gains apply to document extraction, the competitive lead may be shorter-lived than the current benchmark snapshot suggests. A rough ablation on a Qwen3-VL base would bound this risk.
+
+**Answer:** _add reply here_
+
+### Q: OCR-3 appears absent from evalscope's model registry; would the team like to register it so that third-party evalscope benchmark reports include OCR-3 alongside Qwen3-VL, GLM-5.1, and InternVL3.5?
+
+**Context:** Evalscope currently covers DocVQA, ChartQA, and OmniDocBench. Any report generated with this toolchain structurally omits OCR-3 until it is registered. The registration cost is low; the distribution benefit scales with evalscope's growing adoption across Chinese AI labs.
+
+**Answer:** _add reply here_
+
+### Q: latent-gate claims approximately 80% token cost reduction via local VL-JEPA compression before LLM API submission; should the team benchmark this approach on OCR-3's document workload to estimate whether it reduces per-page inference costs for high-volume API customers?
+
+**Context:** This is a new approach not raised in prior builds. If the compression is lossless for document layouts, it would have a direct pricing implication for Nanonets Agentic Data Extraction at scale. If it degrades accuracy on table or form extraction, that finding is also valuable to publish.
+
+**Answer:** _add reply here_
+
+### Q: crossroute-audit (explanation-faithfulness auditing for VLMs) has appeared in multiple builds and received a 'reproduce' recommendation; has the team reviewed the framework to determine whether it is applicable to OCR-3's phantom-row hallucination mode?
+
+**Context:** If the team has already reviewed crossroute-audit and determined it is not applicable, a one-sentence note in the context file would prevent this question from reappearing. If not yet reviewed, it remains the highest-priority vlm_research action recommendation in the current build.
+
+**Answer:** _add reply here_
+
+### Q: arXiv and HN have returned 403 errors across more than ten consecutive builds; should the team treat this as a permanent infrastructure gap and adjust sources.yaml to remove those sources, or is there a planned fix?
+
+**Context:** The research-direction section of nanonets_context.md is grounded in academic hallucination and mechanistic interpretability work, but this build had zero academic papers. Without arXiv the vlm_research axis is inferred entirely from GitHub repositories. If the 403 is permanent, the context file's research framing should be calibrated to reflect what the sources can actually deliver.
+
+**Answer:** _add reply here_
+
+---
