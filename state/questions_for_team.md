@@ -3412,3 +3412,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-18T12:00:00+00:00 (audit: partial)
+
+### Q: Should the LlamaParse competitive registry entry be split into two distinct sub-entries — managed API (LlamaParse) and open-source self-hosted (LiteParse) — given that LiteParse is now trending independently and targets a different market tier?
+
+**Context:** LiteParse (run-llama/liteparse) first appeared as a trending GitHub repo this cycle independently of LlamaCloud. Its self-hosted, zero-cost positioning competes with MinerU and Docling, while managed LlamaParse competes with OCR-3's API tier. Treating them as a single registry entry conflates two market segments and may cause systematic scoring inaccuracy for future LiteParse items.
+
+**Answer:** _add reply here_
+
+### Q: Is the identity and document-extraction capability of 'gpt-oss' (listed in Ollama's headline model description) known to the team — specifically, is it an open-weight GPT-derived model with VQA or document extraction capabilities that should be added to the IDP Leaderboard competitive set?
+
+**Context:** This build cannot resolve gpt-oss's provenance from GitHub Trending metadata alone. If it is an open-weight GPT-derived model with document extraction or VQA capabilities, it belongs in the competitive registry alongside GLM-5.1 and Kimi-K2.6. If it is a community alias for an existing model, a one-sentence team note would close the question permanently and prevent it from recurring.
+
+**Answer:** _add reply here_
+
+### Q: Crossroute-audit tests VLM explanation-faithfulness against visual evidence in the source input — this is directly applicable to phantom-row detection. Should this be triaged for reproduction against OCR-3 outputs, and if so, would the existing OCR-3 output format require adaptation before the audit harness can be applied?
+
+**Context:** Crossroute-audit addresses the same diagnostic question as the team's phantom-row taxonomy: does the model's extracted output reflect content that is actually present in the source document? The prior build gave it a 'reproduce' recommendation; this question is asking specifically about feasibility — whether OCR-3's output format is compatible with the audit harness as-is, which determines whether reproduction is a half-day or multi-week effort.
+
+**Answer:** _add reply here_
+
+### Q: At what point does the recurrence of the full open-source extraction stack (MinerU, LiteParse, opendataloader-pdf, evalscope, ms-swift) in a single cycle warrant a structured, versioned accuracy and feature comparison — rather than per-build 'monitor' recommendations — so that customer conversations about make-vs-buy have a factual foundation?
+
+**Context:** This is the fourth or more consecutive cycle in which these tools co-trend. Individual 'monitor' recommendations accumulate without producing a synthetic answer to the competitive question. A one-time structured comparison — accuracy on DocVQA/OmniDocBench, feature coverage on tables/forms/nested layouts, and API parity — would close this class of items editorially and allow the dashboard to report deviations from a known baseline rather than re-deriving the competitive position each build.
+
+**Answer:** _add reply here_
+
+### Q: Has the team run GRPO fine-tuning on any of the ms-swift-supported model families (Qwen3-VL, GLM-5.1, InternVL3.5) with document extraction tasks, or is GRPO-on-document-VLMs currently an external-lab-only capability?
+
+**Context:** ms-swift GRPO support for all three IDP Leaderboard competitive model families has co-trended with evalscope for the second consecutive build. The standing prior question asked about a benchmark threshold for escalation; this question is more foundational — whether the team has internal GRPO experience with document VLMs, which changes both the competitive risk assessment and the feasibility of a proactive baseline comparison before an external submission arrives.
+
+**Answer:** _add reply here_
+
+---
