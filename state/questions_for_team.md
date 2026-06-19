@@ -3480,3 +3480,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-19T00:06:16+00:00 (audit: partial)
+
+### Q: What is 'gpt-oss' in Ollama's current model list — is it an open-weight OpenAI model with vision and document-extraction capabilities, or a community alias for an existing model?
+
+**Context:** gpt-oss appears in Ollama's description alongside GLM-5.1 and Kimi-K2.6. If it is a new open-weight OpenAI model with vision depth, it is a material IDP Leaderboard entrant that should be queued for benchmark evaluation. If it is a community alias, the scoring uncertainty on Ollama items can be resolved permanently. This question has been raised in prior builds (2026-05-28, 2026-05-30); a one-sentence answer closes it.
+
+**Answer:** _add reply here_
+
+### Q: Is the barrier to submitting OCR-3 to the evalscope model registry a pull request to ModelScope's repository, a compute-intensive benchmark run, or a policy decision about controlling announcement timing?
+
+**Context:** evalscope registers Qwen3-VL, InternVL3.5, and GLM4.5v but not OCR-3; competitors can publish DocVQA and OmniDocBench comparison tables via this harness that structurally exclude OCR-3. Knowing which of the three barriers applies converts a recurring monitoring action into either a half-day engineering task, a compute allocation, or a policy decision.
+
+**Answer:** _add reply here_
+
+### Q: Of Dify, BiSheng, and UltraRAG — which has the most accessible connector contribution path for a third-party extraction provider (documented plugin API, active community connector PRs, responsive maintainers)?
+
+**Context:** All three trend without a confirmed Nanonets OCR-3 connector. These platforms set parsing defaults at adoption time, meaning each new adopter defaults away from Nanonets unless a connector exists. Identifying the single lowest-barrier platform would convert recurring multi-platform monitoring into a one-platform engineering task with a concrete deliverable.
+
+**Answer:** _add reply here_
+
+---
