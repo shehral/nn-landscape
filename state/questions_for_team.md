@@ -3564,3 +3564,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-19T00:00:00+00:00 (audit: partial)
+
+### Q: crossroute-audit describes explanation-faithfulness auditing for VLMs as a distinct capability -- is this the same problem as hallucination detection, or a different evaluation dimension (output attributability vs. factual accuracy) the team is not currently measuring?
+
+**Context:** The faithfulness framing asks whether the model explanation is consistent with its output rather than whether the output is factually correct. If these are distinct, faithfulness auditing could serve as a lightweight deployment-time check complementary to the teams mechanistic interpretability work without requiring activation access.
+
+**Answer:** _add reply here_
+
+### Q: gpt-oss appears in Ollamas featured model list alongside GLM-5.1 and Kimi-K2.6 -- is this an open-weight OpenAI model, a community alias, or a distinct artifact, and does it have document-extraction capabilities that warrant IDP Leaderboard evaluation?
+
+**Context:** GLM and Qwen in the same Ollama list are confirmed IDP Leaderboard comparables. If gpt-oss is an open-weight GPT-based model with vision and document capabilities, it belongs in the competitive registry; if it is a community alias, scoring for Ollama items referencing it can be stabilized without escalation.
+
+**Answer:** _add reply here_
+
+### Q: The questions_for_team.md file now contains 100+ unanswered questions across 30+ consecutive builds with zero team responses; should the AI-partner channel be routed to a different surface (Slack, Linear ticket, email digest) or should the build reduce to 1-2 high-priority questions per cycle to reduce the write-only accumulation?
+
+**Context:** The current volume means recurring high-priority questions (arXiv access, MinerU registry classification, OCR-3 lmms-eval submission, GRPO timeline) are indistinguishable from noise. A routing change or volume reduction would improve signal-to-noise without losing the mechanism.
+
+**Answer:** _add reply here_
+
+### Q: Qualcomm nexa-sdk enables on-device frontier VLM inference for Qwen3-VL and competitive model families across GPU, NPU, and mobile; if data-sovereign customers can run a competitive document model locally without API fees, is there a Nanonets product response for that deployment segment?
+
+**Context:** OCR-3 at 35B MoE is cloud-only for most deployments. Data-sovereign enterprise customers in finance, healthcare, and government frequently require on-premise processing. If this segment has been identified as a target, a quantized local OCR-3 variant would address it; if not, the question can be closed permanently.
+
+**Answer:** _add reply here_
+
+### Q: Should the build treat github_trending-only signal as the accepted operating norm and note this in data/nanonets_context.md, or is there a specific owner and deadline for restoring arXiv, HN, or an RSS feed?
+
+**Context:** arXiv and HN have returned HTTP 403 for 30+ consecutive builds; RSS has returned zero items. Without primary research sources, the vlm_research and doc_ai research_implication fields are inferred from GitHub repository metadata alone, which changes their epistemic reliability. Naming this as a resolved policy or assigning an owner would end the recurring infrastructure question.
+
+**Answer:** _add reply here_
+
+---
