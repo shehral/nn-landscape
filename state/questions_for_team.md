@@ -3502,3 +3502,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-19T06:07:46+00:00 (audit: partial)
+
+### Q: GLM-5.1 and gpt-oss have appeared in Ollama's model list for at least two consecutive builds with their document extraction capabilities unconfirmed. Can a team member resolve whether GLM-5.1 retains GLM-OCR's OmniDocBench V1.5 score (94.62) and what gpt-oss refers to?
+
+**Context:** Both affect competitive axis scoring accuracy. GLM-OCR is listed in the editorial grounding with a confirmed benchmark score; if GLM-5.1 supersedes it, the registry entry needs a version note. If gpt-oss is a new open-weight OpenAI model with vision capabilities, it belongs on the IDP Leaderboard evaluation queue. Prior builds raised both questions without a team reply.
+
+**Answer:** _add reply here_
+
+### Q: opendataloader-pdf has appeared with an 'investigate' recommendation for five or more consecutive builds. Should the dashboard treat the absence of a team response as an implicit policy decision — not a named competitor — and stop flagging it each build?
+
+**Context:** Without a confirmed registry entry or an explicit 'not relevant' determination, the build agent re-evaluates opendataloader-pdf from first principles every cycle. A one-sentence team note either adding it to data/nanonets_context.md or explicitly excluding it would end the recurring question.
+
+**Answer:** _add reply here_
+
+### Q: evalscope covers DocVQA, ChartQA, and OmniDocBench but does not include OCR-3 in its model registry. Is the barrier a pull request, a benchmark compute run, or a policy decision about controlling announcement timing?
+
+**Context:** Competitors can already publish evalscope-based DocVQA and OmniDocBench comparison tables that structurally exclude OCR-3. Knowing which of the three barriers applies converts a recurring monitoring action into either a half-day engineering task, a compute allocation, or a policy decision — all of which have different owners.
+
+**Answer:** _add reply here_
+
+### Q: crossroute-audit has received a 'reproduce' recommendation for at least two consecutive builds. If no team member has acted on it, is the reason that the triage process for 'reproduce' items does not have an owner, or that this specific tool was evaluated and de-prioritized?
+
+**Context:** Either answer would improve the action_recommendation taxonomy's calibration. If 'reproduce' items have no triage path, the recommendation is effectively the same as 'monitor' and the label should change. If crossroute-audit was reviewed and rejected, a one-line note in questions_for_team.md would prevent it from recurring.
+
+**Answer:** _add reply here_
+
+### Q: arXiv and HN have returned HTTP 403 for more than ten consecutive builds; this build's framing quality is structurally degraded by the absence of academic paper signal. Should the team treat this as a permanent infrastructure gap and note it in nanonets_context.md, or is there a planned fix with an owner and date?
+
+**Context:** The research-direction section of nanonets_context.md references mechanistic interpretability and hallucination research — topics that appear in academic papers, not GitHub trending repositories. Without arXiv, the research_implication fields are inferred from tooling rather than primary research. Framing this as a resolved policy decision would end the recurring infrastructure question across all future builds.
+
+**Answer:** _add reply here_
+
+---
