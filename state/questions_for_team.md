@@ -3536,3 +3536,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-19T06:00:00+00:00 (audit: partial)
+
+### Q: crossroute-audit is newly trending as an explanation-faithfulness auditing tool for VLMs; does the team's current hallucination evaluation methodology include faithfulness auditing for intermediate attention steps, and would crossroute-audit's causal consistency approach add to or duplicate the existing interpretability line?
+
+**Context:** crossroute-audit tests whether a VLM's stated attention explanation is causally consistent with the output path — a distinct test from accuracy benchmarks or logit-lens probing. If the team does not currently test faithfulness of intermediate representations, crossroute-audit could close that gap at low engineering cost.
+
+**Answer:** _add reply here_
+
+### Q: ByteDance's UI-TARS-desktop (open-source multimodal AI agent stack for UI interaction) is newly trending; does its architecture or training approach have any transfer value for Nanonets Agents use cases involving reading and acting on document UIs in ERP or approval-chain workflows?
+
+**Context:** UI-TARS is framed as UI-level multimodal control rather than document extraction, but the overlap emerges in agent tasks that require reading structured content from screen-rendered documents rather than uploaded files. The question is whether the team sees any architectural commonality worth tracking.
+
+**Answer:** _add reply here_
+
+### Q: The arXiv, HN, and RSS sources have all failed for 20+ consecutive builds; should the team treat github_trending-only as the accepted signal set for this dashboard, or is there a specific date by which an alternative source (Semantic Scholar, OAI-PMH, HN Firebase API) will be configured?
+
+**Context:** Framing this as a resolved policy decision would end the recurring infrastructure question that has appeared in every build since May 21. Without clarity, each build surfaces the same concern. A single yes/no on whether the source failure is accepted operating norm would stabilize editorial posture going forward.
+
+**Answer:** _add reply here_
+
+### Q: Screenpipe (YC S26) captures everything a user has seen, said, or heard and injects it as local AI context; does the team see any relevance to document-capture or ambient document intake use cases for Nanonets Agentic Data Extraction, or is this orthogonal to the structured extraction surface?
+
+**Context:** Screenpipe is a perceptual capture layer, not a document parser. The question is whether continuous ambient capture represents an incoming document intake modality (real-time invoice/form capture from screen) that the /vqa or /extract endpoint could serve, or whether the use cases are too disjoint to track.
+
+**Answer:** _add reply here_
+
+---
