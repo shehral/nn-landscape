@@ -3626,3 +3626,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-20T06:00:00+00:00 (audit: partial)
+
+### Q: Is there a documented Nanonets /parse or /extract integration for paperless-ngx, and if not, is this a distribution channel the team has evaluated?
+
+**Context:** paperless-ngx has a plugin/integration ecosystem and targets SME scan-and-archive workflows (invoices, receipts, forms) that overlap directly with Nanonets' extraction use cases. A connector or integration guide would reach that community without paid acquisition cost. This question is new — prior builds tracked paperless-ngx as a monitor item but did not ask about an integration specifically.
+
+**Answer:** _add reply here_
+
+### Q: Of SGLang and vllm-omni, which has the team evaluated as a serving candidate for OCR-3, and what was the throughput-per-dollar outcome on a 35B MoE workload?
+
+**Context:** Both SGLang and vllm-omni trend in this build as high-performance VLM serving frameworks. Prior builds raised SGLang as a serving candidate without a recorded team answer. vllm-omni is a new entry with omni-modal support. Knowing which was evaluated (or why neither was) would allow the dashboard to score serving infrastructure items accurately rather than re-flagging the same candidates each build.
+
+**Answer:** _add reply here_
+
+### Q: vlm-eval-harness is a lighter-weight CLI alternative to lmms-eval covering DocVQA and ChartQA; does the team see this as a lower-barrier path to registering OCR-3 in a third-party benchmark harness than the previously discussed lmms-eval registration?
+
+**Context:** Prior builds raised OCR-3 registration in lmms-eval and evalscope without a team answer. vlm-eval-harness is a new entrant in this build; if its registration path is simpler (e.g., a pull request vs. a compute-intensive benchmark run), it may be the actionable first step. A one-sentence answer about relative registration barrier would close the multi-build open question.
+
+**Answer:** _add reply here_
+
+### Q: Has the team assessed Tencent AngelSlim as a model compression toolkit for OCR-3, and is post-training compression (quantization, pruning, distillation) of OCR-3 on the team's roadmap?
+
+**Context:** AngelSlim trended this cycle as a comprehensive model compression toolkit from Tencent. OCR-3 is a 35B MoE model; a compressed variant would address data-sovereign enterprise customers who require on-premise deployment but cannot run a 35B model. This question is new — prior builds have not asked specifically about OCR-3 compression.
+
+**Answer:** _add reply here_
+
+---
