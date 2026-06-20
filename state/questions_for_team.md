@@ -3598,3 +3598,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-20T00:00:00+00:00 (audit: partial)
+
+### Q: The questions_for_team.md file now contains 100+ unanswered questions across 30+ consecutive builds. Should the AI-partner channel route to a different surface (Slack digest, Linear ticket) or reduce to 1-2 highest-priority questions per cycle?
+
+**Context:** Recurring high-priority questions (arXiv access, MinerU registry classification, OCR-3 lmms-eval registration, GRPO timeline, crossroute-audit reproduction) are indistinguishable from noise at current volume. A routing or volume change would improve signal-to-noise without losing the mechanism.
+
+**Answer:** _add reply here_
+
+### Q: Should OCR-3 be registered in lmms-eval and vlm-eval-harness so that third-party benchmark reports generated with these harnesses include OCR-3 alongside Qwen3-VL, GLM-5.1, and InternVL3.5?
+
+**Context:** Both evaluation tools trended this cycle. Competitors can currently publish DocVQA and OmniDocBench comparison tables via these harnesses that structurally exclude OCR-3. The registration barrier is not known — is it a pull request, a compute-intensive run, or a policy decision about controlling announcement timing?
+
+**Answer:** _add reply here_
+
+### Q: LiteParse (run-llama/liteparse) is the highest-scoring item this build; does the team treat it as a named competitive entry in the same tier as managed LlamaParse, or as a distinct open-source threat profile alongside MinerU and opendataloader-pdf?
+
+**Context:** LiteParse is LlamaIndex's self-hosted, zero-cost alternative to managed LlamaParse. It ranked highest in composite score this cycle (65). Whether the registry entry is split or merged changes how future builds score and frame LiteParse items.
+
+**Answer:** _add reply here_
+
+### Q: arXiv, HN, and RSS have returned errors for 30+ consecutive builds; should the team treat github_trending-only as the accepted operating norm and note it in data/nanonets_context.md, or is there an owner and date for restoring academic-paper signal?
+
+**Context:** The research-direction section of nanonets_context.md references hallucination research and mechanistic interpretability — topics covered by arXiv papers, not GitHub repositories. Without primary research sources, all vlm_research framing is inferred from tooling metadata.
+
+**Answer:** _add reply here_
+
+---
