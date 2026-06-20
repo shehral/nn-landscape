@@ -3670,3 +3670,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-20T10:00:00+00:00 (audit: partial)
+
+### Q: Is GLM-5.1 (now in Ollama's featured model list for three consecutive builds) the same product line as GLM-OCR, or a distinct general VLM that should be added to data/nanonets_context.md separately?
+
+**Context:** GLM-OCR (Zhipu AI) is in the competitive registry; GLM-5.1 appears as a distinct entry in Ollama's headline description alongside Qwen and DeepSeek. If GLM-5.1 includes document extraction on par with GLM-OCR, it should be named in the context file; if not, the competitive scoring for Ollama-related items may be inflated.
+
+**Answer:** _add reply here_
+
+### Q: ArXiv and HN have returned 403 errors for four consecutive builds; should the pipeline switch to OAI-PMH for arXiv and a direct HN API mirror, and should the partial-build banner distinguish 'infrastructure-biased' builds from 'partial-coverage' builds?
+
+**Context:** The vlm_research and doc_ai research_implication fields are currently inferred from GitHub repo descriptions, not academic papers. Four builds without arXiv means the team is receiving no signal from primary research literature; the partial-build banner does not communicate this epistemic gap.
+
+**Answer:** _add reply here_
+
+### Q: opendataloader-pdf has appeared as an 'investigate' item in at least three consecutive builds; has the team assessed whether it warrants a named entry in data/nanonets_context.md alongside Docling?
+
+**Context:** It targets the same PDF-to-AI-ready-output interface as the Nanonets Agentic Data Extraction /parse endpoint, is open-source, and consistently scores composite ~52. Without a named entry, future builds re-evaluate it from scratch rather than tracking it as a known competitive entrant.
+
+**Answer:** _add reply here_
+
+### Q: Does OCR-3 currently appear in lmms-eval's or vlm-eval-harness's model registry, or could a third party run a benchmark against OCR-3 without the team's input on test conditions?
+
+**Context:** Both evaluation toolkits cover DocVQA, ChartQA, and related benchmarks. If OCR-3 is not registered, a competitor could publish unanticipated head-to-head results using non-representative test conditions. The answer changes lmms-eval and vlm-eval-harness from 'investigate' to 'no action' in future builds.
+
+**Answer:** _add reply here_
+
+### Q: Should the framing pass be suppressed or explicitly labeled 'infrastructure-biased' when fewer than 2 primary research sources (arXiv, HN) contribute to a build?
+
+**Context:** This is the fourth consecutive build with only github_trending as an active source. Research implication fields in this build are authored without academic paper coverage. The current partial-build banner flags coverage gaps but does not signal the epistemically different nature of a build with no primary research source.
+
+**Answer:** _add reply here_
+
+---
