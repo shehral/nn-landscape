@@ -3654,3 +3654,19 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-20T12:00:00+00:00 (audit: partial)
+
+### Q: GOT-OCR2.0 appears bundled as a native node in ComfyUI LLM Party; is it in the competitive registry, and has the team benchmarked it on OmniDocBench or DocVQA relative to OCR-3?
+
+**Context:** GOT-OCR2.0 is not listed in nanonets_context.md's competitive set. Its integration into a no-code node-based agent builder (50k+ GitHub stars) gives it reach beyond the typical open-weight-model user. A one-sentence note on its benchmark position would resolve whether it belongs in the competitive registry alongside GLM-OCR and DeepSeek-OCR 2, or whether it is out-of-scope (consumer OCR rather than enterprise document extraction).
+
+**Answer:** _add reply here_
+
+### Q: Is the barrier to OCR-3 registration in lmms-eval or vlm-eval-harness a technical PR, a compute-intensive benchmark run, or a policy decision about announcement timing?
+
+**Context:** Both harnesses trended this cycle and cover DocVQA, ChartQA, and OmniDocBench. This question was first raised in May 2026 and has not been answered across 20+ subsequent builds. Third-party reports generated via these harnesses structurally exclude OCR-3. Knowing which barrier applies would convert a recurring monitoring flag into a specific one-off task with an owner. This build reduces its AI-partner output to two questions because the file has exceeded 100 unanswered questions; the team should consider routing to Slack or a Linear ticket if this surface is not being reviewed.
+
+**Answer:** _add reply here_
+
+---
