@@ -3788,3 +3788,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-21T00:00:00+00:00 (audit: partial)
+
+### Q: arXiv and HN are returning 403 errors for a third or more consecutive build — should ingestion migrate to OAI-PMH for arXiv and an alternative HN data source?
+
+**Context:** This build drew exclusively from github_trending (46 items, 0 from arXiv, 0 from HN, 0 from RSS). The prior question about this issue (Build 2026-05-21 Q2) has not been answered. Without primary research sources, the doc_ai and vlm_research axes are underserved, and github_trending biases coverage toward tooling repos over research papers or market events.
+
+**Answer:** _add reply here_
+
+### Q: Should MinerU (opendatalab/MinerU) be added to the competitive registry in data/nanonets_context.md?
+
+**Context:** MinerU is an open-source PDF/Office-to-markdown/JSON pipeline that directly targets the same use case as Nanonets Agentic Data Extraction. It is not currently in the competitive set. The prior question about opendatalab-pdf (Build 2026-05-31) also has no answer. MinerU is the top-scoring item this build (composite 62).
+
+**Answer:** _add reply here_
+
+### Q: LlamaIndex's GitHub description now reads 'leading document agent and OCR platform' — does the team want manual confirmation of whether OCR-3 has been benchmarked in ParseBench?
+
+**Context:** LlamaIndex explicitly claims OCR platform leadership. The context file notes ParseBench (April 2026, accepted CVPR 2026) and Claude Fable 5 participation in ParseBench. If OCR-3 is not in ParseBench, it may be absent from a public competitive benchmark that shapes enterprise buyer perception.
+
+**Answer:** _add reply here_
+
+### Q: Should the scoring rubric apply a source-diversity penalty when fewer than 2 primary research sources contributed, to prevent tooling GitHub repos from dominating the top-N framing slots?
+
+**Context:** With only github_trending available, the top-scoring items (MinerU=62, LlamaIndex=58, Tesseract=46) are infrastructure repos, not research papers or market events. The team may prefer the framing pass to be suppressed or flagged differently in builds where primary sources (arXiv, HN) are unavailable.
+
+**Answer:** _add reply here_
+
+### Q: No hostility flags have been set in any build to date — should the team confirm that Nanonets keyword filtering is active and returning zero results by design, or is it being bypassed by the 403 errors on arXiv and HN?
+
+**Context:** The prior build (2026-05-21 Q3) raised this and received no answer. Given that arXiv and HN are the most likely sources for critical Nanonets mentions, the 403 errors may be causing a systematic gap in hostility detection. The team should spot-check HuggingFace and arXiv for 'Nanonets-OCR3' or 'Nanonets-OCR2' mentions.
+
+**Answer:** _add reply here_
+
+---
