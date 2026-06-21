@@ -3738,3 +3738,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-21T06:06:44+00:00 (audit: partial)
+
+### Q: Should Unstract (Zipstack/unstract) be added to the competitive registry in data/nanonets_context.md alongside Reducto and LlamaParse?
+
+**Context:** Unstract explicitly targets LLM-driven extraction of unstructured data via API deployments and ETL pipeline workflows — the same interface positioning as Nanonets Agentic Data Extraction. It scored competitive=5 (highest) this build. Without a registry entry, future builds evaluate it from scratch rather than tracking it as a known entrant.
+
+**Answer:** _add reply here_
+
+### Q: The last build was 2026-05-24 and this build is 2026-06-21, a four-week gap outside the normal six-hour cadence. Was the cron schedule paused intentionally, or did intermediate builds fail silently?
+
+**Context:** A four-week gap cannot be explained by normal build failures, which the pipeline would log. If the schedule was paused intentionally, confirming whether to resume at the original interval would prevent the build agent from treating the gap as an anomaly in future editions.
+
+**Answer:** _add reply here_
+
+### Q: Does the research team track explanation-faithfulness auditing for VLMs as a distinct evaluation paradigm from activation patching and behavioral benchmarking?
+
+**Context:** crossroute-audit implements routing-consistency checks on VLM explanations — a different failure-detection method than the mechanistic interpretability techniques named in the current research direction. Confirming whether the team considers explanation faithfulness in scope would change the action recommendation for this class of items from 'read in week' to 'reproduce'.
+
+**Answer:** _add reply here_
+
+### Q: Have vllm-omni and SGLang been evaluated as serving options for OCR-3, and what is the current production serving infrastructure for OCR-3?
+
+**Context:** Both frameworks have appeared in five or more consecutive builds. A one-sentence answer naming the current serving stack and whether either was evaluated would permanently close this item class. Without a team answer, the build agent will continue flagging both as 'investigate' each cycle, consuming framing budget on the same repeated item.
+
+**Answer:** _add reply here_
+
+---
