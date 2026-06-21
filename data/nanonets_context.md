@@ -122,21 +122,30 @@ Items that name, compare against, or are released by these companies are
   Foundation alongside BeeAI. IBM released the Heron layout model (IBM
   Think 2026; 23.5% mAP improvement over prior Docling baseline; Heron-101
   variant processes pages at 28ms on A100). Docling for IBM watsonx
-  launched as an enterprise document-intelligence platform.
+  reached general availability (June 2026; $4/1,000 pages flat, 20% below
+  comparable major vendors per IBM list pricing).
 - **Chandra OCR 2 / LightOn OCR-2** — specialized OCR-VLM models that
   OCR-3 benchmarks against; Chandra OCR 2 (Datalab, March 2026) is a
   4B-parameter model built on Qwen 3.5, 85.9% on olmOCR benchmark,
   supporting 90+ languages. LightOn OCR-2 is a 1B end-to-end VLM
   optimized for OlmOCR-Bench.
 - **GLM-OCR** (Zhipu AI, March 2026; 0.9B params, 94.62 on OmniDocBench
-  V1.5 — tops that benchmark), **DeepSeek-OCR 2** (DeepSeek AI, January
-  2026; 3B params, 91.09% on OmniDocBench v1.5), **HunyuanOCR** (Tencent
-  Hunyuan, November 2025; 1B params; 94.1 on OmniDocBench; end-to-end
-  OCR-VLM covering detection, recognition, parsing, and extraction;
-  100+ languages; MIT license), **Pixtral** (Mistral), **Qwen3-VL**
-  family (Alibaba; Qwen 3.6-VL is the 2026-series variant),
+  V1.5), **DeepSeek-OCR 2** (DeepSeek AI, January 2026; 3B params, 91.09%
+  on OmniDocBench v1.5), **HunyuanOCR** (Tencent Hunyuan, November 2025;
+  1B params; 94.1 on OmniDocBench; end-to-end OCR-VLM covering detection,
+  recognition, parsing, and extraction; 100+ languages; MIT license),
+  **Qianfan-OCR** (Baidu Qianfan, March 2026; 4B params; 93.12 on
+  OmniDocBench v1.5, 880 on OCRBench; unified end-to-end document
+  intelligence VLM with "Layout-as-Thought" architecture; open-weight on
+  Hugging Face), **PaddleOCR-VL-1.6** (PaddlePaddle/Baidu, released May
+  28, 2026; ~0.9B VLM + PP-DocLayoutV3 layout model; 96.33 on OmniDocBench
+  v1.6, #1 on that benchmark version; open-weight), **Pixtral** (Mistral),
+  **Qwen3-VL** family (Alibaba; Qwen 3.6-VL is the 2026-series variant),
   **Llama-3.2-Vision** (Meta) — open-weight VLMs that appear on the IDP
-  Leaderboard as direct comparables.
+  Leaderboard as direct comparables. Note: OmniDocBench was updated from
+  v1.5 to v1.6 (April 10, 2026; +296 pages, MGAM evaluation methodology)
+  and then v1.7 (April 30, 2026); scores across versions are not directly
+  comparable.
 - **Rossum** (acquired by Coupa, announced Inspire 2026), **Docsumo**,
   **ABBYY**, **Kofax (Tungsten Automation)** — legacy / semi-structured
   document-extraction vendors Nanonets routinely positions against
@@ -564,3 +573,77 @@ Nanonets, do not respond.
 - Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed
   unchanged. No new Nanonets-authored arXiv papers. No June 2026
   Nanonets blog posts indexed.
+
+---
+
+**Date:** 2026-06-21
+
+**Sources consulted:**
+
+- `nanonets.com`, `nanonets.com/blog`, `benchmarking.nanonets.com`,
+  `idp-leaderboard.org` — all returned HTTP 403; fell back to web
+  search for all Nanonets data
+- WebSearch: "Nanonets OCR-3 IDP leaderboard June 2026 ranking" — #1 at
+  85.9% confirmed unchanged; idp-leaderboard.org confirmed resolving
+- WebSearch: "site:huggingface.co/nanonets" — open-weight model lineup
+  unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains API-only
+- WebSearch: "nanonets arxiv 2026" — no team-authored papers surfaced;
+  Nanonets-KIE appears as a benchmark dataset in Qianfan-OCR paper
+- WebSearch: "Nanonets product announcement June 2026" — no new product
+  announcements indexed; no Nanonets blog posts from June 2026
+- WebFetch: `arxiv.org/abs/2603.13398` — Qianfan-OCR (Baidu Qianfan,
+  March 2026; 4B params; 93.12 on OmniDocBench v1.5, 880 on OCRBench)
+- WebSearch: "PaddleOCR-VL 1.6 OmniDocBench 2026" — PaddleOCR-VL-1.6
+  (PaddlePaddle/Baidu, released May 28, 2026; technical report June 3,
+  2026 arxiv 2606.03264; ~0.9B VLM; 96.33 on OmniDocBench v1.6, #1)
+- WebSearch: "OmniDocBench v1.6 2026" — v1.6 released April 10, 2026
+  (+296 pages, MGAM evaluation); v1.7 April 30, 2026 (Qianfan-OCR
+  leaderboard added, skills-based evaluation)
+- WebSearch: Mistral OCR 2026 June — no new model versions; minor API
+  additions (table_format, extract_header/footer, hyperlinks output)
+- WebSearch: Reducto AI 2026 June — AWS Marketplace availability
+  (February 2026) confirmed; no new June 2026 announcements
+- WebSearch: LlamaParse / LlamaIndex 2026 June — live webinar June 30;
+  no new products beyond what's already in context
+- WebSearch: Unstructured.io 2026 June — library v0.23.1 (June 11,
+  2026); OpenSearch connectors added; no major product announcement
+- WebSearch: Docling IBM 2026 June — Docling for IBM watsonx GA (June
+  2026; $4/1,000 pages flat; 20% below comparable major vendors)
+- WebSearch: GLM-OCR / Chandra OCR / LightOn OCR 2026 June — GLM-OCR
+  now available in Azure AI Foundry alongside Chandra OCR 2; all
+  confirmed operating
+- WebSearch: Anthropic Claude document extraction June 2026 — no new
+  document-specific product beyond Claude Fable 5 (already in context)
+- WebSearch: OpenAI GPT-5 vision document June 2026 — GPT-5.4 and
+  GPT-5.5 confirmed active; no new June 2026 models
+- WebSearch: Google Gemini document OCR June 2026 — Gemini 3 Flash
+  layout parser in Google Document AI (Preview); migration to later
+  processor versions recommended before June 30, 2026
+- WebSearch: xAI Grok document extraction June 2026 — Grok 4.3 on
+  Amazon Bedrock (long-document workflows); Grok for Microsoft Word
+  (document creation, not extraction); no dedicated document extraction
+  product
+
+**Material changes versus prior version (2026-06-14):**
+
+- Added **Qianfan-OCR** (Baidu Qianfan, March 2026; 4B params; 93.12 on
+  OmniDocBench v1.5; "Layout-as-Thought" architecture; open-weight on
+  Hugging Face) to the competitive set alongside GLM-OCR, DeepSeek-OCR 2,
+  HunyuanOCR.
+- Added **PaddleOCR-VL-1.6** (PaddlePaddle/Baidu, released May 28, 2026;
+  ~0.9B VLM; 96.33 on OmniDocBench v1.6, current #1 on that benchmark
+  version) to the competitive set. Both Qianfan-OCR and PaddleOCR-VL-1.6
+  could not be confirmed on the IDP Leaderboard (sites 403); added to
+  competitive set only, not to the IDP Leaderboard comparables list.
+- Removed "tops that benchmark" qualifier from GLM-OCR entry; GLM-OCR
+  remains #1 on OmniDocBench v1.5 (94.62) but PaddleOCR-VL-1.6 leads
+  the v1.6 edition (96.33); scores across versions are not comparable.
+- Added note on OmniDocBench versioning: v1.6 (April 10, 2026) and v1.7
+  (April 30, 2026) now exist; v1.5-based scores in prior context remain
+  accurate for their benchmark version.
+- Updated **Docling for IBM watsonx** entry to note general availability
+  (June 2026; $4/1,000 pages flat pricing, 20% below "selected major
+  vendors" per IBM list pricing).
+- Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
+  No new Nanonets models on Hugging Face. No Nanonets-authored arXiv
+  papers found.
