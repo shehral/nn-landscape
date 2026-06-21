@@ -3704,3 +3704,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-21T00:00:00+00:00 (audit: partial)
+
+### Q: Should Zipstack/Unstract be added to the canonical competitive set in data/nanonets_context.md?
+
+**Context:** Unstract explicitly targets LLM-driven extraction, API deployments, and ETL pipelines — the same surface as Nanonets Agentic Data Extraction. It is open-source, which may represent a different threat tier than SaaS competitors; the team should decide how to classify self-hosted open-source alternatives.
+
+**Answer:** _add reply here_
+
+### Q: Is network access to arxiv.org and hn.algolia.com expected to be blocked in this environment, and if so, should the source configuration be updated with alternative endpoints?
+
+**Context:** This build had only 1 of 4 sources covered (github_trending only); arXiv and HN returned HTTP 403, and RSS returned zero items. A second consecutive all-sources failure would make the dashboard substantially less useful. The questions_for_team.md from the 2026-05-21 build raised the same source-coverage concern.
+
+**Answer:** _add reply here_
+
+### Q: Does the crossroute-audit repo (explanation-faithfulness auditing for VLMs) have a corresponding arXiv preprint the team should prioritize?
+
+**Context:** The repo appeared in GitHub trending but arXiv was unavailable this build. If a preprint exists, it would be the highest-priority research item this cycle given the team's active work on VLM hallucinations.
+
+**Answer:** _add reply here_
+
+### Q: LlamaIndex's GitHub description now reads 'the leading document agent and OCR platform' — should this phrasing trigger an update to its entry in data/nanonets_context.md to reflect more aggressive OCR self-positioning?
+
+**Context:** The prior context.md entry describes LlamaParse as a 'managed parsing service' within LlamaCloud. The new self-description as an 'OCR platform' combined with ParseBench (CVPR 2026) and Parse-Flow (June 2026) represents a material positioning shift worth tracking explicitly.
+
+**Answer:** _add reply here_
+
+### Q: Should the github_trending source configuration add document-AI-specific topic filters (e.g., 'document-parsing', 'pdf-extraction', 'ocr') to surface more targeted signal when arXiv and HN remain unavailable?
+
+**Context:** This build's github_trending output was dominated by general ML infrastructure, RAG tooling, and agent frameworks. With arXiv and HN blocked, tuning github_trending topics toward document-AI verticals would improve signal density until network access is restored.
+
+**Answer:** _add reply here_
+
+---
