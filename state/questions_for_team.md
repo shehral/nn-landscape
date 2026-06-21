@@ -3766,3 +3766,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-21T12:06:53+00:00 (audit: partial)
+
+### Q: Should Zipstack/unstract be added to the named competitive set in data/nanonets_context.md?
+
+**Context:** Unstract describes itself as 'LLM-Driven Extraction of Unstructured Data — Built for API Deployments & ETL Pipeline Workflows' — positioning nearly identical to Nanonets Agentic Data Extraction. It is open-source and trending on GitHub. It does not appear in the current competitive registry. A one-sentence inclusion or exclusion would prevent this question from recuring.
+
+**Answer:** _add reply here_
+
+### Q: Of the document-parsing connectors in the agentic workflow platforms trending this cycle (Dify, BiSheng, RAGFlow, UltraRAG), does any have a confirmed Nanonets OCR-3 integration, and if not, which has the lowest-barrier connector contribution path?
+
+**Context:** All four platforms trended this build and embed document parsing as part of their agentic workflow. Each sets a parsing default at adoption time, meaning new users default to the built-in parser unless an OCR-3 connector exists. Identifying the single lowest-barrier platform would convert recurring monitoring into one actionable engineering task.
+
+**Answer:** _add reply here_
+
+### Q: The prior build's AI-partner channel has accumulated 100+ unanswered questions; this build reduces output to three questions, but the volume problem remains. Should the build agent route questions to a separate Slack digest or Linear label rather than appending to this file?
+
+**Context:** The current state of questions_for_team.md means recurring high-priority items (arXiv access, lmms-eval registration, crossroute-audit reproduction status) are visually indistinguishable from noise. A routing change would not require any code change — it could be implemented as a webhook or daily digest from this file.
+
+**Answer:** _add reply here_
+
+---
