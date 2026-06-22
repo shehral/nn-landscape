@@ -3878,3 +3878,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-22T12:06:42+00:00 (audit: partial)
+
+### Q: Has OCR-3 been evaluated on OmniDocBench v1.6, and if so, what is its score? PaddleOCR-VL-1.6 holds #1 at 96.33 on v1.6; OCR-3's published score of 90.5 is on v1.5 and is not directly comparable to the current leaderboard edition.
+
+**Context:** OmniDocBench was updated from v1.5 to v1.6 (April 10, 2026; +296 pages, MGAM evaluation methodology) and v1.7 (April 30, 2026). Without a v1.6 score, the dashboard cannot assess whether OCR-3 retains competitive positioning on the most current benchmark version. This is a new question; prior builds have not asked about the v1.6 evaluation specifically.
+
+**Answer:** _add reply here_
+
+### Q: Does the team view pixel-native retrieval (the PixelRAG pattern) as a substitution risk for the /parse and /extract endpoints in retrieval-focused use cases, or is structured JSON output essential for all customer workflows?
+
+**Context:** PixelRAG markets itself as eliminating document parsing; substitution risk would be specific to retrieval workflows, not extraction-dependent workflows (AP automation, structured forms). A one-sentence scope note would allow the dashboard to set a stable action_recommendation for this item class across future builds.
+
+**Answer:** _add reply here_
+
+### Q: Of the four agentic workflow platforms that trended this build (Dify, UltraRAG, RAGFlow, LangChain), does any have a confirmed OCR-3 connector, and which has the lowest-barrier path to adding one?
+
+**Context:** All four trended simultaneously and each sets a document parsing default at adoption time. Identifying the single lowest-barrier platform would convert four recurring 'monitor' recommendations into one actionable engineering task. This question has not been asked in prior builds in this form.
+
+**Answer:** _add reply here_
+
+---
