@@ -3822,3 +3822,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-22T00:00:00+00:00 (audit: partial)
+
+### Q: Should Zipstack/Unstract be added to the named competitive set in data/nanonets_context.md?
+
+**Context:** Unstract has appeared in five or more consecutive builds with composite scores of 55-62 and action_recommendation: monitor. Its description (LLM-driven extraction for API deployments and ETL pipelines) positions it identically to Nanonets Agentic Data Extraction. A one-sentence inclusion or exclusion would permanently close this recurring item and apply consistent scoring in future builds.
+
+**Answer:** _add reply here_
+
+### Q: What is the barrier to registering OCR-3 in lmms-eval: a GitHub pull request, a compute-intensive benchmark run, or a policy decision on announcement timing?
+
+**Context:** lmms-eval is the highest-composite item in this build (66) and has appeared as a top-5 item across 15+ builds. The harness covers DocVQA, ChartQA, and OmniDocBench. Without OCR-3 registration, third parties can run independent comparisons using non-representative test conditions. A one-sentence answer would retire this question permanently.
+
+**Answer:** _add reply here_
+
+### Q: The questions_for_team.md file now exceeds 100 unanswered entries; should the build agent route AI-partner output to a Slack digest or Linear label instead of appending to this file?
+
+**Context:** The current format makes high-priority recurring items (OCR-3 registration, Unstract registry entry, serving infrastructure, arXiv access) visually indistinguishable from noise. This build limits output to three questions. Routing high-severity questions to a ticketing surface would allow triage without a code change.
+
+**Answer:** _add reply here_
+
+---
