@@ -3900,3 +3900,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-22T06:00:00+00:00 (audit: partial)
+
+### Q: Ollama's headline now lists Kimi-K2.6 (updated from K2.5, Moonshot AI). Does Kimi-K2.6 include document extraction or OCR capabilities comparable to GLM-OCR or Qwen3-VL, and if so, should it be added to the competitive registry in data/nanonets_context.md?
+
+**Context:** Prior builds asked about Kimi-K2.5 without a team reply. Kimi-K2.6 is a different version; the naming convention suggests continued model iteration from Moonshot AI. If Kimi-K2.6 has document VLM capabilities, it belongs alongside GLM-OCR in the registry; if not, competitive scoring for Ollama items may be inflated.
+
+**Answer:** _add reply here_
+
+### Q: If a customer applies VL-JEPA-style compression (latent-gate, claiming ~80% token reduction) upstream of the OCR-3 /extract or /parse endpoint, would accuracy on complex invoice table layouts or multi-column forms degrade measurably?
+
+**Context:** latent-gate trended this build. Compressed image payloads are a viable cost-reduction strategy for customers calling document APIs. Understanding whether OCR-3 is robust to this compression level would determine whether this is a support risk (phantom rows increasing under lossy input) or a non-issue. This question is new; prior builds have not asked about input-compression impact on extraction fidelity.
+
+**Answer:** _add reply here_
+
+### Q: Does multimodal bias (the VQA fairness evaluation pattern in multimodal-bias-vqa, using Qwen2.5-VL) apply to field-level extraction in OCR outputs, and has the team assessed whether demographic or document-origin biases affect OCR-3's extraction accuracy on real-world form sets?
+
+**Context:** multimodal-bias-vqa trended this build. Bias in VQA settings can manifest as systematic hallucination or mis-attribution for particular document types. If extraction accuracy varies by document origin (e.g., non-Western script layouts, handwritten forms from specific regions), this would be a research-relevant and product-relevant finding. The question has not appeared in prior builds.
+
+**Answer:** _add reply here_
+
+---
