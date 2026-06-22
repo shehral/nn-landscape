@@ -3844,3 +3844,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-22T00:00:00+00:00 (audit: partial)
+
+### Q: arXiv and HN have returned 403 errors on every build this monitoring system has run — is this a network policy restriction in the remote execution environment, and has the team investigated the arXiv OAI-PMH endpoint or the HN Firebase API as alternatives?
+
+**Context:** Every build from May to June 2026 reports the same 403 failures on both sources. The dashboard is structurally limited to github_trending, which skews coverage toward production tooling and away from primary research. Prior builds raised this repeatedly without a team response; it should be resolved at the infrastructure level.
+
+**Answer:** _add reply here_
+
+### Q: MinerU (opendatalab/Shanghai AI Lab) and opendataloader-pdf have now appeared in multiple consecutive builds — should they be added to data/nanonets_context.md as named competitive entrants alongside Reducto, LlamaParse, and Unstructured.io?
+
+**Context:** Both target the same PDF-to-AI-ready-output interface as Nanonets Agentic Data Extraction, are open-source, and are backed by established labs. Without named registry entries, each build re-scores them from scratch rather than applying stable axis weights.
+
+**Answer:** _add reply here_
+
+### Q: Is OCR-3 registered in lmms-eval's model registry, and has the team assessed whether competitors are using lmms-eval to publish head-to-head comparisons against OCR-3 outside the IDP Leaderboard?
+
+**Context:** lmms-eval covers DocVQA, ChartQA, and benchmarks adjacent to the IDP Leaderboard. Prior builds raised the same question (2026-05-22T06:07:17 and 2026-05-22T10:20:00) without a team reply. If OCR-3 is absent from the framework, the team has no pre-established rebuttal baseline for third-party comparisons.
+
+**Answer:** _add reply here_
+
+### Q: GLM-5.1 (Zhipu AI) is now natively supported in Ollama; is GLM-5.1 in the same product line as GLM-OCR, or is it a general multimodal model without the document-extraction focus that warrants a distinct competitive entry?
+
+**Context:** GLM-OCR is in the competitive registry at 94.62 OmniDocBench v1.5. GLM-5.1 appears under a different naming convention in Ollama. If GLM-5.1 includes document capabilities comparable to GLM-OCR, the registry entry should be updated; if not, the scoring on Ollama-related items may be inflated.
+
+**Answer:** _add reply here_
+
+### Q: PixelRAG ('the end of web parsing') positions pixel-native retrieval as a substitute for document extraction; should the team assess whether pixel-native search is a viable alternative or complementary tool for the use cases Nanonets Agentic Data Extraction serves?
+
+**Context:** If pixel-native retrieval makes structured extraction optional for document search and retrieval tasks, it represents a substitution risk for the /parse and /extract endpoints. The item is too new to evaluate without a technical read; an investigate recommendation would benefit from the team's view on whether the use cases overlap.
+
+**Answer:** _add reply here_
+
+---
