@@ -3966,3 +3966,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-23T12:18:13+00:00 (audit: partial)
+
+### Q: ms-swift supports fine-tuning of Qwen3-VL, GLM-5.1, and other IDP Leaderboard competitor VLMs via DPO and GRPO — does the team view open-source fine-tuning infrastructure as a competitive risk for specific vertical document types, and should the monitoring rubric flag fine-tuning framework releases as a distinct signal category?
+
+**Context:** Prior builds have not raised the specific risk of third-party vertical fine-tuning from open-weight competitor bases. If a customer or research lab fine-tunes Qwen3-VL on a specific invoice or form dataset, the resulting model may match OCR-3 accuracy on that document type at zero marginal cost. The question is new; prior builds asked only about ms-swift's evaluation-harness implications.
+
+**Answer:** _add reply here_
+
+### Q: crossroute-audit provides explanation-faithfulness auditing for VLMs — does the team have existing tooling to audit whether OCR-3's field-level extraction outputs are consistent with its internal representations, or is per-field faithfulness an uncharacterized gap in the current hallucination research toolkit?
+
+**Context:** The research line covers phantom-row, repetition, and structural hallucinations but does not publicly document whether OCR-3's extraction attribution (which source token drove which field value) has been characterized using mechanistic interpretability methods. crossroute-audit operationalizes exactly this audit; determining whether it applies to OCR-3's architecture would scope whether a 'reproduce' recommendation is warranted.
+
+**Answer:** _add reply here_
+
+### Q: Does Nanonets have a public benchmark result comparing OCR-3 against Tesseract on structured document types (invoices, tables, multi-column forms), and if not, is there a planned publication or data release that would establish OCR-3 as the default developer upgrade path from Tesseract?
+
+**Context:** Tesseract continues to trend on GitHub as the zero-cost developer baseline for OCR adoption decisions. Developers evaluating extraction APIs routinely use Tesseract as their starting comparison point. A published head-to-head on canonical structured document benchmarks (FUNSD, CORD) would convert Tesseract users into a defined OCR-3 upgrade funnel. This question has not appeared in prior builds.
+
+**Answer:** _add reply here_
+
+---
