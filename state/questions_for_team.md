@@ -3922,3 +3922,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-23T00:03:01+00:00 (audit: partial)
+
+### Q: The seen.json has accumulated 300 entries since 2026-05-21 with no expiry; github_trending and RSS now return zero new items because all entries are already seen. Should the publish step add a TTL so entries older than 7-14 days are pruned on each build?
+
+**Context:** Prior builds surfaced 30-46 github_trending items; this build got zero because all currently-trending repos were seen on 2026-06-22. Without TTL pruning, the seen.json will permanently block re-surfacing repos that return to trending. Implementing a rolling 7-day window in the publish step would require no schema change — only the atomic update logic needs a filter pass.
+
+**Answer:** _add reply here_
+
+### Q: arxiv and HN have returned 403 on every build since 2026-05-21 — is the remote execution environment's outbound network policy explicitly blocking academic API endpoints, and has anyone filed a support request with Code.Claude.com to whitelist export.arxiv.org and hn.algolia.com?
+
+**Context:** This question has appeared in every prior build without a team reply. Today marks the first build where github_trending and RSS also returned zero items (seen.json depletion), leaving the dashboard with no source coverage at all. Filing a support request or adjusting the environment's network policy is the only structural fix. The arXiv OAI-PMH endpoint (export.arxiv.org/oai2) may behave differently from the search API — worth testing.
+
+**Answer:** _add reply here_
+
+### Q: Should the pipeline add a fallback ingestion path using the GitHub API (repos search with topic filters) as an alternative when github_trending returns zero items due to seen.json exhaustion?
+
+**Context:** GitHub API search endpoints (api.github.com/search/repositories?q=topic:ocr+topic:vlm) are distinct from the GitHub Trending scrape and would surface different repos not already in seen.json. This would require a new source type in ingest.py. The team should decide whether this is in scope before the build agent tries to implement it.
+
+**Answer:** _add reply here_
+
+---
