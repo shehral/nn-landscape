@@ -3944,3 +3944,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-23T12:00:00+00:00 (audit: partial)
+
+### Q: lmms-eval and evalscope both trended this build as evaluation harnesses covering DocVQA, ChartQA, and OmniDocBench — is OCR-3 registered in either, and would a single registration effort (e.g., a PR to both repos) cover both frameworks?
+
+**Context:** Prior builds have asked about lmms-eval registration without a team reply. evalscope is a second harness now appearing alongside it with overlapping benchmark coverage. If OCR-3 is unregistered in both, the team has no baseline in either framework to rebut third-party comparisons.
+
+**Answer:** _add reply here_
+
+### Q: latent-gate introduces VL-JEPA-style image compression (~80% token reduction) that customers could apply upstream of OCR-3 API calls — has the team characterized whether lossy image compression at this reduction ratio degrades phantom-row hallucination rates on invoice table layouts?
+
+**Context:** This is a new question; prior builds have not asked specifically about input-compression perturbation effects on hallucination rates. If the answer is 'unknown,' reproducing the latent-gate compression and running it through the existing phantom-row evaluation suite would be a scoped experiment.
+
+**Answer:** _add reply here_
+
+### Q: PaddleOCR-VL-1.6 holds #1 on OmniDocBench v1.6 (96.33) while OCR-3's published score (90.5) is on v1.5 and not comparable — should the pipeline flag items where a known competitor holds the #1 position on a canonical benchmark to distinguish these from standard competitive monitor items?
+
+**Context:** This is a new question about dashboard pipeline behavior, distinct from prior asks about whether OCR-3 has been evaluated on v1.6. A benchmark-leadership flag would surface benchmark-positioning risks more prominently than the current composite score.
+
+**Answer:** _add reply here_
+
+---
