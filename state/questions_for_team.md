@@ -4022,3 +4022,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-24T12:00:00+00:00 (audit: partial)
+
+### Q: Has the team assessed whether Daft (Eventual-Inc) could serve as a batch preprocessing layer for high-volume Nanonets Agentic Data Extraction jobs, and if so, does distributed image preprocessing upstream of /parse reduce per-page cost for bulk invoice or table ingestion?
+
+**Context:** Daft explicitly supports image and structured data processing at scale. This is a new question not raised in prior builds; prior builds asked about serving infrastructure (SGLang, vLLM) but not batch preprocessing frameworks upstream of the Nanonets endpoint.
+
+**Answer:** _add reply here_
+
+### Q: Should the build agent escalate ms-swift items from 'monitor' to 'read in week' when they co-occur in the same build cycle with Ollama listing competitive VLMs (Qwen3-VL, GLM-5.1, InternVL3.5), since the combination signals an accessible train-then-distribute path for competitive document VLMs?
+
+**Context:** ms-swift and Ollama both trended this cycle. Their co-occurrence closes the loop from training to local distribution for competitive models. A standing co-occurrence escalation rule would stabilize scoring without per-build editorial judgment.
+
+**Answer:** _add reply here_
+
+### Q: For the genkit connector gap: is the path to adding a Nanonets connector a community npm package contribution, a first-party Nanonets engineering task, or not a priority given Nanonets' current distribution strategy?
+
+**Context:** Genkit appeared as the top frontier item (composite=45). Prior builds asked generically about genkit connectors; this asks for a one-sentence routing decision — community, internal, or deprioritized — which would retire the question from the AI-partner channel permanently.
+
+**Answer:** _add reply here_
+
+### Q: Is there a specific customer document type (web-scraped contracts, HTML-rendered invoices) where PixelRAG-style pixel-native retrieval could substitute for the Nanonets /parse or /extract endpoint, and if so, how large is that segment of the current customer base?
+
+**Context:** PixelRAG trended at composite=49 for the second build cycle and frames itself as a parsing replacement. Prior builds asked whether pixel-native retrieval is a substitution risk in general; this asks for a scope-bounded customer-segment answer that would anchor future action recommendations.
+
+**Answer:** _add reply here_
+
+### Q: Has the team characterized whether any of the smaller open-weight OCR models (LightOn OCR-2 at 1B, Chandra OCR 2 at 4B) runs at acceptable extraction accuracy on the Qualcomm Nexa SDK's NPU target, and if so, does on-device extraction quality at those parameter counts represent a viable alternative to the Nanonets API for mobile capture workflows?
+
+**Context:** Nexa SDK appeared this cycle with day-0 model support across GPU, NPU, CPU on mobile. On-device OCR at competitive model sizes would remove the API dependency for mobile workflows. This question has not been raised in prior builds.
+
+**Answer:** _add reply here_
+
+---
