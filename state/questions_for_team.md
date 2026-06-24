@@ -4056,3 +4056,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-24T12:10:37+00:00 (audit: partial)
+
+### Q: Has OCR-3 been submitted to the lmms-eval or evalscope model registries, and if not, is there a planned submission date?
+
+**Context:** Both lmms-eval and evalscope trended this cycle with overlapping DocVQA, ChartQA, and OmniDocBench coverage. Competitors can already run and publish head-to-head benchmarks against Qwen3-VL, GLM-5.1, and InternVL3.5 in these frameworks without OCR-3 as a reference point. This question has appeared in prior builds without a team response; a yes/no with a date would retire it permanently.
+
+**Answer:** _add reply here_
+
+### Q: latent-gate trended this cycle with a 'reproduce' recommendation for phantom-row impact under ~80% VL-JEPA compression — has any team member applied this compression to the existing phantom-row evaluation suite?
+
+**Context:** This question appeared in the June 23 and June 24 builds without a team response. A scoped experiment (compress a test set with latent-gate, run through phantom-row eval) would characterize the degradation curve. If the answer is 'unknown,' the experiment is bounded and executable with existing infrastructure.
+
+**Answer:** _add reply here_
+
+### Q: PaddleOCR-VL-1.6 is currently #1 on OmniDocBench v1.6 (96.33), while OCR-3's published score (90.5) is on v1.5 and not directly comparable — should OCR-3 be evaluated on OmniDocBench v1.6 or v1.7 to establish a current benchmark position?
+
+**Context:** OmniDocBench has versioned twice since OCR-3's April 2026 launch (v1.6 on April 10, v1.7 on April 30). Without a v1.6+ score, OCR-3 cannot rebut PaddleOCR-VL-1.6's leadership claim on that benchmark version. The prior version scores remain accurate but are increasingly stale as the competitive field publishes on later versions.
+
+**Answer:** _add reply here_
+
+### Q: arxiv, HN, and RSS have all failed on every build since this monitor was deployed — should the team accept github_trending-only as the operating norm, or assign an owner to implement the OAI-PMH or HN Firebase API alternatives proposed in prior builds?
+
+**Context:** This question has appeared in five or more consecutive builds without a team response. A yes/no policy decision — 'accept github_trending-only' or 'owner X will implement OAI-PMH by date Y' — would end this recurring question permanently. The current state silently degrades research-axis coverage (vlm_research and frontier axes are only weakly covered by GitHub trending repos).
+
+**Answer:** _add reply here_
+
+### Q: Should BiSheng and RAGFlow be added to data/nanonets_context.md as named competitive entrants in an above-extraction-layer category (agentic workflow platforms that bundle document parsing)?
+
+**Context:** Both have appeared in multiple consecutive builds and score consistently in the competitive axis. Without registry entries, each build evaluates them from first principles. A single team response covering both would stabilize scoring and retire this class of question permanently.
+
+**Answer:** _add reply here_
+
+---
