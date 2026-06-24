@@ -3988,3 +3988,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-24T06:00:00+00:00 (audit: partial)
+
+### Q: arXiv, HN, and RSS have all failed for this build — the twentieth or more consecutive build without arXiv coverage. Should the team treat the github_trending-only signal as a resolved operating norm, or assign an owner and deadline for the OAI-PMH or HN Firebase API alternatives previously proposed?
+
+**Context:** Without arXiv and HN, the vlm_research and doc_ai axes are sourced entirely from GitHub trending repos. Multiple prior builds proposed Semantic Scholar and OAI-PMH as fallback sources; both remain unanswered. A yes/no policy decision would end this recurring question permanently.
+
+**Answer:** _add reply here_
+
+### Q: Has OCR-3 been submitted to the lmms-eval or evalscope model registries, and if not, is there a planned submission date?
+
+**Context:** Both frameworks trended this cycle with overlapping DocVQA/ChartQA/VLM coverage. Competitors can already run and publish head-to-head benchmarks against Qwen3-VL, GLM-5.1, and InternVL3.5 without including OCR-3. This is a submission gap, not a framework limitation — prior builds raised this question without a team response.
+
+**Answer:** _add reply here_
+
+### Q: BiSheng, RAGFlow, and Dify have appeared in multiple consecutive builds as orchestration-layer competitors. Should they be added to data/nanonets_context.md as named competitive entrants (above-extraction-layer category) to stabilize scoring across future builds?
+
+**Context:** All three bundle their own document extraction defaults. Without registry entries, each build evaluates them from first principles rather than tracking them as known entrants. A single team response covering all three would close this class of question permanently.
+
+**Answer:** _add reply here_
+
+### Q: Does the research team track explanation-faithfulness auditing as a distinct subtype of structural hallucinations, and is the crossroute-audit framework's methodology compatible with the team's existing mechanistic interpretability work?
+
+**Context:** Explanation-faithfulness auditing measures whether a VLM's stated explanations track internal processing — maps to structural hallucinations (fabricated markers, mis-attributed fields) in the team's research direction. A yes/no answer determines whether future appearances should be escalated to 'reproduce'.
+
+**Answer:** _add reply here_
+
+### Q: opendataloader-pdf has appeared in multiple consecutive builds with an 'investigate' recommendation; has any team member evaluated its extraction quality on a common test set relative to OCR-3, and should it be added to data/nanonets_context.md?
+
+**Context:** Without a registry entry, each build re-evaluates this item from first principles. It targets the same /parse interface as Nanonets Agentic Data Extraction and is open-source. A single evaluation result would determine whether this warrants a named entry alongside Docling, MinerU, and Unstructured.
+
+**Answer:** _add reply here_
+
+---
