@@ -4090,3 +4090,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-24T18:09:02+00:00 (audit: partial)
+
+### Q: Ollama now lists GLM-5.1 (Zhipu AI) as a headline model, distinct from GLM-OCR (0.9B, March 2026). Is GLM-5.1 a generational update with document extraction capabilities comparable to GLM-OCR, or a general-purpose language model without OCR-specific fine-tuning?
+
+**Context:** GLM-OCR (0.9B, 94.62 on OmniDocBench V1.5) is in the competitive registry. GLM-5.1 appears in Ollama's headline model list but its parameter count, architecture, and document extraction capabilities are not confirmed in public sources. Without clarification, scoring future Ollama items against GLM-5.1 requires per-build editorial judgment. If GLM-5.1 has document extraction capabilities, it should be added to the competitive registry in nanonets_context.md alongside GLM-OCR.
+
+**Answer:** _add reply here_
+
+### Q: Of BiSheng, RAGFlow, Dify, and LangChain — four workflow platforms that trended this build — which has the most accessible contribution path for adding OCR-3 as a named extraction provider?
+
+**Context:** All four set document parsing defaults at enterprise deployment time. A single engineering response identifying the lowest-barrier integration path (plugin SDK, integration PR, or npm package) would convert four recurring 'monitor' items into one scoped task. Prior builds asked about BiSheng and RAGFlow's nanonets_context.md registration; this asks for a technical integration priority ranking, not a registry decision.
+
+**Answer:** _add reply here_
+
+### Q: Does the team have a published comparison (blog post, benchmark result, or technical note) positioning OCR-3's accuracy or reliability advantage over at least one open-source /parse alternative (PaddleOCR, Unstructured.io, or opendataloader-pdf)?
+
+**Context:** All three open-source tools trended this build with matching value propositions. PaddleOCR-VL-1.6 holds #1 on OmniDocBench v1.6 (96.33); OCR-3's published score (90.5) is on v1.5. Without a published head-to-head on at least one open-source alternative on FUNSD or CORD, developers evaluating open-source options have no OCR-3 reference point. This question is distinct from prior asks about lmms-eval registration.
+
+**Answer:** _add reply here_
+
+### Q: With ms-swift enabling GRPO fine-tuning for Qwen3-VL, GLM4.5v, and InternVL3.5 (all IDP Leaderboard competitors), has the team considered whether GRPO-based alignment directed at phantom-row and repetition-loop failure modes would be applicable to OCR-3 or its successor models?
+
+**Context:** GRPO is a reinforcement learning alignment method. Its application to VLM hallucination mitigation is a new research direction. If the answer is 'unknown,' applying ms-swift's GRPO scripts to an open-weight competitor VLM and measuring phantom-row rates before and after alignment would be a scoped experiment with the existing evaluation infrastructure. This question has not appeared in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: On-device document extraction is now feasible with 1B–4B competitive VLMs (LightOn OCR-2, Chandra OCR 2) via Qualcomm Nexa SDK and React Native ExecuTorch. Is on-device document capture a deployment pattern that any current or target customer requires, where the API dependency is a disqualifying constraint?
+
+**Context:** Prior builds asked whether on-device OCR models run acceptably on Qualcomm NPUs; this asks for a scope-bounded customer-segment answer. If on-device deployment is required by a material customer segment, the competitive risk from on-device alternatives is product-relevant rather than research-adjacent. A yes/no with a rough segment size would retire the on-device question class permanently from the AI-partner channel.
+
+**Answer:** _add reply here_
+
+---
