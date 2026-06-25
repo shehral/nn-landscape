@@ -4152,3 +4152,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-25T06:09:25+00:00 (audit: partial)
+
+### Q: microvlm provides a 280-line NumPy cross-attention implementation for studying image-patch-to-text alignment. For the research team's mechanistic interpretability work on OCR-3 hallucination modes, does a minimal cross-attention scaffold serve as a useful controlled-experiment environment, or is the gap better addressed by steering vectors and activation patching on full-scale models?
+
+**Context:** microvlm trended this cycle alongside crossroute-audit. Its minimal footprint allows targeted ablations on attention mechanisms without full-model dependencies. The question is whether isolation at this scale is informative for the phantom-row and structural hallucination failure modes in production-scale document VLMs, or whether the representational gap between 280 lines and a 35B MoE is too large for results to transfer. This question has not been asked in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: video-evaluator extracts grounded visual evidence per video frame, which is structurally analogous to extracting grounded field evidence per page in a multi-page PDF. Has the team evaluated whether per-frame video grounding methods transfer to per-page document layout grounding, and if so, are there specific failure modes in temporal video grounding that do not appear in spatial document layout grounding?
+
+**Context:** video-evaluator appeared this cycle with a 'doc_ai' primary axis score of 2. The structural similarity between sequential video frames and sequential document pages suggests potential method transfer; the key difference is that document pages have spatial layout structure (columns, tables, reading order) that video frames do not. Characterizing this distinction would determine whether video grounding research is a relevant methodological input to per-field attribution work. This question has not been asked in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: vlmscope provides a dependency-light Python harness for per-task VLM evaluation (VQA, captioning, image-text retrieval). Does the team currently use any lightweight harness for per-checkpoint accuracy spot-checks during model development, or do all evaluation runs go through the full benchmark suite — and if the former does not exist, would vlmscope's minimal-dependency design fill a gap in the development CI pipeline?
+
+**Context:** vlmscope trended this cycle alongside lmms-eval and evalscope. The distinction is footprint: vlmscope targets fast, dependency-minimal evaluation rather than comprehensive registered benchmarks. A lightweight per-PR spot-check harness would reduce the friction of continuous evaluation on new checkpoints without requiring full benchmark infrastructure. This question is distinct from prior builds' questions about lmms-eval and evalscope registration; it asks about a different use case (development-time spot-checks vs. published benchmark registration).
+
+**Answer:** _add reply here_
+
+### Q: LangChain trended again as the dominant open-source agent engineering platform, and Nanonets Agentic Data Extraction documents LangChain as a supported integration. What is the current integration state — is there a first-class LangChain document loader or chain template maintained by Nanonets, and if so, is its maintenance owned by Nanonets engineering or community-driven?
+
+**Context:** LangChain has appeared in multiple consecutive builds. Prior builds asked about OCR-3 integration paths for Dify, RAGFlow, and BiSheng; this asks specifically about the status of the documented LangChain integration. If the integration is community-maintained or undocumented, it may not surface OCR-3 as the default extraction option when LangChain developers configure document loaders. A yes/no with an ownership answer would retire this question permanently.
+
+**Answer:** _add reply here_
+
+### Q: crossroute-audit and latent-gate both appeared in this build with 'investigate' and 'reproduce' recommendations respectively; both have appeared in multiple prior builds without a team response. Are there any prior-cycle questions (crossroute-audit faithfulness applicability, latent-gate phantom-row experiment) that the team has internally acted on but not yet documented as answers in this file?
+
+**Context:** crossroute-audit has generated 'investigate' recommendations across three builds; latent-gate's phantom-row experiment has been proposed across four builds. If either has been acted on internally, documenting the outcome here would retire both questions and allow the agent to adjust future action recommendations accordingly. The question is not about new items but about the status of prior open work items.
+
+**Answer:** _add reply here_
+
+---
