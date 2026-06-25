@@ -4124,3 +4124,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-25T06:00:00+00:00 (audit: partial)
+
+### Q: PaddleOCR-VL-1.6 scored highest (composite=68) in this build and holds #1 on OmniDocBench v1.6 (96.33) with zero-cost open-weight distribution and identical positioning to Nanonets Agentic Data Extraction. Does the team have a publicly documentable differentiation claim — accuracy, reliability, or speed on a specific document type — that does not depend on OmniDocBench v1.5 scores that are no longer the current benchmark version?
+
+**Context:** Three open-source parsers (PaddleOCR, opendataloader-pdf, Unstructured-IO) all headline with 'PDF to structured data for AI' messaging this cycle. Without a current benchmark comparison on v1.6 or a published head-to-head on FUNSD/CORD, the public-facing differentiation between OCR-3 and the open-weight field is not benchmarkable from external sources. This question has not appeared in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: Three VLM evaluation harnesses (lmms-eval, evalscope, vlmscope) trended in the same build. Does the team have a preferred framework for internal OCR-3 benchmarking, or are different frameworks used for different evaluation types (comprehensive benchmark vs. per-task spot-check vs. CJK-language evaluation)?
+
+**Context:** Clarifying a framework preference would allow future builds to escalate registration or integration tasks in the preferred framework rather than treating all three as equivalent signals. This is a new process question not raised in prior builds; prior builds asked only about lmms-eval and evalscope registration independently.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift (GRPO/DPO for Qwen3-VL, GLM-5.1, InternVL3.5) and Ollama (local distribution of the same models) co-appeared this cycle, completing the train-adapt-distribute loop for competitive document VLMs. At what accuracy threshold on a canonical document type — invoice tables, FUNSD forms — does the team consider a vertically fine-tuned open-weight model a material competitive risk warranting a product response, as opposed to a research curiosity?
+
+**Context:** Prior builds asked whether GRPO-based alignment applies to OCR-3 successor models. This question asks for a competitive-risk threshold definition, which would stabilize future scoring and action recommendations for fine-tuning framework items. A yes/no with a rough accuracy gap would retire this class of question.
+
+**Answer:** _add reply here_
+
+### Q: screenpipe (YC S26) trended this cycle as a 24/7 screen-and-audio recorder that extracts ambient document context from what has been seen on-screen rather than from file uploads. Is ambient document capture — where invoices or forms are captured via screen recording rather than PDF or image upload — a workflow pattern any current or prospective customer has requested?
+
+**Context:** If yes, screenpipe and similar ambient-capture tools represent a distinct document-ingestion pathway that the current Nanonets /parse and /extract endpoints do not serve. The answer would determine whether ambient-capture items should be framed as 'adjacent' or 'product-relevant' in future builds. This question has not appeared in prior builds.
+
+**Answer:** _add reply here_
+
+---
