@@ -4186,3 +4186,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-25T12:09:23+00:00 (audit: partial)
+
+### Q: graft's pluggable encoder design enables systematic vision encoder substitution in a document VLM while holding the language model constant. If the team ran phantom-row evaluation across several encoder configurations using graft, which vision encoders (by family: SigLIP, CLIP, DINOv2, SAM-family) would be highest priority to test, and is encoder substitution currently feasible on OCR-3's architecture or blocked by the production MoE design?
+
+**Context:** graft appeared this cycle at vlm_research=3. The cross-architecture hallucination transfer research direction would benefit from knowing whether phantom-row patterns are encoder-specific. A yes/no on feasibility plus one or two encoder candidates would allow the team to scope a graft-based ablation experiment without further open questions.
+
+**Answer:** _add reply here_
+
+### Q: lmms-eval, evalscope, and vlmscope all trended this cycle with overlapping document benchmark coverage. Rather than registering OCR-3 in all three, which single framework would give the highest competitive visibility for the benchmarks most cited in document-AI comparisons — and if the answer is lmms-eval, is the blocker a submission process, a model hosting requirement, or a measurement methodology question?
+
+**Context:** Prior builds asked whether OCR-3 is registered in lmms-eval or evalscope separately; those questions remain unanswered across five or more builds. This reformulates the question as a single-choice priority to make a yes/no answer actionable without requiring the team to address all three frameworks simultaneously.
+
+**Answer:** _add reply here_
+
+### Q: This cycle, five individually-authored lightweight VLM tools (latent-gate, crossroute-audit, graft, vlmscope, microvlm) trended simultaneously. The cluster suggests a research community interest in minimal, reproducible VLM tooling. Does the team have any hallucination-research artifacts — evaluation protocols, minimal probing harnesses, or phantom-row test sets — that would be publishable as open-source tools in this category?
+
+**Context:** Publishing minimal tooling alongside research findings increases citation surface and positions Nanonets as a contributor to the VLM mechanistic research community. This question has not appeared in prior builds; it asks about existing artifacts that could be released, not about building new ones.
+
+**Answer:** _add reply here_
+
+### Q: Daft (high-performance multimodal data engine) trended this cycle. Prior builds asked whether Daft could serve as a batch preprocessing layer upstream of Nanonets Agentic Data Extraction. This build asks more specifically: does OCR-3's current API impose per-request latency overhead (cold start, minimum processing time) that would make a batched Daft preprocessing pipeline materially more cost-effective for customers submitting more than, say, 10,000 pages per job — and is there existing internal data on per-page throughput vs. batch size?
+
+**Context:** The Daft integration question has appeared in prior builds at a higher abstraction level. This version asks for a specific threshold and whether internal benchmarking data already exists, which would make the answer actionable without further measurement.
+
+**Answer:** _add reply here_
+
+---
