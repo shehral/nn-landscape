@@ -4214,3 +4214,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-25T18:09:00+00:00 (audit: partial)
+
+### Q: Does Kimi-K2.6 (MoE architecture, Moonshot AI) have document-extraction capabilities that would qualify it for the IDP Leaderboard competitive set, or is it a general-purpose reasoning/chat model with no document fine-tuning?
+
+**Context:** Ollama's current headline explicitly names Kimi-K2.6 alongside GLM-5.1, MiniMax, Qwen, and DeepSeek. Kimi-K2.6 is a MoE architecture — the same topology as OCR-3 — but its document-extraction capabilities have not been confirmed in public benchmarks. A one-sentence classification (competitive registry or not) would determine whether Moonshot AI warrants an entry in nanonets_context.md. This question has not appeared in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: Has SGLang been evaluated as a serving backend for OCR-3 or any predecessor model, and if not, is the decision to use a different serving framework documented in a way the build agent could reference to stop surfacing SGLang each build cycle?
+
+**Context:** SGLang has trended in the fourth consecutive build cycle. Its RadixAttention prefix caching directly benefits batch document extraction where requests share a common system-prompt prefix. Prior builds asked about vLLM serving alternatives and Daft batch preprocessing; none asked specifically about SGLang. A yes/no with the serving decision rationale would retire this item permanently from the build's framing pool.
+
+**Answer:** _add reply here_
+
+### Q: For a developer configuring RAGFlow or Dify as an enterprise document automation platform today, what parser appears as the default extraction provider — and has any engineering work (PR, plugin, or connector) exposed OCR-3 as a selectable option in either platform's parser registry?
+
+**Context:** RAGFlow and Dify both trended this cycle as document workflow platforms that set parser defaults at deployment time. Prior builds asked about BiSheng and RAGFlow individually for nanonets_context.md registry inclusion; this build asks specifically about the integration state. Parser selection at configuration time determines the extraction provider for all downstream workflows; a yes/no on current integration state would determine whether this is a product task or already complete.
+
+**Answer:** _add reply here_
+
+### Q: Should PixelRAG be retired to a standing 'monitor' recommendation in future builds until a structured-document accuracy benchmark (DocVQA, FUNSD, or CORD) is published, or does its consistent trending signal sufficient competitive intent to maintain per-build framing?
+
+**Context:** PixelRAG has trended in at least three consecutive build cycles with identical 'end of document parsing' messaging and no published accuracy data on structured documents. Without benchmark evidence, each build repeats the same framing without new information. A policy decision — retire to 'monitor' until benchmark published, or maintain 'investigate' regardless — would stabilize future builds without per-build editorial judgment on this item.
+
+**Answer:** _add reply here_
+
+### Q: Would adding GitHub Trending topic parameters not currently in sources.yaml (e.g., 'document-intelligence', 'pdf-extraction', 'invoice-parsing') surface materially different items from the current topic set, or would the overlap be high enough that a dedicated arxiv/HN/RSS alternative remains the priority?
+
+**Context:** arxiv, HN, and RSS have failed in every documented build since the monitor was deployed. Prior build questions proposed OAI-PMH and HN Firebase API alternatives. This build asks a scoped alternative: whether topic-set expansion within github_trending (the one working source) would improve axis coverage on research-axis items (vlm_research, frontier) without requiring new source implementations. A yes/no from someone who has tested the GitHub Trending API topic filters would determine whether this is a quick config change or a dead end.
+
+**Answer:** _add reply here_
+
+---
