@@ -4344,3 +4344,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-26T08:00:00+00:00 (audit: partial)
+
+### Q: PaddleOCR-VL-1.6 is confirmed #1 on OmniDocBench v1.6 at 96.33; has the IDP Leaderboard team run it on the IDP Leaderboard metric, and if so, how does its score compare to OCR-3's 85.9?
+
+**Context:** PaddleOCR-VL-1.6 (May 2026) significantly exceeds prior competitive set members on OmniDocBench v1.6. Without an IDP Leaderboard run, the dashboard cannot assess whether this is a benchmark-specific result or signals a genuine leadership change on the metric OCR-3 is ranked by.
+
+**Answer:** _add reply here_
+
+### Q: evalscope and vlmscope are both trending evaluation frameworks with VQA and document-benchmark coverage; is OCR-3 present in either framework's model registry, and if not, who should initiate registration?
+
+**Context:** Prior builds have asked whether lmms-eval or evalscope is used internally, with no reply after multiple cycles. This question is narrower: just whether OCR-3 appears in these frameworks' model registries. Without presence, any third party running document VLM comparisons via these tools produces results that structurally omit Nanonets.
+
+**Answer:** _add reply here_
+
+### Q: paperless-ngx users process invoices, receipts, and forms at scale using self-hosted infrastructure; has the team assessed whether a first-party Nanonets /parse or /extract integration for paperless-ngx is a viable community-distribution channel?
+
+**Context:** Paperless-ngx has appeared in multiple consecutive builds. Its user community processes the same document types Nanonets serves. A native integration would reach this segment without paid acquisition cost; prior builds raised the same question and received no response.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift now provides GRPO training for Qwen3-VL, GLM-5.1, and InternVL; does the team have any alert mechanism for GRPO-fine-tuned document VLM submissions to the IDP Leaderboard before they appear publicly?
+
+**Context:** GRPO has produced SOTA improvements on reasoning tasks; applied to document VLMs, it could narrow OCR-3's IDP Leaderboard lead. If the first signal is a public leaderboard appearance, the team has no lead time to prepare benchmark baselines. An early-warning mechanism — even a GitHub search alert on 'IDP Leaderboard' + 'GRPO' — would help.
+
+**Answer:** _add reply here_
+
+### Q: arXiv, HN, and RSS have all been unavailable for eleven or more consecutive builds; is there a confirmed resolution path, and should Semantic Scholar or Papers With Code be added to sources.yaml as interim academic coverage while the primary sources remain blocked?
+
+**Context:** The dashboard has drawn exclusively from github_trending since at least build 2026-05-22. The vlm_research and doc_ai research-implication fields are inferred from GitHub repos rather than papers, which changes their epistemic reliability. Prior builds have raised this repeatedly; a confirmed team decision — add alternatives, wait for fix, or acknowledge the bias — would prevent further repetition.
+
+**Answer:** _add reply here_
+
+---
