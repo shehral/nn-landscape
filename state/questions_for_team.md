@@ -4310,3 +4310,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-26T12:08:00+00:00 (audit: partial)
+
+### Q: Should extraction-bypass approaches (PixelRAG's pixel-native retrieval, latent-gate's VL-JEPA compression) be tracked as a distinct competitive category separate from open-source extraction tools like MinerU and opendataloader-pdf?
+
+**Context:** Both PixelRAG and latent-gate propose reducing or bypassing the text-extraction step rather than substituting a cheaper extraction tool. If this class of approach gains traction, the threat profile differs from open-source OCR substitution: it threatens the relevance of the extraction layer entirely. A context-file update noting 'extraction-bypass' as a category would allow future builds to score these items consistently without per-build ad hoc judgment.
+
+**Answer:** _add reply here_
+
+### Q: Is crossroute-audit's explanation-faithfulness auditing the same measurement as any technique in the team's current hallucination-characterization stack, or is it a distinct dimension from activation-level mechanistic interpretability?
+
+**Context:** crossroute-audit verifies whether a VLM's explanations align with its visual evidence — a behavioral-level measurement. The team's existing work covers mechanistic interpretability (logit lens, activation patching, causal scrubbing). If they measure different hallucination dimensions, crossroute-audit could complement the existing line without duplicating work. A one-paragraph description of the current measurement stack would resolve this.
+
+**Answer:** _add reply here_
+
+### Q: Would the team expect VL-JEPA-compressed document images to exhibit the same, higher, or lower rates of structural hallucinations compared to full-resolution input to a document VLM?
+
+**Context:** latent-gate claims ~80% token cost reduction via VL-JEPA compression; if compression introduces or amplifies hallucination artifacts in document VLMs, the cost-reduction claim has a quality tradeoff that should be benchmarked. This is a testable hypothesis against the team's existing hallucination benchmark set and would either validate or caution against compression-based cost reduction for document extraction pipelines.
+
+**Answer:** _add reply here_
+
+### Q: Would the team want to run a hallucination profile on an existing GRPO-fine-tuned document VLM variant (e.g., a GRPO-Qwen3-VL or GRPO-InternVL3.5 derivative) before new IDP Leaderboard submissions from these fine-tunes arrive?
+
+**Context:** ms-swift's GRPO support for IDP Leaderboard-proximate models means third-party GRPO-fine-tuned submissions could arrive soon. GRPO's reinforcement learning objective could either reduce hallucinations (by rewarding accurate outputs) or change their character (by rewarding confident-looking outputs). An early hallucination profile would give advance notice of whether OCR-3's hallucination advantage holds against GRPO-fine-tuned competitors.
+
+**Answer:** _add reply here_
+
+### Q: Does the team consider temporal visual grounding (extracting evidence from video frames) related to spatial document grounding (locating evidence in document pages), and if so, would video-evaluator's techniques be considered in-scope for the hallucination research line?
+
+**Context:** video-evaluator and crossroute-audit both address grounded visual evidence extraction in different modalities this build. If the team considers temporal and spatial grounding related problems, cross-pollinating techniques could yield faster progress on document grounding under the hallucination research line. A yes/no answer on whether video-temporal grounding is considered in-scope would allow the dashboard to frame this class of items consistently in future builds.
+
+**Answer:** _add reply here_
+
+---
