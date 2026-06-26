@@ -4282,3 +4282,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-26T06:07:35+00:00 (audit: partial)
+
+### Q: arxiv, HN, and RSS have now failed across every documented build since the monitor was deployed; is there a network-level block in the run environment requiring a source-path change, or should the pipeline add exponential-backoff retry logic before the next scheduled build?
+
+**Context:** github_trending is the sole working source for this and all recent builds, leaving vlm_research and doc_ai research axes structurally undersampled. Prior builds raised arxiv and HN failures; this build adds persistent RSS failure. This is the highest-priority infrastructure gap in the AI-partner channel.
+
+**Answer:** _add reply here_
+
+### Q: Has the IDP Leaderboard team run or planned an OCR-3 evaluation on OmniDocBench v1.6 or v1.7 to produce a versioned comparable score against PaddleOCR-VL-1.6 (96.33 on v1.6)?
+
+**Context:** OmniDocBench v1.6 (April 10, 2026) introduced the MGAM evaluation methodology, making v1.5 and v1.6 scores non-comparable. OCR-3's published score (90.5) is from v1.5; PaddleOCR-VL-1.6 leads v1.6 with 96.33. Without a v1.6 OCR-3 score, external comparisons cannot determine the current benchmark gap.
+
+**Answer:** _add reply here_
+
+### Q: Is there an engineering task open for adding OCR-3 as a named extraction provider in Dify, RAGFlow, or BiSheng — the three document workflow platforms that have trended in at least four consecutive builds?
+
+**Context:** All three platforms set parser defaults at deployment time; absent an OCR-3 connector, enterprise deployments using these platforms route document parsing to bundled providers. A yes/no on current integration state per platform would retire this question class from the AI-partner channel.
+
+**Answer:** _add reply here_
+
+### Q: At what accuracy threshold on a canonical document type (invoice tables or FUNSD forms) does the team classify a GRPO-fine-tuned open-weight model as a competitive risk warranting a product response, rather than a research curiosity?
+
+**Context:** ms-swift now covers GRPO training for three competitive-set MLLMs simultaneously; prior builds raised this question for Qwen3-VL alone. A specific accuracy gap threshold would stabilize future scoring and action recommendations for fine-tuning framework items without per-build editorial judgment.
+
+**Answer:** _add reply here_
+
+---
