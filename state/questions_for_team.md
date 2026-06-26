@@ -4248,3 +4248,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-26T00:00:00+00:00 (audit: partial)
+
+### Q: arxiv, HN, and RSS all failed in this build; all three have now failed across multiple consecutive cycles. Is there a network-level block or rate limit affecting the run environment that requires a source-path change, or should the pipeline add retry logic with exponential backoff before the next scheduled build?
+
+**Context:** Prior builds raised the arxiv and HN 403 issue; this build adds RSS failure, leaving github_trending as the sole source. The vlm_research and doc_ai research_implication fields are structurally undersampled when no primary research sources contribute. This is now the highest-priority infrastructure issue across all unanswered prior questions.
+
+**Answer:** _add reply here_
+
+### Q: PaddleOCR-VL-1.6 holds #1 on OmniDocBench v1.6 (96.33) and OCR-3's public score (90.5) is from OmniDocBench v1.5 — a different benchmark version using a different evaluation methodology (MGAM). Should the IDP Leaderboard team run OCR-3 on OmniDocBench v1.6 to produce a versioned comparable score, or document the benchmark-version gap publicly so leaderboard readers are not misled by a direct number comparison?
+
+**Context:** OmniDocBench v1.6 was released April 10, 2026, with +296 pages and MGAM evaluation. v1.7 followed April 30, 2026. Scores across versions are not directly comparable per the competitive context. PaddleOCR-VL-1.6 and PaddleOCR's GitHub trending suggest this benchmark version is gaining adoption as a reference.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift GRPO support now covers GLM-5.1 (Zhipu AI, same lab as GLM-OCR), InternVL3.5, and Qwen3-VL simultaneously; does the team have a planned timeline for running IDP Leaderboard evaluations on GRPO-fine-tuned document variants of these models before they appear as independent leaderboard submissions?
+
+**Context:** A prior build raised this for Qwen3-VL alone; the scope has since expanded to three competitive-set models. Early benchmark runs would let the team publish comparative results before new GRPO fine-tuned entries arrive on the leaderboard from third parties.
+
+**Answer:** _add reply here_
+
+### Q: crossroute-audit, vlmscope, and graft are individual-contributor GitHub repos with no visible institutional backing; should the scoring rubric apply a credibility ceiling for individual-contributor repos versus lab- or org-backed projects, or does the team consider GitHub trending sufficient provenance for inclusion regardless of source?
+
+**Context:** These three repos scored in the top-5 vlm_research axis this build based on their descriptions, but without institutional backing the descriptions may not reflect reproducible, peer-reviewed work. A provenance signal in sources.yaml or the scoring rubric would prevent the dashboard from over-weighting speculative or LLM-generated repos.
+
+**Answer:** _add reply here_
+
+### Q: MinerU and opendataloader-pdf have appeared in top-5 competitive or doc_ai positions across multiple consecutive builds, but neither is in the named competitive set in data/nanonets_context.md — should both be added alongside Docling as named open-source extraction competitors to stabilize scoring across future builds?
+
+**Context:** The current context file names Docling (IBM Research) as the open-source layout-aware document parser reference but does not name MinerU (Shanghai AI Lab / opendatalab) or opendataloader-pdf. Adding named entries would prevent the build agent from making ad hoc relevance judgments on these tools each cycle.
+
+**Answer:** _add reply here_
+
+---
