@@ -4412,3 +4412,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-27T06:00:00+00:00 (audit: partial)
+
+### Q: Chandra OCR 2 (datalab-to/chandra) is now trending on GitHub with 'complex tables, forms, handwriting with full layout' positioning and a claimed 85.9% OlmOCR score equal to OCR-3's IDP Leaderboard result. Is the Datalab team publicly promoting Chandra OCR 2 as a direct OCR-3 alternative, and has the IDP Leaderboard team received a benchmark submission from Datalab or seen Chandra OCR 2 listed on the official leaderboard?
+
+**Context:** Chandra OCR 2 has appeared on GitHub Trending multiple times, but this is the first build where its repository is directly trending with OCR-parity positioning. If Datalab is actively using the 85.9% OlmOCR figure as a public claim against OCR-3 on the same benchmark, that is a concrete competitive positioning event. A yes/no on leaderboard submission status would determine whether to escalate from 'investigate' to 'reply' in future builds. This question has not appeared in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: PaddleOCR, MinerU, and Chandra OCR 2 all headlined simultaneously in this build with 'PDF to structured data for AI' messaging that is nearly word-for-word the same as Nanonets Agentic Data Extraction positioning. Is there a publicly documentable accuracy, API-completeness, or reliability differentiation claim for the Nanonets /parse and /extract endpoints relative to all three of these tools simultaneously — not against a specific benchmark version, but as a category claim a customer could evaluate independently?
+
+**Context:** Prior builds raised the PaddleOCR OmniDocBench version gap (v1.5 vs v1.6) as a benchmark comparability issue. This question shifts from benchmark scoring to product differentiation: whether there is a claim a potential customer can verify without needing to run internal benchmarks. The question is new in this formulation; prior questions addressed PaddleOCR alone or benchmark methodology specifically.
+
+**Answer:** _add reply here_
+
+### Q: Google Genkit (genkit-ai/genkit) is an open-source AI application framework for JavaScript, Go, and Python built and used in production by Google. Nanonets Agentic Data Extraction publicly documents LangChain and LlamaIndex as supported integrations. Has a Genkit integration been considered, and if not, is the blocking factor engineering bandwidth, Genkit's current adoption level, or a strategic decision to prioritize other frameworks?
+
+**Context:** Genkit trended this cycle alongside LangChain. As a Google-backed framework with production usage, its developer community is distinct from LangChain's. An integration would surface Nanonets Agentic Data Extraction as the default document parser for Genkit-based agents. This question has not been asked in prior builds; prior builds asked about LangChain integration state specifically.
+
+**Answer:** _add reply here_
+
+### Q: RAGFlow, BiSheng, Dify, LangChain, and FlowiseAI all co-appeared in this build, covering the full spectrum from no-code (Flowise) to developer-framework (LangChain) to enterprise platform (RAGFlow, BiSheng) document workflow tooling. The context file currently classifies LangChain as an integration partner and does not classify Dify or Flowise. Should Dify and Flowise be added to nanonets_context.md as 'above-extraction-layer workflow orchestrators' in the competitive set, or are they currently treated as integration targets rather than competitors?
+
+**Context:** Prior builds asked about RAGFlow and BiSheng individually for competitive registry inclusion; both remain unanswered. This question addresses the full orchestration-layer cluster and asks for a categorical decision — competitor or integration partner — that would stabilize action recommendations across all five tools in future builds without per-build editorial judgment.
+
+**Answer:** _add reply here_
+
+### Q: arxiv, HN, and RSS have failed in all documented builds since this monitor was deployed; github_trending is the sole working source. The prior build raised this as the highest-priority infrastructure issue. This build raises it again because the vlm_research and frontier axes remain structurally undersampled from github_trending alone. Is there an environment-level network block affecting the run container's access to arxiv, the HN Algolia API, and RSS feeds simultaneously, and if so, is the fix a network policy change or a source-path change to alternative endpoints (OAI-PMH, HN Firebase API)?
+
+**Context:** This question has been asked in prior builds. It is repeated here because no team response has been received and the infrastructure issue is now the single largest constraint on build quality. All other questions in this file are secondary to resolving this one.
+
+**Answer:** _add reply here_
+
+---
