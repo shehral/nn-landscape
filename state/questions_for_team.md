@@ -4446,3 +4446,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-27T12:06:54+00:00 (audit: partial)
+
+### Q: PixelRAG positions itself as 'the end of web parsing' via pixel-native search — should it be treated as a research prototype to monitor or a direct alternative to the /parse endpoint requiring an 'investigate' action?
+
+**Context:** The repository description does not disclose the methodology; the competitive claim is unusually strong but unsubstantiated. A product team read of the implementation would determine whether it handles structured extraction (tables, forms, schemas) or only semantic retrieval over natural-language content — the latter would make it complementary rather than competitive.
+
+**Answer:** _add reply here_
+
+### Q: DataElement and Datalab appear to be closely related entities: DataElement makes BiSheng (orchestration) and Datalab makes Chandra OCR 2 (extraction). Should they be treated as a single coordinated full-stack competitor in data/nanonets_context.md, or evaluated separately at different competitive layers?
+
+**Context:** This is the first build in which both appear simultaneously. If they share engineering, customer relationships, or go-to-market, the combined threat profile is qualitatively different from two independent open-source projects at different layers. A one-sentence clarification would stabilize future scoring for both.
+
+**Answer:** _add reply here_
+
+### Q: Crossroute-audit targets explanation-faithfulness auditing for VLMs — does the methodology overlap with or complement the team's current mechanistic interpretability work on phantom-row hallucinations?
+
+**Context:** The repository appeared in GitHub trending but arXiv is unavailable, so there is no associated paper to assess methodology. A direct read of the repository would determine whether it uses causal patching, saliency maps, or another approach — the answer would change the action recommendation from 'read in week' to either 'reproduce' or 'no action'.
+
+**Answer:** _add reply here_
+
+### Q: Ollama now lists Kimi-K2.6 (incremented from K2.5 in prior builds) — has the document-extraction capability of the Kimi-K2.x series been assessed, and should it be added to the competitive registry if confirmed to handle structured document extraction?
+
+**Context:** Prior builds raised this question about K2.5 without a team response; the version increment to K2.6 suggests active development. If Kimi-K2.6 has document extraction capabilities comparable to GLM-OCR or Qwen3-VL, it may appear on the IDP Leaderboard without advance warning; confirming its document-extraction positioning now would allow proactive baseline preparation.
+
+**Answer:** _add reply here_
+
+---
