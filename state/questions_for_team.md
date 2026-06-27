@@ -4378,3 +4378,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-27T00:00:00+00:00 (audit: partial)
+
+### Q: Has Chandra OCR 2 (datalab-to/chandra) been evaluated on OmniDocBench v1.7 or submitted to the IDP Leaderboard? Its stated capabilities — complex tables, forms, handwriting, full layout — are directly in OCR-3's benchmark category.
+
+**Context:** datalab-to/chandra is trending on GitHub with the highest composite score this build (71). It positions explicitly on full-layout IDP tasks. No IDP Leaderboard or OmniDocBench submission has been confirmed in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: With ms-swift + evalscope providing end-to-end GRPO training and IDP evaluation for Qwen3-VL, InternVL3.5, GLM4.5v, and Ovis2.5 — does the team have a timeline estimate for when a GRPO-IDP-tuned variant of any of these models might appear on OmniDocBench?
+
+**Context:** ms-swift (composite 52) trending with explicit GRPO support for all major IDP Leaderboard competitor families. evalscope (composite 49) provides the evaluation harness. The supply chain for a rapid leaderboard challenge is now publicly available.
+
+**Answer:** _add reply here_
+
+### Q: LiteParse (run-llama/liteparse) is the LlamaIndex team's open-source document parser (composite 59, competitive classification). Has the team done a quality comparison against MinerU and OCR-3 on structured documents with complex tables?
+
+**Context:** LiteParse claims to be fast, helpful, and open-source, backed by LlamaIndex's distribution to a large developer base. RAG-native positioning may accelerate adoption among the same buyers Nanonets targets.
+
+**Answer:** _add reply here_
+
+### Q: Does evalscope's OmniDocBench integration cover v1.7 (the version OCR-3 was evaluated on), or only earlier versions? If v1.7 is supported, any team running ms-swift GRPO fine-tuning can immediately benchmark against OCR-3's score.
+
+**Context:** evalscope is trending alongside ms-swift; together they form the complete GRPO training-to-evaluation loop. The OmniDocBench version coverage is the critical detail for assessing how quickly a competitor could mount a leaderboard challenge.
+
+**Answer:** _add reply here_
+
+### Q: crossroute-audit (VLM explanation-faithfulness auditing) is trending — has the team considered running it against OCR-3 to audit whether OCR-3's layout explanations are faithful to its attention patterns, as a trust and compliance differentiator for regulated-industry buyers?
+
+**Context:** umynameislove/crossroute-audit audits VLMs for explanation faithfulness (vlm_research score 5/5). Regulated verticals — finance, legal, healthcare — require explainability for document AI. A published faithfulness score could be a product differentiator.
+
+**Answer:** _add reply here_
+
+---
