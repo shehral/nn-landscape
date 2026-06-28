@@ -4530,3 +4530,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-28T18:00:00+00:00 (audit: partial)
+
+### Q: Of the four enterprise workflow platforms co-trending this build (BiSheng, RAGFlow, Dify, AnythingLLM), has the team observed whether any of them default to MinerU as their document parser? If yes, the competitive threat is MinerU reaching developers through these platforms, not the platform itself.
+
+**Context:** MinerU (composite 68) and the orchestration cluster appeared in the same build cycle for the third time. If MinerU is being bundled as the default extraction backend in any of these platforms, each new platform deployment is a MinerU adoption event, not just a workflow tool adoption event. This question has not been asked in this formulation before.
+
+**Answer:** _add reply here_
+
+### Q: PixelRAG claims pixel-native search replaces web parsing but discloses no methodology. Should the default classification be 'research prototype' (not yet competitive) or 'undisclosed competitor' (conservative, treat as competitive until proven otherwise)?
+
+**Context:** Pixel-native search could mean rendered-page VLM attention (competing directly with OCR-3 on structured extraction) or pixel-level image hashing for semantic retrieval (complementary, not substituting). The tie-break rule in context.md says to default to competitive when uncertain, but this item's claim is so undisclosed that even that rule may be over-indexing. A one-sentence team policy would resolve future builds of this type.
+
+**Answer:** _add reply here_
+
+### Q: Has the team characterized what happens to OCR-3 markdown output when a 60-95% token compression layer (e.g., Headroom) is applied before a downstream LLM extraction step? Specifically, do complex multi-column tables survive compression with row- and cell-level fidelity intact?
+
+**Context:** Headroom operates post-OCR on structured text, not on images; it is not covered by the team's hallucination research which focuses on the VLM generation step. If table rows are compressed differently than prose paragraphs, customers using Headroom-style tools in their pipelines may attribute downstream extraction failures to OCR-3 rather than to the compression layer. This is a new question not raised in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: arxiv, HN, and RSS have been blocked for all documented build cycles. Is there a confirmed environment-level network policy that blocks these endpoints, and has a decision been made on whether to add Semantic Scholar or Papers With Code as an interim academic source in sources.yaml?
+
+**Context:** This question has been asked multiple times. It is repeated because trend bullet 5 this build explicitly flags that vlm_research and frontier scores are lower-confidence as a result, and the dashboard's about page may need a standing disclaimer if no fix is planned. A yes/no on whether a fix is planned would allow the next build to either add a disclaimer or stop raising this question.
+
+**Answer:** _add reply here_
+
+### Q: Should the rendered HTML dashboard include a standing 'research coverage gap' banner when github_trending is the sole active source for more than 5 consecutive builds? If yes, what threshold triggers removal of the banner?
+
+**Context:** The build infrastructure failure has now persisted long enough that readers comparing consecutive dashboard editions may draw inaccurate conclusions about research trends — the vlm_research and frontier axes reflect developer GitHub activity, not academic publication velocity. A banner would set expectations without requiring a source fix first. Prior builds asked for a source fix; this question asks for a product response to the gap regardless of fix timeline.
+
+**Answer:** _add reply here_
+
+---
