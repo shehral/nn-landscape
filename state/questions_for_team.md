@@ -4564,3 +4564,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-28T12:06:58+00:00 (audit: partial)
+
+### Q: Ollama's featured model list has updated from Kimi-K2.5 to Kimi-K2.6 and from GLM-5 to GLM-5.1; are these incremental updates or version changes that introduce new document-extraction capabilities relative to the prior versions tracked in data/nanonets_context.md?
+
+**Context:** GLM-5.1 and Kimi-K2.6 are now locally accessible via Ollama at no API cost. If either inherits document-extraction depth from GLM-OCR or introduces new VQA capabilities, it is a new IDP Leaderboard candidate that is freely available for head-to-head comparison with OCR-3. A one-sentence answer per model — 'document-capable vs. prior version: yes/no change' — would either close the question permanently or trigger a registry update in data/nanonets_context.md.
+
+**Answer:** _add reply here_
+
+### Q: PixelRAG's 'pixel-based RAG' paradigm operates at the image-region level and claims to replace text parsing in retrieval pipelines; does this represent a structurally different threat to OCR-3's /parse→RAG workflow than text-chunk-based RAG, or does it require OCR-quality text extraction as a prerequisite before pixel-level indexing?
+
+**Context:** If PixelRAG can retrieve and answer from document images without extracting text, it bypasses OCR-3's /parse step for retrieval workloads entirely. If it requires a prior OCR pass, it is a downstream consumer of /parse output rather than a substitute. The distinction changes the competitive threat classification and the action recommendation from 'read in week' to either 'investigate' or 'no action'.
+
+**Answer:** _add reply here_
+
+### Q: Three behavioral hallucination-mitigation approaches (spatial grounding from NVIDIA VSS, evidence anchoring from video-evaluator, constrained decoding from SGLang) appeared in the same cycle. Has the team assessed whether any of these could serve as a cheap, no-activation-access complement to the mechanistic interpretability work — specifically, does any of the three provide a phantom-row signal on a benchmark the team already runs?
+
+**Context:** The prior builds raised retrieval-based mitigation repeatedly without resolution; this question is narrower. Spatial grounding and constrained decoding require no interpretability tooling and could be implemented in a single day as an ablation check. Knowing whether any of the three paradigms overlaps with a benchmark the team currently uses would determine whether the comparison requires new infrastructure or just a configuration change.
+
+**Answer:** _add reply here_
+
+### Q: The github_trending-only signal this build produces zero items from Anthropic, OpenAI, Google, Mistral, or any frontier lab, and zero academic papers; are the framing and trend analysis in this edition considered reliable enough for the DL team and Prathamesh view, or should the rendered output carry a stronger disclaimer than the partial-build banner?
+
+**Context:** arXiv, HN, and RSS have failed for 30+ consecutive builds. The frontier and vlm_research axis framings in this edition are inferred entirely from GitHub repository metadata, not papers or lab announcements. Readers may not notice the partial-build banner; a more prominent or inline disclaimer per framing block would more accurately represent the epistemic status of research_implication fields in particular.
+
+**Answer:** _add reply here_
+
+### Q: RAGFlow, Dify, UltraRAG, BiSheng, and Genkit all trend without confirmed Nanonets OCR-3 connectors; is the bottleneck for closing these distribution gaps a process question (who owns connector development), a technical question (connector API complexity per platform), or a prioritization question (which platform reaches the most relevant customers)?
+
+**Context:** This framing of the connector-gap question is new: prior builds asked about individual platforms and about the technical specification (REST vs. custom). This build asks which type of barrier is primary, because the correct action is different in each case — assign an owner, assess the API, or decide which platform is highest priority. A one-sentence answer per barrier type would convert a recurring monitoring action into a concrete next step.
+
+**Answer:** _add reply here_
+
+---
