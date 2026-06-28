@@ -83,13 +83,18 @@ characterization, or runtime mitigation are research-axis relevant.
 Items that name, compare against, or are released by these companies are
 **competitive-axis relevant**:
 
-- **Mistral OCR 3 / Mistral Document AI** — direct competitor on
-  multilingual document extraction; Mistral OCR 3 (announced January
-  2026; model ID mistral-ocr-2512) improved accuracy across handwritten
-  and structured documents; 74% win rate over Mistral OCR 2 in internal
-  evaluations; priced at $2 per 1,000 pages (50% batch discount = $1
-  per 1,000 pages); Mistral OCR 2 retiring June 30, 2026; Mistral OCR
-  25.03 on Azure AI Foundry; Mistral OCR 25.05 on Vertex AI (May 2026).
+- **Mistral OCR 4 / Mistral Document AI** — direct competitor on
+  multilingual document extraction; Mistral OCR 4 (released June 23,
+  2026; model ID mistral-ocr-4-0; mistral-ocr-latest alias now points
+  to this version) adds bounding boxes, typed-block labels (titles,
+  tables, equations, signatures), per-word confidence scores, and
+  self-hosted single-container deployment; supports 170 languages
+  across 10 language groups; priced at $4 per 1,000 pages ($2 with
+  Batch API 50% discount); 85.20 on OlmOCRBench; 72% average win rate
+  over tested systems in independent annotation. Supersedes Mistral OCR
+  3 (January 2026; mistral-ocr-2512; 74% win rate over OCR 2). Mistral
+  OCR 25.03 on Azure AI Foundry; Mistral OCR 25.05 on Vertex AI (May
+  2026). Mistral OCR 2 retired June 30, 2026.
 - **Reducto** — competitor on structured extraction with multi-pass
   agentic correction; exposes Parse / Extract / Split / Edit endpoints
   similar to OCR-3's surface. Raised $75M Series B (Andreessen
@@ -139,7 +144,16 @@ Items that name, compare against, or are released by these companies are
   intelligence VLM with "Layout-as-Thought" architecture; open-weight on
   Hugging Face), **PaddleOCR-VL-1.6** (PaddlePaddle/Baidu, released May
   28, 2026; ~0.9B VLM + PP-DocLayoutV3 layout model; 96.33 on OmniDocBench
-  v1.6, #1 on that benchmark version; open-weight), **Pixtral** (Mistral),
+  v1.6, #1 on that benchmark version; open-weight),
+  **Unlimited-OCR** (Baidu, released June 22, 2026; 3B MoE with 500M
+  activated parameters; R-SWA architecture keeps KV cache constant for
+  long-document single-pass parsing; 93.23 on OmniDocBench v1.5, 93.92
+  on v1.6; 20–40+ page documents handled in a single pass; MIT license;
+  arXiv 2606.23050; GitHub baidu/Unlimited-OCR),
+  **Surya OCR 2** (Datalab, released May 27, 2026; 650M params; same
+  team as Chandra OCR 2; 83.3% on OlmOCR-bench; 91 languages, 87.2%
+  multilingual pass rate; Apache 2.0 code / modified OpenRAIL-M weights),
+  **Pixtral** (Mistral),
   **Qwen3-VL** family (Alibaba; Qwen 3.6-VL is the 2026-series variant),
   **Llama-3.2-Vision** (Meta) — open-weight VLMs that appear on the IDP
   Leaderboard as direct comparables. Note: OmniDocBench was updated from
@@ -183,15 +197,21 @@ Examples that are **competitive-primary**:
   Claude Fable 5 (June 9, 2026; model ID claude-fable-5) and Claude
   Mythos 5 (limited availability, Project Glasswing) include advanced
   vision understanding for diagrams and nested tables and appear on
-  ParseBench.
+  ParseBench; Claude Opus 4.7 (April 16, 2026) accepts images up to
+  2,576px on the long edge (~3.75 megapixels, 3x prior models) with
+  improved chart and document parsing accuracy.
 - Google releases a Gemini-document-mode endpoint or a layout-aware
   OCR benchmark result (Gemini 3 Pro/Flash; Gemini 3.5 Flash released
   May 2026 at Google I/O).
 - OpenAI announces GPT-5.x vision improvements on DocVQA / ChartQA /
   OmniDocBench / IDP Leaderboard (GPT-5.4 March 2026, GPT-5.5 April
   2026).
-- Mistral OCR is updated with new accuracy or pricing.
-- xAI ships Grok vision document handling.
+- Mistral OCR is updated with new accuracy or pricing (Mistral OCR 4
+  released June 23, 2026).
+- xAI ships Grok vision document handling; the Grok Collections API
+  (released 2026) uses OCR and layout-aware parsing to extract and
+  index PDFs and Excel files into searchable knowledge bases for RAG
+  workflows ($2.50/1,000 searches).
 - Meta releases a Llama-vision model with explicit document focus.
 
 The `frontier` axis is reserved for capability releases that **do not
@@ -647,3 +667,85 @@ Nanonets, do not respond.
 - Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
   No new Nanonets models on Hugging Face. No Nanonets-authored arXiv
   papers found.
+
+---
+
+**Date:** 2026-06-28
+
+**Sources consulted:**
+
+- `nanonets.com`, `nanonets.com/blog`, `benchmarking.nanonets.com`,
+  `idp-leaderboard.org` — all returned HTTP 403; fell back to web
+  search for all Nanonets data
+- WebSearch: "Nanonets OCR-3 IDP leaderboard June 2026 ranking" —
+  #1 at 85.9% confirmed unchanged; idp-leaderboard.org and
+  benchmarking.nanonets.com both resolving
+- WebSearch: "site:huggingface.co/nanonets" — open-weight model lineup
+  unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains API-only
+- WebSearch: "nanonets arxiv 2026 research paper" — no team-authored
+  papers surfaced; Nanonets-KIE dataset referenced in Qianfan-OCR paper
+  (as in prior refresh)
+- WebSearch: "Mistral OCR 2026 June update pricing model" — Mistral OCR
+  4 (June 23, 2026; mistral-ocr-4-0) confirmed from mistral.ai/news/ocr-4
+  and multiple trade sources (VentureBeat, MarkTechPost, TechTimes)
+- WebSearch: `"Mistral OCR 4" features bounding boxes model ID pricing` —
+  model ID, pricing ($4/$2 batch), OlmOCRBench (85.20), 72% win rate,
+  170 languages, self-hosted container confirmed
+- WebSearch: "Baidu Unlimited OCR" June 2026 — Unlimited-OCR (June 22,
+  2026; arXiv 2606.23050; 3B MoE, R-SWA, MIT license) confirmed from
+  MarkTechPost, Pandaily, Medium, and GitHub repo
+- WebSearch: "Surya 2 OCR 2026 benchmark release" — Surya OCR 2 (Datalab,
+  May 27, 2026; 650M; OlmOCR-bench 83.3%; 91 languages) confirmed from
+  datalab.to blog and HuggingFace
+- WebSearch: "Reducto AI 2026 June" — no new June announcements; all
+  prior entries confirmed current
+- WebSearch: "LlamaParse LlamaIndex 2026 June" — no new products beyond
+  what's in context; June 30 webinar noted
+- WebSearch: "Unstructured.io 2026 June" — library v0.23.1 only;
+  no new product announcement
+- WebSearch: "Docling IBM 2026 June" — docling-ibm-models PyPI package
+  (June 4, 2026); Docling for watsonx GA confirmed
+- WebSearch: "Chandra OCR LightOn OCR 2026 June" — no new model
+  versions; both confirmed operating
+- WebSearch: "Anthropic Claude document extraction vision June 2026" —
+  Claude Opus 4.7 (April 16, 2026; 2,576px max image, 3× prior models)
+  confirmed from Anthropic news and Amazon Bedrock announcement
+- WebSearch: "Claude Opus 4.7 vision document features" — improved
+  chart and document parsing accuracy confirmed from MindStudio and
+  Claudefa.st reviews
+- WebSearch: "OpenAI GPT-5 document vision OCR June 2026" — GPT-5.4
+  and GPT-5.5 confirmed active; no new June 2026 models
+- WebSearch: "Google Gemini document OCR vision June 2026" — Gemini 3
+  Pro vision confirmed; Gemini Document AI layout parser (OCR + Gemini)
+  in general use; no major new June announcement
+- WebSearch: "xAI Grok Collections API OCR document extraction 2026" —
+  Grok Collections API confirmed (OCR+layout parsing for PDF/Excel
+  indexing; $2.50/1,000 searches) from x.ai/news and xAI docs
+- WebSearch: "Rossum Docsumo ABBYY Kofax Tungsten Automation 2026" —
+  all confirmed operating; Rossum (Coupa), ABBYY Vantage, Docsumo,
+  Tungsten Automation all actively marketed in 2026
+- WebSearch: "Firecrawl 2026 June document AI update" — Research Index
+  (June 16, 2026; 3M+ arXiv papers) confirmed; /parse endpoint and
+  Rust engine from prior context still current
+
+**Material changes versus prior version (2026-06-21):**
+
+- Updated **Mistral OCR** entry: Mistral OCR 4 (June 23, 2026;
+  model ID mistral-ocr-4-0; mistral-ocr-latest now points to this)
+  adds bounding boxes, typed-block labels, per-word confidence scores,
+  170-language self-hosted container; $4/1K pages ($2 batch); 85.20
+  OlmOCRBench; 72% win rate. Supersedes Mistral OCR 3. Mistral OCR 2
+  confirmed retired June 30, 2026.
+- Added **Unlimited-OCR** (Baidu, June 22, 2026; 3B MoE, R-SWA constant
+  KV cache for long-document single-pass parsing; 93.23 OmniDocBench
+  v1.5, 93.92 v1.6; MIT license; arXiv 2606.23050) to competitive set.
+- Added **Surya OCR 2** (Datalab, May 27, 2026; 650M params; same team
+  as Chandra OCR 2; 83.3% OlmOCR-bench; 91 languages; Apache 2.0) to
+  competitive set.
+- Updated frontier-lab competitive examples: added Claude Opus 4.7
+  (April 16, 2026; 2,576px max image resolution, 3× prior models;
+  improved document parsing) alongside Fable 5; added Grok Collections
+  API (OCR+layout-aware parsing for document RAG) to xAI entry.
+- Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed
+  unchanged. No new Nanonets models on Hugging Face. No
+  Nanonets-authored arXiv papers found.
