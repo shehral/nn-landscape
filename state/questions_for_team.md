@@ -4508,3 +4508,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-28T06:00:00+00:00 (audit: partial)
+
+### Q: Of the five agentic workflow platforms trending in this build (Dify, BiSheng, RAGFlow, UltraRAG, AnythingLLM), which has the largest enterprise customer base, and does prioritizing a single OCR-3 connector integration deliver more distribution than further optimizing the OCR-3 API surface itself?
+
+**Context:** Prior builds tracked these platforms individually; this build is the first to ask which single integration delivers the most distribution leverage. Each platform sets a parsing default at adoption time, but the team's bandwidth for connector development is finite. A one-sentence prioritization answer would convert five recurring 'monitor' items into one engineering task.
+
+**Answer:** _add reply here_
+
+### Q: Has the team characterized whether context-window compression (headroom-style, 60-95% token reduction on OCR-3 markdown output) degrades accuracy on downstream extraction tasks such as line-item matching or field attribution from complex tables?
+
+**Context:** Prior builds asked about image-level compression (latent-gate, VL-JEPA). Headroom is different: it operates on the text output of OCR-3 before a downstream LLM step. If structured table markdown is the compression target, row-level fidelity losses may not be detectable until a downstream task fails. This is new — no prior build asked about post-OCR text compression specifically.
+
+**Answer:** _add reply here_
+
+### Q: MinerU (opendatalab/MinerU, Shanghai AI Lab) has appeared as the highest-scoring item in three or more consecutive builds and is a direct interface substitute for Nanonets Agentic Data Extraction; should it be added to the named competitive registry in data/nanonets_context.md?
+
+**Context:** This question has recurred across prior builds without a team response. At 72 composite score, MinerU is consistently the top-ranked item from github_trending. A one-sentence inclusion or exclusion would stabilize competitive-axis scoring for this item permanently and stop the recurring flag.
+
+**Answer:** _add reply here_
+
+---
