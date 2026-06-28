@@ -4598,3 +4598,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-28T12:00:00+00:00 (audit: partial)
+
+### Q: ms-swift and Ollama now both feature Qwen3-VL, InternVL3.5, and GLM-5.1 with accessible GRPO fine-tuning and local serving — lowering the IDP Leaderboard submission barrier materially. Should the team establish a monitoring rule for ms-swift forks that reference OmniDocBench, DocVQA, or the IDP Leaderboard to get advance notice of incoming competitive submissions?
+
+**Context:** Prior builds asked whether the team monitors HuggingFace for such fine-tunes (unanswered). This build introduces ms-swift as the specific fine-tuning infrastructure combining GRPO with the exact model families on the leaderboard. The question is narrower: a GitHub fork-watch rule rather than an HF model card watch.
+
+**Answer:** _add reply here_
+
+### Q: Genkit (Google-backed) appeared for the second or third consecutive build without a Nanonets connector. At what stage should a Nanonets connector for Genkit be treated as a concrete deliverable rather than a 'monitor' item — and is there a team owner for evaluating connector build vs. buy for production-backed agent frameworks?
+
+**Context:** Dify, RAGFlow, and BiSheng have also appeared repeatedly without resolved connector questions. Genkit's Google production backing differentiates it from community platforms and raises the cost of indefinite monitoring. Prior builds asked about Genkit connector feasibility; the question remains open.
+
+**Answer:** _add reply here_
+
+### Q: PixelRAG's pixel-native search architecture bypasses text extraction entirely. Is there a team view on whether visual-embedding-based retrieval is a plausible replacement for structured extraction on the use cases Nanonets serves (invoices, contracts, tables, forms), or is this approach limited to web-screenshot and UI use cases?
+
+**Context:** If pixel-native retrieval handles structured documents accurately, it represents an architectural threat to extraction APIs — not just to web-scraping services like Firecrawl. A one-sentence product position on this would inform future build scoring of pixel-native tools and determine whether 'monitor' is the right standing action.
+
+**Answer:** _add reply here_
+
+### Q: arXiv, HN, and RSS have failed for 20+ consecutive builds. Is the current policy to accept github_trending-only signal, or is there an owner and timeline for restoring a primary research source? A one-sentence answer would end recurring surfacing of this infrastructure question.
+
+**Context:** Without primary research sources, vlm_research and doc_ai research_implication fields are inferred from GitHub repo metadata only, reducing the epistemic quality of hallucination-research framing. Prior builds proposed Semantic Scholar and arXiv OAI-PMH as alternatives; neither has been acted on.
+
+**Answer:** _add reply here_
+
+### Q: Headroom (pre-LLM context compression) reduces document token count 60-95% before the model stage. If widely adopted upstream in agentic pipelines, it could reduce per-document cost for competitor models while also reducing the apparent differentiation of structured extraction over raw LLM prompting. Is this architecture worth a one-time evaluation to understand its impact on Nanonets' value proposition?
+
+**Context:** This is Headroom's first appearance in this dashboard. Prior builds have not surfaced pre-LLM compression as a distinct architectural category. The question is whether this should be treated as a watch item or an immediate evaluation target.
+
+**Answer:** _add reply here_
+
+---
