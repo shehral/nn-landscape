@@ -4734,3 +4734,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-29T18:07:21+00:00 (audit: partial)
+
+### Q: Does evalscope's task registry include OmniDocBench, DocVQA, or any benchmark task on the IDP Leaderboard, and has the team evaluated it as a local replication environment for leaderboard tasks?
+
+**Context:** evalscope is now co-trending with ms-swift (fine-tuning) and Ollama (serving), completing a supply chain that allows any lab to benchmark IDP Leaderboard comparable models locally. If evalscope already supports the relevant tasks, the team could use it as a cheap internal evaluation harness; if not, knowing that would confirm the team still controls the primary evaluation infrastructure.
+
+**Answer:** _add reply here_
+
+### Q: Should the LlamaIndex document-parsing family (LiteParse, LlamaParse, Parse-Flow) be tracked as a single competitive entry or as separate products in data/nanonets_context.md?
+
+**Context:** LiteParse is trending on GitHub this cycle; Parse-Flow launched June 2026 and is already in context.md alongside LlamaParse. As a single entry 'LlamaIndex document parsing suite,' future builds can score the family consistently without re-evaluating each product's overlap with Nanonets' endpoints. As separate entries, each product receives independent scoring which may over-represent LlamaIndex in any given build.
+
+**Answer:** _add reply here_
+
+### Q: Is there a team policy on which RAG and agent platforms (RAGFlow, BiSheng, UltraRAG, Dify) to prioritize for a first-party OCR-3 connector, and is the bottleneck technical (connector API complexity), prioritization (which platform reaches relevant customers), or ownership (no assigned team member)?
+
+**Context:** Five platforms in this class trended simultaneously in this cycle with no confirmed OCR-3 connector in any of them. The question is not whether connectors are valuable but which type of barrier is primary — the correct next step differs significantly by answer, and repeating 'monitor' without a decision makes this a permanent watch item.
+
+**Answer:** _add reply here_
+
+---
