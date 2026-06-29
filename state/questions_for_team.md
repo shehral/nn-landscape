@@ -4666,3 +4666,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-29T06:08:44+00:00 (audit: partial)
+
+### Q: ms-swift now ships GRPO support for Qwen3-VL and GLM-5.1. Has the team benchmarked GRPO-fine-tuned variants on hallucination tasks (phantom-row, repetition loops)? If a competitor produces a GRPO-tuned document extractor before the team has a baseline, OCR-3's benchmark lead could narrow quickly.
+
+**Context:** GRPO has produced SOTA improvements on reasoning tasks; document-VLM fine-tuning via GRPO is an emerging direction not yet well-benchmarked. ms-swift's tooling reduces the execution cost for any team pursuing this.
+
+**Answer:** _add reply here_
+
+### Q: Ollama's model list now shows Kimi-K2.6 (Moonshot AI), an increment from Kimi-K2.5 flagged in prior builds. Should Moonshot AI's Kimi series be evaluated on IDP Leaderboard tasks, given persistent trending presence across multiple builds?
+
+**Context:** Prior builds asked about Kimi-K2.5 with no team reply. Kimi-K2.6 appearing in the current Ollama description suggests continued active development. The build agent cannot determine whether it has document extraction capabilities without team input.
+
+**Answer:** _add reply here_
+
+### Q: headroom claims 60-95% token compression on RAG chunks before LLM context insertion. If Nanonets /chunk output is used in agent pipelines, a compression layer would change downstream token budgets significantly. Should the team evaluate headroom compatibility with /chunk output?
+
+**Context:** Token cost is a primary objection in enterprise AI pipeline adoption. A validated compression layer for Nanonets-produced chunks would be a concrete developer-experience improvement, but the team is the only one who knows whether /chunk users are hitting context-size limits today.
+
+**Answer:** _add reply here_
+
+### Q: arXiv and HN have returned 403 errors for ten or more consecutive builds; prior builds raised the OAI-PMH and HN Firebase API alternatives repeatedly without a team reply. This question is not being repeated for an answer, but to note: without a structural fix, the vlm_research and doc_ai framing fields will continue to be grounded in GitHub-trending repos rather than academic papers indefinitely.
+
+**Context:** The partial-build banner communicates source failure per build, but not the cumulative epistemic drift from many consecutive infrastructure-biased builds. The team's decision on whether to invest in alternative source paths determines whether this gap closes.
+
+**Answer:** _add reply here_
+
+### Q: opendataloader-pdf has now appeared in GitHub trending across five or more consecutive builds with an 'investigate' recommendation. Should it be added to data/nanonets_context.md as a named competitive entrant alongside Docling, so future builds score and frame it consistently rather than re-evaluating from scratch each time?
+
+**Context:** The current competitive registry names Docling as the reference open-source parser; opendataloader-pdf targets the same interface with an AI-ready-data positioning. Without a registry entry, the scoring depends on ad hoc inference each build.
+
+**Answer:** _add reply here_
+
+---
