@@ -4632,3 +4632,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-29T00:00:00+00:00 (audit: partial)
+
+### Q: Ollama's featured model list now includes 'gpt-oss' alongside GLM-5.1 and Kimi-K2.6. If gpt-oss has document extraction capabilities, should it be assessed for IDP Leaderboard benchmarking? And has the prior unanswered question about GLM-5 vs GLM-OCR disambiguation been resolved?
+
+**Context:** gpt-oss's provenance (open-weight OpenAI model, community alias, or other) is unclear from the repository description. GLM-5.1 is from Zhipu AI, the same lab as GLM-OCR, raising the same disambiguation question raised in multiple prior builds. A one-sentence answer on each would close both permanently.
+
+**Answer:** _add reply here_
+
+### Q: mindee/docTR (Document Text Recognition, Mindee) scored composite=65 this build — the highest item — but Mindee is not in data/nanonets_context.md's competitive registry. Should docTR be added alongside Reducto and LlamaParse as a named competitive entrant?
+
+**Context:** docTR directly occupies the same OCR extraction market as the Nanonets /parse and /extract endpoints but as an open-source library. Its sustained developer traction makes it a recurring high scorer without a registry entry to anchor scoring across builds. A yes/no addition decision would stabilize future scoring.
+
+**Answer:** _add reply here_
+
+### Q: This is now 30+ consecutive builds with no team responses in questions_for_team.md. Should this channel be replaced or supplemented with a smaller weekly digest of the top 3 questions routed to a named team member, rather than accumulating in a file exceeding 1,200 lines?
+
+**Context:** The build agent has no signal about whether these questions are being read. If the channel is write-only, the build agent should switch to a default-action posture (e.g., 'monitor' for all recurring unanswered categories) rather than continuing to surface the same open questions each cycle.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift now explicitly lists Qwen3.6-VL (the 2026-series Qwen VLM variant, per context.md) in its GRPO training support. Does this represent a materially faster path to an IDP Leaderboard GRPO submission from a Qwen3-VL derivative than was possible six months ago?
+
+**Context:** The complete fine-tune-to-evaluate supply chain (ms-swift + Ollama + evalscope) is trending together for the second or more consecutive cycle. If the barrier has materially lowered, a proactive benchmark baseline run on the held-out OCR-3 test set would allow the team to respond to an external GRPO submission rather than react to it.
+
+**Answer:** _add reply here_
+
+### Q: vllm-omni is now a recurring high-frontier item (frontier=2, trending for multiple builds). Does OCR-3's five-endpoint architecture (/parse, /extract, /split, /chunk, /vqa) match the workload model vllm-omni is optimized for, or is this a serving question already decided internally?
+
+**Context:** Without a one-sentence answer on OCR-3's serving architecture, vllm-omni will continue to receive 'read in week' each cycle. If the team already evaluated it and chose a different framework, noting that in nanonets_context.md would permanently close the question.
+
+**Answer:** _add reply here_
+
+---
