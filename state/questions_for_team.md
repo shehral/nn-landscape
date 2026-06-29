@@ -4700,3 +4700,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-29T00:00:00+00:00 (audit: partial)
+
+### Q: Ollama now lists Kimi-K2.6 (updated from Kimi-K2.5) and GLM-5.1 (updated from GLM-5 / GLM-5). Are these meaningfully new model versions with updated document-extraction capabilities relative to prior versions, or minor point releases? A one-sentence answer per model would resolve recurring per-build classification uncertainty.
+
+**Context:** Prior builds asked about Kimi-K2.5 and GLM-5 classification without receiving a team answer. The version increments are now confirmed in Ollama's description. If the new versions include document-extraction benchmark improvements, they should be evaluated for IDP Leaderboard submission; if they are minor releases, they can be permanently noted as 'same tier as prior version.'
+
+**Answer:** _add reply here_
+
+### Q: gpt-oss appears in Ollama's featured model list for the second consecutive build. Has anyone confirmed whether gpt-oss is a named open-weight OpenAI model with vision or document capabilities, or a community alias for an existing model? If it has document-extraction capabilities, it belongs in the competitive registry.
+
+**Context:** This question was first raised in a prior build and remains unanswered. Ollama's description lists gpt-oss alongside Kimi-K2.6, GLM-5.1, and Qwen — all IDP Leaderboard comparables. Confirming its provenance is a one-sentence lookup that would either close this question permanently or add a new competitive entry.
+
+**Answer:** _add reply here_
+
+### Q: The video-evaluator grounded-evidence pattern — requiring the model to cite a source region for each extracted value — is directly applicable to phantom-row detection: table rows without a verifiable visual anchor in the source document would be flagged without mechanistic interpretability tooling. Would a 1-2 day experiment applying this post-hoc anchoring check to OCR-3 outputs on a small table document set be within the team's current research scope?
+
+**Context:** This specific approach has not been raised in prior builds; it is distinct from the retrieval-based hallucination mitigation paradigm that has been asked about repeatedly. The grounded-evidence check is a lightweight post-hoc consistency test: it does not require inspecting internal model activations, only checking whether the model can identify the source region of each extracted row.
+
+**Answer:** _add reply here_
+
+### Q: LangChain now describes itself as 'the agent engineering platform' directly overlapping Nanonets Agents positioning while also being a named distribution partner. Should future builds classify LangChain as competitive-primary for the purposes of axis scoring and framing, or retain the partner-primary classification? This question has been raised across 5+ consecutive builds without a team answer.
+
+**Context:** The current scoring treats LangChain as competitive-primary based on its description change; prior context.md listed it only as a distribution partner. Without a team answer, scoring will continue to reflect the description-based judgment. A one-sentence policy decision would stabilize scoring permanently and remove this item from the recurring AI-partner queue.
+
+**Answer:** _add reply here_
+
+### Q: This build is the 35th or more consecutive build in which no team reply appears in questions_for_team.md. Should the build agent reduce the AI-partner question volume from 5 per build to 1-2 genuinely novel questions per build, reserving capacity for items that are materially new rather than recurring infrastructure questions? A policy signal — even a single word — would allow calibration of future question volume.
+
+**Context:** The file now exceeds 1300 lines with zero replies. Recurring questions (arXiv failure, MinerU registry, GRPO timeline, LangChain classification, OCR-3 lmms-eval submission) have been raised verbatim 5-10 times each. Without feedback, the build agent cannot distinguish between 'team read this and decided no action' and 'team has not read this.' If the channel is being monitored but responses are being deferred, a one-word confirmation would suffice to adjust question volume.
+
+**Answer:** _add reply here_
+
+---
