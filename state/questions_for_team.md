@@ -4834,3 +4834,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-30T18:12:37+00:00 (audit: partial)
+
+### Q: PixelRAG has now recurred for a third consecutive build with the same 'end of parsing' framing and still no benchmark validation on actual scanned or structured documents (evidence so far is web-page retrieval only). Is three consecutive appearances with no new evidence a signal worth a one-time deeper team read, or should it be folded into the same recurring-question suppression policy applied to other long-standing open items?
+
+**Context:** Distinguishing 'genuinely escalating signal' from 'noise that happens to resurface' is exactly the kind of judgment call this channel exists for; the item itself has not changed since the first time it was raised.
+
+**Answer:** _add reply here_
+
+### Q: This is the third consecutive build with only 1 of 4 sources covered (github_trending only; arXiv/HN return 403, RSS returns zero items). All research_implication framing this cycle is necessarily inferred from repository metadata rather than papers or analyst commentary. Should github_trending-only now be treated as the structural default state -- with framing language adjusted to reflect that lower evidentiary bar -- rather than continuing to flag each build individually as a transient partial-build state?
+
+**Context:** This narrows a question asked in different forms across many prior builds to a single binary decision: keep flagging as transient, or formally downgrade the epistemic baseline in nanonets_context.md.
+
+**Answer:** _add reply here_
+
+### Q: No new question this cycle on the long-standing recurring items (opendataloader-pdf registry status, LangChain classification, Kimi/GLM model versioning, arXiv/HN structural fix) -- continuing the volume-reduction policy adopted over the past two builds. They remain open in this file's history across 40+ unanswered builds.
+
+**Context:** Process note, not a request for new information: confirming the question-volume policy is still being followed rather than silently dropped.
+
+**Answer:** _add reply here_
+
+---
