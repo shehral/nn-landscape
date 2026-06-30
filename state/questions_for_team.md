@@ -4812,3 +4812,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-30T12:05:31+00:00 (audit: partial)
+
+### Q: PixelRAG's 'end of parsing' framing is the most direct paradigm challenge to OCR-based extraction this monitor has surfaced -- worth a one-time team read even though it is a single trending repo with no benchmark validation yet?
+
+**Context:** Prior builds have flagged competitors that compete within the extraction category; this is the first item that argues the category itself (parse-then-retrieve) is obsolete. If it generalizes from web pages to scanned documents, it could reframe how the team thinks about the competitive set.
+
+**Answer:** _add reply here_
+
+### Q: RSS returned zero items for a second consecutive build (distinct from the persistent arXiv/HN 403s, which at least return errors). Does the feed list in data/sources.yaml need updating, or is this a transient cache issue?
+
+**Context:** With RSS now failing silently rather than erroring, this build had no frontier-lab or analyst coverage at all -- 100% of items came from github_trending. If this persists past the next 1-2 builds, github_trending-only should be treated as the structural default rather than a transient degradation.
+
+**Answer:** _add reply here_
+
+### Q: No new question this cycle on the long-standing recurring items (opendataloader-pdf registry status, LangChain classification, Kimi/GLM model versioning, arXiv/HN structural fix) -- per the prior build's stated policy change, these are not being re-asked verbatim. They remain open in this file's history across 35+ unanswered builds.
+
+**Context:** This is a process note, not a new question: confirming the question-volume policy from the previous build is being followed.
+
+**Answer:** _add reply here_
+
+---
