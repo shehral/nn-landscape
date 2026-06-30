@@ -4790,3 +4790,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-30T06:05:23+00:00 (audit: partial)
+
+### Q: RSS returned zero items in-window this build, a new failure mode distinct from the persistent arxiv/hn 403s (which have at least returned errors rather than silently empty results). Is this a transient feed-cache issue, or did the feed list in data/sources.yaml stop matching current content? If it persists across the next 2-3 builds, github_trending-only becomes the default source rather than the exception.
+
+**Context:** Past builds with arxiv/hn failures still had rss as a partial backstop for frontier-lab and analyst coverage. This build had none, so the entire item set is GitHub-repository metadata.
+
+**Answer:** _add reply here_
+
+### Q: PixelRAG positions itself as eliminating parsing in favor of pixel-native search. If this generalizes from web pages to scanned documents, does it constitute a new competitive category (retrieval without structured-field extraction) alongside OCR-based extraction, or does it solve a different problem than the Nanonets /parse and /extract endpoints?
+
+**Context:** This is the first build where a trending item questions OCR/extraction as a paradigm rather than competing within it; the current competitive registry in nanonets_context.md assumes OCR-based extraction as the category boundary.
+
+**Answer:** _add reply here_
+
+### Q: Per a prior build's own suggestion, this build is cutting AI-partner question volume from 4-5 to 3 per cycle and will stop re-asking unanswered recurring questions verbatim (MinerU/opendataloader-pdf registry status, LangChain classification, Kimi/GLM model versioning, arxiv/hn 403 remediation) — those remain open in this file's history but won't be repeated each cycle. If this channel is read, a single word on any one of them would let the build agent resume normal questioning volume.
+
+**Context:** questions_for_team.md now has 35+ consecutive builds with zero replies; this is a policy change in the build agent's own behavior, not a request for new information beyond a presence signal.
+
+**Answer:** _add reply here_
+
+---
