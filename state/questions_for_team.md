@@ -4756,3 +4756,37 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-06-30T00:07:50+00:00 (audit: partial)
+
+### Q: Kimi-K2.6 now appears in ollama's model description, updated from Kimi-K2.5 in prior builds. Has Moonshot AI published document-AI benchmark results for Kimi-K2.6 that would determine whether it warrants a competitive registry entry alongside GLM-OCR and Qwen3-VL?
+
+**Context:** The version increment from Kimi-K2.5 to Kimi-K2.6 in ollama's description suggests active model development. Prior builds asked whether Moonshot AI's Kimi-K2.5 had document-extraction capabilities; that question was not answered. A benchmark result on OmniDocBench or the IDP Leaderboard would confirm whether this is a competitive entrant or a general multimodal model.
+
+**Answer:** _add reply here_
+
+### Q: GLM4.5v appears explicitly in the ms-swift fine-tuning list alongside GLM-5.1. Is GLM4.5v a distinct multimodal variant from GLM-OCR, and if so, does it require its own competitive registry entry?
+
+**Context:** Prior builds asked whether GLM-5 and GLM-OCR were distinct. GLM4.5v is a new name that has not appeared in prior questions; ms-swift's GRPO support for it specifically suggests it is an actively maintained VLM. Without a registry entry for GLM4.5v, future builds cannot distinguish between a GLM-OCR benchmark update and a new competitive entrant on the IDP Leaderboard.
+
+**Answer:** _add reply here_
+
+### Q: Qwen3-Omni appears in the ms-swift fine-tuning model list; this is distinct from Qwen3-VL already in the competitive registry. Does Qwen3-Omni have document-extraction capabilities comparable to Qwen3-VL on OmniDocBench or the IDP Leaderboard?
+
+**Context:** The existing registry entry for 'Qwen3-VL family' may not cover Qwen3-Omni's omni-modal architecture (text, image, audio, video). If Qwen3-Omni scores on document benchmarks, it would need a distinct registry entry. If it does not have document-extraction focus, items referencing it should be scored frontier-primary rather than competitive-primary.
+
+**Answer:** _add reply here_
+
+### Q: Should Daft (Eventual Inc.) be scored as competitive-axis relevant for the Nanonets /chunk endpoint use case, given its 'at any scale' image-plus-structured-data positioning, or does it address a different tier of the data pipeline?
+
+**Context:** Daft is a high-performance data engine for multimodal workloads including images and structured data. Its batch-scale image processing could overlap with Nanonets' /chunk endpoint for large-scale document batch processing. A team decision on whether data-engine-layer tools that process document images belong in the competitive registry would stabilize scoring for this class of items across future builds.
+
+**Answer:** _add reply here_
+
+### Q: The arXiv/HN 403 failure has persisted across many consecutive builds with no team response to prior alternative proposals (Semantic Scholar, OAI-PMH). Should this be formally recorded as a resolved policy — github_trending-only signal is the accepted operating norm — so the build agent can adjust editorial posture accordingly?
+
+**Context:** All research_implication fields in this and recent builds are inferred from GitHub repository metadata alone, not academic papers. If the team accepts github_trending-only as the norm, noting it in data/nanonets_context.md would allow the build agent to annotate these fields with an appropriate epistemic caveat rather than presenting them with the same confidence as paper-backed conclusions.
+
+**Answer:** _add reply here_
+
+---
