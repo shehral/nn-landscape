@@ -4928,3 +4928,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-07-01T18:08:00+00:00 (audit: FAILED — 0 items, no sources covered)
+
+**INFRASTRUCTURE FAILURE — no edition published this cycle.**
+
+All four ingest sources returned zero items or HTTP errors:
+
+- arxiv: HTTP 403 Forbidden (persistent across 30+ prior builds)
+- hn: HTTP 403 Forbidden (persistent across 30+ prior builds)
+- rss: no items in current window
+- github_trending: no items in current window
+
+The previous successful build was 2026-07-01T12:15:09+00:00 (44 items, github_trending only). That build's HTML remains live at docs/. No new edition was published this cycle.
+
+### Q: Why did github_trending return zero items at the 18:00 UTC build when it returned 44 items at the 12:15 UTC build the same day?
+
+**Context:** github_trending uses `days_back: 1` and `per_page: 30`. The 12:15 build succeeded; the 18:00 build returned "no items in current window." This is the first build where github_trending also returned zero (prior failures were limited to arxiv and HN). Possible causes: (a) the GitHub Trending scrape endpoint rate-limited or changed, (b) the `days_back: 1` window has a UTC cutoff that coincides with this build time, (c) a transient network timeout. Diagnosing whether this is structural or transient would determine whether the `days_back` value needs adjustment.
+
+**Answer:** _add reply here_
+
+### Q: Should the build schedule be adjusted so consecutive builds in the same day are spaced beyond the github_trending `days_back` window to avoid empty cycles?
+
+**Context:** With `days_back: 1`, the github_trending source refreshes on a ~24-hour cadence. A 6-hour build schedule means multiple consecutive builds may see the same (or no) trending repos within the window. If the team is satisfied with github_trending as the primary source, adjusting the schedule to match its refresh cadence (or increasing `days_back` to 2-3) would reduce empty cycles.
+
+**Answer:** _add reply here_
+
