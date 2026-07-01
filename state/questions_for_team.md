@@ -4878,3 +4878,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-01T00:00:00+00:00 (audit: partial)
+
+### Q: Does evalscope's benchmark registry include OmniDocBench, DocVQA, or any IDP Leaderboard task? If yes, it could serve as a low-cost internal replication environment for competitor benchmark claims before they reach the IDP Leaderboard.
+
+**Context:** evalscope is now co-trending with ms-swift and Ollama, completing a fine-tune-to-evaluate supply chain for document VLMs. Whether evalscope covers the specific benchmarks that matter for OCR-3 comparisons determines whether this is an 'investigate' or 'monitor' item.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift now supports Qwen3-Omni (omni-modal: text, image, audio, video) in its GRPO fine-tuning pipeline alongside Qwen3-VL. If Qwen3-Omni benchmarks on document tasks, should it be classified as competitive-primary or frontier-primary?
+
+**Context:** Qwen3-Omni's architecture is distinct from Qwen3-VL; the existing 'Qwen3-VL family' registry entry may not cover omni-modal variants. Without a confirmed benchmark result on OmniDocBench or the IDP Leaderboard, future builds cannot assign axis with confidence.
+
+**Answer:** _add reply here_
+
+### Q: PixelRAG's 'end of parsing' claim has appeared in multiple consecutive builds as the most direct paradigm challenge to OCR-based extraction this monitor has surfaced. Is this worth a one-time team read to assess whether pixel-native retrieval generalizes from web pages to scanned documents?
+
+**Context:** video-evaluator's grounded-evidence anchoring pattern appearing in the same cycle suggests a broader trend of research exploring alternatives to structured extraction. A team read on PixelRAG would determine whether this is a watch item or a 'no action' closure.
+
+**Answer:** _add reply here_
+
+---
