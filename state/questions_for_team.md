@@ -4900,3 +4900,31 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-01T12:15:09+00:00 (audit: partial)
+
+### Q: The full competitive document-AI pipeline trended simultaneously for another consecutive build. Has the team established a concrete accuracy threshold on DocVQA, OmniDocBench, or the IDP Leaderboard test set below which an all-open-source alternative becomes a retention-risk argument for existing customers?
+
+**Context:** Without a defined accuracy floor, competitive framing defaults to qualitative claims each build. A one-sentence threshold would allow future builds to automatically escalate items that cross it rather than re-evaluating the competitive posture each cycle.
+
+**Answer:** _add reply here_
+
+### Q: lmms-eval and evalscope both trended with competitive models registered but OCR-3 absent; a competitor can now publish a structured comparison in two independent evaluation frameworks that structurally exclude OCR-3. Is there an owner and deadline for OCR-3 registry submission to at least one of these frameworks?
+
+**Context:** This question was raised in prior builds and remains unanswered. The registration gap is not a quality or embargo question — it is a publication gap that a competitor can exploit regardless of OCR-3's actual benchmark performance.
+
+**Answer:** _add reply here_
+
+### Q: arXiv, HN, and RSS have all failed for consecutive builds and this build is again infrastructure-limited to github_trending (1 of 4 sources). Should github_trending-only signal be treated as the accepted operating norm, or is there an owner and deadline for restoring a primary-research source?
+
+**Context:** Prior builds proposed Semantic Scholar and arXiv OAI-PMH as alternatives; neither has been acted on. Without arXiv, the vlm_research and doc_ai research_implication fields are inferred from GitHub repository metadata alone, which changes the epistemic status of all framing in this build.
+
+**Answer:** _add reply here_
+
+### Q: Genkit (Google-backed production framework) has appeared for multiple builds alongside Dify and RAGFlow, all without confirmed Nanonets connectors. Should a Nanonets-Genkit connector be prioritized differently than community platforms given Genkit's Google backing and enterprise trajectory?
+
+**Context:** Google's connector ecosystem (Anthropic, OpenAI, Gemini already included) signals enterprise adoption. Absence from Genkit is qualitatively different from absence from Dify or RAGFlow because of its production-backing and likely developer adoption in enterprise document workflows.
+
+**Answer:** _add reply here_
+
+---
