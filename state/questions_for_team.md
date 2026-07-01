@@ -4856,3 +4856,25 @@ agent's editorial grounding.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-01T06:00:00+00:00 (audit: partial)
+
+### Q: Would a 1-2 day experiment applying a grounded-evidence anchoring check — requiring OCR-3 to cite the source image region for each extracted table row — fall within the team's current research scope as a lightweight phantom-row detector?
+
+**Context:** The video-evaluator trending item uses this post-hoc consistency pattern for video frames. Applied to document extraction, rows without verifiable visual anchors would be flagged without mechanistic interpretability tooling. This approach is distinct from retrieval-based hallucination mitigation and has not appeared in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: Does Qwen3-Omni (now in ms-swift's GRPO fine-tuning list) have published document-extraction benchmark results on OmniDocBench or the IDP Leaderboard distinct from Qwen3-VL, and if so, should it receive its own competitive registry entry?
+
+**Context:** Qwen3-Omni is an omni-modal architecture (text, image, audio, video) distinct from Qwen3-VL's vision-only design. ms-swift's GRPO support for it specifically suggests active VLM development. The existing 'Qwen3-VL family' registry entry may not cover Qwen3-Omni's benchmark profile.
+
+**Answer:** _add reply here_
+
+### Q: Is the primary barrier to a first-party Nanonets connector in any of the five trending orchestration platforms (Dify, RAGFlow, BiSheng, Genkit, LangChain) technical (API compatibility), prioritization (which platform reaches the most relevant customers), or ownership (no assigned team member)?
+
+**Context:** All five platforms trend simultaneously this cycle without confirmed OCR-3 or Nanonets Agentic Data Extraction connectors. A one-sentence answer on the barrier type would allow the build agent to sharpen the action recommendation from 'monitor' to something actionable, and end a recurring multi-platform tracking question that has appeared across many builds.
+
+**Answer:** _add reply here_
+
+---
