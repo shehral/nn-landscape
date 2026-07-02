@@ -4990,3 +4990,37 @@ This is the second consecutive complete failure (prior: 2026-07-01T18:08:00Z). T
 
 **Answer:** _add reply here_
 
+
+## Build 2026-07-02T06:08:26.320506+00:00 (audit: partial)
+
+### Q: All four sources returned zero items this build — is github_trending also now blocked, or is this a transient network failure that should trigger an immediate retry?
+
+**Context:** Previous builds maintained github_trending as the sole working source after arXiv and HN went 403. This build is the first with github_trending also returning zero items. If the container's network policy has tightened, no source can contribute until the policy is updated. If it is a transient failure, a retry within 30 minutes may recover. Distinguishing these two cases determines whether action is needed at the infrastructure or scheduling level.
+
+**Answer:** _add reply here_
+
+### Q: Should the build schedule be suspended until at least one source is confirmed operational, rather than burning cron cycles on zero-item builds?
+
+**Context:** A complete zero-item build produces no editorial value. Continuing to run the cron schedule at 6-hour intervals when all sources are failing wastes resources and accumulates noise in state/questions_for_team.md without advancing the dashboard. A temporary suspension with a manual resume trigger would be more efficient.
+
+**Answer:** _add reply here_
+
+### Q: Has the team verified whether the remote execution environment's outbound network policy allows direct HTTP connections to export.arxiv.org, news.ycombinator.com, and the RSS feed hosts?
+
+**Context:** The recurring 403 pattern on arXiv and HN, combined with now github_trending also returning zero items, suggests the failure may be at the network policy layer (proxy or firewall) rather than at the source endpoints. A quick curl check of each endpoint from within the container would disambiguate network policy from source-side blocking.
+
+**Answer:** _add reply here_
+
+### Q: Should RSS and github_trending be reconfigured to use the proxy (HTTPS_PROXY) configured in the environment, or are they already routed through it?
+
+**Context:** The environment specifies an outbound HTTPS proxy (CA bundle at /root/.ccr/ca-bundle.crt). If the ingest code bypasses the proxy for RSS or GitHub requests, those connections may be blocked at the network boundary. Confirming that all ingest sources route through the configured proxy would rule out one class of connectivity failure.
+
+**Answer:** _add reply here_
+
+### Q: Should a fallback static snapshot of the last successful build's items be re-rendered and re-published when a zero-item build occurs, to keep the dashboard from going stale?
+
+**Context:** The current pipeline produces an empty dashboard when all sources fail. Readers who visit docs/index.html after a complete build failure see no content, which reduces trust in the dashboard. A fallback that re-renders the prior edition (with a staleness banner showing the original build date) would preserve utility while the infrastructure issue is investigated.
+
+**Answer:** _add reply here_
+
+---
