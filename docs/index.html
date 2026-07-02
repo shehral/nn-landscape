@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jul 02, 2026 · 06:08 UTC · 0 items scored</span>
+  <span class="built-at">Built Jul 02, 2026 · 00:00 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,28 +79,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four sources returned zero items this build — is github_trending also now blocked, or is this a transient network failure that should trigger an immediate retry?</p>
-    <p class="question-context">Previous builds maintained github_trending as the sole working source after arXiv and HN went 403. This build is the first with github_trending also returning zero items. If the container&#39;s network policy has tightened, no source can contribute until the policy is updated. If it is a transient failure, a retry within 30 minutes may recover. Distinguishing these two cases determines whether action is needed at the infrastructure or scheduling level.</p>
+    <p class="question-text">All four ingestion sources have failed simultaneously for this build; is there a network-level policy change in the remote execution environment that blocks outbound HTTP to arxiv.org, HN Algolia, RSS feeds, and GitHub?</p>
+    <p class="question-context">arxiv and HN have 403&#39;d for many consecutive prior builds, but this is the first build where RSS and github_trending also return zero items. The combined failure across all four sources suggests the problem may now be environment-level (network egress policy) rather than per-source rate limiting.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the build schedule be suspended until at least one source is confirmed operational, rather than burning cron cycles on zero-item builds?</p>
-    <p class="question-context">A complete zero-item build produces no editorial value. Continuing to run the cron schedule at 6-hour intervals when all sources are failing wastes resources and accumulates noise in state/questions_for_team.md without advancing the dashboard. A temporary suspension with a manual resume trigger would be more efficient.</p>
+    <p class="question-text">Should the pipeline add a health-check step before ingest that tests a known-good URL (e.g., https://httpbin.org/get) and aborts early with a clear network-policy error message if connectivity is blocked?</p>
+    <p class="question-context">A pre-ingest connectivity probe would distinguish &#39;sources are rate-limiting us&#39; from &#39;the execution environment has no outbound internet&#39; in O(1) network call, saving the cost of attempting all four sources in a no-connectivity scenario.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Has the team verified whether the remote execution environment&#39;s outbound network policy allows direct HTTP connections to export.arxiv.org, news.ycombinator.com, and the RSS feed hosts?</p>
-    <p class="question-context">The recurring 403 pattern on arXiv and HN, combined with now github_trending also returning zero items, suggests the failure may be at the network policy layer (proxy or firewall) rather than at the source endpoints. A quick curl check of each endpoint from within the container would disambiguate network policy from source-side blocking.</p>
+    <p class="question-text">arXiv and HN have returned 403 errors for 18+ consecutive builds with no team action confirmed; should the team formally decide between (a) fixing the network path, (b) switching to alternative sources (Semantic Scholar OAI-PMH, HN Firebase API), or (c) accepting github_trending-only signal as the operating norm?</p>
+    <p class="question-context">Semantic Scholar and OAI-PMH were proposed in builds 2026-05-22T18 and 2026-05-22T00 respectively; both remain unacted on. A clear decision — with an owner — would end the recurring infrastructure question in this file.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should RSS and github_trending be reconfigured to use the proxy (HTTPS_PROXY) configured in the environment, or are they already routed through it?</p>
-    <p class="question-context">The environment specifies an outbound HTTPS proxy (CA bundle at /root/.ccr/ca-bundle.crt). If the ingest code bypasses the proxy for RSS or GitHub requests, those connections may be blocked at the network boundary. Confirming that all ingest sources route through the configured proxy would rule out one class of connectivity failure.</p>
+    <p class="question-text">RSS feeds returned zero items in current window; are the feed URLs in data/sources.yaml still valid, or have they moved or discontinued since the sources file was last updated?</p>
+    <p class="question-context">The RSS feed list was last checked at setup time. A spot-check of https://www.anthropic.com/news/rss.xml and https://openai.com/blog/rss.xml would confirm whether the zero-item result is a transient network timeout or stale feed URLs.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should a fallback static snapshot of the last successful build&#39;s items be re-rendered and re-published when a zero-item build occurs, to keep the dashboard from going stale?</p>
-    <p class="question-context">The current pipeline produces an empty dashboard when all sources fail. Readers who visit docs/index.html after a complete build failure see no content, which reduces trust in the dashboard. A fallback that re-renders the prior edition (with a staleness banner showing the original build date) would preserve utility while the infrastructure issue is investigated.</p>
+    <p class="question-text">github_trending returned zero items in current window; is the trending API call using a supported endpoint or has GitHub changed the trending API surface since the ingest code was written?</p>
+    <p class="question-context">GitHub does not have a documented official trending API; the ingest code likely scrapes the trending page or uses an unofficial endpoint. Zero items — distinct from a 403 — may indicate a page-structure change rather than a rate-limit, which has a different fix path.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -112,7 +112,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-07-02T06:08:26.320506+00:00
+    sources covered:     · failed: 4 · built at 2026-07-02T00:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

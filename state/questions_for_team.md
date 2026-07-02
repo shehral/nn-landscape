@@ -5024,3 +5024,37 @@ This is the second consecutive complete failure (prior: 2026-07-01T18:08:00Z). T
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-02T00:00:00+00:00 (audit: partial)
+
+### Q: All four ingestion sources have failed simultaneously for this build; is there a network-level policy change in the remote execution environment that blocks outbound HTTP to arxiv.org, HN Algolia, RSS feeds, and GitHub?
+
+**Context:** arxiv and HN have 403'd for many consecutive prior builds, but this is the first build where RSS and github_trending also return zero items. The combined failure across all four sources suggests the problem may now be environment-level (network egress policy) rather than per-source rate limiting.
+
+**Answer:** _add reply here_
+
+### Q: Should the pipeline add a health-check step before ingest that tests a known-good URL (e.g., https://httpbin.org/get) and aborts early with a clear network-policy error message if connectivity is blocked?
+
+**Context:** A pre-ingest connectivity probe would distinguish 'sources are rate-limiting us' from 'the execution environment has no outbound internet' in O(1) network call, saving the cost of attempting all four sources in a no-connectivity scenario.
+
+**Answer:** _add reply here_
+
+### Q: arXiv and HN have returned 403 errors for 18+ consecutive builds with no team action confirmed; should the team formally decide between (a) fixing the network path, (b) switching to alternative sources (Semantic Scholar OAI-PMH, HN Firebase API), or (c) accepting github_trending-only signal as the operating norm?
+
+**Context:** Semantic Scholar and OAI-PMH were proposed in builds 2026-05-22T18 and 2026-05-22T00 respectively; both remain unacted on. A clear decision — with an owner — would end the recurring infrastructure question in this file.
+
+**Answer:** _add reply here_
+
+### Q: RSS feeds returned zero items in current window; are the feed URLs in data/sources.yaml still valid, or have they moved or discontinued since the sources file was last updated?
+
+**Context:** The RSS feed list was last checked at setup time. A spot-check of https://www.anthropic.com/news/rss.xml and https://openai.com/blog/rss.xml would confirm whether the zero-item result is a transient network timeout or stale feed URLs.
+
+**Answer:** _add reply here_
+
+### Q: github_trending returned zero items in current window; is the trending API call using a supported endpoint or has GitHub changed the trending API surface since the ingest code was written?
+
+**Context:** GitHub does not have a documented official trending API; the ingest code likely scrapes the trending page or uses an unofficial endpoint. Zero items — distinct from a 403 — may indicate a page-structure change rather than a rate-limit, which has a different fix path.
+
+**Answer:** _add reply here_
+
+---
