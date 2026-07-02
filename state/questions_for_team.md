@@ -4956,3 +4956,37 @@ The previous successful build was 2026-07-01T12:15:09+00:00 (44 items, github_tr
 
 **Answer:** _add reply here_
 
+
+---
+
+## Build 2026-07-02T00:08:27Z (audit: FAILED — 0 items, no sources covered)
+
+**INFRASTRUCTURE FAILURE — no edition published this cycle.**
+
+All four ingest sources returned zero items or HTTP errors:
+
+- arxiv: HTTP 403 Forbidden (persistent across 30+ prior builds)
+- hn: HTTP 403 Forbidden (persistent across 30+ prior builds)
+- rss: no items in current window
+- github_trending: no items in current window
+
+This is the second consecutive complete failure (prior: 2026-07-01T18:08:00Z). The last successful edition was 2026-07-01T12:15:09Z (44 items, github_trending only). That build's HTML remains live at docs/.
+
+### Q: github_trending has now returned zero items in two consecutive builds (18:08 UTC 2026-07-01 and 00:08 UTC 2026-07-02), while returning 44 items at 12:15 UTC 2026-07-01. The `days_back: 1` setting appears to have a UTC-midnight cutoff or rate-limit boundary. Should `days_back` be increased to 2 or 3 in data/sources.yaml to provide buffer across build windows?
+
+**Context:** Increasing `days_back` from 1 to 2-3 would mean each build sees a larger window of trending repos, reducing empty cycles at the cost of more duplicate items across consecutive builds (handled by dedup). This is a one-line change in data/sources.yaml that requires no code change.
+
+**Answer:** _add reply here_
+
+### Q: RSS has returned zero items for multiple consecutive builds. The feeds in data/sources.yaml include newsletter/blog sources (Anthropic, OpenAI, Latent Space, Interconnects, Stratechery) that publish daily. Is this a feed-parsing regression, a URL change, or a `per_feed_limit` + time-window interaction? A single successful RSS fetch would confirm the feeds themselves are still live.
+
+**Context:** With arxiv, HN, and RSS all failing and github_trending intermittent, the monitor is structurally dependent on a single source with a known daily-cadence gap. Restoring RSS would immediately expand coverage to frontier-lab and analyst commentary.
+
+**Answer:** _add reply here_
+
+### Q: No new question this cycle on long-standing recurring items (opendataloader-pdf registry, LangChain classification, Kimi/GLM versioning, lmms-eval OCR-3 submission, PixelRAG paradigm read) — per the volume-reduction policy in effect since Build 2026-06-30T06:05:23Z. They remain open in this file's history.
+
+**Context:** Process note confirming the question-volume policy is being followed.
+
+**Answer:** _add reply here_
+
