@@ -5058,3 +5058,25 @@ This is the second consecutive complete failure (prior: 2026-07-01T18:08:00Z). T
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-07-02T00:00:00+00:00 (FAILED — no items ingested)
+
+All four sources returned zero items. Build aborted per the failure-mode protocol; no HTML was rendered or pushed.
+
+### Error details
+
+- **arxiv**: HTTP 403 Forbidden — `http://export.arxiv.org/api/query?...` — same recurring error flagged in builds dating to 2026-05-21. The proxy or network policy is blocking outbound requests to export.arxiv.org.
+- **hn**: HTTP 403 Forbidden — recurring error from prior builds. HN Algolia search endpoint is blocked.
+- **rss**: "no items in current window" — all 10 RSS feeds returned zero posts in the configured time window, suggesting either a network policy block on outbound HTTPS to third-party feeds or all feeds are genuinely empty (unlikely).
+- **github_trending**: "no items in current window" — GitHub trending scraper returned zero results; same connectivity class of failure.
+
+### What the team should investigate
+
+1. **Network/proxy policy**: This remote execution environment appears to block outbound HTTPS to most third-party domains (arxiv.org, hn.algolia.com, RSS feed hosts). Every build since 2026-05-21 has had some or all of these sources fail. The team should check whether the container's egress policy permits outbound requests to these hosts, or configure an allow-list.
+2. **Alternative ingestion paths**: If direct egress is permanently blocked, consider pushing ingested items into the repo on a separate schedule (e.g., a daily GitHub Action that runs outside the restricted environment), so the build agent reads from a pre-populated JSONL rather than fetching live.
+3. **Minimum viable build**: The dashboard has not rendered fresh content since the earliest builds. If network access cannot be restored, the build schedule should be paused until the infrastructure issue is resolved.
+
+This is the fifth or sixth consecutive build that has raised source-failure concerns. No team replies have been recorded in this file. A response here or a change to the ingestion infrastructure is needed before any future build can produce editorial value.
+
