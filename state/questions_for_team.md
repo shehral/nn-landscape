@@ -5080,3 +5080,20 @@ All four sources returned zero items. Build aborted per the failure-mode protoco
 
 This is the fifth or sixth consecutive build that has raised source-failure concerns. No team replies have been recorded in this file. A response here or a change to the ingestion infrastructure is needed before any future build can produce editorial value.
 
+---
+
+## Build 2026-07-03T00:09:19Z (FAILED — 0 items, no sources covered)
+
+**INFRASTRUCTURE FAILURE — no edition published this cycle.**
+
+All four ingest sources returned zero items:
+
+- **arxiv**: HTTP 403 Forbidden (uninterrupted since 2026-05-21)
+- **hn**: HTTP 403 Forbidden (uninterrupted since 2026-05-21)
+- **rss**: no items in current window (failing since at least 2026-07-01T18:08Z)
+- **github_trending**: no items in current window (failing since at least 2026-07-01T18:08Z)
+
+Last successful edition: **2026-07-01T12:15:09Z** (44 items, github_trending only). That build's HTML remains live at docs/. No new content has been published since.
+
+All root-cause hypotheses and remediation options are documented in the Build 2026-07-02T00:00:00+00:00 failure note immediately above (network egress policy, alternative ingestion paths, schedule suspension). No new questions raised this cycle — prior questions remain open and unanswered. Further builds will continue to fail until the network access or ingestion path is resolved.
+
