@@ -5097,3 +5097,31 @@ Last successful edition: **2026-07-01T12:15:09Z** (44 items, github_trending onl
 
 All root-cause hypotheses and remediation options are documented in the Build 2026-07-02T00:00:00+00:00 failure note immediately above (network egress policy, alternative ingestion paths, schedule suspension). No new questions raised this cycle — prior questions remain open and unanswered. Further builds will continue to fail until the network access or ingestion path is resolved.
 
+
+## Build 2026-07-03T00:00:00+00:00 (audit: partial)
+
+### Q: All four sources failed this build (arxiv HTTP 403, HN HTTP 403, RSS empty, GitHub Trending empty) — is there a network-level policy or proxy change that needs to be addressed before the next build can ingest anything?
+
+**Context:** This is the most severe ingestion failure observed across all builds logged in questions_for_team.md. Prior builds lost arxiv and HN but retained RSS or github_trending. This build has zero items from zero sources, making the rendered output functionally empty. The agent proxy (HTTPS_PROXY) may be blocking outbound requests to these endpoints.
+
+**Answer:** _add reply here_
+
+### Q: Should the build agent fall back to a cached edition (the most recent state/run/edition.json that had items) when all four sources fail, rather than publishing an empty edition?
+
+**Context:** A zero-item edition offers no editorial value and signals infrastructure failure rather than landscape signal. A stale-cache fallback with a banner noting the date of the cached data would be more useful to readers than an empty dashboard. The team should decide the policy and encode it in SKILL.md or the CLI.
+
+**Answer:** _add reply here_
+
+### Q: The persistent arXiv and HN 403 errors across multiple builds suggest the remote execution environment's egress IP may be on a block list; has anyone checked the proxy status at the /__agentproxy/status endpoint?
+
+**Context:** The environment documentation notes an outbound HTTPS proxy and provides a status endpoint. If that proxy is being blocked by arxiv or HN rate-limiting rules, a different egress path or API key-based access (arXiv OAI-PMH, HN Firebase API) would bypass it.
+
+**Answer:** _add reply here_
+
+### Q: RSS returning empty for all 10 configured feeds in the current window is unusual — are the feed URLs still valid, or have some feeds migrated or been deprecated since sources.yaml was last updated?
+
+**Context:** Prior builds had RSS as the dominant source (109 of 112 items in the 2026-05-21 build). Complete RSS failure alongside the other source failures suggests either a network block at the proxy level or simultaneous URL rot across all feeds. Manual verification of each feed URL would isolate the cause.
+
+**Answer:** _add reply here_
+
+---
