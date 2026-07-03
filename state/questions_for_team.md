@@ -5125,3 +5125,32 @@ All root-cause hypotheses and remediation options are documented in the Build 20
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-07-03T18:07:59Z (FAILED — 0 items, all sources blocked)
+
+**INFRASTRUCTURE FAILURE — no edition published this cycle.**
+
+All four ingest sources are blocked by the remote execution environment's outbound proxy policy. This is a confirmed environment-level block, not source-side rate-limiting.
+
+### Error details
+
+- **arxiv**: HTTP 403 Forbidden — `http://export.arxiv.org/api/query?...` — persistent since 2026-05-21.
+- **hn**: HTTP 403 Forbidden — persistent since 2026-05-21.
+- **rss**: Proxy returns `x-deny-reason: host_not_allowed` for all configured RSS feed hosts (confirmed via `curl -sI https://www.anthropic.com/news/rss.xml`). CLI reports "no items in current window" because the feeds return 403 at the proxy layer, not the time-window filter.
+- **github_trending**: GitHub returns HTTP 403 Forbidden for the trending endpoint; proxy connection establishes but GitHub blocks the scraper.
+
+### Root cause (confirmed this build)
+
+The agent proxy (`HTTPS_PROXY`) is configured in this environment but its allowlist does not include `anthropic.com`, `export.arxiv.org`, `hn.algolia.com`, or any of the RSS feed hosts. The proxy status endpoint at `/__agentproxy/status` shows `recentRelayFailures: []` (no relay errors logged by the proxy itself), but direct curl tests to the feed hosts return `x-deny-reason: host_not_allowed` at the proxy layer.
+
+The `noProxy` list in the proxy config covers only internal/private network ranges, npm/PyPI registries, and `*.anthropic.com` — but the proxy is separately blocking outbound to general internet hosts not in an explicit allow-list. This is distinct from `*.anthropic.com` being in `noProxy` (which means it bypasses the proxy, not that it is allowed through it).
+
+### What the team must do to unblock
+
+1. **Add the required hosts to the proxy allow-list** for this remote execution environment. Minimum required hosts: `export.arxiv.org`, `hn.algolia.com`, `api.github.com`, `github.com`, and the 10 RSS feed domains (anthropic.com, openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai). Refer to `/root/.ccr/README.md` for the allow-list configuration path.
+2. **Alternative**: Pre-ingest items via a separate GitHub Actions workflow outside the restricted container and commit the JSONL to the repo before each build. The build agent then reads from a pre-populated `state/run/items_raw.jsonl` rather than fetching live. This is the recommended long-term architecture if egress policy cannot be relaxed.
+3. **Short-term**: If the proxy can be configured to allow GitHub API requests (which is already partially working — the proxy established the connection, only GitHub's own rate-limit or scraper-blocking responds with 403), switching the github_trending source to the GitHub REST API `/trending` endpoint (if available) or the Search API may work within the existing proxy policy.
+
+No new questions raised this cycle beyond the infrastructure failure — all prior open questions remain in this file's history. The build schedule should be paused or the infrastructure issue resolved before further cron cycles run.
