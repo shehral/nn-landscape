@@ -5188,3 +5188,18 @@ Eighth+ consecutive build failure. All four ingest sources blocked; no change fr
 Root cause and remediation options are documented in full in the 2026-07-03T18:07:59Z entry. No new information this cycle. Prior open questions remain unanswered.
 
 **Recommended immediate action:** Suspend the cron schedule via the `/schedule` command until either (a) the proxy allow-list is updated to permit the required ingestion hosts, or (b) a pre-ingest GitHub Action is in place to populate state/run/items_raw.jsonl before each build. Continuing to run the cron produces no editorial value and accumulates noise in this file.
+
+---
+
+## Build 2026-07-04T12:09:18Z (FAILED — 0 items, all sources blocked)
+
+**INFRASTRUCTURE FAILURE — no edition published this cycle.**
+
+Ninth consecutive build failure. Proxy blocks all ingest hosts; no change since 2026-05-21.
+
+- **arxiv**: HTTP 403 Forbidden (proxy `host_not_allowed`)
+- **hn**: HTTP 403 Forbidden (proxy `host_not_allowed`)
+- **rss**: "no items in current window" (all feed hosts blocked)
+- **github_trending**: "no items in current window" (zero items returned)
+
+No new questions raised. The recommended immediate action remains: suspend the cron schedule until either the proxy allow-list includes the required ingestion hosts, or a pre-ingest GitHub Action pre-populates `state/run/items_raw.jsonl`. Every cycle this schedule fires without that fix produces no editorial value.
