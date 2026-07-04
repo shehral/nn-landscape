@@ -5154,3 +5154,20 @@ The `noProxy` list in the proxy config covers only internal/private network rang
 3. **Short-term**: If the proxy can be configured to allow GitHub API requests (which is already partially working — the proxy established the connection, only GitHub's own rate-limit or scraper-blocking responds with 403), switching the github_trending source to the GitHub REST API `/trending` endpoint (if available) or the Search API may work within the existing proxy policy.
 
 No new questions raised this cycle beyond the infrastructure failure — all prior open questions remain in this file's history. The build schedule should be paused or the infrastructure issue resolved before further cron cycles run.
+
+---
+
+## Build 2026-07-04T00:07:40Z (FAILED — 0 items, all sources blocked)
+
+**INFRASTRUCTURE FAILURE — no edition published this cycle.**
+
+Proxy still blocking all four ingest sources (seventh+ consecutive failure). No new root cause; all details documented in the 2026-07-03T18:07:59Z entry immediately above.
+
+- **arxiv**: HTTP 403 Forbidden (proxy `connect_rejected`, `host_not_allowed`)
+- **hn**: HTTP 403 Forbidden (proxy `connect_rejected`, hn.algolia.com blocked)
+- **rss**: all 10 feed hosts in `recentRelayFailures` (openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai)
+- **github_trending**: returning zero items in window
+
+Proxy status: `enabled=true`, `recentRelayFailures` logged for every ingestion host. No change from prior build.
+
+No new questions raised. Prior open questions (network allow-list, pre-ingest GitHub Action, schedule suspension) remain unanswered. Build schedule should be paused or infrastructure unblocked before further cron cycles produce editorial value.
