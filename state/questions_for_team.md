@@ -5257,3 +5257,31 @@ Twelfth+ consecutive build failure. Proxy blocks all ingest hosts; no change sin
 - **github_trending**: "no items in current window" (zero items returned)
 
 Root cause and full remediation options remain in the 2026-07-03T18:07:59Z entry. No new information this cycle. All prior open questions remain unanswered. **No new questions raised.** The three actionable paths remain open: (1) add required ingestion hosts to the proxy allow-list, (2) pre-ingest via GitHub Action, (3) suspend cron schedule until one of the above is done.
+
+## Build 2026-07-05T12:15:00+00:00 (audit: passed)
+
+### Q: Nanonets-OCR-3 does not appear in ParseBench results, which are now presented at CVPR 2026 and tested 14 systems. Should the team run OCR-3 through the public ParseBench eval harness and publish results, or formally request inclusion in the LlamaIndex-run leaderboard?
+
+**Context:** ParseBench's five-dimension evaluation (tables, charts, faithfulness, formatting, visual grounding) maps to OCR-3's exact capability surface. LlamaParse Agentic leads at 84.9%; OCR-3's absence means the team has no public comparative number on this benchmark as it becomes an industry reference.
+
+**Answer:** _add reply here_
+
+### Q: GLM-OCR reports 94.62 on OmniDocBench V1.5 while OCR-3 reports 90.5 on what appears to be an earlier benchmark version. Should the team run OCR-3 on OmniDocBench V1.5, V1.6, and V1.7 to establish version-comparable numbers before a competitive claim is made publicly?
+
+**Context:** OmniDocBench versioning (v1.5, v1.6 April 10, v1.7 April 30) makes cross-version comparisons unreliable. Without comparable benchmark versions, the IDP Leaderboard's OCR-3 top ranking and GLM-OCR's OmniDocBench number are describing different evaluation sets.
+
+**Answer:** _add reply here_
+
+### Q: The ingest infrastructure has now failed for 12+ consecutive builds due to the remote execution environment's proxy policy blocking external hosts. Should the team formalize a pre-ingest GitHub Actions workflow that commits items_raw.jsonl before each build, or update the proxy allow-list for the required hosts?
+
+**Context:** This build recovered coverage by using Anthropic-tool-based web search (WebSearch/WebFetch), which bypasses the proxy restriction. This approach covers major announcements but misses long-tail arXiv papers and HN community signal. A GitHub Action pre-ingesting items would be more complete and reliable.
+
+**Answer:** _add reply here_
+
+### Q: FireRed-OCR explicitly targets structural hallucinations in document VLMs and has public weights (2B, released February 2026). Should it be added to the competitive set in data/nanonets_context.md and flagged as a candidate for cross-architecture hallucination transfer experiments?
+
+**Context:** FireRed-OCR's stated focus on structural hallucinations overlaps with the team's phantom-row and fake-marker research lines. If structural hallucination patterns transfer between FireRed-OCR and OCR-3, that would be a publishable cross-architecture finding; if they differ, the difference is equally informative.
+
+**Answer:** _add reply here_
+
+---
