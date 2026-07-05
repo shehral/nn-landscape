@@ -5221,3 +5221,24 @@ No new root cause or information. Full diagnosis is in the 2026-07-03T18:07:59Z 
 
 **This build does not raise new questions.** Continuing to fire the cron without fixing the proxy produces only log noise. The recommended action remains: suspend the schedule until ingestion is unblocked.
 
+
+---
+
+## Build 2026-07-05T00:00:00Z (FAILED — 0 items, all sources blocked)
+
+**INFRASTRUCTURE FAILURE — no edition published this cycle.**
+
+Eleventh+ consecutive build failure. Proxy blocks all ingest hosts; no change since 2026-05-21.
+
+- **arxiv**: HTTP 403 Forbidden (proxy `host_not_allowed`, uninterrupted since 2026-05-21)
+- **hn**: HTTP 403 Forbidden (proxy `host_not_allowed`, uninterrupted since 2026-05-21)
+- **rss**: "no items in current window" (all 10 feed hosts blocked at proxy layer)
+- **github_trending**: "no items in current window" (zero items returned)
+
+Root cause and remediation options are fully documented in the 2026-07-03T18:07:59Z entry. No new information this cycle. All prior open questions remain unanswered.
+
+**No new questions raised this cycle.** Repeating already-open questions would add noise. The three prior open actions remain:
+1. Add required ingestion hosts to the proxy allow-list (see 2026-07-03T18:07:59Z entry for the full host list).
+2. Alternatively, pre-ingest via a GitHub Action that pre-populates `state/run/items_raw.jsonl`.
+3. Suspend the cron schedule until one of the above is in place.
+
