@@ -52,9 +52,9 @@ The team also publicly maintains the **IDP Leaderboard**
 benchmark on document AI co-developed with IIT Indore. Items that
 publish leaderboard results, contest its methodology, or are released by
 models near the top of it (GPT-5.4, GPT-5.5, Gemini-3-Pro/Flash,
-Gemini 3.5 Flash, Claude 4.6 family, Claude Fable 5, Qwen3-VL, Pixtral,
-GLM-OCR, Chandra OCR 2, LightOn OCR-2, DeepSeek-OCR 2) are
-competitive-axis relevant.
+Gemini 3.1 Pro, Gemini 3.5 Flash, Claude 4.6 family, Claude Fable 5,
+Claude Opus 4.8, Qwen3-VL, Pixtral, GLM-OCR, Chandra OCR 2,
+LightOn OCR-2, DeepSeek-OCR 2) are competitive-axis relevant.
 
 ## Active research direction
 
@@ -103,7 +103,12 @@ Items that name, compare against, or are released by these companies are
   categorization before downstream processing; Smart Schema in Studio
   (April 2026) for autonomous schema creation; 1 billion pages processed
   to date; acquired Opennote (May 2026), an AI-notebook startup, to
-  strengthen agentic document-retrieval workflows.
+  strengthen agentic document-retrieval workflows; Reducto Deep Extract
+  ranked #1 on LongExtractBench (announced July 1, 2026; independently
+  audited by micro1; 225 sourced documents averaging 88,700+ fields
+  each; 100% completeness, 99.6% precision, 99.6% recall, 99.3% leaf
+  accuracy; zero failures; peer systems: Extend MAX, LlamaExtract-Agentic,
+  GPT-5.5, Claude Opus 4.8, Gemini 3.1 Pro).
 - **LlamaParse (LlamaIndex / LlamaCloud)** — managed parsing service
   inside LlamaCloud; RAG-native, multimodal, often paired with or
   benchmarked against Reducto. LlamaParse v2 launched 2026 with
@@ -120,6 +125,12 @@ Items that name, compare against, or are released by these companies are
   document parsing infrastructure. Expanded Microsoft Azure integration
   announced June 3, 2026, covering Azure AI Search and Blob Storage
   pipelines for enterprise RAG and agentic workflows.
+- **Extend** (extend.ai; YC-backed; raised $17M) — end-to-end document
+  processing competitor positioning as "the document processing cloud";
+  unifies models, infrastructure, and tooling into a single platform for
+  production document-to-structured-data pipelines; appeared as a direct
+  peer system in LongExtractBench (July 2026) alongside Reducto, Llama-
+  Extract-Agentic, GPT-5.5, Opus 4.8, and Gemini 3.1 Pro.
 - **Docling** (IBM Research) — open-source layout-aware document parser;
   reference architecture and common open-source baseline.
   Granite-Docling-258M (production VLM, January 2026, Apache 2.0)
@@ -199,10 +210,13 @@ Examples that are **competitive-primary**:
   vision understanding for diagrams and nested tables and appear on
   ParseBench; Claude Opus 4.7 (April 16, 2026) accepts images up to
   2,576px on the long edge (~3.75 megapixels, 3x prior models) with
-  improved chart and document parsing accuracy.
+  improved chart and document parsing accuracy; Claude Opus 4.8 (May 28,
+  2026) adds dynamic multi-agent workflows and is evaluated as a peer on
+  long-document structured extraction benchmarks (LongExtractBench,
+  July 2026).
 - Google releases a Gemini-document-mode endpoint or a layout-aware
-  OCR benchmark result (Gemini 3 Pro/Flash; Gemini 3.5 Flash released
-  May 2026 at Google I/O).
+  OCR benchmark result (Gemini 3 Pro/Flash; Gemini 3.1 Pro released
+  February 19, 2026; Gemini 3.5 Flash released May 2026 at Google I/O).
 - OpenAI announces GPT-5.x vision improvements on DocVQA / ChartQA /
   OmniDocBench / IDP Leaderboard (GPT-5.4 March 2026, GPT-5.5 April
   2026).
@@ -749,3 +763,88 @@ Nanonets, do not respond.
 - Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed
   unchanged. No new Nanonets models on Hugging Face. No
   Nanonets-authored arXiv papers found.
+
+---
+
+**Date:** 2026-07-05
+
+**Sources consulted:**
+
+- `nanonets.com`, `nanonets.com/blog`, `benchmarking.nanonets.com`,
+  `idp-leaderboard.org` — all returned HTTP 403; fell back to web
+  search for all Nanonets data
+- WebSearch: "Nanonets OCR-3 IDP leaderboard July 2026 ranking" —
+  #1 at 85.9% confirmed unchanged; idp-leaderboard.org and
+  benchmarking.nanonets.com URLs confirmed resolving
+- WebSearch: "site:huggingface.co/nanonets" — open-weight model lineup
+  unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains API-only
+- WebSearch: "nanonets arxiv 2026 research paper" — no team-authored
+  papers surfaced; Nanonets-KIE dataset referenced in third-party
+  papers (as in prior refreshes)
+- WebSearch: "Nanonets OCR-3 new announcement product July 2026" —
+  no new Nanonets product announcements in July 2026
+- WebSearch: "Mistral OCR July 2026 new model update" — no new model
+  since Mistral OCR 4 (June 23, 2026); July 7 webinar scheduled;
+  all prior entries confirmed current
+- WebSearch: "Reducto LongExtractBench date announcement July 2026"
+  + "Reducto LongExtractBench" — LongExtractBench (July 1, 2026;
+  micro1-audited; 225 documents; Reducto Deep Extract #1) confirmed
+  from PRNewswire, reducto.ai blog, TipRanks, LinkedIn (micro1 post)
+- WebSearch: "Extend AI Extend MAX document processing funding 2026"
+  — Extend confirmed as YC-backed startup (extend.ai); $17M raised;
+  appeared as peer in LongExtractBench as "Extend MAX"
+- WebSearch: "LlamaParse LlamaIndex July 2026 new product" — no new
+  July 2026 products beyond what's in context; LlamaCloud rebranding
+  confirmed; LiteParse and Parse-Flow unchanged
+- WebSearch: "Unstructured.io July 2026 new update" — library v0.18.11
+  (July 23) and unstructured-api v0.0.89 (July 5, CVE patch); no
+  material product announcement
+- WebSearch: "Docling IBM July 2026 update release" — docling-parse v6
+  (threaded PDF parser, worker thread pool) released mid-2026; Docling
+  for IBM watsonx GA already in context; no additional major announcement
+- WebSearch: "Firecrawl July 2026 document parsing update" — PDF upload
+  limit raised (minor operational change); Fire-PDF and /parse endpoint
+  already in context; no major new feature
+- WebSearch: "Claude Opus 4.8 Anthropic release document vision 2026"
+  — Opus 4.8 (May 28, 2026) confirmed from Anthropic news,
+  artificialintelligence-news.com, MacRumors; focus: dynamic
+  multi-agent workflows; appears in LongExtractBench (July 2026)
+- WebSearch: "Gemini 3.1 Pro Google release date 2026" — Gemini 3.1
+  Pro (February 19, 2026) confirmed from Google DeepMind blog and
+  Google Cloud docs; distinct model from "Gemini 3 Pro"; appears in
+  LongExtractBench comparisons
+- WebSearch: "Anthropic Claude document extraction vision July 2026"
+  — no new Anthropic document-specific product beyond what's in context
+- WebSearch: "OpenAI GPT-5 document vision OCR July 2026" — GPT-5.4
+  and GPT-5.5 confirmed active; no new July 2026 models
+- WebSearch: "Google Gemini document OCR vision July 2026" — Gemini 3
+  Pro confirmed as frontier vision model; no major new July announcement
+- WebSearch: "xAI Grok document extraction OCR July 2026" — Grok
+  Collections API confirmed unchanged from prior context
+- WebSearch: "DeepSeek OCR VLM new model July 2026" — no new model
+  since DeepSeek-OCR 2 (January 2026); confirmed unchanged
+- WebSearch: "Qwen3-VL Qwen VLM new release July 2026" — Qwen3-VL
+  confirmed current; Qwen3-VL-Embedding (embedding variant) noted
+  but not directly relevant to document extraction product surface
+- WebSearch: "new OCR VLM model document AI July 2026" — no new
+  entrants beyond Extend (already captured above)
+
+**Material changes versus prior version (2026-06-28):**
+
+- Added **Extend** (extend.ai; YC-backed; $17M raised) to the
+  competitive set as a new entrant. Appeared as a direct peer in
+  LongExtractBench (July 2026) alongside Reducto, LlamaExtract-Agentic,
+  GPT-5.5, Claude Opus 4.8, and Gemini 3.1 Pro. Positions as
+  end-to-end "document processing cloud."
+- Updated **Reducto**: added LongExtractBench #1 result (July 1, 2026;
+  micro1-audited; 225 documents; 100% completeness, 99.6% precision,
+  99.6% recall, 99.3% leaf accuracy; zero failures).
+- Added **Claude Opus 4.8** (May 28, 2026) to the frontier-lab
+  competitive-primary Anthropic example and IDP Leaderboard comparables
+  list; dynamic multi-agent workflows; evaluated on LongExtractBench.
+- Added **Gemini 3.1 Pro** (February 19, 2026) to the Google frontier-lab
+  example and IDP Leaderboard comparables list; distinct from "Gemini 3
+  Pro" and older than Gemini 3.5 Flash; appears in LongExtractBench.
+- Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
+  No new Nanonets models on Hugging Face. No Nanonets-authored arXiv
+  papers found. No July 2026 Nanonets blog posts indexed.
