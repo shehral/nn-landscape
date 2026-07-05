@@ -5285,3 +5285,73 @@ Root cause and full remediation options remain in the 2026-07-03T18:07:59Z entry
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-05T18:30:00+00:00 (audit: partial — CLI proxy-blocked, WebSearch fallback)
+
+**Build note:** All 4 CLI ingest sources (arxiv, hn, rss, github_trending) were blocked by the remote execution environment proxy. Items were gathered via WebSearch/WebFetch fallback (21 items total). This is the same pattern as the prior builds since 2026-05-21. audit_passed=False. Rendered 4 HTML views. See trend bullets and questions below.
+
+### Q: Has the team systematically measured hallucination rates on OCR-3's production extraction pipeline across document types — tables, handwriting, stamps, faded text?
+
+**Context:** Four independent research groups published hallucination mitigation papers this week (SECOND arxiv:2506.08391, Decoding by Perturbation arxiv:2604.12424, Attention Blur arxiv:2605.24602, ACL 2026 survey ACL:2026.findings-acl.1237). The academic consensus is converging on perceptual hallucination as the #1 VLM reliability problem. If Nanonets lacks an internal hallucination rate baseline, we are flying blind relative to the research frontier and cannot credibly claim reliability superiority over competitors.
+
+**Answer:** _add reply here_
+
+### Q: Has the team run a head-to-head accuracy benchmark of Gemini 3 Flash and Gemini 3.5 Flash against OCR-3 on canonical IDP tasks (invoices, contracts, receipts) at comparable latency and cost per page?
+
+**Context:** Gemini 3 Flash and Gemini 3.5 Flash both claim frontier-level document extraction accuracy at flash-tier cost (VentureBeat, WaveSpeed). Box is already integrating Gemini 3 Flash for unstructured data. If the accuracy gap has closed, Nanonets' pricing and positioning argument needs to shift immediately.
+
+**Answer:** _add reply here_
+
+### Q: Has the product team done a teardown of Mistral OCR 4 to identify where Nanonets retains differentiation in accuracy, workflow integration, vertical compliance, and on-premises deployment?
+
+**Context:** Mistral OCR 4 is now positioned as a full PDF-ingestion pipeline (VentureBeat) — structurally the same narrative as Nanonets IDP. Microsoft also shipped 7 document AI models simultaneously. The competitive environment has shifted from 'model accuracy competition' to 'full pipeline competition' in the past 30 days.
+
+**Answer:** _add reply here_
+
+### Q: What is the current OSS strategy for docext and docstrange, and should star velocity be tracked as a leading indicator of enterprise pipeline health?
+
+**Context:** NanoNets/docext and NanoNets/docstrange both trended on GitHub this week alongside allenai/olmocr. This is rare organic traction. If there is no OSS strategy defined, now is the moment to capitalize on momentum before it fades.
+
+**Answer:** _add reply here_
+
+### Q: Does Nanonets have a published benchmark evaluation stance, and should we participate in or endorse specific third-party benchmarks to shape the emerging evaluation narrative?
+
+**Context:** Four independent OCR benchmarks surfaced this week with conflicting model rankings (CC-OCR V2, GlotOCR Bench, socOCRbench v3, Document AI 2026 Comparison). The benchmark landscape is fragmenting — without an active evaluation stance, Nanonets' market position will be defined by whichever benchmark third parties choose to cite.
+
+**Answer:** _add reply here_
+
+---
+
+## Build 2026-07-05T18:30:00+00:00 (audit: partial)
+
+### Q: Has the team systematically measured hallucination rates on OCR-3's production extraction pipeline across document types — tables, handwriting, stamps, faded text?
+
+**Context:** Four independent research groups published hallucination mitigation papers this week (items: d54e09ed, 01a7d78a, 63a89199, 3fdf621f). The academic consensus is converging on perceptual hallucination as the #1 VLM reliability problem. If Nanonets lacks an internal hallucination rate baseline, we are flying blind relative to the research frontier and cannot credibly claim reliability superiority over competitors.
+
+**Answer:** _add reply here_
+
+### Q: Has the team run a head-to-head accuracy benchmark of Gemini 3 Flash and Gemini 3.5 Flash against Nanonets OCR-3 on canonical IDP tasks (invoices, contracts, receipts) at comparable latency and cost per page?
+
+**Context:** Gemini 3 Flash (item: 277fbae6) and Gemini 3.5 Flash (item: 2d3f73f4) both claim frontier-level document extraction accuracy at flash-tier cost. Box is already integrating Gemini 3 Flash for unstructured data. If the accuracy gap has closed, Nanonets' pricing and positioning argument needs to shift immediately.
+
+**Answer:** _add reply here_
+
+### Q: Has the product team done a teardown of Mistral OCR 4 to identify where Nanonets retains differentiation in accuracy, workflow integration, vertical compliance, and on-premises deployment?
+
+**Context:** Mistral OCR 4 (item: 8df752fa) is now positioned as a full PDF-ingestion pipeline — structurally the same narrative as Nanonets IDP. Microsoft also shipped 7 document AI models simultaneously (item: cc3be7ec). The competitive environment has shifted from 'model accuracy competition' to 'full pipeline competition' in the past 30 days.
+
+**Answer:** _add reply here_
+
+### Q: What is the current OSS strategy for docext and docstrange — feeder to enterprise deals, accuracy benchmark, or community build — and should star velocity be tracked as a leading indicator of enterprise pipeline health?
+
+**Context:** NanoNets/docext and NanoNets/docstrange both trended on GitHub this week (items: a043c681, 4349dcc0) alongside allenai/olmocr (item: ae05babd). This is rare organic traction. If there is no OSS strategy defined, now is the moment to capitalize on momentum before it fades.
+
+**Answer:** _add reply here_
+
+### Q: Does Nanonets have a published benchmark evaluation stance, and should we participate in or endorse specific third-party benchmarks to shape the emerging evaluation narrative?
+
+**Context:** Four independent OCR benchmarks surfaced this week with conflicting model rankings (CC-OCR V2: aac56eaa, GlotOCR: 23ec2cb6, socOCRbench: 48d7c6ff, Document AI 2026: 1d1f4a5f). The benchmark landscape is fragmenting — without an active evaluation stance, Nanonets' market position will be defined by whichever benchmark third parties choose to cite.
+
+**Answer:** _add reply here_
+
+---
