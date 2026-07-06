@@ -5451,3 +5451,37 @@ Root cause and full remediation options remain in the 2026-07-03T18:07:59Z entry
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-06T18:00:00+00:00 (audit: partial)
+
+### Q: Should NVIDIA be added to the competitive registry in data/nanonets_context.md?
+
+**Context:** Nemotron Nano 2 VL now tops OCRBench v2 and is distributed via NVIDIA NIM API targeting enterprise single-GPU document workflows. NVIDIA's ecosystem leverage (hardware + software + distribution) is a different competitive dynamic than the specialized document AI startups already in the registry. Prior builds have not tracked NVIDIA as a named competitor.
+
+**Answer:** _add reply here_
+
+### Q: Has the team benchmarked Gemini 3.5 Flash against OCR-3 on canonical IDP tasks (invoices, receipts, contracts) at comparable latency and cost per page, given that Ramp is now a named Google launch case study for production invoice OCR?
+
+**Context:** The Ramp/Gemini 3.5 Flash case study is the clearest public signal yet that a frontier multimodal model is displacing or supplementing a specialized extraction stack in production at enterprise scale. If the accuracy gap has closed at flash-tier pricing, the competitive positioning argument needs to shift. Note: prior builds asked about Gemini 3 Flash and 3.5 Flash benchmarking; this question is not yet answered.
+
+**Answer:** _add reply here_
+
+### Q: Does Format-Constrained GRPO's syntactic-validity reward (FireRed-OCR) also suppress phantom rows, which are syntactically valid but semantically hallucinated — and has the team tested this as an alternative reward signal for the phantom-row research line?
+
+**Context:** FireRed-OCR uses format constraints (valid table Markdown, closed LaTeX) as GRPO reward signals to eliminate structural hallucinations. Phantom rows are syntactically valid (the table parses correctly) but semantically wrong (the row does not exist in the source). Whether the syntactic reward transfers to the semantic case is an open empirical question with a short experiment path.
+
+**Answer:** _add reply here_
+
+### Q: Should the team run OCR-3 on OmniDocBench v1.6 before ParseBench becomes the dominant industry reference, given that LlamaIndex has now publicly declared OmniDocBench saturated?
+
+**Context:** PP-OCRv6 leads OmniDocBench v1.6 at 96.33; OCR-3 has no published v1.6 score. LlamaIndex is actively promoting ParseBench as the replacement benchmark. The window for establishing a competitive OmniDocBench number — before the industry pivots to ParseBench — may be short. (Prior builds have asked about ParseBench; this is a distinct question about the v1.6 OmniDocBench number while it remains a reference.)
+
+**Answer:** _add reply here_
+
+### Q: Note: four prior questions remain unanswered across multiple builds and are not repeated here. Outstanding items: (1) proxy allowlist update or GitHub Actions pre-ingest to restore CLI ingestion; (2) OCR-3 submission to ParseBench public eval harness; (3) OCR-3 inclusion in LongExtractBench via micro1; (4) GLM-4.5V addition to the competitive registry in nanonets_context.md.
+
+**Context:** These questions have been asked in consecutive builds since the 2026-07-05T12:15:00 edition. No team replies have appeared in questions_for_team.md under any of the four Answer lines.
+
+**Answer:** _add reply here_
+
+---
