@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jul 06, 2026 · 06:08 UTC · 0 items scored</span>
+  <span class="built-at">Built Jul 06, 2026 · 12:30 UTC · 19 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -50,24 +50,514 @@
   <span id="filter-count" class="filter-count"></span>
 </section>
 
+<section class="brief" aria-label="Today's brief">
+  <h2>Patterns this build</h2>
+  <ul>
+    <li>OCR-3 is absent from two newly prominent document benchmarks: ParseBench (CVPR 2026, 14 systems) and LongExtractBench (micro1-audited, 225 documents). Both benchmarks are attracting third-party citations without OCR-3 as a reference point, creating a benchmark coverage gap that grows as these become industry-standard references.</li>
+    <li>Structural hallucination is attracting dedicated technical remedies at the training level. FireRed-OCR-2B uses Format-Constrained GRPO; olmOCR 2 uses RL with unit-test verifiers; SECOND and AFIP use decode-time contrastive and attention corrections. Four papers in a single build cycle targeting the same failure class the team researches signals a convergence moment.</li>
+    <li>Frontier labs (Gemini 3.5 Flash, Claude Fable 5) are appearing on document-specific benchmarks alongside dedicated extraction products (Reducto, LlamaParse). The make-vs-buy question for enterprise document extraction is increasingly answered by published, apples-to-apples numbers rather than qualitative capability comparisons.</li>
+    <li>Nanonets&#39; two open-source libraries (docext, docstrange) trended on GitHub in the same cycle as allenai/olmocr, creating a rare moment of direct open-source visibility for Nanonets alongside a direct open-weight competitor on the olmOCR-Bench leaderboard.</li>
+    <li>Three approaches to VLM over-alignment — language priors overwriting visual input (arXiv 2605.08245), attention distraction (AFIP), and perceptual contrastive decoding (SECOND) — appeared in the same build cycle, each attributing hallucination to a different mechanism at the same computational level. The convergence of independent attributions on similar failure modes strengthens the case for a mechanistic root cause.</li>
+  </ul>
+</section>
 
 <section class="axes" aria-label="Items by axis">
   <div class="axis-col" data-axis="doc_ai">
     <h2>Document AI</h2>
-      <p class="item-summary">No top-N items this build.</p>
+<article class="item "
+         data-source="arxiv"
+         data-score="73">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 5 · competitive 4 · frontier 2 · vlm_research 2 = 73 (this view's weighting)">73</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
   </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2604.08538" target="_blank" rel="nofollow noopener noreferrer">ParseBench: A Document Parsing Benchmark for AI Agents (CVPR 2026)</a>
+  </p>
+  <p class="item-summary">ParseBench tests 14 document-parsing systems at CVPR 2026; LlamaParse leads at 84.9%; OCR-3 is absent from the benchmark.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>OCR-3 is absent from a CVPR-accepted benchmark that evaluates 14 systems across tables, charts, faithfulness, formatting, and visual grounding. LlamaParse Agentic leads at 84.9%; Gemini 3 Flash is 71.0%; Reducto 67.8%. Third parties can cite ParseBench comparisons that structurally exclude OCR-3.</dd>
+      <dt>Research</dt>
+      <dd>ParseBench&#39;s five-dimension structure (tables, charts, faithfulness, formatting, visual grounding) maps directly to OCR-3&#39;s capability surface and the team&#39;s phantom-row and structural hallucination research lines. The grounding dimension in particular overlaps with mechanistic interpretability work on hallucination attribution.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="56">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 3 · frontier 1 · vlm_research 2 = 56 (this view's weighting)">56</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2606.13108" target="_blank" rel="nofollow noopener noreferrer">PP-OCRv6: 34.5M-parameter OCR claims to surpass billion-scale VLMs on OCR tasks</a>
+  </p>
+  <p class="item-summary">Baidu PP-OCRv6 (1.5M-34.5M params, 50 languages, June 2026) claims to surpass Qwen3-VL-235B, GPT-5.5, Gemini 3.1 Pro on in-house OCR benchmarks.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>A 34.5M-parameter model with 5-6x speed advantage and 50-language coverage is a credible cost alternative for high-volume, simple-document OCR workloads. The claim of surpassing billion-scale VLMs on accuracy is on in-house benchmarks; independent verification on OmniDocBench or IDP Leaderboard would test whether this transfers.</dd>
+      <dt>Research</dt>
+      <dd>The performance claim warrants benchmark scrutiny; if a sub-35M-parameter model genuinely matches VLM OCR accuracy on standard document benchmarks, it challenges the VLM-first architectural assumption underlying OCR-3.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="47">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 5 · competitive 1 · frontier 0 · vlm_research 2 = 47 (this view's weighting)">47</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 100%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/NanoNets/docext" target="_blank" rel="nofollow noopener noreferrer">NanoNets/docext trending on GitHub: OCR-free on-premises extraction with IDP Leaderboard benchmarking</a>
+  </p>
+  <p class="item-summary">Nanonets/docext, an OCR-free on-premises VLM extraction toolkit linked to the IDP Leaderboard, is trending on GitHub this build.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Organic GitHub traction for Nanonets&#39; own OCR-free extraction toolkit alongside allenai/olmocr is a distribution signal. Developer discovery of docext through GitHub trending creates a funnel toward the IDP Leaderboard and Nanonets Agentic Data Extraction; the traction window is actionable.</dd>
+      <dt>Research</dt>
+      <dd>The toolkit&#39;s benchmarking integration with the IDP Leaderboard creates a direct path for publishing benchmark comparisons through the open-source surface without a dedicated publication.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="44">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 5 · competitive 1 · frontier 0 · vlm_research 1 = 44 (this view's weighting)">44</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 100%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/NanoNets/docstrange" target="_blank" rel="nofollow noopener noreferrer">NanoNets/docstrange trending on GitHub: document-to-Markdown/JSON/CSV conversion library</a>
+  </p>
+  <p class="item-summary">Nanonets/docstrange, Nanonets&#39; open-source document-to-Markdown/JSON/CSV library, is trending on GitHub alongside docext.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Nanonets&#39; two open-source libraries (docext, docstrange) are trending simultaneously, indicating a developer discovery moment. Docstrange&#39;s cloud API + offline mode design creates an entry point for developers before they encounter the full Nanonets Agentic Data Extraction API surface.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article>  </div>
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
-      <p class="item-summary">No top-N items this build.</p>
+<article class="item "
+         data-source="rss"
+         data-score="80">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 5 · frontier 4 · vlm_research 2 = 80 (this view's weighting)">80</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">rss</span>
   </div>
+  <p class="item-title">
+    <a href="https://deepmind.google/models/gemini/flash/" target="_blank" rel="nofollow noopener noreferrer">Gemini 3.5 Flash: frontier document intelligence at flash-tier cost</a>
+  </p>
+  <p class="item-summary">Gemini 3.5 Flash tops Roboflow Vision Evals and scores 71.0% on ParseBench; ~3x faster and ~half the cost of comparable frontier models.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Tops Roboflow Vision Evals across 67 real vision prompts and scores 71.0% on ParseBench; Box is integrating it for unstructured data at enterprise scale. The combination of frontier accuracy and flash-tier cost narrows the make-vs-buy argument for high-volume document parsing customers.</dd>
+      <dt>Research</dt>
+      <dd>Architecture not disclosed. The 84.2% on CharXiv Reasoning indicates strong chart understanding. Benchmarking on FUNSD and CORD would establish a direct accuracy comparison against OCR-3 on extraction-specific tasks.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier, doc_ai</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="80">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 5 · frontier 4 · vlm_research 2 = 80 (this view's weighting)">80</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://www.anthropic.com/claude/fable" target="_blank" rel="nofollow noopener noreferrer">Claude Fable 5: advanced document, diagram, and nested-table understanding</a>
+  </p>
+  <p class="item-summary">Anthropic Claude Fable 5 (June 9, 2026) advances document/diagram/table understanding and appears as a tested system on ParseBench.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Directly competes on OCR-3&#39;s /parse and /vqa capability surface; appears on ParseBench alongside Gemini 3 Flash and Reducto. Anthropic is positioning Fable 5 as a document-heavy enterprise model. Its inclusion in ParseBench makes comparative scoring against OCR-3 straightforward via the public harness.</dd>
+      <dt>Research</dt>
+      <dd>No architecture details released. ParseBench inclusion enables direct capability comparison on the faithfulness and visual-grounding dimensions, which map to the team&#39;s phantom-row and hallucination research.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier, doc_ai</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="80">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 5 · competitive 5 · frontier 3 · vlm_research 1 = 80 (this view's weighting)">80</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://mistral.ai/news/ocr-4/" target="_blank" rel="nofollow noopener noreferrer">Mistral OCR 4: bounding boxes, 170 languages, single-container self-hosted deployment</a>
+  </p>
+  <p class="item-summary">Mistral OCR 4 adds bounding boxes, typed-block labels, per-word confidence scores, 170-language support; $4/1K pages, 85.20 on OlmOCRBench.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Directly overlaps OCR-3&#39;s extraction, layout classification, and on-premises deployment positioning. At $4/1K pages ($2 batch) it undercuts OCR-3 on price where self-hosted compliance requirements exist. The July 7 webinar signals active enterprise sales motion. Its 85.20 OlmOCRBench score makes it a direct IDP Leaderboard candidate.</dd>
+      <dt>Research</dt>
+      <dd>The typed-block classification (titles, tables, equations, signatures) and per-word confidence scores represent an alternative uncertainty quantification approach to mechanistic interpretability for structural hallucination. The underlying format-aware training methodology is worth examining.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="73">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 4 · frontier 3 · vlm_research 3 = 73 (this view's weighting)">73</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/zai-org/GLM-V" target="_blank" rel="nofollow noopener noreferrer">GLM-4.5V: Zhipu AI open-source VLM, 106B/12B active, SOTA on 42 VL benchmarks</a>
+  </p>
+  <p class="item-summary">Zhipu AI GLM-4.5V (106B/12B active, MIT license) posts SOTA on 42 VL benchmarks including document and chart understanding.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Successor generation to GLM-OCR (in the named competitive set); MIT-licensed and available on Hugging Face, making it immediately deployable as a free alternative to OCR-3 for document understanding tasks. Its 64K multimodal context and 3D-RoPE spatial reasoning address long-document and layout-rich use cases.</dd>
+      <dt>Research</dt>
+      <dd>The 3D-RoPE architecture and 64K multimodal context are design choices distinct from OCR-3&#39;s MoE architecture; the model is a natural candidate for cross-architecture hallucination transfer experiments on the team&#39;s phantom-row test suite.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="72">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 5 · competitive 5 · frontier 1 · vlm_research 1 = 72 (this view's weighting)">72</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://www.prnewswire.com/news-releases/reducto-deep-extract-ranks-first-overall-in-longextractbench-an-independent-benchmark-for-complex-document-extraction-302815264.html" target="_blank" rel="nofollow noopener noreferrer">Reducto Deep Extract #1 on LongExtractBench: 100% completeness, 99.6% precision/recall</a>
+  </p>
+  <p class="item-summary">Reducto Deep Extract ranks #1 on LongExtractBench (micro1-audited, 225 documents): 100% completeness, 99.6% precision/recall, zero failures.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Reducto now holds the top public benchmark position on long-document structured extraction. Peer systems in the benchmark include GPT-5.5, Claude Opus 4.8, Gemini 3.1 Pro, Extend MAX, and LlamaExtract-Agentic — OCR-3 is not listed. The benchmark was commissioned by Reducto and independently audited by micro1; the methodology and scope differ from the IDP Leaderboard.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication. The benchmark&#39;s completeness-first evaluation metric and schema-driven extraction task are distinct from the IDP Leaderboard&#39;s extraction-accuracy framing and from the team&#39;s hallucination research.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="69">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 4 · frontier 2 · vlm_research 3 = 69 (this view's weighting)">69</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://allenai.org/blog/olmocr-2" target="_blank" rel="nofollow noopener noreferrer">olmOCR 2: RL with unit-test rewards for document OCR, 82.4 on olmOCR-Bench</a>
+  </p>
+  <p class="item-summary">Allen AI olmOCR 2 (7B, Qwen2.5-VL base) achieves 82.4 on olmOCR-Bench via RL with unit-test rewards; processes 10K pages under $2 on H100.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Open-weight model at 7B parameters processes 10K pages for under $2 on a single H100, competing directly on per-page cost with managed extraction APIs. The RL+unit-test training approach is reproducible by any lab with the same base model and benchmark fixtures.</dd>
+      <dt>Research</dt>
+      <dd>Unit test rewards as RL verifiers for reducing document hallucinations is directly applicable to phantom-row and structural hallucination research. The approach is complementary to mechanistic interpretability: cheaper to implement in production and potentially usable as a pre-publication baseline.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="62">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 4 · frontier 1 · vlm_research 2 = 62 (this view's weighting)">62</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://landing.ai/news/landingai-expands-agentic-document-intelligence-with-a-document-pre-trained-transformer" target="_blank" rel="nofollow noopener noreferrer">LandingAI DPT-2: joint visual/text agentic extraction with cell-level table grounding</a>
+  </p>
+  <p class="item-summary">LandingAI DPT-2 achieves 99.16% on DocVQA with cell-level table coordinate output; deployed on Azure Marketplace via landingai-ade SDK.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Joint visual+textual processing with cell-level coordinate output for compliance workflows; deployed on Azure Marketplace. The cell-coordinate grounding feature is a differentiation point Nanonets does not currently publish, targeting regulated enterprise document workflows where auditability requires source-cell traceability.</dd>
+      <dt>Research</dt>
+      <dd>No hallucination characterization published. Cell-level coordinate grounding is technically distinct from OCR-3&#39;s current capability framing; its accuracy on complex table benchmarks warrants a direct comparison.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="53">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 3 · frontier 2 · vlm_research 2 = 53 (this view's weighting)">53</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://mlcommons.org/2026/02/vlm-inference-shopify/" target="_blank" rel="nofollow noopener noreferrer">Qwen3-VL-235B submitted to MLPerf Inference v6.0 for product classification</a>
+  </p>
+  <p class="item-summary">Qwen3-VL-235B A22B submitted to MLPerf Inference v6.0 for product classification using the Shopify Product Catalog dataset.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Alibaba&#39;s MLPerf submission for Qwen3-VL on product classification signals growing investment in inference efficiency validation for the same VLM family that appears on the IDP Leaderboard. Accelerated inference for Qwen3-VL derivatives lowers the barrier for external labs to run IDP Leaderboard-competitive document fine-tunes.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="46">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 3 · frontier 1 · vlm_research 1 = 46 (this view's weighting)">46</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/docling-project/docling-parse" target="_blank" rel="nofollow noopener noreferrer">Docling-parse v6: threaded PDF parser with worker pool for memory-bounded processing</a>
+  </p>
+  <p class="item-summary">IBM Docling-parse v6 introduces a worker thread pool with bounded memory for high-throughput PDF parsing; adopted by the main Docling library.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Improves Docling&#39;s production throughput profile at the same $4/1K-page watsonx price point. No new accuracy or capability claims; the infrastructure improvement narrows the operational gap between Docling&#39;s self-hosted model and managed APIs at scale.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
+</article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
-      <p class="item-summary">No top-N items this build.</p>
+<article class="item "
+         data-source="rss"
+         data-score="45">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 2 · frontier 4 · vlm_research 1 = 45 (this view's weighting)">45</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
   </div>
+  <p class="item-title">
+    <a href="https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/" target="_blank" rel="nofollow noopener noreferrer">Microsoft Build 2026: 7 in-house MAI models including MAI-Thinking-1 and MAI-Transcribe-1.5</a>
+  </p>
+  <p class="item-summary">Microsoft Build 2026 launches 7 MAI models: MAI-Thinking-1 (35B, 256K context), MAI-Transcribe-1.5 (43 languages), reducing OpenAI dependency.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Microsoft&#39;s Frontier Tuning RL customization for enterprise workflows could enable document-specific adaptations without third-party extraction APIs. MAI-Transcribe-1.5&#39;s 43-language scope overlaps with the multilingual OCR dimension; MAI-Thinking-1&#39;s 256K context window positions it for long-document single-pass reasoning tasks.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication. MAI-Thinking-1&#39;s 256K context is a useful long-document baseline comparison point.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article>  </div>
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
-      <p class="item-summary">No top-N items this build.</p>
+<article class="item "
+         data-source="arxiv"
+         data-score="65">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 3 · frontier 1 · vlm_research 5 = 65 (this view's weighting)">65</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 100%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
   </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2603.01840" target="_blank" rel="nofollow noopener noreferrer">FireRed-OCR-2B: Format-Constrained GRPO eliminates structural hallucinations in tables and LaTeX</a>
+  </p>
+  <p class="item-summary">FireRed-OCR-2B uses Format-Constrained GRPO to eliminate unclosed-table and invalid-LaTeX errors; 92.94% on OmniDocBench v1.5.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>A 2B-parameter model scoring 92.94% on OmniDocBench v1.5 (above DeepSeek-OCR 2 at 91.09%) is a plausible IDP Leaderboard submission. The model specifically targets structural hallucinations in Markdown tables and LaTeX, the same failure modes that most commonly degrade enterprise document extraction quality.</dd>
+      <dt>Research</dt>
+      <dd>Format-Constrained GRPO enforces syntactic validity at training time using format constraints as reward signals — an approach the team can evaluate as a complement or alternative to causal interpretability for phantom-row reduction. The Geometry+Semantics data factory construction is worth examining for training data design insights.</dd>
+      <dt>Action</dt>
+      <dd>reproduce</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="40">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 0 · frontier 1 · vlm_research 5 = 40 (this view's weighting)">40</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 100%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2506.08391" target="_blank" rel="nofollow noopener noreferrer">SECOND: Selective and Contrastive Decoding reduces perceptual hallucinations in VLMs</a>
+  </p>
+  <p class="item-summary">SECOND (arXiv 2506.08391) mitigates VLM perceptual hallucinations by contrasting sparse and dense multi-scale visual information at decode time.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>SECOND is training-free and uses selective contrast between sparse and dense visual features at decode time to reduce perceptual hallucinations. Outperforms prior contrastive decoding methods on CHAIR, POPE, and MMHal-Bench. Applicable to OCR-3&#39;s phantom-row reduction as a decode-time intervention that does not require retraining.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="37">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 0 · frontier 1 · vlm_research 4 = 37 (this view's weighting)">37</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2605.08245" target="_blank" rel="nofollow noopener noreferrer">When Language Overwrites Vision: over-alignment and geometric debiasing in VLMs</a>
+  </p>
+  <p class="item-summary">arXiv 2605.08245 shows language priors overwrite visual input in VLMs; geometric debiasing of representations reduces this over-alignment.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Identifies over-alignment as a root cause of hallucination: language priors dominate visual input, causing the model to generate content consistent with language statistics rather than the image. Geometric debiasing in representation space is applicable to OCR-3&#39;s structural hallucination cases where the model generates plausible-but-absent table rows.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="36">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 5 = 36 (this view's weighting)">36</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2605.24602" target="_blank" rel="nofollow noopener noreferrer">AFIP: Correcting attention distraction in MLLMs reduces hallucinations (arXiv 2605.24602)</a>
+  </p>
+  <p class="item-summary">AFIP (arXiv 2605.24602) corrects spatial inconsistency in multi-head attention via cross-head enrichment and dynamic historical attention to reduce hallucinations.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Reveals that hallucinations in MLLMs are correlated with attention distraction: spatial inconsistency across attention heads and temporal fading of image-token attention during decoding. Cross-head enrichment and dynamic historical attention reinforcement correct this. The temporal fading mechanism is a plausible contributor to phantom-row generation in long-document OCR contexts.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="36">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 5 = 36 (this view's weighting)">36</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2601.05159" target="_blank" rel="nofollow noopener noreferrer">VLI: Training-free inference-time hallucination mitigation via metacognitive self-verification</a>
+  </p>
+  <p class="item-summary">Vision-Language Introspection (arXiv 2601.05159) mitigates overconfident hallucinations at inference time without retraining via metacognitive self-verification.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Deployable as a wrapper on OCR-3 without retraining; the self-verification loop could serve as a lightweight phantom-row post-filter in a production pipeline. The metacognitive framing offers a different intervention point from mechanistic interpretability but with lower engineering cost.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article>  </div>
 </section>
 
 <aside class="ai-partner" aria-label="Questions from your AI partner">
@@ -79,23 +569,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four sources failed this build — including github_trending, which has been the sole working source across 20+ consecutive builds. Is the remote execution environment network policy now blocking all outbound HTTP to external APIs?</p>
-    <p class="question-context">Prior builds consistently had github_trending as the fallback source (arxiv and HN have 403-ed since at least build 2026-05-21). This is the first build where github_trending also returned zero items. If the environment&#39;s egress policy has tightened, every future build will produce a zero-item edition until the network policy is changed or the build is moved to a different host.</p>
+    <p class="question-text">Should the team run OCR-3 through the ParseBench evaluation harness before it becomes the canonical CVPR document parsing reference?</p>
+    <p class="question-context">ParseBench (CVPR 2026, arxiv 2604.08538) evaluates 14 systems on five dimensions including tables, charts, faithfulness, and visual grounding. LlamaParse Agentic leads at 84.9%; Gemini 3 Flash 71.0%; Reducto 67.8%. OCR-3 is absent. The public evaluation code is available. Running OCR-3 would produce a citable comparison on a CVPR-accepted benchmark; not running it means third parties can describe the space without OCR-3 as a reference.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should a push notification be sent to the team automatically when a build produces zero items across all four sources, distinct from the normal edition publish flow?</p>
-    <p class="question-context">A zero-item build does not change the rendered dashboard — the prior edition persists on GitHub Pages. Without an active alert, the team has no visibility that the pipeline has stalled. The current cron-based build loop continues executing every 6 hours, committing empty state files that cost CI minutes without providing signal.</p>
+    <p class="question-text">Should the team contact micro1 to include OCR-3 in a LongExtractBench evaluation?</p>
+    <p class="question-context">Reducto&#39;s #1 LongExtractBench result lists GPT-5.5, Claude Opus 4.8, Gemini 3.1 Pro, Extend MAX, and LlamaExtract-Agentic as peer systems — all without OCR-3. The benchmark focuses on schema-driven extraction from long, table-heavy PDFs, which maps directly to OCR-3&#39;s enterprise extraction surface. micro1 audited and validated the benchmark independently; inclusion would require reaching out to establish a comparable evaluation run.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the cron schedule be paused until at least one source is confirmed working, rather than continuing to execute builds that produce no items?</p>
-    <p class="question-context">This is the first fully-empty build (all 4 sources down). If the network policy is the cause, no build configuration change fixes it — only environment-level action does. Continuing to run a cron that produces no signal every 6 hours wastes compute and fills questions_for_team.md with repetitive infrastructure notes. A pause decision is team-level.</p>
+    <p class="question-text">Does FireRed-OCR&#39;s Format-Constrained GRPO approach have a direct analogue in the team&#39;s phantom-row research?</p>
+    <p class="question-context">FireRed-OCR-2B (arXiv 2603.01840) eliminates unclosed-table and invalid-LaTeX errors by using format constraints as GRPO reward signals, achieving 92.94% on OmniDocBench v1.5. The team&#39;s phantom-row research line focuses on the same structural hallucination class. Whether the format-constraint signal (syntactic validity of table Markdown) is a proxy for semantic correctness of row content — i.e., whether it also reduces phantom rows — is an open question that a short experiment could answer.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Is the github_trending failure transient (a temporary rate limit or scraping block) or persistent (a policy change)? The distinction determines whether the next build should retry the same configuration or skip until the environment is changed.</p>
-    <p class="question-context">github_trending has been the sole working source across all recent builds; if it is now also blocked, the dashboard has no viable ingestion path in the current remote environment. A quick manual test of the github_trending URL from the same host would determine whether the failure is transient.</p>
+    <p class="question-text">Should GLM-4.5V be added to the competitive registry in data/nanonets_context.md alongside GLM-OCR?</p>
+    <p class="question-context">GLM-4.5V (106B/12B active, MIT license, SOTA on 42 VL benchmarks) is the direct successor generation to GLM-OCR, which is already in the named competitive set. It adds document understanding, 64K multimodal context, and 3D-RoPE spatial reasoning. Without a registry entry, future builds evaluate GLM-4.5V from first principles rather than treating it as a tracked competitive entry. Its MIT license and Hugging Face availability make it a natural IDP Leaderboard submission candidate.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Is the current GitHub trending traction for docext and docstrange being converted into developer pipeline adoption, and is there an active strategy to capitalize on the visibility window?</p>
+    <p class="question-context">NanoNets/docext and NanoNets/docstrange trended alongside allenai/olmocr this cycle. This is an uncommon moment of direct open-source visibility for Nanonets in the same discovery surface as a direct competitor. Without an active response (blog post, community engagement, documentation update), the traction window typically dissipates within days. Prior builds asked whether there is an OSS strategy defined for these repos; this build provides the concrete trigger.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -107,7 +602,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-07-06T06:08:37+00:00
+    sources covered: arxiv, rss, github_trending    · failed: 4 · built at 2026-07-06T12:30:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

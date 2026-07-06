@@ -5417,3 +5417,37 @@ Root cause and full remediation options remain in the 2026-07-03T18:07:59Z entry
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-06T12:30:00+00:00 (audit: partial)
+
+### Q: Should the team run OCR-3 through the ParseBench evaluation harness before it becomes the canonical CVPR document parsing reference?
+
+**Context:** ParseBench (CVPR 2026, arxiv 2604.08538) evaluates 14 systems on five dimensions including tables, charts, faithfulness, and visual grounding. LlamaParse Agentic leads at 84.9%; Gemini 3 Flash 71.0%; Reducto 67.8%. OCR-3 is absent. The public evaluation code is available. Running OCR-3 would produce a citable comparison on a CVPR-accepted benchmark; not running it means third parties can describe the space without OCR-3 as a reference.
+
+**Answer:** _add reply here_
+
+### Q: Should the team contact micro1 to include OCR-3 in a LongExtractBench evaluation?
+
+**Context:** Reducto's #1 LongExtractBench result lists GPT-5.5, Claude Opus 4.8, Gemini 3.1 Pro, Extend MAX, and LlamaExtract-Agentic as peer systems — all without OCR-3. The benchmark focuses on schema-driven extraction from long, table-heavy PDFs, which maps directly to OCR-3's enterprise extraction surface. micro1 audited and validated the benchmark independently; inclusion would require reaching out to establish a comparable evaluation run.
+
+**Answer:** _add reply here_
+
+### Q: Does FireRed-OCR's Format-Constrained GRPO approach have a direct analogue in the team's phantom-row research?
+
+**Context:** FireRed-OCR-2B (arXiv 2603.01840) eliminates unclosed-table and invalid-LaTeX errors by using format constraints as GRPO reward signals, achieving 92.94% on OmniDocBench v1.5. The team's phantom-row research line focuses on the same structural hallucination class. Whether the format-constraint signal (syntactic validity of table Markdown) is a proxy for semantic correctness of row content — i.e., whether it also reduces phantom rows — is an open question that a short experiment could answer.
+
+**Answer:** _add reply here_
+
+### Q: Should GLM-4.5V be added to the competitive registry in data/nanonets_context.md alongside GLM-OCR?
+
+**Context:** GLM-4.5V (106B/12B active, MIT license, SOTA on 42 VL benchmarks) is the direct successor generation to GLM-OCR, which is already in the named competitive set. It adds document understanding, 64K multimodal context, and 3D-RoPE spatial reasoning. Without a registry entry, future builds evaluate GLM-4.5V from first principles rather than treating it as a tracked competitive entry. Its MIT license and Hugging Face availability make it a natural IDP Leaderboard submission candidate.
+
+**Answer:** _add reply here_
+
+### Q: Is the current GitHub trending traction for docext and docstrange being converted into developer pipeline adoption, and is there an active strategy to capitalize on the visibility window?
+
+**Context:** NanoNets/docext and NanoNets/docstrange trended alongside allenai/olmocr this cycle. This is an uncommon moment of direct open-source visibility for Nanonets in the same discovery surface as a direct competitor. Without an active response (blog post, community engagement, documentation update), the traction window typically dissipates within days. Prior builds asked whether there is an OSS strategy defined for these repos; this build provides the concrete trigger.
+
+**Answer:** _add reply here_
+
+---
