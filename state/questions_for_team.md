@@ -5507,3 +5507,37 @@ Root cause and full remediation options remain in the 2026-07-03T18:07:59Z entry
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-07T06:08:10+00:00 (audit: partial)
+
+### Q: Should the build pipeline log the CCR proxy status endpoint response at the start of each ingest run, written to state/run/proxy_status.json, so that zero-item builds can be attributed unambiguously to proxy blocks versus source data gaps?
+
+**Context:** The current zero-item signal is ambiguous: arxiv and HN return HTTP 403 (consistent with proxy blocking), while RSS and github_trending return empty windows (consistent with a data gap or a different block class). Without a logged proxy status, the team cannot distinguish environment regression from source outage when reviewing questions_for_team.md. A single curl to $HTTPS_PROXY/__agentproxy/status at build start would provide the attribution signal.
+
+**Answer:** _add reply here_
+
+### Q: Should the publish step be gated on a minimum item count (e.g., 1) so that zero-item builds do not commit and push to the repository, avoiding git history clutter and GitHub Pages overwrites with blank editions?
+
+**Context:** This is a distinct question from the carry-forward mode asked in the prior build (which addresses what readers see). This is about whether the pipeline should skip the git commit and push entirely when there is nothing to publish, releasing the build lock without writing to docs/. The prior build asked about serving stale content; this asks about whether the commit itself should be suppressed. Both behaviors can be configured independently.
+
+**Answer:** _add reply here_
+
+### Q: Is the RSS zero-item result caused by a window configuration mismatch — specifically, are all 10 configured feed URLs still active and returning recent items, or have some feeds migrated or been discontinued since sources.yaml was last updated?
+
+**Context:** RSS has returned zero items for multiple consecutive builds, but this is classified as 'no items in current window' rather than an HTTP error — suggesting the feeds are reachable but producing no items. Prior builds asked whether feeds are still active; this build raises it again because the per_feed_limit:15 configuration implies the feeds are expected to return items, and a persistent zero is unusual. A manual spot-check of the Anthropic, OpenAI, and HuggingFace feed URLs would confirm whether the issue is window sizing or feed availability.
+
+**Answer:** _add reply here_
+
+### Q: The 2026-07-07T00:09 and 2026-07-07T06:08 UTC builds both returned zero items; the 2026-07-06T12:30 and 18:00 UTC builds both returned items from github_trending. Is GitHub's trending endpoint rate-limited or updated on a UTC daily cycle that excludes early-morning windows (00:00-10:00 UTC)?
+
+**Context:** This is a two-day consistent pattern across four data points. If GitHub trending resets or updates on a North American business-hours cycle, the zero-item early-morning builds are structural, not transient. Confirming the GitHub trending update cadence would let the team shift the cron to a window guaranteed to have fresh data, without requiring network policy changes.
+
+**Answer:** _add reply here_
+
+### Q: Given that questions_for_team.md now contains approximately 80+ unanswered questions spanning 6 weeks and 5,000+ lines, is anyone on the team reading this file? If not, what is the correct channel (Slack, Linear, email) to route urgent items from the build agent?
+
+**Context:** The build agent has been appending questions since May 21, 2026. None have received an Answer reply. This could mean the file is not being read, the questions are not actionable in current form, or the team is aware and has deprioritized the review. Knowing which of these is true would change how the agent should behave — for example, switching from file-append to a push notification, or stopping the question-generation step entirely until a review cadence is established.
+
+**Answer:** _add reply here_
+
+---
