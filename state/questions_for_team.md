@@ -5541,3 +5541,38 @@ Root cause and full remediation options remain in the 2026-07-03T18:07:59Z entry
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-07T12:09:00+00:00 (audit: FAILED — ingest step, zero items, network policy)
+
+**Failure summary:** All four ingestion sources returned zero items. The build did not proceed past the ingest step. No edition.json was written, no HTML was rendered, and no push was made (except this note).
+
+**Root cause confirmed:** The agent proxy is enforcing a strict allowlist network policy that blocks outbound HTTPS connections to all data source hosts. This is a policy-level denial (`connect_rejected` at the proxy gateway), not a transient rate-limit or a service outage. Sources blocked:
+
+- `export.arxiv.org` — 403 connect_rejected
+- `hn.algolia.com` — 403 connect_rejected (confirmed in proxy relay failures)
+- `openai.com`, `deepmind.google`, and all RSS feed hosts — 403 connect_rejected
+- `api.github.com` — 403 connect_rejected
+
+The proxy `noProxy` bypass list includes only: localhost, pypi.org, files.pythonhosted.org, index.crates.io, proxy.golang.org, anthropic.com domains, and private network ranges. None of the pipeline data sources are on this list.
+
+**This supersedes the prior question about GitHub trending UTC timing.** Earlier zero-item builds were attributed to a possible GitHub trending cadence issue, but the proxy failure log shows `connect_rejected` for all hosts tested today. The core issue is network policy, not source timing.
+
+### Q: The agent proxy is blocking all external HTTPS connections to pipeline data sources. Can the environment's network policy be updated to allow the following hosts, or should the environment be switched to one with outbound access?
+
+**Required hosts for a functioning build:**
+- `export.arxiv.org` (arxiv source)
+- `hn.algolia.com` (Hacker News source)
+- `www.anthropic.com`, `openai.com`, `deepmind.google`, `huggingface.co`, `www.latent.space`, `www.interconnects.ai`, `buttondown.com`, `stratechery.com`, `importai.substack.com`, `blog.mistral.ai` (RSS feeds)
+- `api.github.com` (GitHub trending source)
+
+**Context:** The build has been running with at least partial network access in prior sessions (seen.json shows items from July 5-6, 2026). Something changed in the network policy between the last successful build and this run. The build cannot produce useful output until external access is restored.
+
+**Answer:** _add reply here_
+
+### Q: Should the cron schedule be paused until network access is restored, or should it continue firing (each run will fail the same way and append another note)?
+
+**Context:** Continued cron runs with no network access consume compute and produce no useful output. Pausing until the network policy is fixed would reduce noise in this file.
+
+**Answer:** _add reply here_
+
+---
