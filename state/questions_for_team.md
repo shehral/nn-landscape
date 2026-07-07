@@ -5485,3 +5485,25 @@ Root cause and full remediation options remain in the 2026-07-03T18:07:59Z entry
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-07T00:09:13+00:00 (audit: partial)
+
+### Q: Should the pipeline implement a carry-forward mode that serves the last successful build's rendered edition when ingest produces zero items, rather than pushing a blank page?
+
+**Context:** The July 6 12:30 and 18:00 UTC builds produced items; the 00:09, 06:08 (July 6), and current (July 7 00:09) builds did not. A carry-forward mode would keep the dashboard informative between zero-item cycles without publishing empty editions to GitHub Pages. The cost is staleness risk if github_trending has a multi-day outage.
+
+**Answer:** _add reply here_
+
+### Q: Should the cron schedule be shifted to a UTC window that correlates with github_trending having items — specifically avoiding midnight-to-06:00 UTC runs?
+
+**Context:** The temporal pattern across recent builds is consistent: the two July 6 builds that produced items ran at 12:30 and 18:00 UTC; the zero-item builds ran at 00:09 and 06:08 UTC (July 6) and 00:09 UTC (July 7). github_trending may update on a cycle that peaks in North American business hours. Shifting the schedule to 14:00 and 20:00 UTC would test this hypothesis at zero engineering cost.
+
+**Answer:** _add reply here_
+
+### Q: The July 6 18:00 build noted four unanswered action items (proxy allowlist fix, ParseBench OCR-3 evaluation, LongExtractBench micro1 outreach, GLM-4.5V registry addition). Should these be tracked in a separate channel — issue tracker, Slack — rather than only in questions_for_team.md?
+
+**Context:** questions_for_team.md now has 5,487 lines, and the oldest unanswered questions date to May 21. The file functions as a write-once append log; there is no mechanism to mark questions resolved or to escalate time-sensitive items. The four July-6 action items involve external coordination (micro1, the ParseBench harness) that requires human outreach, not just editorial decisions.
+
+**Answer:** _add reply here_
+
+---
