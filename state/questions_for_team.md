@@ -5576,3 +5576,31 @@ The proxy `noProxy` bypass list includes only: localhost, pypi.org, files.python
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-07T18:08:57+00:00 (audit: partial)
+
+### Q: Should the pipeline write a minimal carry-forward edition.json by copying the last successful build's items when all four sources fail, so that GitHub Pages continues to serve informative content between zero-item builds?
+
+**Context:** This is the sixth consecutive build at this UTC window with zero items from all four sources. The rendered docs/ from prior successful builds remain in git, but edition.json and the rendered HTML are overwritten each publish cycle. A carry-forward step would copy state/seen.json's last valid edition into docs/ without re-scoring, preserving the dashboard for readers while the network policy issue is unresolved.
+
+**Answer:** _add reply here_
+
+### Q: Is the zero-item pattern strictly correlated with UTC time of day — specifically, do all six zero-item builds fall in the 00:00–10:00 UTC or 12:00–18:00 windows, while the two successful July 6 builds (12:30 and 18:00 UTC) were the exception?
+
+**Context:** The prior note in this file (build 2026-07-07T00:09) observed a two-day pattern where 12:30 and 18:00 UTC builds had items and 00:09 and 06:08 UTC builds did not. The current 18:08 UTC build is zero-item, which breaks that pattern. This is new information: if 18:00 UTC also fails today, the UTC-timing hypothesis is less plausible and the proxy-policy hypothesis is more plausible. Noting the 18:08 data point explicitly so the team can compare.
+
+**Answer:** _add reply here_
+
+### Q: Should the build emit a PushNotification when zero items are produced for three or more consecutive builds, distinct from the normal edition-complete notification?
+
+**Context:** The build agent has a PushNotification tool available. Prior builds have not used it for zero-item runs; the output has only been logged to questions_for_team.md, which 80+ unanswered questions suggest is not actively monitored. A direct push notification on the third consecutive zero-item build would route the infrastructure signal through a different channel without requiring the team to poll this file.
+
+**Answer:** _add reply here_
+
+### Q: With six zero-item builds across July 6-7 UTC, is the prior build note's claim — that the July 6 12:30 and 18:00 UTC builds successfully produced items from github_trending — confirmed by the seen.json audit trail, or is it possible those builds also had zero live items and carried forward old seen.json state?
+
+**Context:** state/seen.json records canonical URLs from published items. If the July 6 12:30 and 18:00 builds added no new URLs to seen.json, that would indicate they also produced zero live items, and the apparent pattern break was an artifact. Reviewing seen.json's git history for the July 6 commits would confirm whether github_trending was genuinely returning items on those specific runs.
+
+**Answer:** _add reply here_
+
+---
