@@ -5619,3 +5619,21 @@ The proxy `noProxy` bypass list includes only: localhost, pypi.org, files.python
 The root cause is unchanged from the July 7 12:09 build note: the agent proxy allowlist does not include pipeline data source hosts. The dashboard currently serves the stale July 6 18:00 edition (12 items). No new questions are raised here — all outstanding action items are documented in the July 7 builds above, and repeating them does not increase urgency. **Action required: update the proxy allowlist or switch to an environment with outbound access.** A PushNotification has been sent via the tool this cycle to route this signal outside questions_for_team.md, which appears not to be monitored.
 
 ---
+
+---
+
+## Build 2026-07-08T06:09:00+00:00 (audit: FAILED — ingest step, zero items)
+
+**Failure summary:** All four ingestion sources returned zero items. No edition was built, no HTML rendered, no push made (except this note).
+
+| Source | Status |
+|---|---|
+| arxiv | 403 Forbidden (proxy policy block: export.arxiv.org not in allowlist) |
+| hn | 403 Forbidden (proxy policy block: hn.algolia.com not in allowlist) |
+| rss | no items in current window (10 feeds, 0 items) |
+| github_trending | no items in current window |
+
+**Status:** This is the sixth or seventh consecutive build in this UTC window (00:00-10:00 UTC) with zero items. The root cause is the agent proxy allowlist blocking all pipeline data source hosts. The 2026-07-08T00:09 build note documented this in detail and sent a push notification. This build sends an additional push notification.
+
+**No new questions raised.** All action items remain as documented in prior build notes. The dashboard continues to serve the stale July 6 18:00 edition.
+
