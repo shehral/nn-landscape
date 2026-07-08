@@ -5577,6 +5577,7 @@ The proxy `noProxy` bypass list includes only: localhost, pypi.org, files.python
 
 ---
 
+
 ## Build 2026-07-07T18:08:57+00:00 (audit: partial)
 
 ### Q: Should the pipeline write a minimal carry-forward edition.json by copying the last successful build's items when all four sources fail, so that GitHub Pages continues to serve informative content between zero-item builds?
@@ -5654,3 +5655,15 @@ This is the 8th consecutive zero-item build. Root cause and required fix are doc
 
 Push notification sent.
 
+## Build 2026-07-08T18:08:00+00:00 (audit: FAILED — ingest step, zero items, network policy)
+
+**Failure summary:** Identical failure to 2026-07-07T12:09. All four ingestion sources returned zero items. The build did not proceed past the ingest step.
+
+**Root cause confirmed (second consecutive build):** The agent proxy continues to block all outbound HTTPS connections to data source hosts with `connect_rejected` (policy denial). Blocked hosts confirmed this run: `hn.algolia.com`, `openai.com`, `deepmind.google`, `huggingface.co`, `www.latent.space`, `www.interconnects.ai`. ArXiv also returned 403. RSS and github_trending returned "no items in current window," consistent with prior proxy blocks masking as empty windows.
+
+The detailed root-cause analysis and the list of hosts that need proxy allowlisting is in the 2026-07-07T12:09 failure note immediately above. The two questions from that build remain unanswered:
+
+- Network policy update (required hosts list provided in prior note)
+- Whether the cron schedule should be paused until access is restored
+
+**No edition was rendered. No docs/ push was made. This note only.**
