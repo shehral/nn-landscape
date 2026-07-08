@@ -5637,3 +5637,20 @@ The root cause is unchanged from the July 7 12:09 build note: the agent proxy al
 
 **No new questions raised.** All action items remain as documented in prior build notes. The dashboard continues to serve the stale July 6 18:00 edition.
 
+---
+
+## Build 2026-07-08T12:09:00+00:00 (audit: FAILED — ingest step, zero items)
+
+**Failure summary:** All four ingestion sources returned zero items. No edition built, no HTML rendered, no push (except this note).
+
+| Source | Status |
+|---|---|
+| arxiv | 403 Forbidden (proxy policy: export.arxiv.org not in allowlist) |
+| hn | 403 Forbidden (proxy policy: hn.algolia.com not in allowlist) |
+| rss | no items in current window (10 feeds, 0 items) |
+| github_trending | no items in current window |
+
+This is the 8th consecutive zero-item build. Root cause and required fix are documented in the 2026-07-07T12:09 and 2026-07-08T00:09 build notes. **No further analysis needed — this is an environment configuration issue, not a data-source issue.** The proxy allowlist must be extended or the environment switched before builds can resume producing output.
+
+Push notification sent.
+
