@@ -5729,3 +5729,30 @@ The detailed root-cause analysis and the list of hosts that need proxy allowlist
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-09T12:09:50+00:00 (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition was produced. Build lock acquired and released cleanly. No HTML was rendered or pushed.
+
+**Source errors:**
+
+- `arxiv`: HTTP 403 Forbidden — `http://export.arxiv.org/api/query?...` (persistent; 15+ consecutive builds)
+- `hn`: HTTP 403 Forbidden (persistent; 15+ consecutive builds)
+- `rss`: no items in current window (all 10 RSS feeds within per_feed_limit returned nothing new)
+- `github_trending`: no items in current window (topics: machine-learning, llm, vlm, ocr, rag, multimodal, vision-language; days_back=1)
+
+**What the team should investigate:**
+
+1. **arxiv and HN 403s are now confirmed structural.** Prior builds have raised this for 15+ cycles. Removing these sources from sources.yaml or replacing them (Semantic Scholar API, HN Firebase API) would prevent misleading failure noise in every build log. The question has been asked repeatedly without action.
+2. **github_trending returning nothing.** The topics list (machine-learning, llm, vlm, ocr, rag, multimodal, vision-language) and days_back=1 window produce empty results when no repos trend in those topics in that 24-hour window. Increasing days_back from 1 to 3 or adding a pinned watch list in sources.yaml would provide a coverage floor.
+3. **RSS feeds returning nothing.** The 10 registered RSS feeds (Anthropic, OpenAI, DeepMind, HuggingFace, Latent Space, Interconnects, AI News, Stratechery, ImportAI, Mistral Blog) appear to have exhausted their current window. This is a timing issue; extending the RSS lookback period or switching to a cached feed index would help.
+
+**Recommended immediate action:** Increase `github_trending.days_back` from 1 to 3 in sources.yaml to provide a baseline on slow days. This is a one-line change and would have prevented this build from returning zero items.
+
+### Q: All 4 ingest sources returned zero items simultaneously for the second consecutive build (arxiv: 403, HN: 403, RSS: empty window, github_trending: empty window). Should the sources.yaml `github_trending.days_back` be increased from 1 to 3 immediately to prevent recurrence, and should the cron schedule be changed to 24-hour cadence?
+
+**Context:** A days_back=1 window on github_trending aligned with a 6-hour build cadence will produce empty builds whenever no new repos trend in the configured topics within the most recent 24 hours. Increasing to days_back=3 is a one-line change; increasing cron cadence to 24 hours is a settings change. Both are reversible.
+
+**Answer:** _add reply here_
+
+---
