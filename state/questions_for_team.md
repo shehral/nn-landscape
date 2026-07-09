@@ -5667,3 +5667,37 @@ The detailed root-cause analysis and the list of hosts that need proxy allowlist
 - Whether the cron schedule should be paused until access is restored
 
 **No edition was rendered. No docs/ push was made. This note only.**
+
+## Build 2026-07-09T00:08:49+00:00 (audit: partial)
+
+### Q: All four sources returned zero items this build (arxiv and HN: 403, RSS and github_trending: no items in window). Is the remote execution environment's network policy blocking outbound HTTP to these endpoints, and should the sources.yaml be updated with alternative endpoints or the environment's network policy adjusted?
+
+**Context:** This is a complete source blackout — not just a subset failure. Prior builds lost arxiv and HN to persistent 403s, but RSS and github_trending were the reliable fallbacks. This build is the first in which all four sources failed simultaneously. The most likely cause is a network policy change in the remote execution environment blocking outbound HTTP to external hosts.
+
+**Answer:** _add reply here_
+
+### Q: Should a fallback ingestion path be added to sources.yaml that does not depend on outbound HTTP (e.g., a team-maintained JSONL drop-in at a known path in the repo) so that future total-blackout builds can still render a meaningful edition?
+
+**Context:** A zero-item build produces an edition that is valid per schema but carries no informational content. A team-maintained curated JSONL (even updated manually) would allow the render pipeline to produce a non-empty edition even during network outages.
+
+**Answer:** _add reply here_
+
+### Q: The RSS feeds (Anthropic, OpenAI, Deepmind, HuggingFace, Latent Space, Interconnects, AINews, Stratechery, Import AI, Mistral) returning zero items in the current window — is this a transient fetch timeout, a feed format change, or a network block?
+
+**Context:** RSS returned 'no items in current window' rather than an HTTP error, which suggests the fetches may have returned HTTP 200 but the published timestamps were outside the configured lookback window, or all feeds returned empty on first parse. Distinguishing between a feed-moved/format-change scenario and a network timeout would determine the fix.
+
+**Answer:** _add reply here_
+
+### Q: github_trending also returned zero items this build — has the GitHub trending API endpoint or scraping approach changed since the source was last confirmed working?
+
+**Context:** In prior builds, github_trending was the most reliable fallback when arxiv, HN, and RSS failed. Its failure in this build suggests either a GitHub API change, a network-level block, or a bug in the ingest.py github_trending implementation introduced since the last successful build.
+
+**Answer:** _add reply here_
+
+### Q: Should the build pipeline add an explicit network connectivity check at Step 3 (ingest) that probes a known-reachable URL before reporting source failures, so the build log distinguishes 'network entirely unreachable' from 'individual source endpoints blocked'?
+
+**Context:** The current failure messages from each source look identical across 'network policy blocks all outbound HTTP' and 'each endpoint is individually rate-limited.' A single connectivity probe at build start would reduce diagnostic ambiguity when all sources fail simultaneously.
+
+**Answer:** _add reply here_
+
+---

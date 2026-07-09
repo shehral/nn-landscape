@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jul 07, 2026 · 18:08 UTC · 0 items scored</span>
+  <span class="built-at">Built Jul 09, 2026 · 00:08 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,23 +79,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Should the pipeline write a minimal carry-forward edition.json by copying the last successful build&#39;s items when all four sources fail, so that GitHub Pages continues to serve informative content between zero-item builds?</p>
-    <p class="question-context">This is the sixth consecutive build at this UTC window with zero items from all four sources. The rendered docs/ from prior successful builds remain in git, but edition.json and the rendered HTML are overwritten each publish cycle. A carry-forward step would copy state/seen.json&#39;s last valid edition into docs/ without re-scoring, preserving the dashboard for readers while the network policy issue is unresolved.</p>
+    <p class="question-text">All four sources returned zero items this build (arxiv and HN: 403, RSS and github_trending: no items in window). Is the remote execution environment&#39;s network policy blocking outbound HTTP to these endpoints, and should the sources.yaml be updated with alternative endpoints or the environment&#39;s network policy adjusted?</p>
+    <p class="question-context">This is a complete source blackout — not just a subset failure. Prior builds lost arxiv and HN to persistent 403s, but RSS and github_trending were the reliable fallbacks. This build is the first in which all four sources failed simultaneously. The most likely cause is a network policy change in the remote execution environment blocking outbound HTTP to external hosts.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Is the zero-item pattern strictly correlated with UTC time of day — specifically, do all six zero-item builds fall in the 00:00–10:00 UTC or 12:00–18:00 windows, while the two successful July 6 builds (12:30 and 18:00 UTC) were the exception?</p>
-    <p class="question-context">The prior note in this file (build 2026-07-07T00:09) observed a two-day pattern where 12:30 and 18:00 UTC builds had items and 00:09 and 06:08 UTC builds did not. The current 18:08 UTC build is zero-item, which breaks that pattern. This is new information: if 18:00 UTC also fails today, the UTC-timing hypothesis is less plausible and the proxy-policy hypothesis is more plausible. Noting the 18:08 data point explicitly so the team can compare.</p>
+    <p class="question-text">Should a fallback ingestion path be added to sources.yaml that does not depend on outbound HTTP (e.g., a team-maintained JSONL drop-in at a known path in the repo) so that future total-blackout builds can still render a meaningful edition?</p>
+    <p class="question-context">A zero-item build produces an edition that is valid per schema but carries no informational content. A team-maintained curated JSONL (even updated manually) would allow the render pipeline to produce a non-empty edition even during network outages.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the build emit a PushNotification when zero items are produced for three or more consecutive builds, distinct from the normal edition-complete notification?</p>
-    <p class="question-context">The build agent has a PushNotification tool available. Prior builds have not used it for zero-item runs; the output has only been logged to questions_for_team.md, which 80+ unanswered questions suggest is not actively monitored. A direct push notification on the third consecutive zero-item build would route the infrastructure signal through a different channel without requiring the team to poll this file.</p>
+    <p class="question-text">The RSS feeds (Anthropic, OpenAI, Deepmind, HuggingFace, Latent Space, Interconnects, AINews, Stratechery, Import AI, Mistral) returning zero items in the current window — is this a transient fetch timeout, a feed format change, or a network block?</p>
+    <p class="question-context">RSS returned &#39;no items in current window&#39; rather than an HTTP error, which suggests the fetches may have returned HTTP 200 but the published timestamps were outside the configured lookback window, or all feeds returned empty on first parse. Distinguishing between a feed-moved/format-change scenario and a network timeout would determine the fix.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">With six zero-item builds across July 6-7 UTC, is the prior build note&#39;s claim — that the July 6 12:30 and 18:00 UTC builds successfully produced items from github_trending — confirmed by the seen.json audit trail, or is it possible those builds also had zero live items and carried forward old seen.json state?</p>
-    <p class="question-context">state/seen.json records canonical URLs from published items. If the July 6 12:30 and 18:00 builds added no new URLs to seen.json, that would indicate they also produced zero live items, and the apparent pattern break was an artifact. Reviewing seen.json&#39;s git history for the July 6 commits would confirm whether github_trending was genuinely returning items on those specific runs.</p>
+    <p class="question-text">github_trending also returned zero items this build — has the GitHub trending API endpoint or scraping approach changed since the source was last confirmed working?</p>
+    <p class="question-context">In prior builds, github_trending was the most reliable fallback when arxiv, HN, and RSS failed. Its failure in this build suggests either a GitHub API change, a network-level block, or a bug in the ingest.py github_trending implementation introduced since the last successful build.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Should the build pipeline add an explicit network connectivity check at Step 3 (ingest) that probes a known-reachable URL before reporting source failures, so the build log distinguishes &#39;network entirely unreachable&#39; from &#39;individual source endpoints blocked&#39;?</p>
+    <p class="question-context">The current failure messages from each source look identical across &#39;network policy blocks all outbound HTTP&#39; and &#39;each endpoint is individually rate-limited.&#39; A single connectivity probe at build start would reduce diagnostic ambiguity when all sources fail simultaneously.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -107,7 +112,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-07-07T18:08:57+00:00
+    sources covered:     · failed: 4 · built at 2026-07-09T00:08:49+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
