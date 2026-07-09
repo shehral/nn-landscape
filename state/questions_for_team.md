@@ -5756,3 +5756,19 @@ The detailed root-cause analysis and the list of hosts that need proxy allowlist
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-09T18:07:00+00:00 (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Build lock acquired and released.
+
+**Source errors (same as 12:09 build):**
+- `arxiv`: HTTP 403 (connect_rejected via proxy — structural)
+- `hn`: HTTP 403 (connect_rejected via proxy — structural)
+- `rss`: no items in current window
+- `github_trending`: no items in current window
+
+**New proxy data from this run:** Proxy `recentRelayFailures` log confirms `connect_rejected` for hn.algolia.com, openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai — all at 18:07 UTC. This is a policy denial at the gateway, not a transient rate limit.
+
+**No new questions added** — the 12:09 build's questions cover the same root causes. The team has been notified via push notification.
+
+---
