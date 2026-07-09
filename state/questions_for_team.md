@@ -5701,3 +5701,31 @@ The detailed root-cause analysis and the list of hosts that need proxy allowlist
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-09T06:09:38+00:00 (audit: partial)
+
+### Q: RSS and github_trending returned no new items this build cycle, yet both sources are reachable (no 403). The most plausible explanation is that all feed items within the current window are already in seen.json. Should the per_feed_limit, days_back, or seen.json TTL parameters be adjusted to re-surface items after a set number of builds?
+
+**Context:** The last successful ingest was 2026-07-06 (3 days ago). github_trending uses days_back=1, which means repos trending today that also trended 3 days ago are already marked seen and excluded. A TTL-based expiry on seen.json entries (e.g., 7 days) would allow recurring items to re-surface without flooding the dashboard.
+
+**Answer:** _add reply here_
+
+### Q: This is the first build where all 4 sources returned zero new items simultaneously. The partial-build banner currently does not distinguish between a source 403 and a 'no new content' state. Should the render step surface a distinct 'no new signal since [date]' message rather than rendering the partial-build banner, to avoid alarming readers who might interpret the banner as a failure?
+
+**Context:** From the dashboard reader's perspective, a build that ran successfully but found nothing new is different from a build that failed mid-pipeline. The current banner text does not communicate this distinction.
+
+**Answer:** _add reply here_
+
+### Q: The arxiv and HN 403 failures have persisted for 15+ consecutive builds with no team action confirmed. Should this be treated as a permanent infrastructure constraint and the sources.yaml updated to remove or replace them, or does the team intend to resolve the network access path by a specific date?
+
+**Context:** Prior builds proposed Semantic Scholar (2026-05-22), OAI-PMH (2026-05-22), and the HN Firebase API (2026-05-22) as alternatives. None has been acted on. Clarifying the team's intent — resolve vs. accept — would end the recurring question. If accepted as permanent, removing arxiv and HN from sources.yaml would stop surfacing their failures and allow the build to focus on improving RSS and github_trending coverage instead.
+
+**Answer:** _add reply here_
+
+### Q: The build cadence is 6 hours, but the average gap between meaningful ingest cycles appears to be 3+ days. Should the cron interval be lengthened (e.g., to 24 hours) so that the pipeline is less likely to run against an empty window?
+
+**Context:** With github_trending days_back=1 and RSS per_feed_limit=15, 6-hour builds frequently return empty windows. A 24-hour cadence would align the lookback window with the cron interval, reducing empty builds while maintaining timely coverage for items that do arrive.
+
+**Answer:** _add reply here_
+
+---

@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jul 09, 2026 · 00:08 UTC · 0 items scored</span>
+  <span class="built-at">Built Jul 09, 2026 · 06:09 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,28 +79,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four sources returned zero items this build (arxiv and HN: 403, RSS and github_trending: no items in window). Is the remote execution environment&#39;s network policy blocking outbound HTTP to these endpoints, and should the sources.yaml be updated with alternative endpoints or the environment&#39;s network policy adjusted?</p>
-    <p class="question-context">This is a complete source blackout — not just a subset failure. Prior builds lost arxiv and HN to persistent 403s, but RSS and github_trending were the reliable fallbacks. This build is the first in which all four sources failed simultaneously. The most likely cause is a network policy change in the remote execution environment blocking outbound HTTP to external hosts.</p>
+    <p class="question-text">RSS and github_trending returned no new items this build cycle, yet both sources are reachable (no 403). The most plausible explanation is that all feed items within the current window are already in seen.json. Should the per_feed_limit, days_back, or seen.json TTL parameters be adjusted to re-surface items after a set number of builds?</p>
+    <p class="question-context">The last successful ingest was 2026-07-06 (3 days ago). github_trending uses days_back=1, which means repos trending today that also trended 3 days ago are already marked seen and excluded. A TTL-based expiry on seen.json entries (e.g., 7 days) would allow recurring items to re-surface without flooding the dashboard.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should a fallback ingestion path be added to sources.yaml that does not depend on outbound HTTP (e.g., a team-maintained JSONL drop-in at a known path in the repo) so that future total-blackout builds can still render a meaningful edition?</p>
-    <p class="question-context">A zero-item build produces an edition that is valid per schema but carries no informational content. A team-maintained curated JSONL (even updated manually) would allow the render pipeline to produce a non-empty edition even during network outages.</p>
+    <p class="question-text">This is the first build where all 4 sources returned zero new items simultaneously. The partial-build banner currently does not distinguish between a source 403 and a &#39;no new content&#39; state. Should the render step surface a distinct &#39;no new signal since [date]&#39; message rather than rendering the partial-build banner, to avoid alarming readers who might interpret the banner as a failure?</p>
+    <p class="question-context">From the dashboard reader&#39;s perspective, a build that ran successfully but found nothing new is different from a build that failed mid-pipeline. The current banner text does not communicate this distinction.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The RSS feeds (Anthropic, OpenAI, Deepmind, HuggingFace, Latent Space, Interconnects, AINews, Stratechery, Import AI, Mistral) returning zero items in the current window — is this a transient fetch timeout, a feed format change, or a network block?</p>
-    <p class="question-context">RSS returned &#39;no items in current window&#39; rather than an HTTP error, which suggests the fetches may have returned HTTP 200 but the published timestamps were outside the configured lookback window, or all feeds returned empty on first parse. Distinguishing between a feed-moved/format-change scenario and a network timeout would determine the fix.</p>
+    <p class="question-text">The arxiv and HN 403 failures have persisted for 15+ consecutive builds with no team action confirmed. Should this be treated as a permanent infrastructure constraint and the sources.yaml updated to remove or replace them, or does the team intend to resolve the network access path by a specific date?</p>
+    <p class="question-context">Prior builds proposed Semantic Scholar (2026-05-22), OAI-PMH (2026-05-22), and the HN Firebase API (2026-05-22) as alternatives. None has been acted on. Clarifying the team&#39;s intent — resolve vs. accept — would end the recurring question. If accepted as permanent, removing arxiv and HN from sources.yaml would stop surfacing their failures and allow the build to focus on improving RSS and github_trending coverage instead.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">github_trending also returned zero items this build — has the GitHub trending API endpoint or scraping approach changed since the source was last confirmed working?</p>
-    <p class="question-context">In prior builds, github_trending was the most reliable fallback when arxiv, HN, and RSS failed. Its failure in this build suggests either a GitHub API change, a network-level block, or a bug in the ingest.py github_trending implementation introduced since the last successful build.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">Should the build pipeline add an explicit network connectivity check at Step 3 (ingest) that probes a known-reachable URL before reporting source failures, so the build log distinguishes &#39;network entirely unreachable&#39; from &#39;individual source endpoints blocked&#39;?</p>
-    <p class="question-context">The current failure messages from each source look identical across &#39;network policy blocks all outbound HTTP&#39; and &#39;each endpoint is individually rate-limited.&#39; A single connectivity probe at build start would reduce diagnostic ambiguity when all sources fail simultaneously.</p>
+    <p class="question-text">The build cadence is 6 hours, but the average gap between meaningful ingest cycles appears to be 3+ days. Should the cron interval be lengthened (e.g., to 24 hours) so that the pipeline is less likely to run against an empty window?</p>
+    <p class="question-context">With github_trending days_back=1 and RSS per_feed_limit=15, 6-hour builds frequently return empty windows. A 24-hour cadence would align the lookback window with the cron interval, reducing empty builds while maintaining timely coverage for items that do arrive.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -112,7 +107,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-07-09T00:08:49+00:00
+    sources covered:     · failed: 4 · built at 2026-07-09T06:09:38+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
