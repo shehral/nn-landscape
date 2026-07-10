@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jul 09, 2026 · 06:09 UTC · 0 items scored</span>
+  <span class="built-at">Built Jul 10, 2026 · 12:22 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,23 +79,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">RSS and github_trending returned no new items this build cycle, yet both sources are reachable (no 403). The most plausible explanation is that all feed items within the current window are already in seen.json. Should the per_feed_limit, days_back, or seen.json TTL parameters be adjusted to re-surface items after a set number of builds?</p>
-    <p class="question-context">The last successful ingest was 2026-07-06 (3 days ago). github_trending uses days_back=1, which means repos trending today that also trended 3 days ago are already marked seen and excluded. A TTL-based expiry on seen.json entries (e.g., 7 days) would allow recurring items to re-surface without flooding the dashboard.</p>
+    <p class="question-text">All four sources returned 403 or zero items for the 2026-07-10 build — is the ingest proxy configuration (HTTPS_PROXY) blocking external API requests?</p>
+    <p class="question-context">arxiv returned HTTP 403, HN returned HTTP 403, RSS returned &#39;no items in current window&#39;, and github_trending returned &#39;no items in current window&#39;. Two of the four failures are explicit 403 blocks, suggesting a network policy or proxy auth issue rather than upstream maintenance.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">This is the first build where all 4 sources returned zero new items simultaneously. The partial-build banner currently does not distinguish between a source 403 and a &#39;no new content&#39; state. Should the render step surface a distinct &#39;no new signal since [date]&#39; message rather than rendering the partial-build banner, to avoid alarming readers who might interpret the banner as a failure?</p>
-    <p class="question-context">From the dashboard reader&#39;s perspective, a build that ran successfully but found nothing new is different from a build that failed mid-pipeline. The current banner text does not communicate this distinction.</p>
+    <p class="question-text">RSS and github_trending both returned &#39;no items in current window&#39; — are the feed parsers filtering too aggressively on publish timestamps, or are these feeds genuinely stale?</p>
+    <p class="question-context">Prior builds have had partial coverage from these sources. If the &#39;current window&#39; filter is keyed on a time window that doesn&#39;t match the feed publication cadence, widening the days_back parameter in sources.yaml for these two sources might restore coverage.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The arxiv and HN 403 failures have persisted for 15+ consecutive builds with no team action confirmed. Should this be treated as a permanent infrastructure constraint and the sources.yaml updated to remove or replace them, or does the team intend to resolve the network access path by a specific date?</p>
-    <p class="question-context">Prior builds proposed Semantic Scholar (2026-05-22), OAI-PMH (2026-05-22), and the HN Firebase API (2026-05-22) as alternatives. None has been acted on. Clarifying the team&#39;s intent — resolve vs. accept — would end the recurring question. If accepted as permanent, removing arxiv and HN from sources.yaml would stop surfacing their failures and allow the build to focus on improving RSS and github_trending coverage instead.</p>
+    <p class="question-text">Should the build agent attempt a fallback to cached or previously-seen items when all sources fail, to avoid publishing a fully empty edition?</p>
+    <p class="question-context">Three consecutive builds have had source failures. A fallback mode that re-scores the top-N unseen items from state/seen.json would preserve dashboard utility even when live ingest is unavailable.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The build cadence is 6 hours, but the average gap between meaningful ingest cycles appears to be 3+ days. Should the cron interval be lengthened (e.g., to 24 hours) so that the pipeline is less likely to run against an empty window?</p>
-    <p class="question-context">With github_trending days_back=1 and RSS per_feed_limit=15, 6-hour builds frequently return empty windows. A 24-hour cadence would align the lookback window with the cron interval, reducing empty builds while maintaining timely coverage for items that do arrive.</p>
+    <p class="question-text">Is the arXiv 403 failure environment-specific (e.g., the remote execution container&#39;s IP is rate-limited or blocked), or does it reproduce from a local environment?</p>
+    <p class="question-context">arXiv&#39;s export API has had documented IP-based rate limiting. If the build container&#39;s IP is on a blocklist, switching to the OAI-PMH endpoint or using a delay/retry strategy would work around it.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -107,7 +107,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-07-09T06:09:38+00:00
+    sources covered:     · failed: 4 · built at 2026-07-10T12:22:42+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

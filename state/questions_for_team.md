@@ -5803,3 +5803,31 @@ The detailed root-cause analysis and the list of hosts that need proxy allowlist
 | github_trending | no items in current window |
 
 **No new questions raised.** Root causes and remediation are fully documented in the 2026-07-07T12:09 and 2026-07-09T18:07 build notes. The proxy allowlist must be extended (or environment switched) to resume meaningful builds. The dashboard continues to serve the stale July 6 edition.
+
+## Build 2026-07-10T12:22:42+00:00 (audit: partial)
+
+### Q: All four sources returned 403 or zero items for the 2026-07-10 build — is the ingest proxy configuration (HTTPS_PROXY) blocking external API requests?
+
+**Context:** arxiv returned HTTP 403, HN returned HTTP 403, RSS returned 'no items in current window', and github_trending returned 'no items in current window'. Two of the four failures are explicit 403 blocks, suggesting a network policy or proxy auth issue rather than upstream maintenance.
+
+**Answer:** _add reply here_
+
+### Q: RSS and github_trending both returned 'no items in current window' — are the feed parsers filtering too aggressively on publish timestamps, or are these feeds genuinely stale?
+
+**Context:** Prior builds have had partial coverage from these sources. If the 'current window' filter is keyed on a time window that doesn't match the feed publication cadence, widening the days_back parameter in sources.yaml for these two sources might restore coverage.
+
+**Answer:** _add reply here_
+
+### Q: Should the build agent attempt a fallback to cached or previously-seen items when all sources fail, to avoid publishing a fully empty edition?
+
+**Context:** Three consecutive builds have had source failures. A fallback mode that re-scores the top-N unseen items from state/seen.json would preserve dashboard utility even when live ingest is unavailable.
+
+**Answer:** _add reply here_
+
+### Q: Is the arXiv 403 failure environment-specific (e.g., the remote execution container's IP is rate-limited or blocked), or does it reproduce from a local environment?
+
+**Context:** arXiv's export API has had documented IP-based rate limiting. If the build container's IP is on a blocklist, switching to the OAI-PMH endpoint or using a delay/retry strategy would work around it.
+
+**Answer:** _add reply here_
+
+---
