@@ -5772,3 +5772,19 @@ The detailed root-cause analysis and the list of hosts that need proxy allowlist
 **No new questions added** — the 12:09 build's questions cover the same root causes. The team has been notified via push notification.
 
 ---
+
+---
+
+## Build 2026-07-10T00:17:20Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Build lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (connect_rejected — proxy allowlist, structural) |
+| hn | HTTP 403 Forbidden (connect_rejected — proxy allowlist, structural) |
+| rss | no items in current window (all 10 feeds returned 0 items) |
+| github_trending | no items in current window |
+
+**No new questions raised.** Root cause and required remediation are fully documented in the 2026-07-07T12:09 and 2026-07-09T12:09 build notes. The required fix (extend the proxy allowlist to include pipeline data source hosts, or switch to an environment with outbound access) has not changed. The dashboard continues to serve the stale July 6 18:00 edition.
+
