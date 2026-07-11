@@ -5900,3 +5900,19 @@ This is the 14th consecutive failed build. Proxy connectivity confirmed: `anthro
 
 **No new questions added.** The 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes fully document the root cause and remediation path. The team has been notified.
 
+
+---
+
+## Build 2026-07-11T18:08:32Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Build lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (connect_rejected — proxy allowlist, structural) |
+| hn | HTTP 403 Forbidden (connect_rejected — proxy allowlist, structural) |
+| rss | no items in current window |
+| github_trending | no items in current window |
+
+This is the 15th consecutive failed build. Root cause and required remediation are fully documented in the 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes. No new questions raised — the failure mode is identical and the team has been notified repeatedly. The dashboard continues to serve the stale July 6 edition.
+
