@@ -5862,3 +5862,23 @@ The detailed root-cause analysis and the list of hosts that need proxy allowlist
 | github_trending | no items in current window |
 
 **No new questions raised.** All root causes and required remediations remain fully documented in the 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes. Twelve consecutive failed builds with the same root cause. The dashboard continues to serve the stale July 6 edition until the proxy allowlist is extended or the environment is switched.
+
+---
+
+## Build 2026-07-11T06:09:00Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Build lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (connect_rejected — proxy allowlist, structural) |
+| hn | HTTP 403 Forbidden (connect_rejected — proxy allowlist, structural) |
+| rss | no items in current window |
+| github_trending | no items in current window |
+
+**No new questions raised.** This is the 13th consecutive failed build with the same root cause. Root causes and required remediations are fully documented in the 2026-07-07T12:09, 2026-07-09T12:09, and 2026-07-10T12:22:42 build notes.
+
+**File size note:** `state/questions_for_team.md` is now 566KB (5864+ lines). If this file exceeds git's LFS threshold or causes clone/diff slowness, archiving older build sections to a dated archive file would reduce noise without losing history.
+
+The dashboard continues to serve the stale July 6 edition until the proxy allowlist is extended or the environment is switched.
+
