@@ -5938,3 +5938,22 @@ This is the 15th consecutive failed build. Root cause and required remediation a
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-07-12T06:14:00Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Build lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (connect_rejected — proxy policy denial, structural) |
+| hn | HTTP 403 Forbidden (connect_rejected — proxy policy denial, structural) |
+| rss | no items in current window |
+| github_trending | no items in current window |
+
+This is the 16th or more consecutive failed build. Proxy `recentRelayFailures` confirms `connect_rejected` at the gateway for hn.algolia.com, openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, and all other external content hosts as of 2026-07-12T06:07:54Z. This is a policy denial at the egress gateway, not a transient error.
+
+**No new questions added.** Root causes and required remediations are fully documented in the 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes. The team has been notified repeatedly via push notification. The dashboard continues to serve the stale July 6 edition.
+
+**Required fix:** Extend the environment's egress proxy allowlist to permit outbound HTTPS to arxiv.org (port 443), hn.algolia.com (port 443), and the RSS feed hosts (anthropic.com, openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai). Until this is resolved, no build can produce a new edition.
