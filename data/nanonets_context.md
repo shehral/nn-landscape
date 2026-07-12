@@ -51,7 +51,7 @@ The team also publicly maintains the **IDP Leaderboard**
 (`idp-leaderboard.org` / `benchmarking.nanonets.com`), an academic
 benchmark on document AI co-developed with IIT Indore. Items that
 publish leaderboard results, contest its methodology, or are released by
-models near the top of it (GPT-5.4, GPT-5.5, Gemini-3-Pro/Flash,
+models near the top of it (GPT-5.4, GPT-5.5, GPT-5.6 Sol/Terra/Luna, Gemini-3-Pro/Flash,
 Gemini 3.1 Pro, Gemini 3.5 Flash, Claude 4.6 family, Claude Fable 5,
 Claude Opus 4.8, Qwen3-VL, Pixtral, GLM-OCR, Chandra OCR 2,
 LightOn OCR-2, DeepSeek-OCR 2) are competitive-axis relevant.
@@ -101,7 +101,7 @@ Items that name, compare against, or are released by these companies are
   Horowitz, February 2026); launched Deep Extract agentic product;
   released Classification endpoint (May 2026) for lightweight document
   categorization before downstream processing; Smart Schema in Studio
-  (April 2026) for autonomous schema creation; 1 billion pages processed
+  (April 2026) for autonomous schema creation; 3B+ pages processed
   to date; acquired Opennote (May 2026), an AI-notebook startup, to
   strengthen agentic document-retrieval workflows; Reducto Deep Extract
   ranked #1 on LongExtractBench (announced July 1, 2026; independently
@@ -219,7 +219,9 @@ Examples that are **competitive-primary**:
   February 19, 2026; Gemini 3.5 Flash released May 2026 at Google I/O).
 - OpenAI announces GPT-5.x vision improvements on DocVQA / ChartQA /
   OmniDocBench / IDP Leaderboard (GPT-5.4 March 2026, GPT-5.5 April
-  2026).
+  2026, GPT-5.6 Sol/Terra/Luna July 9 2026; all three tiers include
+  vision input; Terra tier explicitly targets document analysis
+  workflows).
 - Mistral OCR is updated with new accuracy or pricing (Mistral OCR 4
   released June 23, 2026).
 - xAI ships Grok vision document handling; the Grok Collections API
@@ -848,3 +850,91 @@ Nanonets, do not respond.
 - Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
   No new Nanonets models on Hugging Face. No Nanonets-authored arXiv
   papers found. No July 2026 Nanonets blog posts indexed.
+
+---
+
+**Date:** 2026-07-12
+
+**Sources consulted:**
+
+- `nanonets.com`, `nanonets.com/blog`, `benchmarking.nanonets.com`,
+  `idp-leaderboard.org` — all returned HTTP 403; fell back to web
+  search for all Nanonets data
+- WebSearch: "Nanonets OCR-3 IDP leaderboard July 2026 ranking" —
+  #1 at 85.9% confirmed unchanged; benchmarking.nanonets.com and
+  idp-leaderboard.org URLs confirmed resolving
+- WebSearch: "site:huggingface.co/nanonets" — open-weight model lineup
+  unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains API-only
+- WebSearch: "nanonets arxiv 2026 research paper" — no team-authored
+  papers surfaced; Nanonets-KIE dataset referenced in third-party
+  papers (as in prior refreshes)
+- WebSearch: "Nanonets OCR-3 new announcement product July 2026" —
+  no new Nanonets product announcements
+- WebSearch: "OpenAI GPT-5.6 release Sol Terra Luna document vision" —
+  GPT-5.6 (Sol, Terra, Luna) confirmed released July 9, 2026 (openai.com
+  announcement); all three tiers include vision input; Terra explicitly
+  targets document analysis workflows; Sol is flagship for hard tasks;
+  Luna is fast/low-cost
+- WebSearch: "Reducto AI document processing July 2026" — 3B+ pages
+  processed confirmed from multiple sources (up from 1B+ in prior context)
+- WebSearch: "Mistral OCR July 2026 new model update" — no new model
+  since Mistral OCR 4 (June 23, 2026); all prior entries confirmed
+- WebSearch: "LlamaParse LlamaIndex July 2026 new product" — legal-kb
+  reference application (July 5, 2026; agentic retrieval harness for
+  legal documents on LlamaCloud Index v2); not a core product release;
+  no material changes to LlamaParse feature set
+- WebSearch: "Extend AI document processing July 2026" — confirmed
+  operating; published OCR benchmarks for real-world documents (July
+  2026); Parse 2.0 layout-first system noted but not confirmed as a
+  new July launch
+- WebSearch: "GLM-4.5V GLM-4.6V Zhipu AI 2026 OCR document" —
+  GLM-4.5V (August 2025) and GLM-4.6V (September 2025) are general VLM
+  iterations; GLM-OCR (March 2026) remains the dedicated OCR model;
+  Zhipu AI appears to be operating under "Z.ai" branding in mid-2026
+  (GitHub: zai-org; VentureBeat reference); body text left as "Zhipu AI"
+  pending manual verification
+- WebSearch: "Qwen3.7 Plus VLM document OCR Alibaba June July 2026" —
+  Qwen3.7-Plus (Alibaba, June 2, 2026; Bailian platform) confirmed as
+  new multimodal agentic VLM; distinct from Qwen3-VL; positioned as
+  agent model with vision, not an OCR specialist; not added to body text
+  pending document-extraction benchmark confirmation
+- WebSearch: "DeepSeek OCR VLM new model July 2026" — DeepSeek-OCR 2
+  (January 2026) confirmed current; no new model
+- WebSearch: "Chandra OCR 2 LightOn OCR 2 update July 2026" — no new
+  model versions; both confirmed operating; no renames or pivots
+- WebSearch: "Unstructured.io update July 2026" — library v0.24.0
+  (July 6, 2026); operational release only; no major product announcement
+- WebSearch: "Docling IBM July 2026 update new release" — no new major
+  announcement beyond Docling for IBM watsonx GA (June 2026) already
+  in context
+- WebSearch: "Anthropic Claude document extraction vision July 2026" —
+  no new document-specific product beyond what's already in context
+- WebSearch: "Google Gemini document OCR vision July 2026" — no major
+  new announcement beyond Gemini 3.5 Flash (May 2026) already in context
+- WebSearch: "xAI Grok document extraction OCR July 2026" — Grok
+  Collections API confirmed current; no new dedicated document extraction
+  product
+- WebSearch: "new OCR VLM model document AI July 2026" — OLMOCR Project
+  presented at ACL (July 2026); academic research paper, not a product
+  release; Qwen3-VL and GLM-OCR confirmed still leading open benchmarks
+
+**Material changes versus prior version (2026-07-05):**
+
+- Added **GPT-5.6 Sol/Terra/Luna** (OpenAI, July 9, 2026) to the IDP
+  Leaderboard comparables list and OpenAI frontier-lab competitive-primary
+  example; all three tiers include vision input; Terra tier is explicitly
+  positioned for document analysis workflows; Sol is the flagship for
+  hardest tasks. GPT-5.5 remains in the list as the prior generation.
+- Updated **Reducto** page count from "1 billion pages processed to
+  date" to "3B+ pages processed to date" — confirmed from multiple
+  current public sources including Reducto's own documentation.
+- No new Nanonets OCR-3 announcements; #1 IDP Leaderboard ranking (85.9)
+  confirmed unchanged. No new Nanonets models on Hugging Face. No
+  Nanonets-authored arXiv papers found.
+- Note for manual verification: Zhipu AI appears to be operating under
+  "Z.ai" branding in mid-2026 (GitHub org: zai-org; VentureBeat refers
+  to "Z.ai"); GLM-OCR body text left as "Zhipu AI" until the team
+  confirms the rebrand.
+- Note: Qwen3.7-Plus (Alibaba, June 2, 2026) is a new multimodal agentic
+  VLM; not added to body text because document-extraction OCR benchmark
+  positioning is not yet confirmed; monitor for benchmark results.
