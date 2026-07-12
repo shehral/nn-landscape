@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jul 10, 2026 · 12:22 UTC · 0 items scored</span>
+  <span class="built-at">Built Jul 12, 2026 · 00:08 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,23 +79,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four sources returned 403 or zero items for the 2026-07-10 build — is the ingest proxy configuration (HTTPS_PROXY) blocking external API requests?</p>
-    <p class="question-context">arxiv returned HTTP 403, HN returned HTTP 403, RSS returned &#39;no items in current window&#39;, and github_trending returned &#39;no items in current window&#39;. Two of the four failures are explicit 403 blocks, suggesting a network policy or proxy auth issue rather than upstream maintenance.</p>
+    <p class="question-text">Should the publish step apply a rolling 7-14 day TTL to seen.json entries so that github_trending repos can resurface after they return to trending?</p>
+    <p class="question-context">github_trending returned zero items again this build due to seen.json depletion. This recurs whenever the same repos continue to trend across multiple builds. A TTL on seen.json entries was proposed in Build 2026-06-23 without a team answer. Without it, the dashboard will continue producing zero-item builds whenever trending repos overlap the seen set.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">RSS and github_trending both returned &#39;no items in current window&#39; — are the feed parsers filtering too aggressively on publish timestamps, or are these feeds genuinely stale?</p>
-    <p class="question-context">Prior builds have had partial coverage from these sources. If the &#39;current window&#39; filter is keyed on a time window that doesn&#39;t match the feed publication cadence, widening the days_back parameter in sources.yaml for these two sources might restore coverage.</p>
+    <p class="question-text">Should the build agent emit an out-of-band alert (webhook, email, or Slack message) when all four sources fail simultaneously, rather than only appending to questions_for_team.md?</p>
+    <p class="question-context">This build produced zero items from all four sources. questions_for_team.md has had zero team replies across 40+ consecutive builds; an out-of-band alert on a total-source-failure event would be qualitatively different from the steady-state accumulation of open questions. This question has not appeared in prior builds.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the build agent attempt a fallback to cached or previously-seen items when all sources fail, to avoid publishing a fully empty edition?</p>
-    <p class="question-context">Three consecutive builds have had source failures. A fallback mode that re-scores the top-N unseen items from state/seen.json would preserve dashboard utility even when live ingest is unavailable.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">Is the arXiv 403 failure environment-specific (e.g., the remote execution container&#39;s IP is rate-limited or blocked), or does it reproduce from a local environment?</p>
-    <p class="question-context">arXiv&#39;s export API has had documented IP-based rate limiting. If the build container&#39;s IP is on a blocklist, switching to the OAI-PMH endpoint or using a delay/retry strategy would work around it.</p>
+    <p class="question-text">Reducto&#39;s LongExtractBench #1 result (announced July 1, 2026) and Mistral OCR 4 (released June 23, 2026) have not been covered by any recent build due to source failures. Should the team manually ingest these competitive events directly into edition.json as one-off items to prevent a permanent blind spot?</p>
+    <p class="question-context">Both events are material: Reducto Deep Extract achieved 100% completeness and 99.6% precision in an independently-audited 225-document benchmark; Mistral OCR 4 introduced bounding boxes, typed-block labels, and a self-hosted container. Neither has been scored or framed. A manual one-off ingest mechanism or periodic human review of known competitive events would prevent automated source failures from creating permanent gaps in competitive coverage.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -107,7 +102,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-07-10T12:22:42+00:00
+    sources covered:     · failed: 4 · built at 2026-07-12T00:08:50+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

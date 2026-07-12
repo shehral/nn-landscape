@@ -5916,3 +5916,25 @@ This is the 14th consecutive failed build. Proxy connectivity confirmed: `anthro
 
 This is the 15th consecutive failed build. Root cause and required remediation are fully documented in the 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes. No new questions raised — the failure mode is identical and the team has been notified repeatedly. The dashboard continues to serve the stale July 6 edition.
 
+
+## Build 2026-07-12T00:08:50+00:00 (audit: partial)
+
+### Q: Should the publish step apply a rolling 7-14 day TTL to seen.json entries so that github_trending repos can resurface after they return to trending?
+
+**Context:** github_trending returned zero items again this build due to seen.json depletion. This recurs whenever the same repos continue to trend across multiple builds. A TTL on seen.json entries was proposed in Build 2026-06-23 without a team answer. Without it, the dashboard will continue producing zero-item builds whenever trending repos overlap the seen set.
+
+**Answer:** _add reply here_
+
+### Q: Should the build agent emit an out-of-band alert (webhook, email, or Slack message) when all four sources fail simultaneously, rather than only appending to questions_for_team.md?
+
+**Context:** This build produced zero items from all four sources. questions_for_team.md has had zero team replies across 40+ consecutive builds; an out-of-band alert on a total-source-failure event would be qualitatively different from the steady-state accumulation of open questions. This question has not appeared in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: Reducto's LongExtractBench #1 result (announced July 1, 2026) and Mistral OCR 4 (released June 23, 2026) have not been covered by any recent build due to source failures. Should the team manually ingest these competitive events directly into edition.json as one-off items to prevent a permanent blind spot?
+
+**Context:** Both events are material: Reducto Deep Extract achieved 100% completeness and 99.6% precision in an independently-audited 225-document benchmark; Mistral OCR 4 introduced bounding boxes, typed-block labels, and a self-hosted container. Neither has been scored or framed. A manual one-off ingest mechanism or periodic human review of known competitive events would prevent automated source failures from creating permanent gaps in competitive coverage.
+
+**Answer:** _add reply here_
+
+---
