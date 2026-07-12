@@ -5957,3 +5957,20 @@ This is the 16th or more consecutive failed build. Proxy `recentRelayFailures` c
 **No new questions added.** Root causes and required remediations are fully documented in the 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes. The team has been notified repeatedly via push notification. The dashboard continues to serve the stale July 6 edition.
 
 **Required fix:** Extend the environment's egress proxy allowlist to permit outbound HTTPS to arxiv.org (port 443), hn.algolia.com (port 443), and the RSS feed hosts (anthropic.com, openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai). Until this is resolved, no build can produce a new edition.
+
+---
+
+## Build 2026-07-12T12:08:00Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Build lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 (host_not_allowed — network egress policy, structural) |
+| hn | HTTP 403 (connect_rejected via proxy — structural) |
+| rss | no items in current window |
+| github_trending | no items in current window |
+
+**Proxy note:** `recentRelayFailures` is now empty in the proxy status response, but direct testing confirms both arxiv.org (HTTP) and hn.algolia.com (HTTPS via proxy) are still blocked. The egress policy blocks at the network level for HTTP and at the proxy allowlist for HTTPS. These are two separate blocking layers.
+
+This is the 17th consecutive failed build. No new questions raised — root causes and remediation are fully documented in the 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes.
