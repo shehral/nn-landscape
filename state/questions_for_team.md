@@ -5991,3 +5991,20 @@ This is the 17th consecutive failed build. No new questions raised — root caus
 This is the 18th consecutive failed build. Root causes and required remediations are fully documented in the 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes. No new questions raised. The dashboard continues to serve the stale July 12 00:08 UTC edition (0 items).
 
 **Required fix (unchanged):** Extend the environment's egress proxy allowlist to permit outbound HTTPS to arxiv.org, hn.algolia.com, and the 10 RSS feed hosts. Until this is resolved, no build can produce a new edition.
+
+---
+
+## Build 2026-07-13T00:11:33Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Build lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (connect_rejected — proxy policy denial, structural) |
+| hn | HTTP 403 Forbidden (connect_rejected — proxy policy denial, structural) |
+| rss | no items in current window |
+| github_trending | no items in current window |
+
+This is the 19th consecutive failed build. Root causes and required remediations are fully documented in the 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes. No new questions raised. The dashboard continues to serve the stale edition from the last successful build.
+
+**Required fix (unchanged):** Extend the environment's egress proxy allowlist to permit outbound HTTPS to arxiv.org, hn.algolia.com, and the RSS feed hosts (anthropic.com, openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai). Until this is resolved, no build can produce a new edition.
