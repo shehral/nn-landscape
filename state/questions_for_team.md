@@ -6025,3 +6025,22 @@ This is the 19th consecutive failed build. Root causes and required remediations
 This is the 20th consecutive failed build. All external content hosts remain blocked by the egress proxy allowlist. The proxy status endpoint shows no recent relay failures, but direct testing confirms all target hosts (`arxiv.org`, `hn.algolia.com`, `anthropic.com/news/rss.xml`) return 403. Root causes and required remediations are fully documented in the 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes.
 
 **Required fix (unchanged):** Extend the environment's egress proxy allowlist to permit outbound HTTPS to arxiv.org, hn.algolia.com, and the RSS feed hosts (anthropic.com, openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai). Until this is resolved, no build can produce a new edition.
+
+---
+
+## Build 2026-07-13T12:10:00Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Build lock acquired and released. This is the 21st consecutive failed build.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (connect_rejected — proxy policy denial, structural) |
+| hn | HTTP 403 Forbidden (connect_rejected — proxy policy denial, structural) |
+| rss | no items in current window |
+| github_trending | no items in current window |
+
+**Proxy status confirms** `connect_rejected` at the gateway for hn.algolia.com, openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, and stratechery.com as of 2026-07-13T12:09:55Z. The `noProxy` list covers only package registries and internal hosts; all content source hosts remain blocked.
+
+**No new questions raised.** Root causes and required remediations are fully documented in the 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes. All questions from prior builds remain unanswered.
+
+**Required fix (unchanged):** Extend the environment's egress proxy allowlist to permit outbound HTTPS to arxiv.org, hn.algolia.com, and the RSS feed hosts (anthropic.com, openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai). Until this is resolved, no build can produce a new edition. The dashboard continues to serve the stale edition from the last successful build.
