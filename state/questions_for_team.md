@@ -6044,3 +6044,31 @@ This is the 20th consecutive failed build. All external content hosts remain blo
 **No new questions raised.** Root causes and required remediations are fully documented in the 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes. All questions from prior builds remain unanswered.
 
 **Required fix (unchanged):** Extend the environment's egress proxy allowlist to permit outbound HTTPS to arxiv.org, hn.algolia.com, and the RSS feed hosts (anthropic.com, openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai). Until this is resolved, no build can produce a new edition. The dashboard continues to serve the stale edition from the last successful build.
+
+## Build 2026-07-13T18:09:00+00:00 (audit: partial)
+
+### Q: github_trending failed this build alongside arxiv, HN, and RSS — it was the only working source in prior partial builds. Is this a transient container-network issue or a new persistent block?
+
+**Context:** Prior builds since at least May 2026 have relied exclusively on github_trending because arxiv (403), HN (403), and RSS (no items) all failed. This build is the first to return zero items from github_trending as well, producing a total-zero build. Distinguishing a one-time network hiccup from a new block would determine whether the next build should wait or proceed with a source reconfiguration.
+
+**Answer:** _add reply here_
+
+### Q: Should the build abort cleanly and skip render/publish when all four sources return zero items, rather than pushing an empty dashboard to GitHub Pages?
+
+**Context:** An empty dashboard on GitHub Pages (0 items, all sources failed) provides no signal to readers and may signal a broken pipeline rather than a quiet news cycle. The current playbook says to continue with a partial-build banner for <3 sources, but does not address the all-sources-fail scenario. A policy decision — abort-and-skip vs. publish-with-failure-banner — would resolve this edge case for future builds.
+
+**Answer:** _add reply here_
+
+### Q: The Semantic Scholar API and Papers With Code were proposed as fallback academic paper sources in builds dating back to May 2026; have either been evaluated as substitutes for arXiv, and is there an owner for that investigation?
+
+**Context:** More than 20 consecutive builds have noted that arxiv 403 and HN 403 failures leave the vlm_research and doc_ai axes sourced only from github_trending. The proposal to add Semantic Scholar (open, rate-limit-friendly) or Papers With Code (paper-to-code links, benchmark-indexed) has been raised repeatedly without a team response. Assigning ownership of this one-time evaluation would end the recurring infrastructure question.
+
+**Answer:** _add reply here_
+
+### Q: Should a backup RSS feed set be added to data/sources.yaml drawing from academic or industry sources that are accessible from the build container's network policy?
+
+**Context:** RSS was the sole reliable non-github_trending source during the stretch when arxiv and HN were down. It has now also returned no items. A secondary feed list (e.g., ACL Anthology, ICLR openreview feeds, vendor engineering blogs not behind CDN auth) could provide fallback coverage independent of academic search APIs.
+
+**Answer:** _add reply here_
+
+---

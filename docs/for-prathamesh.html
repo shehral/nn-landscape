@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jul 12, 2026 · 00:08 UTC · 0 items scored</span>
+  <span class="built-at">Built Jul 13, 2026 · 18:09 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,18 +79,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Should the publish step apply a rolling 7-14 day TTL to seen.json entries so that github_trending repos can resurface after they return to trending?</p>
-    <p class="question-context">github_trending returned zero items again this build due to seen.json depletion. This recurs whenever the same repos continue to trend across multiple builds. A TTL on seen.json entries was proposed in Build 2026-06-23 without a team answer. Without it, the dashboard will continue producing zero-item builds whenever trending repos overlap the seen set.</p>
+    <p class="question-text">github_trending failed this build alongside arxiv, HN, and RSS — it was the only working source in prior partial builds. Is this a transient container-network issue or a new persistent block?</p>
+    <p class="question-context">Prior builds since at least May 2026 have relied exclusively on github_trending because arxiv (403), HN (403), and RSS (no items) all failed. This build is the first to return zero items from github_trending as well, producing a total-zero build. Distinguishing a one-time network hiccup from a new block would determine whether the next build should wait or proceed with a source reconfiguration.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the build agent emit an out-of-band alert (webhook, email, or Slack message) when all four sources fail simultaneously, rather than only appending to questions_for_team.md?</p>
-    <p class="question-context">This build produced zero items from all four sources. questions_for_team.md has had zero team replies across 40+ consecutive builds; an out-of-band alert on a total-source-failure event would be qualitatively different from the steady-state accumulation of open questions. This question has not appeared in prior builds.</p>
+    <p class="question-text">Should the build abort cleanly and skip render/publish when all four sources return zero items, rather than pushing an empty dashboard to GitHub Pages?</p>
+    <p class="question-context">An empty dashboard on GitHub Pages (0 items, all sources failed) provides no signal to readers and may signal a broken pipeline rather than a quiet news cycle. The current playbook says to continue with a partial-build banner for &lt;3 sources, but does not address the all-sources-fail scenario. A policy decision — abort-and-skip vs. publish-with-failure-banner — would resolve this edge case for future builds.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Reducto&#39;s LongExtractBench #1 result (announced July 1, 2026) and Mistral OCR 4 (released June 23, 2026) have not been covered by any recent build due to source failures. Should the team manually ingest these competitive events directly into edition.json as one-off items to prevent a permanent blind spot?</p>
-    <p class="question-context">Both events are material: Reducto Deep Extract achieved 100% completeness and 99.6% precision in an independently-audited 225-document benchmark; Mistral OCR 4 introduced bounding boxes, typed-block labels, and a self-hosted container. Neither has been scored or framed. A manual one-off ingest mechanism or periodic human review of known competitive events would prevent automated source failures from creating permanent gaps in competitive coverage.</p>
+    <p class="question-text">The Semantic Scholar API and Papers With Code were proposed as fallback academic paper sources in builds dating back to May 2026; have either been evaluated as substitutes for arXiv, and is there an owner for that investigation?</p>
+    <p class="question-context">More than 20 consecutive builds have noted that arxiv 403 and HN 403 failures leave the vlm_research and doc_ai axes sourced only from github_trending. The proposal to add Semantic Scholar (open, rate-limit-friendly) or Papers With Code (paper-to-code links, benchmark-indexed) has been raised repeatedly without a team response. Assigning ownership of this one-time evaluation would end the recurring infrastructure question.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Should a backup RSS feed set be added to data/sources.yaml drawing from academic or industry sources that are accessible from the build container&#39;s network policy?</p>
+    <p class="question-context">RSS was the sole reliable non-github_trending source during the stretch when arxiv and HN were down. It has now also returned no items. A secondary feed list (e.g., ACL Anthology, ICLR openreview feeds, vendor engineering blogs not behind CDN auth) could provide fallback coverage independent of academic search APIs.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -102,7 +107,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-07-12T00:08:50+00:00
+    sources covered:     · failed: 4 · built at 2026-07-13T18:09:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
