@@ -6103,6 +6103,21 @@ The dashboard continues to serve the stale July 6 edition until one of these is 
 
 ---
 
+## Build 2026-07-14T12:09:00Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Build lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (egress proxy blocks arxiv.org — structural) |
+| hn | HTTP 403 Forbidden (egress proxy blocks hn.algolia.com — structural) |
+| rss | no items in current window (all RSS feed hosts blocked by egress proxy) |
+| github_trending | no items in current window (GitHub API session scope restricts to `repos/{owner}/{repo}/...`) |
+
+Root causes and required remediations remain fully documented in the 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes. No new questions raised. The dashboard continues to serve the stale July 6 edition. Resolution requires environment configuration changes outside the build agent's scope.
+
+---
+
 ## Build 2026-07-14T06:09:02Z (FAILED — zero items from all sources)
 
 **Build outcome:** All 4 ingest sources returned zero items. No edition produced. Build lock acquired and released.
