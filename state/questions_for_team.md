@@ -6134,3 +6134,18 @@ Root causes and required remediations remain fully documented in the 2026-07-09T
 Root causes and required remediations remain fully documented in the 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes. No new questions raised. The dashboard continues to serve the stale July 6 edition.
 
 ---
+
+## Build 2026-07-14T18:08:12Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (egress proxy blocks arxiv.org) |
+| hn | HTTP 403 Forbidden (egress proxy blocks hn.algolia.com) |
+| rss | no items in current window (all RSS feed hosts blocked by egress proxy) |
+| github_trending | no items in current window (GitHub API session scope restricts to `repos/{owner}/{repo}/...`) |
+
+Root causes and required remediations unchanged from prior builds. All prior questions remain unanswered. No new questions raised. The dashboard continues to serve the stale July 6 edition.
+
+---
