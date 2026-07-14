@@ -6072,3 +6072,33 @@ This is the 20th consecutive failed build. All external content hosts remain blo
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-14T00:00:00Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Build lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (egress proxy blocks arxiv.org — structural) |
+| hn | HTTP 403 Forbidden (egress proxy blocks hn.algolia.com — structural) |
+| rss | no items in current window (all RSS feed hosts blocked by egress proxy) |
+| github_trending | no items in current window (GitHub API search endpoint returns 403: "path not available — sessions are bound to configured repositories") |
+
+This is the 22nd or more consecutive failed build.
+
+**New diagnosis — github_trending root cause confirmed:** The github_trending source silently swallows HTTP errors in its per-topic loop (`except Exception: continue`). Direct testing confirms that `api.github.com/search/repositories` returns HTTP 403 with body: `"This GitHub API path is not available: sessions are bound to their configured repositories."` This is a Claude Code session-scope restriction on GitHub API access, not a seen.json depletion issue. The TTL question from Build 2026-07-12 was addressing the wrong root cause. Even with a clean seen.json, github_trending cannot produce items in this environment.
+
+**Summary of blocked sources:**
+- arxiv.org, hn.algolia.com: egress proxy blocks outbound HTTPS (allowedHosts is empty; these hosts are not in noProxy)
+- All RSS feed hosts (anthropic.com/news/rss.xml, openai.com/blog/rss.xml, etc.): same egress policy block
+- api.github.com/search/*: GitHub session scope restricts access to repository-scoped endpoints only (`repos/{owner}/{repo}/...`)
+
+**Required fixes (unchanged from prior builds):**
+1. Extend the environment's egress proxy allowlist to permit outbound HTTPS to: arxiv.org, hn.algolia.com, anthropic.com, openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai
+2. OR enable broader GitHub API access (remove the repository-scope restriction) so github_trending search queries can execute
+
+The dashboard continues to serve the stale July 6 edition until one of these is resolved.
+
+**No new questions raised.** Root causes are fully diagnosed. Resolution requires environment configuration changes outside the build agent's scope.
+
+---
