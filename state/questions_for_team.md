@@ -6189,3 +6189,37 @@ This is the 26th consecutive failed build.
 **Required fix (updated):** Content source hosts must be added to the environment's egress network settings (the allowlist that issues the "Host not in allowlist" response), not only to the proxy's noProxy list. Affected hosts: `export.arxiv.org`, `hn.algolia.com`, `www.anthropic.com`, `openai.com`, `deepmind.google`, `huggingface.co`, `latent.space`, `interconnects.ai`, `buttondown.com`, `stratechery.com`, `importai.substack.com`, `blog.mistral.ai`, plus `api.github.com` search endpoints for github_trending.
 
 No new editorial questions raised. All prior unanswered questions remain open.
+
+## Build 2026-07-15T12:08:25.945974+00:00 (audit: partial)
+
+### Q: All four ingest sources returned 403 or empty results on this build (2026-07-15). Is the proxy or network policy blocking outbound HTTP to arxiv.org, news.ycombinator.com, and the RSS/GitHub trending endpoints?
+
+**Context:** arxiv returned 403 Forbidden on the OAI query endpoint. HN returned 403 Forbidden. RSS returned 'no items in current window' (which may indicate feed fetch failures behind the same proxy block). github_trending returned 'no items in current window'. This is a full ingest blackout, not a partial-build. Multiple prior builds have shown arxiv and HN 403 patterns; this is the first build where all four sources fail simultaneously.
+
+**Answer:** _add reply here_
+
+### Q: Should the RSS source be updated to use the proxy CA bundle (/root/.ccr/ca-bundle.crt) or pass through the HTTPS_PROXY environment variable, given that the execution environment routes outbound HTTPS through a pre-configured agent proxy?
+
+**Context:** The remote execution environment requires outbound HTTPS to route through a pre-configured agent proxy (CA bundle at /root/.ccr/ca-bundle.crt, HTTPS_PROXY env var set). If the Python ingest code is not picking up these settings, all external HTTP calls will fail with 403 or TLS errors. The CLI should be audited to confirm requests.Session (or httpx) honors the HTTPS_PROXY variable and loads the custom CA bundle.
+
+**Answer:** _add reply here_
+
+### Q: Prior builds from 2026-05-21 onward consistently logged arxiv and HN 403 errors; should the team treat these as permanent infrastructure failures and add a mirror or alternative access path before the next build cycle?
+
+**Context:** The questions_for_team.md file shows unanswered questions about arxiv 403s going back to the May 2026 builds. At least 6 consecutive builds have been affected by the same error pattern. Without a fix to the access path, the dashboard is structurally biased toward the sources that do work (when they do).
+
+**Answer:** _add reply here_
+
+### Q: Should the build agent fail fast and skip render/publish when 0 of 4 sources produce items, or is a 'null edition' (empty items list, audit_passed=false) still worth pushing to keep the GitHub Pages timestamp current?
+
+**Context:** This build produced zero items. The rendered HTML will be a blank dashboard with a partial-build banner. Publishing it preserves the update cadence but risks confusing readers who check the page. Suppressing the push and leaving the prior edition live may be preferable for readability. The team should decide the policy and encode it in the playbook.
+
+**Answer:** _add reply here_
+
+### Q: The github_trending and rss sources both returned 'no items in current window' rather than 403 — does this mean they fetched successfully but found no matching content, or that the fetch itself silently failed?
+
+**Context:** A 'no items in current window' result is ambiguous: it could be a successful fetch with no keyword-matching results (e.g., no trending repos match the configured topic list today), or it could be a fetch that returned an empty/error body and the parser treated it as zero results. Distinguishing these two cases is important for diagnosing whether the issue is network-level or content-level.
+
+**Answer:** _add reply here_
+
+---
