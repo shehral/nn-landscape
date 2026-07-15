@@ -6149,3 +6149,20 @@ Root causes and required remediations remain fully documented in the 2026-07-09T
 Root causes and required remediations unchanged from prior builds. All prior questions remain unanswered. No new questions raised. The dashboard continues to serve the stale July 6 edition.
 
 ---
+
+## Build 2026-07-15T00:09:07Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Build lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (egress proxy blocks arxiv.org — structural) |
+| hn | HTTP 403 Forbidden (egress proxy blocks hn.algolia.com — structural) |
+| rss | no items in current window (all RSS feed hosts blocked by egress proxy) |
+| github_trending | no items in current window (GitHub API session scope restricts to `repos/{owner}/{repo}/...`) |
+
+This is the 25th or more consecutive failed build. Root causes and required remediations are fully documented in the 2026-07-09T12:09 and 2026-07-10T12:22:42 build notes. All prior questions remain unanswered. The dashboard continues to serve the stale July 6 edition.
+
+**Required fix (unchanged):** Extend the environment's egress proxy allowlist to permit outbound HTTPS to arxiv.org, hn.algolia.com, and the RSS feed hosts (anthropic.com, openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai). Until this is resolved, no build can produce a new edition.
+
+---
