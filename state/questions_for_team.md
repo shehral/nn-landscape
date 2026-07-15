@@ -6166,3 +6166,26 @@ This is the 25th or more consecutive failed build. Root causes and required reme
 **Required fix (unchanged):** Extend the environment's egress proxy allowlist to permit outbound HTTPS to arxiv.org, hn.algolia.com, and the RSS feed hosts (anthropic.com, openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai). Until this is resolved, no build can produce a new edition.
 
 ---
+
+## Build 2026-07-15T06:10:20Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Build lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (egress proxy blocks arxiv.org — structural) |
+| hn | HTTP 403 Forbidden (egress proxy blocks hn.algolia.com — structural) |
+| rss | no items in current window (all RSS feed hosts blocked; see new diagnosis below) |
+| github_trending | no items in current window (GitHub API session scope restricts to `repos/{owner}/{repo}/...`) |
+
+This is the 26th consecutive failed build.
+
+**New diagnostic detail — RSS blocking mechanism confirmed:** Direct testing of `https://www.anthropic.com/news/rss.xml` (which bypasses the HTTPS proxy because `anthropic.com` is in the `noProxy` list) returns the message: `"Host not in allowlist: www.anthropic.com. Add this host to your network egress settings to allow access."` This reveals a second blocking layer distinct from the HTTPS proxy's own allowedHosts list — an environment-level egress policy that blocks all content source hosts even when the proxy is bypassed via noProxy. Both layers must be addressed for any source to produce items.
+
+**Two distinct blocking layers identified:**
+1. **HTTPS proxy layer:** `hn.algolia.com`, `arxiv.org`, `openai.com`, `deepmind.google`, `huggingface.co`, `latent.space`, `interconnects.ai`, `buttondown.com`, `stratechery.com`, `importai.substack.com`, `blog.mistral.ai` — all return connection refused (HTTP 000) through the proxy
+2. **Environment egress allowlist layer:** `www.anthropic.com` bypasses the HTTPS proxy (noProxy) but is still blocked at the environment level, returning the explicit "Host not in allowlist" message from the egress gateway
+
+**Required fix (updated):** Content source hosts must be added to the environment's egress network settings (the allowlist that issues the "Host not in allowlist" response), not only to the proxy's noProxy list. Affected hosts: `export.arxiv.org`, `hn.algolia.com`, `www.anthropic.com`, `openai.com`, `deepmind.google`, `huggingface.co`, `latent.space`, `interconnects.ai`, `buttondown.com`, `stratechery.com`, `importai.substack.com`, `blog.mistral.ai`, plus `api.github.com` search endpoints for github_trending.
+
+No new editorial questions raised. All prior unanswered questions remain open.
