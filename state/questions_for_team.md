@@ -6226,6 +6226,21 @@ No new editorial questions raised. All prior unanswered questions remain open.
 
 ---
 
+## Build 2026-07-16T00:08:34Z (FAILED — zero items from all sources)
+
+**Build outcome:** Same infrastructure failure as 2026-07-15T18:08:58Z (6 hours prior). All 4 sources returned zero items. No edition produced. Lock released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden |
+| hn | HTTP 403 Forbidden |
+| rss | no items in current window |
+| github_trending | no items in current window |
+
+See prior build note (2026-07-15T18:08:58Z) for full root-cause analysis and required egress allowlist changes. No further action possible from within the build agent.
+
+---
+
 ## Build 2026-07-15T18:08:58Z (FAILED — zero items from all sources)
 
 **Build outcome:** All 4 ingest sources returned zero items. No edition produced. Build lock acquired and released.
