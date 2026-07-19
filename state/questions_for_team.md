@@ -6488,3 +6488,30 @@ This is the 39th+ consecutive failed build. Root causes and required remediation
 **Required fix (unchanged):** Extend the environment's egress network allowlist to permit outbound HTTPS to: `export.arxiv.org`, `hn.algolia.com`, `www.anthropic.com`, `openai.com`, `deepmind.google`, `huggingface.co`, `latent.space`, `interconnects.ai`, `buttondown.com`, `stratechery.com`, `importai.substack.com`, `blog.mistral.ai`. The GitHub API session scope also needs to be broadened to allow `/search/repositories` queries for github_trending to function.
 
 No new questions raised. Resolution requires environment configuration changes outside the build agent's scope.
+
+---
+
+## Build 2026-07-19T00:00:00+00:00 (audit: FAILED — total ingest failure)
+
+**What failed:** Step 3 (ingest). All four sources returned zero items:
+- `arxiv`: FAILED — HTTP 403 on `export.arxiv.org`. This is a recurring failure across many prior builds.
+- `hn`: FAILED — HTTP 403 on the Algolia HN API.
+- `rss`: 0 items in current window (all configured feeds returned no new content within the lookback window).
+- `github_trending`: 0 items in current window (no GitHub trending repos matched configured topics in the lookback window).
+
+**Action taken:** Build aborted per the partial-output rule. No new HTML was rendered or pushed. The prior rendered edition remains live on GitHub Pages.
+
+**For the team to investigate:**
+
+### Q: arXiv and HN have now failed with 403 errors across every build visible in this file. Is there a network-level block in the execution environment, and has any action been taken to switch to the arXiv OAI-PMH endpoint or the HN Firebase API?
+
+**Context:** This question has been raised at least five times in prior builds without a recorded answer. If the environment's outbound policy blocks export.arxiv.org and the Algolia HN endpoint, those sources will never recover without a code change to use alternative access paths. The OAI-PMH feed is `https://export.arxiv.org/oai2`; the HN Firebase API is `https://hacker-news.firebaseio.com`.
+
+**Answer:** _add reply here_
+
+### Q: RSS and GitHub trending both returned "no items in current window" this build — a new failure mode not seen in prior builds. Is the `days_back` lookback window too narrow, or did the RSS feeds recently change their format or URL?
+
+**Context:** Prior builds had RSS and GitHub trending as the only working sources (github_trending alone has carried multiple builds). Having all four sources fail simultaneously means the environment may be experiencing broader connectivity issues, or the window configuration for RSS/GitHub trending is now mismatched. Checking `data/sources.yaml` `days_back` values against current UTC time offset would confirm the latter.
+
+**Answer:** _add reply here_
+
