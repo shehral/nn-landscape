@@ -120,7 +120,9 @@ Items that name, compare against, or are released by these companies are
   complex formulas, handwriting, and infographics; word-, line-, and
   cell-level bounding boxes added for audit-grade citation trails.
   Parse-Flow launched June 2026 for visual document intelligence
-  workflows.
+  workflows. LlamaIndex partnered with LanceDB (July 7, 2026) on a
+  hybrid pipeline pairing LiteParse with multimodal storage to decompose
+  complex enterprise PDFs into pages, chunks, and assets.
 - **Unstructured.io** — competitor and frequent integration partner;
   document parsing infrastructure. Expanded Microsoft Azure integration
   announced June 3, 2026, covering Azure AI Search and Blob Storage
@@ -145,7 +147,7 @@ Items that name, compare against, or are released by these companies are
   4B-parameter model built on Qwen 3.5, 85.9% on olmOCR benchmark,
   supporting 90+ languages. LightOn OCR-2 is a 1B end-to-end VLM
   optimized for OlmOCR-Bench.
-- **GLM-OCR** (Zhipu AI, March 2026; 0.9B params, 94.62 on OmniDocBench
+- **GLM-OCR** (Z.ai (formerly Zhipu AI), March 2026; 0.9B params, 94.62 on OmniDocBench
   V1.5), **DeepSeek-OCR 2** (DeepSeek AI, January 2026; 3B params, 91.09%
   on OmniDocBench v1.5), **HunyuanOCR** (Tencent Hunyuan, November 2025;
   1B params; 94.1 on OmniDocBench; end-to-end OCR-VLM covering detection,
@@ -164,6 +166,10 @@ Items that name, compare against, or are released by these companies are
   **Surya OCR 2** (Datalab, released May 27, 2026; 650M params; same
   team as Chandra OCR 2; 83.3% on OlmOCR-bench; 91 languages, 87.2%
   multilingual pass rate; Apache 2.0 code / modified OpenRAIL-M weights),
+  **FireRed-OCR-2B** (FireRedTeam, March 2026; 2B params; Qwen3-VL
+  architecture; 92.94 on OmniDocBench v1.5; uses Format-Constrained GRPO
+  to enforce strict syntactic validity, eliminating structural hallucinations
+  in tables and LaTeX; arXiv 2603.01840; Apache 2.0),
   **Pixtral** (Mistral),
   **Qwen3-VL** family (Alibaba; Qwen 3.6-VL is the 2026-series variant),
   **Llama-3.2-Vision** (Meta) — open-weight VLMs that appear on the IDP
@@ -938,3 +944,95 @@ Nanonets, do not respond.
 - Note: Qwen3.7-Plus (Alibaba, June 2, 2026) is a new multimodal agentic
   VLM; not added to body text because document-extraction OCR benchmark
   positioning is not yet confirmed; monitor for benchmark results.
+
+---
+
+**Date:** 2026-07-19
+
+**Sources consulted:**
+
+- WebSearch: "Nanonets OCR-3 IDP leaderboard July 2026 ranking new model"
+  — #1 at 85.9% confirmed unchanged; benchmarking.nanonets.com and
+  idp-leaderboard.org resolving
+- WebSearch: "site:huggingface.co/nanonets" — open-weight model lineup
+  unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains API-only
+- WebSearch: "nanonets arxiv 2026 research paper hallucination VLM" —
+  no team-authored papers surfaced; Nanonets-KIE dataset referenced in
+  third-party papers (as in prior refreshes)
+- WebSearch: "Nanonets product announcement blog July 2026" — no new
+  July 2026 Nanonets product announcements indexed
+- WebSearch: "Mistral OCR July 2026 new model update" — no new model
+  since Mistral OCR 4 (June 23, 2026); Mistral open-weight frontier
+  model in July early access confirmed (MoE architecture), but
+  confirmed text-only / not OCR-specific; no change to Mistral OCR entry
+- WebSearch: "Reducto AI document processing July 2026" — all prior
+  entries confirmed current; no new announcements
+- WebSearch: "LlamaParse LlamaIndex July 2026 new product update" —
+  LanceDB partnership (July 7, 2026) confirmed from multiple sources;
+  LiteParse + multimodal storage hybrid pipeline for enterprise PDFs
+- WebSearch: "OpenAI GPT-5.6 Sol Terra Luna document vision OCR July 2026"
+  — GPT-5.6 confirmed in context and current; no new OpenAI models
+- WebSearch: "Google Gemini document OCR vision July 2026 new" —
+  Gemini 3.1 Pro and 3.5 Flash confirmed current; no major new
+  announcement
+- WebSearch: "Anthropic Claude document extraction vision July 2026 new"
+  — no new Anthropic document-specific product beyond what's in context;
+  Claude Fable 5 and Opus 4.8 confirmed current
+- WebSearch: "xAI Grok document extraction OCR July 2026" — Grok
+  Collections API confirmed current; no new dedicated product
+- WebSearch: "Unstructured.io update July 2026" — library maintenance
+  releases only (v0.24.1 July 11); no major product announcement
+- WebSearch: "Docling IBM July 2026 update release" — hardening and
+  maintenance releases only; no major new feature
+- WebSearch: "Extend AI document processing 2026 new feature benchmark"
+  — confirmed operating; published RealDoc-Bench datasets on HuggingFace;
+  no major new product announcement in July
+- WebSearch: '"Chandra OCR" OR "LightOn OCR" 2026 new model update July'
+  — no new model versions; both confirmed operating
+- WebSearch: "DeepSeek OCR VLM new model July 2026" — DeepSeek-OCR 2
+  (January 2026) confirmed current; no new model
+- WebSearch: "Qwen3-VL Alibaba VLM document OCR new release July 2026"
+  — Qwen3-VL confirmed current; no major new release
+- WebSearch: "Rossum Docsumo ABBYY Kofax Tungsten Automation 2026
+  operating" — all confirmed operating; no renames, closures, or
+  acquisitions beyond prior notes
+- WebSearch: "Firecrawl document parsing July 2026 update new feature"
+  — v2.11 (June 2026) already in context; no new July 2026 document
+  parsing feature
+- WebSearch: '"dots.ocr" OR "FireRed-OCR" OCR model 2026' — FireRed-OCR-2B
+  (FireRedTeam, March 2026; arXiv 2603.01840) confirmed; dots.ocr rebranded
+  to dots.mocr (March 2026); neither previously in context
+- WebSearch: '"Zhipu AI" OR "Z.ai" GLM-OCR 2026 rebrand July' —
+  Z.ai international rebrand confirmed; GLM-OCR on HuggingFace under
+  zai-org/GLM-OCR; GitHub github.com/zai-org/GLM-OCR; docs at
+  docs.z.ai/guides/vlm/glm-ocr; resolves the manual-verification flag
+  from the 2026-07-12 refresh
+- WebSearch: "PaddleOCR-VL Baidu document AI 2026 new release update"
+  — PaddleOCR-VL-1.6 confirmed current (May 28, 2026); no new version
+- WebSearch: "idp-leaderboard.org benchmarking.nanonets.com July 2026
+  current rankings" — Nanonets OCR-3 #1 at 85.9% confirmed unchanged;
+  29 models evaluated on the leaderboard
+
+**Material changes versus prior version (2026-07-12):**
+
+- Updated **GLM-OCR** company attribution from "Zhipu AI" to "Z.ai
+  (formerly Zhipu AI)": international rebrand confirmed from multiple
+  public sources (GitHub org: zai-org; HuggingFace: zai-org/GLM-OCR;
+  developer docs: docs.z.ai); resolves the manual-verification note
+  added in the 2026-07-12 refresh.
+- Added **FireRed-OCR-2B** (FireRedTeam, March 2026; 2B params; Qwen3-VL
+  architecture; 92.94 on OmniDocBench v1.5; arXiv 2603.01840) to the
+  competitive set. New entrant confirmed from arXiv, MarkTechPost, and
+  HuggingFace; not previously in context. Notable for its use of
+  Format-Constrained GRPO to eliminate structural hallucinations in
+  tables and LaTeX — directly relevant to Nanonets' research axis on
+  structural hallucinations.
+- Updated **LlamaParse** entry: added LanceDB partnership (July 7, 2026)
+  on a hybrid pipeline pairing LiteParse with multimodal storage to
+  decompose complex enterprise PDFs into pages, chunks, and assets.
+- Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
+  No new Nanonets models on Hugging Face. No Nanonets-authored arXiv
+  papers found. No July 2026 Nanonets blog posts indexed.
+- Note: Qwen3.7-Plus (Alibaba, June 2, 2026) still unconfirmed on
+  document-extraction OCR benchmarks; retained in monitoring note from
+  prior refresh.
