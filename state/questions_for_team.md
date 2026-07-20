@@ -6557,3 +6557,25 @@ This is the 41st+ consecutive failed build. Root causes and required remediation
 No new questions raised. Resolution requires environment configuration changes outside the build agent's scope.
 
 ---
+
+## Build 2026-07-20T06:00:00+00:00 (audit: partial)
+
+### Q: Unsiloed Parser claims olmOCR-Bench #1 at 88.0 using olmocr==0.4.27 on allenai/olmOCR-bench 'as of May 2026'. Should the team run a comparative evaluation using the same scorer version to confirm whether OCR-3's 87.4 was produced with the same olmocr version, or whether the May 2026 scorer introduced methodology changes that affect score comparability?
+
+**Context:** The olmOCR ACL 2026 paper formalizes olmOCR-Bench as the community reference. If OCR-3's 87.4 and Unsiloed's 88.0 were produced with different scorer versions, the 0.6-point gap is not a valid comparison. This affects how the team should communicate the IDP Leaderboard #1 claim.
+
+**Answer:** _add reply here_
+
+### Q: FADE (arXiv:2606.29431) identifies FFN modules at critical decoder layers as the primary injection point for language priors that override visual evidence. Does the team's existing mechanistic interpretability work on OCR-3's phantom-row hallucinations implicate FFN layers at specific decoder depths, or does the evidence point primarily to attention circuits?
+
+**Context:** If OCR-3's phantom-row failures involve the same FFN-layer mechanism FADE targets, FADE's inference-time suppression (no retraining) could be a low-cost near-term mitigation. The answer would determine whether FADE should be in the 'reproduce' queue or only 'read in week'.
+
+**Answer:** _add reply here_
+
+### Q: The Transcoders paper (arXiv:2605.22902) achieves AUC 0.68 for hallucination prediction on Gemma 3-4B-IT using graph-based circuit indicators. Is AUC 0.68 above or below the team's current phantom-row detection baseline on OCR-3, and would the Transcoder circuit framework transfer to a 35B MoE architecture where circuit topology is likely to differ substantially?
+
+**Context:** AUC 0.68 is the paper's headline result. Without knowing OCR-3's current detection baseline, it is unclear whether Transcoders would be a step forward or backward. The 35B MoE vs. 4B dense architecture difference may also limit direct transfer.
+
+**Answer:** _add reply here_
+
+---
