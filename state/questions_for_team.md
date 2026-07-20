@@ -6579,3 +6579,28 @@ No new questions raised. Resolution requires environment configuration changes o
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-07-20T00:00:00+00:00 (audit: FAILED — ingest returned 0 items from all 4 sources)
+
+### FAILURE REPORT — Step 3 (ingest): all 4 sources returned 0 items
+
+**What failed:**
+
+- **arxiv**: HTTP 403 Forbidden on `export.arxiv.org/api/query`. This is a repeated failure across multiple prior builds (see Build 2026-05-21T12:08:38 and others above). The arxiv API is rate-limiting or blocking the ingest client.
+- **HN (Hacker News)**: HTTP 403 Forbidden on the Algolia search endpoint. Also a repeated failure.
+- **RSS feeds**: No items within the configured time window. This could mean all 10 feeds returned empty results for the current window, or the feed-fetch requests were also rate-limited / blocked.
+- **github_trending**: No items within the configured window (`days_back: 1`). This may indicate a rate-limit or a scrape-block on the GitHub trending endpoint.
+
+**What the team should investigate:**
+
+1. **arxiv 403**: The `export.arxiv.org` API enforces a crawl rate limit. The ingest client likely needs to either use OAI-PMH daily ID dumps, add a `Retry-After`-aware backoff, or use a mirror. Prior builds raised this; it has not been resolved. No build has had arxiv coverage since the first few builds.
+2. **HN 403**: The Algolia HN search API may be blocking the request due to a missing or expired User-Agent header, or outright IP-based blocking of the cloud environment's IP range. Switching to the official HN Firebase API (`hacker-news.firebaseio.com`) or adding proper headers may resolve this.
+3. **RSS feeds returning 0**: With 10 configured feeds and a time-window filter, it is unusual for all feeds to return 0 items. The most likely cause is that the window is misconfigured (too narrow), the environment's outbound HTTP is blocked for these domains, or the proxy is intercepting and dropping feed responses. Manual test: `curl -sI https://www.anthropic.com/news/rss.xml` from the build environment.
+4. **github_trending with `days_back: 1`**: GitHub trending is a scraped page, not an API. If the scraper was updated or if GitHub changed its HTML structure, `days_back: 1` may produce 0 results. Raising `days_back` to 3 or 7 in `data/sources.yaml` would provide a fallback.
+
+**Outcome:** No edition was built. The HTML output in `docs/` is from the prior successful build. The build lock has been released.
+
+**Action:** Until the source connectivity issues are resolved, every build will return 0 items and the dashboard will stall. At minimum, fixing the github_trending `days_back` configuration and the HN API path would give the build some items in the next cycle even if arxiv and RSS remain blocked.
+
