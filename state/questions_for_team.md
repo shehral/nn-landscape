@@ -6604,3 +6604,23 @@ No new questions raised. Resolution requires environment configuration changes o
 
 **Action:** Until the source connectivity issues are resolved, every build will return 0 items and the dashboard will stall. At minimum, fixing the github_trending `days_back` configuration and the HN API path would give the build some items in the next cycle even if arxiv and RSS remain blocked.
 
+
+---
+
+## Build 2026-07-20T18:09:00Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (egress proxy blocks export.arxiv.org — structural) |
+| hn | HTTP 403 Forbidden (egress proxy blocks hn.algolia.com — structural) |
+| rss | no items in current window (all RSS feed hosts blocked by egress policy) |
+| github_trending | no items in current window (GitHub API session scope restricts to `repos/{owner}/{repo}/...`) |
+
+This is the 42nd+ consecutive failed build. Root causes and required remediations are documented in prior build notes (2026-07-09T12:09 and 2026-07-10T12:22:42). All prior questions remain unanswered. The dashboard continues to serve the stale July 6 edition.
+
+**Required fix (unchanged):** Extend the environment's egress network allowlist to permit outbound HTTPS to: `export.arxiv.org`, `hn.algolia.com`, `www.anthropic.com`, `openai.com`, `deepmind.google`, `huggingface.co`, `latent.space`, `interconnects.ai`, `buttondown.com`, `stratechery.com`, `importai.substack.com`, `blog.mistral.ai`. The GitHub API session scope also needs to be broadened to allow `/search/repositories` queries for github_trending to function.
+
+No new questions raised. Resolution requires environment configuration changes outside the build agent's scope.
+
