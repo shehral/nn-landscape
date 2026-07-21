@@ -6676,3 +6676,22 @@ No new questions raised — this is a repeat of the same structural block.
 This is the 45th+ consecutive failed build. The dashboard continues to serve the stale July 6 edition. Root causes and required remediations are fully documented in prior build notes (see Build 2026-07-03T18:07:59Z for confirmed root cause and Build 2026-07-10T12:22:42 for full remediation steps). All prior questions remain unanswered.
 
 No new questions raised.
+
+---
+
+## Build 2026-07-21T12:11:00Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 — egress proxy policy denial on `export.arxiv.org` |
+| hn | HTTP 403 — egress proxy policy denial on `hn.algolia.com` |
+| rss | no items in current window — all RSS feed hosts policy-denied by egress proxy |
+| github_trending | no items in current window — GitHub API session scope restricts to `repos/{owner}/{repo}/...` |
+
+This is the 46th consecutive failed build. Proxy status endpoint (`/__agentproxy/status`) confirms policy denials (403 CONNECT) for `hn.algolia.com`, `openai.com`, `deepmind.google`, `huggingface.co`, `latent.space`, `interconnects.ai`, and others. This is an organization egress policy block, not a transient error.
+
+**Required fix (unchanged):** An administrator must extend the environment's egress allowlist to permit outbound HTTPS to the source domains. Per the proxy README, 403/407 responses are policy denials that must not be routed around — they require admin action.
+
+The dashboard continues to serve the stale July 6 edition. No new questions raised.
