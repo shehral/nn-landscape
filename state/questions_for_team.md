@@ -6642,3 +6642,20 @@ This is the 43rd+ consecutive failed build. The dashboard continues to serve the
 
 **Required fix (unchanged):** Extend the environment's egress network allowlist to permit outbound HTTPS to the source domains. No new questions raised — this is a repeat of the same structural block.
 
+
+---
+
+## Build 2026-07-21T00:00:00Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (egress proxy blocks export.arxiv.org) |
+| hn | HTTP 403 Forbidden (egress proxy blocks hn.algolia.com) |
+| rss | no items in current window |
+| github_trending | no items in current window |
+
+This is the 44th+ consecutive failed build. The dashboard continues to serve the stale July 6 edition. Root causes and required remediations are documented in prior build notes. All prior questions remain unanswered.
+
+No new questions raised — this is a repeat of the same structural block.
