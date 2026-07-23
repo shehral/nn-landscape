@@ -6791,3 +6791,21 @@ This is the 51st consecutive failed build. The dashboard continues to serve the 
 
 No new questions raised.
 
+
+
+---
+
+## Build 2026-07-23T00:00:00Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (egress proxy blocks export.arxiv.org — structural) |
+| hn | HTTP 403 Forbidden (egress proxy blocks hn.algolia.com — structural) |
+| rss | no items in current window (all RSS feed hosts blocked by egress policy) |
+| github_trending | no items in current window (GitHub API session scope restricts to `repos/{owner}/{repo}/...`) |
+
+This is the 52nd+ consecutive failed build. Root cause and required remediations are fully documented in prior build notes (Build 2026-07-03T18:07:59Z and Build 2026-07-10T12:22:42). All prior questions remain unanswered.
+
+**Required fix (unchanged):** An administrator must extend the environment's egress allowlist to permit outbound HTTPS to the source domains. No new questions raised.
