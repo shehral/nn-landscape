@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jul 20, 2026 · 06:00 UTC · 14 items scored</span>
+  <span class="built-at">Built Jul 24, 2026 · 00:00 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -50,355 +50,24 @@
   <span id="filter-count" class="filter-count"></span>
 </section>
 
-<section class="brief" aria-label="Today's brief">
-  <h2>Patterns this build</h2>
-  <ul>
-    <li>Four concurrent VLM hallucination papers published this cycle converge on FFN layers and attention circuits as the primary locus of hallucination, suggesting the field is shifting from dataset-level mitigations toward mechanistic layer-targeted interventions.</li>
-    <li>Unsiloed Parser&#39;s olmOCR-Bench claim (88.0 vs OCR-3&#39;s 87.4) is the first publicly reported result above OCR-3 on that benchmark from a non-frontier entity, and the olmOCR 2 paper at ACL 2026 formalizes that benchmark as the community reference — the two together raise the stakes of Nanonets&#39; position on that leaderboard.</li>
-    <li>GPT-5.6 Terra (July 9) and Mistral OCR 4 (June 23) both shipped full document-pipeline product narratives within four weeks, signaling that frontier labs are converging on structured extraction as a primary product surface rather than a vision capability add-on.</li>
-    <li>LlamaIndex Index v2 and MinerU 3.4.4 both shipped meaningful July updates — LanceDB integration and PP-OCRv6 respectively — sustaining open-source parsing as a technically current, cost-free alternative to managed extraction APIs.</li>
-  </ul>
-</section>
 
 <section class="axes" aria-label="Items by axis">
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
-<article class="item "
-         data-source="arxiv"
-         data-score="54">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 2 · vlm_research 5 = 54 (this view's weighting)">54</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 100%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
+      <p class="item-summary">No top-N items this build.</p>
   </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2605.22902" target="_blank" rel="nofollow noopener noreferrer">Transcoders: Graph-based hallucination prediction in VLMs via circuit analysis (arXiv:2605.22902)</a>
-  </p>
-  <p class="item-summary">Transcoder circuits applied to Gemma 3-4B-IT achieve AUC 0.68 for hallucination prediction via graph-topology indicators across circuit modules.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>AUC 0.68 for hallucination detection is a meaningful inference-time signal; if the method transfers to larger MoE models, it could provide a per-inference confidence score for extraction outputs without retraining.</dd>
-      <dt>Research</dt>
-      <dd>The Transcoder circuit framework gives interpretable localization of hallucination loci. Applying it to OCR-3 would test whether phantom-row failures are circuit-level phenomena, and whether AUC 0.68 is competitive with the team&#39;s existing phantom-row detection baseline.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="54">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 2 · vlm_research 5 = 54 (this view's weighting)">54</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 100%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2606.29431" target="_blank" rel="nofollow noopener noreferrer">FADE: FFN-layer hallucination localization and mitigation in VLMs (arXiv:2606.29431)</a>
-  </p>
-  <p class="item-summary">FADE identifies critical FFN decoder layers where language priors override visual evidence; targeted suppression reduces hallucination rates without retraining.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>FFN-layer suppression is a low-cost inference-time mitigation requiring no fine-tuning overhead; if applicable to OCR-3&#39;s MoE architecture, it could reduce phantom-row rate on production-serving paths.</dd>
-      <dt>Research</dt>
-      <dd>Directly relevant to the team&#39;s phantom-row mitigation work. Identifies FFN layers, not attention circuits, as primary hallucination loci — worth testing whether OCR-3&#39;s phantom-row failure mode implicates the same layer types.</dd>
-      <dt>Action</dt>
-      <dd>reproduce</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="46">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 2 · vlm_research 4 = 46 (this view's weighting)">46</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2604.12424" target="_blank" rel="nofollow noopener noreferrer">Decoding by Perturbation: inference-time VLM hallucination reduction without retraining (arXiv:2604.12424)</a>
-  </p>
-  <p class="item-summary">Perturbation-based decoding averages over perturbed visual token sets at inference time, achieving SOTA on HallusionBench without model modification.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Inference-time method with no retraining requirement; applicable to OCR-3 if perturbation overhead stays within latency budget for production extraction pipelines.</dd>
-      <dt>Research</dt>
-      <dd>Complements FADE&#39;s FFN-suppression approach — the two methods target different mechanisms (visual token perturbation vs. FFN layer suppression) and may compound if combined on the same inference pass.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="46">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 2 · vlm_research 4 = 46 (this view's weighting)">46</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2602.11824" target="_blank" rel="nofollow noopener noreferrer">REVIS: Reliability Enhancement in VLMs via Visual Instruction Synthesis (arXiv:2602.11824)</a>
-  </p>
-  <p class="item-summary">REVIS improves VLM reliability via targeted visual instruction synthesis, reducing both hallucination rate and over-refusal on standard benchmarks.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>REVIS&#39;s over-refusal reduction is relevant to OCR-3&#39;s structured output mode — aggressive hallucination suppression can cause under-extraction; REVIS may offer a better precision-recall tradeoff.</dd>
-      <dt>Research</dt>
-      <dd>REVIS is a training-time method, applicable to future OCR-3 fine-tuning cycles. The instruction synthesis approach complements inference-time methods like FADE and Decoding by Perturbation.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article>  </div>
   <div class="axis-col" data-axis="doc_ai">
     <h2>Document AI</h2>
-<article class="item "
-         data-source="arxiv"
-         data-score="70">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 3 · frontier 2 · vlm_research 4 = 70 (this view's weighting)">70</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
+      <p class="item-summary">No top-N items this build.</p>
   </div>
-  <p class="item-title">
-    <a href="https://aclanthology.org/2026.acl-long.olmocr" target="_blank" rel="nofollow noopener noreferrer">olmOCR at ACL 2026: systematic evaluation of OCR-VLM pipeline architectures</a>
-  </p>
-  <p class="item-summary">Allen AI&#39;s olmOCR at ACL 2026 presents a systematic architecture comparison of OCR-VLMs, formalizing olmOCR-Bench as the community evaluation standard.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>ACL publication formalizes olmOCR-Bench as the citable community reference for OCR-VLM evaluation. Nanonets&#39; OCR-3 position at 87.4 on this benchmark becomes the published competitive baseline against which new entrants (e.g. Unsiloed) compare.</dd>
-      <dt>Research</dt>
-      <dd>Peer-reviewed methodology means the benchmark&#39;s scorer version and dataset composition are now auditable. Nanonets should confirm OCR-3&#39;s 87.4 was produced with the same scorer version as the ACL paper to ensure score comparability.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: vlm_research</p>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="62">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 3 · frontier 2 · vlm_research 3 = 62 (this view's weighting)">62</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2510.19817" target="_blank" rel="nofollow noopener noreferrer">olmOCR 2: Unlocking Trillions of Tokens from Scientific Documents via VLMs (arXiv:2510.19817)</a>
-  </p>
-  <p class="item-summary">olmOCR 2 presents systematic improvements to Allen AI&#39;s OCR-VLM pipeline optimized for scientific document scale, forming the basis for olmOCR-Bench.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>olmOCR 2&#39;s scientific document focus overlaps with Nanonets&#39; enterprise extraction customers in research, legal, and medical verticals. The open-source approach creates a credible free alternative in those segments.</dd>
-      <dt>Research</dt>
-      <dd>olmOCR 2&#39;s pipeline is the technical basis for the olmOCR-Bench scorer that Unsiloed used to claim #1. Understanding its technical choices — particularly the scorer implementation — is prerequisite to validating that claim.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="50">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 3 · frontier 1 · vlm_research 2 = 50 (this view's weighting)">50</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/opendatalab/MinerU/releases/tag/v3.4.4" target="_blank" rel="nofollow noopener noreferrer">MinerU 3.4.4 ships PP-OCRv6 backend (July 10, 2026)</a>
-  </p>
-  <p class="item-summary">MinerU 3.4.4 integrates PP-OCRv6 for improved table and formula extraction in the open-source document parsing toolkit.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="50">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 5 · competitive 0 · frontier 1 · vlm_research 2 = 50 (this view's weighting)">50</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/nanonets/docext" target="_blank" rel="nofollow noopener noreferrer">nanonets/docext: open-source document information extraction library</a>
-  </p>
-  <p class="item-summary">Nanonets&#39; open-source docext library for structured document extraction, a self-hosted complement to the /extract product endpoint.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>docext&#39;s open-source presence creates a managed-vs-self-hosted decision point. Its GitHub issue tracker is a direct signal of what enterprise customers want from extraction capabilities that the managed /extract API does not yet expose.</dd>
-      <dt>Research</dt>
-      <dd>The extraction architecture in docext likely lags OCR-3 capabilities; tracking its issue velocity reveals which extraction failure modes customers encounter in production.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="rss"
-         data-score="42">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 3 · frontier 1 · vlm_research 1 = 42 (this view's weighting)">42</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.unsiloed.ai/blog/llms-for-document-extraction" target="_blank" rel="nofollow noopener noreferrer">Unsiloed AI: Why LLMs Outperform Traditional OCR for Document Extraction</a>
-  </p>
-  <p class="item-summary">Unsiloed AI&#39;s blog argues LLM-based extraction outperforms pipeline OCR on fidelity; positions their parser as a native-LLM extraction approach.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="36">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 0 · frontier 1 · vlm_research 1 = 36 (this view's weighting)">36</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/nanonets/docstrange" target="_blank" rel="nofollow noopener noreferrer">nanonets/docstrange: open-source document classification and splitting library</a>
-  </p>
-  <p class="item-summary">Nanonets&#39; open-source docstrange library handles document classification and splitting, complementing the /split and /chunk product endpoints.</p>
-</article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
       <p class="item-summary">No top-N items this build.</p>
   </div>
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
-<article class="item "
-         data-source="rss"
-         data-score="68">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 5 · competitive 5 · frontier 3 · vlm_research 2 = 68 (this view's weighting)">68</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 60%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">rss</span>
+      <p class="item-summary">No top-N items this build.</p>
   </div>
-  <p class="item-title">
-    <a href="https://mistral.ai/news/mistral-ocr-4" target="_blank" rel="nofollow noopener noreferrer">Mistral releases Mistral OCR 4 (June 23, 2026)</a>
-  </p>
-  <p class="item-summary">Mistral&#39;s fourth-generation dedicated OCR model ships with structured extraction targeting enterprise document pipelines.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Mistral OCR 4 adds a credible frontier-lab entry to the enterprise extraction market, targeting the same pipeline surface as Nanonets /parse and /extract. The make-vs-buy calculus for customers shifts further toward API consolidation under a single provider.</dd>
-      <dt>Research</dt>
-      <dd>Architecture details not yet public; if Mistral OCR 4&#39;s layout understanding is disclosed, it is a useful baseline for Nanonets&#39; hallucination evaluations on table and form data.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="66">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 5 · frontier 4 · vlm_research 2 = 66 (this view's weighting)">66</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://openai.com/blog/gpt-5-6" target="_blank" rel="nofollow noopener noreferrer">OpenAI releases GPT-5.6 family: Sol, Terra (document analysis), Luna (July 9, 2026)</a>
-  </p>
-  <p class="item-summary">OpenAI&#39;s GPT-5.6 family includes Terra, explicitly positioned for document analysis, entering the structured extraction surface directly.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>GPT-5.6 Terra positions OpenAI directly against specialized extraction APIs. Customers evaluating Nanonets against GPT-5.6 Terra will benchmark on FUNSD/CORD/DocVQA; Nanonets should pre-empt with updated OCR-3 scores on those datasets.</dd>
-      <dt>Research</dt>
-      <dd>No architecture disclosure for Terra&#39;s document specialization; worth monitoring for published ablations on layout-aware fine-tuning that might inform Nanonets&#39; research direction.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai, frontier</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="48">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 5 · competitive 5 · frontier 0 · vlm_research 1 = 48 (this view's weighting)">48</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.unsiloed.ai/blog/olmocr-bench-number-one" target="_blank" rel="nofollow noopener noreferrer">Unsiloed Parser achieves 88.0 on olmOCR-Bench, displacing OCR-3 (87.4)</a>
-  </p>
-  <p class="item-summary">Unsiloed Parser (7-person YC team) claims olmOCR-Bench #1 at 88.0, surpassing Nanonets OCR-3 at 87.4 on the same scorer.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Unsiloed&#39;s olmOCR-Bench claim is the first publicly reported result above OCR-3&#39;s 87.4 on that benchmark. Needs immediate reproduction to confirm scorer version parity and dataset overlap with Nanonets&#39; submission.</dd>
-      <dt>Research</dt>
-      <dd>If the 88.0 result holds under the same olmocr scorer version used for OCR-3&#39;s 87.4, it narrows the benchmark lead to a margin within evaluator variance — a materially different competitive posture than current IDP Leaderboard #1.</dd>
-      <dt>Action</dt>
-      <dd>investigate</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="44">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 1 · vlm_research 1 = 44 (this view's weighting)">44</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.llamaindex.ai/blog/llamaparse-index-v2-lancedb" target="_blank" rel="nofollow noopener noreferrer">LlamaIndex launches LlamaParse Index v2 with native LanceDB integration (July 7, 2026)</a>
-  </p>
-  <p class="item-summary">LlamaParse Index v2 ships native LanceDB vector storage, tightening the open-source parse-to-retrieval stack against managed extraction APIs.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>LlamaIndex&#39;s LanceDB integration tightens the open-source parsing-to-retrieval stack, positioning it as a credible alternative to managed extraction APIs for cost-sensitive customers. Nanonets&#39; LanceDB partnership may be relevant here — worth confirming how LlamaParse v2&#39;s positioning affects that relationship.</dd>
-      <dt>Research</dt>
-      <dd>No research implication; product ecosystem move.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article>  </div>
 </section>
 
 <aside class="ai-partner" aria-label="Questions from your AI partner">
@@ -410,18 +79,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Unsiloed Parser claims olmOCR-Bench #1 at 88.0 using olmocr==0.4.27 on allenai/olmOCR-bench &#39;as of May 2026&#39;. Should the team run a comparative evaluation using the same scorer version to confirm whether OCR-3&#39;s 87.4 was produced with the same olmocr version, or whether the May 2026 scorer introduced methodology changes that affect score comparability?</p>
-    <p class="question-context">The olmOCR ACL 2026 paper formalizes olmOCR-Bench as the community reference. If OCR-3&#39;s 87.4 and Unsiloed&#39;s 88.0 were produced with different scorer versions, the 0.6-point gap is not a valid comparison. This affects how the team should communicate the IDP Leaderboard #1 claim.</p>
+    <p class="question-text">github_trending returned &#39;no items in current window&#39; this build — the first time this source has failed; prior builds relied on it as the sole working source. Is there a change in the execution environment&#39;s network policy blocking github.com?</p>
+    <p class="question-context">All prior partial builds produced items from github_trending despite arxiv, HN, and RSS failing. This build is the first with zero items across all four sources. The error message &#39;no items in current window&#39; differs from the 403 pattern on arxiv and HN, suggesting a different failure mode — likely a date-range or scraping-window issue rather than an access-policy block.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">FADE (arXiv:2606.29431) identifies FFN modules at critical decoder layers as the primary injection point for language priors that override visual evidence. Does the team&#39;s existing mechanistic interpretability work on OCR-3&#39;s phantom-row hallucinations implicate FFN layers at specific decoder depths, or does the evidence point primarily to attention circuits?</p>
-    <p class="question-context">If OCR-3&#39;s phantom-row failures involve the same FFN-layer mechanism FADE targets, FADE&#39;s inference-time suppression (no retraining) could be a low-cost near-term mitigation. The answer would determine whether FADE should be in the &#39;reproduce&#39; queue or only &#39;read in week&#39;.</p>
+    <p class="question-text">With all four sources now failing simultaneously, should the build pipeline add a health-check step before ingest that detects network-policy blocks and aborts immediately rather than consuming the lock window?</p>
+    <p class="question-context">A zero-item build wastes the lock window and produces no useful signal. A pre-ingest check — e.g., a HEAD request to each source domain — would surface network failures in under five seconds rather than after a full ingest timeout. The result could be logged to questions_for_team.md without occupying the full build window.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The Transcoders paper (arXiv:2605.22902) achieves AUC 0.68 for hallucination prediction on Gemma 3-4B-IT using graph-based circuit indicators. Is AUC 0.68 above or below the team&#39;s current phantom-row detection baseline on OCR-3, and would the Transcoder circuit framework transfer to a 35B MoE architecture where circuit topology is likely to differ substantially?</p>
-    <p class="question-context">AUC 0.68 is the paper&#39;s headline result. Without knowing OCR-3&#39;s current detection baseline, it is unclear whether Transcoders would be a step forward or backward. The 35B MoE vs. 4B dense architecture difference may also limit direct transfer.</p>
+    <p class="question-text">Should the pipeline add a fallback to reuse the previous build&#39;s items_deduped.jsonl when all sources fail, rendering the prior edition with a staleness banner and the current timestamp?</p>
+    <p class="question-context">A dashboard with day-old items is more useful than a blank page. The prior seen.json and edition.json both persist across builds; a render-from-cache mode would at minimum keep the public pages non-empty and mark them as stale rather than empty.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">arxiv has returned 403 for every build since 2026-05-21 — 30+ consecutive builds. Is this environment-level access control (the remote execution container is blocked by arXiv&#39;s IP range), or has a configuration change (user-agent, rate-limit, auth) resolved the pattern in other contexts?</p>
+    <p class="question-context">The pattern is too consistent to be transient. arXiv&#39;s API blocks commercial crawlers and rate-limited clients. If the container IP range is blocklisted, a proxy or the arXiv OAI-PMH feed (which has different access semantics) would be the cleanest fix. If this has already been investigated and concluded as unresolvable, noting that in context.md would stop the recurring question.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -433,7 +107,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-07-20T06:00:00+00:00
+    sources covered:     · failed: 4 · built at 2026-07-24T00:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

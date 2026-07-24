@@ -6866,3 +6866,31 @@ This is the 55th consecutive failed build. The dashboard continues to serve the 
 **Required fix (unchanged):** An administrator must extend the environment's egress allowlist to permit outbound HTTPS to the source domains. Per the proxy README, 403/407 responses are policy denials that require admin action.
 
 No new questions raised — this is a repeat of the same structural block.
+
+## Build 2026-07-24T00:00:00+00:00 (audit: partial)
+
+### Q: github_trending returned 'no items in current window' this build — the first time this source has failed; prior builds relied on it as the sole working source. Is there a change in the execution environment's network policy blocking github.com?
+
+**Context:** All prior partial builds produced items from github_trending despite arxiv, HN, and RSS failing. This build is the first with zero items across all four sources. The error message 'no items in current window' differs from the 403 pattern on arxiv and HN, suggesting a different failure mode — likely a date-range or scraping-window issue rather than an access-policy block.
+
+**Answer:** _add reply here_
+
+### Q: With all four sources now failing simultaneously, should the build pipeline add a health-check step before ingest that detects network-policy blocks and aborts immediately rather than consuming the lock window?
+
+**Context:** A zero-item build wastes the lock window and produces no useful signal. A pre-ingest check — e.g., a HEAD request to each source domain — would surface network failures in under five seconds rather than after a full ingest timeout. The result could be logged to questions_for_team.md without occupying the full build window.
+
+**Answer:** _add reply here_
+
+### Q: Should the pipeline add a fallback to reuse the previous build's items_deduped.jsonl when all sources fail, rendering the prior edition with a staleness banner and the current timestamp?
+
+**Context:** A dashboard with day-old items is more useful than a blank page. The prior seen.json and edition.json both persist across builds; a render-from-cache mode would at minimum keep the public pages non-empty and mark them as stale rather than empty.
+
+**Answer:** _add reply here_
+
+### Q: arxiv has returned 403 for every build since 2026-05-21 — 30+ consecutive builds. Is this environment-level access control (the remote execution container is blocked by arXiv's IP range), or has a configuration change (user-agent, rate-limit, auth) resolved the pattern in other contexts?
+
+**Context:** The pattern is too consistent to be transient. arXiv's API blocks commercial crawlers and rate-limited clients. If the container IP range is blocklisted, a proxy or the arXiv OAI-PMH feed (which has different access semantics) would be the cleanest fix. If this has already been investigated and concluded as unresolvable, noting that in context.md would stop the recurring question.
+
+**Answer:** _add reply here_
+
+---
