@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jul 24, 2026 · 00:00 UTC · 0 items scored</span>
+  <span class="built-at">Built Jul 25, 2026 · 00:00 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,23 +79,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">github_trending returned &#39;no items in current window&#39; this build — the first time this source has failed; prior builds relied on it as the sole working source. Is there a change in the execution environment&#39;s network policy blocking github.com?</p>
-    <p class="question-context">All prior partial builds produced items from github_trending despite arxiv, HN, and RSS failing. This build is the first with zero items across all four sources. The error message &#39;no items in current window&#39; differs from the 403 pattern on arxiv and HN, suggesting a different failure mode — likely a date-range or scraping-window issue rather than an access-policy block.</p>
+    <p class="question-text">All four ingestion sources returned zero items this build (arxiv 403, HN 403, RSS empty, GitHub trending empty); is the scheduled build time falling outside any maintenance or rate-limit window that could explain simultaneous failures across all source types?</p>
+    <p class="question-context">arxiv and HN have returned 403 for multiple consecutive builds. RSS and GitHub trending returning empty in the same build cycle is new — this suggests either a time-window issue (build fires at an off-peak time for all sources) or a proxy/network policy blocking outbound requests.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">With all four sources now failing simultaneously, should the build pipeline add a health-check step before ingest that detects network-policy blocks and aborts immediately rather than consuming the lock window?</p>
-    <p class="question-context">A zero-item build wastes the lock window and produces no useful signal. A pre-ingest check — e.g., a HEAD request to each source domain — would surface network failures in under five seconds rather than after a full ingest timeout. The result could be logged to questions_for_team.md without occupying the full build window.</p>
+    <p class="question-text">Should the CLI ingest step add fallback retry logic or a secondary access path for arXiv (e.g., OAI-PMH, Semantic Scholar API) given that the primary arXiv endpoint has been 403-ing consistently?</p>
+    <p class="question-context">The arXiv API at export.arxiv.org has been blocked for many consecutive builds. This is the highest-priority research source for the vlm_research and doc_ai axes. Without it, hallucination and VLM internals research papers are invisible to the dashboard.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the pipeline add a fallback to reuse the previous build&#39;s items_deduped.jsonl when all sources fail, rendering the prior edition with a staleness banner and the current timestamp?</p>
-    <p class="question-context">A dashboard with day-old items is more useful than a blank page. The prior seen.json and edition.json both persist across builds; a render-from-cache mode would at minimum keep the public pages non-empty and mark them as stale rather than empty.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">arxiv has returned 403 for every build since 2026-05-21 — 30+ consecutive builds. Is this environment-level access control (the remote execution container is blocked by arXiv&#39;s IP range), or has a configuration change (user-agent, rate-limit, auth) resolved the pattern in other contexts?</p>
-    <p class="question-context">The pattern is too consistent to be transient. arXiv&#39;s API blocks commercial crawlers and rate-limited clients. If the container IP range is blocklisted, a proxy or the arXiv OAI-PMH feed (which has different access semantics) would be the cleanest fix. If this has already been investigated and concluded as unresolvable, noting that in context.md would stop the recurring question.</p>
+    <p class="question-text">Should the build be configured to fire at a different time-of-day to avoid what appears to be systematic source unavailability during the current scheduled window?</p>
+    <p class="question-context">All four sources failing simultaneously — including RSS and GitHub trending, which have succeeded in prior builds — suggests the scheduled execution time may be hitting a network or rate-limit restriction. Shifting by 2-4 hours could be diagnostic.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -107,7 +102,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-07-24T00:00:00+00:00
+    sources covered:     · failed: 4 · built at 2026-07-25T00:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

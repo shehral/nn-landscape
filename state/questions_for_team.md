@@ -6989,3 +6989,25 @@ This is the 60th+ consecutive failed build. The dashboard continues to serve the
 **Required fix (unchanged):** An administrator must extend the environment's egress allowlist to permit outbound HTTPS to the source domains. Per the proxy README, 403/407 responses are policy denials that require admin action.
 
 No new questions raised — this is a repeat of the same structural block.
+
+## Build 2026-07-25T00:00:00+00:00 (audit: partial)
+
+### Q: All four ingestion sources returned zero items this build (arxiv 403, HN 403, RSS empty, GitHub trending empty); is the scheduled build time falling outside any maintenance or rate-limit window that could explain simultaneous failures across all source types?
+
+**Context:** arxiv and HN have returned 403 for multiple consecutive builds. RSS and GitHub trending returning empty in the same build cycle is new — this suggests either a time-window issue (build fires at an off-peak time for all sources) or a proxy/network policy blocking outbound requests.
+
+**Answer:** _add reply here_
+
+### Q: Should the CLI ingest step add fallback retry logic or a secondary access path for arXiv (e.g., OAI-PMH, Semantic Scholar API) given that the primary arXiv endpoint has been 403-ing consistently?
+
+**Context:** The arXiv API at export.arxiv.org has been blocked for many consecutive builds. This is the highest-priority research source for the vlm_research and doc_ai axes. Without it, hallucination and VLM internals research papers are invisible to the dashboard.
+
+**Answer:** _add reply here_
+
+### Q: Should the build be configured to fire at a different time-of-day to avoid what appears to be systematic source unavailability during the current scheduled window?
+
+**Context:** All four sources failing simultaneously — including RSS and GitHub trending, which have succeeded in prior builds — suggests the scheduled execution time may be hitting a network or rate-limit restriction. Shifting by 2-4 hours could be diagnostic.
+
+**Answer:** _add reply here_
+
+---
