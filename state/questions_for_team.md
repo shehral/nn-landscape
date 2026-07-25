@@ -6951,3 +6951,22 @@ This is the 58th+ consecutive failed build. The dashboard continues to serve the
 **Required fix (unchanged):** An administrator must extend the environment's egress allowlist to permit outbound HTTPS to the source domains. Per the proxy README, 403/407 responses are policy denials that require admin action.
 
 No new questions raised — this is a repeat of the same structural block.
+
+---
+
+## Build 2026-07-25T00:00:00Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (egress proxy blocks export.arxiv.org — structural) |
+| hn | HTTP 403 Forbidden (egress proxy blocks hn.algolia.com — structural) |
+| rss | no items in current window (all RSS feed hosts blocked by egress policy) |
+| github_trending | no items in current window (GitHub API session scope restricts to `repos/{owner}/{repo}/...`) |
+
+This is the 59th+ consecutive failed build. The dashboard continues to serve the stale July 6 edition. Root causes and required remediations are documented in prior build notes (Build 2026-07-03T18:07:59Z for root cause; Build 2026-07-10T12:22:42 for remediation steps; Build 2026-07-24T00:00:00+00:00 for questions raised when github_trending first failed). All prior questions remain unanswered.
+
+**Required fix (unchanged):** An administrator must extend the environment's egress allowlist to permit outbound HTTPS to the source domains. Per the proxy README, 403/407 responses are policy denials that require admin action.
+
+No new questions raised — this is a repeat of the same structural block. The complete remediation steps are in Build 2026-07-10T12:22:42.
