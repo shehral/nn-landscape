@@ -53,7 +53,7 @@ benchmark on document AI co-developed with IIT Indore. Items that
 publish leaderboard results, contest its methodology, or are released by
 models near the top of it (GPT-5.4, GPT-5.5, GPT-5.6 Sol/Terra/Luna, Gemini-3-Pro/Flash,
 Gemini 3.1 Pro, Gemini 3.5 Flash, Claude 4.6 family, Claude Fable 5,
-Claude Opus 4.8, Qwen3-VL, Pixtral, GLM-OCR, Chandra OCR 2,
+Claude Opus 4.8, Claude Opus 5, Qwen3-VL, Pixtral, GLM-OCR, Chandra OCR 2,
 LightOn OCR-2, DeepSeek-OCR 2) are competitive-axis relevant.
 
 ## Active research direction
@@ -132,7 +132,14 @@ Items that name, compare against, or are released by these companies are
   unifies models, infrastructure, and tooling into a single platform for
   production document-to-structured-data pipelines; appeared as a direct
   peer system in LongExtractBench (July 2026) alongside Reducto, Llama-
-  Extract-Agentic, GPT-5.5, Opus 4.8, and Gemini 3.1 Pro.
+  Extract-Agentic, GPT-5.5, Opus 4.8, and Gemini 3.1 Pro; launched
+  Parse 2.0 (July 2026; 0.847 Adjusted F1 on layout accuracy; 95.7%
+  on document Q&A across 581 documents) and released RealDoc-Bench
+  (public on HuggingFace: Extend-AI/RealDoc-Bench-Layout and
+  Extend-AI/RealDoc-Bench), a real-world evaluation suite targeting
+  multi-page loans, handwritten annotations, rotated scans, and
+  tables spanning page breaks — document types that curated OCR
+  benchmarks systematically exclude.
 - **Docling** (IBM Research) — open-source layout-aware document parser;
   reference architecture and common open-source baseline.
   Granite-Docling-258M (production VLM, January 2026, Apache 2.0)
@@ -219,7 +226,11 @@ Examples that are **competitive-primary**:
   improved chart and document parsing accuracy; Claude Opus 4.8 (May 28,
   2026) adds dynamic multi-agent workflows and is evaluated as a peer on
   long-document structured extraction benchmarks (LongExtractBench,
-  July 2026).
+  July 2026); Claude Opus 5 (July 24, 2026) carries native vision with
+  chart, document, and image parsing; 1M-token context window; 128K
+  synchronous output; $5/$25 per million input/output tokens; near-Fable-5
+  performance at half the price; no IDP Leaderboard or ParseBench scores
+  yet available as of this refresh.
 - Google releases a Gemini-document-mode endpoint or a layout-aware
   OCR benchmark result (Gemini 3 Pro/Flash; Gemini 3.1 Pro released
   February 19, 2026; Gemini 3.5 Flash released May 2026 at Google I/O).
@@ -233,7 +244,11 @@ Examples that are **competitive-primary**:
 - xAI ships Grok vision document handling; the Grok Collections API
   (released 2026) uses OCR and layout-aware parsing to extract and
   index PDFs and Excel files into searchable knowledge bases for RAG
-  workflows ($2.50/1,000 searches).
+  workflows ($2.50/1,000 searches). Grok 4.5 (July 8, 2026; 500K token
+  context; $2/$6 per million tokens) adds productivity assistance for
+  Microsoft 365 and Google Workspace (Sheets, Slides, Docs, Drive); this
+  is document productivity, not a document-extraction API, and does not
+  add a new surface that competes with OCR-3's extraction endpoints.
 - Meta releases a Llama-vision model with explicit document focus.
 
 The `frontier` axis is reserved for capability releases that **do not
@@ -1036,3 +1051,87 @@ Nanonets, do not respond.
 - Note: Qwen3.7-Plus (Alibaba, June 2, 2026) still unconfirmed on
   document-extraction OCR benchmarks; retained in monitoring note from
   prior refresh.
+
+---
+
+**Date:** 2026-07-26
+
+**Sources consulted:**
+
+- `nanonets.com`, `nanonets.com/blog`, `benchmarking.nanonets.com`,
+  `idp-leaderboard.org` — all returned HTTP 403; fell back to web
+  search for all Nanonets data
+- WebSearch: "Nanonets OCR-3 IDP leaderboard July 2026 ranking new model"
+  — #1 at 85.9% confirmed unchanged; benchmarking.nanonets.com and
+  idp-leaderboard.org URLs confirmed resolving
+- WebSearch: "site:huggingface.co/nanonets" — open-weight model lineup
+  unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains API-only
+- WebSearch: "nanonets arxiv 2026 research paper" — no team-authored
+  papers surfaced; Nanonets-KIE dataset referenced in third-party
+  papers (as in prior refreshes)
+- WebSearch: "Nanonets blog product announcement July 2026" — no new
+  July 2026 Nanonets product announcements indexed
+- WebSearch: "Claude Opus 5" release July 2026 document vision — Opus 5
+  (July 24, 2026) confirmed from Anthropic release notes,
+  coursiv.io, codersera.com, bleap.finance, benchlm.ai: native vision,
+  chart and document parsing, 1M-token context, 128K output,
+  $5/$25 per million tokens
+- WebSearch: "Claude Opus 5" IDP leaderboard ParseBench benchmark —
+  no IDP Leaderboard or ParseBench scores yet available; model
+  launched two days before this refresh
+- WebSearch: Mistral OCR July 2026 new model — no new model since
+  OCR 4 (June 23, 2026); all prior entries confirmed current
+- WebSearch: Reducto AI document processing July 2026 — no new
+  announcements; all prior entries confirmed current
+- WebSearch: LlamaParse LlamaIndex July 2026 — granular job tracking,
+  cost attribution metadata, and HMAC webhooks added; no new major
+  product beyond what's in context
+- WebSearch: Unstructured.io July 2026 — maintenance releases only;
+  no major product announcement
+- WebSearch: "Grok 4.5" xAI release July 2026 — July 8, 2026 launch
+  confirmed; general-purpose model with vision + M365/Google Workspace
+  productivity integration; Grok Collections API remains primary
+  document-extraction signal from xAI
+- WebSearch: Extend AI document processing benchmark July 2026 —
+  Parse 2.0 and RealDoc-Bench confirmed from extend.ai/resources
+- WebSearch: GLM-OCR Z.ai July 2026 — Z.ai rebrand confirmed current
+  (from 2026-07-19 refresh); no new model
+- WebSearch: Chandra OCR 2 / LightOn OCR 2 July 2026 — no new model
+  versions; both confirmed operating
+- WebSearch: DeepSeek VLM document OCR July 2026 — DeepSeek-OCR 2
+  (January 2026) confirmed current; no new model
+- WebSearch: Qwen3-VL Alibaba VLM July 2026 — confirmed current; no
+  new release
+- WebSearch: Rossum Docsumo ABBYY Kofax Tungsten Automation 2026 —
+  all confirmed operating; no renames or closures
+- WebSearch: Firecrawl document parsing July 2026 — Fire-PDF and
+  /parse endpoint confirmed current; no new July features
+- WebSearch: Docling IBM July 2026 — hardening and maintenance releases
+  only; no major new feature
+- WebSearch: Google Gemini document OCR vision July 2026 — no major
+  new announcement; Gemini 3.1 Pro and 3.5 Flash confirmed current
+- WebSearch: OpenAI GPT-5.6 Sol/Terra/Luna document vision July 2026
+  — confirmed current (July 9, 2026); no new OpenAI models
+
+**Material changes versus prior version (2026-07-19):**
+
+- Added **Claude Opus 5** (Anthropic, July 24, 2026) to the frontier-lab
+  competitive-primary Anthropic example and IDP Leaderboard comparables
+  list; native vision with chart, document, and image parsing; 1M-token
+  context; 128K synchronous output; $5/$25 per million tokens; near-
+  Fable-5 performance at half the price. No IDP Leaderboard or ParseBench
+  scores yet available (model launched two days before this refresh).
+- Updated **Extend** entry: added Parse 2.0 (July 2026; 0.847 Adjusted F1
+  on layout accuracy; 95.7% on document Q&A across 581 documents) and
+  RealDoc-Bench (public on HuggingFace: Extend-AI/RealDoc-Bench) as a
+  real-world evaluation suite for complex production-document types.
+- Added **Grok 4.5** (xAI, July 8, 2026) as a note in the xAI entry:
+  general-purpose model with vision and productivity assistance for
+  Microsoft 365/Google Workspace; not a document-extraction API competitor;
+  Grok Collections API remains the primary xAI document-extraction signal.
+  Not added to competitive-primary examples.
+- Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
+  No new Nanonets models on HuggingFace. No Nanonets-authored arXiv
+  papers found. No July 2026 Nanonets blog posts indexed.
+- Note: Qwen3.7-Plus (Alibaba, June 2, 2026) still unconfirmed on
+  document-extraction OCR benchmarks; monitor for benchmark results.
