@@ -7030,3 +7030,35 @@ This is the 61st+ consecutive failed build. The dashboard continues to serve the
 No new questions raised — this is a repeat of the same structural block. See Build 2026-07-10T12:22:42 for the complete remediation steps and Build 2026-07-24T00:00:00+00:00 for the questions raised when github_trending first failed.
 
 ---
+
+---
+
+## Build 2026-07-26T00:00:00+00:00 (audit: ABORTED — complete source failure)
+
+**Build aborted at Step 3 (ingest). No edition published. Lock released.**
+
+All 4 sources returned 0 items:
+
+- **arxiv**: HTTP 403 Forbidden (`export.arxiv.org/api/query`). Persistent across many consecutive builds.
+- **hn**: HTTP 403 Forbidden. Persistent across many consecutive builds.
+- **rss**: "no items in current window." This is the first build where RSS has returned 0 items. Possible causes: (a) all items returned by the 10 configured feeds were already present in `state/seen.json` (which now contains 385 entries), or (b) the time-window filter in the RSS ingestor excluded all items.
+- **github_trending**: "no items in current window." Same pattern as RSS — likely all returned repos are in `state/seen.json` or the window filter returned nothing.
+
+### Q: Is the seen.json filter too aggressive now that it has grown to 385 entries?
+
+**Context:** As seen.json accumulates every URL ever processed, it becomes more likely that recurring items (e.g., pinned GitHub repos that trend repeatedly, long-running RSS articles) are permanently filtered out. If RSS feeds are returning 15 items per feed but all 150 items are in seen.json, the build will always return 0 items from RSS going forward. The team should audit whether seen.json needs a time-based expiry (e.g., entries older than 30 days removed) to allow re-surfacing of items that have materially updated since they were first seen.
+
+**Answer:** _add reply here_
+
+### Q: arxiv and HN have returned HTTP 403 for many consecutive builds; has any investigation of the root cause been done?
+
+**Context:** This question has been raised in multiple prior builds (2026-05-21 through at least 2026-05-28). The failures appear to be persistent IP-level blocks on the remote execution environment's IP range, not transient rate limits. The team should check whether the arXiv OAI-PMH endpoint (`export.arxiv.org/oai2`) or the HN Firebase API (`hacker-news.firebaseio.com`) bypass the block. Until resolved, the build has no research-primary coverage.
+
+**Answer:** _add reply here_
+
+### Q: Should the build proceed with 0 items and publish an empty edition as a health signal, or abort (current behavior) to avoid committing meaningless editions?
+
+**Context:** The current policy (abort on complete source failure) means the dashboard goes stale; readers see no update. An alternative is to publish a minimal "no new items this cycle" edition that still updates the `built_at` timestamp and shows sources_failed. This would distinguish "build ran but found nothing" from "no build ran at all" for downstream consumers of the dashboard.
+
+**Answer:** _add reply here_
+
