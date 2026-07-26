@@ -7062,3 +7062,26 @@ All 4 sources returned 0 items:
 
 **Answer:** _add reply here_
 
+
+---
+
+## Build 2026-07-26T06:10:00+00:00 (audit: ABORTED — complete source failure)
+
+**Build aborted at Step 3 (ingest). No edition published. Lock released.**
+
+All 4 sources returned 0 items:
+
+| Source | Status | Root cause |
+|---|---|---|
+| arxiv | HTTP 403 Forbidden | Egress proxy blocks `export.arxiv.org:443` (policy denial) |
+| hn | HTTP 403 Forbidden | Egress proxy blocks `hn.algolia.com:443` (policy denial) |
+| rss | no items in current window | Egress proxy blocks all 10 RSS feed hosts (openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, etc.) confirmed via proxy status endpoint |
+| github_trending | no items in current window | GitHub API session scope restricts to `repos/{owner}/{repo}/...`; trending endpoint is out of scope |
+
+**New diagnostic information:** This build ran `curl -sS "$HTTPS_PROXY/__agentproxy/status"` and confirmed that openai.com:443, deepmind.google:443, huggingface.co:443, latent.space:443, interconnects.ai:443, and hn.algolia.com:443 are all receiving `gateway answered 403 to CONNECT (policy denial or upstream failure)`. Prior builds attributed RSS failures to `seen.json` saturation; this build confirms the failure is proxy policy, not seen.json.
+
+**Additional compounding factor:** `seen.json` now contains 385 entries (oldest: 2026-05-21; newest: 2026-07-20). Even if the proxy blockage were resolved, RSS and github_trending may return zero new items due to seen.json saturation. The publish step should add a TTL-based expiry (e.g., drop entries older than 30 days) to prevent permanent depletion.
+
+**Required fix (unchanged):** An administrator must extend the environment's egress allowlist to permit outbound HTTPS to: `export.arxiv.org`, `hn.algolia.com`, and all 10 RSS feed hosts. Per the proxy README, 403/407 responses are policy denials that require admin action — the agent cannot route around them. The GitHub trending failure requires a separate fix (either a token with broader GitHub API scope, or an alternative trending source).
+
+This is the 62nd+ consecutive failed build. The dashboard continues to serve the stale July 6 edition. No new questions raised — prior questions remain unanswered and unchanged.
