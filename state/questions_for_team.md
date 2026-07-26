@@ -7085,3 +7085,20 @@ All 4 sources returned 0 items:
 **Required fix (unchanged):** An administrator must extend the environment's egress allowlist to permit outbound HTTPS to: `export.arxiv.org`, `hn.algolia.com`, and all 10 RSS feed hosts. Per the proxy README, 403/407 responses are policy denials that require admin action — the agent cannot route around them. The GitHub trending failure requires a separate fix (either a token with broader GitHub API scope, or an alternative trending source).
 
 This is the 62nd+ consecutive failed build. The dashboard continues to serve the stale July 6 edition. No new questions raised — prior questions remain unanswered and unchanged.
+
+---
+
+## Build 2026-07-26T12:00:00Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). No edition published. Lock released.**
+
+All 4 sources returned 0 items (63rd+ consecutive failed build):
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (egress proxy blocks `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (egress proxy blocks `hn.algolia.com`) |
+| rss | no items in current window (egress proxy blocks all RSS feed hosts) |
+| github_trending | no items in current window (GitHub API session scope restricts to `repos/{owner}/{repo}/...`) |
+
+Dashboard continues to serve the stale July 6 edition. All prior questions remain unanswered. Required fix unchanged: an administrator must extend the environment's egress allowlist to permit outbound HTTPS to the source domains. No new questions raised — all relevant questions are documented in prior entries.
