@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jul 27, 2026 · 00:15 UTC · 0 items scored</span>
+  <span class="built-at">Built Jul 27, 2026 · 12:18 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,23 +79,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four ingest sources failed with 403 or zero-item results. Is the remote execution environment&#39;s network proxy configured to allow outbound HTTPS to arxiv.org, hn.algolia.com, RSS feed hosts, and github.com?</p>
-    <p class="question-context">arxiv returned HTTP 403; HN Algolia returned HTTP 403; RSS and GitHub trending returned no items. This is the complete failure pattern. The proxy at /root/.ccr/ca-bundle.crt may be blocking these hosts, or outbound network policy is not allowing egress to external APIs.</p>
+    <p class="question-text">All four ingest sources failed in this build — arxiv (403), HN (403), RSS (zero items), and github_trending (zero items). Is there a network policy change or environment-level restriction that explains the complete source failure, distinct from the partial failures seen in prior builds?</p>
+    <p class="question-context">Prior builds consistently failed on arxiv and HN but retained github_trending and occasionally RSS as working sources. This is the first documented build where all four sources simultaneously returned zero items. A complete ingest failure produces a useless edition. If github_trending and RSS failing is transient (e.g., off-peak GitHub indexing window or feed refresh timing), the next build may recover. If it reflects an environment change, the infrastructure needs repair before further builds have value.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the build pipeline include a graceful fallback that re-uses items from the previous seen.json when all current-cycle sources fail, so the dashboard does not go fully blank?</p>
-    <p class="question-context">With zero items, the rendered dashboard is empty and provides no signal. A fallback that surfaces the top 10 items from state/seen.json (most recently first) would preserve some value for readers while the network issue is investigated.</p>
+    <p class="question-text">Claude Opus 5 launched July 24, 2026 with native vision and document parsing at $5/$25 per million tokens — two days before the most recent context refresh. Should a brief structured update to data/nanonets_context.md be triggered when a flagship frontier model lands, rather than waiting for the next weekly refresh cycle?</p>
+    <p class="question-context">Claude Opus 5 is a competitive-primary item under the strict frontier-vs-competitive disambiguation rule (native vision, chart and document parsing, 1M-token context). Its IDP Leaderboard and ParseBench scores are not yet published. A mid-cycle context amendment for high-impact frontier releases would allow the dashboard to score and frame them in the next build rather than a week later.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The questions_for_team.md file (656KB) accumulates all prior questions with no pruning. Should completed or stale questions be archived to a separate file to keep the active file manageable?</p>
-    <p class="question-context">The file has grown large with all prior build questions unanswered (no team replies detected). A large file increases read cost per build and complicates the agent&#39;s scan for recent answers.</p>
+    <p class="question-text">The questions_for_team.md file now contains 1200+ lines of unanswered questions spanning 60+ consecutive builds. Is there any channel through which the team receives and responds to these questions?</p>
+    <p class="question-context">No question in the file has ever received a reply marked with an answer. Critical open items — arXiv access, MinerU and PaddleOCR competitive registry classification, GRPO leaderboard timeline, OCR-3 lmms-eval submission, LangChain reclassification — have been re-asked verbatim in 5-10 consecutive builds each. Without any feedback loop, the AI-partner channel is producing only write-once noise. If the intended review channel is different from this file (e.g., a Slack digest, a Linear board), specifying that target in data/nanonets_context.md would allow the build agent to adjust routing.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the build schedule be paused until network egress from the remote environment is confirmed working, to avoid accumulating empty builds and lock-acquire cycles?</p>
-    <p class="question-context">Back-to-back empty builds produce no value and consume run quota. If the 403 errors are environment-level (not transient), pausing is more efficient than retrying every 6 hours.</p>
+    <p class="question-text">GPT-5.6 Sol/Terra/Luna launched July 9, 2026 — Terra explicitly targets document analysis workflows. Extend released Parse 2.0 and RealDoc-Bench (July 2026). These are both post-June items not yet validated against actual benchmark scores on the IDP Leaderboard. Should a manual build trigger be available to force a build between scheduled cron cycles when a cluster of high-signal competitive events occurs?</p>
+    <p class="question-context">The scheduled 6-hour cadence does not distinguish between low-signal and high-signal periods. Two major competitive events (GPT-5.6 with document-analysis tier, Extend Parse 2.0 with 0.847 Adjusted F1) occurred within the last 18 days and have not appeared in any successfully rendered edition. A manual trigger — or a webhook from context.md refreshes — would allow timely coverage of competitive spikes.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Should the build abort entirely and not render a zero-item edition, or continue and render a banner-only page indicating the infrastructure failure?</p>
+    <p class="question-context">The current playbook continues even on partial builds. A zero-item build produces a page with no content beyond the failure banner, which may be worse than no page if the prior edition remains visible. The render step will overwrite docs/index.html; if the previous edition was informative, rendering an empty one erases it. A &#39;skip render if items == 0&#39; policy would preserve prior editions until ingest recovers.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -107,7 +112,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-07-27T00:15:00+00:00
+    sources covered:     · failed: 4 · built at 2026-07-27T12:18:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

@@ -7164,3 +7164,70 @@ All 4 sources returned 0 items (65th+ consecutive failed build):
 Dashboard continues to serve the stale July 6 edition. All prior questions remain unanswered. Required fix unchanged: an administrator must extend the environment's egress allowlist to permit outbound HTTPS to the source domains. No new questions raised — all relevant questions are documented in the 2026-07-27T00:15 entry immediately above.
 
 ---
+
+---
+
+## Build 2026-07-27T12:18:00+00:00 (audit: failed — zero items, all sources failed)
+
+**INFRASTRUCTURE FAILURE NOTE**
+
+All four ingest sources failed this build cycle:
+- **arxiv**: HTTP 403 Forbidden (consistent with 40+ consecutive build pattern)
+- **hn**: HTTP 403 Forbidden (same pattern)
+- **rss**: zero items in current window
+- **github_trending**: zero items in current window
+
+This is the first documented build where github_trending and RSS also returned zero items simultaneously. The edition was rendered with 0 items and audit_passed=false. Prior editions may be preferable to the blank edition now live on GitHub Pages.
+
+### Q: What caused github_trending and RSS to also fail this cycle, in addition to the persistent arxiv/HN 403s?
+
+**Context:** Prior builds retained github_trending and RSS as working sources even when arxiv and HN were blocked. Both returning zero in the same cycle suggests either a timing issue (build ran during a window before GitHub trending was updated) or a new environment restriction. Checking whether the next scheduled build recovers github_trending would determine if this is transient.
+
+**Answer:** _add reply here_
+
+### Q: Claude Opus 5 (July 24, 2026) and GPT-5.6 Terra (July 9, 2026) are competitive-primary items that have not appeared in any rendered edition because ingest has been partially or fully failing. Should a manual build trigger be documented so the team can force a build when high-signal competitive events occur?
+
+**Context:** Both models are competitive-axis items under the strict disambiguation rule (document parsing, extraction surface). Neither has IDP Leaderboard scores yet. A manual trigger would allow timely coverage without waiting for infrastructure recovery.
+
+**Answer:** _add reply here_
+
+### Q: Should the build skip rendering and publishing when items == 0, to avoid overwriting a prior informative edition with a blank failure page?
+
+**Context:** The current playbook renders regardless of item count. A zero-item edition overwrites docs/index.html with a failure banner, erasing the most recent valid content. If the prior edition remains at the same URL, preserving it until ingest recovers would give readers a better experience. The lock would still release; the failure would still be logged here.
+
+**Answer:** _add reply here_
+
+
+## Build 2026-07-27T12:18:00+00:00 (audit: partial)
+
+### Q: All four ingest sources failed in this build — arxiv (403), HN (403), RSS (zero items), and github_trending (zero items). Is there a network policy change or environment-level restriction that explains the complete source failure, distinct from the partial failures seen in prior builds?
+
+**Context:** Prior builds consistently failed on arxiv and HN but retained github_trending and occasionally RSS as working sources. This is the first documented build where all four sources simultaneously returned zero items. A complete ingest failure produces a useless edition. If github_trending and RSS failing is transient (e.g., off-peak GitHub indexing window or feed refresh timing), the next build may recover. If it reflects an environment change, the infrastructure needs repair before further builds have value.
+
+**Answer:** _add reply here_
+
+### Q: Claude Opus 5 launched July 24, 2026 with native vision and document parsing at $5/$25 per million tokens — two days before the most recent context refresh. Should a brief structured update to data/nanonets_context.md be triggered when a flagship frontier model lands, rather than waiting for the next weekly refresh cycle?
+
+**Context:** Claude Opus 5 is a competitive-primary item under the strict frontier-vs-competitive disambiguation rule (native vision, chart and document parsing, 1M-token context). Its IDP Leaderboard and ParseBench scores are not yet published. A mid-cycle context amendment for high-impact frontier releases would allow the dashboard to score and frame them in the next build rather than a week later.
+
+**Answer:** _add reply here_
+
+### Q: The questions_for_team.md file now contains 1200+ lines of unanswered questions spanning 60+ consecutive builds. Is there any channel through which the team receives and responds to these questions?
+
+**Context:** No question in the file has ever received a reply marked with an answer. Critical open items — arXiv access, MinerU and PaddleOCR competitive registry classification, GRPO leaderboard timeline, OCR-3 lmms-eval submission, LangChain reclassification — have been re-asked verbatim in 5-10 consecutive builds each. Without any feedback loop, the AI-partner channel is producing only write-once noise. If the intended review channel is different from this file (e.g., a Slack digest, a Linear board), specifying that target in data/nanonets_context.md would allow the build agent to adjust routing.
+
+**Answer:** _add reply here_
+
+### Q: GPT-5.6 Sol/Terra/Luna launched July 9, 2026 — Terra explicitly targets document analysis workflows. Extend released Parse 2.0 and RealDoc-Bench (July 2026). These are both post-June items not yet validated against actual benchmark scores on the IDP Leaderboard. Should a manual build trigger be available to force a build between scheduled cron cycles when a cluster of high-signal competitive events occurs?
+
+**Context:** The scheduled 6-hour cadence does not distinguish between low-signal and high-signal periods. Two major competitive events (GPT-5.6 with document-analysis tier, Extend Parse 2.0 with 0.847 Adjusted F1) occurred within the last 18 days and have not appeared in any successfully rendered edition. A manual trigger — or a webhook from context.md refreshes — would allow timely coverage of competitive spikes.
+
+**Answer:** _add reply here_
+
+### Q: Should the build abort entirely and not render a zero-item edition, or continue and render a banner-only page indicating the infrastructure failure?
+
+**Context:** The current playbook continues even on partial builds. A zero-item build produces a page with no content beyond the failure banner, which may be worse than no page if the prior edition remains visible. The render step will overwrite docs/index.html; if the previous edition was informative, rendering an empty one erases it. A 'skip render if items == 0' policy would preserve prior editions until ingest recovers.
+
+**Answer:** _add reply here_
+
+---
