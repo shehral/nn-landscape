@@ -7231,3 +7231,35 @@ This is the first documented build where github_trending and RSS also returned z
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-27T00:00:00+00:00 (build failed — all sources returned zero items)
+
+**Build outcome:** ABORTED at Step 3 (ingest). No items ingested; no edition produced; no render; no push of docs/. Only this file has been updated.
+
+**Failure details:**
+- `arxiv`: HTTP 403 Forbidden on `http://export.arxiv.org/api/query` — network-layer block; same failure observed across 7+ consecutive builds. The build environment proxy is intercepting or rejecting requests to export.arxiv.org.
+- `hn`: HTTP 403 Forbidden on HN Algolia search API — same proxy block pattern.
+- `rss`: All 10 RSS feeds failed silently (connection refused or 403 through proxy); feedparser received no entries from any feed (Anthropic, OpenAI, DeepMind, HuggingFace, Latent Space, Interconnects, AINews, Stratechery, Import AI, Mistral). Spot-check of `https://www.anthropic.com/news/rss.xml` via curl returned HTTP 403.
+- `github_trending`: GitHub Search API (`api.github.com/search/repositories`) returned zero items across all 7 configured topics — likely rate-limited (no `GITHUB_TOKEN` env var; unauthenticated GitHub API is capped at 10 requests/hour).
+
+**Root cause assessment:** The remote execution environment (claude.ai managed container) enforces an outbound network policy that blocks most external HTTP endpoints. The proxy intercepts requests to arxiv.org, news.ycombinator.com, and all RSS feed domains, returning 403. GitHub API queries silently return empty under unauthenticated rate limiting rather than a 4xx, hence the "no items in current window" message.
+
+### Q: Are environment secrets (GITHUB_TOKEN, or an arXiv API key) available or can they be added to the remote session environment?
+
+**Context:** An authenticated GitHub token would raise the API rate limit from 10 to 5,000 requests/hour, likely restoring github_trending coverage. The arxiv and HN 403s appear to be proxy-level blocks rather than credential issues — those may require a network-policy allowlist change or a different API approach (e.g., OAI-PMH for arxiv, which was raised in the 2026-05-21 build and still unanswered).
+
+**Answer:** _add reply here_
+
+### Q: Should the dashboard be switched to a VPN or a whitelisted egress environment where arxiv.org, HN, and RSS feeds are reachable?
+
+**Context:** The last successful multi-source build is unknown (all prior questions_for_team.md entries show arxiv and HN failing since at least 2026-05-21). The cron fires every 6 hours but produces zero useful output because the network environment blocks all primary research sources. Either the execution environment must change or the source set must be replaced with sources reachable from within the proxy's allowlist.
+
+**Answer:** _add reply here_
+
+### Q: Should the scheduled cron be paused until network access is restored?
+
+**Context:** Each failed build still consumes API calls (lock acquire/release, ingest attempt) without producing value. If network restoration is not imminent, pausing the schedule and re-enabling it manually once a token or network fix is in place would avoid wasteful repeated failures.
+
+**Answer:** _add reply here_
+
+---
