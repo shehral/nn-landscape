@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jul 25, 2026 · 00:00 UTC · 0 items scored</span>
+  <span class="built-at">Built Jul 27, 2026 · 00:15 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,18 +79,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four ingestion sources returned zero items this build (arxiv 403, HN 403, RSS empty, GitHub trending empty); is the scheduled build time falling outside any maintenance or rate-limit window that could explain simultaneous failures across all source types?</p>
-    <p class="question-context">arxiv and HN have returned 403 for multiple consecutive builds. RSS and GitHub trending returning empty in the same build cycle is new — this suggests either a time-window issue (build fires at an off-peak time for all sources) or a proxy/network policy blocking outbound requests.</p>
+    <p class="question-text">All four ingest sources failed with 403 or zero-item results. Is the remote execution environment&#39;s network proxy configured to allow outbound HTTPS to arxiv.org, hn.algolia.com, RSS feed hosts, and github.com?</p>
+    <p class="question-context">arxiv returned HTTP 403; HN Algolia returned HTTP 403; RSS and GitHub trending returned no items. This is the complete failure pattern. The proxy at /root/.ccr/ca-bundle.crt may be blocking these hosts, or outbound network policy is not allowing egress to external APIs.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the CLI ingest step add fallback retry logic or a secondary access path for arXiv (e.g., OAI-PMH, Semantic Scholar API) given that the primary arXiv endpoint has been 403-ing consistently?</p>
-    <p class="question-context">The arXiv API at export.arxiv.org has been blocked for many consecutive builds. This is the highest-priority research source for the vlm_research and doc_ai axes. Without it, hallucination and VLM internals research papers are invisible to the dashboard.</p>
+    <p class="question-text">Should the build pipeline include a graceful fallback that re-uses items from the previous seen.json when all current-cycle sources fail, so the dashboard does not go fully blank?</p>
+    <p class="question-context">With zero items, the rendered dashboard is empty and provides no signal. A fallback that surfaces the top 10 items from state/seen.json (most recently first) would preserve some value for readers while the network issue is investigated.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the build be configured to fire at a different time-of-day to avoid what appears to be systematic source unavailability during the current scheduled window?</p>
-    <p class="question-context">All four sources failing simultaneously — including RSS and GitHub trending, which have succeeded in prior builds — suggests the scheduled execution time may be hitting a network or rate-limit restriction. Shifting by 2-4 hours could be diagnostic.</p>
+    <p class="question-text">The questions_for_team.md file (656KB) accumulates all prior questions with no pruning. Should completed or stale questions be archived to a separate file to keep the active file manageable?</p>
+    <p class="question-context">The file has grown large with all prior build questions unanswered (no team replies detected). A large file increases read cost per build and complicates the agent&#39;s scan for recent answers.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Should the build schedule be paused until network egress from the remote environment is confirmed working, to avoid accumulating empty builds and lock-acquire cycles?</p>
+    <p class="question-context">Back-to-back empty builds produce no value and consume run quota. If the 403 errors are environment-level (not transient), pausing is more efficient than retrying every 6 hours.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -102,7 +107,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-07-25T00:00:00+00:00
+    sources covered:     · failed: 4 · built at 2026-07-27T00:15:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

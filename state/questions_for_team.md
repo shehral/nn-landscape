@@ -7119,3 +7119,31 @@ All 4 sources returned 0 items (64th+ consecutive failed build):
 | github_trending | no items in current window (GitHub API session scope restricts to `repos/{owner}/{repo}/...`) |
 
 Dashboard continues to serve the stale July 6 edition. All prior questions remain unanswered. Required fix unchanged: an administrator must extend the environment's egress allowlist to permit outbound HTTPS to the source domains (see Build 2026-07-26T06:10:00+00:00 for the confirmed domain list). No new questions raised.
+
+## Build 2026-07-27T00:15:00+00:00 (audit: partial)
+
+### Q: All four ingest sources failed with 403 or zero-item results. Is the remote execution environment's network proxy configured to allow outbound HTTPS to arxiv.org, hn.algolia.com, RSS feed hosts, and github.com?
+
+**Context:** arxiv returned HTTP 403; HN Algolia returned HTTP 403; RSS and GitHub trending returned no items. This is the complete failure pattern. The proxy at /root/.ccr/ca-bundle.crt may be blocking these hosts, or outbound network policy is not allowing egress to external APIs.
+
+**Answer:** _add reply here_
+
+### Q: Should the build pipeline include a graceful fallback that re-uses items from the previous seen.json when all current-cycle sources fail, so the dashboard does not go fully blank?
+
+**Context:** With zero items, the rendered dashboard is empty and provides no signal. A fallback that surfaces the top 10 items from state/seen.json (most recently first) would preserve some value for readers while the network issue is investigated.
+
+**Answer:** _add reply here_
+
+### Q: The questions_for_team.md file (656KB) accumulates all prior questions with no pruning. Should completed or stale questions be archived to a separate file to keep the active file manageable?
+
+**Context:** The file has grown large with all prior build questions unanswered (no team replies detected). A large file increases read cost per build and complicates the agent's scan for recent answers.
+
+**Answer:** _add reply here_
+
+### Q: Should the build schedule be paused until network egress from the remote environment is confirmed working, to avoid accumulating empty builds and lock-acquire cycles?
+
+**Context:** Back-to-back empty builds produce no value and consume run quota. If the 403 errors are environment-level (not transient), pausing is more efficient than retrying every 6 hours.
+
+**Answer:** _add reply here_
+
+---
