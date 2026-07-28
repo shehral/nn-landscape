@@ -7263,3 +7263,18 @@ This is the first documented build where github_trending and RSS also returned z
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-07-28T00:10:28Z (build failed — all sources blocked, ingest returned 0 items)
+
+**Build outcome:** ABORTED at Step 3 (ingest). Lock was acquired and released; no edition produced; no render; no push of docs/. Only this file updated.
+
+**Failure details (same pattern as 2026-07-27 builds):**
+- `arxiv`: CONNECT rejected by proxy (policy denial, host `arxiv.org:443`).
+- `hn`: CONNECT rejected by proxy (host `hn.algolia.com:443`).
+- `rss`: All 10 feed domains rejected (openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai all returned proxy-level 403); anthropic.com returns 403 directly. Zero items.
+- `github_trending`: Not attempted (ingest returned 0 before reaching it).
+
+This is the 4th consecutive full-failure build. The questions about network policy (pausing cron, adding GITHUB_TOKEN, switching environments) from the 2026-07-27T00:00:00Z build remain unanswered and unchanged. No new questions are added — the failure mode and remediation paths are already documented. Skipping repeat questions per SKILL.md guidance.
+
