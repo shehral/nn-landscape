@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jul 27, 2026 · 12:18 UTC · 0 items scored</span>
+  <span class="built-at">Built Jul 28, 2026 · 00:00 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,28 +79,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four ingest sources failed in this build — arxiv (403), HN (403), RSS (zero items), and github_trending (zero items). Is there a network policy change or environment-level restriction that explains the complete source failure, distinct from the partial failures seen in prior builds?</p>
-    <p class="question-context">Prior builds consistently failed on arxiv and HN but retained github_trending and occasionally RSS as working sources. This is the first documented build where all four sources simultaneously returned zero items. A complete ingest failure produces a useless edition. If github_trending and RSS failing is transient (e.g., off-peak GitHub indexing window or feed refresh timing), the next build may recover. If it reflects an environment change, the infrastructure needs repair before further builds have value.</p>
+    <p class="question-text">All four ingestion sources returned zero items for this build (arxiv 403, HN 403, RSS empty, github_trending empty). This appears to be a recurring failure across many consecutive builds based on questions_for_team.md. Is there a network/access policy change needed, or should the build cadence be suspended until the source access is restored?</p>
+    <p class="question-context">The questions_for_team.md file shows 30+ consecutive builds with arxiv and HN returning 403, RSS empty, and github_trending intermittently empty. This is the first build in this series where github_trending also returned no items, producing a fully empty edition. All framing and trend detection requires items; none are available. The dashboard has been rendering empty or near-empty editions for weeks.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Claude Opus 5 launched July 24, 2026 with native vision and document parsing at $5/$25 per million tokens — two days before the most recent context refresh. Should a brief structured update to data/nanonets_context.md be triggered when a flagship frontier model lands, rather than waiting for the next weekly refresh cycle?</p>
-    <p class="question-context">Claude Opus 5 is a competitive-primary item under the strict frontier-vs-competitive disambiguation rule (native vision, chart and document parsing, 1M-token context). Its IDP Leaderboard and ParseBench scores are not yet published. A mid-cycle context amendment for high-impact frontier releases would allow the dashboard to score and frame them in the next build rather than a week later.</p>
+    <p class="question-text">Should the scheduled build be paused or the cron frequency reduced (e.g., to weekly) until at least one primary research source is restored to operational status?</p>
+    <p class="question-context">This build produced zero items from all sources. Empty builds add noise to the commit history and questions_for_team.md without editorial value. A build cadence question was raised in build 2026-06-06T18 without a team response; now that github_trending has also failed, the situation is more acute.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The questions_for_team.md file now contains 1200+ lines of unanswered questions spanning 60+ consecutive builds. Is there any channel through which the team receives and responds to these questions?</p>
-    <p class="question-context">No question in the file has ever received a reply marked with an answer. Critical open items — arXiv access, MinerU and PaddleOCR competitive registry classification, GRPO leaderboard timeline, OCR-3 lmms-eval submission, LangChain reclassification — have been re-asked verbatim in 5-10 consecutive builds each. Without any feedback loop, the AI-partner channel is producing only write-once noise. If the intended review channel is different from this file (e.g., a Slack digest, a Linear board), specifying that target in data/nanonets_context.md would allow the build agent to adjust routing.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">GPT-5.6 Sol/Terra/Luna launched July 9, 2026 — Terra explicitly targets document analysis workflows. Extend released Parse 2.0 and RealDoc-Bench (July 2026). These are both post-June items not yet validated against actual benchmark scores on the IDP Leaderboard. Should a manual build trigger be available to force a build between scheduled cron cycles when a cluster of high-signal competitive events occurs?</p>
-    <p class="question-context">The scheduled 6-hour cadence does not distinguish between low-signal and high-signal periods. Two major competitive events (GPT-5.6 with document-analysis tier, Extend Parse 2.0 with 0.847 Adjusted F1) occurred within the last 18 days and have not appeared in any successfully rendered edition. A manual trigger — or a webhook from context.md refreshes — would allow timely coverage of competitive spikes.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">Should the build abort entirely and not render a zero-item edition, or continue and render a banner-only page indicating the infrastructure failure?</p>
-    <p class="question-context">The current playbook continues even on partial builds. A zero-item build produces a page with no content beyond the failure banner, which may be worse than no page if the prior edition remains visible. The render step will overwrite docs/index.html; if the previous edition was informative, rendering an empty one erases it. A &#39;skip render if items == 0&#39; policy would preserve prior editions until ingest recovers.</p>
+    <p class="question-text">Is there a network egress policy or proxy configuration in the build environment that blocks arxiv.org and the HN Algolia API, or is this a rate-limiting / IP-ban issue that requires a different API key or access path?</p>
+    <p class="question-context">arxiv.org returns HTTP 403 (not 429 rate-limit). HN Algolia also returns 403. These are access-denied responses, not transient errors. The build environment&#39;s outbound HTTPS goes through a pre-configured agent proxy; if that proxy is blocking academic and social-news APIs, restoring access would recover both sources simultaneously.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -112,7 +102,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-07-27T12:18:00+00:00
+    sources covered:     · failed: 4 · built at 2026-07-28T00:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

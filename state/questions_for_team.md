@@ -7312,3 +7312,25 @@ All 4 sources returned 0 items (67th+ consecutive failed build):
 | github_trending | no items in current window (GitHub API session scope restricts to `repos/{owner}/{repo}/...`) |
 
 Dashboard continues to serve the stale July 6 edition. All prior questions remain unanswered. No new questions raised — the failure mode, domain list, and remediation paths are fully documented in prior entries.
+
+## Build 2026-07-28T00:00:00+00:00 (audit: partial)
+
+### Q: All four ingestion sources returned zero items for this build (arxiv 403, HN 403, RSS empty, github_trending empty). This appears to be a recurring failure across many consecutive builds based on questions_for_team.md. Is there a network/access policy change needed, or should the build cadence be suspended until the source access is restored?
+
+**Context:** The questions_for_team.md file shows 30+ consecutive builds with arxiv and HN returning 403, RSS empty, and github_trending intermittently empty. This is the first build in this series where github_trending also returned no items, producing a fully empty edition. All framing and trend detection requires items; none are available. The dashboard has been rendering empty or near-empty editions for weeks.
+
+**Answer:** _add reply here_
+
+### Q: Should the scheduled build be paused or the cron frequency reduced (e.g., to weekly) until at least one primary research source is restored to operational status?
+
+**Context:** This build produced zero items from all sources. Empty builds add noise to the commit history and questions_for_team.md without editorial value. A build cadence question was raised in build 2026-06-06T18 without a team response; now that github_trending has also failed, the situation is more acute.
+
+**Answer:** _add reply here_
+
+### Q: Is there a network egress policy or proxy configuration in the build environment that blocks arxiv.org and the HN Algolia API, or is this a rate-limiting / IP-ban issue that requires a different API key or access path?
+
+**Context:** arxiv.org returns HTTP 403 (not 429 rate-limit). HN Algolia also returns 403. These are access-denied responses, not transient errors. The build environment's outbound HTTPS goes through a pre-configured agent proxy; if that proxy is blocking academic and social-news APIs, restoring access would recover both sources simultaneously.
+
+**Answer:** _add reply here_
+
+---
