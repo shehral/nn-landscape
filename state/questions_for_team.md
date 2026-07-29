@@ -7334,3 +7334,11 @@ Dashboard continues to serve the stale July 6 edition. All prior questions remai
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-29 (ingest failure — aborted)
+
+**Status:** All four sources failed (arxiv 403, HN 403, RSS empty, github_trending empty). Zero items ingested. Build aborted per failure-mode playbook; no edition.json or HTML generated.
+
+**Note:** Prior questions remain current and unanswered. No new questions raised.
+
+---
