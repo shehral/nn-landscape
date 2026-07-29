@@ -7342,3 +7342,21 @@ Dashboard continues to serve the stale July 6 edition. All prior questions remai
 **Note:** Prior questions remain current and unanswered. No new questions raised.
 
 ---
+
+---
+
+## Build 2026-07-29T00:00:00+00:00 (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). No edition published. Lock acquired and released.**
+
+All 4 sources returned 0 items (68th+ consecutive failed build):
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (egress proxy blocks `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (egress proxy blocks `hn.algolia.com`) |
+| rss | no items in current window (egress proxy blocks all RSS feed hosts) |
+| github_trending | no items in current window (GitHub API session scope restricts to `repos/{owner}/{repo}/...`) |
+
+Dashboard continues to serve the stale July 6 edition. All prior questions remain unanswered. Required fix unchanged: an administrator must extend the environment's egress allowlist to permit outbound HTTPS to the source domains. No new questions raised — all relevant questions and remediation paths are documented in prior entries.
+
