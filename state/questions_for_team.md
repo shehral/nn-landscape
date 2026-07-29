@@ -7360,3 +7360,29 @@ All 4 sources returned 0 items (68th+ consecutive failed build):
 
 Dashboard continues to serve the stale July 6 edition. All prior questions remain unanswered. Required fix unchanged: an administrator must extend the environment's egress allowlist to permit outbound HTTPS to the source domains. No new questions raised — all relevant questions and remediation paths are documented in prior entries.
 
+
+---
+
+## Build 2026-07-29T12:19:00+00:00 (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items (69th+ consecutive failed build):
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy `connect_rejected`, policy denial for `arxiv.org:443`) |
+| hn | HTTP 403 Forbidden (proxy `connect_rejected`, policy denial for `hn.algolia.com:443`) |
+| rss | 0 items — proxy `connect_rejected` for all 10 feed domains (openai.com, deepmind.google, huggingface.co, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai; anthropic.com returns direct 403) |
+| github_trending | 0 items — GitHub Search API returns empty results (unauthenticated rate limit; no `GITHUB_TOKEN` env var) |
+
+**Proxy confirmation:** `curl $HTTPS_PROXY/__agentproxy/status` shows `"recentRelayFailures"` with `connect_rejected` / `gateway answered 403 to CONNECT (policy denial)` for all source hosts as of 2026-07-29T12:10 UTC. The `/root/.ccr/README.md` instructs: "Do not retry or route around it — report the blocked host."
+
+**Dashboard state:** GitHub Pages continues to serve the stale July 6 edition. No competitive events since July 6 (Claude Opus 5 July 24, GPT-5.6 July 9, Extend Parse 2.0 July 2026, Mistral OCR 4 June 23) have appeared in any rendered edition.
+
+**Action required (no new questions — the required fix is already documented):**
+1. An administrator must update the session's egress allowlist to permit outbound HTTPS to: `arxiv.org`, `export.arxiv.org`, `hn.algolia.com`, `openai.com`, `deepmind.google`, `huggingface.co`, `latent.space`, `interconnects.ai`, `buttondown.com`, `stratechery.com`, `importai.substack.com`, `blog.mistral.ai`, `anthropic.com`, `api.github.com`.
+2. Optionally: add a `GITHUB_TOKEN` environment secret to restore authenticated GitHub Search API access.
+3. Once egress is restored, the next scheduled build will recover automatically. No code changes needed.
+
+All prior questions remain unanswered. No new questions raised — the failure mode, domain list, and remediation paths are fully documented in entries from builds 2026-07-27T00:00 and 2026-07-28T00:10.
