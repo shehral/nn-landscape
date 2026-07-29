@@ -7386,3 +7386,9 @@ All 4 sources returned 0 items (69th+ consecutive failed build):
 3. Once egress is restored, the next scheduled build will recover automatically. No code changes needed.
 
 All prior questions remain unanswered. No new questions raised — the failure mode, domain list, and remediation paths are fully documented in entries from builds 2026-07-27T00:00 and 2026-07-28T00:10.
+
+---
+
+## Build 2026-07-29T18:09:00+00:00 (FAILED — network access blocked)
+
+Same failure as builds 2026-07-27 and 2026-07-28. All 4 sources (arxiv, hn, rss, github_trending) returned 0 items due to proxy `connect_rejected` for all source hosts. No new questions raised. Remediation documented in prior build entries. Awaiting admin egress allowlist update.
