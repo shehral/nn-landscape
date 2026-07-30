@@ -7461,3 +7461,37 @@ All 4 sources returned 0 items (71st+ consecutive failed build):
 | github_trending | 0 items — GitHub Search API returns empty (unauthenticated, no `GITHUB_TOKEN`) |
 
 Dashboard continues to serve the stale July 6 edition. No new questions raised — all failure-mode questions and remediation steps are documented in the 2026-07-29T12:19:00+00:00 and 2026-07-30T00:10:49+00:00 build entries. Required fix: admin must extend egress allowlist for the domains listed in those entries.
+
+## Build 2026-07-30T18:17:42+00:00 (audit: partial)
+
+### Q: Is PixelRAG's pixel-native RAG approach methodologically sound, or a proof-of-concept only?
+
+**Context:** The GitHub description mentions an arXiv paper accompanies the repo, but I cannot retrieve it due to proxy restrictions. Benchmark coverage (DocVQA, ChartQA, OCRBench) and the accuracy gap vs. extraction-based RAG are unknown. The action_recommendation was set to 'reproduce' but should be reconsidered if the paper results are not statistically robust.
+
+**Answer:** _add reply here_
+
+### Q: Should opendatalab (MinerU + PDF-Extract-Kit) be added to the competitive set in nanonets_context.md?
+
+**Context:** Both repos are trending simultaneously this week and originate from the same organization (Shanghai AI Lab). The pattern suggests coordinated OSS investment in the document extraction stack that would warrant monitoring opendatalab as a competitive entity, not just individual repos.
+
+**Answer:** _add reply here_
+
+### Q: This is build 72+ with sources_covered = ['github_trending'] only. Should nanonets_context.md be updated to note that arXiv paper coverage is currently absent from builds?
+
+**Context:** The egress proxy continues to block arxiv.org, hn.algolia.com, and all 10 configured RSS feed domains. Readers see a GitHub-only signal that may underrepresent research papers and lab announcements. The MCP github_trending workaround is the only functional ingestion path.
+
+**Answer:** _add reply here_
+
+### Q: lmms-eval covers DocVQA, ChartQA, and OCRBench — all benchmarks relevant to Nanonets OCR-3. Should Nanonets OCR-3 be submitted to lmms-eval for a public comparison against Qwen-VL, GLM-VL, and InternVL?
+
+**Context:** This would give the IDP Leaderboard (benchmarking.nanonets.com) external validation in a framework used by frontier labs. The action_recommendation is 'investigate' but this question could also go to the research team directly.
+
+**Answer:** _add reply here_
+
+### Q: Two consecutive builds have scored the same set of OSS repositories (MinerU, RAGFlow, Dify) without surfacing any new competitive or research-paper items. Is the github_trending source covering a stale window, or is this the actual signal for the period?
+
+**Context:** With arxiv and HN blocked, the build cannot distinguish between 'nothing new happened in research' and 'we can't see research items'. The team should be aware that composite_score >= 60 items in this build are all pre-existing OSS repos, not new research or product announcements.
+
+**Answer:** _add reply here_
+
+---
