@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jul 28, 2026 · 00:00 UTC · 0 items scored</span>
+  <span class="built-at">Built Jul 30, 2026 · 00:10 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,18 +79,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four ingestion sources returned zero items for this build (arxiv 403, HN 403, RSS empty, github_trending empty). This appears to be a recurring failure across many consecutive builds based on questions_for_team.md. Is there a network/access policy change needed, or should the build cadence be suspended until the source access is restored?</p>
-    <p class="question-context">The questions_for_team.md file shows 30+ consecutive builds with arxiv and HN returning 403, RSS empty, and github_trending intermittently empty. This is the first build in this series where github_trending also returned no items, producing a fully empty edition. All framing and trend detection requires items; none are available. The dashboard has been rendering empty or near-empty editions for weeks.</p>
+    <p class="question-text">github_trending returned zero items this build for the first time — previously it was the only reliable source. Has something changed in the GitHub trending scrape configuration, or is this a new network policy regression?</p>
+    <p class="question-context">Prior builds returned 20-30 items from github_trending even when arXiv, HN, and RSS all failed. This build returned zero from all four sources. If the github_trending failure is a scraper regression rather than a policy change, the days_back window or topic list in sources.yaml may need adjustment.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the scheduled build be paused or the cron frequency reduced (e.g., to weekly) until at least one primary research source is restored to operational status?</p>
-    <p class="question-context">This build produced zero items from all sources. Empty builds add noise to the commit history and questions_for_team.md without editorial value. A build cadence question was raised in build 2026-06-06T18 without a team response; now that github_trending has also failed, the situation is more acute.</p>
+    <p class="question-text">At what point should a complete zero-item build trigger an out-of-band alert (Slack or email), distinct from the questions_for_team.md entry?</p>
+    <p class="question-context">The questions_for_team.md channel has no SLA for team response; prior infrastructure questions have accumulated unanswered across 20+ builds. A direct notification for zero-item builds would escalate to the right owner faster than the passive accumulation pattern currently in place.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Is there a network egress policy or proxy configuration in the build environment that blocks arxiv.org and the HN Algolia API, or is this a rate-limiting / IP-ban issue that requires a different API key or access path?</p>
-    <p class="question-context">arxiv.org returns HTTP 403 (not 429 rate-limit). HN Algolia also returns 403. These are access-denied responses, not transient errors. The build environment&#39;s outbound HTTPS goes through a pre-configured agent proxy; if that proxy is blocking academic and social-news APIs, restoring access would recover both sources simultaneously.</p>
+    <p class="question-text">Should the build be suppressed entirely when 0 of 4 sources contribute items, rather than publishing an empty partial-build edition?</p>
+    <p class="question-context">An empty edition provides no editorial signal and may erode trust in the dashboard if readers see repeated empty pages. Alternatively, a &#39;build suspended&#39; static page could be displayed until ingestion is restored, preserving the last successful edition&#39;s content.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Claude Opus 5 (July 24, 2026) and GPT-5.6 Sol/Terra/Luna (July 9, 2026) both launched since the last confirmed successful build and are not yet reflected in any build&#39;s item set. Should the team manually seed these items into the next build&#39;s state/run/items_raw.jsonl to ensure they surface?</p>
+    <p class="question-context">Both are competitive-primary by the strict disambiguation rule (frontier labs shipping vision/document capability). Without a working ingestion path, they will not appear unless manually injected. The team&#39;s input on whether manual seeding is acceptable, and which other July 2026 events should be included, would make the first successful post-outage build materially richer.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Should the RSS feed list in data/sources.yaml be audited for stale or moved URLs, given that RSS has returned zero items for multiple consecutive builds?</p>
+    <p class="question-context">The current feed list includes 10 sources (Anthropic, OpenAI, DeepMind, HuggingFace, Latent Space, Interconnects, AINews, Stratechery, Import AI, Mistral). Some may have changed URLs or discontinued RSS. A one-time manual fetch of each URL would identify which feeds are live and which need replacement.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -102,7 +112,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-07-28T00:00:00+00:00
+    sources covered:     · failed: 4 · built at 2026-07-30T00:10:49+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

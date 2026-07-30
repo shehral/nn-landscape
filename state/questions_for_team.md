@@ -7392,3 +7392,37 @@ All prior questions remain unanswered. No new questions raised — the failure m
 ## Build 2026-07-29T18:09:00+00:00 (FAILED — network access blocked)
 
 Same failure as builds 2026-07-27 and 2026-07-28. All 4 sources (arxiv, hn, rss, github_trending) returned 0 items due to proxy `connect_rejected` for all source hosts. No new questions raised. Remediation documented in prior build entries. Awaiting admin egress allowlist update.
+
+## Build 2026-07-30T00:10:49+00:00 (audit: partial)
+
+### Q: github_trending returned zero items this build for the first time — previously it was the only reliable source. Has something changed in the GitHub trending scrape configuration, or is this a new network policy regression?
+
+**Context:** Prior builds returned 20-30 items from github_trending even when arXiv, HN, and RSS all failed. This build returned zero from all four sources. If the github_trending failure is a scraper regression rather than a policy change, the days_back window or topic list in sources.yaml may need adjustment.
+
+**Answer:** _add reply here_
+
+### Q: At what point should a complete zero-item build trigger an out-of-band alert (Slack or email), distinct from the questions_for_team.md entry?
+
+**Context:** The questions_for_team.md channel has no SLA for team response; prior infrastructure questions have accumulated unanswered across 20+ builds. A direct notification for zero-item builds would escalate to the right owner faster than the passive accumulation pattern currently in place.
+
+**Answer:** _add reply here_
+
+### Q: Should the build be suppressed entirely when 0 of 4 sources contribute items, rather than publishing an empty partial-build edition?
+
+**Context:** An empty edition provides no editorial signal and may erode trust in the dashboard if readers see repeated empty pages. Alternatively, a 'build suspended' static page could be displayed until ingestion is restored, preserving the last successful edition's content.
+
+**Answer:** _add reply here_
+
+### Q: Claude Opus 5 (July 24, 2026) and GPT-5.6 Sol/Terra/Luna (July 9, 2026) both launched since the last confirmed successful build and are not yet reflected in any build's item set. Should the team manually seed these items into the next build's state/run/items_raw.jsonl to ensure they surface?
+
+**Context:** Both are competitive-primary by the strict disambiguation rule (frontier labs shipping vision/document capability). Without a working ingestion path, they will not appear unless manually injected. The team's input on whether manual seeding is acceptable, and which other July 2026 events should be included, would make the first successful post-outage build materially richer.
+
+**Answer:** _add reply here_
+
+### Q: Should the RSS feed list in data/sources.yaml be audited for stale or moved URLs, given that RSS has returned zero items for multiple consecutive builds?
+
+**Context:** The current feed list includes 10 sources (Anthropic, OpenAI, DeepMind, HuggingFace, Latent Space, Interconnects, AINews, Stratechery, Import AI, Mistral). Some may have changed URLs or discontinued RSS. A one-time manual fetch of each URL would identify which feeds are live and which need replacement.
+
+**Answer:** _add reply here_
+
+---
