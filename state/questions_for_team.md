@@ -7426,3 +7426,21 @@ Same failure as builds 2026-07-27 and 2026-07-28. All 4 sources (arxiv, hn, rss,
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-07-30T06:11:19Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items (70th+ consecutive failed build):
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy `connect_rejected`, policy denial for `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (proxy `connect_rejected`, policy denial for `hn.algolia.com`) |
+| rss | 0 items — proxy blocks all 10 RSS feed domains |
+| github_trending | 0 items — GitHub Search API returns empty (unauthenticated rate limit) |
+
+Dashboard continues to serve the stale July 6 edition. No new questions raised — all failure-mode questions and remediation steps are documented in the 2026-07-29T12:19:00+00:00 and 2026-07-30T00:10:49+00:00 build entries. Required fix: admin must extend egress allowlist for the domains listed in those entries.
+
