@@ -7516,3 +7516,25 @@ Dashboard continues to serve the stale July 6 edition. No new questions raised �
 3. Restore a primary-research source (arXiv, HN, or RSS) — this question has been raised in 30+ prior builds without resolution.
 
 ---
+
+## Build 2026-07-31T06:10:10+00:00 (audit: partial)
+
+### Q: github_trending has now failed for the first time, joining arxiv, hn, and rss as a complete four-source outage. Is the remote execution environment network policy blocking outbound HTTP to GitHub, the Algolia HN API, arXiv, and RSS feeds simultaneously?
+
+**Context:** Prior builds always had github_trending as the sole surviving source. This build is the first with zero items from all four sources. The failure pattern (403 from arxiv and hn; zero items from rss and github_trending) is consistent with an outbound network policy change in the remote execution environment rather than individual upstream failures. A one-minute curl test from the environment to each endpoint would confirm or rule this out.
+
+**Answer:** _add reply here_
+
+### Q: Should an alternative ingest path be added to sources.yaml that does not depend on direct outbound HTTP from the execution environment — for example, a pre-fetched nightly snapshot stored in the repo or fetched from a proxy?
+
+**Context:** With all four live-fetch sources now failing, the monitor produces zero signal per cycle. A pre-computed daily snapshot (arxiv metadata via OAI-PMH, HN top items via Firebase API, RSS via a mirror) would decouple ingest from the execution environment's network policy. This is a concrete infrastructure proposal distinct from the prior per-source questions about arXiv OAI-PMH and Semantic Scholar.
+
+**Answer:** _add reply here_
+
+### Q: Is the questions_for_team.md file still being read? It now exceeds 670 KB with zero responses across 50+ consecutive builds. If the channel is not being monitored, routing to a different surface (a Slack digest, a Linear ticket per build, an email) would be more effective.
+
+**Context:** The current format accumulates questions that the build agent cannot act on without team input — registry additions, scoring thresholds, infrastructure decisions. If the file is not being read, the agent's questions are invisible to the team and the monitor's editorial calibration degrades with each unanswered cycle. A single sentence confirming whether the file is being read would change the agent's behavior.
+
+**Answer:** _add reply here_
+
+---
