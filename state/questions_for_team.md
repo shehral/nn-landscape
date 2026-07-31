@@ -7555,3 +7555,31 @@ All 4 sources returned 0 items:
 | github_trending | 0 items — no items in current window |
 
 This is the build immediately following the 06:10:10Z partial build (which got items from github_trending). The github_trending source is now empty again under `days_back: 1`. Failure mode and remediation are fully documented in the 2026-07-29T12:19:00+00:00 and 2026-07-31T06:10:10+00:00 build entries. All prior questions remain unanswered.
+
+## Build 2026-07-31T18:10:28+00:00 (audit: partial)
+
+### Q: GitHub Trending returned zero items this build for the first time — is this a transient rate-limit, a 'days_back: 1' timing gap, or a structural change in the trending endpoint?
+
+**Context:** Prior builds consistently produced items from github_trending even when arxiv, HN, and RSS all failed. This build is the first with all four sources returning zero items simultaneously. The github_trending failure may be a transient issue (GitHub rate-limiting the build environment IP) or a window-timing artifact (1-day look-back that happened to produce no results on this exact cycle). Confirming which failure mode applies would determine whether the next build is expected to self-recover.
+
+**Answer:** _add reply here_
+
+### Q: ArXiv and HN have returned HTTP 403 for 20+ consecutive builds; should the team configure an API key or alternative ingest path before adding more sources to sources.yaml?
+
+**Context:** The build environment appears to be blocked at the network level for both export.arxiv.org and the HN Algolia API. RSS has also been unreliable. Without at least one working primary-research source, the dashboard cannot surface academic papers or community discussion on VLM hallucination — the team's primary research direction. A one-sentence response naming the responsible party and target date would end the recurring infrastructure question.
+
+**Answer:** _add reply here_
+
+### Q: Should the build script be modified to short-circuit gracefully when 0 of 4 sources produce items, committing a timestamped 'no signal' marker rather than an empty rendered dashboard?
+
+**Context:** An empty rendered dashboard with the partial-build banner conveys the same information as the previous build to a reader. A lightweight 'no signal this cycle — infrastructure failure' marker would be cheaper to render and would make the failure state explicit without overwriting the last substantive build output.
+
+**Answer:** _add reply here_
+
+### Q: Should the build lock be held or released when all sources fail and no items are produced?
+
+**Context:** The current build completes (lock acquired, 0 items ingested, empty edition.json written, rendered, published). A subsequent cron tick six hours later will attempt the same pipeline. If the source failures are infrastructure-level, the next six ticks will also produce empty builds. Releasing the lock (done by publish) is correct; but the team may want an alert or back-off policy rather than six consecutive empty-dashboard commits per day.
+
+**Answer:** _add reply here_
+
+---

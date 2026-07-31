@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Jul 31, 2026 · 06:10 UTC · 0 items scored</span>
+  <span class="built-at">Built Jul 31, 2026 · 18:10 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,18 +79,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">github_trending has now failed for the first time, joining arxiv, hn, and rss as a complete four-source outage. Is the remote execution environment network policy blocking outbound HTTP to GitHub, the Algolia HN API, arXiv, and RSS feeds simultaneously?</p>
-    <p class="question-context">Prior builds always had github_trending as the sole surviving source. This build is the first with zero items from all four sources. The failure pattern (403 from arxiv and hn; zero items from rss and github_trending) is consistent with an outbound network policy change in the remote execution environment rather than individual upstream failures. A one-minute curl test from the environment to each endpoint would confirm or rule this out.</p>
+    <p class="question-text">GitHub Trending returned zero items this build for the first time — is this a transient rate-limit, a &#39;days_back: 1&#39; timing gap, or a structural change in the trending endpoint?</p>
+    <p class="question-context">Prior builds consistently produced items from github_trending even when arxiv, HN, and RSS all failed. This build is the first with all four sources returning zero items simultaneously. The github_trending failure may be a transient issue (GitHub rate-limiting the build environment IP) or a window-timing artifact (1-day look-back that happened to produce no results on this exact cycle). Confirming which failure mode applies would determine whether the next build is expected to self-recover.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should an alternative ingest path be added to sources.yaml that does not depend on direct outbound HTTP from the execution environment — for example, a pre-fetched nightly snapshot stored in the repo or fetched from a proxy?</p>
-    <p class="question-context">With all four live-fetch sources now failing, the monitor produces zero signal per cycle. A pre-computed daily snapshot (arxiv metadata via OAI-PMH, HN top items via Firebase API, RSS via a mirror) would decouple ingest from the execution environment&#39;s network policy. This is a concrete infrastructure proposal distinct from the prior per-source questions about arXiv OAI-PMH and Semantic Scholar.</p>
+    <p class="question-text">ArXiv and HN have returned HTTP 403 for 20+ consecutive builds; should the team configure an API key or alternative ingest path before adding more sources to sources.yaml?</p>
+    <p class="question-context">The build environment appears to be blocked at the network level for both export.arxiv.org and the HN Algolia API. RSS has also been unreliable. Without at least one working primary-research source, the dashboard cannot surface academic papers or community discussion on VLM hallucination — the team&#39;s primary research direction. A one-sentence response naming the responsible party and target date would end the recurring infrastructure question.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Is the questions_for_team.md file still being read? It now exceeds 670 KB with zero responses across 50+ consecutive builds. If the channel is not being monitored, routing to a different surface (a Slack digest, a Linear ticket per build, an email) would be more effective.</p>
-    <p class="question-context">The current format accumulates questions that the build agent cannot act on without team input — registry additions, scoring thresholds, infrastructure decisions. If the file is not being read, the agent&#39;s questions are invisible to the team and the monitor&#39;s editorial calibration degrades with each unanswered cycle. A single sentence confirming whether the file is being read would change the agent&#39;s behavior.</p>
+    <p class="question-text">Should the build script be modified to short-circuit gracefully when 0 of 4 sources produce items, committing a timestamped &#39;no signal&#39; marker rather than an empty rendered dashboard?</p>
+    <p class="question-context">An empty rendered dashboard with the partial-build banner conveys the same information as the previous build to a reader. A lightweight &#39;no signal this cycle — infrastructure failure&#39; marker would be cheaper to render and would make the failure state explicit without overwriting the last substantive build output.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Should the build lock be held or released when all sources fail and no items are produced?</p>
+    <p class="question-context">The current build completes (lock acquired, 0 items ingested, empty edition.json written, rendered, published). A subsequent cron tick six hours later will attempt the same pipeline. If the source failures are infrastructure-level, the next six ticks will also produce empty builds. Releasing the lock (done by publish) is correct; but the team may want an alert or back-off policy rather than six consecutive empty-dashboard commits per day.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -102,7 +107,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-07-31T06:10:10+00:00
+    sources covered:     · failed: 4 · built at 2026-07-31T18:10:28+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
