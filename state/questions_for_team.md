@@ -7495,3 +7495,24 @@ Dashboard continues to serve the stale July 6 edition. No new questions raised �
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-07-31 (FAILED — zero items from all sources)
+
+**Step failed:** Step 3 (ingest) — all four sources returned zero items or errors.
+
+**Errors:**
+- arxiv: 403 Forbidden (`http://export.arxiv.org/api/query?...`)
+- hn: 403 Forbidden
+- rss: no items in current window
+- github_trending: no items in current window
+
+**What is new vs prior builds:** Previous builds consistently received items from github_trending (the only functional source for 72+ cycles). This is the first build where github_trending also returned zero items ("no items in current window"). The `days_back: 1` setting in sources.yaml combined with an empty trending window produced a completely empty ingest run.
+
+**No output committed:** Per the playbook, partial builds with zero items do not push rendered HTML. The build lock has been released.
+
+**Action required:** One or more of the following:
+1. Increase `days_back` in the github_trending source in `data/sources.yaml` (currently `days_back: 1`) — a value of 3 or 7 would ensure items appear even on slow trending days.
+2. Confirm whether the egress proxy policy has changed and now also blocks the GitHub trending endpoint.
+3. Restore a primary-research source (arXiv, HN, or RSS) — this question has been raised in 30+ prior builds without resolution.
+
+---
