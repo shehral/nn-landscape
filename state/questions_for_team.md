@@ -7538,3 +7538,20 @@ Dashboard continues to serve the stale July 6 edition. No new questions raised �
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-07-31T12:13:17Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items:
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy `connect_rejected`) |
+| hn | HTTP 403 Forbidden |
+| rss | 0 items — proxy blocks all feed domains |
+| github_trending | 0 items — no items in current window |
+
+This is the build immediately following the 06:10:10Z partial build (which got items from github_trending). The github_trending source is now empty again under `days_back: 1`. Failure mode and remediation are fully documented in the 2026-07-29T12:19:00+00:00 and 2026-07-31T06:10:10+00:00 build entries. All prior questions remain unanswered.
