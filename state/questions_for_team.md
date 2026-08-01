@@ -7665,3 +7665,18 @@ This is the 56th+ consecutive failed build. The dashboard continues to serve the
 
 No new questions raised. This is a repeat of the same structural block.
 
+
+---
+
+## Build 2026-08-01T12:00:00Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (egress proxy blocks export.arxiv.org — structural) |
+| hn | HTTP 403 Forbidden (egress proxy blocks hn.algolia.com — structural) |
+| rss | no items in current window (all RSS feed hosts blocked by egress policy) |
+| github_trending | no items in current window (GitHub API session scope restricts to `repos/{owner}/{repo}/...`) |
+
+Prior remediation notes and required admin actions are documented in the 2026-07-31 and earlier 2026-08-01 entries above. No new questions raised; this is a repeat failure.
