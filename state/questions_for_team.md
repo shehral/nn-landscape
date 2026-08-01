@@ -7583,3 +7583,37 @@ This is the build immediately following the 06:10:10Z partial build (which got i
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-01T00:00:00+00:00 (audit: partial)
+
+### Q: Should Nanonets OCR-3 be submitted to ParseBench (LlamaIndex, CVPR 2026)?
+
+**Context:** ParseBench benchmarks document parsers for AI agents and carries CVPR 2026 credibility. OCR-3's current third-party benchmark coverage focuses on IDP Leaderboard, OlmOCR-Bench, and OmniDocBench. ParseBench submission would provide cross-framework comparison against LlamaParse and frontier models.
+
+**Answer:** _add reply here_
+
+### Q: Is LandingAI's 'Agentic Document Extraction' product on the competitive monitoring list?
+
+**Context:** LandingAI (Andrew Ng) uses 'Agentic Document Extraction' as its product name, directly overlapping Nanonets' 'Agentic Data Extraction' positioning. At 2.4k stars, LandingAI has enterprise distribution. If not already tracked, it warrants addition to nanonets_context.md.
+
+**Answer:** _add reply here_
+
+### Q: Should the github_trending CLI source's days_back be increased from 1 to 7 in data/sources.yaml?
+
+**Context:** The current days_back: 1 produces empty results on slow trending days (as seen in July 31 builds). This build required MCP-based GitHub search as a workaround because the CLI returned zero items. Increasing to 7 would ensure items appear even on low-activity days at the cost of surfacing older repos.
+
+**Answer:** _add reply here_
+
+### Q: Are MCP-supplemented builds (using GitHub MCP API search instead of the CLI's github_trending endpoint) an acceptable substitute when CLI ingestion returns zero items?
+
+**Context:** This build injected all 22 items via GitHub MCP API search. The item set differs from what the CLI's trending endpoint would return. The team should decide whether to flag MCP-supplemented builds distinctly in the rendered output, and whether sources_covered should indicate the supplement method.
+
+**Answer:** _add reply here_
+
+### Q: The questions_for_team.md file has exceeded 670KB with zero team responses across 70+ builds — is there an alternative escalation path (Slack, Linear ticket) that would get faster responses?
+
+**Context:** Infrastructure questions about arXiv, HN, and RSS egress have accumulated across 70+ builds without resolution. The passive accumulation model appears ineffective; a direct escalation channel for infrastructure failures would allow the monitor to self-recover faster.
+
+**Answer:** _add reply here_
+
+---
