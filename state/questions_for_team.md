@@ -7617,3 +7617,31 @@ This is the build immediately following the 06:10:10Z partial build (which got i
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-01T06:10:01+00:00 (audit: partial)
+
+### Q: github_trending returned 'no items in current window' for the first time across multiple builds — is the scraper's window calculation broken, or did GitHub change its trending API response format?
+
+**Context:** Prior builds since at least May 2026 have shown github_trending as the only reliably working source, producing 10-30 items per build. This is the first build where github_trending also returns zero, suggesting a new regression distinct from the ongoing arXiv and HN 403 failures. The 'no items in current window' message may indicate a date-range calculation error or a GitHub-side API change.
+
+**Answer:** _add reply here_
+
+### Q: Should the build agent abort and notify without rendering or pushing when all 4 sources return zero items, rather than publishing an empty edition to GitHub Pages?
+
+**Context:** An empty edition (0 items, 0 trends) provides no editorial value to readers but does overwrite the prior build's content on GitHub Pages. If the render/publish step is skipped when items=0, the prior edition remains visible until sources recover. This is a product decision about graceful degradation that the team should resolve — the current playbook says to continue regardless of source count.
+
+**Answer:** _add reply here_
+
+### Q: RSS returned 'no items in current window' again — is this a persistent feed-URL staleness issue or a window-size parameter that needs widening to catch lower-frequency newsletters?
+
+**Context:** RSS feeds in sources.yaml include high-frequency sources (Anthropic, OpenAI, HuggingFace blogs) and low-frequency newsletters (Stratechery, Import AI). A per_feed_limit of 15 and a narrow time window may exclude lower-frequency feeds entirely. Widening the RSS window to 7 days or increasing per_feed_limit could restore signal from newsletters that publish weekly. Prior builds noted RSS returning zero once (2026-05-24T12); this build is a recurrence.
+
+**Answer:** _add reply here_
+
+### Q: Is there a monitoring or alerting hook the team can add outside the build agent to detect when all sources fail, so the infrastructure issue is surfaced to an engineer before the next scheduled build cycle?
+
+**Context:** The build agent surfaces source failures through questions_for_team.md, but this file is only read on a subsequent successful build. When all sources fail consecutively, the failure loop is self-reinforcing: no items means no dashboard update, and no dashboard update reduces visibility into the degradation. An out-of-band alert (Slack, email, PagerDuty) triggered by the landscape.cli ingest exit code would break this loop.
+
+**Answer:** _add reply here_
+
+---
