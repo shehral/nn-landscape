@@ -7645,3 +7645,23 @@ This is the build immediately following the 06:10:10Z partial build (which got i
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-08-01T00:00:00Z (FAILED — zero items from all sources)
+
+**Build outcome:** All 4 ingest sources returned zero items. No edition produced. Lock acquired and released.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (egress proxy blocks export.arxiv.org — structural) |
+| hn | HTTP 403 Forbidden (egress proxy blocks hn.algolia.com — structural) |
+| rss | no items in current window (all RSS feed hosts blocked by egress policy) |
+| github_trending | no items in current window (GitHub API session scope restricts to `repos/{owner}/{repo}/...`) |
+
+This is the 56th+ consecutive failed build. The dashboard continues to serve the stale July 6 edition. Root causes and required remediations are fully documented in Build 2026-07-03T18:07:59Z and Build 2026-07-10T12:22:42 notes. All prior questions remain unanswered.
+
+**Required fix (unchanged):** An administrator must extend the environment's egress allowlist to permit outbound HTTPS to the source domains (`export.arxiv.org`, `hn.algolia.com`, and the 10 RSS feed hosts). The GitHub API session scope must also permit `/search/repositories` for github_trending to function. Per the proxy README, 403/407 responses are policy denials that require admin action — they cannot be routed around by the build agent.
+
+No new questions raised. This is a repeat of the same structural block.
+
