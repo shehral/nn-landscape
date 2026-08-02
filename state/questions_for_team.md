@@ -7680,3 +7680,37 @@ No new questions raised. This is a repeat of the same structural block.
 | github_trending | no items in current window (GitHub API session scope restricts to `repos/{owner}/{repo}/...`) |
 
 Prior remediation notes and required admin actions are documented in the 2026-07-31 and earlier 2026-08-01 entries above. No new questions raised; this is a repeat failure.
+
+## Build 2026-08-02T06:00:00+00:00 (audit: partial)
+
+### Q: Unstract (Zipstack, 7K stars) covers IDP, OCR, and JSON extraction at scale with an API-first and MCP-integrated architecture — directly overlapping Nanonets Agentic Data Extraction. It is not named in data/nanonets_context.md. Should it be added to the competitive registry?
+
+**Context:** Unstract has grown consistently and appeared in multiple build cycles. Without a named entry, the build agent evaluates it from scratch each time rather than tracking it as a known competitive entrant. This question has not been raised in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: ParseBench (LlamaIndex, CVPR 2026) has been surfaced by prior builds with an 'investigate' recommendation and a standing question (from Build 2026-08-01T00:00:00+00:00) about whether OCR-3 should be submitted. Has any submission happened, and if not, who owns this action?
+
+**Context:** The question has appeared in at least two prior builds without a team answer. ParseBench is the most visible agent-native document-parsing benchmark; continued absence of OCR-3 scores increases the gap visible to enterprise evaluators comparing parsers on CVPR-credentialed results.
+
+**Answer:** _add reply here_
+
+### Q: This build's items came entirely from GitHub MCP API search; the CLI's github_trending source also returned zero items ('no items in current window' under days_back: 1). Should days_back be increased to 7 in data/sources.yaml to ensure the CLI produces items on low-activity days?
+
+**Context:** The CLI github_trending has intermittently returned zero items since July 31. A days_back value of 7 would ensure items appear even on slow days, at the cost of surfacing older repos. The team has been asked this in prior builds (Build 2026-07-31) with no response.
+
+**Answer:** _add reply here_
+
+### Q: The vlm_research axis this build is covered entirely by text-LLM interpretability tools (pyvene, Llamascopium, CLT-Forge, axbench) without VLM-specific variants. Is the team adapting these tools to VLM architectures internally, or would a VLM-specific interpretability tool be a material gap?
+
+**Context:** Without arXiv coverage, VLM-specific research papers are invisible to the build. The interpretability tools visible on GitHub are text-LLM focused. If the team is building VLM-specific interpretability methods, this context should be added to nanonets_context.md to help future builds score VLM-specific variants correctly.
+
+**Answer:** _add reply here_
+
+### Q: This is build ~75 with arXiv, HN, and RSS all blocked by the egress proxy. No VLM hallucination papers, phantom-row research, or lab announcements are visible. Should the team manually seed recent arXiv papers on VLM hallucination into the next build's state/run/items_raw.jsonl to restore research-axis signal?
+
+**Context:** The questions_for_team.md file now exceeds 700KB with zero responses across 75+ builds. If this channel is not being read, the build agent's editorial calibration degrades silently. A single response confirming the channel is monitored would change the agent's escalation behavior.
+
+**Answer:** _add reply here_
+
+---
