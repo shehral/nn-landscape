@@ -7776,3 +7776,37 @@ Prior remediation notes and required admin actions are documented in the 2026-07
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-02T18:30:00+00:00 (audit: partial)
+
+### Q: Should LandingAI (landing-ai/ade-cli) be added to the competitive registry in data/nanonets_context.md?
+
+**Context:** LandingAI's product name 'Agentic Document Extraction' directly mirrors Nanonets' 'Agentic Data Extraction' positioning. At 2.4k stars with active development and Andrew Ng's enterprise distribution, it is not yet in the context file's competitive registry. This question has been surfaced in the prior Aug 2 builds without a response.
+
+**Answer:** _add reply here_
+
+### Q: Has OCR-3 been submitted to ParseBench (LlamaIndex, CVPR 2026)? If not, who owns this action?
+
+**Context:** ParseBench was last updated July 27, 2026; 536 stars, 75 forks. It is now the third distinct document-parsing benchmark where OCR-3 has no published score (alongside lmms-eval and pdfmux). This question has been raised in five consecutive builds (Aug 1 x2, Aug 2 x3) without a response.
+
+**Answer:** _add reply here_
+
+### Q: Should the build flag 'MCP-supplemented' as a distinct source status in edition.json when the CLI github_trending source returns zero items and GitHub MCP API search is used as a fallback?
+
+**Context:** This is now the 100th+ build where at least one CLI source has failed. The current sources_covered field in edition.json cannot represent the distinction between CLI ingestion and MCP API supplement, making the build's provenance ambiguous in the rendered output.
+
+**Answer:** _add reply here_
+
+### Q: Has the team evaluated GRPO-based training (as used in FireRed-OCR-2B) for reducing structural hallucinations in OCR-3's table outputs?
+
+**Context:** FireRed-OCR-2B used Format-Constrained GRPO to eliminate structural hallucinations in tables and LaTeX (92.94 on OmniDocBench v1.5). Unsloth now natively supports GRPO for Qwen3.6 and GLM variants. This is the second consecutive build to surface GRPO training accessibility; no team response has been received.
+
+**Answer:** _add reply here_
+
+### Q: Is there a plan to add Unstract (Zipstack/unstract, 7.1k stars) to the competitive registry in data/nanonets_context.md?
+
+**Context:** Unstract's LLM-driven IDP extraction API, MCP integration, and AGPL-3.0 self-hosting target the same surface as Nanonets Agentic Data Extraction. The question was first raised in the Aug 2 12:15 build; this is the second time it appears without a response.
+
+**Answer:** _add reply here_
+
+---
