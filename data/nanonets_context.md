@@ -90,7 +90,7 @@ Items that name, compare against, or are released by these companies are
   tables, equations, signatures), per-word confidence scores, and
   self-hosted single-container deployment; supports 170 languages
   across 10 language groups; priced at $4 per 1,000 pages ($2 with
-  Batch API 50% discount); 85.20 on OlmOCRBench; 72% average win rate
+  Batch API 50% discount); 85.20 on OlmOCRBench; 93.07 on OmniDocBench; 72% average win rate
   over tested systems in independent annotation. Supersedes Mistral OCR
   3 (January 2026; mistral-ocr-2512; 74% win rate over OCR 2). Mistral
   OCR 25.03 on Azure AI Foundry; Mistral OCR 25.05 on Vertex AI (May
@@ -101,7 +101,7 @@ Items that name, compare against, or are released by these companies are
   Horowitz, February 2026); launched Deep Extract agentic product;
   released Classification endpoint (May 2026) for lightweight document
   categorization before downstream processing; Smart Schema in Studio
-  (April 2026) for autonomous schema creation; 3B+ pages processed
+  (April 2026) for autonomous schema creation; 4B+ pages processed
   to date; acquired Opennote (May 2026), an AI-notebook startup, to
   strengthen agentic document-retrieval workflows; Reducto Deep Extract
   ranked #1 on LongExtractBench (announced July 1, 2026; independently
@@ -1135,3 +1135,85 @@ Nanonets, do not respond.
   papers found. No July 2026 Nanonets blog posts indexed.
 - Note: Qwen3.7-Plus (Alibaba, June 2, 2026) still unconfirmed on
   document-extraction OCR benchmarks; monitor for benchmark results.
+
+---
+
+**Date:** 2026-08-02
+
+**Sources consulted:**
+
+- WebSearch: "Nanonets OCR-3 IDP leaderboard August 2026 ranking" —
+  #1 at 85.9% confirmed unchanged; benchmarking.nanonets.com and
+  idp-leaderboard.org URLs confirmed resolving
+- WebSearch: "site:huggingface.co/nanonets" — open-weight model lineup
+  unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains API-only
+- WebSearch: "nanonets arxiv 2026 research paper hallucination VLM" —
+  no team-authored papers surfaced; Nanonets-KIE dataset referenced in
+  third-party papers (as in prior refreshes)
+- WebSearch: "Nanonets product announcement blog August 2026" — no new
+  August 2026 Nanonets product announcements indexed
+- WebSearch: "Mistral OCR August 2026 new model update" — no new model
+  since Mistral OCR 4 (June 23, 2026); all prior entries confirmed current
+- WebSearch + secondary sources: "Mistral OCR 4" OmniDocBench score —
+  93.07 on OmniDocBench confirmed from MarkTechPost, MLQ.ai, and
+  multiple trade sources covering the June 23, 2026 launch; not previously
+  recorded in context (only OlmOCRBench 85.20 was present)
+- WebSearch: "Reducto AI document processing August 2026" and
+  "Reducto '4 billion' pages processed 2026" — llms.reducto.ai/
+  performance-at-scale (403 on direct fetch; confirmed via search
+  snippet summary) and llms.reducto.ai/best-document-extraction-
+  financial-documents: "over 4 billion pages to date for enterprise and
+  AI customers"; updated from 3B+ to 4B+
+- WebSearch: "LlamaParse LlamaIndex August 2026 new product" — no new
+  major announcements; all prior entries confirmed current
+- WebSearch: "Anthropic Claude document extraction vision August 2026"
+  — no new Anthropic document-specific product; Claude Opus 5 confirmed
+  current (already in context); still no IDP Leaderboard or ParseBench
+  scores for Opus 5
+- WebSearch: "Claude Opus 5 IDP leaderboard ParseBench OmniDocBench
+  benchmark results August 2026" — no scores published yet; model
+  launched July 24, 2026; note in context retained
+- WebSearch: "OpenAI GPT-5 document vision OCR August 2026" — GPT-5.6
+  Sol/Terra/Luna confirmed current; no new OpenAI models
+- WebSearch: "Google Gemini document OCR vision August 2026" — Gemini
+  3.1 Pro and 3.5 Flash confirmed current; no major new announcement
+- WebSearch: "xAI Grok document extraction OCR August 2026" — Grok
+  Collections API confirmed current; Grok 3 and Grok 4 deprecated on
+  Oracle OCI only (OCI-specific endpoint deprecation, not a universal
+  xAI product change); no material change to xAI entry
+- WebSearch: '"Chandra OCR" OR "LightOn OCR" new model release
+  August 2026' — no new model versions; Chandra OCR 2 (March 2026)
+  and LightOn OCR-2 (January 2026) confirmed current
+- WebSearch: "Qwen3-VL DeepSeek GLM-OCR new model August 2026" —
+  no new model releases; GLM-OCR Z.ai attribution confirmed current;
+  Qwen3-VL and DeepSeek-OCR 2 unchanged
+- WebSearch: "Unstructured.io Firecrawl Docling August 2026" — all
+  confirmed operating; no major new product announcements
+- WebSearch: "Rossum Docsumo ABBYY Kofax Tungsten Automation 2026
+  operating" — all confirmed operating; no renames or closures
+- WebSearch: "document AI OCR new model release August 2026 benchmark"
+  and "idp-leaderboard.org benchmarking.nanonets.com August 2026" —
+  no new model entrants identified; IDP Leaderboard at 29 models
+  confirmed unchanged
+- WebSearch: "Extend AI document processing August 2026 new feature"
+  — confirmed operating; Parse 2.0 and RealDoc-Bench from prior context
+  still current; no new August 2026 announcements
+
+**Material changes versus prior version (2026-07-26):**
+
+- Updated **Mistral OCR 4** entry: added 93.07 on OmniDocBench,
+  confirmed from multiple trade sources (MarkTechPost, MLQ.ai, VentureBeat)
+  covering the June 23, 2026 launch. Prior entry only recorded OlmOCRBench
+  (85.20); the OmniDocBench score was present in the original launch
+  coverage but had not been added to context.
+- Updated **Reducto** page count from "3B+ pages processed to date" to
+  "4B+ pages processed to date", confirmed from Reducto's own documentation
+  (llms.reducto.ai); updated approximately mid-July 2026 per search
+  snippet attribution (missed in the 2026-07-26 refresh).
+- Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
+  No new Nanonets models on HuggingFace. No Nanonets-authored arXiv
+  papers found. No August 2026 Nanonets blog posts indexed.
+- All competitive set members confirmed still operating; no renames,
+  closures, or new significant entrants identified this week.
+- Claude Opus 5 (July 24, 2026) still without IDP Leaderboard or
+  ParseBench scores; note retained in context.
