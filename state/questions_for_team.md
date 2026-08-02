@@ -7714,3 +7714,37 @@ Prior remediation notes and required admin actions are documented in the 2026-07
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-02T12:15:00+00:00 (audit: partial)
+
+### Q: ParseBench (LlamaIndex, CVPR 2026) has 536 stars, 75 forks, and was last updated July 27. OCR-3 has no published score. This question has now been raised in three consecutive builds (Aug 1 x2, Aug 2) without a response. Has there been a decision not to submit, or is this unowned?
+
+**Context:** ParseBench evaluates document parsers on agent-task success metrics, distinct from OmniDocBench and IDP Leaderboard. Enterprise evaluators use it to compare parsers. OCR-3's absence is a visible gap. A one-sentence answer would close this recurring question.
+
+**Answer:** _add reply here_
+
+### Q: pdfmux positions itself as a cross-extractor audit layer that can certify any parser's output for dropped or misextracted pages. Should Nanonets run OCR-3 through pdfmux's audit and publish the result as a quality signal?
+
+**Context:** pdfmux is #2 on opendataloader-bench at 0.903. Its 7-tool MCP server makes it easy to integrate into a testing pipeline. If the audit methodology becomes standard, customers may use it to independently verify OCR-3 accuracy on their documents — making proactive testing preferable.
+
+**Answer:** _add reply here_
+
+### Q: Unstract (Zipstack, 7.1K stars) and parsehawk (61 stars, June 2026) are not in the competitive registry in nanonets_context.md but both position on the same JSON-schema extraction surface as Nanonets Agentic Data Extraction. Should either be added to the monitored competitive set?
+
+**Context:** Unstract has IDP, MCP, JSON-schema extraction, and AGPL-3.0 licensing targeting enterprise self-hosting. parsehawk is a newer entrant using local vLLM with the same endpoint concepts as OCR-3. Adding named entries to context.md would allow future builds to score them accurately.
+
+**Answer:** _add reply here_
+
+### Q: GRPO-based training is now supported across multiple open-weight VLM toolkits (Qwen-VL-Finetune, ms-swift). FireRed-OCR-2B showed Format-Constrained GRPO eliminates structural hallucinations in tables and LaTeX. Has the team evaluated GRPO as a training method for reducing phantom-row hallucinations specifically?
+
+**Context:** This is the first build to explicitly surface GRPO support across multiple competitive toolkits simultaneously. If the team has already evaluated this, noting it in context.md would prevent future builds from raising it again.
+
+**Answer:** _add reply here_
+
+### Q: arXiv, HN, and RSS have been blocked by the egress proxy for 80+ consecutive builds. This build is the ~90th relying entirely on GitHub MCP search for signal — producing no VLM hallucination papers or lab announcements. Is there a planned fix, or should the build agent stop raising this and document it as a known permanent limitation?
+
+**Context:** The questions_for_team.md file now exceeds 700KB with zero responses. If the infrastructure block is permanent or has a known resolution date, a single note here would allow the build agent to calibrate its editorial approach accordingly.
+
+**Answer:** _add reply here_
+
+---
