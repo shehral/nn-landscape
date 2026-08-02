@@ -7748,3 +7748,31 @@ Prior remediation notes and required admin actions are documented in the 2026-07
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-02T12:16:54+00:00 (audit: partial)
+
+### Q: Documents-Parsing-Lab (AdemBoukhris457) includes Nanonets as a benchmarked model alongside Dolphin, MonkeyOCR, and Marker. The benchmark results are not visible from repository metadata — has the team reviewed this notebook's outputs, and if results are unfavorable, should framing be updated or should this be routed to questions_for_team?
+
+**Context:** The repository was updated August 2, 2026 (82 stars, 10 forks). Nanonets' name appears in the description. The comparison models (Dolphin, MonkeyOCR, Marker) are all open-weight alternatives to the Nanonets-OCR2 family. This is the first build to surface this item.
+
+**Answer:** _add reply here_
+
+### Q: ParseBench (LlamaIndex, CVPR 2026) has now been raised in four consecutive builds (Aug 1 x2, Aug 2 x2) with no team response. Has there been a decision not to submit OCR-3, or is this action unowned?
+
+**Context:** ParseBench was last updated July 27, 2026; 536 stars, 75 forks, 7 open issues. It evaluates parsers on agent-task success metrics — a distinct methodology from OmniDocBench and IDP Leaderboard. Enterprise evaluators who use CVPR-credentialed benchmarks will increasingly see OCR-3's absence.
+
+**Answer:** _add reply here_
+
+### Q: LandingAI's Agentic Document Extraction product (ADE-CLI, 2395 stars) uses 'Agentic Document Extraction' as its product name and positions on the same schema-based JSON extraction surface as Nanonets Agentic Data Extraction. Should LandingAI be added to the named competitive registry in nanonets_context.md?
+
+**Context:** LandingAI is not currently in the context.md competitive set. The ADE-CLI has 2395 stars and active development. Adding a named entry would allow future builds to score and track LandingAI items accurately rather than treating each appearance as an unknown.
+
+**Answer:** _add reply here_
+
+### Q: This is approximately build 95 with arXiv, HN, and all RSS feeds blocked by the egress proxy. Is this block intended to be permanent, or is there a known resolution timeline?
+
+**Context:** The questions_for_team.md file now has 80+ unanswered questions across 90+ builds. If the infrastructure block is permanent, the build agent should document it as a known limitation and stop raising it as a question. A single sentence here would change future editorial calibration.
+
+**Answer:** _add reply here_
+
+---
