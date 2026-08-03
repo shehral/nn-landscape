@@ -7878,3 +7878,37 @@ Prior remediation notes and required admin actions are documented in the 2026-07
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-03T13:00:00+00:00 (audit: partial)
+
+### Q: Has OCR-3 been submitted to ParseBench (LlamaIndex, CVPR 2026)? If not, who owns this action?
+
+**Context:** ParseBench was last updated July 29, 2026; 536 stars, 76 forks. It evaluates parsers on agent-task success metrics distinct from OmniDocBench. This question has been raised in seven or more consecutive builds without a team response. A one-sentence answer — submitted, in progress, or decided not to — would stop it recurring.
+
+**Answer:** _add reply here_
+
+### Q: Should LandingAI's Agentic Document Extraction (landing-ai/ade-cli) be added to the competitive registry in data/nanonets_context.md?
+
+**Context:** LandingAI uses 'Agentic Document Extraction' as the product name — directly mirroring Nanonets' 'Agentic Data Extraction' — with schema-shaped JSON output, PDF parsing, and Apache 2.0 licensing. At 2.4K stars with Andrew Ng's enterprise distribution, it belongs in the named competitive set so future builds track it accurately. This question has appeared in prior builds without a response.
+
+**Answer:** _add reply here_
+
+### Q: Is the egress proxy block on arXiv, HN, and RSS permanent, or is there a planned resolution date?
+
+**Context:** All three external data sources have been blocked for approximately 100+ consecutive builds. Without arXiv, VLM hallucination papers and frontier-lab announcements are not visible to the build. A single sentence — 'permanent, adjust editorial approach' or 'fix expected by [date]' — would change future editorial calibration. This question is not new; it is raised because no response has been received and the operational impact grows with each cycle.
+
+**Answer:** _add reply here_
+
+### Q: Should Zipstack/unstract (7.1K stars) be added to the competitive registry in data/nanonets_context.md?
+
+**Context:** Unstract provides LLM-driven IDP extraction API, JSON-schema output, MCP integration, and AGPL-3.0 self-hosting — the same product surface as Nanonets Agentic Data Extraction. At 7.1K stars it is larger than most named competitors in the context file. Adding a named entry would let future builds score and track Unstract items accurately. This question has appeared in prior builds without a response.
+
+**Answer:** _add reply here_
+
+### Q: Has the team evaluated GRPO-based training for reducing structural hallucinations in OCR-3's table outputs?
+
+**Context:** FireRed-OCR-2B (March 2026) demonstrated that Format-Constrained GRPO eliminates structural hallucinations in tables and LaTeX at 92.94 on OmniDocBench v1.5. GRPO training is now accessible via Unsloth and ms-swift for Qwen3.6 and GLM variants. This is the third or fourth consecutive build surfacing GRPO accessibility without a team response.
+
+**Answer:** _add reply here_
+
+---
