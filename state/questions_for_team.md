@@ -7912,3 +7912,37 @@ Prior remediation notes and required admin actions are documented in the 2026-07
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-03T18:20:38+00:00 (audit: partial)
+
+### Q: TurboOCR claims >200 img/s on OmniDocBench via TensorRT FP16 + PP-OCRv6, but no methodology or dataset split is disclosed. Should the team request a reproduction dataset before treating this as a throughput benchmark OCR-3 needs to respond to?
+
+**Context:** If the throughput claim is on a subset of OmniDocBench that excludes complex tables and formulas, it may not represent the workloads where OCR-3 differentiates. A reproduction would surface whether the throughput gain involves accuracy tradeoffs relevant to OCR-3's current strengths.
+
+**Answer:** _add reply here_
+
+### Q: ParseBench (LlamaIndex, CVPR 2026) remains the only CVPR-credentialed document parsing benchmark where OCR-3 has no published score. Has a submission decision been made, and if so, what is the current status?
+
+**Context:** This question has appeared in 8+ consecutive build cycles without a response. A one-sentence answer — submitted, in progress, or decided not to — would close it and prevent future builds from re-raising it. The build agent will stop raising it once a response is recorded here.
+
+**Answer:** _add reply here_
+
+### Q: GRPO for structural hallucination elimination is now accessible via ms-swift and Relax — two maintained frameworks supporting Qwen3-VL and InternVL3.5. Has the team assessed whether Format-Constrained GRPO applies to OCR-3's table-output structural hallucination modes?
+
+**Context:** FireRed-OCR-2B (March 2026) demonstrated that Format-Constrained GRPO eliminates structural hallucinations in tables and LaTeX at 92.94 on OmniDocBench v1.5. If the team has already evaluated this training approach, a note in nanonets_context.md would prevent future builds from re-surfacing it.
+
+**Answer:** _add reply here_
+
+### Q: opendataloader-bench appears in multiple items this build (pdfmux at 0.903, TurboOCR's implied claims). Is the team tracking this benchmark's methodology, and does OCR-3 have a score on it?
+
+**Context:** opendataloader-bench is distinct from OmniDocBench and IDP Leaderboard. pdfmux is ranked #2 of 8 engines on it. If the methodology is sound and the dataset represents Nanonets' production document types, OCR-3's absence is an evaluable gap.
+
+**Answer:** _add reply here_
+
+### Q: ArXiv, HN, and RSS have been blocked by the egress proxy for 100+ consecutive builds. Is this a permanent infrastructure constraint, or is there a planned resolution date?
+
+**Context:** Without arxiv and HN, VLM hallucination papers and frontier-lab announcements are structurally invisible to the build agent. If the block is permanent, adding a note to nanonets_context.md would let the agent adjust editorial priorities on vlm_research and frontier axes accordingly. The questions_for_team.md file now exceeds 700KB with zero responses to this or any other question.
+
+**Answer:** _add reply here_
+
+---
