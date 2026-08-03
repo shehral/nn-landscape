@@ -7844,3 +7844,37 @@ Prior remediation notes and required admin actions are documented in the 2026-07
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-03T12:30:00+00:00 (audit: partial)
+
+### Q: Should Unstract (Zipstack/unstract, 7.1K stars, AGPL-3.0) be added to the competitive registry in data/nanonets_context.md?
+
+**Context:** Unstract builds an LLM-driven extraction API for ETL pipelines with an explicit API-deployment and enterprise self-hosting positioning — the same surface as Nanonets Agentic Data Extraction. At 7.1K stars and daily updates, it is larger than any competitor not currently named in context.md. This is the third consecutive build surfacing it without a response.
+
+**Answer:** _add reply here_
+
+### Q: Has the team reviewed MinerU-Diffusion (ECCV 2026) and assessed whether diffusion-based decoding changes the hallucination profile of document OCR models?
+
+**Context:** MinerU-Diffusion replaces autoregressive decoding with block-level parallel diffusion for document OCR. The sequential dependency removed by diffusion decoding is the mechanism underlying repetition-loop and infinite-generation hallucinations. If diffusion decoding empirically reduces these failure modes, it would be directly relevant to the team's VLM hallucination research direction.
+
+**Answer:** _add reply here_
+
+### Q: Has a decision been made about submitting OCR-3 to ParseBench (LlamaIndex, CVPR 2026)? If not, who owns this action?
+
+**Context:** ParseBench is now the primary CVPR-credentialed agentic document parsing benchmark; 536 stars, last updated July 27. OCR-3's absence is visible to enterprise evaluators who use CVPR-credentialed results. This question has been raised across seven or more consecutive build cycles with no response. A one-sentence answer would close this recurring question.
+
+**Answer:** _add reply here_
+
+### Q: GRPO for vision and OCR tasks is now available in three accessible toolkits (verl-omni, mlx-tune, and previously-surfaced ms-swift). Has the team evaluated GRPO for reducing structural hallucinations (phantom rows, misrendered captions) in OCR-3 outputs, or is there a known barrier to doing so?
+
+**Context:** FireRed-OCR-2B demonstrated that Format-Constrained GRPO eliminates structural hallucinations in tables and LaTeX (92.94 on OmniDocBench v1.5). mlx-tune now makes GRPO + OCR fine-tuning a single-command operation on Apple Silicon. This is the fourth consecutive build surfacing GRPO accessibility without a team response.
+
+**Answer:** _add reply here_
+
+### Q: Are the arXiv, HN, and RSS egress blocks a permanent infrastructure constraint for this build environment, or is there a known resolution date?
+
+**Context:** All three sources have returned HTTP 403 for 100+ consecutive builds. Without arXiv and HN, VLM hallucination papers, lab announcements, and competitive news are structurally invisible to the build agent. If the block is permanent, this should be documented in data/nanonets_context.md so the agent can calibrate editorial priorities on vlm_research and frontier axes accordingly. The questions_for_team.md file now exceeds 700KB with zero responses.
+
+**Answer:** _add reply here_
+
+---
