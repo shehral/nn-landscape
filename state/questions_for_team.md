@@ -7810,3 +7810,37 @@ Prior remediation notes and required admin actions are documented in the 2026-07
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-03T06:00:00+00:00 (audit: partial)
+
+### Q: Should LandingAI (landing-ai/ade-cli) be added to the competitive registry in data/nanonets_context.md?
+
+**Context:** LandingAI positions its product as 'Agentic Document Extraction' — terminology identical to Nanonets' 'Agentic Data Extraction' — with schema-based JSON output, PDF parsing, Apache 2.0, and 2,395 stars at last push July 31, 2026. Andrew Ng's enterprise distribution gives it reach into enterprise evaluation cycles. This is the sixth consecutive build surfacing LandingAI without a team response.
+
+**Answer:** _add reply here_
+
+### Q: ParseBench (LlamaIndex, CVPR 2026) has been raised in six or more consecutive build cycles. Has there been a decision not to submit OCR-3, or is this action unowned?
+
+**Context:** ParseBench evaluates parsers on agent-task success metrics distinct from OmniDocBench; 536 stars, last updated July 27, 2026; enterprise evaluators using CVPR-credentialed benchmarks will increasingly see OCR-3's absence relative to competitors.
+
+**Answer:** _add reply here_
+
+### Q: OCR-3 is absent from the lmms-eval model registry; Qwen3-VL, InternVL3.5, and other open-weight VLMs are already registered. Is there a barrier (technical, policy, or ownership) to submitting OCR-3 before a competitor uses this framework to publish a head-to-head comparison that structurally excludes it?
+
+**Context:** lmms-eval covers DocVQA, ChartQA, and IDP-adjacent tasks at 4.3K stars; adding OCR-3 would also provide a standardized evaluation harness for the research team's hallucination benchmarks. This question has appeared in 10+ build cycles with no response.
+
+**Answer:** _add reply here_
+
+### Q: Are the arXiv, HN, and RSS egress blocks a permanent infrastructure constraint, or is there a known resolution timeline? The questions_for_team.md file now exceeds 700KB with zero responses across 95+ build cycles.
+
+**Context:** Without arXiv and HN, VLM hallucination research papers and lab announcements are structurally invisible. If the block is permanent, a note in nanonets_context.md would allow the build agent to calibrate its editorial approach on vlm_research and frontier axes accordingly.
+
+**Answer:** _add reply here_
+
+### Q: Documents-Parsing-Lab (AdemBoukhris457, 82 stars, updated August 2) benchmarks Nanonets alongside Dolphin, MonkeyOCR, and Marker. Has any team member reviewed the notebook outputs, and are the results favorable?
+
+**Context:** Benchmark methodology and results are not visible from repository metadata. If results are unfavorable and the methodology is sound, the item should be reframed with the descriptive hostility-flag template in the next build cycle.
+
+**Answer:** _add reply here_
+
+---
