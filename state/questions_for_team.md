@@ -7946,3 +7946,24 @@ Prior remediation notes and required admin actions are documented in the 2026-07
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-04T00:15:30Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items (repeated failure — same condition as 2026-07-30 builds):
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy `connect_rejected`, policy denial for `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (proxy `connect_rejected`, policy denial for `hn.algolia.com`) |
+| rss | 0 items — proxy blocks all RSS feed domains |
+| github_trending | 0 items — GitHub Search API returns empty (unauthenticated, no `GITHUB_TOKEN`) |
+
+Dashboard continues to serve the last successfully rendered edition. No new questions raised — the required fix (admin must extend egress allowlist) is documented in the 2026-07-29 and 2026-07-30 build entries. This is now the second consecutive day with all sources blocked; the dashboard data is growing stale.
+
+**Domains requiring egress allowlist (from prior build entries):**
+- `export.arxiv.org` (arxiv)
+- `hn.algolia.com` (Hacker News)
+- RSS feed domains: `anthropic.com`, `openai.com`, `deepmind.google`, `huggingface.co`, `latent.space`, `interconnects.ai`, `buttondown.com`, `stratechery.com`, `importai.substack.com`, `blog.mistral.ai`
+- `github.com` / GitHub API (requires `GITHUB_TOKEN` environment variable for trending)
