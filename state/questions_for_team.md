@@ -7967,3 +7967,37 @@ Dashboard continues to serve the last successfully rendered edition. No new ques
 - `hn.algolia.com` (Hacker News)
 - RSS feed domains: `anthropic.com`, `openai.com`, `deepmind.google`, `huggingface.co`, `latent.space`, `interconnects.ai`, `buttondown.com`, `stratechery.com`, `importai.substack.com`, `blog.mistral.ai`
 - `github.com` / GitHub API (requires `GITHUB_TOKEN` environment variable for trending)
+
+## Build 2026-08-04T06:20:42+00:00 (audit: partial)
+
+### Q: All four ingestion sources failed this build for the first time simultaneously — is github_trending endpoint also now blocked by the environment network policy, or was this a transient outage?
+
+**Context:** Prior builds consistently had github_trending succeed even when arxiv and HN returned 403. This build is the first with zero coverage across all four sources. If github_trending is newly blocked, the pipeline has no fallback source and will produce empty editions indefinitely until the network policy is adjusted.
+
+**Answer:** _add reply here_
+
+### Q: The RSS source returned 'no items in current window' rather than a network error — does this indicate the 15-item-per-feed limit is misconfigured for the current build window cadence, or that all monitored feeds have been quiet?
+
+**Context:** An RSS failure due to empty window is structurally different from a 403 block. The feeds list includes high-volume sources (Anthropic, OpenAI, HuggingFace blogs). If they all returned zero items for the current window, the dedup window calculation may be too narrow. If they are network-blocked, the error message would likely differ.
+
+**Answer:** _add reply here_
+
+### Q: Should the build agent abort and skip rendering entirely when all four sources fail, rather than rendering a dashboard with zero items?
+
+**Context:** The current behavior on total source failure is to render and publish an edition with zero items and a partial-build banner. This may be less useful than no update, since readers cannot distinguish 'no newsworthy items' from 'infrastructure was down.' A rendered zero-item edition provides no editorial value and may erode reader trust if it appears on a regular cadence.
+
+**Answer:** _add reply here_
+
+### Q: The arxiv and HN 403 failures have been raised in every build since at least 2026-05-22 without a team reply or fix; should the build pipeline be suspended until network access is restored, or is the github_trending-only coverage considered acceptable?
+
+**Context:** At minimum 15 consecutive builds have reported arxiv and HN as unavailable. The repeated unanswered questions in questions_for_team.md suggest either the team is not reading this file or has decided the current situation is acceptable. A definitive team answer on whether to investigate or accept the status quo would prevent future builds from raising the same question.
+
+**Answer:** _add reply here_
+
+### Q: Is there a maintenance window or network policy change that can restore access to at least arxiv and HN before the next build cycle?
+
+**Context:** The arxiv API (export.arxiv.org) and HN Algolia search (hn.algolia.com) are returning HTTP 403, consistent with the remote execution environment's outbound network policy. The OAI-PMH endpoint (export.arxiv.org/oai2) and the HN Firebase API (hacker-news.firebaseio.com) are alternative access paths that have been suggested in prior builds but not yet tested.
+
+**Answer:** _add reply here_
+
+---
