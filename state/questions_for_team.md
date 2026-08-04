@@ -8018,3 +8018,18 @@ All 4 sources returned 0 items — same condition as 2026-08-04T00:15:30Z and 20
 | github_trending | 0 items — no `GITHUB_TOKEN` env var |
 
 No new questions raised this build — all relevant questions are documented above and unanswered. Dashboard continues to serve the last successfully rendered edition. The required fix remains: extend egress allowlist to include `export.arxiv.org`, `hn.algolia.com`, RSS feed domains, and set `GITHUB_TOKEN` for github_trending access.
+
+## Build 2026-08-04T18:30:00Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items — fourth consecutive total failure on 2026-08-04:
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy reject, `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (proxy reject, `hn.algolia.com`) |
+| rss | 0 items — proxy blocks feed domains (`no items in current window`) |
+| github_trending | 0 items — no `GITHUB_TOKEN` env var configured |
+
+No new questions raised. All root-cause and remediation detail is in prior entries above (see builds 2026-08-04T00:15:30Z, 2026-08-04T06:20:42+00:00, 2026-08-04T12:25:34Z). Dashboard is now approximately 12+ hours stale. The required admin action remains: extend egress allowlist and set `GITHUB_TOKEN`.
