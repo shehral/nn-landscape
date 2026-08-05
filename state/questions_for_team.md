@@ -8093,3 +8093,22 @@ This is now at least the 8th consecutive build failure. No new questions raised 
 1. Extend egress allowlist to `export.arxiv.org`, `hn.algolia.com`, and the RSS feed domains listed in the 2026-08-04T00:15:30Z entry.
 2. Replace `GITHUB_TOKEN` with a classic or fine-grained PAT that has read access to the GitHub Search API (`/search/repositories`).
 
+
+## Build 2026-08-05T18:14:19Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items — same structural failure as all prior 2026-08-04 and 2026-08-05 builds. Dashboard continues to serve the last successfully rendered edition (approximately 2026-08-03). This is now at least the 9th consecutive build failure.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy reject, `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (proxy reject, `hn.algolia.com`) |
+| rss | 0 items — "no items in current window" (proxy blocks feed domains) |
+| github_trending | 0 items — "no items in current window" (session-scoped token; GitHub Search API unavailable) |
+
+No new questions raised — all remediation detail is in prior entries above and remains unanswered. Required admin actions (unchanged):
+
+1. Extend egress allowlist to `export.arxiv.org`, `hn.algolia.com`, and the RSS feed domains listed in the 2026-08-04T00:15:30Z entry.
+2. Replace `GITHUB_TOKEN` with a classic or fine-grained PAT that has read access to the GitHub Search API (`/search/repositories`).
+
