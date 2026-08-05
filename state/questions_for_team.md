@@ -8033,3 +8033,24 @@ All 4 sources returned 0 items — fourth consecutive total failure on 2026-08-0
 | github_trending | 0 items — no `GITHUB_TOKEN` env var configured |
 
 No new questions raised. All root-cause and remediation detail is in prior entries above (see builds 2026-08-04T00:15:30Z, 2026-08-04T06:20:42+00:00, 2026-08-04T12:25:34Z). Dashboard is now approximately 12+ hours stale. The required admin action remains: extend egress allowlist and set `GITHUB_TOKEN`.
+
+## Build 2026-08-05T00:15:00Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items — same structural failure as all 2026-08-04 builds:
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy reject, `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (proxy reject, `hn.algolia.com`) |
+| rss | 0 items — proxy blocks feed domains (`no items in current window`) |
+| github_trending | 0 items — `GITHUB_TOKEN` is set but repo-scoped only (14-char session token); GitHub Search API returns: "This GitHub API path is not available: sessions are bound to their configured repositories" |
+
+**New finding this build:** `GITHUB_TOKEN` is now present in the environment, but it is a session-scoped token that only allows `repos/{owner}/{repo}/...` endpoints. The GitHub Trending / Search API (`/search/repositories`) is explicitly disallowed. This means `github_trending` will continue to fail regardless of whether a token is present, unless the token is replaced with a classic Personal Access Token (PAT) or fine-grained PAT with `public_repo` read scope and `repo:public_repo` for search.
+
+**Cumulative status:** Dashboard has been stale since the last successful build (approximately 2026-08-03). No questions raised — all remediation is documented above and unanswered.
+
+**Required admin actions (unchanged from prior entries):**
+1. Extend egress allowlist to `export.arxiv.org`, `hn.algolia.com`, and RSS feed domains (see 2026-08-04T00:15:30Z entry for full domain list).
+2. Replace `GITHUB_TOKEN` with a classic PAT or fine-grained PAT that includes read access to the GitHub Search API.
