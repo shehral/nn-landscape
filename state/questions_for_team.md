@@ -8150,3 +8150,18 @@ All 4 sources returned 0 items — same structural failure as all prior 2026-08-
 2. Replace `GITHUB_TOKEN` with a classic or fine-grained PAT that has read access to the GitHub Search API (`/search/repositories`).
 
 **Escalation note:** This is the 11th consecutive failure. The build cron is running every 6 hours but producing no output. If the network policy cannot be changed, consider suspending the cron schedule until the egress allowlist or token issue is resolved, to avoid unnecessary execution cycles.
+
+## Build 2026-08-06T12:28:31Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items — same structural failure as all prior builds since approximately 2026-08-03. Dashboard has been stale for 3+ days. This is now at least the **12th consecutive build failure**.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy reject, `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (proxy reject, `hn.algolia.com`) |
+| rss | 0 items — "no items in current window" (proxy blocks feed domains) |
+| github_trending | 0 items — "no items in current window" (session-scoped token; GitHub Search API unavailable) |
+
+No new questions raised. Required admin actions are unchanged from all prior failure entries. The build cron continues to run every 6 hours with no output; suspension of the schedule is recommended until egress access is restored.
