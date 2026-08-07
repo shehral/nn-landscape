@@ -8225,3 +8225,25 @@ No new questions raised. Required admin actions are unchanged:
 2. Replace `GITHUB_TOKEN` with a classic or fine-grained PAT that has read access to the GitHub Search API (`/search/repositories`).
 
 **Escalation note:** 15 consecutive failures. Dashboard stale since ~2026-08-03. Strongly recommend suspending the cron schedule until egress access is restored.
+
+## Build 2026-08-07T06:00:00+00:00 (audit: partial)
+
+### Q: All four ingest sources failed for the first time in this build — arxiv with HTTP 403, HN with HTTP 403, RSS with no items in window, and GitHub Trending with no items in window. Is the proxy blocking ALL outbound HTTPS to external sources in the remote build environment?
+
+**Context:** Prior builds showed arxiv returning 403 for 8+ consecutive builds, but HN, RSS, and GitHub Trending had been intermittently providing items. This build is the first to return zero items across all four sources simultaneously. A curl test from the build environment confirmed the proxy returns 403 for arxiv.org and hn.algolia.com. This may represent a policy change in the remote build environment. Without at least one functioning source, no editorial value can be produced.
+
+**Answer:** _add reply here_
+
+### Q: RSS produced 'no items in current window' — is the per-feed time window filter too narrow for the feeds in sources.yaml, or did all feeds genuinely publish nothing in the window?
+
+**Context:** RSS feeds like anthropic.com/news, openai.com/blog, and huggingface.co/blog typically post multiple times per week. 'No items in current window' suggests either the window is shorter than the inter-post interval or the HTTP request itself was blocked before the feed could be parsed. Clarifying which case applies determines whether the fix is a window expansion or a proxy allowlist entry.
+
+**Answer:** _add reply here_
+
+### Q: GitHub Trending returned 'no items in current window' for the first time — is github.com/trending accessible from the build environment, or is the proxy now blocking GitHub as well?
+
+**Context:** GitHub Trending has been a reliable source in past builds. Its failure alongside HN and RSS suggests a broader proxy policy change rather than an API-specific issue. If GitHub is blocked, the entire 'no arXiv paper coverage' mitigation strategy that relied on GitHub Trending as a fallback research signal is also unavailable.
+
+**Answer:** _add reply here_
+
+---
