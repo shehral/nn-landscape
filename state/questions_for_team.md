@@ -8185,3 +8185,148 @@ No new questions raised. All remediation detail is documented in prior entries a
 2. Replace `GITHUB_TOKEN` with a classic or fine-grained PAT that has read access to the GitHub Search API (`/search/repositories`).
 
 **Escalation note:** 13 consecutive failures. The dashboard has been stale since ~2026-08-03. Consider suspending the cron schedule until egress access is restored to avoid unnecessary execution cycles.
+
+## Build 2026-08-07T00:00:00Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items — same structural failure as all prior builds since approximately 2026-08-03. Dashboard has been stale for 4+ days. This is now at least the **14th consecutive build failure**.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy reject, `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (proxy reject, `hn.algolia.com`) |
+| rss | 0 items — "no items in current window" (proxy blocks feed domains) |
+| github_trending | 0 items — "no items in current window" (session-scoped token; GitHub Search API unavailable) |
+
+No new questions raised. Required admin actions are unchanged:
+
+1. Extend egress allowlist to `export.arxiv.org`, `hn.algolia.com`, and the RSS feed domains listed in the 2026-08-04T00:15:30Z entry.
+2. Replace `GITHUB_TOKEN` with a classic or fine-grained PAT that has read access to the GitHub Search API (`/search/repositories`).
+
+**Escalation note:** 14 consecutive failures. Dashboard stale since ~2026-08-03. Strongly recommend suspending the cron schedule until egress access is restored.
+
+## Build 2026-08-07T06:15:00Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items — same structural failure as all prior builds since approximately 2026-08-03. Dashboard has been stale for 4+ days. This is now at least the **15th consecutive build failure**.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy reject, `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (proxy reject, `hn.algolia.com`) |
+| rss | 0 items — "no items in current window" (proxy blocks feed domains) |
+| github_trending | 0 items — "no items in current window" (session-scoped token; GitHub Search API unavailable) |
+
+No new questions raised. Required admin actions are unchanged:
+
+1. Extend egress allowlist to `export.arxiv.org`, `hn.algolia.com`, and the RSS feed domains listed in the 2026-08-04T00:15:30Z entry.
+2. Replace `GITHUB_TOKEN` with a classic or fine-grained PAT that has read access to the GitHub Search API (`/search/repositories`).
+
+**Escalation note:** 15 consecutive failures. Dashboard stale since ~2026-08-03. Strongly recommend suspending the cron schedule until egress access is restored.
+
+## Build 2026-08-07T06:00:00+00:00 (audit: partial)
+
+### Q: All four ingest sources failed for the first time in this build — arxiv with HTTP 403, HN with HTTP 403, RSS with no items in window, and GitHub Trending with no items in window. Is the proxy blocking ALL outbound HTTPS to external sources in the remote build environment?
+
+**Context:** Prior builds showed arxiv returning 403 for 8+ consecutive builds, but HN, RSS, and GitHub Trending had been intermittently providing items. This build is the first to return zero items across all four sources simultaneously. A curl test from the build environment confirmed the proxy returns 403 for arxiv.org and hn.algolia.com. This may represent a policy change in the remote build environment. Without at least one functioning source, no editorial value can be produced.
+
+**Answer:** _add reply here_
+
+### Q: RSS produced 'no items in current window' — is the per-feed time window filter too narrow for the feeds in sources.yaml, or did all feeds genuinely publish nothing in the window?
+
+**Context:** RSS feeds like anthropic.com/news, openai.com/blog, and huggingface.co/blog typically post multiple times per week. 'No items in current window' suggests either the window is shorter than the inter-post interval or the HTTP request itself was blocked before the feed could be parsed. Clarifying which case applies determines whether the fix is a window expansion or a proxy allowlist entry.
+
+**Answer:** _add reply here_
+
+### Q: GitHub Trending returned 'no items in current window' for the first time — is github.com/trending accessible from the build environment, or is the proxy now blocking GitHub as well?
+
+**Context:** GitHub Trending has been a reliable source in past builds. Its failure alongside HN and RSS suggests a broader proxy policy change rather than an API-specific issue. If GitHub is blocked, the entire 'no arXiv paper coverage' mitigation strategy that relied on GitHub Trending as a fallback research signal is also unavailable.
+
+**Answer:** _add reply here_
+
+---
+
+## Build 2026-08-08T00:00:00Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items — same structural failure as all prior builds since approximately 2026-08-03. Dashboard has been stale for 5+ days. This is now at least the **16th consecutive build failure**.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy reject, `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (proxy reject, `hn.algolia.com`) |
+| rss | 0 items — "no items in current window" (proxy blocks feed domains) |
+| github_trending | 0 items — "no items in current window" (session-scoped token; GitHub Search API unavailable) |
+
+No new questions raised. Required admin actions are unchanged:
+
+1. Extend egress allowlist to `export.arxiv.org`, `hn.algolia.com`, and the RSS feed domains listed in the 2026-08-04T00:15:30Z entry.
+2. Replace `GITHUB_TOKEN` with a classic or fine-grained PAT that has read access to the GitHub Search API (`/search/repositories`).
+
+**Escalation note:** 16 consecutive failures. Dashboard stale since ~2026-08-03 (5+ days). The cron schedule is generating no value in its current state. Admin action is required to restore egress access before builds can succeed.
+)
+
+## Build 2026-08-08T06:00:00Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items — same structural failure as all prior builds since approximately 2026-08-03. Dashboard has been stale for 5+ days. This is the **17th consecutive build failure**.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy reject, `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (proxy reject, `hn.algolia.com`) |
+| rss | 0 items — "no items in current window" (proxy blocks feed domains) |
+| github_trending | 0 items — "no items in current window" (session-scoped token; GitHub Search API unavailable) |
+
+No new questions raised. Required admin actions are unchanged:
+
+1. Extend egress allowlist to `export.arxiv.org`, `hn.algolia.com`, and the RSS feed domains listed in the 2026-08-04T00:15:30Z entry.
+2. Replace `GITHUB_TOKEN` with a classic or fine-grained PAT that has read access to the GitHub Search API (`/search/repositories`).
+
+**Escalation note:** 17 consecutive failures. Dashboard stale since ~2026-08-03 (5+ days). The cron schedule is generating no value in its current state. Admin action is required to restore egress access before builds can succeed. Recommend suspending the cron until the network policy issue is resolved.
+
+## Build 2026-08-08T12:00:00Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items — same structural failure as all prior builds since approximately 2026-08-03. Dashboard has been stale for 5+ days. This is the **18th consecutive build failure**.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy reject, `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (proxy reject, `hn.algolia.com`) |
+| rss | 0 items — "no items in current window" (proxy blocks feed domains) |
+| github_trending | 0 items — "no items in current window" (session-scoped token; GitHub Search API unavailable) |
+
+No new questions raised. Required admin actions are unchanged:
+
+1. Extend egress allowlist to `export.arxiv.org`, `hn.algolia.com`, and the RSS feed domains listed in the 2026-08-04T00:15:30Z entry.
+2. Replace `GITHUB_TOKEN` with a classic or fine-grained PAT that has read access to the GitHub Search API (`/search/repositories`).
+
+**Escalation note:** 18 consecutive failures. Dashboard stale since ~2026-08-03 (5+ days). Admin action is required to restore egress access before builds can succeed.
+
+---
+
+## Build 2026-08-08T18:00:00Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items — same structural failure as all prior builds since approximately 2026-08-03. Dashboard has been stale for 5+ days. This is the **19th consecutive build failure**.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy reject, `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (proxy reject, `hn.algolia.com`) |
+| rss | 0 items — "no items in current window" (proxy blocks feed domains) |
+| github_trending | 0 items — "no items in current window" (session-scoped token; GitHub Search API unavailable) |
+
+No new questions raised. Required admin actions from the 2026-08-04T00:15:30Z entry remain unresolved:
+
+1. Extend egress allowlist to `export.arxiv.org`, `hn.algolia.com`, and the RSS feed domains listed in `data/sources.yaml`.
+2. Replace `GITHUB_TOKEN` with a classic or fine-grained PAT that has read access to the GitHub Search API (`/search/repositories`).
+
+**Escalation note:** 19 consecutive failures. Dashboard stale since ~2026-08-03 (5+ days). Builds cannot succeed without admin action to restore egress access.
