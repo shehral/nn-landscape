@@ -8390,3 +8390,23 @@ No new questions raised. Required admin actions remain outstanding since 2026-08
 2. Replace `GITHUB_TOKEN` with a classic or fine-grained PAT that has read access to the GitHub Search API (`/search/repositories`).
 
 **Escalation note:** 22 consecutive failures. Dashboard stale since ~2026-08-03 (6+ days). No build can succeed until egress access is restored. Strongly recommend suspending the cron schedule until admin action resolves the network policy issue.
+
+## Build 2026-08-09T18:00:00Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced. No render. No push of docs/.**
+
+All 4 sources returned 0 items — same structural failure as all prior builds since approximately 2026-08-03. Dashboard has been stale for 6+ days. This is the **23rd consecutive build failure**.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (proxy reject, `export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (proxy reject, `hn.algolia.com`) |
+| rss | 0 items — proxy blocks feed domains |
+| github_trending | 0 items — session-scoped token; GitHub Search API unavailable |
+
+No new questions raised. Required admin actions remain outstanding since 2026-08-03:
+
+1. Extend egress allowlist to `export.arxiv.org`, `hn.algolia.com`, and the RSS feed domains listed in `data/sources.yaml`.
+2. Replace `GITHUB_TOKEN` with a classic or fine-grained PAT that has read access to the GitHub Search API (`/search/repositories`).
+
+**Escalation note:** 23 consecutive failures. Dashboard stale since ~2026-08-03 (6+ days). No build can succeed until egress access is restored.
