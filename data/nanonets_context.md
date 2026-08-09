@@ -52,8 +52,8 @@ The team also publicly maintains the **IDP Leaderboard**
 benchmark on document AI co-developed with IIT Indore. Items that
 publish leaderboard results, contest its methodology, or are released by
 models near the top of it (GPT-5.4, GPT-5.5, GPT-5.6 Sol/Terra/Luna, Gemini-3-Pro/Flash,
-Gemini 3.1 Pro, Gemini 3.5 Flash, Claude 4.6 family, Claude Fable 5,
-Claude Opus 4.8, Claude Opus 5, Qwen3-VL, Pixtral, GLM-OCR, Chandra OCR 2,
+Gemini 3.1 Pro, Gemini 3.5 Flash, Gemini 3.6 Flash, Claude 4.6 family, Claude Fable 5,
+Claude Sonnet 5, Claude Opus 4.8, Claude Opus 5, Qwen3-VL, Pixtral, GLM-OCR, Chandra OCR 2,
 LightOn OCR-2, DeepSeek-OCR 2) are competitive-axis relevant.
 
 ## Active research direction
@@ -194,8 +194,15 @@ Items that name, compare against, or are released by these companies are
   Fire-PDF Rust engine (April 2026), and a dedicated /parse endpoint
   (May 2026; supports PDFs, Word docs, spreadsheets up to 50MB; 5×
   faster than prior engine) continue moving Firecrawl closer to
-  document AI proper. Note that **Mendable as a standalone product is
-  effectively deprecated** — the same team has pivoted to Firecrawl.
+  document AI proper. **AnyDoc** (August 2026; open-sourced; MIT
+  license; Rust; no ML models, zero external dependencies; converts 14
+  document formats — docx, pptx, xlsx, pdf, rtf, epub, csv, odt, ods,
+  odp, and related variants — to GitHub-Flavored Markdown in a median
+  4.7ms per document; already powers Firecrawl's /parse and /scrape
+  endpoints; node.js and Python bindings included) materially extends
+  Firecrawl's multi-format document-conversion surface. Note that
+  **Mendable as a standalone product is effectively deprecated** — the
+  same team has pivoted to Firecrawl.
 - **Tesseract** — legacy OCR baseline; releases of OCR-VLM models that
   benchmark against Tesseract are worth surfacing.
 - **Frontier-lab vision-for-docs offerings** — see the rule below.
@@ -221,7 +228,12 @@ Examples that are **competitive-primary**:
   Claude Fable 5 (June 9, 2026; model ID claude-fable-5) and Claude
   Mythos 5 (limited availability, Project Glasswing) include advanced
   vision understanding for diagrams and nested tables and appear on
-  ParseBench; Claude Opus 4.7 (April 16, 2026) accepts images up to
+  ParseBench; Claude Sonnet 5 (June 30, 2026; $2/$10 per million
+  tokens, introductory pricing through August 31, 2026; 1M-token
+  context; default model for Free and Pro claude.ai users; image input
+  supported; described as not a step forward for vision over Sonnet 4.6;
+  no IDP Leaderboard or ParseBench document-benchmark scores confirmed
+  yet); Claude Opus 4.7 (April 16, 2026) accepts images up to
   2,576px on the long edge (~3.75 megapixels, 3x prior models) with
   improved chart and document parsing accuracy; Claude Opus 4.8 (May 28,
   2026) adds dynamic multi-agent workflows and is evaluated as a peer on
@@ -233,12 +245,18 @@ Examples that are **competitive-primary**:
   yet available as of this refresh.
 - Google releases a Gemini-document-mode endpoint or a layout-aware
   OCR benchmark result (Gemini 3 Pro/Flash; Gemini 3.1 Pro released
-  February 19, 2026; Gemini 3.5 Flash released May 2026 at Google I/O).
+  February 19, 2026; Gemini 3.5 Flash released May 2026 at Google I/O;
+  Gemini 3.6 Flash released July 21, 2026 — Google's new default model,
+  1M-token context window, accepts PDF and images as input, confirmed
+  used by enterprise customers for document parsing and chart analysis;
+  3.5 Flash-Lite and 3.5 Flash Cyber released alongside it).
 - OpenAI announces GPT-5.x vision improvements on DocVQA / ChartQA /
   OmniDocBench / IDP Leaderboard (GPT-5.4 March 2026, GPT-5.5 April
   2026, GPT-5.6 Sol/Terra/Luna July 9 2026; all three tiers include
   vision input; Terra tier explicitly targets document analysis
-  workflows).
+  workflows; GPT-5.6 Luna price cut 80% and Terra cut 20%, effective
+  July 30, 2026; Fast mode for GPT-5.6 Sol added at 2.5× speed at
+  twice the price).
 - Mistral OCR is updated with new accuracy or pricing (Mistral OCR 4
   released June 23, 2026).
 - xAI ships Grok vision document handling; the Grok Collections API
@@ -1217,3 +1235,106 @@ Nanonets, do not respond.
   closures, or new significant entrants identified this week.
 - Claude Opus 5 (July 24, 2026) still without IDP Leaderboard or
   ParseBench scores; note retained in context.
+
+---
+
+**Date:** 2026-08-09
+
+**Sources consulted:**
+
+- `nanonets.com`, `nanonets.com/blog`, `benchmarking.nanonets.com`,
+  `idp-leaderboard.org` — all returned EGRESS_BLOCKED by network proxy;
+  fell back to web search for all Nanonets data
+- WebSearch: "Nanonets OCR-3 IDP leaderboard August 2026 ranking" —
+  #1 at 85.9% confirmed unchanged (29 models evaluated); scores 87.4
+  on OLM-OCR and 90.5 on OmniDocBench confirmed current
+- WebSearch: "site:huggingface.co/nanonets" — open-weight model lineup
+  unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains API-only
+- WebSearch: "nanonets arxiv 2026 research paper hallucination VLM" —
+  no team-authored papers surfaced; Nanonets-KIE dataset referenced in
+  third-party papers (as in prior refreshes)
+- WebSearch: "Nanonets product announcement blog August 2026" — no new
+  August 2026 Nanonets product announcements indexed
+- WebSearch: "Gemini 3.6 Flash release date document OCR vision" —
+  confirmed from 9to5google, Google DeepMind model card, Google blog;
+  released July 21, 2026; new default Gemini model; accepts PDF and
+  images; used by enterprise customers (Hebbia, Harvey) for document
+  parsing, chart analysis, report drafting; released alongside Gemini
+  3.5 Flash-Lite and 3.5 Flash Cyber
+- WebSearch: "Claude Sonnet 5 release date vision document capabilities"
+  — confirmed June 30, 2026; 1M-token context; image input; $2/$10 per
+  million tokens introductory through August 31, 2026; described as
+  "not a step forward for vision over Sonnet 4.6"; no IDP Leaderboard
+  or ParseBench scores confirmed
+- WebSearch: "GPT-5.6 August 2026 updates document vision" — no new
+  model; pricing changes confirmed (Luna −80%, Terra −20%, effective
+  July 30, 2026) from openai.com; Fast mode for Sol confirmed
+- WebSearch: "Firecrawl AnyDoc open source August 2026" — confirmed from
+  firecrawl.dev/blog, GitHub firecrawl/anydoc, X @firecrawl post,
+  Medium AI Engineering article; Rust-based, MIT license, 14 formats,
+  4.7ms median, already powers /parse and /scrape endpoints
+- WebSearch: "Mistral OCR August 2026 new model update" — no new model
+  since OCR 4 (June 23, 2026); minor API additions (table_format,
+  extract_footer, extract_header, hyperlinks output) noted; no change
+  to main entry warranted
+- WebSearch: "Reducto AI document processing August 2026" — 4B+ pages
+  confirmed current; Agents hub with tool schemas for OpenAI and Claude
+  noted; no new major product announcement
+- WebSearch: "Docling IBM August 2026" — hardening/maintenance release
+  (August 7, 2026); no major new feature
+- WebSearch: "LlamaParse LlamaIndex August 2026" — no major new
+  announcements; all prior entries confirmed current
+- WebSearch: "Unstructured.io August 2026" — maintenance releases only;
+  no major product announcement
+- WebSearch: "Extend AI document processing August 2026" — Parse 2.0
+  and RealDoc-Bench from prior context confirmed current; no new
+  August 2026 announcements
+- WebSearch: "Chandra OCR LightOn OCR August 2026" — no new model
+  versions; both confirmed operating
+- WebSearch: "GLM-OCR DeepSeek OCR VLM new model August 2026" — no new
+  models; both confirmed current (GLM-OCR March 2026; DeepSeek-OCR 2
+  January 2026; Z.ai attribution confirmed)
+- WebSearch: "Qwen3-VL August 2026" — confirmed current; no new release
+- WebSearch: "PaddleOCR-VL Baidu Unlimited-OCR August 2026" — both
+  confirmed current; no new versions
+- WebSearch: "Rossum Docsumo ABBYY Kofax Tungsten Automation 2026" —
+  all confirmed operating; Tungsten Automation named a Gartner Leader
+  in 2025 Magic Quadrant for IDP Solutions (no change to entry needed)
+- WebSearch: "xAI Grok document extraction OCR August 2026" — no new
+  dedicated document extraction product; Grok Collections API confirmed
+  current; no material change
+
+**Material changes versus prior version (2026-08-02):**
+
+- Added **Gemini 3.6 Flash** (Google, July 21, 2026) to the frontier-lab
+  competitive-primary Google example and IDP Leaderboard comparables
+  list. Confirmed as Google's new default Gemini model; accepts PDF and
+  images as input; enterprise use cases confirmed for document parsing
+  and chart analysis (Hebbia, Harvey cited in official coverage); 1M
+  token context window. Released alongside Gemini 3.5 Flash-Lite and
+  3.5 Flash Cyber.
+- Added **Claude Sonnet 5** (Anthropic, June 30, 2026) to the
+  frontier-lab competitive-primary Anthropic example and IDP Leaderboard
+  comparables list. Released between Fable 5 and Opus 5; became the
+  default model for Free and Pro claude.ai users; $2/$10 per million
+  tokens introductory pricing; 1M-token context; image input supported.
+  No document-specific benchmark scores (IDP Leaderboard, ParseBench,
+  OmniDocBench) confirmed yet; described in coverage as not a step
+  forward for vision over Sonnet 4.6. Added to ensure completeness of
+  Claude family tracking.
+- Updated **Firecrawl** entry: added AnyDoc (August 2026; open-sourced;
+  MIT license; pure Rust; no ML dependencies; converts 14 document
+  formats to GitHub-Flavored Markdown in 4.7ms median; already powers
+  /parse and /scrape endpoints). Moves Firecrawl further into
+  multi-format document-conversion territory; "adjacent" classification
+  unchanged.
+- Updated **OpenAI / GPT-5.6** note: added confirmed pricing changes
+  (Luna −80%, Terra −20%, effective July 30, 2026) and Fast mode for
+  Sol (2.5× speed at 2× price). No new model.
+- Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
+  No new Nanonets models on HuggingFace. No Nanonets-authored arXiv
+  papers found. No August 2026 Nanonets blog posts indexed.
+- Claude Opus 5 (July 24, 2026) still without IDP Leaderboard or
+  ParseBench scores; note retained.
+- Claude Sonnet 5 IDP Leaderboard / ParseBench scores: not yet
+  confirmed; monitor for document benchmark results.
