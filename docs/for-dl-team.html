@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Aug 07, 2026 · 06:00 UTC · 0 items scored</span>
+  <span class="built-at">Built Aug 10, 2026 · 06:32 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,18 +79,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four ingest sources failed for the first time in this build — arxiv with HTTP 403, HN with HTTP 403, RSS with no items in window, and GitHub Trending with no items in window. Is the proxy blocking ALL outbound HTTPS to external sources in the remote build environment?</p>
-    <p class="question-context">Prior builds showed arxiv returning 403 for 8+ consecutive builds, but HN, RSS, and GitHub Trending had been intermittently providing items. This build is the first to return zero items across all four sources simultaneously. A curl test from the build environment confirmed the proxy returns 403 for arxiv.org and hn.algolia.com. This may represent a policy change in the remote build environment. Without at least one functioning source, no editorial value can be produced.</p>
+    <p class="question-text">github_trending failed for the first time this build, eliminating the last working data source; is the remote execution environment&#39;s egress policy blocking all external HTTP traffic, or is this a transient GitHub-side outage?</p>
+    <p class="question-context">Prior builds always had github_trending as the fallback when arxiv, HN, and RSS failed. This build produced 0 items from all 4 sources. If egress is policy-blocked rather than transient, the entire pipeline is non-functional until network access is restored or alternative ingestion methods (pre-fetched data, internal mirrors) are configured.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">RSS produced &#39;no items in current window&#39; — is the per-feed time window filter too narrow for the feeds in sources.yaml, or did all feeds genuinely publish nothing in the window?</p>
-    <p class="question-context">RSS feeds like anthropic.com/news, openai.com/blog, and huggingface.co/blog typically post multiple times per week. &#39;No items in current window&#39; suggests either the window is shorter than the inter-post interval or the HTTP request itself was blocked before the feed could be parsed. Clarifying which case applies determines whether the fix is a window expansion or a proxy allowlist entry.</p>
+    <p class="question-text">Should the build pipeline be paused or the cron schedule suspended until at least one data source is confirmed working, rather than generating empty editions every 6 hours?</p>
+    <p class="question-context">A build with 0 items produces a blank dashboard and appends another entry to questions_for_team.md without adding editorial value. Suspending the schedule until network access is confirmed would reduce noise. Alternatively, adding a pre-flight check that aborts cleanly if all sources fail before running the full pipeline would prevent empty commits.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">GitHub Trending returned &#39;no items in current window&#39; for the first time — is github.com/trending accessible from the build environment, or is the proxy now blocking GitHub as well?</p>
-    <p class="question-context">GitHub Trending has been a reliable source in past builds. Its failure alongside HN and RSS suggests a broader proxy policy change rather than an API-specific issue. If GitHub is blocked, the entire &#39;no arXiv paper coverage&#39; mitigation strategy that relied on GitHub Trending as a fallback research signal is also unavailable.</p>
+    <p class="question-text">Should data/sources.yaml be extended with alternative ingest paths that do not require outbound HTTP to third-party APIs — for example, a local file drop directory, a GitHub Actions-fed data file, or a pre-fetched daily snapshot committed to the repo?</p>
+    <p class="question-context">The remote execution environment&#39;s network policy blocks arxiv.org, HN (Algolia), and now appears to block GitHub Trending and RSS feeds as well. Ingest paths that consume data already inside the repo (committed files, GitHub Actions artifacts) would be immune to egress restrictions and would not require network policy changes.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Is the data/nanonets_context.md refresh skill (separate cron) also failing due to the same network outage, and if so, should both skills share a single network-health check that gates all downstream work?</p>
+    <p class="question-context">The context refresh skill and the build skill both depend on outbound web access. If both are failing silently, the editorial grounding in data/nanonets_context.md is also stale. A shared pre-flight check would surface this dependency explicitly and prevent silent degradation of both pipelines.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Is the prior-build unanswered question about arXiv and HN persistent 403 failures (20+ consecutive builds) now resolved as a confirmed egress block rather than a rate-limit issue?</p>
+    <p class="question-context">Earlier builds attributed the arxiv and HN failures to rate-limiting or IP blocking by those services. This build shows github_trending and RSS also returning no items, which is consistent with a network-level egress block in the execution environment rather than site-specific throttling. Confirming the cause determines whether the fix is a network policy change or a source-rotation strategy.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -102,7 +112,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-08-07T06:00:00+00:00
+    sources covered:     · failed: 4 · built at 2026-08-10T06:32:27.118000+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
