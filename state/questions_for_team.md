@@ -8486,3 +8486,25 @@ No new questions raised. Required admin actions remain outstanding since 2026-08
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-10T18:15:10Z (FAILED — zero items from all sources)
+
+**25th+ consecutive failure. Build aborted at ingest. Lock acquired and released.**
+
+All 4 sources returned 0 items — same structural failure ongoing since 2026-08-03 (7+ days).
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (`export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (`hn.algolia.com`) |
+| rss | 0 items — proxy blocks feed domains |
+| github_trending | 0 items — GitHub Search API unavailable |
+
+No new questions raised. Prior questions from the 2026-08-10T06:32Z and 2026-08-10T12:40Z builds remain unanswered. Required actions unchanged:
+
+1. Extend egress allowlist to `export.arxiv.org`, `hn.algolia.com`, and RSS feed domains in `data/sources.yaml`.
+2. Replace `GITHUB_TOKEN` with a PAT that has `read` access to the GitHub Search API.
+
+**Escalation:** 25+ consecutive failures. No dashboard content ingested since ~2026-08-03. Recommend suspending the cron schedule until network access is confirmed restored.
+
+---
