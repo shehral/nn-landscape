@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Aug 10, 2026 · 06:32 UTC · 0 items scored</span>
+  <span class="built-at">Built Aug 10, 2026 · 12:40 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,28 +79,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">github_trending failed for the first time this build, eliminating the last working data source; is the remote execution environment&#39;s egress policy blocking all external HTTP traffic, or is this a transient GitHub-side outage?</p>
-    <p class="question-context">Prior builds always had github_trending as the fallback when arxiv, HN, and RSS failed. This build produced 0 items from all 4 sources. If egress is policy-blocked rather than transient, the entire pipeline is non-functional until network access is restored or alternative ingestion methods (pre-fetched data, internal mirrors) are configured.</p>
+    <p class="question-text">All four ingestion sources have returned 0 items for at least 25 consecutive builds; is the remote execution environment&#39;s egress policy blocking outbound HTTP to arxiv.org, news.ycombinator.com, and feed domains?</p>
+    <p class="question-context">arxiv and HN both return HTTP 403. RSS and github_trending return no items, consistent with the same egress block rather than genuine feed emptiness. The git history shows this started around build 2026-08-09T12:00Z (22nd consecutive failure at that point). No dashboard content has been ingested since then. The pipeline itself is healthy; only network egress is broken.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the build pipeline be paused or the cron schedule suspended until at least one data source is confirmed working, rather than generating empty editions every 6 hours?</p>
-    <p class="question-context">A build with 0 items produces a blank dashboard and appends another entry to questions_for_team.md without adding editorial value. Suspending the schedule until network access is confirmed would reduce noise. Alternatively, adding a pre-flight check that aborts cleanly if all sources fail before running the full pipeline would prevent empty commits.</p>
+    <p class="question-text">Should the scheduled build frequency be reduced or suspended until egress is restored, to avoid creating spurious 0-item edition commits every 6 hours?</p>
+    <p class="question-context">Each cron tick produces a commit with 0 items, bloating the git history and preventing the dashboard from aging gracefully. If the team expects the egress block to persist for days, temporarily disabling the schedule or adding a pre-flight egress check that aborts early would preserve history integrity.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should data/sources.yaml be extended with alternative ingest paths that do not require outbound HTTP to third-party APIs — for example, a local file drop directory, a GitHub Actions-fed data file, or a pre-fetched daily snapshot committed to the repo?</p>
-    <p class="question-context">The remote execution environment&#39;s network policy blocks arxiv.org, HN (Algolia), and now appears to block GitHub Trending and RSS feeds as well. Ingest paths that consume data already inside the repo (committed files, GitHub Actions artifacts) would be immune to egress restrictions and would not require network policy changes.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">Is the data/nanonets_context.md refresh skill (separate cron) also failing due to the same network outage, and if so, should both skills share a single network-health check that gates all downstream work?</p>
-    <p class="question-context">The context refresh skill and the build skill both depend on outbound web access. If both are failing silently, the editorial grounding in data/nanonets_context.md is also stale. A shared pre-flight check would surface this dependency explicitly and prevent silent degradation of both pipelines.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">Is the prior-build unanswered question about arXiv and HN persistent 403 failures (20+ consecutive builds) now resolved as a confirmed egress block rather than a rate-limit issue?</p>
-    <p class="question-context">Earlier builds attributed the arxiv and HN failures to rate-limiting or IP blocking by those services. This build shows github_trending and RSS also returning no items, which is consistent with a network-level egress block in the execution environment rather than site-specific throttling. Confirming the cause determines whether the fix is a network policy change or a source-rotation strategy.</p>
+    <p class="question-text">Is there a fallback ingestion path (e.g., a pre-cached snapshot or an Anthropic-approved proxy allowlist) that could be added to sources.yaml to provide at least partial content while direct egress remains blocked?</p>
+    <p class="question-context">The RSS source list includes Anthropic, OpenAI, and HuggingFace blog feeds. If any of these are reachable via the ccr proxy (the build environment&#39;s HTTPS_PROXY), routing feed fetches through it could recover partial coverage without a full egress policy change.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -112,7 +102,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-08-10T06:32:27.118000+00:00
+    sources covered:     · failed: 4 · built at 2026-08-10T12:40:49+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

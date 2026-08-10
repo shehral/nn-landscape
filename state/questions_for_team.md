@@ -8464,3 +8464,25 @@ No new questions raised. Required admin actions remain outstanding since 2026-08
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-10T12:40:49+00:00 (audit: partial)
+
+### Q: All four ingestion sources have returned 0 items for at least 25 consecutive builds; is the remote execution environment's egress policy blocking outbound HTTP to arxiv.org, news.ycombinator.com, and feed domains?
+
+**Context:** arxiv and HN both return HTTP 403. RSS and github_trending return no items, consistent with the same egress block rather than genuine feed emptiness. The git history shows this started around build 2026-08-09T12:00Z (22nd consecutive failure at that point). No dashboard content has been ingested since then. The pipeline itself is healthy; only network egress is broken.
+
+**Answer:** _add reply here_
+
+### Q: Should the scheduled build frequency be reduced or suspended until egress is restored, to avoid creating spurious 0-item edition commits every 6 hours?
+
+**Context:** Each cron tick produces a commit with 0 items, bloating the git history and preventing the dashboard from aging gracefully. If the team expects the egress block to persist for days, temporarily disabling the schedule or adding a pre-flight egress check that aborts early would preserve history integrity.
+
+**Answer:** _add reply here_
+
+### Q: Is there a fallback ingestion path (e.g., a pre-cached snapshot or an Anthropic-approved proxy allowlist) that could be added to sources.yaml to provide at least partial content while direct egress remains blocked?
+
+**Context:** The RSS source list includes Anthropic, OpenAI, and HuggingFace blog feeds. If any of these are reachable via the ccr proxy (the build environment's HTTPS_PROXY), routing feed fetches through it could recover partial coverage without a full egress policy change.
+
+**Answer:** _add reply here_
+
+---
