@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Aug 10, 2026 · 12:40 UTC · 0 items scored</span>
+  <span class="built-at">Built Aug 11, 2026 · 00:00 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,18 +79,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four ingestion sources have returned 0 items for at least 25 consecutive builds; is the remote execution environment&#39;s egress policy blocking outbound HTTP to arxiv.org, news.ycombinator.com, and feed domains?</p>
-    <p class="question-context">arxiv and HN both return HTTP 403. RSS and github_trending return no items, consistent with the same egress block rather than genuine feed emptiness. The git history shows this started around build 2026-08-09T12:00Z (22nd consecutive failure at that point). No dashboard content has been ingested since then. The pipeline itself is healthy; only network egress is broken.</p>
+    <p class="question-text">All four ingest sources failed in this build cycle for the first time — arxiv (403), HN (403), RSS (0 items), and github_trending (0 items). Is there a network policy change or environment outage that explains the simultaneous failure of all sources, including github_trending which had been the sole reliable source for 30+ consecutive builds?</p>
+    <p class="question-context">Prior builds always had at least github_trending returning items. A simultaneous failure of all four sources is a new pattern that may indicate a network-level change (proxy policy, egress block) rather than individual source API issues. The build environment should be checked for outbound HTTP access.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the scheduled build frequency be reduced or suspended until egress is restored, to avoid creating spurious 0-item edition commits every 6 hours?</p>
-    <p class="question-context">Each cron tick produces a commit with 0 items, bloating the git history and preventing the dashboard from aging gracefully. If the team expects the egress block to persist for days, temporarily disabling the schedule or adding a pre-flight egress check that aborts early would preserve history integrity.</p>
+    <p class="question-text">With zero items across all sources, the dashboard is now completely empty. Should the team be notified through an alternative channel (Slack, email, Linear) when a build produces zero items, since the empty dashboard itself may not be noticed?</p>
+    <p class="question-context">The questions_for_team.md file has accumulated 1,400+ lines of unanswered questions. A complete empty build may not surface as urgently as it should if the notification channel is not actively monitored. A zero-item build is qualitatively different from a partial build — it provides no signal at all.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Is there a fallback ingestion path (e.g., a pre-cached snapshot or an Anthropic-approved proxy allowlist) that could be added to sources.yaml to provide at least partial content while direct egress remains blocked?</p>
-    <p class="question-context">The RSS source list includes Anthropic, OpenAI, and HuggingFace blog feeds. If any of these are reachable via the ccr proxy (the build environment&#39;s HTTPS_PROXY), routing feed fetches through it could recover partial coverage without a full egress policy change.</p>
+    <p class="question-text">The github_trending source uses GitHub&#39;s public trending API with topic filters. Has GitHub changed rate limits or topic-based filtering behavior that would explain the zero-item return in this cycle?</p>
+    <p class="question-context">github_trending has been reliable across 30+ builds. A zero-item return from it — separate from the arxiv/HN 403 issues — suggests either a topic filter mismatch (GitHub changed topic taxonomy), an API endpoint change, or a temporary data gap. The ingest log shows &#39;no items in current window&#39; rather than a 403 error, which suggests the API was reachable but the filters matched nothing.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Should the build agent fall back to a cached prior edition when all sources fail, displaying the last-known-good edition with a prominent staleness banner, rather than pushing an empty dashboard?</p>
+    <p class="question-context">An empty dashboard signals failure but provides no intelligence. A cached prior edition with a clear &#39;all sources down — showing edition from YYYY-MM-DD&#39; banner would maintain dashboard utility for readers while still clearly signaling the ingest failure. This is a design decision for the team.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -102,7 +107,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-08-10T12:40:49+00:00
+    sources covered:     · failed: 4 · built at 2026-08-11T00:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

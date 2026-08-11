@@ -8530,3 +8530,31 @@ No new questions raised. Prior unanswered questions and required admin actions r
 **Escalation:** 8+ days without a successful build. Dashboard content is stale. Cron is generating no value in its current state. Admin action required before any build can succeed.
 
 ---
+
+## Build 2026-08-11T00:00:00+00:00 (audit: partial)
+
+### Q: All four ingest sources failed in this build cycle for the first time — arxiv (403), HN (403), RSS (0 items), and github_trending (0 items). Is there a network policy change or environment outage that explains the simultaneous failure of all sources, including github_trending which had been the sole reliable source for 30+ consecutive builds?
+
+**Context:** Prior builds always had at least github_trending returning items. A simultaneous failure of all four sources is a new pattern that may indicate a network-level change (proxy policy, egress block) rather than individual source API issues. The build environment should be checked for outbound HTTP access.
+
+**Answer:** _add reply here_
+
+### Q: With zero items across all sources, the dashboard is now completely empty. Should the team be notified through an alternative channel (Slack, email, Linear) when a build produces zero items, since the empty dashboard itself may not be noticed?
+
+**Context:** The questions_for_team.md file has accumulated 1,400+ lines of unanswered questions. A complete empty build may not surface as urgently as it should if the notification channel is not actively monitored. A zero-item build is qualitatively different from a partial build — it provides no signal at all.
+
+**Answer:** _add reply here_
+
+### Q: The github_trending source uses GitHub's public trending API with topic filters. Has GitHub changed rate limits or topic-based filtering behavior that would explain the zero-item return in this cycle?
+
+**Context:** github_trending has been reliable across 30+ builds. A zero-item return from it — separate from the arxiv/HN 403 issues — suggests either a topic filter mismatch (GitHub changed topic taxonomy), an API endpoint change, or a temporary data gap. The ingest log shows 'no items in current window' rather than a 403 error, which suggests the API was reachable but the filters matched nothing.
+
+**Answer:** _add reply here_
+
+### Q: Should the build agent fall back to a cached prior edition when all sources fail, displaying the last-known-good edition with a prominent staleness banner, rather than pushing an empty dashboard?
+
+**Context:** An empty dashboard signals failure but provides no intelligence. A cached prior edition with a clear 'all sources down — showing edition from YYYY-MM-DD' banner would maintain dashboard utility for readers while still clearly signaling the ingest failure. This is a design decision for the team.
+
+**Answer:** _add reply here_
+
+---
