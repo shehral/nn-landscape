@@ -8741,3 +8741,25 @@ Required admin actions remain unchanged since 2026-08-03:
 **Answer:** _add reply here_
 
 ---
+
+
+## Build 2026-08-13T06:00:00Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced.**
+
+34th consecutive failure. All 4 sources returned 0 items. Dashboard stale since 2026-08-03 (10+ days).
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 000 (connection blocked — `export.arxiv.org` unreachable) |
+| hn | HTTP 000 (connection blocked — `hn.algolia.com` unreachable) |
+| rss | 0 items — proxy blocks feed domains |
+| github_trending | 0 items — GitHub Search API unavailable |
+
+Required admin actions remain unchanged since 2026-08-03:
+1. Extend egress allowlist to `export.arxiv.org`, `hn.algolia.com`, and RSS feed domains in `data/sources.yaml`.
+2. Replace `GITHUB_TOKEN` with a PAT that has `read` access to the GitHub Search API (`/search/repositories`).
+
+**Escalation:** 34 consecutive failures over 10+ days. No new questions raised — all relevant ones are in prior entries and unanswered. Admin action is required before any build can succeed.
+
+---
