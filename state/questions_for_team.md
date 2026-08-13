@@ -8697,3 +8697,25 @@ All relevant questions have been raised in prior build cycles and remain unanswe
 **Escalation:** 32 consecutive failures over 9+ days. Dashboard content is stale. Cron is generating no editorial value. This entry and future entries will be kept brief until admin action resolves the egress block.
 
 ---
+
+---
+
+## Build 2026-08-13T00:00:00Z (FAILED — zero items from all sources)
+
+**Build aborted at Step 3 (ingest). Lock acquired and released. No edition produced.**
+
+33rd consecutive failure. All 4 sources returned 0 items. Dashboard stale since 2026-08-03 (10+ days).
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (`export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (`hn.algolia.com`) |
+| rss | 0 items — proxy blocks feed domains |
+| github_trending | 0 items — GitHub Search API unavailable |
+
+Required admin actions remain unchanged since 2026-08-03:
+1. Extend egress allowlist to `export.arxiv.org`, `hn.algolia.com`, and RSS feed domains in `data/sources.yaml`.
+2. Replace `GITHUB_TOKEN` with a PAT that has `read` access to the GitHub Search API (`/search/repositories`).
+
+**Escalation:** 33 consecutive failures over 10+ days. Cron is generating no editorial value. This entry will be kept brief — all questions have been raised in prior cycles and remain unanswered. Admin action is required before any build can succeed.
+
