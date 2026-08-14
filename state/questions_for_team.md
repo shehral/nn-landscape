@@ -8819,3 +8819,37 @@ Required admin actions (unchanged since 2026-08-03):
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-14T07:05:00+00:00 (audit: partial)
+
+### Q: doc7 has 1.1K stars and targets the same /parse pipeline step as Nanonets Agentic Data Extraction; has the team reviewed its underlying architecture and compared its Markdown output quality against OCR-3 on a common document set?
+
+**Context:** doc7's 'visual understanding' claim is undocumented as to model and benchmark. If it uses a commodity VLM (Gemini Flash, Claude Sonnet), the accuracy ceiling is known; if it uses a specialized model, the comparison is not yet available from public sources.
+
+**Answer:** _add reply here_
+
+### Q: pdfmux introduces 'certify any extractor's output' as a product framing; should Nanonets preemptively publish an accuracy audit report on OCR-3's /parse output against a common benchmark to anchor third-party characterizations?
+
+**Context:** If self-auditing tools gain adoption, customers will expect external accuracy verification rather than vendor claims. A proactively published report — even a narrow one covering DocVQA or OmniDocBench subset — would set the frame before adversarial audits do.
+
+**Answer:** _add reply here_
+
+### Q: Two builds have now run on 2026-08-14 (midnight and 07:05 UTC) with the same MCP GitHub Search fallback; should the six-hour schedule be reduced to daily until standard sources (arxiv, HN, RSS) are unblocked?
+
+**Context:** With only github_trending available via MCP, consecutive builds in the same day produce significant item overlap. A daily cadence would reduce redundancy without losing coverage, and would reduce the volume of unanswered questions accumulating in this file.
+
+**Answer:** _add reply here_
+
+### Q: The admin escalation items from 2026-08-03 (extend egress allowlist for export.arxiv.org, hn.algolia.com, RSS feed domains; replace GITHUB_TOKEN with read-PAT) have received no reply across 35+ builds; are these actions blocked, deprioritized, or owned by a specific person?
+
+**Context:** Without knowing the status of these actions, the build agent cannot distinguish between 'this is being worked on' and 'this will never be fixed.' A one-sentence status update would allow the cron to be reconfigured accordingly.
+
+**Answer:** _add reply here_
+
+### Q: Should doc7, DocMeld, and aiworkdeck be added to the competitive registry in data/nanonets_context.md as open-source substitutes for Nanonets Agentic Data Extraction's pipeline step?
+
+**Context:** All three position as document-to-Markdown or document-to-agent-ready converters. Without registry entries, future builds evaluate each one from first principles rather than tracking them as named entrants with a known threat profile.
+
+**Answer:** _add reply here_
+
+---
