@@ -8887,3 +8887,37 @@ Required admin actions (unchanged since 2026-08-03):
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-14T16:30:00+00:00 (audit: partial)
+
+### Q: Should Baidu Unlimited-OCR be formally evaluated on the IDP Leaderboard and added to the team's benchmark suite?
+
+**Context:** franken_ocr (this build) wraps Unlimited-OCR (3B MoE, MIT license, DeepSeek-OCR-derived). The model appears in nanonets_context.md as a competitor but with no IDP Leaderboard or OmniDocBench score on record. Its open-weight, MIT-licensed status makes it a credible self-hosted alternative to Nanonets OCR-3.
+
+**Answer:** _add reply here_
+
+### Q: Should this build schedule be reduced to 12h or 24h intervals until standard egress is restored?
+
+**Context:** This is the 38th+ consecutive build using the MCP GitHub Search fallback. Standard ingest (arxiv, HN, RSS, github_trending) has been blocked since 2026-08-03. GitHub trending alone covers approximately 25% of normal signal volume; arxiv, HN discussion, and lab RSS announcements remain absent from every build.
+
+**Answer:** _add reply here_
+
+### Q: Has the team considered submitting Nanonets OCR-3 to ParseBench ahead of its CVPR 2026 camera-ready deadline?
+
+**Context:** run-llama/ParseBench (CVPR 2026) is gaining academic traction as the agent-pipeline document parsing benchmark. Nanonets OCR-3 does not appear in its leaderboard. A submission would establish visibility alongside IDP Leaderboard and OmniDocBench in benchmark-driven enterprise procurement.
+
+**Answer:** _add reply here_
+
+### Q: Should xberg-io/xberg be added to the competitive tracking registry in nanonets_context.md?
+
+**Context:** xberg provides 101 format support, 15 language bindings, a Rust core, REST API, and an MCP server — broad integration surface overlapping Nanonets' extraction API. It was not in the competitive set as of the 2026-08-09 context update and has now surfaced as trending.
+
+**Answer:** _add reply here_
+
+### Q: Should the team manually supplement builds with recent arxiv preprints or HN threads while egress remains blocked?
+
+**Context:** All 20 items in this build are GitHub repositories; no lab announcements, research preprints, or community discussion is present. Manual supplementation via questions_for_team.md (team pastes relevant titles or URLs) could restore partial arxiv/HN coverage without requiring egress changes.
+
+**Answer:** _add reply here_
+
+---
