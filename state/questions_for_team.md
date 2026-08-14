@@ -8785,3 +8785,37 @@ Required admin actions (unchanged since 2026-08-03):
 **Escalation:** 35 consecutive failures over 11+ days. No new questions raised. Admin action required before any build can succeed.
 
 ---
+
+## Build 2026-08-14T00:00:00+00:00 (audit: partial)
+
+### Q: EvalScope and lmms-eval both cover DocVQA, ChartQA, and OmniDocBench — all benchmarks in the IDP Leaderboard set. Should Nanonets OCR-3 be submitted to either framework to establish parity with competitor evaluation methodologies?
+
+**Context:** EvalScope appeared in this build at 3.2K stars. Competitors using EvalScope to publish head-to-head document extraction comparisons outside the IDP Leaderboard would create benchmark results the team does not yet have a position on.
+
+**Answer:** _add reply here_
+
+### Q: TurboOCR claims >200 img/s throughput on OmniDocBench via TensorRT + PP-OCRv6. Is the team tracking high-throughput deterministic OCR pipelines as a distinct segment from accuracy-leading VLM approaches like OCR-3?
+
+**Context:** TurboOCR's benchmark is throughput-only — accuracy on OmniDocBench is not disclosed. If there is a market segment where throughput dominates accuracy, this is a different competitive axis than the IDP Leaderboard ranking.
+
+**Answer:** _add reply here_
+
+### Q: This build was seeded via MCP GitHub Search as a fallback because all four standard ingest sources remained blocked by the egress proxy. Should MCP GitHub Search be adopted as a standing fallback for github_trending when the GITHUB_TOKEN-based source fails?
+
+**Context:** The MCP GitHub server provides authenticated search access that bypasses the token-rate-limit issue that blocked the standard github_trending source. This is the 36th+ consecutive build where standard sources failed; the MCP path produced 20 relevant items this build.
+
+**Answer:** _add reply here_
+
+### Q: Unsloth and NeMo Automodel both now explicitly support GRPO fine-tuning of Qwen3-VL and GLM — the same training paradigm FireRed-OCR-2B used to eliminate structural hallucinations. Has the team assessed the timeline risk of GRPO-tuned document VLM variants appearing on the IDP Leaderboard?
+
+**Context:** FireRed-OCR-2B (March 2026) demonstrated that Format-Constrained GRPO eliminates structural hallucinations in tables and LaTeX. With Unsloth (71K stars) now providing GRPO support for Qwen3 and GLM, the path to community-fine-tuned document OCR variants is shorter than before.
+
+**Answer:** _add reply here_
+
+### Q: This is the 36th+ consecutive build where arxiv, HN, and RSS were inaccessible due to the egress proxy policy. Should the scheduled cron be suspended until the admin extends the egress allowlist, or is the MCP GitHub fallback considered sufficient coverage?
+
+**Context:** The MCP GitHub fallback covers github_trending only — not arxiv papers, HN discussion, or RSS lab announcements. Research signal and lab announcement signal remain absent. The unanswered admin questions have been in this file since August 3, 2026.
+
+**Answer:** _add reply here_
+
+---
