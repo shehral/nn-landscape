@@ -8853,3 +8853,37 @@ Required admin actions (unchanged since 2026-08-03):
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-14T15:00:00+00:00 (audit: partial)
+
+### Q: Should Baidu Unlimited-OCR be added as a named entry to the competitive set in data/nanonets_context.md, given that two independent community agent skills for it appeared in a single 12-hour window?
+
+**Context:** Unlimited-OCR (arXiv 2606.23050; 3B MoE; 93.92 on OmniDocBench v1.6; MIT license) is already tracked informally in context.md but without a named competitive-set entry. The rapid community packaging suggests it is gaining developer adoption outside Baidu's own channels.
+
+**Answer:** _add reply here_
+
+### Q: Should the team monitor or submit OCR-3 to the opendataloader-bench, which is emerging as a third-party PDF parser evaluation baseline independent of IDP Leaderboard?
+
+**Context:** pdfmux scored '#2 of 8 engines' on opendataloader-bench; the benchmark appears to be running active comparisons across PDF extractors. If OCR-3 is not represented, third parties can establish the competitive frame without Nanonets' participation.
+
+**Answer:** _add reply here_
+
+### Q: Should DocFailBench — a public failure-mode leaderboard specifically targeting structural and phantom-row failures in OCR and VLM parsers — be treated as an investigation priority before adversarial third-party submissions create a public record?
+
+**Context:** DocFailBench's failure categories (phantom rows, mis-rendered captions, fabricated headers) map directly to the team's research areas. A proactive submission would let the team control the framing rather than react to external results.
+
+**Answer:** _add reply here_
+
+### Q: This is the 37th consecutive build where arxiv, HN, and RSS were inaccessible; the MCP GitHub Search fallback covers github_trending signal only. Should a daily pre-staging step be added (a GitHub Action with its own network access that commits items_raw.jsonl before the editorial agent runs)?
+
+**Context:** Research paper signal (arXiv), lab announcement signal (RSS), and community discussion signal (HN) have been absent from every build since August 3. The pre-staging approach would decouple network access from editorial judgment without requiring changes to the remote execution environment's egress policy.
+
+**Answer:** _add reply here_
+
+### Q: The six-hour build schedule is producing two to three overlapping builds per day while only github_trending is accessible; should the cron frequency be reduced to once daily until standard sources are restored?
+
+**Context:** Consecutive same-day builds on Aug 14 (00:00, 07:05, and now ~15:00 UTC) produce significant item overlap since github_trending updates at most once per 24 hours. A daily cadence would reduce redundancy and question accumulation without losing coverage.
+
+**Answer:** _add reply here_
+
+---
