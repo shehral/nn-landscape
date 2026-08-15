@@ -8983,3 +8983,22 @@ Required admin actions (unchanged since 2026-08-03):
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-08-15T18:00:00+00:00 (FAILED — zero new signal)
+
+**Build aborted after ingest (Step 3) and MCP fallback exhausted.**
+
+All 4 standard sources returned 0 items (40th+ consecutive failure). MCP GitHub Search fallback attempted; only 7 new repos found vs 309 already in seen.json. Editions were already published at 00:00 and 12:00 UTC today; a third near-duplicate edition was not published.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 Forbidden (`export.arxiv.org`) |
+| hn | HTTP 403 Forbidden (`hn.algolia.com`) |
+| rss | 0 items — proxy blocks feed domains |
+| github_trending | 0 items — GitHub Search API unavailable |
+| MCP GitHub fallback | 7 new repos only (insufficient for a meaningful edition) |
+
+**No new questions raised.** All outstanding admin actions and editorial questions are in prior entries. Dashboard was updated as recently as 12:00 UTC today.
+
