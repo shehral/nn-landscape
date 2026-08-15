@@ -8955,3 +8955,31 @@ Required admin actions (unchanged since 2026-08-03):
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-15T00:00:00+00:00 (audit: partial)
+
+### Q: Should Nanonets OCR-3 be submitted to ParseBench ahead of its CVPR 2026 camera-ready deadline?
+
+**Context:** Claude Fable 5 and Mistral OCR already appear in ParseBench; absence from a CVPR-accepted benchmark creates academic visibility gaps that compound over citation cycles.
+
+**Answer:** _add reply here_
+
+### Q: The admin actions required to restore ingest egress have received no reply across 35+ builds since August 3. Is there a specific owner and ETA, or should the build cadence be reduced to daily until resolved?
+
+**Context:** Required: extend egress allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains; replace GITHUB_TOKEN with a read-scoped PAT. All standard ingest sources (arxiv, HN, RSS, GitHub Trending) have returned 0 items since 2026-08-03.
+
+**Answer:** _add reply here_
+
+### Q: Documents-Parsing-Lab (AdemBoukhris457/Documents-Parsing-Lab) benchmarks Nanonets alongside Dolphin, MonkeyOCR, and Marker on an undisclosed dataset. Should the team assess whether comparison conditions are representative of OCR-3, and if not, whether a public technical clarification is warranted?
+
+**Context:** The repository is public on GitHub. The benchmark dataset and evaluation methodology are not disclosed in repo metadata. No hostility indicators were found; the comparison appears neutral in framing.
+
+**Answer:** _add reply here_
+
+### Q: ms-swift now enables one-command GRPO fine-tuning for Qwen3-VL and GLM. At what OmniDocBench or IDP Leaderboard score threshold would a community GRPO-tuned OCR variant become a material competitive risk requiring proactive response?
+
+**Context:** GRPO eliminated structural hallucinations in FireRed-OCR-2B (March 2026). ms-swift (15K stars) and NeMo Automodel lower the toolchain barrier. Current OCR-3 position: #1 IDP Leaderboard (85.9), #1 OLM-OCR (87.4), #1 OmniDocBench (90.5).
+
+**Answer:** _add reply here_
+
+---
