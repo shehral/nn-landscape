@@ -8921,3 +8921,37 @@ Required admin actions (unchanged since 2026-08-03):
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-15T12:00:00+00:00 (audit: partial)
+
+### Q: ParseBench (run-llama/ParseBench, CVPR 2026) does not appear to include Nanonets OCR-3 in its leaderboard. Should the team submit OCR-3 to ParseBench ahead of its camera-ready deadline?
+
+**Context:** ParseBench is accepted at CVPR 2026 and is gaining academic traction as the standard benchmark for document parsing in AI agent pipelines; Claude Fable 5 and Mistral OCR already appear in it. Absence from a CVPR-accepted benchmark limits academic visibility and may affect enterprise procurement decisions.
+
+**Answer:** _add reply here_
+
+### Q: AdemBoukhris457/Documents-Parsing-Lab explicitly benchmarks Nanonets alongside Dolphin, MonkeyOCR, and Marker using an undisclosed dataset. Should the team identify the dataset and assess whether comparison conditions are representative of OCR-3?
+
+**Context:** The repository is public and names Nanonets directly; results and methodology are not visible in this build. If the comparison conditions are not representative of OCR-3's intended use cases, the framing established there may mislead developers evaluating document parsing options.
+
+**Answer:** _add reply here_
+
+### Q: Three consecutive builds have surfaced GRPO fine-tuning infrastructure (ms-swift, NeMo Automodel, verl-omni) targeting Qwen3-VL and GLM—the base architectures for competitor OCR models. Has the team assessed the timeline risk of community GRPO-tuned OCR variants appearing on the IDP Leaderboard?
+
+**Context:** FireRed-OCR-2B (March 2026) demonstrated that Format-Constrained GRPO eliminates structural hallucinations in tables and LaTeX. With ms-swift (15K stars) now providing one-command GRPO support for Qwen3 and GLM, the path to community-fine-tuned OCR variants is shorter than the IDP Leaderboard's current composition reflects.
+
+**Answer:** _add reply here_
+
+### Q: Standard ingest sources (arxiv, HN, RSS, github_trending via GITHUB_TOKEN) have been blocked for 13+ consecutive days. Should a pre-staging GitHub Action be created to commit items_raw.jsonl from a wider network context before the editorial agent runs?
+
+**Context:** The MCP GitHub Search fallback covers repository signal only—not research preprints (arxiv), lab announcements (RSS), or community discussion (HN). All three are absent from every build since August 3, 2026. A pre-staging Action would decouple network access from editorial judgment without requiring egress policy changes in the remote execution environment.
+
+**Answer:** _add reply here_
+
+### Q: MinerU (77K stars), Docling (64K stars), and OCRmyPDF (34K stars) are the three most widely adopted open-source document parsers, all actively maintained and zero-cost. Is the team tracking the accuracy floor these tools represent—the threshold below which OCR-3's pricing becomes the primary differentiator?
+
+**Context:** These three tools define the zero-cost baseline developers compare against before evaluating paid APIs. If their accuracy on common document types is converging toward OCR-3's accuracy on those types, the value proposition shifts from accuracy to features, support, or specific document-type performance.
+
+**Answer:** _add reply here_
+
+---
