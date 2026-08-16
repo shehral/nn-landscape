@@ -9058,3 +9058,31 @@ All 4 standard sources returned 0 items (40th+ consecutive failure). MCP GitHub 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-16T13:00:00+00:00 (audit: partial)
+
+### Q: Lexoid (open-source, Apache 2.0) replicates the Nanonets Agentic Data Extraction value proposition at zero per-page cost. Is the team tracking the accuracy gap between Lexoid and OCR-3 on FUNSD, CORD, or the IDP Leaderboard test set?
+
+**Context:** If the accuracy gap is small on common document types, the differentiation shifts entirely to SLA, support, and specific document-type performance — a harder pitch than accuracy-first messaging.
+
+**Answer:** _add reply here_
+
+### Q: document-parsers-list compares Docling, MinerU, Marker, LlamaParse, and other OSS parsers without including Nanonets OCR-3. Should the team contribute a pull request adding OCR-3 to the comparison, or is the managed-API vs. OSS distinction sufficient to justify absence?
+
+**Context:** Community comparison tables shape developer procurement decisions. Nanonets' absence from such lists means competitors define the frame without a Nanonets data point.
+
+**Answer:** _add reply here_
+
+### Q: The german-ocr project demonstrates that a Qwen3-VL + LoRA fine-tune (Apache 2.0, Ollama-compatible) achieves acceptable performance on German invoices. At what accuracy threshold on the IDP Leaderboard would a domain-specific OSS fine-tune represent a material competitive risk to OCR-3's pricing justification?
+
+**Context:** This is the third consecutive build surfacing LoRA fine-tuning of competitor-architecture VLMs for extraction tasks. A threshold-based monitoring rule would help prioritize when to benchmark these variants directly.
+
+**Answer:** _add reply here_
+
+### Q: All four standard ingest sources (arxiv, HN, RSS, github_trending) have been inaccessible for 14+ consecutive days (since 2026-08-03). This is the 44th+ consecutive build on the GitHub MCP fallback only. Should the 6-hour cron be paused until egress is restored, given that github_trending updates at most once per 24 hours and repeated builds produce heavily overlapping signal?
+
+**Context:** Required admin actions remain unchanged: (1) extend egress allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains; (2) replace GITHUB_TOKEN with a read-scoped PAT. Reducing to a 24-hour cadence would maintain signal continuity while eliminating redundant builds.
+
+**Answer:** _add reply here_
+
+---
