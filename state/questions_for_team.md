@@ -9086,3 +9086,25 @@ All 4 standard sources returned 0 items (40th+ consecutive failure). MCP GitHub 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-16T18:55:27+00:00 (audit: partial)
+
+### Q: github_trending returned zero items for the first time in this build series (2026-08-16 build). Is this a network policy change, a GitHub rate-limit, or a transient failure with no items trending in the configured topics on this date?
+
+**Context:** Prior builds relied on github_trending as the sole reliable source after arxiv and HN began returning 403. github_trending has now also failed, producing a complete zero-item build. Diagnosing whether this is transient (retry next build) or structural (network policy has changed) is urgent — the dashboard has no data at all without at least one working source.
+
+**Answer:** _add reply here_
+
+### Q: Should the team configure an alternative source (Semantic Scholar API, GitHub REST API with direct repo search, Papers With Code) before the next scheduled build, given that all four current sources are now failing?
+
+**Context:** arxiv (403, 30+ builds), HN (403, multiple builds), RSS (empty feed responses, multiple builds), and now github_trending (empty, first occurrence) have all failed in this build. The dashboard infrastructure requires at least one working ingest source. Prior builds surfaced Semantic Scholar and arXiv OAI-PMH as alternatives; neither has been implemented. This build surfaces the urgency: the entire dashboard is now producing zero items.
+
+**Answer:** _add reply here_
+
+### Q: Should the rss source feed list in data/sources.yaml be audited for stale URLs? Latent Space, Interconnects, Import AI, Stratechery, and several frontier-lab blog feeds have returned zero items across multiple consecutive builds.
+
+**Context:** RSS feeds may have moved or deprecated. A one-time audit comparing current feed URLs against each publication's current RSS endpoint would identify which feeds are stale. If even two or three feeds are restored, RSS could return items while the github_trending and arxiv issues are investigated.
+
+**Answer:** _add reply here_
+
+---
