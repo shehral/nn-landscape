@@ -9002,3 +9002,37 @@ All 4 standard sources returned 0 items (40th+ consecutive failure). MCP GitHub 
 
 **No new questions raised.** All outstanding admin actions and editorial questions are in prior entries. Dashboard was updated as recently as 12:00 UTC today.
 
+
+## Build 2026-08-16T01:00:00+00:00 (audit: partial)
+
+### Q: GRACE-VLM achieves INT4 Qwen3-VL without reported accuracy loss on standard vision benchmarks. At what OmniDocBench or IDP Leaderboard score threshold would an INT4 Qwen3-VL variant represent a material competitive risk to OCR-3's current #1 position?
+
+**Context:** The repo reports no document-AI benchmark results, so the accuracy impact on OmniDocBench (current top: PaddleOCR-VL-1.6 at 96.33 v1.6) or IDP Leaderboard (OCR-3 at 85.9) is unknown. A threshold-based monitoring rule would let the team decide when to benchmark the INT4 variant directly.
+
+**Answer:** _add reply here_
+
+### Q: AgilePruner connects visual token redundancy to hallucination onset in VLMs. Has the research team evaluated whether token-pruning approaches reduce phantom-row hallucination rates in document-structured inputs, or does the document-layout domain break the attention-diversity assumptions the paper relies on?
+
+**Context:** AgilePruner tests on standard VLM benchmarks (not document benchmarks). Document pages have dense, spatially-structured content where token pruning based on attention diversity may behave differently than on natural images. The team's phantom-row research may have prior experiments that speak to this.
+
+**Answer:** _add reply here_
+
+### Q: Is Nanonets OCR-3 or any Nanonets model listed as a supported provider in LiteLLM's provider registry?
+
+**Context:** LiteLLM at 56K stars is a common integration path for developers evaluating and switching between LLM and vision-AI providers. If OCR-3 is absent from the registry, developers using LiteLLM will incur additional integration work compared to Mistral OCR and general-purpose vision APIs already listed. A one-time PR to the LiteLLM registry would increase discoverability.
+
+**Answer:** _add reply here_
+
+### Q: All four standard ingest sources have been inaccessible since 2026-08-03 (13+ days, 40+ consecutive failures). This build found 10 new items via MCP GitHub Search—below the 20-item threshold of earlier successful builds. Should the build schedule be reduced from 6-hour to 24-hour intervals until the egress proxy allowlist is extended?
+
+**Context:** Required admin actions remain unchanged since 2026-08-03: (1) extend egress allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains; (2) replace GITHUB_TOKEN with a read-scoped PAT for the GitHub Search API. With only GitHub repository signal available, consecutive same-day builds produce significant item overlap and limited editorial value.
+
+**Answer:** _add reply here_
+
+### Q: The VLM safety audit framework (ACM AI 2026) distinguishes calibration error, abstention rate, and confident-wrong outputs as separate failure modes. Should the team's hallucination evaluation for OCR-3 and prior models adopt this decomposition, reporting these three metrics separately rather than a single hallucination rate?
+
+**Context:** Phantom rows and fabricated headers in document VLMs may reflect different underlying failure modes: a phantom row could be a confident-wrong output (calibration problem) or a structural hallucination (generation-path problem). Reporting them separately would make external benchmark comparisons more interpretable.
+
+**Answer:** _add reply here_
+
+---
