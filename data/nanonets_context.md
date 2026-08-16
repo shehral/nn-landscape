@@ -94,7 +94,14 @@ Items that name, compare against, or are released by these companies are
   over tested systems in independent annotation. Supersedes Mistral OCR
   3 (January 2026; mistral-ocr-2512; 74% win rate over OCR 2). Mistral
   OCR 25.03 on Azure AI Foundry; Mistral OCR 25.05 on Vertex AI (May
-  2026). Mistral OCR 2 retired June 30, 2026.
+  2026). Mistral OCR 2 retired June 30, 2026. Mistral OCR 4.1 (public
+  preview July 16, 2026; full release August 13, 2026; model ID
+  mistral-ocr-4-1) is a targeted revision of OCR 4 adding
+  paragraph-level bounding boxes, structural block labels, and
+  block-level confidence scores; specifically improves bounding box
+  accuracy on busy, marked-up pages (annotated contracts, stamped
+  medical reports, hand-filled forms, highlighted scans); performance
+  benchmarks and pricing unchanged from OCR 4.
 - **Reducto** — competitor on structured extraction with multi-pass
   agentic correction; exposes Parse / Extract / Split / Edit endpoints
   similar to OCR-3's surface. Raised $75M Series B (Andreessen
@@ -108,7 +115,10 @@ Items that name, compare against, or are released by these companies are
   audited by micro1; 225 sourced documents averaging 88,700+ fields
   each; 100% completeness, 99.6% precision, 99.6% recall, 99.3% leaf
   accuracy; zero failures; peer systems: Extend MAX, LlamaExtract-Agentic,
-  GPT-5.5, Claude Opus 4.8, Gemini 3.1 Pro).
+  GPT-5.5, Claude Opus 4.8, Gemini 3.1 Pro); released Deep Split (2026;
+  4 credits/page via API and Studio), an agentic splitting mode extending
+  Split to documents running to thousands of pages across 150+ category
+  taxonomies, using the same agent harness architecture as Deep Extract.
 - **LlamaParse (LlamaIndex / LlamaCloud)** — managed parsing service
   inside LlamaCloud; RAG-native, multimodal, often paired with or
   benchmarked against Reducto. LlamaParse v2 launched 2026 with
@@ -1338,3 +1348,86 @@ Nanonets, do not respond.
   ParseBench scores; note retained.
 - Claude Sonnet 5 IDP Leaderboard / ParseBench scores: not yet
   confirmed; monitor for document benchmark results.
+
+---
+
+**Date:** 2026-08-16
+
+**Sources consulted:**
+
+- WebSearch: "Nanonets OCR-3 IDP leaderboard August 2026 ranking" —
+  #1 at 85.9% confirmed unchanged (29 models evaluated); 87.4 OLM-OCR
+  and 90.5 OmniDocBench confirmed current; benchmarking.nanonets.com
+  and idp-leaderboard.org URLs confirmed resolving
+- WebSearch: "site:huggingface.co/nanonets" — open-weight model lineup
+  unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains API-only
+- WebSearch: "nanonets arxiv 2026 research paper hallucination VLM" —
+  no team-authored papers surfaced; Nanonets-KIE dataset referenced in
+  third-party papers (as in prior refreshes)
+- WebSearch: "Nanonets product announcement blog August 2026" — no new
+  August 2026 Nanonets product announcements indexed
+- WebSearch: "Mistral OCR August 2026 new model update" — Mistral OCR
+  4.1 confirmed from releasebot.io, explainx.ai, ultrathink.ai,
+  docs.mistral.ai/models/ocr-4-1 (direct fetch EGRESS_BLOCKED; verified
+  via secondary sources); public preview July 16, 2026; full release
+  August 13, 2026; model ID mistral-ocr-4-1
+- WebSearch: "Reducto Deep Split document processing 2026" — Deep Split
+  confirmed from Reducto X post (@reductoai) and llms.reducto.ai
+  documentation; described as June 2026 release in AI summarization of
+  those sources; exact release date not confirmed from a dated primary
+  source (press release or blog post); monitor for clarification
+- WebSearch: "LlamaParse LlamaIndex August 2026 new product" — no major
+  new August product; LlamaParse MCP update (Extract + Index v2 tools)
+  confirmed from llamaindex.ai blog; prior context sufficient
+- WebSearch: "Anthropic Claude document extraction vision August 2026" —
+  no new document-specific product; Claude Opus 5 still without IDP
+  Leaderboard or ParseBench benchmark scores
+- WebSearch: "Google Gemini document OCR vision August 2026" — no new
+  model; Gemini 3.6 Flash (July 21, 2026) confirmed current
+- WebSearch: "OpenAI GPT-5 document vision OCR August 2026" — GPT-5.6
+  Sol/Terra/Luna confirmed current; no new model
+- WebSearch: "xAI Grok document extraction OCR August 2026" — Grok
+  Collections API confirmed current; Grok 4.6 confirmed as coding and
+  productivity model (GitHub Copilot integration), not a document
+  extraction product; no material change to xAI entry
+- WebSearch: "Chandra OCR LightOn OCR new model August 2026" — no new
+  models; both confirmed operating
+- WebSearch: "GLM-OCR DeepSeek OCR VLM new model August 2026" — no new
+  models; Z.ai/GLM-OCR and DeepSeek-OCR 2 confirmed current
+- WebSearch: "Qwen3-VL Alibaba VLM document OCR new release August 2026"
+  — no new August 2026 release; confirmed current
+- WebSearch: "Firecrawl document parsing August 2026" — no major new
+  features; Fire-PDF, AnyDoc, and /parse endpoint from prior context
+  confirmed current
+- WebSearch: "Unstructured.io Docling IBM August 2026" — no major new
+  announcements; all prior entries confirmed current
+- WebSearch: "Rossum Docsumo ABBYY Kofax Tungsten Automation 2026
+  operating" — all confirmed operating; no renames or closures
+- WebSearch: "new OCR VLM model document AI August 2026 benchmark" — no
+  new entrants identified; market stable relative to July 2026 snapshot
+- WebSearch: "idp-leaderboard.org benchmarking.nanonets.com August 2026
+  current rankings" — Nanonets OCR-3 #1 at 85.9% confirmed; 29 models
+  evaluated on leaderboard
+
+**Material changes versus prior version (2026-08-09):**
+
+- Updated **Mistral OCR** entry: added Mistral OCR 4.1 (model ID
+  mistral-ocr-4-1; public preview July 16, 2026; full release August 13,
+  2026), a targeted revision of OCR 4 that adds paragraph-level bounding
+  boxes, structural block labels, and block-level confidence scores;
+  specifically addresses bounding box accuracy on busy, marked-up pages
+  (annotated contracts, stamped medical reports, hand-filled forms,
+  highlighted scans); performance benchmarks and pricing unchanged from
+  OCR 4.
+- Updated **Reducto** entry: added Deep Split (2026; 4 credits/page via
+  API and Studio), an agentic splitting mode for large documents running
+  to thousands of pages across 150+ category taxonomies, using the same
+  agent harness as Deep Extract. Missed in prior refreshes; exact release
+  date not confirmed from a dated primary source.
+- Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
+  No new Nanonets models on HuggingFace. No Nanonets-authored arXiv
+  papers found. No August 2026 Nanonets product announcements indexed.
+- All other competitive set members confirmed still operating; no renames,
+  closures, or new significant entrants identified this week.
+- Claude Opus 5 (July 24, 2026) and Claude Sonnet 5 (June 30, 2026)
+  still without IDP Leaderboard or ParseBench scores; notes retained.
