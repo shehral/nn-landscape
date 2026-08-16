@@ -9036,3 +9036,25 @@ All 4 standard sources returned 0 items (40th+ consecutive failure). MCP GitHub 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-16T07:04:08+00:00 (audit: partial)
+
+### Q: NanoNets/Graft (github.com/NanoNets/Graft) appeared in this build with 2.9k stars. Is this an official Nanonets product line or a side project from a team member? Framing and competitive classification differ significantly depending on the answer.
+
+**Context:** The repository sits under the NanoNets GitHub org, suggesting official provenance, but it addresses AI coding-agent infrastructure rather than document AI. If it is an official product, it warrants ongoing monitoring as a Nanonets surface; if a personal project, it should be filtered from future builds.
+
+**Answer:** _add reply here_
+
+### Q: Multimodal-OCR3 includes Nanonets-OCR3 in a direct multi-model benchmark comparison. Should the team verify that Nanonets-OCR3's performance on this benchmark is representative of current production capability before the evaluation gains further distribution?
+
+**Context:** The benchmark (github.com/PRITHIVSAKTHIUR/Multimodal-OCR3) is a community effort; methodology and dataset provenance are not yet reviewed. Public benchmark inclusions can be cited by prospects, and inaccurate framing — in either direction — could influence customer decisions.
+
+**Answer:** _add reply here_
+
+### Q: The seen.json filter now tracks 505 canonical URLs, of which 319 are GitHub repositories. Build yield has dropped to 11 new items per cycle. Should items in seen.json older than 90 days be eligible for re-evaluation if their repository has had a significant update (new release, major star growth)?
+
+**Context:** The current filter permanently suppresses all previously-published URLs regardless of how the underlying project has evolved. A staleness threshold would allow relevant repositories with new releases to re-enter the pipeline without re-showing unchanged items.
+
+**Answer:** _add reply here_
+
+---
