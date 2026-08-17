@@ -9201,3 +9201,37 @@ This is the third attempted build of 2026-08-17. Editions were already published
 
 **Answer:** _add reply here_
 
+
+## Build 2026-08-17T19:10:00+00:00 (audit: partial)
+
+### Q: Is the team tracking LandingAI's Agentic Document Extraction (ADE) accuracy on OmniDocBench or the IDP Leaderboard? ADE's open agent-skill library now covers parse/extract/schema-define at the same API surface as Nanonets Agentic Data Extraction.
+
+**Context:** LandingAI's ade-document-processing-skills (63 stars, active) targets identical extraction workflows. Without benchmark comparisons, the competitive positioning relies on sales-layer claims rather than accuracy data.
+
+**Answer:** _add reply here_
+
+### Q: PureDocBench evaluates document parsers on degraded scans and real-world mixed-quality documents absent from OmniDocBench and ParseBench. Does OCR-3's training include degraded-document types, and has it been evaluated on this benchmark?
+
+**Context:** If OCR-3's IDP Leaderboard #1 ranking does not generalize to degraded inputs, PureDocBench could expose an accuracy gap that competitors use to differentiate on real-world enterprise deployments.
+
+**Answer:** _add reply here_
+
+### Q: All four standard ingest sources (arxiv, HN, RSS, github_trending) have been blocked since 2026-08-03 — now 15 days, 50+ consecutive builds. Is there an owner and ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains?
+
+**Context:** Build yield is now 12 items per cycle on MCP GitHub fallback alone. Research-axis items (arxiv papers, academic hallucination work) are structurally absent from recent builds, degrading the research_implication framing quality.
+
+**Answer:** _add reply here_
+
+### Q: Baidu has now published both Qianfan-OCR, Unlimited-OCR, and LoongForge (their shared VLM training framework) as open-source or open-weight artifacts. Does the team have visibility into Baidu's document-AI roadmap, and should LoongForge training configurations be monitored as an early signal of next-generation OCR model releases?
+
+**Context:** Shared training infrastructure lowers per-model release cost. If Baidu follows prior cadence, a new document-specialized VLM on LoongForge could appear on OmniDocBench within 1-2 quarters.
+
+**Answer:** _add reply here_
+
+### Q: Should items in seen.json older than 90 days be eligible for re-evaluation if their repository has had a major release or 2x+ star growth since first seen?
+
+**Context:** seen.json now tracks 556 entries, 370 of which are GitHub repositories. Build yield from MCP GitHub Search is declining as the pool saturates. A staleness threshold would restore coverage of evolving projects without re-showing static items.
+
+**Answer:** _add reply here_
+
+---
