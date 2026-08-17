@@ -9142,3 +9142,37 @@ All 4 standard sources returned 0 items (40th+ consecutive failure). MCP GitHub 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-17T07:02:59+00:00 (audit: partial)
+
+### Q: Does Nanonets OCR-3 have published per-language accuracy benchmarks for CJK text, and how does it compare to specialized Japanese document AI engines like yomitoku on layout detection and table extraction?
+
+**Context:** Yomitoku (1.6K stars) covers layout detection, OCR, and table extraction specifically for Japanese documents — a document type vertical where CJK text accuracy and vertical-text parsing are primary evaluation criteria for enterprise customers. Without a per-language breakdown, it is unclear whether OCR-3's multilingual claim covers CJK at competitive accuracy.
+
+**Answer:** _add reply here_
+
+### Q: Is Excel/spreadsheet extraction (xlsx, ods) a primary use case for OCR-3's /extract endpoint, and if so, is there a published accuracy benchmark for that document type comparable to what exstruct provides?
+
+**Context:** Exstruct (191 stars, active MCP integration) converts Excel tables, shapes, and charts to structured JSON for LLM pipelines at zero per-call cost, directly overlapping Nanonets Agentic Data Extraction's spreadsheet handling. Without a published accuracy benchmark for spreadsheet extraction, developers have no data-driven basis to choose a managed API over open-source tooling for this document type.
+
+**Answer:** _add reply here_
+
+### Q: Has the research team reviewed retrieval-augmented hallucination mitigation (as in Re-Align, EMNLP25) as a complement to activation patching for phantom-row reduction?
+
+**Context:** Re-Align applies image retrieval as a pre-deployment alignment step to reduce VLM hallucination rates without retraining. If this approach generalizes to table-structured document inputs, it may provide a lightweight alternative to the team's current mechanistic interpretability methods for phantom-row mitigation.
+
+**Answer:** _add reply here_
+
+### Q: Is there an owner and resolution ETA for extending the egress allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains? This is build 50+ on MCP GitHub fallback only, now 15 days since 2026-08-03.
+
+**Context:** All four standard ingest sources (arxiv, HN, RSS, github_trending CLI) have returned 0 items since 2026-08-03. This build's maximum composite score was 40, well below the 60 threshold, because GitHub repository signal is nearly exhausted (seen.json: 541 entries). Without egress access, editorial quality will continue to degrade across consecutive builds.
+
+**Answer:** _add reply here_
+
+### Q: Should the build cadence be reduced from 6-hourly to daily until standard ingest egress is restored, given that github_trending updates at most once per 24 hours and consecutive builds now produce heavily overlapping signal?
+
+**Context:** This build found 15 new items versus the prior build's 5, but maximum composite remains below 40. The 6-hour cron produces multiple builds per day with diminishing marginal signal. A 24-hour schedule would maintain continuity while reducing wasted compute on low-yield fallback searches.
+
+**Answer:** _add reply here_
+
+---
