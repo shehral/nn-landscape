@@ -9108,3 +9108,37 @@ All 4 standard sources returned 0 items (40th+ consecutive failure). MCP GitHub 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-17T00:58:54+00:00 (audit: partial)
+
+### Q: Standard ingest egress has been blocked for 15 consecutive days (since 2026-08-03). This build found only 5 new items via MCP GitHub Search fallback. Is there an owner and resolution ETA for extending the egress allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains?
+
+**Context:** All four standard sources (arxiv, HN, RSS, github_trending) have returned 0 items since 2026-08-03. Build yield has dropped from 22 items yesterday to 5 items today as seen.json (now 536 entries) saturates the available GitHub repository signal. Without egress access or a pre-staging pipeline, builds will continue producing near-zero items.
+
+**Answer:** _add reply here_
+
+### Q: Should the team add alternative ingest sources — Semantic Scholar, Papers With Code, or direct arXiv OAI-PMH — before the next scheduled build, given that all four current sources are now failing?
+
+**Context:** Semantic Scholar and Papers With Code both provide free APIs for searching recent ML papers by keyword. Either would restore arxiv-equivalent coverage without requiring egress changes to the current proxy configuration. This was raised in the 2026-08-16T18:55:27 build and remains unanswered.
+
+**Answer:** _add reply here_
+
+### Q: Should items in seen.json older than 90 days be eligible for re-evaluation if their repository has had a significant update (new major release, 2x+ star growth)?
+
+**Context:** seen.json now tracks 536 canonical URLs, 350 of which are GitHub repositories. With only GitHub MCP search available, consecutive builds produce heavily overlapping signal. A staleness threshold would restore some coverage of evolving projects without re-showing unchanged items.
+
+**Answer:** _add reply here_
+
+### Q: LlamaParse now has a first-class Python SDK (llama-parse-py). Is Nanonets OCR-3 accessible from a similarly simple Python-native entry point, or does the API surface require more integration work than a named SDK install?
+
+**Context:** SDK parity matters for developer adoption: llama-parse-py (pip install llama-parse) offers a one-command entry point to LlamaParse document parsing. If OCR-3 lacks an equivalent, the friction gap could affect trial-to-production conversion for developers comparing both services.
+
+**Answer:** _add reply here_
+
+### Q: The build cadence is still 6-hourly but all standard sources have been inaccessible since August 3. Should the cron be reduced to 24-hour intervals until egress is restored, given that github_trending updates at most once per 24 hours and repeated builds produce heavily overlapping signal?
+
+**Context:** This is the 50th+ consecutive build with partial or zero standard-source coverage. The last build with meaningful coverage was the 13:00 UTC edition yesterday (22 items). Today's build at 01:00 UTC found only 5 new items. A 24-hour schedule would maintain continuity while reducing redundant runs.
+
+**Answer:** _add reply here_
+
+---
