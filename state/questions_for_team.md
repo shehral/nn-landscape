@@ -9176,3 +9176,28 @@ All 4 standard sources returned 0 items (40th+ consecutive failure). MCP GitHub 
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-08-17T13:00:00+00:00 (ABORTED — insufficient new signal)
+
+**Build aborted before scoring/rendering. No edition published.**
+
+This is the third attempted build of 2026-08-17. Editions were already published at 00:58 UTC and 07:02 UTC today. The 07:02 UTC edition found 15 items; this build found only 2 new GitHub repositories after exhaustive MCP GitHub Search, below the threshold for a meaningful edition.
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 (proxy egress blocked; day 15, since 2026-08-03) |
+| hn | HTTP 403 (proxy egress blocked) |
+| rss | 0 items (proxy egress blocked) |
+| github_trending | 0 items (proxy egress blocked) |
+| MCP GitHub fallback | 2 new repos only (mlx-vlm, future-agi/future-agi) |
+
+**seen.json is now 556 entries (370 GitHub repos).** Consecutive same-day builds are returning diminishing fractions of new signal as the pool saturates.
+
+### Q: The build cadence is still 6-hourly but all standard sources have been inaccessible since 2026-08-03 (15 days, 50+ consecutive blocked builds). This is the third build aborted or thin on 2026-08-17 alone. Should the cron be paused or reduced to once-daily until egress is restored?
+
+**Context:** The 6-hour cron produces 4 builds/day, but with only GitHub MCP search available and seen.json at 556 entries, each additional build finds 2-15 new repos — marginal editorial value. Required admin actions remain unchanged since 2026-08-03: (1) extend egress proxy allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains; (2) replace GITHUB_TOKEN with a read-scoped PAT for the GitHub Search API. A once-daily build would maintain continuity without wasted cycles.
+
+**Answer:** _add reply here_
+
