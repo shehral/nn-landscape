@@ -9257,3 +9257,37 @@ This is the third attempted build of 2026-08-17. Editions were already published
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-18T12:00:00+00:00 (audit: partial)
+
+### Q: All four standard ingest sources have been proxy-blocked since 2026-08-03 — now day 16, with 60+ consecutive blocked builds. Is there an owner and ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** The build is now exclusively dependent on MCP GitHub Search fallback, which yields ~12 new repos per cycle from a 568-entry seen pool. Research-axis items (arxiv papers, academic hallucination work) are structurally absent from all recent builds. Required actions remain: (1) extend egress allowlist, (2) replace GITHUB_TOKEN with a read-scoped PAT.
+
+**Answer:** _add reply here_
+
+### Q: Should the build cadence be reduced from 6-hourly to daily until egress is restored?
+
+**Context:** This is the second build of 2026-08-18. GitHub MCP Search yields ~12 new repos per cycle; the seen pool at 568 entries saturates quickly with 4 builds per day. A 24-hour cadence would preserve editorial signal without wasted cycles. (Unanswered since 2026-08-17.)
+
+**Answer:** _add reply here_
+
+### Q: Does character-offset grounding (as implemented in Google LangExtract / RayCodes_LangExtract) reduce phantom-row hallucinations in table extraction, or does it only address attribution for span-level text?
+
+**Context:** RayCodes_LangExtract positions character offsets as a hallucination mitigation technique. The team's phantom-row work focuses on rows the model fabricates; it is unclear whether offset grounding prevents row fabrication or only prevents span misattribution for rows that do exist.
+
+**Answer:** _add reply here_
+
+### Q: Is the Talonic MCP server (talonic-mcp) built on a different extraction model than Nanonets OCR-3, or does it wrap a foundation model without proprietary extraction training?
+
+**Context:** Talonic positions directly on the same MCP-native extraction surface as Nanonets' Agentic Data Extraction API. If it wraps a commodity LLM without document-specific training, accuracy on structured forms (tables, invoices) will be lower than Nanonets OCR-3; if it has its own model, it is a more direct competitive signal.
+
+**Answer:** _add reply here_
+
+### Q: Should repos in seen.json older than 90 days with 2x+ star growth since first seen become eligible for re-evaluation?
+
+**Context:** seen.json now has 568 entries (382 GitHub URLs). The MCP fallback pool is saturating. A staleness threshold that re-evaluates high-growth repos would restore coverage of projects that have materially changed since first seen. This would require a code change to the dedup/publish pipeline.
+
+**Answer:** _add reply here_
+
+---
