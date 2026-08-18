@@ -9235,3 +9235,25 @@ This is the third attempted build of 2026-08-17. Editions were already published
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-18T00:00:00+00:00 (audit: failed — zero items)
+
+**Status: ABORTED. All ingest sources returned 0 items. No edition produced.**
+
+| Source | Status |
+|---|---|
+| arxiv | HTTP 403 (proxy egress blocked; day 16, since 2026-08-03) |
+| hn | HTTP 403 (proxy egress blocked) |
+| rss | 0 items (proxy egress blocked) |
+| github_trending | 0 items (proxy egress blocked) |
+| MCP GitHub fallback | 1 new repo only (dkylewillis/vera) — seen.json saturated at 568 entries |
+
+**seen.json is now 568 entries.** MCP GitHub fallback yield has collapsed to 1 item per cycle, making additional builds non-productive.
+
+### Q: All four standard ingest sources have been proxy-blocked since 2026-08-03 — now day 16, 60+ consecutive blocked builds. MCP GitHub fallback yield has dropped to 1 item per cycle (seen.json at 568 entries, pool saturated). The build is no longer producing editorial output. Should the cron be paused until egress is restored?
+
+**Context:** Required unblocking actions remain the same since 2026-08-03: (1) extend egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains listed in data/sources.yaml; (2) replace the GITHUB_TOKEN with a read-scoped PAT for the GitHub Search API so github_trending works again. Both are one-time admin changes. Until one of them lands, this cron is generating wasted compute with no research signal. Pausing the cron (or dropping to once-weekly) is the correct response.
+
+**Answer:** _add reply here_
+
+---
