@@ -9291,3 +9291,25 @@ This is the third attempted build of 2026-08-17. Editions were already published
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-18T00:00:00+00:00 (audit: partial)
+
+### Q: All four sources failed this build: arxiv/HN on 403, RSS/github_trending on 'no items in window'. Is the recency window for RSS and github_trending too narrow, and should it be widened to days_back=3 or more to buffer against quiet periods?
+
+**Context:** This is the first build where RSS and github_trending both returned zero items alongside the persistent arxiv/HN 403s, resulting in 0 total items ingested. The dashboard published a fully empty edition. A wider recency window for the non-blocked sources would prevent total blackouts on low-activity days.
+
+**Answer:** _add reply here_
+
+### Q: The arxiv 403 has now persisted for 15+ consecutive builds (first raised 2026-05-21). Is there a network-policy decision that was made to block arxiv.org outbound, or is this an unintended block that should be escalated to the hosting team?
+
+**Context:** Every build since the first (2026-05-21) has flagged arxiv and HN 403s. The questions file has accumulated 15+ unanswered instances of this question. If the block is intentional, the source should be removed from sources.yaml to reduce noise. If unintentional, it needs a network-level fix — the OAI-PMH alternative suggested in prior builds is a workaround, not a root cause fix.
+
+**Answer:** _add reply here_
+
+### Q: Should an automatic alerting threshold be added: if 0 items are ingested across all 4 sources, the build should notify the team via a push notification rather than silently publishing an empty edition?
+
+**Context:** An empty edition has no value and misleads readers. A zero-item build is categorically different from a partial-build (1-2 sources), yet the current pipeline treats them identically. A dedicated zero-item abort path with team notification would be more actionable than an empty published page.
+
+**Answer:** _add reply here_
+
+---
