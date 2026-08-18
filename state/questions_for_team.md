@@ -9313,3 +9313,31 @@ This is the third attempted build of 2026-08-17. Editions were already published
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-18T19:01:21.924362+00:00 (audit: partial)
+
+### Q: Does Nanonets OCR-3 have a self-hosted or on-premise deployment tier, and if so, how is it positioned against open-source stacks (knowhere, haiku.rag, marieai) that cover the same functional scope at zero API cost?
+
+**Context:** Three items this build are local-first extraction stacks targeting the same use cases as Nanonets Agentic Data Extraction. Without a documented self-hosted offering or a clear accuracy/reliability advantage claim in this segment, Nanonets' positioning against these alternatives is unclear.
+
+**Answer:** _add reply here_
+
+### Q: Is there visibility into Infly AI (infly-ai/INF-MLLM) as a competitive entity? The repo's document-intelligence focus and multimodal-RL methodology overlap directly with OCR-3's positioning, but no IDP Leaderboard or OmniDocBench scores are confirmed.
+
+**Context:** INF-MLLM is described as targeting SOTA visual-language understanding and advanced document intelligence. If Infly AI has benchmark results on the IDP Leaderboard or OmniDocBench, they would represent a direct competitive data point not yet in the monitor's context.
+
+**Answer:** _add reply here_
+
+### Q: All four standard ingest sources (arxiv, HN, RSS, github_trending CLI) have been proxy-blocked since 2026-08-03 — now day 16 with 60+ blocked builds. This is the third build of 2026-08-18 alone. Should the cron be reduced to once-daily until egress is restored?
+
+**Context:** seen.json is at 580 entries (394 GitHub repos). Each 6-hour build cycle finds 9-12 new GitHub repos via MCP fallback before the pool saturates. Reducing to 24-hour cadence would maintain continuity while eliminating redundant low-yield cycles. Required admin actions remain unchanged: extend egress allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml.
+
+**Answer:** _add reply here_
+
+### Q: Should repos in seen.json older than 90 days with 2x+ star growth since first seen become eligible for re-evaluation?
+
+**Context:** The MCP GitHub fallback pool is saturating at 580+ entries (394 GitHub repos). A staleness threshold that re-evaluates high-growth repos would restore coverage of evolving projects. This requires a one-time code change to the dedup/publish pipeline; without it, build yield will continue declining with each 6-hour cycle.
+
+**Answer:** _add reply here_
+
+---
