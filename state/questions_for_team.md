@@ -9341,3 +9341,37 @@ This is the third attempted build of 2026-08-17. Editions were already published
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-19T00:58:46.603555+00:00 (audit: partial)
+
+### Q: All four standard ingest sources have been proxy-blocked since 2026-08-03 — now day 17, 65+ consecutive blocked builds. Is there an owner and ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** This build's maximum composite score is 53 (Google Document AI toolbox), well below the threshold that would trigger framing under normal ingest conditions. Research-axis items (arxiv papers on VLM hallucination, mechanistic interpretability) are structurally absent from all builds since 2026-08-03. Required actions: (1) extend egress allowlist to the four domains, (2) replace GITHUB_TOKEN with a read-scoped PAT for the github_trending CLI. Both are one-time admin changes.
+
+**Answer:** _add reply here_
+
+### Q: Should the build cadence be reduced from 6-hourly to daily until egress is restored?
+
+**Context:** This is the first build of 2026-08-19. seen.json is at 590+ entries (406 GitHub repos). Each 6-hour build cycle finds 10-15 new GitHub repos via MCP fallback before the pool saturates. Reducing to 24-hour cadence would maintain continuity while eliminating redundant low-yield cycles. This question has been unanswered since 2026-08-17.
+
+**Answer:** _add reply here_
+
+### Q: Is Google Cloud Document AI — specifically the python-documentai-toolbox and the underlying managed service — actively benchmarked against Nanonets OCR-3 on the IDP Leaderboard or any shared evaluation set?
+
+**Context:** python-documentai-toolbox was updated in August 2026, signaling Google has not deprioritized its Document AI service despite open-weight OCR commoditization. If Google Document AI does not appear on the IDP Leaderboard, there may be a gap in competitive visibility for one of the larger managed-API competitors.
+
+**Answer:** _add reply here_
+
+### Q: Does the pattern of developers choosing self-hosted Mistral/Ollama for document OCR (paperless-gpt at 2638 stars, zettelrobbe at 207 stars) represent a segment Nanonets should address with explicit positioning, or is this segment categorically outside Nanonets' enterprise target market?
+
+**Context:** Both projects use Mistral OCR as an OCR backend for local document management, accumulating substantial developer stars. If developers in this segment later move to production-grade enterprise deployments, their default OCR preference (Mistral-first) may not route to Nanonets. Whether this is a conversion funnel worth addressing is an editorial positioning question the team should decide.
+
+**Answer:** _add reply here_
+
+### Q: Should repos in seen.json older than 90 days with 2x+ star growth since first seen become eligible for re-evaluation?
+
+**Context:** seen.json now tracks 590 entries (406 GitHub repos). MCP GitHub Search yield is declining as the pool saturates. A staleness threshold would restore coverage of evolving projects without re-showing static items. This requires a one-time code change to the dedup/publish pipeline; without it, build yield will continue declining. Unanswered since 2026-08-18.
+
+**Answer:** _add reply here_
+
+---

@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Aug 18, 2026 · 19:01 UTC · 10 items scored</span>
+  <span class="built-at">Built Aug 19, 2026 · 00:58 UTC · 10 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,123 +53,144 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Agent-native, self-hosted document extraction is consolidating around MCP as the integration layer: three items this build (haiku.rag, nuphus-mcp, knowhere) expose document parsing or extraction via MCP servers, indicating that developer-facing document AI is shifting from REST/SDK APIs to protocol-level tooling.</li>
-    <li>Open-source document AI stacks are treating hallucination prevention as a first-class design concern, not a post-hoc mitigation: haiku.rag explicitly lists &#39;hallucination-prevention&#39; as a topic alongside document parsing, reflecting growing awareness in the community that extraction pipelines must address output reliability at build time.</li>
-    <li>Data-sovereignty is the primary differentiator claim for open-source document extraction: knowhere, haiku.rag, RAG-Enterprise, marieai, and simpledms all emphasize local/self-hosted operation without external API calls, positioning against the managed-service model on the single axis of data control rather than on accuracy.</li>
+    <li>Self-hosted document OCR via Mistral and local VLMs is accumulating significant developer traction: paperless-gpt (2638 stars) and zettelrobbe (207 stars) both wire Mistral or Ollama into document management pipelines as zero-cost per-call OCR layers, a pattern that erodes the addressable market for managed API pricing in the personal and small-team DMS segment.</li>
+    <li>Vertical-specific document AI stacks for regulated workflows are being built locally rather than on managed APIs: rag-tender (tender/procurement) and pageindex-chat-studio (agentic QA) both deploy local RAG and parsing without any mention of managed document extraction services, suggesting developer preference for data-residency control in sensitive document categories.</li>
+    <li>Google Cloud Document AI remains actively maintained (toolbox updated August 2026), confirming it has not been abandoned despite open-weight competition; the managed document API segment continues to see sustained investment from hyperscalers alongside the open-source wave.</li>
+    <li>VLM inference efficiency tooling (optimum-intel, vector-inference) is maturing on non-GPU hardware paths, reducing the infrastructure barrier for on-premise document AI deployments that bypass cloud APIs entirely.</li>
   </ul>
 </section>
 
 <section class="axes" aria-label="Items by axis">
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
-      <p class="item-summary">No top-N items this build.</p>
+<article class="item "
+         data-source="github_trending"
+         data-score="20">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 2 = 20 (this view's weighting)">20</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
   </div>
+  <p class="item-title">
+    <a href="https://github.com/avanturist322/awesome-memory-vla" target="_blank" rel="nofollow noopener noreferrer">awesome-memory-vla: Curated list of Visual-Language-Action models with memory for long-horizon tasks — 117 stars</a>
+  </p>
+  <p class="item-summary">Curated awesome-list of memory-augmented VLA models for embodied AI, covering POMDP, long-horizon planning, and multi-modal memory architectures.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication; VLA memory architectures are for robotics/embodied AI, not document extraction.</dd>
+      <dt>Research</dt>
+      <dd>Memory architectures that handle long-horizon context across VLM passes could inform phantom-row mitigation strategies if the pattern transfers to document parsing sequences, but this connection is speculative at this stage.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
+</article>  </div>
   <div class="axis-col" data-axis="doc_ai">
     <h2>Document AI</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="48">
+         data-score="30">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 3 · frontier 0 · vlm_research 3 = 48 (this view's weighting)">48</span>
+          title="doc_ai 3 · competitive 2 · frontier 0 · vlm_research 1 = 30 (this view's weighting)">30</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/infly-ai/INF-MLLM" target="_blank" rel="nofollow noopener noreferrer">infly-ai/INF-MLLM: open-source MLLMs for visual-language understanding and document intelligence</a>
+    <a href="https://github.com/icereed/paperless-gpt" target="_blank" rel="nofollow noopener noreferrer">paperless-gpt: LLM/VLM OCR for document digitalization (Mistral, Ollama) — 2638 stars</a>
   </p>
-  <p class="item-summary">INF Tech open-source MLLM family (247 stars) targeting document intelligence and SOTA visual-language understanding.</p>
+  <p class="item-summary">Self-hosted LLM/VLM OCR plugin for paperless-ngx, supporting Mistral and local vision models for personal document digitalization.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>INF-MLLM targets document intelligence directly, positioning as an open-weight alternative to managed OCR APIs. No benchmark comparisons against OCR-3 or the IDP Leaderboard are confirmed, so the accuracy gap (or lack thereof) is unknown.</dd>
+      <dd>At 2638 stars, paperless-gpt shows strong developer demand for self-hosted document OCR using Mistral and Ollama. This segment (local-first, personal DMS) is adjacent to Nanonets&#39; enterprise API surface but indicates growing developer comfort running VLMs for document workflows without managed APIs.</dd>
       <dt>Research</dt>
-      <dd>The multimodal-RL training methodology (per repo topics) is potentially relevant to the team&#39;s VLM hallucination reduction work; worth a read to check for applicable techniques.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: competitive, vlm_research</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="38">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 2 · frontier 0 · vlm_research 2 = 38 (this view's weighting)">38</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/ggozad/haiku.rag" target="_blank" rel="nofollow noopener noreferrer">ggozad/haiku.rag: agentic RAG with Docling parsing, LanceDB, and hallucination prevention</a>
-  </p>
-  <p class="item-summary">581-star self-hosted RAG stack combining Docling document parsing with LanceDB, hybrid retrieval, reranking, and an MCP server.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>The project pairs Docling (IBM&#39;s open-source parser) with LanceDB for a full local document-AI pipeline, effectively assembling the same stack Nanonets sells as a managed service. Its &#39;hallucination-prevention&#39; topic framing suggests the open-source developer community is now treating hallucination reduction as a default pipeline concern, not an advanced feature.</dd>
-      <dt>Research</dt>
-      <dd>The explicit hallucination-prevention design axis is worth examining — if community-built RAG stacks are operationalizing VLM hallucination mitigation, it may inform how the team surfaces its research publicly.</dd>
+      <dd>No direct research implication; this is a deployment pattern, not a model or technique paper.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive, vlm_research</p>
 </article><article class="item "
          data-source="github_trending"
          data-score="30">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 3 · frontier 0 · vlm_research 0 = 30 (this view's weighting)">30</span>
+          title="doc_ai 3 · competitive 2 · frontier 0 · vlm_research 1 = 30 (this view's weighting)">30</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/Ontos-AI/knowhere" target="_blank" rel="nofollow noopener noreferrer">Ontos-AI/knowhere: document extraction and parsing for AI agents and RAG pipelines</a>
+    <a href="https://github.com/VT777/pageindex-chat-studio" target="_blank" rel="nofollow noopener noreferrer">pageindex-chat-studio: AI document workspace with multi-format parsing, OCR, visual TOC, agentic QA — 56 stars</a>
   </p>
-  <p class="item-summary">Python library that extracts and parses documents into structured chunks for agent and RAG pipelines; 2,499 stars.</p>
+  <p class="item-summary">AI document workspace combining multi-format parsing, OCR, table of contents extraction, and agentic question answering in a FastAPI/Vue stack.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Knowhere targets the same surface as Nanonets Agentic Data Extraction — structured output from documents for LLM pipelines — but as an open-source, self-hosted library. Its 2,499-star traction signals developer appetite for no-API-cost alternatives.</dd>
+      <dd>Covers the same functional scope as Nanonets Agentic Data Extraction: parse, OCR, structured extraction, agentic QA. Low star count (56) indicates early-stage traction; not yet a credible competitive threat but representative of the open-source stack developers build when a managed API is not chosen.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication; the chunking strategy it uses for agentic retrieval is worth noting as a baseline for benchmarking extraction fidelity.</dd>
+      <dd>No direct research implication; existing open-source components only.</dd>
       <dt>Action</dt>
-      <dd>monitor</dd>
+      <dd>no action</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive</p>
 </article><article class="item "
          data-source="github_trending"
-         data-score="22">
+         data-score="24">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 2 · frontier 0 · vlm_research 0 = 22 (this view's weighting)">22</span>
+          title="doc_ai 2 · competitive 2 · frontier 0 · vlm_research 1 = 24 (this view's weighting)">24</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/marieai/marie-ai" target="_blank" rel="nofollow noopener noreferrer">marieai/marie-ai: document extraction and orchestration framework with OCR, classification, and NER</a>
+    <a href="https://github.com/admonstrator/zettelrobbe" target="_blank" rel="nofollow noopener noreferrer">zettelrobbe: Paperless-AI fork with Mistral/local-vision OCR rescue queue for multi-page PDFs — 207 stars</a>
   </p>
-  <p class="item-summary">Open-source document AI framework covering OCR, classification, splitting, NER, and form processing via GenAI/LLM/VLLM pipelines.</p>
+  <p class="item-summary">Paperless-AI fork adding Mistral-powered or local-vision OCR rescue queue for failed multi-page PDF scans, with richer custom fields and MFA.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Marie-AI covers the same functional scope as Nanonets&#39; extraction pipeline (cleanup, OCR, classification, splitting, NER, form processing) as a self-hosted open-source stack. Adoption signals where enterprise teams prioritize data control over managed-API convenience.</dd>
+      <dd>Demonstrates Mistral OCR 4 being wired into document management pipelines as a drop-in OCR rescue layer. The &#39;rescue queue&#39; pattern (retry failed scans with VLM-based OCR) is a real production workflow for noisy enterprise documents, a segment Nanonets Agents targets.</dd>
       <dt>Research</dt>
       <dd>No direct research implication.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="20">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 1 · frontier 0 · vlm_research 0 = 20 (this view's weighting)">20</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/HunterLzap/rag-tender" target="_blank" rel="nofollow noopener noreferrer">rag-tender: Local-first RAG for tender/bidding document parsing and qualification matching — 91 stars</a>
+  </p>
+  <p class="item-summary">Local-first RAG stack for parsing Chinese government tender documents, extracting qualifications, and sending deadline alerts.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Vertical-specific document AI for procurement (tender documents, qualification matching) using a local RAG stack. Nanonets Agents targets Vendor Onboarding and Contracts verticals, which overlap with this use case. The local-first posture signals the developer did not find a managed API compelling for this document type.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
 </article><article class="item "
          data-source="github_trending"
          data-score="14">
@@ -182,15 +203,48 @@
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/I3K-IT/RAG-Enterprise" target="_blank" rel="nofollow noopener noreferrer">I3K-IT/RAG-Enterprise: 100% local RAG with OCR and Ollama (Rust, Apache 2.0)</a>
+    <a href="https://github.com/AaronGIG/pdf2zh-desktop" target="_blank" rel="nofollow noopener noreferrer">pdf2zh-desktop: Academic PDF translation with table/OCR preservation, 20+ AI translation engines — 399 stars</a>
   </p>
-  <p class="item-summary">Self-hosted RAG system pairing OCR document ingestion with Ollama and Qdrant; no data leaves the server; Apache 2.0.</p>
+  <p class="item-summary">Desktop app for academic PDF translation that preserves original layout, tables, and formulas across 35 languages using 20+ AI engines.</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="6">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 0 = 6 (this view's weighting)">6</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/hgmzhn/manga-translator-ui" target="_blank" rel="nofollow noopener noreferrer">manga-translator-ui: OCR-based manga/comic translator supporting Japanese/Korean/English, 5 AI engines — 2578 stars</a>
+  </p>
+  <p class="item-summary">GUI frontend for manga-image-translator: OCR-based manga translation supporting Japanese/Korean, using OpenAI/Gemini and local models.</p>
+</article>  </div>
+  <div class="axis-col" data-axis="frontier">
+    <h2>Frontier</h2>
+<article class="item "
+         data-source="github_trending"
+         data-score="16">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 0 · frontier 2 · vlm_research 1 = 16 (this view's weighting)">16</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/huggingface/optimum-intel" target="_blank" rel="nofollow noopener noreferrer">optimum-intel: HuggingFace inference optimization for LLM/VLM on Intel hardware (OpenVINO, GenAI) — 614 stars</a>
+  </p>
+  <p class="item-summary">HuggingFace accelerated inference toolkit for LLM and VLM on Intel CPUs/GPUs using OpenVINO and Intel AI libraries.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Represents the sovereign-data pattern: OCR + local LLM + local vector store, no external API calls. Signals that price-sensitive or compliance-constrained buyers view this as a credible alternative to managed extraction services.</dd>
+      <dd>No direct product implication; inference optimization for Intel hardware is infrastructure-layer, not a document-AI product.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication.</dd>
+      <dd>If the team runs inference experiments on Intel-class hardware (common in on-prem enterprise deployments), optimum-intel could reduce per-inference cost for evaluation runs.</dd>
       <dt>Action</dt>
       <dd>no action</dd>
     </dl>
@@ -200,85 +254,46 @@
          data-score="12">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 0 = 12 (this view's weighting)">12</span>
+          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 1 = 12 (this view's weighting)">12</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/freelawproject/doctor" target="_blank" rel="nofollow noopener noreferrer">freelawproject/doctor: document conversion microservice for legal documents</a>
+    <a href="https://github.com/VectorInstitute/vector-inference" target="_blank" rel="nofollow noopener noreferrer">vector-inference: Efficient LLM/VLM inference on Slurm clusters with multimodal support — 106 stars</a>
   </p>
-  <p class="item-summary">Python microservice converting PDFs, audio, and legal documents to text/JSON at scale; 124 stars.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="6">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 0 = 6 (this view's weighting)">6</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/mrpulor-gh/nuphus-mcp" target="_blank" rel="nofollow noopener noreferrer">mrpulor-gh/nuphus-mcp: desktop automation MCP server with OCR for AI agents (Rust)</a>
-  </p>
-  <p class="item-summary">Rust MCP server for screen, mouse/keyboard, and Chrome automation with embedded OCR; 225 stars.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="6">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 0 = 6 (this view's weighting)">6</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/ahatem/QTranslate" target="_blank" rel="nofollow noopener noreferrer">ahatem/QTranslate: extensible desktop translation app with OCR, TTS, and spell check</a>
-  </p>
-  <p class="item-summary">Kotlin/Java desktop translation suite with OCR, TTS, and plug-in system; 131 stars.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="6">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 0 = 6 (this view's weighting)">6</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/simpledms/simpledms" target="_blank" rel="nofollow noopener noreferrer">simpledms/simpledms: lightweight document management system with full-text OCR (Go)</a>
-  </p>
-  <p class="item-summary">Go-based document management system for small businesses with OCR indexing; 160 stars.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="0">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 0 · vlm_research 0 = 0 (this view's weighting)">0</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/Sujal-142/ai-image-clean-eraser" target="_blank" rel="nofollow noopener noreferrer">Sujal-142/ai-image-clean-eraser: AI-powered text and watermark removal from images</a>
-  </p>
-  <p class="item-summary">Web tool for removing text overlays and watermarks from images using AI detection; 119 stars.</p>
+  <p class="item-summary">Vector Institute toolkit for deploying LLMs and multimodal VLMs on Slurm HPC clusters via vLLM/sglang.</p>
 </article>  </div>
-  <div class="axis-col" data-axis="frontier">
-    <h2>Frontier</h2>
-      <p class="item-summary">No top-N items this build.</p>
-  </div>
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
-      <p class="item-summary">No top-N items this build.</p>
+<article class="item "
+         data-source="github_trending"
+         data-score="34">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 4 · frontier 2 · vlm_research 0 = 34 (this view's weighting)">34</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
   </div>
+  <p class="item-title">
+    <a href="https://github.com/googleapis/python-documentai-toolbox" target="_blank" rel="nofollow noopener noreferrer">python-documentai-toolbox: Google Cloud Document AI Python toolbox — 52 stars</a>
+  </p>
+  <p class="item-summary">Google Cloud Document AI Python utility library, active August 2026, wrapping their managed document extraction API.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Google Document AI remains actively maintained with developer tooling investment in August 2026, indicating sustained competitive pressure on the managed document extraction API segment. The toolbox simplifies migration paths for enterprise customers evaluating Nanonets OCR-3 versus Google&#39;s offering.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication; Google&#39;s Document AI is not an open-weight model.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article>  </div>
 </section>
 
 <aside class="ai-partner" aria-label="Questions from your AI partner">
@@ -290,23 +305,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Does Nanonets OCR-3 have a self-hosted or on-premise deployment tier, and if so, how is it positioned against open-source stacks (knowhere, haiku.rag, marieai) that cover the same functional scope at zero API cost?</p>
-    <p class="question-context">Three items this build are local-first extraction stacks targeting the same use cases as Nanonets Agentic Data Extraction. Without a documented self-hosted offering or a clear accuracy/reliability advantage claim in this segment, Nanonets&#39; positioning against these alternatives is unclear.</p>
+    <p class="question-text">All four standard ingest sources have been proxy-blocked since 2026-08-03 — now day 17, 65+ consecutive blocked builds. Is there an owner and ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?</p>
+    <p class="question-context">This build&#39;s maximum composite score is 53 (Google Document AI toolbox), well below the threshold that would trigger framing under normal ingest conditions. Research-axis items (arxiv papers on VLM hallucination, mechanistic interpretability) are structurally absent from all builds since 2026-08-03. Required actions: (1) extend egress allowlist to the four domains, (2) replace GITHUB_TOKEN with a read-scoped PAT for the github_trending CLI. Both are one-time admin changes.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Is there visibility into Infly AI (infly-ai/INF-MLLM) as a competitive entity? The repo&#39;s document-intelligence focus and multimodal-RL methodology overlap directly with OCR-3&#39;s positioning, but no IDP Leaderboard or OmniDocBench scores are confirmed.</p>
-    <p class="question-context">INF-MLLM is described as targeting SOTA visual-language understanding and advanced document intelligence. If Infly AI has benchmark results on the IDP Leaderboard or OmniDocBench, they would represent a direct competitive data point not yet in the monitor&#39;s context.</p>
+    <p class="question-text">Should the build cadence be reduced from 6-hourly to daily until egress is restored?</p>
+    <p class="question-context">This is the first build of 2026-08-19. seen.json is at 590+ entries (406 GitHub repos). Each 6-hour build cycle finds 10-15 new GitHub repos via MCP fallback before the pool saturates. Reducing to 24-hour cadence would maintain continuity while eliminating redundant low-yield cycles. This question has been unanswered since 2026-08-17.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">All four standard ingest sources (arxiv, HN, RSS, github_trending CLI) have been proxy-blocked since 2026-08-03 — now day 16 with 60+ blocked builds. This is the third build of 2026-08-18 alone. Should the cron be reduced to once-daily until egress is restored?</p>
-    <p class="question-context">seen.json is at 580 entries (394 GitHub repos). Each 6-hour build cycle finds 9-12 new GitHub repos via MCP fallback before the pool saturates. Reducing to 24-hour cadence would maintain continuity while eliminating redundant low-yield cycles. Required admin actions remain unchanged: extend egress allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml.</p>
+    <p class="question-text">Is Google Cloud Document AI — specifically the python-documentai-toolbox and the underlying managed service — actively benchmarked against Nanonets OCR-3 on the IDP Leaderboard or any shared evaluation set?</p>
+    <p class="question-context">python-documentai-toolbox was updated in August 2026, signaling Google has not deprioritized its Document AI service despite open-weight OCR commoditization. If Google Document AI does not appear on the IDP Leaderboard, there may be a gap in competitive visibility for one of the larger managed-API competitors.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Does the pattern of developers choosing self-hosted Mistral/Ollama for document OCR (paperless-gpt at 2638 stars, zettelrobbe at 207 stars) represent a segment Nanonets should address with explicit positioning, or is this segment categorically outside Nanonets&#39; enterprise target market?</p>
+    <p class="question-context">Both projects use Mistral OCR as an OCR backend for local document management, accumulating substantial developer stars. If developers in this segment later move to production-grade enterprise deployments, their default OCR preference (Mistral-first) may not route to Nanonets. Whether this is a conversion funnel worth addressing is an editorial positioning question the team should decide.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
     <p class="question-text">Should repos in seen.json older than 90 days with 2x+ star growth since first seen become eligible for re-evaluation?</p>
-    <p class="question-context">The MCP GitHub fallback pool is saturating at 580+ entries (394 GitHub repos). A staleness threshold that re-evaluates high-growth repos would restore coverage of evolving projects. This requires a one-time code change to the dedup/publish pipeline; without it, build yield will continue declining with each 6-hour cycle.</p>
+    <p class="question-context">seen.json now tracks 590 entries (406 GitHub repos). MCP GitHub Search yield is declining as the pool saturates. A staleness threshold would restore coverage of evolving projects without re-showing static items. This requires a one-time code change to the dedup/publish pipeline; without it, build yield will continue declining. Unanswered since 2026-08-18.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -318,7 +338,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered: github_trending    · failed: 3 · built at 2026-08-18T19:01:21.924362+00:00
+    sources covered: github_trending    · failed: 4 · built at 2026-08-19T00:58:46.603555+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
