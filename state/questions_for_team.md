@@ -9375,3 +9375,31 @@ This is the third attempted build of 2026-08-17. Editions were already published
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-19T07:30:00+00:00 (audit: partial)
+
+### Q: Does parsing-free VLM retrieval (VisRAG, Snappy) represent a structural threat to Nanonets' extraction value proposition, or does it validate the accuracy case for specialized OCR?
+
+**Context:** Two repos this build bypass OCR entirely and retrieve over raw page images with VLMs. If this pattern achieves acceptable accuracy on structured documents (invoices, tables), it competes directly with the Nanonets Agentic Data Extraction pipeline. A benchmark comparison of OCR-3's /parse+/extract pipeline against VisRAG on CORD or FUNSD would quantify whether accuracy remains a differentiator.
+
+**Answer:** _add reply here_
+
+### Q: GLM-OCR-server demonstrates developer demand for self-hosted OCR; with OCR-3 API-only, is there a community or self-hosted tier the team is considering?
+
+**Context:** GLM-OCR (0.9B, 94.62 OmniDocBench v1.5) now has a community-maintained self-hosted deployment path. OCR-3 (35B MoE, 90.5 OmniDocBench) has no public self-hosted option. Developers who prioritize on-premise operation may default to a smaller open-weight model even if accuracy is lower. This is a different question from 'should we open-weight OCR-3' — it is about whether a self-hosted tier (e.g., a smaller distilled model) is worth scoping.
+
+**Answer:** _add reply here_
+
+### Q: Should GRPO/DAPO reinforcement fine-tuning recipes (as in LightRFT) be monitored as a potential training-time approach to reducing VLM hallucination rates alongside the current mechanistic interpretability research line?
+
+**Context:** LightRFT and Visual-ERM both apply reward-based training signals to VLM visual alignment. These are training-time interventions, distinct from the mechanistic interpretability (activation patching, logit lens) methodology the team currently pursues. The two approaches are not mutually exclusive, but they require different experimental infrastructure. Knowing whether RL-based alignment is in scope as a research direction would help prioritize which builds of items in this axis to frame at 'reproduce' vs. 'read in week'.
+
+**Answer:** _add reply here_
+
+### Q: Is NumGuard-style numeric integrity verification (doc2dataset) a method the team would consider adopting for invoice extraction accuracy measurement?
+
+**Context:** doc2dataset introduces a dedicated numeric-field integrity layer (NumGuard) that cross-checks extracted numbers against source documents. This is a behavioral evaluation approach for a specific hallucination subtype (numeric transcription errors), distinct from OCR accuracy metrics. If Nanonets' invoice and financial-document extraction pipeline has a numeric-accuracy gap, this could be a lightweight add-on evaluation layer.
+
+**Answer:** _add reply here_
+
+---
