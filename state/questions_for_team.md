@@ -9403,3 +9403,37 @@ This is the third attempted build of 2026-08-17. Editions were already published
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-19T13:30:00+00:00 (audit: partial)
+
+### Q: WeKnora (Tencent, 20K stars, MIT) covers the same end-to-end pipeline as Nanonets Agents — document ingestion, parsing, RAG, and autonomous reasoning. Does the team track APAC open-source adoption in this space, and is there a competitive response if WeKnora gains enterprise traction outside China?
+
+**Context:** WeKnora is a high-star open-source platform from a major tech company. If enterprises in APAC adopt it for document-to-knowledge workflows, it would displace Nanonets Agents in a market segment without requiring a direct product comparison.
+
+**Answer:** _add reply here_
+
+### Q: ContractGuard (open-source contract AI agent, 175 stars) represents a pattern of single-vertical document AI tools. If developers in this segment later need production-grade extraction, would their default route to Nanonets Agents or to tools they already use? Is Nanonets developer-facing positioning targeting this category?
+
+**Context:** Open-source contract AI tools lower the evaluation cost for the contracts use case. Developers who start with a free tool and later need higher accuracy or throughput are a potential conversion funnel worth understanding.
+
+**Answer:** _add reply here_
+
+### Q: All four standard ingest sources have been proxy-blocked since 2026-08-03 (day 17, 65+ builds). This question has been raised in every build since 2026-08-17 without an answer. Is there an owner and resolution ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** The build is now exclusively producing GitHub repo signal. Research-axis items (arxiv papers on VLM hallucination, mechanistic interpretability) are structurally absent from all builds since 2026-08-03, degrading research_implication framing quality.
+
+**Answer:** _add reply here_
+
+### Q: The seen.json pool is at 610+ entries after this build. Should repos older than 90 days with 2x+ star growth since first seen become eligible for re-evaluation?
+
+**Context:** With all standard sources blocked, each build adds 7-10 new GitHub repos until the pool saturates. A staleness threshold would restore coverage of evolving projects without re-showing static items. This requires a one-time code change to the dedup/publish pipeline.
+
+**Answer:** _add reply here_
+
+### Q: This is the third consecutive build with no arxiv or academic paper coverage. If the proxy egress issue cannot be resolved within the next week, should Semantic Scholar or Papers With Code API be added as alternative sources for academic research coverage?
+
+**Context:** Both Semantic Scholar and Papers With Code provide free APIs for searching recent ML papers by keyword. Either would restore arxiv-equivalent coverage without requiring egress changes. The research-implication framing in recent builds has been structurally shallow without primary paper sources.
+
+**Answer:** _add reply here_
+
+---
