@@ -9437,3 +9437,31 @@ This is the third attempted build of 2026-08-17. Editions were already published
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-19T19:00:00+00:00 (audit: partial)
+
+### Q: Three prior unanswered questions remain open from builds 2026-08-18 and 2026-08-19: (1) egress proxy allowlist for arxiv/HN/RSS; (2) seen.json staleness threshold for re-evaluating high-growth repos; (3) cron cadence reduction to daily while egress is blocked. All three are prerequisite to restoring build quality.
+
+**Context:** Day 17 of the egress block. This build returned 7 items (previous: 7 and 10). Without answers to these three questions, each build reduces in quality as the GitHub pool saturates. They are not surfaced as new questions here because the prior instances remain unanswered.
+
+**Answer:** _add reply here_
+
+### Q: The Tesseract+LLM post-correction pattern (text-extract-api, llm_aided_ocr) collectively exceeds 6,000 GitHub stars. Does Nanonets have a documented total-cost-of-ownership counter-argument: what does it cost in compute, latency, and maintenance to run this pattern at production scale versus calling OCR-3 on a per-page basis?
+
+**Context:** Both projects wrap commodity OCR with a local LLM correction pass. If developers are choosing this pattern primarily on cost or privacy grounds, the competitive response is a cost and reliability narrative — not an accuracy narrative. Without a documented TCO comparison, the competitive positioning against this segment is unclear.
+
+**Answer:** _add reply here_
+
+### Q: mdflux claims local document parsing uses fewer tokens than cloud vision models. Is there a public or internal benchmark comparing OCR-3 /parse token consumption against local non-ML converters (MinerU, Docling, mdflux) on a standard set of invoice or form PDFs (CORD, FUNSD)?
+
+**Context:** The 'token cost' framing is likely to appear more frequently as developers build cost-sensitive document pipelines. A verified comparison — whether favorable or not — would allow future build framings on this class of item to be more precise than 'claim is unverified.'
+
+**Answer:** _add reply here_
+
+### Q: Should Semantic Scholar or Papers With Code API be added as alternative ingest sources to restore academic paper coverage while egress to arxiv.org remains blocked?
+
+**Context:** Research-axis items (VLM hallucination, mechanistic interpretability, structural hallucination in tables) have been structurally absent from all builds since 2026-08-03. Both Semantic Scholar and Papers With Code provide free APIs for keyword search on recent ML papers. Neither requires egress to the blocked domains.
+
+**Answer:** _add reply here_
+
+---
