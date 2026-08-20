@@ -9527,3 +9527,31 @@ This is the third attempted build of 2026-08-17. Editions were already published
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-20T13:30:00+00:00 (audit: partial)
+
+### Q: Does iFixAi's compliance framing (OWASP LLM Top 10, EU AI Act, ISO 42001, NIST AI RMF) reflect requirements that Nanonets Agents customers are starting to impose on document-extraction API providers?
+
+**Context:** iFixAi has 11K stars and explicitly maps its audit outputs to EU AI Act and ISO 42001 requirements. If enterprise customers purchasing Nanonets Agents are beginning to ask about AI-Act compliance artifacts for document workflows, the team should have a documented position. This question cannot be answered from public sources.
+
+**Answer:** _add reply here_
+
+### Q: Would claim-level provenance trails (as in brain-in-the-fish's SPARQL-triple approach) be a meaningful differentiator for Nanonets' regulated-industry customers (legal, finance, healthcare)?
+
+**Context:** brain-in-the-fish outputs every extracted claim as an OWL triple with a source-passage citation. If Nanonets' healthcare RCM or contracts customers require field-level audit trails — not just overall accuracy — this approach would become a product requirement. The question is whether that requirement already exists in the customer base.
+
+**Answer:** _add reply here_
+
+### Q: All four standard ingest sources remain proxy-blocked (day 18, 75+ consecutive blocked builds). No answer has been received on this question since 2026-08-14. Is there a resolution ETA, or should the team consider adding Semantic Scholar or Papers With Code as alternative ingest sources?
+
+**Context:** Research-axis items (VLM hallucination papers, mechanistic interpretability, structural hallucination benchmarks) have been structurally absent from all builds since 2026-08-03. Both Semantic Scholar and Papers With Code provide free APIs that do not require egress to the blocked domains. The required admin actions remain: extend egress allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains listed in data/sources.yaml.
+
+**Answer:** _add reply here_
+
+### Q: Should the build cadence be reduced from 6-hourly to daily until standard sources are restored?
+
+**Context:** This build found 5 new GitHub repos. The prior build (2026-08-20T07:00:00) found 12. The pool is at 466 GitHub entries post-build. At the current declining rate, 6-hourly builds will reach near-zero yield within 3-5 days. Reducing to daily would preserve coverage breadth while cutting redundant low-yield cycles. This question has been unanswered since 2026-08-17.
+
+**Answer:** _add reply here_
+
+---
