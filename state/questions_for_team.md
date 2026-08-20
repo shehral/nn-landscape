@@ -9555,3 +9555,25 @@ This is the third attempted build of 2026-08-17. Editions were already published
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-20T00:00:00+00:00 (audit: partial)
+
+### Q: Is the 'no items in current window' failure for RSS and github_trending caused by seen.json dedup filtering, an empty trending feed, or a code bug in the window calculation?
+
+**Context:** This is the first build where all four sources simultaneously returned either a 403 or 'no items in current window'. Prior builds with partial failure (0-2 sources) still produced items from github_trending or RSS. If seen.json is too broad or the trending window reset hasn't fired, the pipeline would appear healthy while silently filtering everything.
+
+**Answer:** _add reply here_
+
+### Q: The arxiv and HN 403 failures have persisted across many consecutive builds; is this a permanent network policy block (egress restriction on the remote execution environment) or a recoverable rate-limit that requires waiting and retrying?
+
+**Context:** If it is a policy block, Semantic Scholar's open API or the HN Algolia search API (api.hn.algolia.com) are confirmed-accessible alternatives that cover the same item space. Without a decision here, each build surfaces this failure without resolving it.
+
+**Answer:** _add reply here_
+
+### Q: Should the build agent skip the publish step entirely when 0 items are collected from all sources, rather than rendering and pushing an empty dashboard?
+
+**Context:** An empty edition updates the 'last built' timestamp but provides no editorial value. Skipping render and publish when items=0 would prevent a misleading 'dashboard is current' signal and preserve the prior edition's content for readers. The current behavior overwrites the rendered HTML with blank content.
+
+**Answer:** _add reply here_
+
+---
