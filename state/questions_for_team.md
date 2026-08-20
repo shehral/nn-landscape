@@ -9493,3 +9493,37 @@ This is the third attempted build of 2026-08-17. Editions were already published
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-20T07:00:00+00:00 (audit: partial)
+
+### Q: jspace identifies an 'answer-identity confound' in Jacobian-lens analysis on Gemma 4 — does this confound apply when analyzing document VLMs where field labels and field values co-occur at the same token positions?
+
+**Context:** The team uses Jacobian lens methodology for VLM hallucination analysis. The jspace study finds the lens can read out a predicted answer token rather than a true causal path, specifically when the answer token is predictable from context. Document VLMs processing structured forms (invoice number, amount, date) may face an amplified version of this confound because field tokens are highly contextually predictable.
+
+**Answer:** _add reply here_
+
+### Q: Has OCR-3's /vqa endpoint been evaluated on CharXiv, and does the chart-description vs. chart-reasoning decomposition expose any accuracy gap relative to the IDP Leaderboard score?
+
+**Context:** CharXiv (NeurIPS 2024, princeton-nlp) specifically distinguishes descriptive chart tasks from reasoning tasks, finding models that describe charts accurately often reason poorly over them. OCR-3's IDP Leaderboard ranking is on structured document extraction; chart reasoning is a different capability. Without a CharXiv score, competitive framing on chart-heavy documents is based on undisclosed capability.
+
+**Answer:** _add reply here_
+
+### Q: Should mercury-mcp (cross-architecture LLM internal observation database, 23 models, 13 families) be added to the research team's interpretability toolchain for cross-architecture hallucination transfer studies?
+
+**Context:** Cross-architecture hallucination transfer is a named research direction — does a hallucination pattern observed in one VLM family appear in another? Mercury-mcp provides pre-computed activation representations across 23 models as MCP-accessible tools. Using it could accelerate a preliminary survey of whether phantom-row hallucination circuits are architecture-specific without requiring fresh training runs.
+
+**Answer:** _add reply here_
+
+### Q: All four standard ingest sources have been proxy-blocked since 2026-08-03 — now day 18. This question has been raised in every build since 2026-08-14 without an answer. Is there an owner and ETA for extending the egress proxy allowlist?
+
+**Context:** Required admin actions remain unchanged: (1) extend egress allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains in data/sources.yaml; (2) replace GITHUB_TOKEN with a read-scoped PAT for the github_trending CLI. Both are one-time changes. This build found 12 items via MCP GitHub Search fallback; the mechanistic interpretability items (brainscope, jspace, mercury-mcp) are valuable but the research-axis coverage (arxiv papers on VLM hallucination) remains structurally absent.
+
+**Answer:** _add reply here_
+
+### Q: The MCP GitHub Search fallback pool is saturating: 635 entries before this build, now 647 after. Should repos older than 90 days with 2x+ star growth since first seen become eligible for re-evaluation?
+
+**Context:** This build found 12 new repos. If this trend continues, each 6-hour build will find fewer new items and re-evaluation of evolved projects (those that have added significant features or star growth since first seen) would restore coverage breadth. This requires a one-time code change to the dedup/publish pipeline. The question has been unanswered since 2026-08-18.
+
+**Answer:** _add reply here_
+
+---

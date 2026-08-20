@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Aug 20, 2026 · 01:30 UTC · 11 items scored</span>
+  <span class="built-at">Built Aug 20, 2026 · 07:00 UTC · 12 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,246 +53,145 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Document knowledge compilation as RAG alternative: developers are building document-to-structured-knowledge pipelines that bypass vector retrieval entirely, compiling documents into human-readable wikis (synthadoc) or local-first search engines (antfly, PharosRAG). The pattern trades retrieval flexibility for output transparency and self-manageability.</li>
-    <li>Synthetic data generation as training-time hallucination mitigation: NVIDIA NeMo DataDesigner and the broader synthetic data ecosystem position controlled synthetic generation as a path to reducing model failure modes, treating data quality as a lever rather than relying solely on post-hoc evaluation or inference-time mitigation.</li>
-    <li>Evaluation infrastructure maturing around agents: multiple high-star repos (deepeval, Tracely, ClawBench, ouroboros) are standardizing agent evaluation from different angles — metric frameworks, trace-to-regression pipelines, browser-task benchmarks, and evolution loops. The space is converging on evaluation as a first-class engineering discipline rather than an ad hoc activity.</li>
-    <li>All high-signal ingest sources (arxiv, HN, RSS, github_trending CLI) remain blocked at the proxy for the 18th consecutive day. This build&#39;s maximum composite score is 33, well below the 60 threshold for normal framing. GitHub MCP search fallback found 11 new repos from a saturating pool (now 635+ seen entries); research-axis items (VLM hallucination papers, mechanistic interpretability work) remain structurally absent.</li>
+    <li>Mechanistic interpretability tooling is acquiring MCP and API server wrappers, signaling a shift from research-only libraries to agent-consumable observability: brainscope (logit-lens/Jacobian server), mercury-mcp (23-model activation database), and pts (SAE-driven pivotal token search) all surface interpretability primitives through standard API interfaces.</li>
+    <li>Open-source document parsers are being repackaged as first-class AI agent skills, lowering the developer barrier to adopt competing parsers within IDE-native agent workflows: MinerU-Skill targets Claude Code and Cursor directly, competing on the same agentic developer surface as Nanonets Agentic Data Extraction.</li>
+    <li>Jacobian lens reliability is under active empirical scrutiny: jspace identifies an answer-identity confound across 25k preregistered prompts, brainscope exposes the mechanism for interactive inspection, and pts uses SAEs to characterize pivotal tokens — together these suggest the field is moving from developing interpretability probes to stress-testing their validity.</li>
+    <li>Table structure recognition and chart understanding remain active, distinct research problems: awesome-table-structure-recognition tracks a growing TSR literature through 2026, while CharXiv documents a persistent gap between VLM chart description accuracy and chart reasoning accuracy on realistic scientific figures.</li>
   </ul>
 </section>
 
 <section class="axes" aria-label="Items by axis">
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
-      <p class="item-summary">No top-N items this build.</p>
-  </div>
-  <div class="axis-col" data-axis="frontier">
-    <h2>Frontier</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="14">
+         data-score="36">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 2 · vlm_research 1 = 14 (this view's weighting)">14</span>
+          title="doc_ai 3 · competitive 3 · frontier 0 · vlm_research 0 = 36 (this view's weighting)">36</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
+      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/Jwuthri/Tracely" target="_blank" rel="nofollow noopener noreferrer">Jwuthri/Tracely: Trace-native CI/CD for AI agents — production failures become regression tests that block the PR.</a>
+    <a href="https://github.com/Nebutra/MinerU-Skill" target="_blank" rel="nofollow noopener noreferrer">MinerU-Skill: AI-native document parser for PDF/Office/images to Markdown as a Claude Code and Cursor skill</a>
   </p>
-  <p class="item-summary">Trace-native CI/CD for AI agents converting production failures into hermetic regression tests run in CI.</p>
+  <p class="item-summary">MinerU packaged as a zero-dependency Claude Code / Cursor skill for PDF and Office document parsing to Markdown.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct product implication. Relevant as infrastructure pattern if Nanonets Agents ever ships a hosted agent product that generates production traces.</dd>
+      <dd>MinerU as a skill lowers the barrier for developers who already use Claude Code or Cursor to adopt MinerU as their default document parser, bypassing the evaluation step that might route them to Nanonets Agentic Data Extraction. The same extraction interface, one install command.</dd>
       <dt>Research</dt>
-      <dd>The trace-to-regression-test pattern is applicable to hallucination benchmarking: if production OCR-3 outputs contain hallucinated rows, those cases could be frozen into a regression suite. The methodology is more relevant to production evaluation than to the mechanistic interpretability research line.</dd>
-      <dt>Action</dt>
-      <dd>no action</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: vlm_research</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="12">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 1 = 12 (this view's weighting)">12</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/TIGER-AI-Lab/ClawBench" target="_blank" rel="nofollow noopener noreferrer">TIGER-AI-Lab/ClawBench: Open-source benchmark for browser AI agents on daily real-world tasks.</a>
-  </p>
-  <p class="item-summary">Open-source benchmark for browser AI agents on real-world daily tasks including document interaction.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication. Browser agent benchmarks measure task completion in interactive environments rather than extraction accuracy on static documents.</dd>
-      <dt>Research</dt>
-      <dd>ClawBench&#39;s task taxonomy may include document-handling subtasks; whether it includes structured extraction scenarios (form filling, invoice reading) is not confirmed from available information.</dd>
-      <dt>Action</dt>
-      <dd>no action</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="12">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 2 · vlm_research 0 = 12 (this view's weighting)">12</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/Q00/ouroboros" target="_blank" rel="nofollow noopener noreferrer">Q00/ouroboros: Agent OS with staged evaluation and budgeted evolution loop; 13 supported coding-agent runtimes including Claude Code and Codex CLI.</a>
-  </p>
-  <p class="item-summary">Agent OS with interview-gated staged evaluation and budgeted evolution loop across 13 coding-agent runtimes.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication.</dd>
-      <dt>Research</dt>
-      <dd>No research implication.</dd>
-      <dt>Action</dt>
-      <dd>no action</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="10">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 0 = 10 (this view's weighting)">10</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/bojieli/ai-agent-book" target="_blank" rel="nofollow noopener noreferrer">bojieli/ai-agent-book: Deep Understanding of AI Agent — full open-source text and code of the book on AI agent design principles and engineering practice.</a>
-  </p>
-  <p class="item-summary">Open-source Chinese-language book on AI agent design principles and engineering practice with accompanying code.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication. 39K stars indicates broad APAC developer mindshare on agent design; the textbook framing of agent architecture may shape how Chinese-market developers evaluate agentic document processing tools.</dd>
-      <dt>Research</dt>
-      <dd>No research implication.</dd>
-      <dt>Action</dt>
-      <dd>no action</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="8">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 1 = 8 (this view's weighting)">8</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/mlflow/mlflow" target="_blank" rel="nofollow noopener noreferrer">mlflow/mlflow: Open source AI engineering platform for agents, LLMs, and ML models. Enables teams to debug, evaluate, monitor, and optimize production AI applications.</a>
-  </p>
-  <p class="item-summary">Open-source AI engineering platform for evaluation, monitoring, and optimization of LLM and agent applications.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication.</dd>
-      <dt>Research</dt>
-      <dd>MLflow&#39;s model evaluation and experiment tracking capability is standard ML infrastructure; relevant as a logging layer for hallucination experiments but not a novel research methodology.</dd>
-      <dt>Action</dt>
-      <dd>no action</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: vlm_research</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="6">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 0 = 6 (this view's weighting)">6</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/hugalafutro/model-hotel" target="_blank" rel="nofollow noopener noreferrer">hugalafutro/model-hotel: Multi-Provider AI Gateway with model autodiscovery, failover groups, and high availability. Privacy-first, no personal logs.</a>
-  </p>
-  <p class="item-summary">Multi-provider AI gateway with model autodiscovery, failover groups, and no-personal-logs privacy design.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication.</dd>
-      <dt>Research</dt>
-      <dd>No research implication.</dd>
-      <dt>Action</dt>
-      <dd>no action</dd>
-    </dl>
-  </div>
-</article>  </div>
-  <div class="axis-col" data-axis="doc_ai">
-    <h2>Document AI</h2>
-<article class="item "
-         data-source="github_trending"
-         data-score="28">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 2 · frontier 0 · vlm_research 0 = 28 (this view's weighting)">28</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/axoviq-ai/synthadoc" target="_blank" rel="nofollow noopener noreferrer">axoviq-ai/synthadoc: LLM knowledge compilation engine that turns raw documents into structured, local-first wikis. A transparent, human-readable alternative to traditional RAG, which can be self-managed and self-improved without the use of any tools.</a>
-  </p>
-  <p class="item-summary">LLM engine converting raw documents into structured local wikis; positions as a RAG alternative with transparent compilation.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Synthadoc competes on the same document-to-structured-knowledge workflow as Nanonets Agentic Data Extraction. Its positioning as a &#39;RAG alternative&#39; that produces human-readable, self-manageable output targets the same customer pain point Nanonets addresses with its /extract and /parse endpoints.</dd>
-      <dt>Research</dt>
-      <dd>No direct VLM hallucination research implication. The compilation approach avoids VLM generation entirely, bypassing hallucination risk rather than mitigating it — a different tradeoff than Nanonets&#39; model-accuracy strategy.</dd>
+      <dd>No direct research implication.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive</p>
-</article><article class="item "
+  <p class="secondary-axes">also: doc_ai</p>
+</article>  </div>
+  <div class="axis-col" data-axis="frontier">
+    <h2>Frontier</h2>
+      <p class="item-summary">No top-N items this build.</p>
+  </div>
+  <div class="axis-col" data-axis="doc_ai">
+    <h2>Document AI</h2>
+<article class="item "
          data-source="github_trending"
-         data-score="18">
+         data-score="34">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 0 · vlm_research 1 = 18 (this view's weighting)">18</span>
+          title="doc_ai 3 · competitive 2 · frontier 0 · vlm_research 3 = 34 (this view's weighting)">34</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/antflydb/antfly" target="_blank" rel="nofollow noopener noreferrer">antflydb/antfly: AI information retrieval engine with multimodal RAG, semantic search, autoscaling, and Elasticsearch integration.</a>
+    <a href="https://github.com/princeton-nlp/CharXiv" target="_blank" rel="nofollow noopener noreferrer">CharXiv: Charting Gaps in Realistic Chart Understanding in Multimodal LLMs (NeurIPS 2024 benchmark)</a>
   </p>
-  <p class="item-summary">Multimodal AI information retrieval engine with semantic search, autoscaling, and Elasticsearch integration.</p>
+  <p class="item-summary">NeurIPS 2024 benchmark exposing large accuracy gaps in VLM chart description and reasoning on realistic scientific charts.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Antfly is an infrastructure-layer retrieval engine rather than a direct OCR or extraction competitor. Its multimodal semantic search capability targets the same enterprise document retrieval use case that Nanonets Agents serves, but from the retrieval side rather than the extraction side.</dd>
+      <dd>OCR-3 exposes a /vqa endpoint with documented chart support; CharXiv&#39;s realistic chart subset provides an external evaluation surface that competitors can use to challenge OCR-3 accuracy claims on chart-heavy documents. Absence of an OCR-3 CharXiv score leaves the question open.</dd>
       <dt>Research</dt>
-      <dd>Multimodal RAG over documents raises the same VLM grounding questions relevant to the team&#39;s hallucination work; no novel methodology surfaced.</dd>
+      <dd>CharXiv distinguishes descriptive chart tasks from reasoning tasks, finding models that describe well often reason poorly. This decomposition is directly applicable to diagnosing hallucination subtypes in OCR-3 chart VQA outputs.</dd>
       <dt>Action</dt>
-      <dd>no action</dd>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research, competitive</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="24">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 1 · frontier 0 · vlm_research 2 = 24 (this view's weighting)">24</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/Tan-Junwen/awesome-table-structure-recognition" target="_blank" rel="nofollow noopener noreferrer">awesome-table-structure-recognition: Curated list of table structure recognition models, papers, and datasets</a>
+  </p>
+  <p class="item-summary">Actively maintained survey of table structure recognition models, papers, and datasets through 2026.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Table extraction is a core Nanonets OCR-3 capability. This resource tracks the competitive field including models that appear on OmniDocBench and the IDP Leaderboard. Useful for identifying new entrants before they reach the leaderboard.</dd>
+      <dt>Research</dt>
+      <dd>Covers both transformer-based and VLM-based TSR methods and their datasets — directly applicable for identifying benchmark sets to use in phantom-row hallucination evaluation.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: vlm_research</p>
 </article><article class="item "
          data-source="github_trending"
-         data-score="16">
+         data-score="4">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 0 · vlm_research 0 = 16 (this view's weighting)">16</span>
+          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 0 = 4 (this view's weighting)">4</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/Laurent00TT/PharosRAG" target="_blank" rel="nofollow noopener noreferrer">Laurent00TT/PharosRAG: Pharos — local-first agentic RAG for team document libraries: multi-format ingest, hybrid retrieval, enterprise ACL, dual HTTP + MCP exits.</a>
+    <a href="https://github.com/yuxino/satori" target="_blank" rel="nofollow noopener noreferrer">satori: Local-first macOS workspace for understanding PDFs with AI (Qwen, local LLM)</a>
   </p>
-  <p class="item-summary">Local-first agentic RAG with multi-format ingest, hybrid retrieval, and enterprise ACL for team document libraries.</p>
+  <p class="item-summary">Local-first macOS PDF reader using Qwen for question answering; consumer context, no enterprise extraction.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Occupies the same self-hosted enterprise knowledge-base segment as haiku.rag and other Docling-based stacks. Not a direct extraction competitor; focuses on retrieval over already-parsed documents rather than on the parsing step itself.</dd>
+      <dd>Consumer-facing local PDF reader; not in the enterprise extraction segment Nanonets targets.</dd>
+      <dt>Research</dt>
+      <dd>No research implication.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="4">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 0 = 4 (this view's weighting)">4</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/beltromatti/get-it" target="_blank" rel="nofollow noopener noreferrer">get-it: AI-powered PDF to flashcards and study materials with knowledge graph visualization</a>
+  </p>
+  <p class="item-summary">Open-source PDF-to-flashcards tool with 3D knowledge graph and spaced repetition, 912 stars; consumer edtech.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Consumer edtech; outside Nanonets&#39; enterprise extraction target market.</dd>
       <dt>Research</dt>
       <dd>No research implication.</dd>
       <dt>Action</dt>
@@ -304,56 +203,179 @@
     <h2>VLM research</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="26">
+         data-score="12">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 2 · vlm_research 3 = 26 (this view's weighting)">26</span>
+          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 3 = 12 (this view's weighting)">12</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 60%"></span>
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/NVIDIA-NeMo/DataDesigner" target="_blank" rel="nofollow noopener noreferrer">NVIDIA-NeMo/DataDesigner: NeMo Data Designer — generate high-quality synthetic data from scratch or seed data for LLM and multimodal model training.</a>
+    <a href="https://github.com/Blaizzy/mlx-vlm" target="_blank" rel="nofollow noopener noreferrer">mlx-vlm: Inference and fine-tuning of Vision Language Models on Mac using Apple MLX (5K+ stars)</a>
   </p>
-  <p class="item-summary">NVIDIA NeMo synthetic data generation framework for LLM and multimodal model training from scratch or seed data.</p>
+  <p class="item-summary">High-adoption library (5K+ stars) for running and fine-tuning VLMs — including Pixtral — on Apple Silicon via MLX.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Synthetic document training data generation is relevant to OCR-3&#39;s training pipeline. High-quality synthetic invoice, table, and form data generated at scale could improve OCR-3&#39;s coverage of edge cases without requiring additional annotation.</dd>
+      <dd>No direct product implication.</dd>
       <dt>Research</dt>
-      <dd>Directly applicable to the team&#39;s hallucination research: synthetic data with controlled ground truth enables targeted evaluation of phantom-row and structural hallucination rates without relying on real-world annotation. The MCP server integration means it can plug into existing tooling.</dd>
+      <dd>Provides a low-cost local fine-tuning path for VLMs including Pixtral. Relevant if the team wants to run controlled hallucination experiments on local VLM variants without cloud API cost.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="10">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 2 = 10 (this view's weighting)">10</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/waybarrios/vllm-mlx" target="_blank" rel="nofollow noopener noreferrer">vllm-mlx: OpenAI/Anthropic-compatible LLM inference server for Apple Silicon with VLM and MCP tool-calling support</a>
+  </p>
+  <p class="item-summary">OpenAI and Anthropic-compatible VLM inference server for Apple Silicon with continuous batching and MCP tool calling, 1.5K stars.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Provides a local VLM server compatible with both OpenAI and Anthropic API surfaces. Useful for local reproducibility runs without cloud API dependency.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="8">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 0 · frontier 0 · vlm_research 4 = 8 (this view's weighting)">8</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/moudrkat/brainscope" target="_blank" rel="nofollow noopener noreferrer">brainscope: OpenAI-compatible server with live view into any HF model residual stream (logit-lens, activation steering)</a>
+  </p>
+  <p class="item-summary">OpenAI-compatible server exposing any HuggingFace model&#39;s residual stream live — logit-lens, Jacobian lens, activation steering.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Logit-lens and Jacobian-lens are explicitly named tools in the team&#39;s mechanistic interpretability methodology. Brainscope packages both as an API server, reducing setup cost for residual-stream analysis on new VLM checkpoints.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: frontier, doc_ai</p>
 </article><article class="item "
          data-source="github_trending"
-         data-score="14">
+         data-score="8">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 2 = 14 (this view's weighting)">14</span>
+          title="doc_ai 0 · competitive 0 · frontier 0 · vlm_research 4 = 8 (this view's weighting)">8</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/confident-ai/deepeval" target="_blank" rel="nofollow noopener noreferrer">confident-ai/deepeval: The LLM Evaluation Framework — metric-driven testing for LLM outputs including RAG and agent pipelines.</a>
+    <a href="https://github.com/codelion/pts" target="_blank" rel="nofollow noopener noreferrer">Pivotal Token Search (pts): SAE-based pivotal-token identification for LLM steering and reasoning</a>
   </p>
-  <p class="item-summary">LLM evaluation framework with metric-driven testing for RAG pipelines, agent outputs, and model hallucination.</p>
+  <p class="item-summary">SAE-driven identification of which tokens most influence LLM output direction — DPO dataset generation and steering vector extraction.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct product implication; deepeval does not compete with Nanonets&#39; extraction surface.</dd>
+      <dd>No direct product implication.</dd>
       <dt>Research</dt>
-      <dd>The framework&#39;s hallucination and faithfulness metrics are potentially applicable to evaluating OCR-3 /extract outputs against ground-truth structured fields. If the team is standardizing evaluation infrastructure for the hallucination research line, deepeval is worth reviewing as an off-the-shelf layer.</dd>
+      <dd>Identifying which tokens drive phantom-row hallucinations or repetition loops is a core goal of the team&#39;s mechanistic work. Pivotal Token Search provides an SAE-based approach to token-level attribution that complements activation patching.</dd>
       <dt>Action</dt>
-      <dd>monitor</dd>
+      <dd>read in week</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="8">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 0 · frontier 0 · vlm_research 4 = 8 (this view's weighting)">8</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/solarkyle/jspace" target="_blank" rel="nofollow noopener noreferrer">jspace: Preregistered Jacobian-lens reliability research on Gemma 4, 25k prompts, frozen probes, public traces</a>
+  </p>
+  <p class="item-summary">Preregistered study of Jacobian-lens reliability on Gemma 4 — identifies answer-identity confound; public traces, 25k prompts.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Jacobian lens is a tool the team uses. This study identifies a specific confound (answer-identity confound) where the lens reads out the predicted answer token rather than a causal path — directly relevant to interpreting logit-lens outputs on document VLMs where field names and values co-occur.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="6">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 0 · frontier 0 · vlm_research 3 = 6 (this view's weighting)">6</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/PaulPauls/llama3_interpretability_sae" target="_blank" rel="nofollow noopener noreferrer">llama3_interpretability_sae: End-to-end SAE pipeline for LLM interpretability on Llama 3.2, pure PyTorch</a>
+  </p>
+  <p class="item-summary">Fully reproducible end-to-end Sparse Autoencoder interpretability pipeline for Llama 3.2, pure PyTorch; archived, text-LLM only.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Provides a reference implementation for an SAE pipeline that could be adapted to vision-capable models. Text-LLM only and archived limits immediate applicability, but the training setup is reproducible.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="6">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 0 · frontier 0 · vlm_research 3 = 6 (this view's weighting)">6</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/norika1207-lab/mercury-mcp" target="_blank" rel="nofollow noopener noreferrer">mercury-mcp: Cross-architecture LLM internal observation database (23 models, 13 families) exposed as MCP tools</a>
+  </p>
+  <p class="item-summary">Cross-architecture LLM internal activation database across 23 models and 13 architecture families, served as MCP tools.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Cross-architecture hallucination transfer is a named research direction for the team. Mercury-MCP provides pre-computed internal representations across 23 models — could accelerate a survey of whether hallucination-relevant circuits are architecture-specific or universal.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
 </article>  </div>
 </section>
 
@@ -366,23 +388,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four standard ingest sources have been proxy-blocked since 2026-08-03, now day 18 with 70+ consecutive blocked builds. This is the fifth build of 2026-08-20 cycle to surface this question without a response. Is there a resolution ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?</p>
-    <p class="question-context">Required actions remain: (1) extend egress allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains; (2) replace GITHUB_TOKEN with a read-scoped PAT for the github_trending CLI. Both are one-time admin changes. Without them, all builds depend on MCP GitHub Search fallback, which is saturating at 635+ seen entries and yields fewer new items each cycle.</p>
+    <p class="question-text">jspace identifies an &#39;answer-identity confound&#39; in Jacobian-lens analysis on Gemma 4 — does this confound apply when analyzing document VLMs where field labels and field values co-occur at the same token positions?</p>
+    <p class="question-context">The team uses Jacobian lens methodology for VLM hallucination analysis. The jspace study finds the lens can read out a predicted answer token rather than a true causal path, specifically when the answer token is predictable from context. Document VLMs processing structured forms (invoice number, amount, date) may face an amplified version of this confound because field tokens are highly contextually predictable.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should repos in seen.json older than 90 days with 2x+ star growth since first seen become eligible for re-evaluation?</p>
-    <p class="question-context">seen.json now tracks 635 entries (438+ GitHub repos). MCP GitHub Search yield is declining as the pool saturates — this build found 11 new repos. A staleness threshold would restore coverage of evolving projects. This requires a one-time code change to the dedup/publish pipeline. The question has been unanswered since 2026-08-18.</p>
+    <p class="question-text">Has OCR-3&#39;s /vqa endpoint been evaluated on CharXiv, and does the chart-description vs. chart-reasoning decomposition expose any accuracy gap relative to the IDP Leaderboard score?</p>
+    <p class="question-context">CharXiv (NeurIPS 2024, princeton-nlp) specifically distinguishes descriptive chart tasks from reasoning tasks, finding models that describe charts accurately often reason poorly over them. OCR-3&#39;s IDP Leaderboard ranking is on structured document extraction; chart reasoning is a different capability. Without a CharXiv score, competitive framing on chart-heavy documents is based on undisclosed capability.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should Semantic Scholar or Papers With Code API be added as alternative ingest sources to restore academic paper coverage while the arxiv proxy block persists?</p>
-    <p class="question-context">Both Semantic Scholar and Papers With Code provide free APIs for keyword search on recent ML papers. Either would restore arxiv-equivalent coverage of VLM hallucination, mechanistic interpretability, and document-AI papers without requiring egress changes to the blocked domains. Research-axis items have been absent from every build since 2026-08-03.</p>
+    <p class="question-text">Should mercury-mcp (cross-architecture LLM internal observation database, 23 models, 13 families) be added to the research team&#39;s interpretability toolchain for cross-architecture hallucination transfer studies?</p>
+    <p class="question-context">Cross-architecture hallucination transfer is a named research direction — does a hallucination pattern observed in one VLM family appear in another? Mercury-mcp provides pre-computed activation representations across 23 models as MCP-accessible tools. Using it could accelerate a preliminary survey of whether phantom-row hallucination circuits are architecture-specific without requiring fresh training runs.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Does NVIDIA NeMo DataDesigner support document-specific synthetic data generation (invoices, tables, forms with controlled field values), or is it primarily for natural-language text and multimodal image datasets?</p>
-    <p class="question-context">If DataDesigner can generate structurally valid synthetic documents with known ground-truth fields, it could directly support the team&#39;s phantom-row and structural hallucination evaluation work by providing controlled test cases with verifiable field-level accuracy.</p>
+    <p class="question-text">All four standard ingest sources have been proxy-blocked since 2026-08-03 — now day 18. This question has been raised in every build since 2026-08-14 without an answer. Is there an owner and ETA for extending the egress proxy allowlist?</p>
+    <p class="question-context">Required admin actions remain unchanged: (1) extend egress allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains in data/sources.yaml; (2) replace GITHUB_TOKEN with a read-scoped PAT for the github_trending CLI. Both are one-time changes. This build found 12 items via MCP GitHub Search fallback; the mechanistic interpretability items (brainscope, jspace, mercury-mcp) are valuable but the research-axis coverage (arxiv papers on VLM hallucination) remains structurally absent.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">The MCP GitHub Search fallback pool is saturating: 635 entries before this build, now 647 after. Should repos older than 90 days with 2x+ star growth since first seen become eligible for re-evaluation?</p>
+    <p class="question-context">This build found 12 new repos. If this trend continues, each 6-hour build will find fewer new items and re-evaluation of evolved projects (those that have added significant features or star growth since first seen) would restore coverage breadth. This requires a one-time code change to the dedup/publish pipeline. The question has been unanswered since 2026-08-18.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -394,7 +421,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-08-20T01:30:00+00:00
+    sources covered: github_trending    · failed: 3 · built at 2026-08-20T07:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
