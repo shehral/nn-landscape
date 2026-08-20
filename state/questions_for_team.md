@@ -9465,3 +9465,31 @@ This is the third attempted build of 2026-08-17. Editions were already published
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-20T01:30:00+00:00 (audit: partial)
+
+### Q: All four standard ingest sources have been proxy-blocked since 2026-08-03, now day 18 with 70+ consecutive blocked builds. This is the fifth build of 2026-08-20 cycle to surface this question without a response. Is there a resolution ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** Required actions remain: (1) extend egress allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains; (2) replace GITHUB_TOKEN with a read-scoped PAT for the github_trending CLI. Both are one-time admin changes. Without them, all builds depend on MCP GitHub Search fallback, which is saturating at 635+ seen entries and yields fewer new items each cycle.
+
+**Answer:** _add reply here_
+
+### Q: Should repos in seen.json older than 90 days with 2x+ star growth since first seen become eligible for re-evaluation?
+
+**Context:** seen.json now tracks 635 entries (438+ GitHub repos). MCP GitHub Search yield is declining as the pool saturates — this build found 11 new repos. A staleness threshold would restore coverage of evolving projects. This requires a one-time code change to the dedup/publish pipeline. The question has been unanswered since 2026-08-18.
+
+**Answer:** _add reply here_
+
+### Q: Should Semantic Scholar or Papers With Code API be added as alternative ingest sources to restore academic paper coverage while the arxiv proxy block persists?
+
+**Context:** Both Semantic Scholar and Papers With Code provide free APIs for keyword search on recent ML papers. Either would restore arxiv-equivalent coverage of VLM hallucination, mechanistic interpretability, and document-AI papers without requiring egress changes to the blocked domains. Research-axis items have been absent from every build since 2026-08-03.
+
+**Answer:** _add reply here_
+
+### Q: Does NVIDIA NeMo DataDesigner support document-specific synthetic data generation (invoices, tables, forms with controlled field values), or is it primarily for natural-language text and multimodal image datasets?
+
+**Context:** If DataDesigner can generate structurally valid synthetic documents with known ground-truth fields, it could directly support the team's phantom-row and structural hallucination evaluation work by providing controlled test cases with verifiable field-level accuracy.
+
+**Answer:** _add reply here_
+
+---
