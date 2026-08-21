@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Aug 21, 2026 · 07:03 UTC · 8 items scored</span>
+  <span class="built-at">Built Aug 21, 2026 · 13:00 UTC · 2 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,10 +53,9 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Sub-25MB specialized OCR models are reaching claimed SOTA on narrow domains: Texo (20M params, LaTeX OCR, browser-runnable) signals that compact specialized models may challenge large cloud-hosted VLMs on well-scoped document types.</li>
-    <li>MCP is becoming the default integration layer for document AI tooling: two projects this build expose document processing exclusively via MCP rather than REST APIs, reflecting a broader ecosystem shift toward agent-native interfaces.</li>
-    <li>Frontier vision models (DeepSeek-Vision) are being wrapped into CLI and pipeline tools by the developer community, accelerating commoditization of general-purpose OCR and creating indirect pricing pressure on dedicated document APIs.</li>
-    <li>RAG infrastructure research is converging on storage efficiency as the primary optimization target: LEANN (MLSys 2026) achieves 97% index-size reduction, which could shift cost models for chunked-document retrieval pipelines.</li>
+    <li>Docling is becoming the default open-source document parser in RAG frameworks: Haystack (26K stars) uses it as a first-class integration, following prior evidence of LanceDB/LiteParse and haiku.rag (Docling-native). This consolidation around Docling as the self-hosted parsing baseline increases the implicit baseline quality developers expect before evaluating cloud extraction APIs.</li>
+    <li>MCP GitHub Search yield has dropped to 2 new items this build (down from 8 two builds ago and 12 five builds ago), consistent with the seen.json saturation trajectory predicted in prior AI-partner questions. At the current rate, MCP fallback yield will approach zero within 2-3 builds.</li>
+    <li>No new VLM hallucination research, mechanistic interpretability tooling, or document benchmark results surfaced in this build — a coverage gap attributable to the arxiv proxy block, not signal absence. The research axis has been dark for 22 days.</li>
   </ul>
 </section>
 
@@ -65,56 +64,6 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="39">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 2 · frontier 0 · vlm_research 2 = 39 (this view's weighting)">39</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/alephpi/Texo" target="_blank" rel="nofollow noopener noreferrer">Texo — 20M-parameter LaTeX OCR model, SOTA accuracy, browser-runnable</a>
-  </p>
-  <p class="item-summary">20M-param LaTeX OCR model claims SOTA accuracy while running in-browser via WASM, challenging cloud-hosted OCR economics for scientific documents.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>A sub-25MB SOTA OCR model for LaTeX/scientific documents signals that compact specialized models can match large generalist VLMs on narrow domains. If Texo&#39;s benchmark claims hold, it sets a competitive bar for Nanonets on scientific-document parsing without cloud inference costs.</dd>
-      <dt>Research</dt>
-      <dd>Architecture and training details warrant review: a 20M-param model reaching SOTA on LaTeX OCR likely exploits domain-specific tokenization or constrained decoding. Relevant to hallucination-mitigation work if similar structural constraints apply to table/formula extraction.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="24">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 1 · vlm_research 0 = 24 (this view's weighting)">24</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/appautomaton/document-SKILLs" target="_blank" rel="nofollow noopener noreferrer">document-SKILLs — Claude Code skills for PDF, Excel, Word, PowerPoint processing</a>
-  </p>
-  <p class="item-summary">Claude Code skill package exposing PDF, Excel, Word, and PowerPoint document operations as reusable agent primitives via MCP.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Exposes document-format processing through Claude Code&#39;s skill and MCP layer, making document AI a first-class agentic primitive. If Anthropic&#39;s ecosystem adopts this pattern broadly, customers may compare Nanonets&#39; REST API against Claude-native document handling.</dd>
-      <dt>Research</dt>
-      <dd>No research contribution; pure integration tooling. Useful as a signal of how frontier labs are packaging document capabilities for developer adoption.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
          data-score="20">
   <div class="item-meta">
     <span class="item-score"
@@ -125,67 +74,17 @@
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/Arterning/DeepParseX" target="_blank" rel="nofollow noopener noreferrer">DeepParseX — multimodal document parsing with knowledge-graph RAG</a>
+    <a href="https://github.com/deepset-ai/haystack" target="_blank" rel="nofollow noopener noreferrer">Haystack: open-source LLM orchestration framework for RAG, document pipelines, and multi-agent workflows (26K stars)</a>
   </p>
-  <p class="item-summary">Open-source platform combining multimodal document parsing with knowledge-graph construction and RAG retrieval for structured document QA.</p>
+  <p class="item-summary">Deepset Haystack — production RAG/agent orchestration with Docling document pipeline support; 26K stars, active maintenance.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>DeepParseX bundles document parsing with KG-based RAG in a single open-source stack, competing with Nanonets at the pipeline level rather than the model level. Enterprises may self-host this rather than using a paid parsing API.</dd>
+      <dd>Haystack&#39;s Docling integration means developer-built document pipelines can use an open-source parser by default, reducing evaluation of cloud extraction APIs for latency-sensitive or self-hosted use cases. Nanonets&#39; Agentic Data Extraction API remains differentiated on accuracy-critical structured extraction, but an official Haystack connector would lower switching cost for the developer tier.</dd>
       <dt>Research</dt>
-      <dd>No novel model architecture; engineering integration of existing parsing and KG libraries. Not directly relevant to current hallucination or extraction research.</dd>
+      <dd>No direct research implication. Haystack pipeline patterns are useful reference architecture for teams building retrieval-augmented workflows over extracted documents.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="20">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 0 · vlm_research 0 = 20 (this view's weighting)">20</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/menghuanshiguang/deepseek-vision-cli" target="_blank" rel="nofollow noopener noreferrer">deepseek-vision-cli — DeepSeek Vision OCR command-line tool</a>
-  </p>
-  <p class="item-summary">CLI wrapper around DeepSeek&#39;s vision API for local OCR tasks, positioning DeepSeek-Vision as a low-cost alternative to dedicated OCR APIs.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Illustrates that DeepSeek-Vision is being positioned as a document OCR backend by the developer community. Low pricing of DeepSeek&#39;s vision inference puts indirect pressure on per-page API pricing for Nanonets&#39; document parsing.</dd>
-      <dt>Research</dt>
-      <dd>No novel research. Useful as a benchmarking target if DeepSeek-Vision&#39;s capabilities have improved since last evaluation.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="7">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 0 = 7 (this view's weighting)">7</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/korovin-aa97/talkthrough-mcp" target="_blank" rel="nofollow noopener noreferrer">talkthrough-mcp — screen recording to OCR-annotated frames MCP server</a>
-  </p>
-  <p class="item-summary">MCP server converting screen recordings to OCR-annotated frame sequences for agent visual understanding of recorded workflows.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Niche use case with no direct overlap with Nanonets&#39; document-parsing endpoints. Noteworthy only as another data point in MCP becoming the default integration protocol for OCR tools.</dd>
-      <dt>Research</dt>
-      <dd>No research implication.</dd>
-      <dt>Action</dt>
-      <dd>no action</dd>
     </dl>
   </div>
 </article>  </div>
@@ -195,86 +94,36 @@
   </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
+      <p class="item-summary">No top-N items this build.</p>
+  </div>
+  <div class="axis-col" data-axis="vlm_research">
+    <h2>VLM research</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="18">
+         data-score="10">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 2 · vlm_research 1 = 18 (this view's weighting)">18</span>
+          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 2 = 10 (this view's weighting)">10</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/StarTrail-org/LEANN" target="_blank" rel="nofollow noopener noreferrer">LEANN — 97% RAG index storage reduction, MLSys 2026</a>
+    <a href="https://github.com/mstar-project/mstar" target="_blank" rel="nofollow noopener noreferrer">mstar: high-performance universal serving framework for VLMs and vision-language-action models</a>
   </p>
-  <p class="item-summary">MLSys 2026 paper achieving 97% storage reduction in vector index construction for RAG pipelines via locality-aware approximate nearest-neighbor indexing.</p>
+  <p class="item-summary">mstar — universal serving framework for VLMs and vision-language-action models; 73 stars, early-stage.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Nanonets&#39; /chunk endpoint feeds downstream RAG systems. If LEANN&#39;s compression technique becomes standard in vector databases, it reduces the storage cost argument for chunked-document retrieval and may shift customer infrastructure choices.</dd>
+      <dd>No direct product implication for Nanonets.</dd>
       <dt>Research</dt>
-      <dd>The locality-aware indexing approach is orthogonal to current hallucination research but relevant if the team evaluates embedding quality for structured-document retrieval. Worth filing for the next roadmap discussion on document-aware retrieval.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="4">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 0 = 4 (this view's weighting)">4</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/mindscale-noah/MindMemOS" target="_blank" rel="nofollow noopener noreferrer">MindMemOS — agent memory operating system with skill plugins</a>
-  </p>
-  <p class="item-summary">Experimental OS-layer abstraction for agent memory management with pluggable skill modules; no published benchmarks.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication.</dd>
-      <dt>Research</dt>
-      <dd>Early-stage agent memory architecture experiment. Not relevant to current hallucination or extraction research.</dd>
-      <dt>Action</dt>
-      <dd>no action</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="4">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 0 = 4 (this view's weighting)">4</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/MigoXLab/LMeterX" target="_blank" rel="nofollow noopener noreferrer">LMeterX — LLM API load testing platform with VLM support</a>
-  </p>
-  <p class="item-summary">Load testing and benchmarking platform for LLM and VLM inference APIs, supporting throughput and latency profiling across providers.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication; internal tooling category.</dd>
-      <dt>Research</dt>
-      <dd>Could serve as infrastructure for throughput benchmarks on Nanonets-OCR3&#39;s /parse endpoint under concurrent load if the team needs to evaluate serving capacity.</dd>
+      <dd>mstar&#39;s unified serving approach for VLMs alongside vision-language-action models is a useful reference for teams evaluating inference infrastructure for multi-VLM research setups. Low star count limits evidence of production readiness.</dd>
       <dt>Action</dt>
       <dd>no action</dd>
     </dl>
   </div>
 </article>  </div>
-  <div class="axis-col" data-axis="vlm_research">
-    <h2>VLM research</h2>
-      <p class="item-summary">No top-N items this build.</p>
-  </div>
 </section>
 
 <aside class="ai-partner" aria-label="Questions from your AI partner">
@@ -286,18 +135,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Should LaTeX and scientific-document parsing be added as a distinct benchmark domain in Nanonets&#39; public evaluation suite?</p>
-    <p class="question-context">Texo (this build) claims SOTA on LaTeX OCR at 20M params. The benchmarks in nanonets_context.md (FUNSD, CORD, DocVQA, OmniDocBench) are all general document tasks with no LaTeX-specific domain. If scientific-document parsing is on the OCR-3 roadmap, a dedicated eval domain would help track competitive position.</p>
+    <p class="question-text">The egress proxy block on arxiv, HN, and RSS sources has now persisted for 22 consecutive days (since 2026-08-03). MCP GitHub Search yield has fallen to 2 items this build — the lowest since the block began. Is there an owner and ETA for restoring standard sources, or should this build schedule be suspended until sources are restored?</p>
+    <p class="question-context">At 2 items per build and 660 entries in seen.json, the dashboard is no longer providing meaningful signal. The prior unanswered question about reducing cadence from 6-hourly to daily still stands. Suspending builds until egress is restored would preserve editorial quality and prevent misleading &#39;last built&#39; timestamps on a near-empty edition.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Is there a planned Nanonets MCP server, and if so which of the five endpoints (/parse, /extract, /split, /chunk, /vqa) would be highest priority to expose?</p>
-    <p class="question-context">Two items this build (document-SKILLs, talkthrough-mcp) integrate document AI via MCP. Claude Code&#39;s skill and MCP ecosystem is growing rapidly. If Nanonets has no MCP server, there is a widening ecosystem gap as agentic document workflows standardize on MCP.</p>
+    <p class="question-text">Should Deepset Haystack be added as an explicit ecosystem entry in nanonets_context.md, given its Docling integration and 26K-star adoption signal?</p>
+    <p class="question-context">Haystack is an orchestration-layer project, not a direct document-AI competitor. However, its active Docling integration makes it a relevant adoption signal: developers building on Haystack are likely to default to Docling for parsing rather than evaluating cloud OCR APIs. A brief entry would allow future builds to frame Haystack-related items more precisely.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Has the team evaluated DeepSeek-Vision as a document-parsing baseline since the latest DeepSeek generation?</p>
-    <p class="question-context">deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision being adopted as a low-cost OCR backend. If its accuracy on FUNSD/CORD has improved in recent versions, it belongs in the competitive benchmark set alongside Mistral OCR 4.1 and the other models listed in nanonets_context.md.</p>
+    <p class="question-text">Has the team evaluated whether a Nanonets MCP server for one or more of the five canonical endpoints (/parse, /extract, /split, /chunk, /vqa) would increase developer adoption in agent-framework pipelines like Haystack?</p>
+    <p class="question-context">This question was raised in the prior build and remains unanswered. Haystack&#39;s active GitHub presence this build reinforces the signal. A Nanonets MCP server would allow direct integration into Haystack, LlamaIndex, and similar frameworks without a custom connector.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -309,7 +158,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered: github_trending    · failed: 3 · built at 2026-08-21T07:03:09+00:00
+    sources covered: github_trending    · failed: 3 · built at 2026-08-21T13:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

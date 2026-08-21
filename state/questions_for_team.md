@@ -9659,3 +9659,25 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-21T13:00:00+00:00 (audit: partial)
+
+### Q: The egress proxy block on arxiv, HN, and RSS sources has now persisted for 22 consecutive days (since 2026-08-03). MCP GitHub Search yield has fallen to 2 items this build — the lowest since the block began. Is there an owner and ETA for restoring standard sources, or should this build schedule be suspended until sources are restored?
+
+**Context:** At 2 items per build and 660 entries in seen.json, the dashboard is no longer providing meaningful signal. The prior unanswered question about reducing cadence from 6-hourly to daily still stands. Suspending builds until egress is restored would preserve editorial quality and prevent misleading 'last built' timestamps on a near-empty edition.
+
+**Answer:** _add reply here_
+
+### Q: Should Deepset Haystack be added as an explicit ecosystem entry in nanonets_context.md, given its Docling integration and 26K-star adoption signal?
+
+**Context:** Haystack is an orchestration-layer project, not a direct document-AI competitor. However, its active Docling integration makes it a relevant adoption signal: developers building on Haystack are likely to default to Docling for parsing rather than evaluating cloud OCR APIs. A brief entry would allow future builds to frame Haystack-related items more precisely.
+
+**Answer:** _add reply here_
+
+### Q: Has the team evaluated whether a Nanonets MCP server for one or more of the five canonical endpoints (/parse, /extract, /split, /chunk, /vqa) would increase developer adoption in agent-framework pipelines like Haystack?
+
+**Context:** This question was raised in the prior build and remains unanswered. Haystack's active GitHub presence this build reinforces the signal. A Nanonets MCP server would allow direct integration into Haystack, LlamaIndex, and similar frameworks without a custom connector.
+
+**Answer:** _add reply here_
+
+---
