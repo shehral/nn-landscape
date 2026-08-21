@@ -9681,3 +9681,31 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-21T18:59:46.673118+00:00 (audit: partial)
+
+### Q: Should the build schedule be suspended until standard egress sources (arxiv, HN, RSS) are restored, given that MCP GitHub Search yield has reached 1 item and seen.json has 663 entries?
+
+**Context:** At 1 item per build and a 663-entry seen.json pool that is fully saturated, each 6-hourly run adds no editorial signal. The partial-build banner has been displayed on every edition since 2026-08-03. Suspending the schedule and re-enabling it once egress is restored would avoid misleading last-built timestamps and redundant low-yield cycles. This question has been unanswered since 2026-08-17.
+
+**Answer:** _add reply here_
+
+### Q: All four standard ingest sources have been egress-blocked for 19+ days (since 2026-08-03). Is there an owner and ETA for extending the proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** Alternatively, Semantic Scholar (api.semanticscholar.org) and Papers With Code (paperswithcode.com/api) provide free, unblocked APIs covering VLM hallucination papers and ML benchmarks — the exact items absent from all builds since the block began. Adding either as a source type requires a one-time ingest.py addition and sources.yaml entry. This question has been raised in 12+ consecutive builds without a response.
+
+**Answer:** _add reply here_
+
+### Q: Should LibPDF-js/core (TypeScript PDF library, 1.8K stars, no ML component, composite=14) be added to seen.json as a permanently excluded item to prevent rechecking in future builds?
+
+**Context:** The item is not relevant to Nanonets products or research. It will appear in future MCP GitHub Search results because it is actively maintained and was not previously seen. A manual exclusion list (or a minimum-relevance threshold below which items are added to seen.json regardless of score) would reduce noise in the saturated fallback pool.
+
+**Answer:** _add reply here_
+
+### Q: Would replacing the 6-hourly github_trending MCP fallback with weekly Semantic Scholar API sweeps for VLM hallucination, document-AI, and mechanistic-interpretability papers restore editorial signal without requiring egress changes?
+
+**Context:** Semantic Scholar's open API (https://api.semanticscholar.org/graph/v1/paper/search) is confirmed accessible from the proxy environment. A weekly sweep on keywords like 'phantom-row hallucination', 'document VLM', 'mechanistic interpretability OCR' would recover the research-axis coverage absent since 2026-08-03 and produce more relevant items than any remaining GitHub repo search.
+
+**Answer:** _add reply here_
+
+---
