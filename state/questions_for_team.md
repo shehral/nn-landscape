@@ -9611,3 +9611,51 @@ This is the third attempted build of 2026-08-17. Editions were already published
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-08-21T07:03:09Z
+
+**Sources this build:** github_trending only (MCP fallback). arxiv, hn, rss all HTTP 403 — egress proxy blocked. 8 new items.
+
+**Q1: Should LaTeX/scientific-document parsing be added as a distinct benchmark domain?**
+Texo (this build) claims SOTA on LaTeX OCR at 20M params. Current benchmarks in nanonets_context.md (FUNSD, CORD, DocVQA, OmniDocBench) have no LaTeX-specific domain. If scientific-document parsing is on the OCR-3 roadmap, a dedicated eval domain would help track competitive position.
+
+**Answer:**
+
+---
+
+**Q2: Is there a planned Nanonets MCP server?**
+Two items this build (document-SKILLs, talkthrough-mcp) expose document AI via MCP. Claude Code's MCP ecosystem is growing rapidly. If Nanonets has no MCP server, there is a widening ecosystem gap as agentic document workflows standardize on MCP. Which of the five endpoints (/parse, /extract, /split, /chunk, /vqa) would be highest priority?
+
+**Answer:**
+
+---
+
+**Q3: Has DeepSeek-Vision been evaluated as a document-parsing baseline recently?**
+deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision being adopted as a low-cost OCR backend by the developer community. If accuracy on FUNSD/CORD has improved in recent DeepSeek generations, it belongs in the competitive benchmark set alongside Mistral OCR 4.1.
+
+**Answer:**
+
+
+## Build 2026-08-21T07:03:09+00:00 (audit: partial)
+
+### Q: Should LaTeX and scientific-document parsing be added as a distinct benchmark domain in Nanonets' public evaluation suite?
+
+**Context:** Texo (this build) claims SOTA on LaTeX OCR at 20M params. The benchmarks in nanonets_context.md (FUNSD, CORD, DocVQA, OmniDocBench) are all general document tasks with no LaTeX-specific domain. If scientific-document parsing is on the OCR-3 roadmap, a dedicated eval domain would help track competitive position.
+
+**Answer:** _add reply here_
+
+### Q: Is there a planned Nanonets MCP server, and if so which of the five endpoints (/parse, /extract, /split, /chunk, /vqa) would be highest priority to expose?
+
+**Context:** Two items this build (document-SKILLs, talkthrough-mcp) integrate document AI via MCP. Claude Code's skill and MCP ecosystem is growing rapidly. If Nanonets has no MCP server, there is a widening ecosystem gap as agentic document workflows standardize on MCP.
+
+**Answer:** _add reply here_
+
+### Q: Has the team evaluated DeepSeek-Vision as a document-parsing baseline since the latest DeepSeek generation?
+
+**Context:** deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision being adopted as a low-cost OCR backend. If its accuracy on FUNSD/CORD has improved in recent versions, it belongs in the competitive benchmark set alongside Mistral OCR 4.1 and the other models listed in nanonets_context.md.
+
+**Answer:** _add reply here_
+
+---
