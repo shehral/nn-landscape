@@ -9577,3 +9577,37 @@ This is the third attempted build of 2026-08-17. Editions were already published
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-21T01:00:00+00:00 (audit: partial)
+
+### Q: Has OCR-3 been submitted to ParseBench (run-llama/ParseBench, CVPR 2026)?
+
+**Context:** ParseBench's GitHub repo is public. Claude Fable 5 and LlamaParse are confirmed participants. An OCR-3 submission would yield an external validation score for agent-pipeline document tasks independent of the IDP Leaderboard — and the team controls when and how to run it.
+
+**Answer:** _add reply here_
+
+### Q: Does Nanonets have a documented accuracy and cost comparison between OCR-3's /parse endpoint and LiteParse (run-llama/liteparse, 12K stars) on a standard document set?
+
+**Context:** LiteParse is becoming the default open-source parser in LlamaIndex-native pipelines. At 12K stars, developers choosing it are less likely to evaluate cloud extraction APIs. A verified comparison — speed, accuracy on FUNSD/CORD, cost-per-page — would allow competitive framings on this class of item to be more precise than 'claim unverified.'
+
+**Answer:** _add reply here_
+
+### Q: All four standard ingest sources (arxiv, HN, RSS, github_trending CLI) have been proxy-blocked since 2026-08-03 — now day 19. This build found 12 items via MCP GitHub Search fallback; seen.json now tracks 664+ entries. Yield will approach zero within 5-7 days without restoring sources or adding alternatives. Is there an owner and ETA for extending the egress proxy allowlist, or approval to add Semantic Scholar/Papers With Code as ingest sources?
+
+**Context:** Required admin actions remain: (1) extend egress allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains in data/sources.yaml; (2) replace GITHUB_TOKEN with a read-scoped PAT for the github_trending CLI ingest. Alternatively, Semantic Scholar and Papers With Code provide free APIs that do not require egress to blocked domains and would restore research-axis coverage (VLM hallucination papers, mechanistic interpretability) absent from all builds since 2026-08-03.
+
+**Answer:** _add reply here_
+
+### Q: Is VLM-based visual document retrieval (VLM2Vec/MMEB-V2, TMLR 2026) on the team's radar as a longer-term architectural threat to the extraction-for-RAG use case?
+
+**Context:** VLM2Vec generates embeddings directly from document images without an OCR preprocessing step. If this approach reaches sufficient accuracy for retrieval tasks, it reduces the extraction step from mandatory to optional in RAG pipelines — affecting the addressable market for cloud extraction APIs in retrieval-only workflows.
+
+**Answer:** _add reply here_
+
+### Q: Should the build cadence be reduced from 6-hourly to daily while standard sources remain blocked?
+
+**Context:** This build is the fifth+ to surface near-zero yield from standard sources (day 19 of block). At the current rate, MCP GitHub Search fallback yield per build is declining as seen.json saturates. Reducing cadence to daily would preserve coverage breadth per build and reduce redundant low-yield cycles. This question has been unanswered since 2026-08-17.
+
+**Answer:** _add reply here_
+
+---
