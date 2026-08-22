@@ -9709,3 +9709,31 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-22T01:00:00+00:00 (audit: partial)
+
+### Q: All four standard ingest sources have been egress-blocked for 20 consecutive days (since 2026-08-03). This build found 5 items from MCP GitHub Search; seen.json now has 664 entries and is near-saturated. Yield is expected to reach zero within 2-3 builds at the current rate. Is there an owner and ETA for extending the egress proxy allowlist, or approval to add Semantic Scholar (api.semanticscholar.org) or Papers With Code as ingest sources?
+
+**Context:** Required admin actions remain: (1) extend egress allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml; (2) replace GITHUB_TOKEN with a read-scoped PAT for the github_trending CLI. This question has been raised in 15+ consecutive builds without a response. Semantic Scholar's API is confirmed accessible from the proxy environment and would restore research-axis coverage absent since August 3.
+
+**Answer:** _add reply here_
+
+### Q: Should the 6-hourly build schedule be suspended until standard sources are restored, given that MCP GitHub Search yield has fallen to 5 items and seen.json is 664/~700 entries saturated?
+
+**Context:** At the current yield trajectory, builds in 48-72 hours will return 0 new items. Rendering an empty or near-empty edition every 6 hours misleads readers on dashboard freshness. The prior question about cadence reduction has been raised since 2026-08-17 without an answer. Suspending and re-enabling on egress restoration is the cleanest option.
+
+**Answer:** _add reply here_
+
+### Q: TransformerLens appeared in this build's GitHub trending results — is the team actively using it for VLM hallucination circuit analysis, and if so, should the build monitor it as a recurring signal source?
+
+**Context:** TransformerLens is the standard library for the mechanistic interpretability methods cited in Nanonets' research direction (activation patching, logit lens, causal scrubbing). It has 3.8K stars and is actively maintained. If the team uses it, tracking its changelog and issues would provide upstream signal on mech-interp method development relevant to hallucination research.
+
+**Answer:** _add reply here_
+
+### Q: Has the team evaluated OnnxTR (docTR ONNX wrapper) as a benchmark baseline for lightweight OCR inference, given its positioning as a PyTorch-free drop-in for document text recognition pipelines?
+
+**Context:** OnnxTR is not a VLM-based competitor but targets the same developer entry segment. A benchmarked comparison on FUNSD/CORD between OnnxTR and OCR-3's /parse endpoint would clarify the accuracy-vs-deployment-simplicity tradeoff relevant to developer positioning.
+
+**Answer:** _add reply here_
+
+---
