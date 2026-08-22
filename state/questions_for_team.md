@@ -9737,3 +9737,24 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-08-22T00:00:00+00:00 (audit: FAILED — ingest returned 0 items)
+
+### PIPELINE FAILURE: All 4 sources returned no usable items
+
+**Context:** The ingest step failed completely. No edition was built or pushed.
+
+**What failed (Step 3 — ingest):**
+- `arxiv`: HTTP 403 Forbidden from `http://export.arxiv.org/api/query` — network egress blocked by the remote execution environment.
+- `hn`: HTTP 403 Forbidden — HN Algolia API blocked by the same proxy.
+- `rss`: "no items in current window" — all recent RSS items from the 10 configured feeds were already in `state/seen.json` (fully consumed by a prior build).
+- `github_trending`: "no items in current window" — same dedup exhaustion.
+
+**What the team should investigate:**
+1. The `arxiv` and `hn` 403s are an outbound network policy issue in the remote execution container. The proxy at `HTTPS_PROXY` may be blocking `export.arxiv.org` and `hn.algolia.com`. Check `/root/.ccr/README.md` and `curl -sS "$HTTPS_PROXY/__agentproxy/status"` for per-host allow/deny state.
+2. The RSS/GitHub exhaustion likely reflects that the prior build already consumed all items within the time window. If the cron fires again before the RSS feeds publish new content, this is expected behavior — the next run with new feed items will succeed. If this recurs across 2+ consecutive 6-hour ticks, the `days_back` or `per_feed_limit` parameters in `data/sources.yaml` may need widening.
+
+**Action taken:** Lock released, no edition rendered or pushed. This file committed and pushed so the team is notified. The next cron tick will retry the full pipeline.
+
