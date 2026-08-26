@@ -9824,3 +9824,31 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-26T18:57:47.622048+00:00 (audit: partial)
+
+### Q: All four standard ingest sources have been egress-blocked for 23 consecutive days (since 2026-08-03). Is there an owner and ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** This question has been raised in 25+ consecutive builds without a response. MCP GitHub Search found 9 items this build but seen.json has 690 entries and is near-saturated. Semantic Scholar (api.semanticscholar.org, confirmed accessible) would restore research-axis coverage without egress changes and has been proposed as an alternative for multiple builds. Yield is expected to approach zero within 2-4 builds at the current saturation rate.
+
+**Answer:** _add reply here_
+
+### Q: Has the team evaluated the doc-extraction-ocr-vs-vlm benchmark (this build, GitHub) against OCR-3's /parse endpoint on its synthetic invoice and shipping document suite?
+
+**Context:** The project benchmarks field-level accuracy and failure profiles for OCR-then-LLM vs end-to-end VLM on the same document types OCR-3 targets. If the failure-profile taxonomy matches the team's phantom-row and structural hallucination categories, this is an external validation dataset worth reproducing against OCR-3. Scored composite=60 — the only item this build above the framing threshold.
+
+**Answer:** _add reply here_
+
+### Q: Should the build schedule be reduced from 6-hourly to daily, or suspended, until standard sources are restored?
+
+**Context:** No item this build exceeded composite=60, and no item has exceeded composite=80 since the egress block began on 2026-08-03. The partial-build banner has displayed on every edition for 23 days. At 6-hourly cadence with seen.json at 690 entries, yield per build is declining. This question has been unanswered since 2026-08-17.
+
+**Answer:** _add reply here_
+
+### Q: Should an 'above-extraction-layer infrastructure' category be added to data/nanonets_context.md to stabilize scoring of high-adoption tools like cocoindex and promptfoo?
+
+**Context:** cocoindex (11K stars) and promptfoo (24K stars) are agentic pipeline infrastructure tools that don't compete with OCR-3 directly but affect the integration surface where document processing APIs get adopted or bypassed. Multiple prior builds have surfaced similar tools (Haystack, RAGFlow, MaxKB, AgenticX) and scored them inconsistently for lack of a context-file category. A brief note would stabilize scoring across builds.
+
+**Answer:** _add reply here_
+
+---
