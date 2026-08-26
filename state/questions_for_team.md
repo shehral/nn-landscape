@@ -9802,3 +9802,25 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-26T13:15:00+00:00 (audit: partial)
+
+### Q: All four standard ingest sources have been egress-blocked for 23 consecutive days (since 2026-08-03). This build found 8 items via MCP GitHub Search; seen.json now has 682 entries and is near-saturated. Is there an owner and ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** Required admin actions remain unchanged: (1) extend egress allowlist to arxiv, HN, and RSS domains; (2) replace GITHUB_TOKEN with a read-scoped PAT for the github_trending CLI. Alternatively, Semantic Scholar (api.semanticscholar.org, confirmed accessible from this environment) would restore research-axis coverage without egress changes. This question has been raised in 25+ consecutive builds without a response.
+
+**Answer:** _add reply here_
+
+### Q: No item this build exceeds composite=33, and no item has exceeded composite=50 in any build since the egress block began on 2026-08-03. Should the build schedule be reduced from 6-hourly to daily, or suspended, until standard sources are restored?
+
+**Context:** The partial-build banner has displayed on every edition since August 3. At 6-hourly cadence with 8 items per build and seen.json at 682 entries, yield is declining each cycle. Reducing to daily would preserve breadth per build and reduce low-yield cycles. This question has been unanswered since 2026-08-17.
+
+**Answer:** _add reply here_
+
+### Q: Three items this build (OpenViking, nuwax, sgr-agent-core) represent agent-layer platforms absorbing structured output and document-parsing functions. Should a brief 'above-extraction-layer agent platforms' category be added to data/nanonets_context.md to stabilize scoring of this growing class of entrant?
+
+**Context:** Without a named registry entry, each build evaluates agent OS and context database platforms (OpenViking, nuwax, BiSheng, RAGFlow, MaxKB, Haystack, wavefront) on ad hoc inference. A brief context-file note listing confirmed examples and their competitive relationship to Nanonets Agents would stabilize scoring across builds.
+
+**Answer:** _add reply here_
+
+---
