@@ -9780,3 +9780,25 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-26T07:00:34.921644+00:00 (audit: partial)
+
+### Q: All four standard ingest sources have been proxy-blocked for 23 consecutive days (since 2026-08-03). This build found 6 items from MCP GitHub Search; seen.json now has 676 entries and is near-saturated. Is there an owner and ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** At the current saturation rate, MCP GitHub Search yield is approaching zero. Required admin actions: (1) extend egress allowlist to arxiv, HN, and RSS domains; (2) replace GITHUB_TOKEN with a read-scoped PAT for github_trending CLI. Alternatively, Semantic Scholar (api.semanticscholar.org, confirmed accessible) would restore research-axis coverage without egress changes. This question has been raised in 20+ consecutive builds without a response.
+
+**Answer:** _add reply here_
+
+### Q: Should the build schedule be reduced from 6-hourly to daily, or suspended entirely, until standard sources are restored?
+
+**Context:** No item this build exceeds composite=42, and no item has exceeded composite=50 since the egress block began on 2026-08-03. The partial-build banner has displayed on every edition since August 3. At 6-hourly cadence with 6 items per build, the dashboard updates frequently but with declining signal quality. This question has been raised since 2026-08-17 without a response.
+
+**Answer:** _add reply here_
+
+### Q: The two MCP-based document tools surfaced this build (basemind, lnwjud) confirm a multi-build pattern: framework authors are embedding OCR and document RAG directly into MCP servers rather than routing to cloud OCR APIs. Should a Nanonets MCP server for one or more of the five canonical endpoints (/parse, /extract, /split, /chunk, /vqa) be prioritized to intercept this adoption pattern?
+
+**Context:** This question was raised in the 2026-08-21 build regarding Claude Code's MCP ecosystem and Haystack. The current build adds a second data point (basemind, 86 stars, Rust) following the same pattern. Without an MCP server, Nanonets OCR-3 is absent from the integration surface where agent-framework developers are making routing decisions.
+
+**Answer:** _add reply here_
+
+---

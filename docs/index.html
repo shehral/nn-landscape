@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Aug 26, 2026 · 03:00 UTC · 8 items scored</span>
+  <span class="built-at">Built Aug 26, 2026 · 07:00 UTC · 6 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,9 +53,9 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>PDF-to-agentic-workflow tooling is accumulating substantial developer adoption independently of enterprise extraction APIs: book-to-skill (25K stars in 4 months) and second-brain both treat documents as context inputs to agent runtimes, routing around cloud OCR endpoints entirely.</li>
-    <li>The enterprise agent orchestration layer is consolidating around open-source platforms (MaxKB at 22K stars), which commoditizes the RAG and knowledge-management functions that sit above extraction and reduces the stickiness of proprietary agent products.</li>
-    <li>Consumer demand for local, offline OCR remains persistent and is not served by enterprise extraction APIs: two new entries this build (ocr-it, docwen) operate offline using Tesseract or basic converters, indicating a developer and SMB segment that is not upgrading to VLM-based extraction.</li>
+    <li>MCP is consolidating as the delivery layer for document intelligence in agent frameworks: two of six items this build (basemind, lnwjud) expose OCR and document RAG as MCP tools, continuing a multi-build pattern where framework authors treat MCP as the default integration surface rather than evaluating cloud OCR APIs.</li>
+    <li>Community reproducibility infrastructure for competitive OCR models is advancing independently of vendor releases: HunyuanOCR-ROCm provides a multi-runtime OmniDocBench v1.6 harness on AMD hardware, lowering self-hosted deployment friction for a model benchmarked on the same leaderboard as OCR-3.</li>
+    <li>Inference cost reduction is an active independent research direction: leanctx (prompt compression, 40-60% token reduction) and cactus (mobile inference kernels) address LLM deployment economics from orthogonal angles — relevant context for any high-volume document-processing pipeline.</li>
   </ul>
 </section>
 
@@ -64,159 +64,130 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="28">
+         data-score="33">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 2 · vlm_research 0 = 28 (this view's weighting)">28</span>
+          title="doc_ai 3 · competitive 2 · frontier 0 · vlm_research 0 = 33 (this view's weighting)">33</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 0%"></span>
+      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/virgiliojr94/book-to-skill" target="_blank" rel="nofollow noopener noreferrer">book-to-skill: Convert Any Technical PDF Book into a Claude Code Skill</a>
+    <a href="https://github.com/parsee-ai/parsee-core" target="_blank" rel="nofollow noopener noreferrer">parsee-ai/parsee-core: Retrieval of fully structured data from PDFs and HTML using LLMs or custom models, with tabular data extraction and multimodal queries</a>
   </p>
-  <p class="item-summary">Converts technical PDF books into Claude Code skills; 25K stars in 4 months signals developer demand for PDF-to-agent workflows.</p>
+  <p class="item-summary">Open-source Python library for structured PDF/HTML data extraction using LLMs or custom models, with tabular and multimodal support.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Developer demand for PDF-to-agentic-knowledge pipelines is substantial; 25K stars for a thin Claude-SDK wrapper over PDF parsing suggests the OCR→extraction→structured-knowledge pattern is underserved by existing API offerings. Nanonets&#39; /parse and /extract endpoints are positioned for exactly this workflow but may lack the developer-facing integrations that would make them the default choice in Claude Code and similar agentic stacks.</dd>
+      <dd>Parsee positions in the same API space as Nanonets Agentic Data Extraction — LLM-routed structured extraction from PDFs with schema targeting. At 84 stars it is early stage, but it benchmarks the same developer entry point.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication; the tool does not engage with extraction accuracy, hallucination, or VLM internals.</dd>
+      <dd>No direct research implication. Architecture uses LLM routing rather than a purpose-built VLM, so it does not surface new methodology.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="27">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 1 · frontier 0 · vlm_research 0 = 27 (this view's weighting)">27</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/Goldziher/basemind" target="_blank" rel="nofollow noopener noreferrer">Goldziher/basemind: Full AI context and content layer over MCP — tree-sitter code-map, document RAG, shared memory, web crawl, git history; 300+ languages, 10+ agent harnesses, pure Rust</a>
+  </p>
+  <p class="item-summary">Rust MCP server providing document RAG, OCR, code-map, and web crawl capabilities for coding agents across 300+ languages.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Basemind exposes document RAG and OCR as MCP tools, the same integration surface where Nanonets has no published MCP server. Agent-framework developers using this will default to its built-in OCR rather than evaluating a cloud API.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="18">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 1 · vlm_research 0 = 18 (this view's weighting)">18</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/jia-gao/leanctx" target="_blank" rel="nofollow noopener noreferrer">jia-gao/leanctx: Drop-in prompt compression for production LLM apps — 40-60% token reduction without code changes, LLMLingua-2, Python SDK, MIT</a>
+  </p>
+  <p class="item-summary">Production prompt compression SDK achieving 40-60% token reduction via LLMLingua-2, with drop-in Python and LangChain compatibility.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Prompt compression reduces inference cost for document-processing pipelines. At 40-60% reduction it is relevant to any pipeline using Nanonets Agentic Data Extraction in high-volume workflows.</dd>
+      <dt>Research</dt>
+      <dd>LLMLingua-2 compression artifacts on structured document fields (tables, key-value pairs) are unstudied at this ratio. Reproduction on document-extraction inputs would clarify safe usage.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: frontier</p>
 </article><article class="item "
          data-source="github_trending"
-         data-score="24">
+         data-score="7">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 1 · vlm_research 0 = 24 (this view's weighting)">24</span>
+          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 0 = 7 (this view's weighting)">7</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/henrydaum/second-brain" target="_blank" rel="nofollow noopener noreferrer">second-brain: Agentic OS with Local File Intelligence and LLM Workflow Automation</a>
+    <a href="https://github.com/engasnm111/lnwjud" target="_blank" rel="nofollow noopener noreferrer">engasnm111/lnwjud: Windows-first local AI-agent runtime and MCP gateway with 223 configurable tools including OCR and desktop automation</a>
   </p>
-  <p class="item-summary">Agentic OS using local file intelligence, cronjob scheduling, and LLMs for workflow automation across modalities.</p>
+  <p class="item-summary">Windows AI-agent runtime with MCP gateway exposing 223 tools including OCR and desktop automation, TypeScript/Electron.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Competes at the workflow automation layer with Nanonets Agents; primarily a developer or power-user tool rather than enterprise-grade. The local-file-intelligence approach sidesteps extraction APIs in favor of direct LLM file reading — the same substitution pressure that multi-billion-context-window models are beginning to exert.</dd>
+      <dd>OCR is a bundled tool in a general desktop-automation platform, not a document-AI competitor. No direct product implication.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication.</dd>
+      <dd>No research implication.</dd>
       <dt>Action</dt>
       <dd>no action</dd>
     </dl>
   </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="20">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 0 · vlm_research 0 = 20 (this view's weighting)">20</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/ZHYX91/docwen" target="_blank" rel="nofollow noopener noreferrer">docwen: Local Document Converter (Word/Markdown/Excel/PDF, OCR, 11 Languages)</a>
-  </p>
-  <p class="item-summary">Python GUI for bidirectional Word/Markdown/Excel/PDF conversion with offline OCR support in 11 languages.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Consumer-grade document converter with offline OCR; targets the lower end of the market and is not enterprise competition. Signals continued demand for bidirectional format conversion with OCR capabilities.</dd>
-      <dt>Research</dt>
-      <dd>No direct research implication.</dd>
-      <dt>Action</dt>
-      <dd>no action</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="20">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 0 · vlm_research 0 = 20 (this view's weighting)">20</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/thiagotigaz/ocr-it" target="_blank" rel="nofollow noopener noreferrer">ocr-it: Chrome Extension for Offline Region-Pin OCR via Tesseract WASM</a>
-  </p>
-  <p class="item-summary">Chrome extension for offline screen-region OCR via Tesseract WASM; hotkey-activated, no cloud calls.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Consumer browser extension using legacy Tesseract for screen-region OCR; not competitive with enterprise document extraction APIs. Indicates persistent demand for lightweight, offline OCR utilities that established cloud providers do not serve.</dd>
-      <dt>Research</dt>
-      <dd>No direct research implication.</dd>
-      <dt>Action</dt>
-      <dd>no action</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="11">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 0 = 11 (this view's weighting)">11</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/caura-ai/caura" target="_blank" rel="nofollow noopener noreferrer">caura: Governed Shared Memory for AI Agent Fleets (MCP-Native, Audit Trails)</a>
-  </p>
-  <p class="item-summary">MCP-native governed memory layer for AI agent fleets with trust tiers, audit trails, and self-improving retrieval.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="11">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 0 = 11 (this view's weighting)">11</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/vitali87/code-graph-rag" target="_blank" rel="nofollow noopener noreferrer">code-graph-rag: Knowledge-Graph RAG for Multi-Language Codebases</a>
-  </p>
-  <p class="item-summary">Knowledge-graph RAG for multi-language codebases using tree-sitter and graph databases; 4.8K stars.</p>
 </article>  </div>
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="32">
+         data-score="42">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 3 · frontier 0 · vlm_research 0 = 32 (this view's weighting)">32</span>
+          title="doc_ai 3 · competitive 3 · frontier 0 · vlm_research 1 = 42 (this view's weighting)">42</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/1Panel-dev/MaxKB" target="_blank" rel="nofollow noopener noreferrer">MaxKB: Open-Source Enterprise AI Agent Platform with RAG and Knowledge Base</a>
+    <a href="https://github.com/AIwork4me/HunyuanOCR-ROCm" target="_blank" rel="nofollow noopener noreferrer">AIwork4me/HunyuanOCR-ROCm: AMD ROCm port of HunyuanOCR-1.5 with reproducible OmniDocBench v1.6 benchmarks across llama.cpp, vLLM, and Transformers on gfx1100</a>
   </p>
-  <p class="item-summary">Open-source enterprise agent platform with RAG and document knowledge base; 22K stars across major enterprise target segments.</p>
+  <p class="item-summary">Community AMD ROCm port of HunyuanOCR-1.5 with reproducible OmniDocBench v1.6 benchmarks on llama.cpp, vLLM, and Transformers.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>MaxKB operates at the orchestration layer above OCR — it provides enterprise RAG, knowledge management, and agent tooling without a proprietary extraction engine, connecting instead to third-party parsing. At 22K stars it has a stronger adoption signal than most extraction-layer competitors currently tracked in context, and competes directly with Nanonets Agents for enterprise document workflow customers.</dd>
+      <dd>HunyuanOCR (Tencent, 94.1 on OmniDocBench v1.5) is now reproducibly benchmarked on AMD hardware, lowering the barrier for self-hosted deployments of a model that competes on the same leaderboard as OCR-3. Enterprise buyers with AMD GPU infrastructure gain a concrete on-premises alternative.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication; operates at the orchestration layer, not the extraction or VLM model layer.</dd>
+      <dd>The benchmark harness covers llama.cpp, vLLM, and HuggingFace Transformers on a single model — a reproducibility scaffold that would generalize to evaluating OCR-3 baselines across runtimes.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
@@ -225,26 +196,36 @@
 </article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
-      <p class="item-summary">No top-N items this build.</p>
-  </div>
-  <div class="axis-col" data-axis="vlm_research">
-    <h2>VLM research</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="17">
+         data-score="4">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 2 = 17 (this view's weighting)">17</span>
+          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 0 = 4 (this view's weighting)">4</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/TeleAI-UAGI/Awesome-Agent-Memory" target="_blank" rel="nofollow noopener noreferrer">Awesome-Agent-Memory: Curated Benchmarks and Papers on LLM/MLLM Memory</a>
+    <a href="https://github.com/cactus-compute/cactus" target="_blank" rel="nofollow noopener noreferrer">cactus-compute/cactus: Quantization, kernels, runtime and inference engine for mobile and edge devices — Android, iOS, on-device LLM inference</a>
   </p>
-  <p class="item-summary">Curated survey of LLM/MLLM memory benchmarks and papers covering long-term context, retrieval, and reasoning.</p>
+  <p class="item-summary">Mobile LLM inference engine for Android/iOS with quantization and custom kernels, 5.9K stars.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication; Nanonets OCR-3 targets cloud/API deployment, not on-device inference.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
 </article>  </div>
+  <div class="axis-col" data-axis="vlm_research">
+    <h2>VLM research</h2>
+      <p class="item-summary">No top-N items this build.</p>
+  </div>
 </section>
 
 <aside class="ai-partner" aria-label="Questions from your AI partner">
@@ -256,18 +237,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four standard ingest sources have been proxy-blocked since 2026-08-03, now day 23. The MCP GitHub Search fallback found 8 new items this build; seen.json now has 676 entries. At the current saturation rate, yield will approach zero within 2-4 builds. Is there an owner and ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?</p>
-    <p class="question-context">Required admin actions remain: (1) extend egress allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains in data/sources.yaml; (2) replace GITHUB_TOKEN with a read-scoped PAT for github_trending CLI. Alternatively, adding Semantic Scholar (api.semanticscholar.org, confirmed accessible) or Papers With Code as ingest sources would restore research-axis coverage without egress changes. This question has been raised in 25+ consecutive builds without a response.</p>
+    <p class="question-text">All four standard ingest sources have been proxy-blocked for 23 consecutive days (since 2026-08-03). This build found 6 items from MCP GitHub Search; seen.json now has 676 entries and is near-saturated. Is there an owner and ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?</p>
+    <p class="question-context">At the current saturation rate, MCP GitHub Search yield is approaching zero. Required admin actions: (1) extend egress allowlist to arxiv, HN, and RSS domains; (2) replace GITHUB_TOKEN with a read-scoped PAT for github_trending CLI. Alternatively, Semantic Scholar (api.semanticscholar.org, confirmed accessible) would restore research-axis coverage without egress changes. This question has been raised in 20+ consecutive builds without a response.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">No item this build exceeds composite=32, and no item has exceeded composite=50 in any build since the egress block began on 2026-08-03. Should the build cadence be reduced from 6-hourly to daily, or should the build be suspended until standard sources are restored?</p>
-    <p class="question-context">The partial-build banner has displayed on every edition since August 3. At 6-hourly cadence with 8 items per build, the dashboard updates frequently but with declining signal quality. Reducing to daily would preserve breadth per build and reduce low-yield cycles. This question has been unanswered since 2026-08-17.</p>
+    <p class="question-text">Should the build schedule be reduced from 6-hourly to daily, or suspended entirely, until standard sources are restored?</p>
+    <p class="question-context">No item this build exceeds composite=42, and no item has exceeded composite=50 since the egress block began on 2026-08-03. The partial-build banner has displayed on every edition since August 3. At 6-hourly cadence with 6 items per build, the dashboard updates frequently but with declining signal quality. This question has been raised since 2026-08-17 without a response.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">MaxKB (22K stars, 1Panel-dev) is a new entry in this build at the enterprise agent orchestration layer. Prior builds raised BiSheng and RAGFlow in the same category. Should an &#39;above-extraction-layer competitors&#39; section be added to data/nanonets_context.md to stabilize scoring of this class of entrant?</p>
-    <p class="question-context">MaxKB, RAGFlow, BiSheng, and Haystack all operate above the OCR/extraction layer and compete with Nanonets Agents rather than with OCR-3. Without a named registry entry, each build evaluates these on ad hoc inference rather than a confirmed competitive category. A brief context-file note would stabilize scoring and framing across builds.</p>
+    <p class="question-text">The two MCP-based document tools surfaced this build (basemind, lnwjud) confirm a multi-build pattern: framework authors are embedding OCR and document RAG directly into MCP servers rather than routing to cloud OCR APIs. Should a Nanonets MCP server for one or more of the five canonical endpoints (/parse, /extract, /split, /chunk, /vqa) be prioritized to intercept this adoption pattern?</p>
+    <p class="question-context">This question was raised in the 2026-08-21 build regarding Claude Code&#39;s MCP ecosystem and Haystack. The current build adds a second data point (basemind, 86 stars, Rust) following the same pattern. Without an MCP server, Nanonets OCR-3 is absent from the integration surface where agent-framework developers are making routing decisions.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -279,7 +260,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered: github_trending    · failed: 3 · built at 2026-08-26T03:00:00+00:00
+    sources covered:     · failed: 4 · built at 2026-08-26T07:00:34.921644+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
