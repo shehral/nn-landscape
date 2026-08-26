@@ -9758,3 +9758,25 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 
 **Action taken:** Lock released, no edition rendered or pushed. This file committed and pushed so the team is notified. The next cron tick will retry the full pipeline.
 
+
+## Build 2026-08-26T03:00:00+00:00 (audit: partial)
+
+### Q: All four standard ingest sources have been proxy-blocked since 2026-08-03, now day 23. The MCP GitHub Search fallback found 8 new items this build; seen.json now has 676 entries. At the current saturation rate, yield will approach zero within 2-4 builds. Is there an owner and ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** Required admin actions remain: (1) extend egress allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains in data/sources.yaml; (2) replace GITHUB_TOKEN with a read-scoped PAT for github_trending CLI. Alternatively, adding Semantic Scholar (api.semanticscholar.org, confirmed accessible) or Papers With Code as ingest sources would restore research-axis coverage without egress changes. This question has been raised in 25+ consecutive builds without a response.
+
+**Answer:** _add reply here_
+
+### Q: No item this build exceeds composite=32, and no item has exceeded composite=50 in any build since the egress block began on 2026-08-03. Should the build cadence be reduced from 6-hourly to daily, or should the build be suspended until standard sources are restored?
+
+**Context:** The partial-build banner has displayed on every edition since August 3. At 6-hourly cadence with 8 items per build, the dashboard updates frequently but with declining signal quality. Reducing to daily would preserve breadth per build and reduce low-yield cycles. This question has been unanswered since 2026-08-17.
+
+**Answer:** _add reply here_
+
+### Q: MaxKB (22K stars, 1Panel-dev) is a new entry in this build at the enterprise agent orchestration layer. Prior builds raised BiSheng and RAGFlow in the same category. Should an 'above-extraction-layer competitors' section be added to data/nanonets_context.md to stabilize scoring of this class of entrant?
+
+**Context:** MaxKB, RAGFlow, BiSheng, and Haystack all operate above the OCR/extraction layer and compete with Nanonets Agents rather than with OCR-3. Without a named registry entry, each build evaluates these on ad hoc inference rather than a confirmed competitive category. A brief context-file note would stabilize scoring and framing across builds.
+
+**Answer:** _add reply here_
+
+---

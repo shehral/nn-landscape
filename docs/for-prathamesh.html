@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Aug 22, 2026 · 01:00 UTC · 5 items scored</span>
+  <span class="built-at">Built Aug 26, 2026 · 03:00 UTC · 8 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,17 +53,42 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Open-source OCR tooling (OnnxTR, kraken) is consolidating around deployment simplicity — ONNX export and Tesseract-drop-in positioning — rather than accuracy improvement. This creates a distinct market segment (zero-cost, edge-deployable OCR) that does not compete on the structured-extraction, schema-based output surface that defines Nanonets&#39; enterprise offering.</li>
-    <li>Mechanistic interpretability tooling (TransformerLens, 3.8K stars) has reached sufficient adoption that it is now a standard dependency in the mech-interp research community — appearing in GitHub trending without a new release event. This reduces the setup cost for running hallucination-circuit experiments in the published literature&#39;s framework.</li>
-    <li>Curated taxonomy lists (awesome-ocr-resources) continue to proliferate as the OCR model landscape expands. The primary function is navigating a space now too wide for individual tracking — a niche the IDP Leaderboard partially fills with quantitative differentiation.</li>
+    <li>PDF-to-agentic-workflow tooling is accumulating substantial developer adoption independently of enterprise extraction APIs: book-to-skill (25K stars in 4 months) and second-brain both treat documents as context inputs to agent runtimes, routing around cloud OCR endpoints entirely.</li>
+    <li>The enterprise agent orchestration layer is consolidating around open-source platforms (MaxKB at 22K stars), which commoditizes the RAG and knowledge-management functions that sit above extraction and reduces the stickiness of proprietary agent products.</li>
+    <li>Consumer demand for local, offline OCR remains persistent and is not served by enterprise extraction APIs: two new entries this build (ocr-it, docwen) operate offline using Tesseract or basic converters, indicating a developer and SMB segment that is not upgrading to VLM-based extraction.</li>
   </ul>
 </section>
 
 <section class="axes" aria-label="Items by axis">
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
-      <p class="item-summary">No top-N items this build.</p>
+<article class="item "
+         data-source="github_trending"
+         data-score="32">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 3 · frontier 0 · vlm_research 0 = 32 (this view's weighting)">32</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
   </div>
+  <p class="item-title">
+    <a href="https://github.com/1Panel-dev/MaxKB" target="_blank" rel="nofollow noopener noreferrer">MaxKB: Open-Source Enterprise AI Agent Platform with RAG and Knowledge Base</a>
+  </p>
+  <p class="item-summary">Open-source enterprise agent platform with RAG and document knowledge base; 22K stars across major enterprise target segments.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>MaxKB operates at the orchestration layer above OCR — it provides enterprise RAG, knowledge management, and agent tooling without a proprietary extraction engine, connecting instead to third-party parsing. At 22K stars it has a stronger adoption signal than most extraction-layer competitors currently tracked in context, and competes directly with Nanonets Agents for enterprise document workflow customers.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication; operates at the orchestration layer, not the extraction or VLM model layer.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
       <p class="item-summary">No top-N items this build.</p>
@@ -72,56 +97,55 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="26">
+         data-score="28">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 2 · frontier 0 · vlm_research 1 = 26 (this view's weighting)">26</span>
+          title="doc_ai 2 · competitive 1 · frontier 2 · vlm_research 0 = 28 (this view's weighting)">28</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/felixdittrich92/OnnxTR" target="_blank" rel="nofollow noopener noreferrer">OnnxTR: docTR Document Text Recognition ONNX pipeline wrapper for fast CPU/GPU inference</a>
+    <a href="https://github.com/virgiliojr94/book-to-skill" target="_blank" rel="nofollow noopener noreferrer">book-to-skill: Convert Any Technical PDF Book into a Claude Code Skill</a>
   </p>
-  <p class="item-summary">ONNX wrapper for docTR&#39;s document-text-recognition pipeline enabling PyTorch-free CPU/GPU OCR inference.</p>
+  <p class="item-summary">Converts technical PDF books into Claude Code skills; 25K stars in 4 months signals developer demand for PDF-to-agent workflows.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>OnnxTR targets the same developer segment as Nanonets Agentic Data Extraction but at the open-source, zero-cost tier: lightweight ONNX inference removes the PyTorch dependency, lowering the barrier for embedding document OCR in edge or serverless environments. Competes on ease-of-deployment, not accuracy or structured extraction.</dd>
+      <dd>Developer demand for PDF-to-agentic-knowledge pipelines is substantial; 25K stars for a thin Claude-SDK wrapper over PDF parsing suggests the OCR→extraction→structured-knowledge pattern is underserved by existing API offerings. Nanonets&#39; /parse and /extract endpoints are positioned for exactly this workflow but may lack the developer-facing integrations that would make them the default choice in Claude Code and similar agentic stacks.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication.</dd>
+      <dd>No direct research implication; the tool does not engage with extraction accuracy, hallucination, or VLM internals.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive</p>
+  <p class="secondary-axes">also: frontier</p>
 </article><article class="item "
          data-source="github_trending"
-         data-score="20">
+         data-score="22">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 0 · vlm_research 2 = 20 (this view's weighting)">20</span>
+          title="doc_ai 2 · competitive 1 · frontier 1 · vlm_research 0 = 22 (this view's weighting)">22</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/ZumingHuang/awesome-ocr-resources" target="_blank" rel="nofollow noopener noreferrer">awesome-ocr-resources: Curated collection of OCR papers, datasets, and models (2024–2026)</a>
+    <a href="https://github.com/henrydaum/second-brain" target="_blank" rel="nofollow noopener noreferrer">second-brain: Agentic OS with Local File Intelligence and LLM Workflow Automation</a>
   </p>
-  <p class="item-summary">Curated awesome-list covering OCR papers, datasets, and model releases across scene-text detection through VLM-based document recognition.</p>
+  <p class="item-summary">Agentic OS using local file intelligence, cronjob scheduling, and LLMs for workflow automation across modalities.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct product implication. Functions as a bibliographic reference for tracking the OCR benchmark and model landscape.</dd>
+      <dd>Competes at the workflow automation layer with Nanonets Agents; primarily a developer or power-user tool rather than enterprise-grade. The local-file-intelligence approach sidesteps extraction APIs in favor of direct LLM file reading — the same substitution pressure that multi-billion-context-window models are beginning to exert.</dd>
       <dt>Research</dt>
-      <dd>Useful for confirming completeness of the team&#39;s benchmark coverage (FUNSD, CORD, DocVQA, OmniDocBench) and for identifying datasets not currently in the evaluation set. Worth a one-time scan for gaps.</dd>
+      <dd>No direct research implication.</dd>
       <dt>Action</dt>
-      <dd>read in week</dd>
+      <dd>no action</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: vlm_research</p>
 </article><article class="item "
          data-source="github_trending"
          data-score="16">
@@ -134,13 +158,13 @@
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/mittagessen/kraken" target="_blank" rel="nofollow noopener noreferrer">kraken: Drop-in replacement for Tesseract; supports all writing systems, layout-aware segmentation</a>
+    <a href="https://github.com/ZHYX91/docwen" target="_blank" rel="nofollow noopener noreferrer">docwen: Local Document Converter (Word/Markdown/Excel/PDF, OCR, 11 Languages)</a>
   </p>
-  <p class="item-summary">Kraken is a Tesseract-replacement OCR system with full writing-system coverage and trainable layout segmentation, targeting historical-document researchers.</p>
+  <p class="item-summary">Python GUI for bidirectional Word/Markdown/Excel/PDF conversion with offline OCR support in 11 languages.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct product implication. Kraken targets academic and historical-document researchers and low-resource-language OCR — not enterprise document extraction.</dd>
+      <dd>Consumer-grade document converter with offline OCR; targets the lower end of the market and is not enterprise competition. Signals continued demand for bidirectional format conversion with OCR capabilities.</dd>
       <dt>Research</dt>
       <dd>No direct research implication.</dd>
       <dt>Action</dt>
@@ -149,29 +173,59 @@
   </div>
 </article><article class="item "
          data-source="github_trending"
-         data-score="12">
+         data-score="16">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 1 · competitive 1 · frontier 0 · vlm_research 0 = 12 (this view's weighting)">12</span>
+          title="doc_ai 2 · competitive 1 · frontier 0 · vlm_research 0 = 16 (this view's weighting)">16</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/xiaofengShi/CHINESE-OCR" target="_blank" rel="nofollow noopener noreferrer">CHINESE-OCR: End-to-end Chinese scene-text detection and recognition (CTPN, CRNN, CTC)</a>
+    <a href="https://github.com/thiagotigaz/ocr-it" target="_blank" rel="nofollow noopener noreferrer">ocr-it: Chrome Extension for Offline Region-Pin OCR via Tesseract WASM</a>
   </p>
-  <p class="item-summary">Older end-to-end Chinese scene-text pipeline (CTPN + CRNN + CTC), 2.9K stars; architecture predates transformer-based OCR approaches.</p>
+  <p class="item-summary">Chrome extension for offline screen-region OCR via Tesseract WASM; hotkey-activated, no cloud calls.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct product implication. The CTPN/CRNN/CTC architecture is from 2016-2019 and has been superseded by transformer-based and VLM-based approaches.</dd>
+      <dd>Consumer browser extension using legacy Tesseract for screen-region OCR; not competitive with enterprise document extraction APIs. Indicates persistent demand for lightweight, offline OCR utilities that established cloud providers do not serve.</dd>
       <dt>Research</dt>
       <dd>No direct research implication.</dd>
       <dt>Action</dt>
       <dd>no action</dd>
     </dl>
   </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="10">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 0 = 10 (this view's weighting)">10</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/caura-ai/caura" target="_blank" rel="nofollow noopener noreferrer">caura: Governed Shared Memory for AI Agent Fleets (MCP-Native, Audit Trails)</a>
+  </p>
+  <p class="item-summary">MCP-native governed memory layer for AI agent fleets with trust tiers, audit trails, and self-improving retrieval.</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="10">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 0 = 10 (this view's weighting)">10</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/vitali87/code-graph-rag" target="_blank" rel="nofollow noopener noreferrer">code-graph-rag: Knowledge-Graph RAG for Multi-Language Codebases</a>
+  </p>
+  <p class="item-summary">Knowledge-graph RAG for multi-language codebases using tree-sitter and graph databases; 4.8K stars.</p>
 </article>  </div>
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
@@ -180,26 +234,16 @@
          data-score="14">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 4 = 14 (this view's weighting)">14</span>
+          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 2 = 14 (this view's weighting)">14</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/TransformerLensOrg/TransformerLens" target="_blank" rel="nofollow noopener noreferrer">TransformerLens: Mechanistic interpretability library for GPT-style language models</a>
+    <a href="https://github.com/TeleAI-UAGI/Awesome-Agent-Memory" target="_blank" rel="nofollow noopener noreferrer">Awesome-Agent-Memory: Curated Benchmarks and Papers on LLM/MLLM Memory</a>
   </p>
-  <p class="item-summary">TransformerLens (3.8K stars) is the standard Python library for activation patching, logit lens, and circuit discovery in transformer LMs.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication. TransformerLens is a research toolkit, not a commercial service.</dd>
-      <dt>Research</dt>
-      <dd>TransformerLens covers the mech-interp methods cited in Nanonets&#39; published research direction (activation patching, logit lens, causal scrubbing). Running phantom-row hallucination probes through TransformerLens would allow direct comparison with the published mech-interp literature and potential reproduction of peer results.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
+  <p class="item-summary">Curated survey of LLM/MLLM memory benchmarks and papers covering long-term context, retrieval, and reasoning.</p>
 </article>  </div>
 </section>
 
@@ -212,23 +256,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four standard ingest sources have been egress-blocked for 20 consecutive days (since 2026-08-03). This build found 5 items from MCP GitHub Search; seen.json now has 664 entries and is near-saturated. Yield is expected to reach zero within 2-3 builds at the current rate. Is there an owner and ETA for extending the egress proxy allowlist, or approval to add Semantic Scholar (api.semanticscholar.org) or Papers With Code as ingest sources?</p>
-    <p class="question-context">Required admin actions remain: (1) extend egress allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml; (2) replace GITHUB_TOKEN with a read-scoped PAT for the github_trending CLI. This question has been raised in 15+ consecutive builds without a response. Semantic Scholar&#39;s API is confirmed accessible from the proxy environment and would restore research-axis coverage absent since August 3.</p>
+    <p class="question-text">All four standard ingest sources have been proxy-blocked since 2026-08-03, now day 23. The MCP GitHub Search fallback found 8 new items this build; seen.json now has 676 entries. At the current saturation rate, yield will approach zero within 2-4 builds. Is there an owner and ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?</p>
+    <p class="question-context">Required admin actions remain: (1) extend egress allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains in data/sources.yaml; (2) replace GITHUB_TOKEN with a read-scoped PAT for github_trending CLI. Alternatively, adding Semantic Scholar (api.semanticscholar.org, confirmed accessible) or Papers With Code as ingest sources would restore research-axis coverage without egress changes. This question has been raised in 25+ consecutive builds without a response.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the 6-hourly build schedule be suspended until standard sources are restored, given that MCP GitHub Search yield has fallen to 5 items and seen.json is 664/~700 entries saturated?</p>
-    <p class="question-context">At the current yield trajectory, builds in 48-72 hours will return 0 new items. Rendering an empty or near-empty edition every 6 hours misleads readers on dashboard freshness. The prior question about cadence reduction has been raised since 2026-08-17 without an answer. Suspending and re-enabling on egress restoration is the cleanest option.</p>
+    <p class="question-text">No item this build exceeds composite=32, and no item has exceeded composite=50 in any build since the egress block began on 2026-08-03. Should the build cadence be reduced from 6-hourly to daily, or should the build be suspended until standard sources are restored?</p>
+    <p class="question-context">The partial-build banner has displayed on every edition since August 3. At 6-hourly cadence with 8 items per build, the dashboard updates frequently but with declining signal quality. Reducing to daily would preserve breadth per build and reduce low-yield cycles. This question has been unanswered since 2026-08-17.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">TransformerLens appeared in this build&#39;s GitHub trending results — is the team actively using it for VLM hallucination circuit analysis, and if so, should the build monitor it as a recurring signal source?</p>
-    <p class="question-context">TransformerLens is the standard library for the mechanistic interpretability methods cited in Nanonets&#39; research direction (activation patching, logit lens, causal scrubbing). It has 3.8K stars and is actively maintained. If the team uses it, tracking its changelog and issues would provide upstream signal on mech-interp method development relevant to hallucination research.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">Has the team evaluated OnnxTR (docTR ONNX wrapper) as a benchmark baseline for lightweight OCR inference, given its positioning as a PyTorch-free drop-in for document text recognition pipelines?</p>
-    <p class="question-context">OnnxTR is not a VLM-based competitor but targets the same developer entry segment. A benchmarked comparison on FUNSD/CORD between OnnxTR and OCR-3&#39;s /parse endpoint would clarify the accuracy-vs-deployment-simplicity tradeoff relevant to developer positioning.</p>
+    <p class="question-text">MaxKB (22K stars, 1Panel-dev) is a new entry in this build at the enterprise agent orchestration layer. Prior builds raised BiSheng and RAGFlow in the same category. Should an &#39;above-extraction-layer competitors&#39; section be added to data/nanonets_context.md to stabilize scoring of this class of entrant?</p>
+    <p class="question-context">MaxKB, RAGFlow, BiSheng, and Haystack all operate above the OCR/extraction layer and compete with Nanonets Agents rather than with OCR-3. Without a named registry entry, each build evaluates these on ad hoc inference rather than a confirmed competitive category. A brief context-file note would stabilize scoring and framing across builds.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -240,7 +279,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered: github_trending    · failed: 3 · built at 2026-08-22T01:00:00+00:00
+    sources covered: github_trending    · failed: 3 · built at 2026-08-26T03:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
