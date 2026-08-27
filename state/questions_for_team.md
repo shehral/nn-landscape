@@ -9902,3 +9902,37 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-27T12:56:04+00:00 (audit: partial)
+
+### Q: All 4 ingest sources failed this build (0 items total); arxiv and HN continue returning 403, RSS and github_trending returned zero items. Should the team treat this as a network policy decision that accepts zero-item builds, or is there an urgent path to restore any one source?
+
+**Context:** This build produced 0 items across all sources. arXiv and HN have failed with 403 for many consecutive builds. RSS and github_trending have returned 0 items, suggesting the seen.json dedup filter or the time-window filter may be too aggressive, or that actual upstream content is unavailable. A zero-item build produces no dashboard signal whatsoever — it is effectively a complete outage.
+
+**Answer:** _add reply here_
+
+### Q: The RSS source reports 'no items in current window' despite 10 active feeds including Anthropic, OpenAI, DeepMind, HuggingFace, and Mistral blogs. Is the seen.json filter excluding items already ingested from prior builds, or are these feeds genuinely empty?
+
+**Context:** If seen.json now contains canonical URLs from all recent RSS items, the ingest will always return zero until new content is published. The per_feed_limit of 15 should capture any new posts within the window. Inspecting seen.json size and the most recent seen item timestamps would clarify whether this is a stale-window dedup issue or a genuine feed outage.
+
+**Answer:** _add reply here_
+
+### Q: github_trending also returned 0 items with days_back: 1. Has a change in the GitHub Trending scrape endpoint broken the connector, or did no repositories matching the configured topics (machine-learning, llm, vlm, ocr, rag, multimodal, vision-language) trend in the last 24 hours?
+
+**Context:** The topics list is broad enough that at least some repositories should trend daily. A 0-item result from github_trending across multiple consecutive builds suggests either a scrape-endpoint change on GitHub's side or a filter that excludes all results. Reviewing the ingest.py github_trending connector against the current GitHub Trending HTML structure would identify a breaking change.
+
+**Answer:** _add reply here_
+
+### Q: Should the build pipeline emit a 'complete outage' notification (distinct from the partial-build banner) when 0 of 4 sources yield items, and should it suppress the render+publish step to avoid overwriting a prior valid edition with an empty one?
+
+**Context:** The current playbook instructs the build to continue with a partial-build banner when fewer than 3 sources succeed, but does not distinguish between 1 source succeeding and 0 sources succeeding. A zero-item edition replaces the prior edition on the published GitHub Pages site, erasing the last valid dashboard. A check of source count before rendering would preserve the prior edition on total failure.
+
+**Answer:** _add reply here_
+
+### Q: Across consecutive builds, the arXiv 403 failure has been documented but not resolved. Is this a known proxy/network policy decision, and if so, should data/sources.yaml be updated to remove arxiv from the source list to stop reporting it as a failure each build?
+
+**Context:** If the team has decided that arXiv access will not be restored in this environment, the source should either be removed from sources.yaml or marked as 'disabled' so the failure does not appear as a new anomaly every build. The persistent false-negative failure report makes it harder to identify genuine new failures.
+
+**Answer:** _add reply here_
+
+---
