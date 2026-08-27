@@ -9874,3 +9874,31 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-27T07:00:00+00:00 (audit: partial)
+
+### Q: All four standard ingest sources have been egress-proxy-blocked since 2026-08-03 (now day 24). This build found 6 items via MCP GitHub Search; seen.json has 709 entries. At current saturation, next build will likely return 0-2 new items. Is there an owner and ETA for extending the proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** Required actions remain: (1) extend egress allowlist to export.arxiv.org, hn.algolia.com, and RSS feed domains; (2) replace GITHUB_TOKEN with a read-scoped PAT for the github_trending CLI. Alternatively, Semantic Scholar (api.semanticscholar.org, confirmed reachable from the proxy) or Papers With Code would restore research-axis coverage without egress changes. This question has been raised in 30+ consecutive builds without a response. The dashboard has displayed the partial-build banner on every edition since August 3.
+
+**Answer:** _add reply here_
+
+### Q: dots.ocr (studio-dots-ai, 9K stars) is a multilingual document layout parsing VLM that directly overlaps OCR-3's product surface. It is not on the IDP Leaderboard, OlmOCR-Bench, or OmniDocBench as far as this build can determine. Should the IDP Leaderboard team run a benchmark evaluation on dots.ocr before it self-submits?
+
+**Context:** dots.ocr's high star count (9K, MIT license) and single-VLM-for-layout positioning make it a credible competitive comparator. An independent leaderboard run before the model's maintainers submit would give Nanonets a private comparator before the score is public.
+
+**Answer:** _add reply here_
+
+### Q: Should this build schedule be reduced to daily or suspended until standard egress sources are restored, given that GitHub Search yield has fallen to 6 items and seen.json is 709/~750 entries saturated?
+
+**Context:** At 6-hourly cadence with 6 items per build, the dashboard updates frequently but with declining signal. The next 1-2 builds will likely return 0-2 new items before exhaustion. Suspending until egress restoration would preserve editorial quality. This question has been raised since 2026-08-17 without a response.
+
+**Answer:** _add reply here_
+
+### Q: The extractous Rust library (yobix-ai/extractous, 1.8K stars) is gaining developer traction as a no-ML document extraction backend. How should this class of tool be scored against Nanonets Agentic Data Extraction — as a direct competitor (doc_ai/competitive) or as an infrastructure layer that Nanonets pipelines could use above?
+
+**Context:** Extractous uses Apache Tika under the hood (rule-based, no VLM) and therefore cannot handle layout, tables, or handwriting. It targets the plain-text extraction segment. Clarifying the competitive framing would stabilize scoring for this class of entrant across future builds.
+
+**Answer:** _add reply here_
+
+---
