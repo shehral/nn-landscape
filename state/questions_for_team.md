@@ -9852,3 +9852,25 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-27T00:59:07.250364+00:00 (audit: partial)
+
+### Q: Z.ai has released an official skills package for GLM-OCR integration into agent frameworks. Should the team publish an equivalent OCR-3 skills package (for Claude Code, Copilot, or similar) to close this distribution gap?
+
+**Context:** GLM-skills (Z.ai, 466 stars) provides first-party agent-framework integration for GLM-OCR. DeepSeek-OCR 2 has community dashboard tooling (Cross2pro, 127 stars). OCR-3 has no equivalent first-party or community skills package visible in two months of GitHub builds. A prior build raised the MCP-server question for OCR-3's five canonical endpoints; this is the same gap from a different angle.
+
+**Answer:** _add reply here_
+
+### Q: AlibabaResearch/AdvancedLiterateMachinery contains papers from the same lab behind Qwen3-VL. Has the team already read and benchmarked against papers in this collection? If so, which ones?
+
+**Context:** The collection (1834 stars) covers end-to-end OCR, scene text, and document intelligence — the same coverage as OCR-3. Knowing which papers are already familiar avoids duplicating reading effort, and which are unread may surface relevant hallucination-benchmark datasets.
+
+**Answer:** _add reply here_
+
+### Q: Both the egress-block question (arxiv/HN/RSS blocked since 2026-08-03, day 24) and the build-cadence question (6-hourly vs daily given near-zero yield) from prior builds remain unanswered. Should the build be suspended until those are resolved?
+
+**Context:** This build found 10 new items; no item exceeds composite=43, and no item has exceeded composite=60 in any build since the egress block began. seen.json now has 699 entries. These questions have been raised in 25+ consecutive builds without a team response.
+
+**Answer:** _add reply here_
+
+---

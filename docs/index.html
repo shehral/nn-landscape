@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Aug 26, 2026 · 18:57 UTC · 9 items scored</span>
+  <span class="built-at">Built Aug 27, 2026 · 00:59 UTC · 10 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,10 +53,9 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Developers are treating OCR+VLM as a combined default architecture, not a choice between them. Three items this build (doc-extraction-ocr-vs-vlm, liteparse, document-extractor) all expose or benchmark combined OCR+VLM extraction stacks rather than either approach alone.</li>
-    <li>Open-weight OCR backends (Docling, PaddleOCR) are appearing as defaults in production doc AI platforms, routing around cloud OCR APIs. Two items (agentic-doc-intelligence-platform, ingestlib) both default to Docling or PaddleOCR for extraction without evaluating cloud alternatives.</li>
-    <li>Community-built evaluation benchmarks for VLM hallucination and extraction accuracy are proliferating alongside lab-published ones. Both vlm-groundbench and doc-extraction-ocr-vs-vlm are practitioner-authored reproducibility-focused evaluation tools, not institutional papers.</li>
-    <li>Agentic pipeline infrastructure is standardizing at high adoption rates (35K+ combined stars for cocoindex + promptfoo) independently of the OCR extraction layer, suggesting the integration surface below document processing APIs is maturing faster than the APIs themselves.</li>
+    <li>Classical table extraction tools (TATR, img2table) continue receiving maintenance and community use alongside end-to-end VLM models, indicating hybrid pipelines remain prevalent where inference cost or latency constraints apply.</li>
+    <li>Competitor OCR models (GLM-OCR, DeepSeek-OCR 2) are building official skills packages and community dashboards that lower adoption friction in agent frameworks, a distribution surface where OCR-3 has no equivalent tooling.</li>
+    <li>Chinese AI labs (Alibaba/Tongyi, DeepSeek, Z.ai) continue expanding document-intelligence ecosystems — research collections, dashboards, and skills packages — across multiple consecutive builds, consistent with sustained OCR-space investment.</li>
   </ul>
 </section>
 
@@ -65,106 +64,30 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="60">
+         data-score="43">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 5 · competitive 2 · frontier 1 · vlm_research 3 = 60 (this view's weighting)">60</span>
+          title="doc_ai 3 · competitive 2 · frontier 1 · vlm_research 2 = 43 (this view's weighting)">43</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/malcomzww/doc-extraction-ocr-vs-vlm" target="_blank" rel="nofollow noopener noreferrer">doc-extraction-ocr-vs-vlm: OCR-then-LLM vs end-to-end VLM extraction on synthetic invoices and shipping documents</a>
+    <a href="https://github.com/AlibabaResearch/AdvancedLiterateMachinery" target="_blank" rel="nofollow noopener noreferrer">AlibabaResearch/AdvancedLiterateMachinery — OCR and document intelligence research collection (Tongyi Lab)</a>
   </p>
-  <p class="item-summary">Field-level accuracy benchmark comparing OCR-then-LLM vs end-to-end VLM on invoices and shipping docs with cost-per-page and failure profile analysis.</p>
+  <p class="item-summary">Alibaba Research OCR collection covering scene text detection, recognition, and document-intelligence methods from Tongyi Lab.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Field-level accuracy and failure-profile data on invoices and shipping docs directly benchmarks the same document types OCR-3 targets; the methodology would support direct comparison against OCR-3&#39;s /parse output.</dd>
+      <dd>This collection originates from the same Alibaba lab behind Qwen3-VL; tracking new papers here surfaces competitor architectural moves before product releases. Coverage spans detection, recognition, and document understanding across the same extraction surface as OCR-3.</dd>
       <dt>Research</dt>
-      <dd>The failure-profile framing for end-to-end VLMs is a ready-made external scaffold for phantom-row and structural hallucination characterization; the cost-per-page analysis quantifies the tradeoff the team&#39;s research is navigating.</dd>
-      <dt>Action</dt>
-      <dd>reproduce</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: vlm_research</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="50">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 2 · frontier 1 · vlm_research 2 = 50 (this view's weighting)">50</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/drmoyassine/liteparse" target="_blank" rel="nofollow noopener noreferrer">liteparse: Isomorphic document text extraction (PDF/Office/images) — one parseDocument(), swappable raster/OCR/VLM adapters. Runs unchanged in browser, Node, and Deno/edge.</a>
-  </p>
-  <p class="item-summary">TypeScript document extraction library with swappable OCR/VLM backends targeting browser, Node, and edge runtimes — single-call API surface.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Single-call isomorphic document extraction with swappable VLM adapters targets the same developer entry-point as Nanonets&#39; Agentic Data Extraction API, but operates client-side without a cloud round-trip.</dd>
-      <dt>Research</dt>
-      <dd>The adapter pattern — making OCR and VLM interchangeable backends behind a single interface — is a relevant reference for evaluating where VLM extraction quality gains outweigh OCR pipeline costs.</dd>
+      <dd>Papers on text-rich image understanding and document layout analysis are adjacent to the team&#39;s structural-hallucination benchmarking work; reviewing recent additions may surface relevant baselines or evaluation datasets.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="46">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 3 · frontier 1 · vlm_research 1 = 46 (this view's weighting)">46</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/Root1V/agentic-doc-intelligence-platform" target="_blank" rel="nofollow noopener noreferrer">agentic-doc-intelligence-platform: Production-grade agentic document intelligence platform — hexagonal architecture, bounded ReAct extraction loop, pluggable OCR (Docling/PaddleOCR); LLM/VLM via OpenAI-compatible endpoint</a>
-  </p>
-  <p class="item-summary">Production doc intelligence platform with hexagonal arch and pluggable Docling/PaddleOCR backends — defaults to open-weight OCR over cloud APIs.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Developer building a production extraction stack has defaulted to Docling and PaddleOCR rather than a cloud OCR API; represents the self-hosting pattern that routes around Nanonets&#39; extraction layer entirely.</dd>
-      <dt>Research</dt>
-      <dd>No direct research implication.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: competitive</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="40">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 2 · frontier 1 · vlm_research 1 = 40 (this view's weighting)">40</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/LangModule/ingestlib" target="_blank" rel="nofollow noopener noreferrer">ingestlib: Self-hosted document intelligence for RAG — parse, classify, split, and extract from PDF/DOCX/PPTX and images; retrieval-ready chunks and schema-driven extraction</a>
-  </p>
-  <p class="item-summary">Self-hosted RAG ingestion library using PaddleOCR and Amazon Nova Lite VLM for document parse/classify/split/extract.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Self-hosted document ingestion library using PaddleOCR as default backend reinforces the multi-build pattern: RAG pipeline developers are defaulting to open-weight OCR models rather than cloud extraction APIs.</dd>
-      <dt>Research</dt>
-      <dd>No direct research implication.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
+  <p class="secondary-axes">also: competitive, vlm_research</p>
 </article><article class="item "
          data-source="github_trending"
          data-score="37">
@@ -177,130 +100,201 @@
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/nicolas-lukita/document-extractor" target="_blank" rel="nofollow noopener noreferrer">document-extractor: Document extraction pipeline for parsing layout and extracting structured content from complex documents using OCR, VLM, and specialized tools</a>
+    <a href="https://github.com/microsoft/table-transformer" target="_blank" rel="nofollow noopener noreferrer">microsoft/table-transformer — TATR deep learning model for table detection and structure recognition</a>
   </p>
-  <p class="item-summary">Developer extraction pipeline combining OCR and VLM for structured content from complex documents — layout-first approach.</p>
+  <p class="item-summary">Microsoft TATR (CVPR): deep learning model for table detection and structure recognition from PDFs and images, with PubTables-1M dataset.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Practitioner building a layout-aware document extraction pipeline treats OCR+VLM as the default combined architecture, not a single-model approach; indicates the developer mental model is shifting toward hybrid stacks.</dd>
+      <dd>TATR remains a reference baseline for table detection; understanding its failure modes on complex layouts clarifies where OCR-3&#39;s end-to-end extraction advantage is most defensible.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication.</dd>
-      <dt>Action</dt>
-      <dd>no action</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="28">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 2 · vlm_research 0 = 28 (this view's weighting)">28</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/cocoindex-io/cocoindex" target="_blank" rel="nofollow noopener noreferrer">cocoindex: Incremental data indexing engine for long-horizon agents — real-time ETL, knowledge graphs, and semantic search for agentic pipelines (11K+ stars)</a>
-  </p>
-  <p class="item-summary">Incremental ETL and indexing engine for agentic data pipelines — 11K stars; operates below the OCR layer but a common integration target for document workflows.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>High-adoption incremental indexing engine positions as infrastructure below the OCR extraction layer; documents processed by Nanonets APIs would typically feed into systems like this, making it a downstream integration partner rather than a competitor.</dd>
-      <dt>Research</dt>
-      <dd>No direct research implication.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: frontier</p>
-</article>  </div>
-  <div class="axis-col" data-axis="competitive">
-    <h2>Competitive</h2>
-      <p class="item-summary">No top-N items this build.</p>
-  </div>
-  <div class="axis-col" data-axis="frontier">
-    <h2>Frontier</h2>
-<article class="item "
-         data-source="github_trending"
-         data-score="24">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 1 · frontier 2 · vlm_research 1 = 24 (this view's weighting)">24</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/promptfoo/promptfoo" target="_blank" rel="nofollow noopener noreferrer">promptfoo: Test prompts, agents, and RAGs; red-teaming and vulnerability scanning for LLMs; compare GPT, Claude, Gemini and custom models (24K+ stars)</a>
-  </p>
-  <p class="item-summary">LLM and RAG testing framework with red-teaming and multi-model comparison — 24K stars; supports automated evaluation across GPT, Claude, Gemini.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Popular automated eval harness supports comparing Claude, GPT, and Gemini against custom endpoints — could be configured to benchmark OCR-3&#39;s /extract output against competitor APIs in CI pipelines.</dd>
-      <dt>Research</dt>
-      <dd>Multi-model eval harness architecture is relevant to the team&#39;s behavioral evaluation methodology for VLM hallucinations; the red-teaming module surfaces edge-case failure modes.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-</article>  </div>
-  <div class="axis-col" data-axis="vlm_research">
-    <h2>VLM research</h2>
-<article class="item "
-         data-source="github_trending"
-         data-score="33">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 1 · frontier 2 · vlm_research 4 = 33 (this view's weighting)">33</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/gorkemergune/vlm-groundbench" target="_blank" rel="nofollow noopener noreferrer">vlm-groundbench: Reproducible benchmark for evaluating multimodal VLMs on visual grounding, object localization, prompt robustness, hallucination, and inference efficiency</a>
-  </p>
-  <p class="item-summary">Community-built reproducible benchmark for VLM hallucination, visual grounding, prompt robustness, and inference efficiency evaluation.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication — benchmark covers general VLM visual grounding, not document extraction specifically.</dd>
-      <dt>Research</dt>
-      <dd>Hallucination and prompt-robustness evaluation methodology is directly adjacent to the team&#39;s VLM hallucination research line; the project&#39;s reproducibility framing and multi-dimension evaluation design (grounding, localization, robustness, efficiency) is a useful structural reference.</dd>
+      <dd>The GriTS evaluation metric and PubTables-1M dataset are standard references for table extraction accuracy — both are relevant baselines for phantom-row hallucination benchmarking.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
+  <p class="secondary-axes">also: vlm_research</p>
 </article><article class="item "
          data-source="github_trending"
-         data-score="10">
+         data-score="20">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 2 = 10 (this view's weighting)">10</span>
+          title="doc_ai 2 · competitive 1 · frontier 0 · vlm_research 0 = 20 (this view's weighting)">20</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/isjinghao/OralGPT" target="_blank" rel="nofollow noopener noreferrer">OralGPT: [NeurIPS&#39;25 | CVPR&#39;26] Official repo of OralGPT &amp; MMOral Bench — oral disease VLM benchmark</a>
+    <a href="https://github.com/ComPDF-derek/docslight" target="_blank" rel="nofollow noopener noreferrer">ComPDF-derek/docslight — KDAN ecosystem open-source document parsing and OCR tool</a>
   </p>
-  <p class="item-summary">CVPR&#39;26 VLM benchmark for oral disease visual QA — domain-specific multimodal evaluation, no doc AI relevance.</p>
+  <p class="item-summary">KDAN/ComPDF open-source document parser converting PDFs, scans, images, and Office files to structured JSON for RAG pipelines.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No product implication.</dd>
+      <dd>KDAN (ComPDF) is positioning DocSlight as an open-source alternative for structured document extraction targeting RAG and agentic workflows — the same use case as Nanonets Agentic Data Extraction.</dd>
       <dt>Research</dt>
-      <dd>Domain-specific VLM benchmark methodology (fine-grained visual QA in a constrained domain) is only peripheral to document-extraction research.</dd>
+      <dd>No direct research implication.</dd>
       <dt>Action</dt>
       <dd>no action</dd>
     </dl>
   </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="17">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 1 = 17 (this view's weighting)">17</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/xavctn/img2table" target="_blank" rel="nofollow noopener noreferrer">xavctn/img2table — OpenCV-based table identification and extraction from PDFs and images</a>
+  </p>
+  <p class="item-summary">img2table: OpenCV image-processing library for table detection and extraction from PDFs and images, with scan support.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Classical table extraction tools remain in use for scanned-document workflows where ML costs or latency are prohibitive; useful baseline against which OCR-3&#39;s table accuracy gains should be quantified.</dd>
+      <dt>Research</dt>
+      <dd>Can serve as a cheap structural-reference baseline when evaluating phantom-row hallucination rates in OCR-3 on identical table images.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="14">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 0 = 14 (this view's weighting)">14</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/jsvine/pdfplumber" target="_blank" rel="nofollow noopener noreferrer">jsvine/pdfplumber — PDF character and table extraction library (10K stars)</a>
+  </p>
+  <p class="item-summary">pdfplumber: rule-based PDF text and table extraction library, widely used for pre-processing before downstream LLM pipelines.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>pdfplumber continues to see heavy use in data-engineering pipelines where ML-based models are not deployed, representing a market segment that may route to Nanonets Agentic Data Extraction as it scales.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="14">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 0 = 14 (this view's weighting)">14</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/janderswag/docuchat.app" target="_blank" rel="nofollow noopener noreferrer">janderswag/docuchat.app — self-hosted document chat for attorneys with local LLMs and page citations</a>
+  </p>
+  <p class="item-summary">Self-hosted legal document chat app using Ollama local LLMs with verifiable page-level citations; one-click desktop install.</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="7">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 0 = 7 (this view's weighting)">7</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/leeryong/DURU" target="_blank" rel="nofollow noopener noreferrer">leeryong/DURU — Korean on-premise AI agent for document RAG with encrypted knowledge sharing</a>
+  </p>
+  <p class="item-summary">DURU: Korean on-premise AI agent answering from user&#39;s own documents, with air-gap support and encrypted knowledge-base sharing.</p>
+</article>  </div>
+  <div class="axis-col" data-axis="competitive">
+    <h2>Competitive</h2>
+<article class="item "
+         data-source="github_trending"
+         data-score="35">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 3 · frontier 0 · vlm_research 1 = 35 (this view's weighting)">35</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/zai-org/GLM-skills" target="_blank" rel="nofollow noopener noreferrer">zai-org/GLM-skills — Z.ai official skills package for GLM family including OCR and vision</a>
+  </p>
+  <p class="item-summary">Z.ai (formerly Zhipu AI) releases official GLM-family skills package including OCR and vision capabilities for agent frameworks.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Z.ai is distributing GLM-OCR integration via a first-party skills package, lowering adoption friction for agent-framework developers choosing between GLM-OCR and API-based alternatives. OCR-3 lacks a comparable official skills package.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="32">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 3 · frontier 0 · vlm_research 0 = 32 (this view's weighting)">32</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/Cross2pro/DeepSeek-OCR-Dashboard" target="_blank" rel="nofollow noopener noreferrer">Cross2pro/DeepSeek-OCR-Dashboard — community Web UI for DeepSeek-OCR 2 with bounding-box visualization</a>
+  </p>
+  <p class="item-summary">Community FastAPI + Vue dashboard for DeepSeek-OCR 2 with PDF/image uploads, progress tracking, and bounding-box visualization.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Growing community tooling around DeepSeek-OCR 2 indicates developer adoption beyond the model release itself. Comparable community infrastructure around OCR-3 is not observed in this or prior builds.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication.</dd>
+      <dt>Action</dt>
+      <dd>no action</dd>
+    </dl>
+  </div>
+</article>  </div>
+  <div class="axis-col" data-axis="frontier">
+    <h2>Frontier</h2>
+      <p class="item-summary">No top-N items this build.</p>
+  </div>
+  <div class="axis-col" data-axis="vlm_research">
+    <h2>VLM research</h2>
+<article class="item "
+         data-source="github_trending"
+         data-score="10">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 1 = 10 (this view's weighting)">10</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/oxbshw/watch-skill" target="_blank" rel="nofollow noopener noreferrer">oxbshw/watch-skill — video understanding skill for AI agents with OCR and MCP server</a>
+  </p>
+  <p class="item-summary">watch-skill: MCP server turning video streams and screen recordings into timestamped, searchable evidence via OCR and VLM reasoning.</p>
 </article>  </div>
 </section>
 
@@ -313,23 +307,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four standard ingest sources have been egress-blocked for 23 consecutive days (since 2026-08-03). Is there an owner and ETA for extending the egress proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?</p>
-    <p class="question-context">This question has been raised in 25+ consecutive builds without a response. MCP GitHub Search found 9 items this build but seen.json has 690 entries and is near-saturated. Semantic Scholar (api.semanticscholar.org, confirmed accessible) would restore research-axis coverage without egress changes and has been proposed as an alternative for multiple builds. Yield is expected to approach zero within 2-4 builds at the current saturation rate.</p>
+    <p class="question-text">Z.ai has released an official skills package for GLM-OCR integration into agent frameworks. Should the team publish an equivalent OCR-3 skills package (for Claude Code, Copilot, or similar) to close this distribution gap?</p>
+    <p class="question-context">GLM-skills (Z.ai, 466 stars) provides first-party agent-framework integration for GLM-OCR. DeepSeek-OCR 2 has community dashboard tooling (Cross2pro, 127 stars). OCR-3 has no equivalent first-party or community skills package visible in two months of GitHub builds. A prior build raised the MCP-server question for OCR-3&#39;s five canonical endpoints; this is the same gap from a different angle.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Has the team evaluated the doc-extraction-ocr-vs-vlm benchmark (this build, GitHub) against OCR-3&#39;s /parse endpoint on its synthetic invoice and shipping document suite?</p>
-    <p class="question-context">The project benchmarks field-level accuracy and failure profiles for OCR-then-LLM vs end-to-end VLM on the same document types OCR-3 targets. If the failure-profile taxonomy matches the team&#39;s phantom-row and structural hallucination categories, this is an external validation dataset worth reproducing against OCR-3. Scored composite=60 — the only item this build above the framing threshold.</p>
+    <p class="question-text">AlibabaResearch/AdvancedLiterateMachinery contains papers from the same lab behind Qwen3-VL. Has the team already read and benchmarked against papers in this collection? If so, which ones?</p>
+    <p class="question-context">The collection (1834 stars) covers end-to-end OCR, scene text, and document intelligence — the same coverage as OCR-3. Knowing which papers are already familiar avoids duplicating reading effort, and which are unread may surface relevant hallucination-benchmark datasets.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the build schedule be reduced from 6-hourly to daily, or suspended, until standard sources are restored?</p>
-    <p class="question-context">No item this build exceeded composite=60, and no item has exceeded composite=80 since the egress block began on 2026-08-03. The partial-build banner has displayed on every edition for 23 days. At 6-hourly cadence with seen.json at 690 entries, yield per build is declining. This question has been unanswered since 2026-08-17.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">Should an &#39;above-extraction-layer infrastructure&#39; category be added to data/nanonets_context.md to stabilize scoring of high-adoption tools like cocoindex and promptfoo?</p>
-    <p class="question-context">cocoindex (11K stars) and promptfoo (24K stars) are agentic pipeline infrastructure tools that don&#39;t compete with OCR-3 directly but affect the integration surface where document processing APIs get adopted or bypassed. Multiple prior builds have surfaced similar tools (Haystack, RAGFlow, MaxKB, AgenticX) and scored them inconsistently for lack of a context-file category. A brief note would stabilize scoring across builds.</p>
+    <p class="question-text">Both the egress-block question (arxiv/HN/RSS blocked since 2026-08-03, day 24) and the build-cadence question (6-hourly vs daily given near-zero yield) from prior builds remain unanswered. Should the build be suspended until those are resolved?</p>
+    <p class="question-context">This build found 10 new items; no item exceeds composite=43, and no item has exceeded composite=60 in any build since the egress block began. seen.json now has 699 entries. These questions have been raised in 25+ consecutive builds without a team response.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -341,7 +330,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-08-26T18:57:47.622048+00:00
+    sources covered: github_trending    · failed: 3 · built at 2026-08-27T00:59:07.250364+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
