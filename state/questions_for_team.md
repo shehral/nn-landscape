@@ -9936,3 +9936,25 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-27T18:58:53+00:00 (audit: partial)
+
+### Q: seen.json now has 715 entries; MCP GitHub Search yielded only 7 items this build, all with composite <= 20. Should seen.json be reset (cleared or date-windowed) so that items from prior months can resurface if they have new activity, or is the current dedup policy correct?
+
+**Context:** The dedup policy is permanent: once a URL is in seen.json it is never re-ingested. For GitHub repositories with ongoing activity, this means a repository that was low-relevance in June may have become high-relevance in August and will never resurface. A date-window policy (e.g., re-ingest items older than 90 days) would recover signal from active repositories.
+
+**Answer:** _add reply here_
+
+### Q: This build's 7 items are all consumer or hobbyist tools with composite scores between 0 and 20. Should the build pipeline suppress render and publish when no item exceeds composite=30, to avoid overwriting a prior valid edition with a zero-signal one?
+
+**Context:** The current playbook continues the build regardless of item quality. At this level of degradation, publishing an edition with 7 near-zero items and no framed content may be less useful than preserving the last substantive edition. A composite-floor check before render would prevent this, at the cost of occasionally missing a build cycle.
+
+**Answer:** _add reply here_
+
+### Q: All competitive and research signals have been absent for the past 24+ days because arxiv and HN are egress-blocked. Is there an owner for this network policy decision, and is Semantic Scholar (api.semanticscholar.org, confirmed accessible from this environment) authorized as an alternative arxiv replacement?
+
+**Context:** Adding Semantic Scholar as an ingest source would restore research-axis coverage without requiring egress policy changes. Multiple prior builds confirmed api.semanticscholar.org is reachable through the proxy. No team response has been received on this proposal across 30+ build cycles.
+
+**Answer:** _add reply here_
+
+---
