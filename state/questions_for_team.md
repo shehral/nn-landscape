@@ -10046,3 +10046,37 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-28T19:00:00+00:00 (audit: partial)
+
+### Q: All four standard ingest sources have been egress-proxy-blocked for 26 consecutive days (since 2026-08-03). Is there an owner and ETA for extending the proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** Required actions remain: (1) extend egress allowlist; (2) replace GITHUB_TOKEN with a read-scoped PAT for github_trending CLI. Alternatively, Semantic Scholar (api.semanticscholar.org, confirmed reachable from the proxy) would restore research-axis coverage without egress changes. This question has been raised for 30+ consecutive builds without a response. seen.json is at 738 entries and approaching saturation of the MCP GitHub Search fallback.
+
+**Answer:** _add reply here_
+
+### Q: Six VLM hallucination-mitigation papers/repos surfaced this build (middle_layers, Accumulative-Decoding, OPA-DPO, ONLY, Nullu, VCD, AGLA). Has the team already reviewed any of these, and if so, which? Knowing what is already read avoids duplicate read recommendations in future builds.
+
+**Context:** All six target inference-time or training-efficient interventions at the attention or decoding layer. The team's existing mechanistic interpretability work (logit lens, activation patching, causal scrubbing) is adjacent. A brief read-status reply would let the build route future papers to 'already read' rather than 'read in week'.
+
+**Answer:** _add reply here_
+
+### Q: The ONLY paper (ICCV 2025) claims one attention-layer intervention is sufficient for hallucination mitigation. If the team's causal-scrubbing work has localized phantom-row hallucinations to a specific layer, is that layer consistent with ONLY's finding? A quick empirical cross-check would either validate or falsify ONLY's claim on document VLMs.
+
+**Context:** The one-layer sufficiency result would sharply reduce engineering cost if it transfers to document-OCR tasks. The team's existing activation-patching results are the fastest way to check this without a full reproduction.
+
+**Answer:** _add reply here_
+
+### Q: Should the build schedule be reduced from 6-hourly to daily, or suspended, until standard egress sources are restored? No item this build exceeded composite=30, and seen.json is at 738 entries.
+
+**Context:** At 6-hourly cadence with seen.json at 738 entries, each build produces 5-15 low-signal items. A daily schedule would produce the same coverage at one-quarter the API cost and allow seen.json saturation to slow. This question has been unanswered since 2026-08-17.
+
+**Answer:** _add reply here_
+
+### Q: Should seen.json be reset or date-windowed (e.g., re-ingest items older than 90 days) to recover signal from repositories with ongoing new activity?
+
+**Context:** The current dedup policy is permanent: once a URL enters seen.json it is never re-ingested. At 738 entries covering most relevant GitHub repositories in the domain, the MCP fallback path is approaching saturation. A date-window policy would allow high-activity repositories to resurface when they release significant updates.
+
+**Answer:** _add reply here_
+
+---
