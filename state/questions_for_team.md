@@ -9986,3 +9986,29 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-08-28T06:54:56+00:00 (BUILD FAILED — zero items ingested)
+
+### FAILURE NOTE: All 4 sources returned zero items; build aborted at Step 3 (ingest)
+
+**What happened:** The ingest step ran at 2026-08-28T06:54:56+00:00 and all four configured sources failed to return any items:
+
+- `arxiv`: HTTP 403 Forbidden on `export.arxiv.org/api/query` (same pattern seen in prior builds; network-level block)
+- `hn`: HTTP 403 Forbidden on the HN Algolia search endpoint
+- `rss`: "no items in current window" — all 10 configured RSS feeds returned 0 items in the time window
+- `github_trending`: "no items in current window" — all 7 configured topics returned 0 items
+
+**What was skipped:** dedup, scoring, framing, trend pass, rendering, and publishing. No HTML was pushed to avoid overwriting the last good dashboard with an empty build.
+
+**What the team should investigate:**
+
+1. **arxiv + HN 403 pattern**: Both have returned 403 errors across many consecutive builds. This is a persistent network-policy or proxy block, not a transient error. The team should decide: (a) route these sources through a different egress path, (b) switch to a mirror (OAI-PMH for arXiv), or (c) remove them and accept that doc_ai / vlm_research axes will be permanently sourced only from RSS/GitHub.
+
+2. **RSS "no items in current window"**: This is new relative to prior builds, which regularly returned 100+ RSS items. Possible causes: (a) the time-window filter is too narrow and all 10 feeds posted nothing new since the last successful build, (b) the RSS fetch itself is being rate-limited or blocked, or (c) the feeds have changed URLs. The team should run `uv run python -m landscape.cli ingest` locally and inspect the logs for each feed URL.
+
+3. **github_trending "no items in current window"**: github_trending is configured for `days_back: 1` across 7 topics. If GitHub's trending API is rate-limiting or the topics returned no items in a 1-day window, this would explain the failure. The team should check whether the GitHub trending API requires authentication now.
+
+**Unanswered from prior builds (still standing):** Questions about arXiv rate-limiting, HN 403, and source-mix infrastructure bias raised in builds from 2026-05-21 through 2026-08-16 remain unanswered. The failure pattern has worsened — prior builds had at least github_trending or RSS as a fallback; this build had none.
+
