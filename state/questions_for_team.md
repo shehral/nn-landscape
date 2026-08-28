@@ -9958,3 +9958,31 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-28T01:00:53+00:00 (audit: partial)
+
+### Q: All four standard ingest sources have been egress-blocked for 25 consecutive days (since 2026-08-03). Is there an owner and ETA for extending the proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** Required actions remain: (1) extend egress allowlist; (2) replace GITHUB_TOKEN with a read-scoped PAT for github_trending CLI. Alternatively, Semantic Scholar (api.semanticscholar.org, confirmed reachable from this proxy) would restore research-axis coverage without egress changes. This question has been raised in 30+ consecutive builds without a response. seen.json is at 722 entries and approaching saturation of the MCP GitHub Search fallback.
+
+**Answer:** _add reply here_
+
+### Q: Should the build schedule be reduced from 6-hourly to daily, or suspended entirely, until standard sources are restored?
+
+**Context:** No item this build exceeds composite=42, and no item has exceeded composite=50 in any build since the egress block began. The partial-build banner has displayed on every edition for 25 days. At 6-hourly cadence with seen.json at 722 entries, yield per build is declining toward zero. This question has been unanswered since 2026-08-17.
+
+**Answer:** _add reply here_
+
+### Q: Should seen.json be reset or date-windowed (e.g., re-ingest items older than 90 days) to recover signal from repositories with ongoing new activity?
+
+**Context:** The current dedup policy is permanent: once a URL enters seen.json it is never re-ingested. At 722 entries covering most relevant GitHub repositories in the domain, the MCP fallback path is saturated. A date-window policy would allow high-activity repositories (Reducto, LlamaParse, Docling-Studio) to resurface when they release significant updates. This has been raised in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: docling-Studio (scub-france/docling-Studio, 249 stars) adds a Neo4j graph storage layer on top of Docling's document parser. Does the team track graph-based document retrieval as a distinct product category, or is this treated the same as vector-store RAG?
+
+**Context:** The studio integrates Docling parsing with Neo4j as a graph backend rather than a vector store. If graph-structured document retrieval becomes a meaningful adoption pattern, it may affect the framing of Docling as a competitor and of document-retrieval architectures more broadly.
+
+**Answer:** _add reply here_
+
+---
