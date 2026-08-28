@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Aug 28, 2026 · 01:00 UTC · 3 items scored</span>
+  <span class="built-at">Built Aug 28, 2026 · 13:05 UTC · 13 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,9 +53,11 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Community tooling is wrapping established open-source document parsers (Docling) rather than building from scratch, indicating convergence around a small set of reference parsing backends.</li>
-    <li>On-device VLM deployment is maturing into production C++ implementations targeting edge NPU hardware, distinct from the cloud-API inference track.</li>
-    <li>Standard ingest sources (arxiv, HN, RSS) remain egress-blocked on day 25; this build found only 3 new items via MCP GitHub Search, all low-composite. Seen.json at 722 entries indicates near-complete saturation of the MCP fallback path.</li>
+    <li>Inference-time attention intervention is converging as the primary approach to VLM hallucination mitigation: four independent groups (PTI, CausalLens, PAINT, EnAR) published training-free prefill- or attention-layer interventions in the 2025-2026 conference cycle, all targeting the same decoder-attention bottleneck.</li>
+    <li>OmniDocBench is bifurcating: the official benchmark (v1.7, MGAM methodology) anchors curated-scan comparisons while Wild_OmniDocBench extends evaluation to real-world captured documents that curated benchmarks exclude — the same gap Extend&#39;s RealDoc-Bench targets independently.</li>
+    <li>Mistral OCR 4 is gaining developer-mindshare through community tooling: an MCP server integrates it into agent IDEs (Claude Code, Cursor, Windsurf) while a 132-star multilingual toolkit demonstrates Arabic adoption — two distribution channels where OCR-3 has no visible equivalent.</li>
+    <li>Open-weight VLM OCR demos are not surfacing OCR-3: the Multimodal-OCR community suite wraps Qwen2.5-VL and peers but omits OCR-3, reflecting that the API-only model is absent from open-weight comparison tooling that shapes developer perceptions.</li>
+    <li>The interpretability toolchain is maturing around sparse autoencoders and steering vectors: the SV_interpretability paper code and community SAE pipelines (llama-sae-feature-interpretability) indicate that SAE-based decomposition of activation interventions is becoming a reproducible experimental practice, directly applicable to the team&#39;s steering-vector hallucination-control work.</li>
   </ul>
 </section>
 
@@ -64,37 +66,266 @@
     <h2>VLM research</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="12">
+         data-score="54">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 1 = 12 (this view's weighting)">12</span>
+          title="doc_ai 3 · competitive 0 · frontier 1 · vlm_research 4 = 54 (this view's weighting)">54</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/cosmo-wander-ai/cosmo-edge" target="_blank" rel="nofollow noopener noreferrer">cosmo-edge — production C++ edge AI engine for on-device VLM and video analytics</a>
+    <a href="https://github.com/huaiyi66/PTI" target="_blank" rel="nofollow noopener noreferrer">PTI: Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models</a>
   </p>
-  <p class="item-summary">C++ edge inference engine for video analytics using VLMs on Rockchip NPU hardware, targeting RKNN on-device deployment.</p>
+  <p class="item-summary">Training-free prefill-stage attention intervention reduces VLM hallucination without adding inference cost.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication for OCR-3&#39;s current production endpoints.</dd>
+      <dt>Research</dt>
+      <dd>Prefill-stage intervention modifies attention before generation begins, reducing hallucination without retraining or inference overhead. If the approach transfers to long autoregressive OCR outputs, it could reduce repetition-loop and infinite-generation failures that degrade structured extraction.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="54">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 0 · frontier 1 · vlm_research 4 = 54 (this view's weighting)">54</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/jijy20/CausalLens" target="_blank" rel="nofollow noopener noreferrer">CausalLens (CVPR 2026): Sensitivity-Guided Multi-Head Causal Intervention for VLM Hallucination Mitigation</a>
+  </p>
+  <p class="item-summary">CVPR 2026: sensitivity-guided causal patching of attention heads to reduce hallucinations in VLMs.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Sensitivity-guided multi-head causal patching is adjacent to the team&#39;s existing causal-scrubbing and activation-patching methodology. The selectivity criterion — targeting heads whose suppression most reduces hallucination — could sharpen the team&#39;s analysis of hallucination-prone layers without broadening the computational footprint.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="50">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 4 = 50 (this view's weighting)">50</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/hasanar1f/PAINT" target="_blank" rel="nofollow noopener noreferrer">PAINT (CVPR 2025 Workshop): Paying Attention to Informed Tokens for VLM Hallucination Reduction</a>
+  </p>
+  <p class="item-summary">CVPR 2025 Workshop: plug-and-play self-attention boost for visual tokens reduces VLM hallucination at inference time.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>PAINT selectively boosts visual-token attention in the LLM decoder — the same layer the team&#39;s activation-patching work targets. The per-token selectivity criterion is a potential complement to existing patching protocols for phantom-row hallucination, where specific visual regions (empty table cells) are under-attended.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="44">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 4 = 44 (this view's weighting)">44</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/Lyxxx1211/CVPR2026-EnAR" target="_blank" rel="nofollow noopener noreferrer">CVPR 2026 EnAR: Counterfactual Hallucination Mitigation via Envision-Attend-Respond in VLMs</a>
+  </p>
+  <p class="item-summary">CVPR 2026: counterfactual image generation and comparison to diagnose and reduce VLM hallucinations.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>The counterfactual approach generates a modified image (e.g., table with a row removed) and compares model response. Applied to phantom-row hallucination, it could systematically identify which visual perturbations trigger row insertion — a potential diagnostic for OCR-3 failure modes on complex tables.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="36">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 3 = 36 (this view's weighting)">36</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/20508Z/HIS-DTP-DPO" target="_blank" rel="nofollow noopener noreferrer">HIS-Guard and DTP-DPO: Selective Verification and Hallucination Mitigation for Vision-Language Models</a>
+  </p>
+  <p class="item-summary">HIS-Guard selects which VLM outputs to verify; DTP-DPO trains models away from hallucinated responses.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>The HIS-Guard selective-verification component decides when a VLM output warrants re-checking — applicable to structured extraction where re-running the model on uncertain table cells could reduce phantom-row rate without full-document re-inference.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="28">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 3 = 28 (this view's weighting)">28</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/HarryMayne/SV_interpretability" target="_blank" rel="nofollow noopener noreferrer">Can Sparse Autoencoders Decompose and Interpret Steering Vectors? (Paper Code)</a>
+  </p>
+  <p class="item-summary">Paper code: evaluates whether sparse autoencoders can decompose steering vectors into interpretable components.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Addresses whether SAE decomposition of steering vectors yields interpretable components — relevant if the team is using steering vectors for hallucination control and wants to understand what those vectors encode.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
 </article>  </div>
   <div class="axis-col" data-axis="doc_ai">
     <h2>Document AI</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="8">
+         data-score="70">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 1 · competitive 1 · frontier 0 · vlm_research 0 = 8 (this view's weighting)">8</span>
+          title="doc_ai 5 · competitive 4 · frontier 2 · vlm_research 3 = 70 (this view's weighting)">70</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 60%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/Nexus-JPF/note-companion" target="_blank" rel="nofollow noopener noreferrer">note-companion — AI file organizer and OCR assistant for Obsidian</a>
+    <a href="https://github.com/opendatalab/OmniDocBench" target="_blank" rel="nofollow noopener noreferrer">OmniDocBench: Comprehensive Benchmark for Document Parsing and Evaluation (CVPR 2025)</a>
   </p>
-  <p class="item-summary">Obsidian plugin for AI-assisted note organization, file tagging, and OCR transcription via third-party LLM APIs.</p>
+  <p class="item-summary">Primary document-parsing benchmark (2000 stars, v1.7 current); Nanonets OCR-3 scores 90.5 on v1.5 baseline.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>OmniDocBench is the public arena where OCR-3&#39;s 90.5 score (v1.5) competes against Mistral OCR 4 (93.07) and PaddleOCR-VL-1.6 (96.33 on v1.6); a methodology change in v1.8 could shift rankings without any model change. The benchmark actively receives community tooling.</dd>
+      <dt>Research</dt>
+      <dd>The MGAM evaluation methodology introduced in v1.6 changes how layout accuracy is scored. Tracking methodology evolution matters for interpreting whether published scores remain comparable across competitors.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="48">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 2 · frontier 1 · vlm_research 2 = 48 (this view's weighting)">48</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/VirtualLUOUCAS/Wild_OmniDocBench" target="_blank" rel="nofollow noopener noreferrer">Wild_OmniDocBench: Real-World Captured Document Parsing Benchmark for Robustness Evaluation</a>
+  </p>
+  <p class="item-summary">Robustness benchmark using real-world captured documents that curated OCR benchmarks systematically exclude.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Targets the distribution where production document processing most commonly degrades: real-world captures, multi-angle shots, distorted scans. This is also the gap Extend&#39;s RealDoc-Bench targets. Evaluating OCR-3 on Wild_OmniDocBench would yield a robustness number complementary to curated benchmark scores.</dd>
+      <dt>Research</dt>
+      <dd>Real-world capture distribution differs systematically from curated scans. Running hallucination analysis on Wild_OmniDocBench samples would reveal whether phantom-row and structural failure rates change meaningfully under distribution shift.</dd>
+      <dt>Action</dt>
+      <dd>reproduce</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="34">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 2 · frontier 1 · vlm_research 1 = 34 (this view's weighting)">34</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/PRITHIVSAKTHIUR/Multimodal-OCR" target="_blank" rel="nofollow noopener noreferrer">Multimodal-OCR: Multi-VLM OCR Suite for Text Extraction and Complex Document Structure Analysis</a>
+  </p>
+  <p class="item-summary">Community OCR demo wrapping Qwen2.5-VL and peer models for document parsing; does not surface OCR-3.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Community developers building OCR tooling are wrapping Qwen2.5-VL and other open-weight VLMs rather than OCR-3. The absence of OCR-3 in community demos suggests the API-only distribution model is not generating developer mindshare in open-weight comparison tooling.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="22">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 1 · frontier 0 · vlm_research 1 = 22 (this view's weighting)">22</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/AIwork4me/omnidocbench-amd-windows" target="_blank" rel="nofollow noopener noreferrer">OmniDocBench v1.6 Evaluation Setup for AMD Windows (ROCm/HIP) with PaddleOCR-VL-1.6 Reference</a>
+  </p>
+  <p class="item-summary">One-command OmniDocBench v1.6 setup on AMD Windows; uses PaddleOCR-VL-1.6 as reference adapter.</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="10">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 0 = 10 (this view's weighting)">10</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/enescingoz/awesome-n8n-templates" target="_blank" rel="nofollow noopener noreferrer">awesome-n8n-templates: 280+ Automation Workflow Templates Including AI Agents and Document Processing</a>
+  </p>
+  <p class="item-summary">25K-star n8n automation template collection; document processing is one category among many.</p>
 </article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
@@ -104,30 +335,54 @@
     <h2>Competitive</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="32">
+         data-score="22">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 3 · frontier 0 · vlm_research 1 = 32 (this view's weighting)">32</span>
+          title="doc_ai 2 · competitive 3 · frontier 1 · vlm_research 0 = 22 (this view's weighting)">22</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/scub-france/docling-Studio" target="_blank" rel="nofollow noopener noreferrer">docling-Studio — community visual analysis studio built on IBM Docling</a>
+    <a href="https://github.com/Swih/mistral-mcp" target="_blank" rel="nofollow noopener noreferrer">mistral-mcp: Full Mistral AI MCP Server Including OCR, Document Extraction, and Codestral</a>
   </p>
-  <p class="item-summary">Open-source visual studio for Docling-powered document analysis, adds Neo4j graph storage and RAG pipeline UI.</p>
+  <p class="item-summary">Community MCP server wrapping Mistral OCR 4 for Claude Code, Cursor, and Windsurf agent workflows.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Community tooling wrapping Docling signals active downstream adoption of IBM&#39;s open-source parser. The studio&#39;s Neo4j graph retrieval layer adds a capability above the parsing layer that overlaps with Nanonets Agents&#39; structured-retrieval surface.</dd>
+      <dd>A community MCP server surfaces Mistral OCR 4 and document extraction inside the agent IDEs where developer adoption happens. OCR-3 has no equivalent first-party or community MCP integration. Agentic IDE distribution is a growing acquisition vector for API-first document AI products.</dd>
       <dt>Research</dt>
-      <dd>Neo4j integration indicates practitioners are modeling document structure as graphs rather than flat embeddings; this is an emerging retrieval architecture worth noting alongside the standard vector-store approach.</dd>
+      <dd>No direct research implication.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="22">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 3 · frontier 1 · vlm_research 0 = 22 (this view's weighting)">22</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/Pythonation/Mistral-Arabic-OCR-test" target="_blank" rel="nofollow noopener noreferrer">Mistral-Arabic-OCR-test: Python Toolkit for Arabic PDF and Image OCR via Mistral AI with Batch Processing</a>
+  </p>
+  <p class="item-summary">132-star toolkit showing Mistral OCR 4 adoption for Arabic/multilingual batch document processing.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Mistral OCR 4 supports 170 languages including Arabic and is attracting community tooling for RTL and multilingual document workflows. OCR-3&#39;s multilingual benchmark coverage is not publicly documented; if the Arabic/CJK/Indic segment is material, the lack of a public multilingual score is a positioning gap.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
 </article>  </div>
 </section>
 
@@ -140,23 +395,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four standard ingest sources have been egress-blocked for 25 consecutive days (since 2026-08-03). Is there an owner and ETA for extending the proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?</p>
-    <p class="question-context">Required actions remain: (1) extend egress allowlist; (2) replace GITHUB_TOKEN with a read-scoped PAT for github_trending CLI. Alternatively, Semantic Scholar (api.semanticscholar.org, confirmed reachable from this proxy) would restore research-axis coverage without egress changes. This question has been raised in 30+ consecutive builds without a response. seen.json is at 722 entries and approaching saturation of the MCP GitHub Search fallback.</p>
+    <p class="question-text">All 4 standard ingest sources have been egress-blocked for 26 consecutive days (since 2026-08-03). This build recovered 13 items via MCP GitHub Search but seen.json is at 725 entries and saturation is accelerating. Is Semantic Scholar (api.semanticscholar.org, confirmed accessible from this proxy) authorized as an arXiv replacement to restore research-axis coverage?</p>
+    <p class="question-context">arXiv and HN have returned 403 on every build since August 3. RSS and github_trending CLI return zero items. MCP GitHub Search is the only functional fallback but seen.json is near-saturated. Semantic Scholar provides arXiv-indexed papers via a proxy-accessible API. This question has been raised for 30+ consecutive builds without a response.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the build schedule be reduced from 6-hourly to daily, or suspended entirely, until standard sources are restored?</p>
-    <p class="question-context">No item this build exceeds composite=42, and no item has exceeded composite=50 in any build since the egress block began. The partial-build banner has displayed on every edition for 25 days. At 6-hourly cadence with seen.json at 722 entries, yield per build is declining toward zero. This question has been unanswered since 2026-08-17.</p>
+    <p class="question-text">Mistral OCR 4.1 (full release August 13, 2026) added paragraph-level bounding boxes and structural block labels for annotated contracts, stamped reports, and handwritten forms. Has the team benchmarked OCR-3 against Mistral OCR 4.1 on these document types? The comparison is missing from any public leaderboard.</p>
+    <p class="question-context">Mistral OCR 4.1 specifically targets the accuracy gap on busy, marked-up documents. OCR-3&#39;s 90.5 OmniDocBench score predates Mistral OCR 4.1. A public comparison on form and contract parsing would close the most visible competitive gap in the positioning.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should seen.json be reset or date-windowed (e.g., re-ingest items older than 90 days) to recover signal from repositories with ongoing new activity?</p>
-    <p class="question-context">The current dedup policy is permanent: once a URL enters seen.json it is never re-ingested. At 722 entries covering most relevant GitHub repositories in the domain, the MCP fallback path is saturated. A date-window policy would allow high-activity repositories (Reducto, LlamaParse, Docling-Studio) to resurface when they release significant updates. This has been raised in prior builds.</p>
+    <p class="question-text">Four CVPR 2025/2026 hallucination-mitigation papers appeared this build (PTI, CausalLens, PAINT, EnAR) — all proposing training-free attention-layer interventions. Should the team run a structured literature review of this convergent cluster to identify which approaches transfer to phantom-row and structural hallucination on long-document OCR outputs?</p>
+    <p class="question-context">All four papers target the decoder-attention bottleneck where VLM hallucinations originate. The team&#39;s existing causal-scrubbing methodology addresses the same layer. A single structured reading session across the four papers could identify the most transferable technique without committing to implementation.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">docling-Studio (scub-france/docling-Studio, 249 stars) adds a Neo4j graph storage layer on top of Docling&#39;s document parser. Does the team track graph-based document retrieval as a distinct product category, or is this treated the same as vector-store RAG?</p>
-    <p class="question-context">The studio integrates Docling parsing with Neo4j as a graph backend rather than a vector store. If graph-structured document retrieval becomes a meaningful adoption pattern, it may affect the framing of Docling as a competitor and of document-retrieval architectures more broadly.</p>
+    <p class="question-text">Wild_OmniDocBench evaluates document parsing on real-world captures (multi-angle, distorted, degraded) that curated benchmarks exclude. Should OCR-3 be evaluated on Wild_OmniDocBench to quantify the gap between its curated-benchmark score (90.5 on OmniDocBench v1.5) and real-world performance?</p>
+    <p class="question-context">Extend&#39;s RealDoc-Bench and Wild_OmniDocBench both emerged in mid-2026 targeting the same distribution gap. If OCR-3&#39;s degradation on real-world captures is larger than competitors&#39;, the 90.5 curated-benchmark number understates the competitive risk.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Should the build schedule be reduced from 6-hourly to daily, or suspended, until standard egress sources are restored? No item this build exceeded composite=76 (OmniDocBench), and that is a long-standing benchmark repo not new weekly signal.</p>
+    <p class="question-context">The partial-build banner has displayed on every edition for 26 days. At 6-hourly cadence with seen.json at 725 entries, each build produces 5-15 low-signal items. A daily schedule would produce the same coverage at one-quarter the API cost and allow seen.json saturation to slow. This question has been unanswered since 2026-08-17.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -168,7 +428,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered: github_trending    · failed: 3 · built at 2026-08-28T01:00:53+00:00
+    sources covered:     · failed: 4 · built at 2026-08-28T13:05:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

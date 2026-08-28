@@ -10012,3 +10012,37 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 
 **Unanswered from prior builds (still standing):** Questions about arXiv rate-limiting, HN 403, and source-mix infrastructure bias raised in builds from 2026-05-21 through 2026-08-16 remain unanswered. The failure pattern has worsened — prior builds had at least github_trending or RSS as a fallback; this build had none.
 
+
+## Build 2026-08-28T13:05:00+00:00 (audit: partial)
+
+### Q: All 4 standard ingest sources have been egress-blocked for 26 consecutive days (since 2026-08-03). This build recovered 13 items via MCP GitHub Search but seen.json is at 725 entries and saturation is accelerating. Is Semantic Scholar (api.semanticscholar.org, confirmed accessible from this proxy) authorized as an arXiv replacement to restore research-axis coverage?
+
+**Context:** arXiv and HN have returned 403 on every build since August 3. RSS and github_trending CLI return zero items. MCP GitHub Search is the only functional fallback but seen.json is near-saturated. Semantic Scholar provides arXiv-indexed papers via a proxy-accessible API. This question has been raised for 30+ consecutive builds without a response.
+
+**Answer:** _add reply here_
+
+### Q: Mistral OCR 4.1 (full release August 13, 2026) added paragraph-level bounding boxes and structural block labels for annotated contracts, stamped reports, and handwritten forms. Has the team benchmarked OCR-3 against Mistral OCR 4.1 on these document types? The comparison is missing from any public leaderboard.
+
+**Context:** Mistral OCR 4.1 specifically targets the accuracy gap on busy, marked-up documents. OCR-3's 90.5 OmniDocBench score predates Mistral OCR 4.1. A public comparison on form and contract parsing would close the most visible competitive gap in the positioning.
+
+**Answer:** _add reply here_
+
+### Q: Four CVPR 2025/2026 hallucination-mitigation papers appeared this build (PTI, CausalLens, PAINT, EnAR) — all proposing training-free attention-layer interventions. Should the team run a structured literature review of this convergent cluster to identify which approaches transfer to phantom-row and structural hallucination on long-document OCR outputs?
+
+**Context:** All four papers target the decoder-attention bottleneck where VLM hallucinations originate. The team's existing causal-scrubbing methodology addresses the same layer. A single structured reading session across the four papers could identify the most transferable technique without committing to implementation.
+
+**Answer:** _add reply here_
+
+### Q: Wild_OmniDocBench evaluates document parsing on real-world captures (multi-angle, distorted, degraded) that curated benchmarks exclude. Should OCR-3 be evaluated on Wild_OmniDocBench to quantify the gap between its curated-benchmark score (90.5 on OmniDocBench v1.5) and real-world performance?
+
+**Context:** Extend's RealDoc-Bench and Wild_OmniDocBench both emerged in mid-2026 targeting the same distribution gap. If OCR-3's degradation on real-world captures is larger than competitors', the 90.5 curated-benchmark number understates the competitive risk.
+
+**Answer:** _add reply here_
+
+### Q: Should the build schedule be reduced from 6-hourly to daily, or suspended, until standard egress sources are restored? No item this build exceeded composite=76 (OmniDocBench), and that is a long-standing benchmark repo not new weekly signal.
+
+**Context:** The partial-build banner has displayed on every edition for 26 days. At 6-hourly cadence with seen.json at 725 entries, each build produces 5-15 low-signal items. A daily schedule would produce the same coverage at one-quarter the API cost and allow seen.json saturation to slow. This question has been unanswered since 2026-08-17.
+
+**Answer:** _add reply here_
+
+---
