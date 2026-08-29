@@ -10164,3 +10164,29 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-08-29T00:00:00+00:00 (FAILED — network blocked)
+
+### Build failure: all external sources returned 403 Forbidden
+
+**Step that failed:** Step 3 — Ingest
+
+**Error summary:**
+
+All four configured sources failed to return items:
+- `arxiv`: `403 Forbidden` from `http://export.arxiv.org/api/query`
+- `hn`: `403 Forbidden`
+- `rss`: `no items in current window` (proxy 403 on all RSS feed URLs verified manually — Anthropic, HuggingFace, and arXiv feeds all returned 403)
+- `github_trending`: `no items in current window`
+
+The build environment's outbound HTTPS proxy is blocking all external requests. This is not a source-side issue; every host tested returns a proxy 403. No items were written to `state/run/items_raw.jsonl`.
+
+**What to investigate:**
+1. Check the proxy policy for this remote execution environment. The proxy CA bundle is at `/root/.ccr/ca-bundle.crt`; run `curl -sS "$HTTPS_PROXY/__agentproxy/status"` to inspect proxy state.
+2. If the policy allows allowlisting specific domains, the minimum set needed is: `export.arxiv.org`, `hn.algolia.com`, Anthropic/OpenAI/DeepMind/HuggingFace blog domains, and the Stratechery/Interconnects/ImportAI/AINews/Latent Space newsletter hosts.
+3. Alternatively, confirm whether outbound access is expected in this environment — if not, the ingest step needs a local cache or a pre-populated feed archive.
+
+**Next step:** The next cron tick will retry automatically. No edition was built; no HTML was pushed. The build lock has been released.
+
