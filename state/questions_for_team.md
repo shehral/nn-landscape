@@ -10114,3 +10114,25 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-29T07:30:00+00:00 (audit: partial)
+
+### Q: The vlm-hallucinations ICLR paper uses representation probing and causal intervention in a standard VLM encoder-decoder. Does the team's causal scrubbing work for phantom-row hallucinations use a comparable intervention methodology? A yes/no with one sentence of context would let this build route similar future papers to 'reproduce' vs 'read in week'.
+
+**Context:** The paper (nickjiang2378/vlm-hallucinations, ICLR 2025) edits VLM representations at inference time to suppress hallucinations without retraining. If the team's existing phantom-row causal scrubbing already covers this ground, future similar papers can be scored lower on vlm_research.
+
+**Answer:** _add reply here_
+
+### Q: With seen.json at 758 entries and all 5 new items this build scoring under composite=30, should the MCP GitHub fallback be replaced by a curated 20-30 repository watch-list that re-checks specific high-value repos (Reducto, LlamaParse, Docling, Mistral OCR, OmniDocBench, IDP Leaderboard) each build regardless of seen.json status?
+
+**Context:** The current dedup policy permanently excludes seen URLs. All repositories in the competitive and document-AI domain are now saturated. A watch-list approach would restore competitive signal by re-ingesting repos when they publish releases or significant commits, at the cost of some dedup complexity.
+
+**Answer:** _add reply here_
+
+### Q: Standard egress sources (arxiv, HN, RSS, github_trending) have been blocked for 27 consecutive days (since 2026-08-03). Is there an owner and ETA for extending the proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** This question has been raised in every build since 2026-08-03 without a response. The dashboard has displayed the partial-build banner on every edition for 27 days. No item has exceeded composite=43 in any build since the block began.
+
+**Answer:** _add reply here_
+
+---
