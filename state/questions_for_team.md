@@ -10136,3 +10136,31 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-29T12:30:00+00:00 (audit: partial)
+
+### Q: Is 'Velrim' a known competitor? The velrim-eval CLI (velrimhq/velrim-eval) includes adapters for Velrim alongside OpenAI, Gemini, LlamaExtract, and Mistral, but Velrim does not appear in the competitive context file.
+
+**Context:** If Velrim is a new document extraction API startup, it may warrant adding to the competitive set. If it is an internal project or unrelated tool, the appearance in a public eval repo is informational only. The team's response would let future builds score it correctly.
+
+**Answer:** _add reply here_
+
+### Q: Has OCR-3 been tested on Azure AI Foundry alongside the engines in doc-extraction-lab (Mistral OCR, GPT vision, Azure Content Understanding)? If not, is this a channel worth benchmarking?
+
+**Context:** Azure AI Foundry is becoming a practitioner reference surface for OCR engine comparison. OCR-3's absence from both velrim-eval and doc-extraction-lab is a coverage gap in publicly available benchmark tooling. A public Azure AI Foundry adapter for OCR-3 would close this gap without requiring a full leaderboard evaluation.
+
+**Answer:** _add reply here_
+
+### Q: Does LURE's decomposition of hallucination into visual vs. textual contribution paths (ICLR 2024, YiyangZhou/LURE, 159 stars) map onto the team's existing causal-patching framework for phantom-row failures?
+
+**Context:** LURE attributes hallucinations to either overreliance on text priors or underuse of visual features — a distinction that may help localize phantom-row hallucinations (which add table rows absent from the image). If the team's activation-patching results already resolve this question, the answer would let future builds route similar papers to 'already read' rather than 'read in week'.
+
+**Answer:** _add reply here_
+
+### Q: The MCP GitHub Search fallback is now surfacing only items with 0-159 stars and composite scores under 30. Should a curated watch-list of 15-20 high-value repositories (IDP Leaderboard, OmniDocBench, Reducto, LlamaParse, Mistral OCR, Extend, Docling) be added to the pipeline to re-check for releases regardless of seen.json status?
+
+**Context:** The current dedup policy permanently excludes seen URLs. With seen.json at 763+ entries, the MCP fallback is saturated and produces near-zero signal. A curated watch-list approach would restore competitive signal by re-ingesting target repos when they publish releases, without requiring egress policy changes. This differs from prior date-window proposals: it would target specific high-value repos rather than time-windowing the full seen.json.
+
+**Answer:** _add reply here_
+
+---
