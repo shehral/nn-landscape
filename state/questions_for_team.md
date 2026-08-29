@@ -10080,3 +10080,37 @@ deepseek-vision-cli (this build) and multiple prior builds show DeepSeek-Vision 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-29T01:00:00+00:00 (audit: partial)
+
+### Q: All four standard ingest sources have returned zero items for 27 consecutive build days (since 2026-08-03). Is there an owner and ETA for extending the proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** Required actions remain: (1) extend egress allowlist; (2) replace GITHUB_TOKEN with a read-scoped PAT for github_trending CLI. Alternatively, Semantic Scholar (api.semanticscholar.org, confirmed reachable from the proxy) would restore research-axis coverage without egress changes. This question has been raised for 30+ consecutive builds without a response. seen.json is at 751 entries and approaching saturation of the MCP GitHub Search fallback.
+
+**Answer:** _add reply here_
+
+### Q: Should the build schedule be reduced from 6-hourly to daily, or suspended entirely, until standard egress sources are restored?
+
+**Context:** No item this build exceeds composite=43, and seen.json is at 751 entries. At 6-hourly cadence with the MCP fallback nearly saturated, each build adds 5-10 low-signal items at non-trivial API cost. A daily schedule or temporary suspension would preserve editorial quality without losing coverage once egress is restored. This question has been unanswered since 2026-08-17.
+
+**Answer:** _add reply here_
+
+### Q: Has the team reviewed VL-Uncertainty's uncertainty estimation approach for hallucination detection? If the team's causal scrubbing work has localized phantom-row hallucinations, uncertainty estimation could provide a lightweight behavioral proxy that does not require internal model access.
+
+**Context:** VL-Uncertainty (Ruiyang-061X, 56 stars) uses token-level uncertainty to flag likely hallucinations without mechanistic access to model internals. If the team's phantom-row cases show predictable uncertainty spikes at the hallucinated positions, this could serve as a production-grade filter on top of OCR-3 outputs without architectural changes.
+
+**Answer:** _add reply here_
+
+### Q: Should mPLUG-DocOwl's modularized architecture be added to the team's hallucination characterization study as a comparison model? Its 2.4K star count and active Alibaba maintenance suggest it may surface in customer benchmark comparisons.
+
+**Context:** mPLUG-DocOwl uses a distinct modular design (separate text recognizer + layout encoder + understanding module) compared to OCR-3's MoE approach. If the team is characterizing cross-architecture hallucination transfer, mPLUG-DocOwl is a plausible candidate given its developer adoption and continued maintenance.
+
+**Answer:** _add reply here_
+
+### Q: Should seen.json be date-windowed (e.g., re-ingest items older than 90 days) to recover signal from repositories with significant new activity since their first ingestion?
+
+**Context:** The current dedup policy is permanent: once a URL enters seen.json it is never re-ingested. At 751 entries, the MCP fallback path is nearly saturated. A date-window policy would allow high-activity repositories (Reducto, LlamaParse, Docling, mPLUG-DocOwl) to resurface when they release significant updates. This has been raised in prior builds without a response.
+
+**Answer:** _add reply here_
+
+---
