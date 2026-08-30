@@ -10252,3 +10252,25 @@ The build environment's outbound HTTPS proxy is blocking all external requests. 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-30T13:00:00+00:00 (audit: partial)
+
+### Q: At 788 seen.json entries, MCP GitHub Search now yields under 3 new items per build. Should the build pipeline be reconfigured to watch GitHub Release events from specific competitor orgs (reducto-ai, run-llama, docling-ibm-models, mistralai, zai-org) as a targeted signal source that bypasses the egress block without requiring seen.json saturation?
+
+**Context:** Release-event watching would capture Reducto, LlamaParse, Docling, and GLM-OCR version releases with high precision — the items that matter most — without the broad seen.json saturation problem that comes from open-ended search. This is technically distinct from the Semantic Scholar question raised in prior builds.
+
+**Answer:** _add reply here_
+
+### Q: Should the seen.json dedup policy be changed from permanent to time-windowed (e.g., 90-day TTL), so that repositories with new significant releases can re-enter the pipeline after the window expires?
+
+**Context:** Under the current permanent policy, a repository seen in May 2026 will never resurface even if it ships a major benchmark result or version release in September 2026. A 90-day TTL would recover this signal at the cost of occasional re-scoring low-signal items. This was raised in prior builds without an answer; this build re-raises it because the saturation problem is now acute (788 entries, <3 new items).
+
+**Answer:** _add reply here_
+
+### Q: Should the per_feed_limit for RSS sources be removed or raised to catch any items published in the time window since the last successful RSS build (which was before 2026-08-03)?
+
+**Context:** If RSS feeds posted new items during the 27-day egress outage, the per_feed_limit: 15 cap may be excluding them now that feeds are again queryable. Removing the limit for a single recovery build would surface any missed content before returning to the normal limit.
+
+**Answer:** _add reply here_
+
+---

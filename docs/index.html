@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Aug 30, 2026 · 06:58 UTC · 4 items scored</span>
+  <span class="built-at">Built Aug 30, 2026 · 13:00 UTC · 2 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,9 +53,9 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Independently-built document-parsing eval harnesses are omitting OCR-3 from their comparison sets. Both handwriting-ocr-llm-eval (this build) and velrim-eval (prior build) benchmark 4-5 engines — LlamaParse, Mistral OCR, Reducto, Gemini — without including OCR-3. The IDP Leaderboard ranking does not automatically generate practitioner-visible coverage in open eval tooling.</li>
-    <li>MCP servers are becoming a distribution layer for frontier vision APIs in document workflows. deepseek-vision-mcp wraps a multimodal vision model as an MCP server, reducing the cost of routing document images through a vision model in an agentic pipeline. This pattern — commoditizing access to frontier vision without a dedicated document-extraction API — applies competitive pressure to the make-vs-buy decision for OCR-3.</li>
-    <li>General-purpose VLM testing harnesses (vlm-testing, handwriting-ocr-llm-eval) are covering OCR and document extraction as secondary tasks alongside visual QA and chart understanding, rather than treating document extraction as a primary evaluation domain. This signals that practitioners may be treating OCR-as-a-feature as increasingly table stakes within general VLM capability assessments.</li>
+    <li>Open-source self-hosted document extraction tools (docuglean-ocr pattern) continue to appear, targeting the same API surface as Nanonets&#39; Agentic Data Extraction — JSON/Markdown output from PDFs via LLMs — without proprietary model quality. This pattern has been consistent across builds since May 2026.</li>
+    <li>Academic VQA benchmarks from 2023-2024 (SlideVQA, DocVQA variants) continue to receive GitHub activity updates with no new data releases — indicating maintenance rather than research momentum in that evaluation niche.</li>
+    <li>For the 27th consecutive day, all four standard ingest sources are egress-blocked; seen.json is at 788 entries. MCP GitHub Search now yields fewer than 3 new items per build. The monitor is approaching total signal exhaustion on the current source configuration.</li>
   </ul>
 </section>
 
@@ -64,115 +64,68 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="40">
+         data-score="33">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 1 · frontier 1 · vlm_research 3 = 40 (this view's weighting)">40</span>
+          title="doc_ai 3 · competitive 2 · frontier 0 · vlm_research 0 = 33 (this view's weighting)">33</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/yohanh2o/vlm-testing" target="_blank" rel="nofollow noopener noreferrer">vlm-testing: Testing suite for VLMs across OCR, document extraction, and chart understanding</a>
+    <a href="https://github.com/cernis-intelligence/docuglean-ocr" target="_blank" rel="nofollow noopener noreferrer">docuglean-ocr: Extract structured JSON/Markdown/HTML from documents via LLMs and AI agents</a>
   </p>
-  <p class="item-summary">Open testing suite for LLaVA, InternVL, Qwen-VL, CLIP, SigLIP across visual QA, OCR, document extraction, and chart understanding.</p>
+  <p class="item-summary">Small open-source LLM-based document extraction tool; outputs JSON, Markdown, HTML; 116 stars.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct product implication; tests open VLMs not the Nanonets product surface. OCR-3 is absent from the model set.</dd>
+      <dd>Docuglean-ocr replicates Nanonets&#39; core extraction API pattern at small scale (JSON/Markdown output from PDFs via LLMs). At 116 stars it is not a market-significant entrant, but signals sustained developer demand for self-hostable extraction alternatives.</dd>
       <dt>Research</dt>
-      <dd>Covers the open VLM families (InternVL, Qwen-VL) most commonly cited in Nanonets benchmark comparisons; useful as a reference harness for benchmarking OCR-3 against open-weight alternatives on the same task suite.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="37">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 2 · frontier 2 · vlm_research 1 = 37 (this view's weighting)">37</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/lmtttt/deepseek-vision-mcp" target="_blank" rel="nofollow noopener noreferrer">deepseek-vision-mcp: MCP Server exposing DeepSeek multimodal vision for document and screenshot analysis</a>
-  </p>
-  <p class="item-summary">MCP server wrapping DeepSeek&#39;s web vision model for document, screenshot, and image analysis tasks; 11 stars.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>MCP wrappers for frontier vision models lower the integration friction for practitioners building document pipelines; each new wrapper incrementally compresses the differentiation window between general-purpose vision APIs and dedicated document-extraction products.</dd>
-      <dt>Research</dt>
-      <dd>No direct research implication.</dd>
+      <dd>No novel methodology; purely applied tool.</dd>
       <dt>Action</dt>
       <dd>no action</dd>
     </dl>
   </div>
-</article>  </div>
-  <div class="axis-col" data-axis="competitive">
-    <h2>Competitive</h2>
-<article class="item "
+</article><article class="item "
          data-source="github_trending"
-         data-score="59">
+         data-score="20">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 4 · frontier 2 · vlm_research 2 = 59 (this view's weighting)">59</span>
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 2 = 20 (this view's weighting)">20</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 40%"></span>
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/abyss-node/handwriting-ocr-llm-eval" target="_blank" rel="nofollow noopener noreferrer">handwriting-ocr-llm-eval: Eval harness for document parsing on handwritten bilingual legal scans</a>
+    <a href="https://github.com/nttmdlab-nlp/SlideVQA" target="_blank" rel="nofollow noopener noreferrer">SlideVQA: Document VQA Dataset on Multiple Images (AAAI 2023)</a>
   </p>
-  <p class="item-summary">Eval harness comparing LiteParse, LlamaParse, Gemini, Mistral OCR, and Reducto on bilingual handwritten legal scans; OCR-3 absent.</p>
+  <p class="item-summary">2023 academic dataset for slide-deck document VQA across multiple images; not a new release.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>An independently-built eval harness benchmarks five document-parsing engines on bilingual handwritten legal scans without including OCR-3. The adapter pattern is well-defined; OCR-3&#39;s absence from this and similar harnesses is a coverage gap in publicly available practitioner benchmarks.</dd>
+      <dd>No direct product implication; SlideVQA targets slide-deck VQA, not Nanonets&#39; core extraction document types.</dd>
       <dt>Research</dt>
-      <dd>Handwritten bilingual legal documents are a document type absent from OmniDocBench, OlmOCR-Bench, and the IDP Leaderboard; a baseline on this distribution would complement existing curated-benchmark results.</dd>
+      <dd>The multi-image document VQA structure is loosely adjacent to cross-page hallucination evaluation; dataset predates current research tooling and has limited transferability.</dd>
       <dt>Action</dt>
-      <dd>investigate</dd>
+      <dd>no action</dd>
     </dl>
   </div>
+  <p class="secondary-axes">also: vlm_research</p>
 </article>  </div>
+  <div class="axis-col" data-axis="competitive">
+    <h2>Competitive</h2>
+      <p class="item-summary">No top-N items this build.</p>
+  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
       <p class="item-summary">No top-N items this build.</p>
   </div>
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
-<article class="item "
-         data-source="github_trending"
-         data-score="36">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 5 = 36 (this view's weighting)">36</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
+      <p class="item-summary">No top-N items this build.</p>
   </div>
-  <p class="item-title">
-    <a href="https://github.com/shehral/nanonets-ocr2-differential" target="_blank" rel="nofollow noopener noreferrer">nanonets-ocr2-differential: Causal localization comparing Nanonets-OCR2-3B vs Qwen2.5-VL-3B on 26 document images</a>
-  </p>
-  <p class="item-summary">Public repo: differential and causal localization comparing Nanonets-OCR2-3B against Qwen2.5-VL-3B base on 26 document images.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication; the analysis targets the prior-generation OCR2-3B, not the current OCR-3 flagship.</dd>
-      <dt>Research</dt>
-      <dd>Causal localization of OCR2-3B vs its Qwen2.5-VL-3B base on document images directly instantiates the team&#39;s mechanistic interpretability methodology; the 26-image dataset and differential approach are inspectable artifacts for phantom-row localization work.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article>  </div>
 </section>
 
 <aside class="ai-partner" aria-label="Questions from your AI partner">
@@ -184,23 +137,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Should OCR-3 be added as an adapter to handwriting-ocr-llm-eval? This would produce the first public benchmark of the current flagship against Mistral OCR, Reducto, and LlamaParse on bilingual handwritten legal documents.</p>
-    <p class="question-context">handwriting-ocr-llm-eval uses a well-defined adapter pattern (one file per engine). OCR-3&#39;s absence from this and similar open harnesses means the IDP Leaderboard #1 ranking has no publicly verifiable cross-engine comparison on real-world handwriting. Adding the adapter would close this coverage gap without requiring a formal leaderboard evaluation.</p>
+    <p class="question-text">At 788 seen.json entries, MCP GitHub Search now yields under 3 new items per build. Should the build pipeline be reconfigured to watch GitHub Release events from specific competitor orgs (reducto-ai, run-llama, docling-ibm-models, mistralai, zai-org) as a targeted signal source that bypasses the egress block without requiring seen.json saturation?</p>
+    <p class="question-context">Release-event watching would capture Reducto, LlamaParse, Docling, and GLM-OCR version releases with high precision — the items that matter most — without the broad seen.json saturation problem that comes from open-ended search. This is technically distinct from the Semantic Scholar question raised in prior builds.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The nanonets-ocr2-differential repository (shehral/nanonets-ocr2-differential) is public on GitHub with 0 stars and no announcement. Is this a published research artifact or an internal experiment that is unintentionally public?</p>
-    <p class="question-context">The repo&#39;s methodology (differential causal localization of OCR2-3B vs Qwen2.5-VL-3B on 26 document images) directly reflects the team&#39;s mechanistic interpretability approach. If intentionally public, it could be surfaced in the Landscape Monitor as a research artifact. If unintentional, it may warrant visibility review.</p>
+    <p class="question-text">Should the seen.json dedup policy be changed from permanent to time-windowed (e.g., 90-day TTL), so that repositories with new significant releases can re-enter the pipeline after the window expires?</p>
+    <p class="question-context">Under the current permanent policy, a repository seen in May 2026 will never resurface even if it ships a major benchmark result or version release in September 2026. A 90-day TTL would recover this signal at the cost of occasional re-scoring low-signal items. This was raised in prior builds without an answer; this build re-raises it because the saturation problem is now acute (788 entries, &lt;3 new items).</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">This build produced 4 new items (vs. 17 in the prior build, 5 two builds ago). Has the MCP GitHub Search fallback reached effective saturation of the publicly-indexed document-AI space on GitHub?</p>
-    <p class="question-context">seen.json is at 784 entries after this build. More than 30 searches across relevant query categories (OCR, VLM, hallucination, document extraction, mechanistic interpretability, benchmark) returned fewer than 10 results not already in seen.json. The pipeline may have reached the point where a build pause — serving a static archival notice rather than a thin partial build — is more informative than continuing at 6-hourly cadence.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">The Gemini 3.6 Flash release (July 21, 2026), GPT-5.6 Luna price cut (effective July 30, 2026), and Mistral OCR 4.1 full release (August 13, 2026) are all noted in the context file but have not surfaced in any build since standard egress was blocked. Has OCR-3 been benchmarked against any of these since their release?</p>
-    <p class="question-context">These three events represent substantive competitive changes since the last competitive-axis item with composite &gt; 50 appeared in any build. Without egress access to arXiv or HN, benchmark comparisons following these releases will not surface until egress is restored or the team provides a manual update to the context file.</p>
+    <p class="question-text">Should the per_feed_limit for RSS sources be removed or raised to catch any items published in the time window since the last successful RSS build (which was before 2026-08-03)?</p>
+    <p class="question-context">If RSS feeds posted new items during the 27-day egress outage, the per_feed_limit: 15 cap may be excluding them now that feeds are again queryable. Removing the limit for a single recovery build would surface any missed content before returning to the normal limit.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -212,7 +160,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered: github_trending    · failed: 3 · built at 2026-08-30T06:58:46+00:00
+    sources covered:     · failed: 4 · built at 2026-08-30T13:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
