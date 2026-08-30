@@ -10190,3 +10190,37 @@ The build environment's outbound HTTPS proxy is blocking all external requests. 
 
 **Next step:** The next cron tick will retry automatically. No edition was built; no HTML was pushed. The build lock has been released.
 
+
+## Build 2026-08-30T00:59:11+00:00 (audit: partial)
+
+### Q: All four standard ingest sources have been egress-proxy-blocked for 28 consecutive days (since 2026-08-03). Is there an owner and ETA for extending the proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?
+
+**Context:** Required actions: (1) extend egress allowlist; (2) replace GITHUB_TOKEN with a read-scoped PAT for github_trending CLI. Alternatively, Semantic Scholar (api.semanticscholar.org, confirmed reachable from the proxy) would restore research-axis coverage without egress changes. This question has been raised in every build since 2026-08-03 without a response. seen.json is at 784 entries after this build.
+
+**Answer:** _add reply here_
+
+### Q: Should the build schedule be reduced from 6-hourly to daily, or suspended entirely, until standard egress sources are restored?
+
+**Context:** This build yielded 17 items, none exceeding composite=24. The dashboard partial-build banner has been displayed on every edition for 28 consecutive days. A daily schedule would produce equivalent coverage at one-quarter the API cost and slow seen.json saturation. This question has been unanswered since 2026-08-17.
+
+**Answer:** _add reply here_
+
+### Q: Should seen.json be date-windowed (expire items older than 90 days) to recover signal from active competitive repos without egress changes?
+
+**Context:** At 784 entries, the MCP fallback is surfacing only 2023-2025 conference papers. Active competitive repos (Reducto, LlamaParse, Docling, Mistral OCR) all have URLs in seen.json from builds 3+ months ago but continue to release new content. A 90-day expiry would restore competitive signal immediately.
+
+**Answer:** _add reply here_
+
+### Q: The team's causal scrubbing work localizes phantom-row hallucinations to specific model layers. Have steering vectors (as in VTI) been tested as an inference-time intervention on those localized circuits?
+
+**Context:** VTI's latent space steering approach (https://github.com/shengliu66/VTI, 120 stars, updated Aug 28) is a natural next step after layer localization: steer the activations at the identified layer during inference to suppress the hallucination direction. If layer localization results exist, this is a one-session experiment.
+
+**Answer:** _add reply here_
+
+### Q: Should a curated watch-list of 15-20 specific competitive repos and URLs (IDP Leaderboard, OmniDocBench, Reducto, LlamaParse, Mistral OCR, Extend, Docling) be added to the pipeline to re-check for releases regardless of seen.json status?
+
+**Context:** Zero competitive-axis items surfaced this build. Mistral OCR 4.1 (full release Aug 13, 2026), Claude Sonnet 5 (June 30, 2026), and GPT-5.6 pricing changes (July 30, 2026) all post-date the last confirmed competitive coverage in seen.json. The IDP Leaderboard state as of Aug 30, 2026 is unknown. A watch-list approach would re-check specific targets each build without requiring seen.json policy changes.
+
+**Answer:** _add reply here_
+
+---
