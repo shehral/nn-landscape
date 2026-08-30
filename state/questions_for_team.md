@@ -10274,3 +10274,31 @@ The build environment's outbound HTTPS proxy is blocking all external requests. 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-30T19:02:08.654731+00:00 (audit: partial)
+
+### Q: Has the team applied activation patching or knockout ablation (as in vision-default-prior-override) to OCR-3 or OCR-2 to localize phantom-row hallucinations to a specific layer or attention head?
+
+**Context:** vision-default-prior-override (nlietzow) applies activation patching and knockout ablation to Qwen 2.5 VL, LLaVA-NeXT, and PaliGemma 2 to identify when VLMs defer to text priors over visual evidence. If the team's existing causal-scrubbing work on phantom-row hallucinations has already run comparable experiments on OCR-2 or OCR-3, the build can route similar future papers to 'already read' rather than 'reproduce'.
+
+**Answer:** _add reply here_
+
+### Q: Has OCR-3 been evaluated on MM-NIAH (Needle In A Multimodal Haystack)? If not, does the team plan to submit scores?
+
+**Context:** MM-NIAH (NeurIPS 2024, OpenGVLab) tests long multimodal document comprehension with a needle-in-haystack design. Frontier models and competitors with comparable context windows have been evaluated on this benchmark. OCR-3's 1M-context endpoint has a structural advantage; the absence of a public score is a gap relative to models positioned as long-document competitors.
+
+**Answer:** _add reply here_
+
+### Q: Does the team consider thepipe (1524 stars, emcf/thepipe) a relevant open-source substitute that affects the managed-API evaluation calculus for prospective customers?
+
+**Context:** thepipe targets the same multi-format document extraction use case (PDF, Word, PowerPoint, scanned documents) as OCR-3's /parse and /extract endpoints, and has broad adoption in the Python ML ecosystem. Understanding whether this represents a real substitution threat vs. a different customer segment would shape how the build frames open-source alternatives in future builds.
+
+**Answer:** _add reply here_
+
+### Q: Should chart-axis hallucination (axis-scale misreading in chart interpretation) be added to the team's structural hallucination characterization taxonomy?
+
+**Context:** The team's public research line covers phantom rows, repetition loops, infinite generation, structural hallucinations, and cross-architecture transfer. Axis-scale misreading in chart VLM outputs is a distinct subtype not currently listed. If chart extraction is in scope for OCR-3's /vqa endpoint, axis-scale errors would be worth characterizing explicitly.
+
+**Answer:** _add reply here_
+
+---
