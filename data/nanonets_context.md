@@ -85,18 +85,18 @@ Items that name, compare against, or are released by these companies are
 
 - **Mistral OCR 4 / Mistral Document AI** — direct competitor on
   multilingual document extraction; Mistral OCR 4 (released June 23,
-  2026; model ID mistral-ocr-4-0; mistral-ocr-latest alias now points
-  to this version) adds bounding boxes, typed-block labels (titles,
-  tables, equations, signatures), per-word confidence scores, and
-  self-hosted single-container deployment; supports 170 languages
-  across 10 language groups; priced at $4 per 1,000 pages ($2 with
-  Batch API 50% discount); 85.20 on OlmOCRBench; 93.07 on OmniDocBench; 72% average win rate
-  over tested systems in independent annotation. Supersedes Mistral OCR
-  3 (January 2026; mistral-ocr-2512; 74% win rate over OCR 2). Mistral
-  OCR 25.03 on Azure AI Foundry; Mistral OCR 25.05 on Vertex AI (May
-  2026). Mistral OCR 2 retired June 30, 2026. Mistral OCR 4.1 (public
-  preview July 16, 2026; full release August 13, 2026; model ID
-  mistral-ocr-4-1) is a targeted revision of OCR 4 adding
+  2026; model ID mistral-ocr-4-0) adds bounding boxes, typed-block
+  labels (titles, tables, equations, signatures), per-word confidence
+  scores, and self-hosted single-container deployment; supports 170
+  languages across 10 language groups; priced at $4 per 1,000 pages ($2
+  with Batch API 50% discount); 85.20 on OlmOCRBench; 93.07 on
+  OmniDocBench; 72% average win rate over tested systems in independent
+  annotation. Supersedes Mistral OCR 3 (January 2026; mistral-ocr-2512;
+  74% win rate over OCR 2). Mistral OCR 25.03 on Azure AI Foundry;
+  Mistral OCR 25.05 on Vertex AI (May 2026). Mistral OCR 2 retired June
+  30, 2026. Mistral OCR 4.1 (public preview July 16, 2026; full release
+  August 13, 2026; model ID mistral-ocr-4-1; mistral-ocr-latest alias
+  now points to this version) is a targeted revision of OCR 4 adding
   paragraph-level bounding boxes, structural block labels, and
   block-level confidence scores; specifically improves bounding box
   accuracy on busy, marked-up pages (annotated contracts, stamped
@@ -168,7 +168,10 @@ Items that name, compare against, or are released by these companies are
   V1.5), **DeepSeek-OCR 2** (DeepSeek AI, January 2026; 3B params, 91.09%
   on OmniDocBench v1.5), **HunyuanOCR** (Tencent Hunyuan, November 2025;
   1B params; 94.1 on OmniDocBench; end-to-end OCR-VLM covering detection,
-  recognition, parsing, and extraction; 100+ languages; MIT license),
+  recognition, parsing, and extraction; 100+ languages; MIT license;
+  HunyuanOCR-1.5 (July 24, 2026; arXiv 2607.04884) extends the model
+  with a unified inference environment and verl-based RL training stack,
+  both open-sourced; CVPR 2026 main-conference paper accepted),
   **Qianfan-OCR** (Baidu Qianfan, March 2026; 4B params; 93.12 on
   OmniDocBench v1.5, 880 on OCRBench; unified end-to-end document
   intelligence VLM with "Layout-as-Thought" architecture; open-weight on
@@ -275,8 +278,12 @@ Examples that are **competitive-primary**:
   workflows ($2.50/1,000 searches). Grok 4.5 (July 8, 2026; 500K token
   context; $2/$6 per million tokens) adds productivity assistance for
   Microsoft 365 and Google Workspace (Sheets, Slides, Docs, Drive); this
-  is document productivity, not a document-extraction API, and does not
-  add a new surface that competes with OCR-3's extraction endpoints.
+  is document productivity, not a document-extraction API. Grok 4.6
+  (August 12, 2026; 500K context; $2/$6 per million tokens; multimodal —
+  text, image, audio inputs) is a general-purpose model focused on
+  agentic automation and extended project workflows; not a dedicated
+  document-extraction product and does not add a new surface competing
+  with OCR-3's extraction endpoints.
 - Meta releases a Llama-vision model with explicit document focus.
 
 The `frontier` axis is reserved for capability releases that **do not
@@ -1431,3 +1438,102 @@ Nanonets, do not respond.
   closures, or new significant entrants identified this week.
 - Claude Opus 5 (July 24, 2026) and Claude Sonnet 5 (June 30, 2026)
   still without IDP Leaderboard or ParseBench scores; notes retained.
+
+---
+
+**Date:** 2026-08-30
+
+**Sources consulted:**
+
+- WebSearch: "Nanonets OCR-3 IDP leaderboard August 2026 ranking" —
+  #1 at 85.9% confirmed unchanged (29 models evaluated); 87.4 OLM-OCR
+  and 90.5 OmniDocBench confirmed current; benchmarking.nanonets.com
+  and idp-leaderboard.org URLs confirmed resolving
+- WebSearch: "site:huggingface.co/nanonets" — open-weight model lineup
+  unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains API-only
+- WebSearch: "nanonets arxiv 2026 research paper hallucination VLM" —
+  no team-authored papers surfaced; Nanonets-KIE dataset referenced in
+  third-party papers (as in prior refreshes)
+- WebSearch: "Nanonets product announcement blog August 2026" — no new
+  August 2026 Nanonets product announcements indexed
+- WebSearch: Mistral OCR August 2026 — Mistral OCR 4.1 full release
+  August 13, 2026 confirmed from releasebot.io (Mistral changelog),
+  explainx.ai, ultrathink.ai; mistral-ocr-latest alias confirmed
+  repointed from OCR 4 to OCR 4.1 upon full release
+- WebSearch: Reducto AI August 2026 — no new major announcements;
+  total funding clarified at $108M ($75M Series B + prior rounds per
+  Reducto X post and multiple funding trackers); 4B+ pages confirmed
+  current
+- WebSearch: LlamaParse LlamaIndex August 2026 — no new major product
+  beyond what's in context; all prior entries confirmed current
+- WebSearch: "Claude Mythos 5" "Claude Security" enterprise August 2026
+  — Claude Security (Anthropic, public beta for Enterprise customers)
+  expanded Mythos 5 availability to Enterprise customers on August 21,
+  2026, for vulnerability scanning; confirmed from cybersecuritynews.com,
+  thenewstack.io, dataconomy.com, and Anthropic's own claude.com blog;
+  this is a cybersecurity product, not a document-extraction surface
+- WebSearch: Grok 4.6 xAI release August 2026 — confirmed from
+  emergent.sh, basenor.com, codersera.com, layer3labs.io; released
+  August 12, 2026; general-purpose multimodal model (text, image,
+  audio); 500K context; $2/$6 per million tokens; focus on agentic
+  automation; not a dedicated document-extraction product
+- WebSearch: HunyuanOCR-1.5 Tencent release July 2026 — confirmed from
+  GitHub Tencent-Hunyuan/HunyuanOCR, arXiv 2607.04884, opentrain.ai;
+  July 24, 2026; unified inference environment and verl-based RL stack
+  open-sourced; CVPR 2026 accepted
+- WebSearch: OpenAI GPT-5 document vision OCR August 2026 — GPT-5.6
+  Sol/Terra/Luna confirmed current; no new models; no new extraction
+  product
+- WebSearch: Google Gemini document OCR vision August 2026 — no new
+  model beyond Gemini 3.6 Flash (July 21, 2026); already in context
+- WebSearch: xAI Grok document extraction OCR August 2026 — Grok
+  Collections API confirmed current; Grok 4.6 (August 12, 2026)
+  is general-purpose, not document-extraction specific
+- WebSearch: Chandra OCR / LightOn OCR / GLM-OCR / DeepSeek-OCR 2026
+  — no new model versions; all confirmed operating; no renames or pivots
+- WebSearch: Qwen3-VL Alibaba VLM August 2026 — confirmed current; no
+  new release
+- WebSearch: Rossum / Docsumo / ABBYY / Kofax (Tungsten Automation)
+  2026 — all confirmed operating; no renames or closures
+- WebSearch: Unstructured.io / Docling / Firecrawl / Extend August 2026
+  — all confirmed operating; Fire-PDF, AnyDoc, /parse endpoint from
+  prior context confirmed current; no major new product announcements
+- WebSearch: new OCR VLM model document AI August 2026 — MinerU2.5
+  (OpenDataLab; arXiv 2509.22186; ACL 2026 industry; 1.2B params;
+  open-source PDF/Office-to-markdown pipeline) noted as a potential
+  new entrant; not yet confirmed in trade press alongside named
+  competitors; not added to body text; monitor for benchmark results
+
+**Material changes versus prior version (2026-08-16):**
+
+- Updated **Mistral OCR** entry: moved the `mistral-ocr-latest` alias
+  note from OCR 4 to OCR 4.1, reflecting Mistral's full release of
+  OCR 4.1 on August 13, 2026 and the simultaneous repointing of the
+  alias; confirmed from Mistral changelog (releasebot.io) and secondary
+  sources.
+- Updated **HunyuanOCR** entry: added HunyuanOCR-1.5 (July 24, 2026;
+  arXiv 2607.04884), which extends the original model with an
+  open-sourced unified inference environment and verl-based RL training
+  stack; CVPR 2026 main-conference paper accepted.
+- Updated **xAI / Grok** frontier-lab entry: added Grok 4.6 (August 12,
+  2026; 500K context; multimodal text/image/audio; $2/$6 per million
+  tokens) as a general-purpose model focused on agentic automation; not
+  a document-extraction product; Grok Collections API remains the
+  primary xAI document-extraction signal.
+- Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
+  No new Nanonets models on HuggingFace. No Nanonets-authored arXiv
+  papers found. No August 2026 Nanonets product announcements indexed.
+- All other competitive set members confirmed still operating; no
+  renames, closures, or significant new entrants identified.
+- Note: Claude Mythos 5 expanded to Enterprise customers via Claude
+  Security (vulnerability scanning) on August 21, 2026; this is a
+  cybersecurity product, not a document-extraction surface; no change
+  to the competitive axis classification.
+- Note: Reducto total funding confirmed at $108M ($75M Series B +
+  $24.5M Series A + seed); the body text's "$75M Series B" figure
+  remains accurate for the round amount.
+- Note: Claude Opus 5 and Claude Sonnet 5 still without IDP Leaderboard
+  or ParseBench document-benchmark scores; notes retained.
+- Note: MinerU2.5 (OpenDataLab, arXiv 2509.22186, ACL 2026) is a new
+  open-source document-parsing VLM to monitor; not yet confirmed in
+  trade press alongside named competitors; not added to body text.
