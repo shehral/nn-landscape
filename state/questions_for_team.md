@@ -10224,3 +10224,31 @@ The build environment's outbound HTTPS proxy is blocking all external requests. 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-30T06:58:46+00:00 (audit: partial)
+
+### Q: Should OCR-3 be added as an adapter to handwriting-ocr-llm-eval? This would produce the first public benchmark of the current flagship against Mistral OCR, Reducto, and LlamaParse on bilingual handwritten legal documents.
+
+**Context:** handwriting-ocr-llm-eval uses a well-defined adapter pattern (one file per engine). OCR-3's absence from this and similar open harnesses means the IDP Leaderboard #1 ranking has no publicly verifiable cross-engine comparison on real-world handwriting. Adding the adapter would close this coverage gap without requiring a formal leaderboard evaluation.
+
+**Answer:** _add reply here_
+
+### Q: The nanonets-ocr2-differential repository (shehral/nanonets-ocr2-differential) is public on GitHub with 0 stars and no announcement. Is this a published research artifact or an internal experiment that is unintentionally public?
+
+**Context:** The repo's methodology (differential causal localization of OCR2-3B vs Qwen2.5-VL-3B on 26 document images) directly reflects the team's mechanistic interpretability approach. If intentionally public, it could be surfaced in the Landscape Monitor as a research artifact. If unintentional, it may warrant visibility review.
+
+**Answer:** _add reply here_
+
+### Q: This build produced 4 new items (vs. 17 in the prior build, 5 two builds ago). Has the MCP GitHub Search fallback reached effective saturation of the publicly-indexed document-AI space on GitHub?
+
+**Context:** seen.json is at 784 entries after this build. More than 30 searches across relevant query categories (OCR, VLM, hallucination, document extraction, mechanistic interpretability, benchmark) returned fewer than 10 results not already in seen.json. The pipeline may have reached the point where a build pause — serving a static archival notice rather than a thin partial build — is more informative than continuing at 6-hourly cadence.
+
+**Answer:** _add reply here_
+
+### Q: The Gemini 3.6 Flash release (July 21, 2026), GPT-5.6 Luna price cut (effective July 30, 2026), and Mistral OCR 4.1 full release (August 13, 2026) are all noted in the context file but have not surfaced in any build since standard egress was blocked. Has OCR-3 been benchmarked against any of these since their release?
+
+**Context:** These three events represent substantive competitive changes since the last competitive-axis item with composite > 50 appeared in any build. Without egress access to arXiv or HN, benchmark comparisons following these releases will not surface until egress is restored or the team provides a manual update to the context file.
+
+**Answer:** _add reply here_
+
+---

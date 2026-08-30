@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Aug 30, 2026 · 00:59 UTC · 17 items scored</span>
+  <span class="built-at">Built Aug 30, 2026 · 06:58 UTC · 4 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,19 +53,41 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Hallucination research is converging on attribution-before-intervention: five of 17 items characterize the failure origin before proposing a fix, matching the mechanistic interpretability direction.</li>
-    <li>Inference-time interventions are dominating over training-stage fixes across the VLM hallucination literature: VTI, DeGF, LogicCheckGPT, and CAD all propose deployment-time modifications requiring no model retraining.</li>
-    <li>ECCV 2026 and ICLR 2025/2026 papers are moving from single-layer interventions to multi-stage attribution pipelines, signaling a maturation from &#39;where&#39; to &#39;why&#39; framing in hallucination research.</li>
-    <li>The MCP GitHub fallback is producing only vlm_research axis items (14 of 17); zero competitive-axis items surfaced. Mistral OCR 4.1, Claude Sonnet 5, and GPT-5.6 pricing changes are not reachable via GitHub search.</li>
-    <li>seen.json saturation at 784 entries after this build confirms the MCP fallback has no remaining competitive or frontier coverage capacity; all new items are 2023-2025 conference papers not previously indexed.</li>
+    <li>Independently-built document-parsing eval harnesses are omitting OCR-3 from their comparison sets. Both handwriting-ocr-llm-eval (this build) and velrim-eval (prior build) benchmark 4-5 engines — LlamaParse, Mistral OCR, Reducto, Gemini — without including OCR-3. The IDP Leaderboard ranking does not automatically generate practitioner-visible coverage in open eval tooling.</li>
+    <li>MCP servers are becoming a distribution layer for frontier vision APIs in document workflows. deepseek-vision-mcp wraps a multimodal vision model as an MCP server, reducing the cost of routing document images through a vision model in an agentic pipeline. This pattern — commoditizing access to frontier vision without a dedicated document-extraction API — applies competitive pressure to the make-vs-buy decision for OCR-3.</li>
+    <li>General-purpose VLM testing harnesses (vlm-testing, handwriting-ocr-llm-eval) are covering OCR and document extraction as secondary tasks alongside visual QA and chart understanding, rather than treating document extraction as a primary evaluation domain. This signals that practitioners may be treating OCR-as-a-feature as increasingly table stakes within general VLM capability assessments.</li>
   </ul>
 </section>
 
 <section class="axes" aria-label="Items by axis">
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
-      <p class="item-summary">No top-N items this build.</p>
+<article class="item "
+         data-source="github_trending"
+         data-score="60">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 4 · frontier 2 · vlm_research 2 = 60 (this view's weighting)">60</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
   </div>
+  <p class="item-title">
+    <a href="https://github.com/abyss-node/handwriting-ocr-llm-eval" target="_blank" rel="nofollow noopener noreferrer">handwriting-ocr-llm-eval: Eval harness for document parsing on handwritten bilingual legal scans</a>
+  </p>
+  <p class="item-summary">Eval harness comparing LiteParse, LlamaParse, Gemini, Mistral OCR, and Reducto on bilingual handwritten legal scans; OCR-3 absent.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>An independently-built eval harness benchmarks five document-parsing engines on bilingual handwritten legal scans without including OCR-3. The adapter pattern is well-defined; OCR-3&#39;s absence from this and similar harnesses is a coverage gap in publicly available practitioner benchmarks.</dd>
+      <dt>Research</dt>
+      <dd>Handwritten bilingual legal documents are a document type absent from OmniDocBench, OlmOCR-Bench, and the IDP Leaderboard; a baseline on this distribution would complement existing curated-benchmark results.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+</article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
       <p class="item-summary">No top-N items this build.</p>
@@ -74,368 +96,82 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="16">
+         data-score="38">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 0 · vlm_research 0 = 16 (this view's weighting)">16</span>
+          title="doc_ai 2 · competitive 2 · frontier 2 · vlm_research 1 = 38 (this view's weighting)">38</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/coregx/gxpdf" target="_blank" rel="nofollow noopener noreferrer">gxpdf: Enterprise-grade PDF library for Go with table extraction, text parsing, encryption, document creation</a>
+    <a href="https://github.com/lmtttt/deepseek-vision-mcp" target="_blank" rel="nofollow noopener noreferrer">deepseek-vision-mcp: MCP Server exposing DeepSeek multimodal vision for document and screenshot analysis</a>
   </p>
-  <p class="item-summary">Go PDF library with table extraction and text parsing; 50 stars. Commoditizes rule-based PDF parsing infrastructure.</p>
+  <p class="item-summary">MCP server wrapping DeepSeek&#39;s web vision model for document, screenshot, and image analysis tasks; 11 stars.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>A lightweight, zero-ML Go library for PDF table extraction narrows the gap for developer-centric infrastructure-first approaches; not a direct competitive threat but signals continued commoditization of traditional parsing.</dd>
+      <dd>MCP wrappers for frontier vision models lower the integration friction for practitioners building document pipelines; each new wrapper incrementally compresses the differentiation window between general-purpose vision APIs and dedicated document-extraction products.</dd>
       <dt>Research</dt>
-      <dd>No research implication.</dd>
+      <dd>No direct research implication.</dd>
       <dt>Action</dt>
       <dd>no action</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive</p>
 </article><article class="item "
          data-source="github_trending"
-         data-score="16">
+         data-score="32">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 0 · vlm_research 0 = 16 (this view's weighting)">16</span>
+          title="doc_ai 3 · competitive 1 · frontier 1 · vlm_research 3 = 32 (this view's weighting)">32</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/scientist-labs/parsekit" target="_blank" rel="nofollow noopener noreferrer">parsekit: Ruby document parsing toolkit — zero runtime dependencies, static MuPDF+Tesseract for PDF, DOCX, XLSX, image OCR</a>
+    <a href="https://github.com/yohanh2o/vlm-testing" target="_blank" rel="nofollow noopener noreferrer">vlm-testing: Testing suite for VLMs across OCR, document extraction, and chart understanding</a>
   </p>
-  <p class="item-summary">Ruby gem for PDF/DOCX/XLSX/image OCR with zero runtime dependencies via static MuPDF+Tesseract; 49 stars.</p>
+  <p class="item-summary">Open testing suite for LLaVA, InternVL, Qwen-VL, CLIP, SigLIP across visual QA, OCR, document extraction, and chart understanding.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Zero-dependency packaging for multi-format document parsing demonstrates persistent developer demand for language-native, self-contained parsers. Lowers integration friction in non-Python stacks.</dd>
+      <dd>No direct product implication; tests open VLMs not the Nanonets product surface. OCR-3 is absent from the model set.</dd>
       <dt>Research</dt>
-      <dd>No research implication.</dd>
+      <dd>Covers the open VLM families (InternVL, Qwen-VL) most commonly cited in Nanonets benchmark comparisons; useful as a reference harness for benchmarking OCR-3 against open-weight alternatives on the same task suite.</dd>
       <dt>Action</dt>
-      <dd>no action</dd>
+      <dd>monitor</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="12">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 1 · frontier 0 · vlm_research 0 = 12 (this view's weighting)">12</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/api-evangelist/parseflow" target="_blank" rel="nofollow noopener noreferrer">Parseflow API profile: document parsing, extraction, and search API for PDF/DOCX with async jobs and batch processing</a>
-  </p>
-  <p class="item-summary">Third-party API Evangelist profile of Parseflow document parsing API; 0 stars. Not a primary source.</p>
-  <p class="secondary-axes">also: competitive</p>
 </article>  </div>
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
 <article class="item "
          data-source="github_trending"
-         data-score="14">
+         data-score="22">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 3 = 14 (this view's weighting)">14</span>
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 5 = 22 (this view's weighting)">22</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
     </span>
     <span class="item-source">github_trending</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/sled-group/moh" target="_blank" rel="nofollow noopener noreferrer">MOH [NeurIPS 2024]: Multi-Object Hallucination in Vision-Language Models</a>
+    <a href="https://github.com/shehral/nanonets-ocr2-differential" target="_blank" rel="nofollow noopener noreferrer">nanonets-ocr2-differential: Causal localization comparing Nanonets-OCR2-3B vs Qwen2.5-VL-3B on 26 document images</a>
   </p>
-  <p class="item-summary">NeurIPS 2024 benchmark for multi-object hallucination; 37 stars. Multi-object setting maps to document table rows.</p>
+  <p class="item-summary">Public repo: differential and causal localization comparing Nanonets-OCR2-3B against Qwen2.5-VL-3B base on 26 document images.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Multi-object hallucination directly maps to the phantom-row problem in document tables; the MOH benchmark could stress-test OCR-3 on complex tables with many distinct row entities.</dd>
+      <dd>No direct product implication; the analysis targets the prior-generation OCR2-3B, not the current OCR-3 flagship.</dd>
       <dt>Research</dt>
-      <dd>MOH&#39;s evaluation protocol measures hallucination rate as object count increases; if phantom-row failures cluster by table complexity, this benchmark is a candidate validation dataset for the team&#39;s research.</dd>
+      <dd>Causal localization of OCR2-3B vs its Qwen2.5-VL-3B base on document images directly instantiates the team&#39;s mechanistic interpretability methodology; the 26-image dataset and differential approach are inspectable artifacts for phantom-row localization work.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="14">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 3 = 14 (this view's weighting)">14</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/bcdnlp/FAITHSCORE" target="_blank" rel="nofollow noopener noreferrer">FAITHSCORE: Fine-grained Evaluations of Hallucinations in Large Vision-Language Models</a>
-  </p>
-  <p class="item-summary">Atomic-fact hallucination evaluation framework for VLMs; 35 stars. Applicable to structured document outputs.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Fine-grained sub-sentence evaluation of hallucinations could detect structural hallucinations (fabricated headers, mis-attributed fields) that coarse accuracy metrics miss in OCR-3 outputs.</dd>
-      <dt>Research</dt>
-      <dd>FAITHSCORE&#39;s atomic-fact decomposition could be adapted to document-structured-output evaluation to build a per-type hallucination taxonomy for OCR-3 — phantom rows, structural headers, field mis-attribution.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="14">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 3 = 14 (this view's weighting)">14</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/CRIPAC-DIG/LogicCheckGPT" target="_blank" rel="nofollow noopener noreferrer">LogicCheckGPT [ACL 2024]: Logical Closed Loop for Uncovering Object Hallucinations in Large Vision-Language Models</a>
-  </p>
-  <p class="item-summary">ACL 2024 closed-loop hallucination detection: generate then re-verify logical consistency without model internals; 25 stars.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>A logical consistency re-check (generate, re-prompt to verify) is deployable as a post-processing step in the OCR-3 extraction pipeline to flag rows with logical inconsistencies without requiring model access.</dd>
-      <dt>Research</dt>
-      <dd>The closed-loop approach doesn&#39;t require model internals; applicable as an inference-time filter on OCR-3 outputs. Less mechanistically informative than attribution-based methods but lower engineering cost.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="12">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 4 = 12 (this view's weighting)">12</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/shengliu66/VTI" target="_blank" rel="nofollow noopener noreferrer">VTI: Reducing Hallucinations in Vision-Language Models via Latent Space Steering</a>
-  </p>
-  <p class="item-summary">Latent space steering reduces VLM hallucinations at inference time without retraining; 120 stars, updated Aug 28.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Inference-time latent steering requires no model retraining and applies directly to OCR-3 if phantom-row hallucinations localize to predictable latent directions.</dd>
-      <dt>Research</dt>
-      <dd>Steering vectors complement the team&#39;s causal-scrubbing methodology; if layer localization results exist, testing steering on those circuits is a low-cost next step.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="12">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 4 = 12 (this view's weighting)">12</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/Lexiang-Xiong/CAD" target="_blank" rel="nofollow noopener noreferrer">CAD [ECCV 2026]: Anatomy of a Lie — Multi-Stage Diagnostic Framework for Tracing Hallucinations in VLMs</a>
-  </p>
-  <p class="item-summary">ECCV 2026 multi-stage framework traces VLM hallucinations per encoder/cross-attn/decoder stage; 28 stars.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>A per-stage diagnostic pipeline would isolate whether OCR-3 structural hallucinations originate in the visual encoder, cross-attention, or decoder layers, sharpening the mitigation target.</dd>
-      <dt>Research</dt>
-      <dd>ECCV 2026 publication; more granular than single-layer interventions (e.g., ONLY). The multi-stage framing maps well onto the team&#39;s existing causal-patching work.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="12">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 4 = 12 (this view's weighting)">12</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/Ziwei-Zheng/VaLSe" target="_blank" rel="nofollow noopener noreferrer">VaLSe: Visualization Library for VLM Interpretability and Hallucination Analysis</a>
-  </p>
-  <p class="item-summary">Toolkit for attention visualization and hallucination localization in LVLMs; 43 stars, from same author as Nullu.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication; tooling for internal research analysis only.</dd>
-      <dt>Research</dt>
-      <dd>VaLSe provides attention visualization and hallucination localization tools compatible with the VLM families the team uses. Could accelerate mechanistic interpretability work without building custom visualization infrastructure.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="12">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 4 = 12 (this view's weighting)">12</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/TianyunYoung/Hallucination-Attribution" target="_blank" rel="nofollow noopener noreferrer">Hallucination-Attribution [ICLR 2025]: Mitigating Hallucinations via Modular Attribution and Intervention in Large VLMs</a>
-  </p>
-  <p class="item-summary">ICLR 2025 paper decomposes VLM hallucination into visual vs. language attribution before applying targeted intervention; 39 stars.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>If OCR-3 phantom-row failures are language-driven (copying from context) rather than visual-driven (misreading image content), this decomposition would sharpen the mitigation target for the team&#39;s current work.</dd>
-      <dt>Research</dt>
-      <dd>Modular attribution overlaps the team&#39;s causal-scrubbing methodology; combining this with existing sparse-autoencoder or steering-vector work could yield a joint contribution on document-VLM hallucination subtypes.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="12">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 4 = 12 (this view's weighting)">12</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/zhangce01/DeGF" target="_blank" rel="nofollow noopener noreferrer">DeGF [ICLR 2025]: Self-Correcting Decoding with Generative Feedback for Mitigating Hallucinations in Large VLMs</a>
-  </p>
-  <p class="item-summary">ICLR 2025 self-correcting decoding: generate, detect hallucination, resample — no retraining required; 26 stars.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Inference-time self-correction directly addresses OCR-3 repetition loops and structural hallucinations without model retraining; the generate-detect-resample loop fits within an existing OCR pipeline.</dd>
-      <dt>Research</dt>
-      <dd>ICLR 2025; the feedback model in DeGF is a lightweight verifier, not a second large VLM. If the team&#39;s phantom-row detection heuristics are mature enough to serve as the feedback signal, this is a near-production approach.</dd>
-      <dt>Action</dt>
-      <dd>reproduce</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="10">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 3 = 10 (this view's weighting)">10</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/THU-BPM/ICT" target="_blank" rel="nofollow noopener noreferrer">ICT: Image-Object Cross-Level Trusted Intervention for Mitigating Object Hallucination in Large VLMs</a>
-  </p>
-  <p class="item-summary">Cross-level image-object intervention reduces object hallucination in VLMs; 28 stars.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="10">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 3 = 10 (this view's weighting)">10</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/AoiDragon/POPE" target="_blank" rel="nofollow noopener noreferrer">POPE [EMNLP 2023]: Evaluating Object Hallucination in Large Vision-Language Models</a>
-  </p>
-  <p class="item-summary">Classic EMNLP 2023 benchmark for evaluating object hallucination in VLMs; 117 stars, widely cited.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="10">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 3 = 10 (this view's weighting)">10</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/lhanchao777/LVLM-Hallucinations-Survey" target="_blank" rel="nofollow noopener noreferrer">LVLM-Hallucinations-Survey: First survey on hallucinations of large vision-language models</a>
-  </p>
-  <p class="item-summary">Living survey of VLM hallucination research; 96 stars, continuously updated with recent papers.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="10">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 3 = 10 (this view's weighting)">10</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/Mr-Loevan/HSA-DPO" target="_blank" rel="nofollow noopener noreferrer">HSA-DPO [AAAI 2025]: Detecting and Mitigating Hallucination in Large Vision Language Models via Fine-Grained AI Feedback</a>
-  </p>
-  <p class="item-summary">AAAI 2025 DPO-based hallucination mitigation using fine-grained AI feedback signals; 36 stars.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="8">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 2 = 8 (this view's weighting)">8</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/mrwu-mac/R-Bench" target="_blank" rel="nofollow noopener noreferrer">R-Bench [ICML 2024]: Evaluating and Analyzing Relationship Hallucinations in Large Vision-Language Models</a>
-  </p>
-  <p class="item-summary">ICML 2024 benchmark for relationship hallucination in VLMs; 24 stars. Object-relation focus, not document-specific.</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="8">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 2 = 8 (this view's weighting)">8</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/GasolSun36/MVP" target="_blank" rel="nofollow noopener noreferrer">MVP: Alleviating Hallucination in Large Vision-Language Models via Multi-View Multi-Path Reasoning</a>
-  </p>
-  <p class="item-summary">Multi-view multi-path reasoning for VLM hallucination reduction; 24 stars. Ensemble approach, not document-specific.</p>
 </article>  </div>
 </section>
 
@@ -448,28 +184,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four standard ingest sources have been egress-proxy-blocked for 28 consecutive days (since 2026-08-03). Is there an owner and ETA for extending the proxy allowlist to export.arxiv.org, hn.algolia.com, and the RSS feed domains in data/sources.yaml?</p>
-    <p class="question-context">Required actions: (1) extend egress allowlist; (2) replace GITHUB_TOKEN with a read-scoped PAT for github_trending CLI. Alternatively, Semantic Scholar (api.semanticscholar.org, confirmed reachable from the proxy) would restore research-axis coverage without egress changes. This question has been raised in every build since 2026-08-03 without a response. seen.json is at 784 entries after this build.</p>
+    <p class="question-text">Should OCR-3 be added as an adapter to handwriting-ocr-llm-eval? This would produce the first public benchmark of the current flagship against Mistral OCR, Reducto, and LlamaParse on bilingual handwritten legal documents.</p>
+    <p class="question-context">handwriting-ocr-llm-eval uses a well-defined adapter pattern (one file per engine). OCR-3&#39;s absence from this and similar open harnesses means the IDP Leaderboard #1 ranking has no publicly verifiable cross-engine comparison on real-world handwriting. Adding the adapter would close this coverage gap without requiring a formal leaderboard evaluation.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the build schedule be reduced from 6-hourly to daily, or suspended entirely, until standard egress sources are restored?</p>
-    <p class="question-context">This build yielded 17 items, none exceeding composite=24. The dashboard partial-build banner has been displayed on every edition for 28 consecutive days. A daily schedule would produce equivalent coverage at one-quarter the API cost and slow seen.json saturation. This question has been unanswered since 2026-08-17.</p>
+    <p class="question-text">The nanonets-ocr2-differential repository (shehral/nanonets-ocr2-differential) is public on GitHub with 0 stars and no announcement. Is this a published research artifact or an internal experiment that is unintentionally public?</p>
+    <p class="question-context">The repo&#39;s methodology (differential causal localization of OCR2-3B vs Qwen2.5-VL-3B on 26 document images) directly reflects the team&#39;s mechanistic interpretability approach. If intentionally public, it could be surfaced in the Landscape Monitor as a research artifact. If unintentional, it may warrant visibility review.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should seen.json be date-windowed (expire items older than 90 days) to recover signal from active competitive repos without egress changes?</p>
-    <p class="question-context">At 784 entries, the MCP fallback is surfacing only 2023-2025 conference papers. Active competitive repos (Reducto, LlamaParse, Docling, Mistral OCR) all have URLs in seen.json from builds 3+ months ago but continue to release new content. A 90-day expiry would restore competitive signal immediately.</p>
+    <p class="question-text">This build produced 4 new items (vs. 17 in the prior build, 5 two builds ago). Has the MCP GitHub Search fallback reached effective saturation of the publicly-indexed document-AI space on GitHub?</p>
+    <p class="question-context">seen.json is at 784 entries after this build. More than 30 searches across relevant query categories (OCR, VLM, hallucination, document extraction, mechanistic interpretability, benchmark) returned fewer than 10 results not already in seen.json. The pipeline may have reached the point where a build pause — serving a static archival notice rather than a thin partial build — is more informative than continuing at 6-hourly cadence.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The team&#39;s causal scrubbing work localizes phantom-row hallucinations to specific model layers. Have steering vectors (as in VTI) been tested as an inference-time intervention on those localized circuits?</p>
-    <p class="question-context">VTI&#39;s latent space steering approach (https://github.com/shengliu66/VTI, 120 stars, updated Aug 28) is a natural next step after layer localization: steer the activations at the identified layer during inference to suppress the hallucination direction. If layer localization results exist, this is a one-session experiment.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">Should a curated watch-list of 15-20 specific competitive repos and URLs (IDP Leaderboard, OmniDocBench, Reducto, LlamaParse, Mistral OCR, Extend, Docling) be added to the pipeline to re-check for releases regardless of seen.json status?</p>
-    <p class="question-context">Zero competitive-axis items surfaced this build. Mistral OCR 4.1 (full release Aug 13, 2026), Claude Sonnet 5 (June 30, 2026), and GPT-5.6 pricing changes (July 30, 2026) all post-date the last confirmed competitive coverage in seen.json. The IDP Leaderboard state as of Aug 30, 2026 is unknown. A watch-list approach would re-check specific targets each build without requiring seen.json policy changes.</p>
+    <p class="question-text">The Gemini 3.6 Flash release (July 21, 2026), GPT-5.6 Luna price cut (effective July 30, 2026), and Mistral OCR 4.1 full release (August 13, 2026) are all noted in the context file but have not surfaced in any build since standard egress was blocked. Has OCR-3 been benchmarked against any of these since their release?</p>
+    <p class="question-context">These three events represent substantive competitive changes since the last competitive-axis item with composite &gt; 50 appeared in any build. Without egress access to arXiv or HN, benchmark comparisons following these releases will not surface until egress is restored or the team provides a manual update to the context file.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -481,7 +212,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-08-30T00:59:11+00:00
+    sources covered: github_trending    · failed: 3 · built at 2026-08-30T06:58:46+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
