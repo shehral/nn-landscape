@@ -10398,3 +10398,31 @@ The build environment's outbound HTTPS proxy is blocking all external requests. 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-31T19:00:00+00:00 (audit: partial)
+
+### Q: Has OCR-3 been tested on KO-VLM-Benchmark (github.com/Marker-Inc-Korea/KO-VLM-Benchmark), the Korean real-document VLM benchmark?
+
+**Context:** KO-VLM-Benchmark (32 stars) evaluates OCR, RAG, and VQA on real Korean business documents. OCR-3's multilingual positioning is not validated in community-visible Korean benchmarks, and Qwen3-VL is the current de facto baseline in this ecosystem.
+
+**Answer:** _add reply here_
+
+### Q: Do community 'independent evaluation' repositories (like ocr-vlm-local-retrieval) that omit OCR-3 represent a monitoring gap, and is there a mechanism to surface or submit to such harnesses?
+
+**Context:** Two repos this build label themselves as independent evaluations and default to Qwen3-VL without including OCR-3. If practitioners select document parsers based on community-run comparisons, the absence of OCR-3 in these evaluations shapes purchasing decisions in Nanonets' disfavor without any adversarial intent.
+
+**Answer:** _add reply here_
+
+### Q: Does OCR-3 have official Java or JVM-compatible client SDKs?
+
+**Context:** JiaJiaOCR (Java, 99 stars) and ScaleDP (Spark/JVM-compatible) demonstrate sustained demand for Java-native document OCR in enterprise contexts. If OCR-3 is accessible only through REST with no JVM SDK, enterprise ERP/banking integrators face higher switching costs relative to Java-native open-source alternatives.
+
+**Answer:** _add reply here_
+
+### Q: Should local/on-device OCR deployment be tracked as a distinct market segment separate from cloud API extraction in future builds?
+
+**Context:** Community ports like unlimited-ocr-mac (Unlimited-OCR 6.7B on Apple Silicon) and MinerU-based local pipelines address users who cannot or will not send documents to a cloud API — a segment with distinct competitive dynamics and where OCR-3's API-only model creates a structural gap versus open-weight competitors.
+
+**Answer:** _add reply here_
+
+---
