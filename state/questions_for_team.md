@@ -10370,3 +10370,31 @@ The build environment's outbound HTTPS proxy is blocking all external requests. 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-31T13:00:00+00:00 (audit: partial)
+
+### Q: Should MinerU be explicitly added to the competitive set in data/nanonets_context.md?
+
+**Context:** Two consecutive builds have surfaced MinerU-based production tools (dsh-plugin-mineru, ThinkParse in this build; MinerU-Skill in prior builds). MinerU is currently mentioned only in a monitoring note from the 2026-08-30 context refresh. Adding it as a named competitive entry would let future builds score MinerU items on the competitive axis rather than only doc_ai, improving signal precision.
+
+**Answer:** _add reply here_
+
+### Q: Has the team applied HACP-style head-level attribution to the phantom-row hallucination task on OCR-3 or OCR-2-3B?
+
+**Context:** HACP (EMNLP 2026 Findings) uses causal head-level attribution followed by selective pruning — structurally similar to the team's causal-scrubbing and activation-patching methodology. If comparable experiments have already been run, future builds can route similar papers to 'already read' rather than 'reproduce'. If not, HACP is a near-drop-in experiment candidate.
+
+**Answer:** _add reply here_
+
+### Q: Should the build schedule be suspended or reduced to weekly until egress is restored?
+
+**Context:** This is the 29th or more consecutive build with 0 of 4 standard sources covered via the CLI. seen.json is at 821 entries. This build found 7 items via MCP GitHub Search fallback — all low composite (max 33). Continuing at 6-hourly cadence spends API tokens on marginal signal; a weekly schedule would reduce cost while maintaining continuity. This question has been raised in multiple prior builds without a team response.
+
+**Answer:** _add reply here_
+
+### Q: Is the Calibration Parabola null result (contrastive decoding does not reduce hallucination) consistent with the team's own internal evaluations of decoding-based mitigations?
+
+**Context:** ICIG 2026 oral paper claims contrastive decoding consistently fails to reduce hallucinations across architectures. If the team has run internal evaluations of contrastive decoding on phantom-row tasks, the answer would either confirm the null result or surface a counter-example worth publishing. Either outcome is informative for the research agenda.
+
+**Answer:** _add reply here_
+
+---
