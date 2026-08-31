@@ -10336,3 +10336,37 @@ The build environment's outbound HTTPS proxy is blocking all external requests. 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-31T07:01:16.117148+00:00 (audit: partial)
+
+### Q: LlamaIndex's llama_index repo description now reads 'the leading document agent and OCR platform' — is this marketing repositioning or a product signal for new OCR-native features in LlamaCloud?
+
+**Context:** The description change places OCR alongside agents in LlamaIndex's headline. Understanding whether this reflects a planned capability expansion or copywriting would sharpen how future builds frame LlamaIndex competitive items.
+
+**Answer:** _add reply here_
+
+### Q: Does OCR-3 have an official multi-language SDK to match LlamaParse's Python/TypeScript/Java/C#/Go/CLI footprint? If not, is SDK proliferation on the near-term roadmap?
+
+**Context:** LlamaIndex now has official SDKs in at least six languages plus a CLI. If OCR-3's API is accessible only through the web interface or informal community clients, enterprise .NET and Java buyers face higher integration friction that is independent of model accuracy.
+
+**Answer:** _add reply here_
+
+### Q: Should docling-serve (1769 GitHub stars, REST API surface mirroring OCR-3's endpoints) be reclassified from 'reference open-source baseline' to 'tier-1 competitor' in data/nanonets_context.md?
+
+**Context:** Docling-serve's REST surface (parse, layout, table extraction) and adoption level mean it is being used as a managed-API replacement, not just a research library. Reclassifying it would change how future builds score Docling items on the competitive axis.
+
+**Answer:** _add reply here_
+
+### Q: This is the 28th or more consecutive build with 0 of 4 standard sources covered due to egress proxy blocking. Should the build schedule be reduced to daily or suspended entirely until the allowlist is updated?
+
+**Context:** Seen.json is at 816 entries and MCP GitHub Search is near saturation. Each 6-hourly build costs API tokens while yielding 0-5 low-composite items. This question was raised in multiple prior builds without a team response.
+
+**Answer:** _add reply here_
+
+### Q: MinerU2.5 (OpenDataLab, arXiv 2509.22186, ACL 2026 industry track) was noted in the 2026-08-30 context refresh as a new entrant. Should its GitHub repo URL be added to a manual watch list for when egress is restored?
+
+**Context:** MinerU2.5 is an open-source PDF-to-markdown VLM (1.2B params) with an ACL 2026 publication. It was not findable via MCP GitHub Search in this build, suggesting it may not be indexed under current search terms. A manual watch-list entry would ensure it surfaces on egress recovery.
+
+**Answer:** _add reply here_
+
+---
