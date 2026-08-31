@@ -10302,3 +10302,37 @@ The build environment's outbound HTTPS proxy is blocking all external requests. 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-08-31T07:00:00+00:00 (audit: partial)
+
+### Q: The zihaomu/HunyuanOCR-Bench repo was created Aug 26 by an apparent individual contributor. Is this an official Tencent evaluation harness or an independent community project?
+
+**Context:** If unofficial, its benchmark results may not be reproducible and could misrepresent HunyuanOCR-1.5's performance. If official, it becomes a channel for third-party benchmark comparisons that currently omit OCR-3. A team spot-check of the methodology and zihaomu's affiliation would clarify whether to treat results from this bench as authoritative.
+
+**Answer:** _add reply here_
+
+### Q: PaddleOCR-VL-1.6 holds the #1 position on OmniDocBench v1.6 (96.33). OCR-3's benchmark result (90.5) was reported on OmniDocBench v1.5. Are these benchmark versions directly comparable, and if not, what is OCR-3's estimated score on v1.6?
+
+**Context:** OmniDocBench v1.6 (April 10, 2026) added 296 pages and changed the MGAM evaluation methodology; the context file notes scores across versions are not directly comparable. Without a v1.6 OCR-3 score, the IDP Leaderboard #1 claim and OmniDocBench claims coexist in a way that is potentially misleading to practitioners who reference v1.6 rankings.
+
+**Answer:** _add reply here_
+
+### Q: The syedahumna56/HunyuanOCR-Demo repo explicitly tags 'nanonets' in its GitHub Topics alongside 'deepseek-ocr' and 'paddleocr'. Is this a signal that practitioners are actively benchmarking HunyuanOCR against the public Nanonets-OCR2-3B model on HuggingFace?
+
+**Context:** The public OCR2-3B model remains the most accessible comparison baseline for Nanonets. If community benchmarks are being run against it without OCR-3 as a reference, the public-facing competitive picture is being shaped by a two-generation-old model. Understanding whether this is one repo's tagging practice or a broader community pattern would clarify the monitoring posture.
+
+**Answer:** _add reply here_
+
+### Q: JZ-Tab (KDD 2026) targets mixed-script document extraction — documents combining multiple character sets such as Latin and CJK in the same layout. Does OCR-3 have public benchmark scores on mixed-script or CJK-dominant document benchmarks?
+
+**Context:** OCR-3's public benchmark positions are strongest on IDP Leaderboard (85.9), OLM-OCR (87.4), and OmniDocBench (90.5). None of these is known to emphasize mixed-script or CJK extraction specifically. If OCR-3 has scores on these document types, publishing them would strengthen the multilingual positioning; if not, JZ-Tab's benchmark dataset (if released) would be a candidate evaluation.
+
+**Answer:** _add reply here_
+
+### Q: Four independent PaddleOCR-VL-1.6 deployment and fine-tuning repos surfaced in this build. Should PaddleOCR-VL-1.6 be added as an explicitly named competitive entry in data/nanonets_context.md, separate from the existing PaddleOCR-VL-1.6 note in the competitive-set list?
+
+**Context:** PaddleOCR-VL-1.6 is currently mentioned within the Baidu/PaddlePaddle competitive entry but not as a top-level named competitor. Given its #1 OmniDocBench v1.6 ranking and the proliferation of community deployments now observed, it may warrant its own scoring anchor so future builds can evaluate PaddleOCR-VL items without relying on the inference that Baidu items are competitive.
+
+**Answer:** _add reply here_
+
+---
