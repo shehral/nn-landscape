@@ -10426,3 +10426,35 @@ The build environment's outbound HTTPS proxy is blocking all external requests. 
 **Answer:** _add reply here_
 
 ---
+## Build 2026-09-01T00:00:00+00:00 (audit: failed — zero items, no push)
+
+### INFRASTRUCTURE FAILURE: All 4 sources returned 0 items
+
+**Step that failed:** Step 3 — ingest (`python -m landscape.cli ingest`)
+
+**Exact errors:**
+- `arxiv`: `Client error '403 Forbidden'` — `http://export.arxiv.org/api/query` (consistent with prior build failures)
+- `hn`: `403 Forbidden` — HN Algolia API (consistent with prior build failures)
+- `rss`: `no items in current window` — all 10 RSS feeds returned 0 usable items; each feed's exception is silently swallowed by the per-feed try/except in `RSSSource.fetch()`; the aggregate source showed zero items
+- `github_trending`: `no items in current window` — GitHub search API returned zero results for topics `machine-learning, llm, vlm, ocr, rag, multimodal, vision-language` with `days_back=1` pushed filter
+
+**What changed this build vs. prior builds:** Prior builds consistently lost arXiv and HN to 403 errors but still collected items from RSS. This is the first build where RSS also returned 0 items. GitHub trending has also failed before. This means the remote execution environment's network proxy is now blocking or rate-limiting all external HTTP endpoints, not just arXiv and the HN API.
+
+**Action taken:** Lock released, no HTML rendered, no push of docs/. Only this file is being committed and pushed.
+
+**What the team should investigate:**
+
+1. **RSS failure (new regression):** The `RSSSource.fetch()` silently swallows per-feed errors, so no individual error message appears. A direct HTTP test of any feed URL (e.g., `curl -v https://www.anthropic.com/news/rss.xml`) from the build environment would confirm whether the proxy is blocking outbound RSS/HTTPS to external news domains. If blocked, the team needs to either (a) configure proxy allowlist for these domains, or (b) mirror feeds to an internal endpoint.
+
+2. **arXiv + HN 403 pattern (recurring):** These have failed for many consecutive builds. The environment's proxy CA bundle (`/root/.ccr/ca-bundle.crt`) is noted in the environment config; the proxy may be intercepting HTTPS and returning 403 for specific API endpoints. Checking `/root/.ccr/README.md` and running `curl -sS "$HTTPS_PROXY/__agentproxy/status"` would clarify proxy policy.
+
+3. **GitHub trending (recurring):** GitHub's search API requires authentication for higher rate limits; `days_back=1` with `pushed:>=YYYY-MM-DD` filter may be returning 0 when called unauthenticated. Adding a `GITHUB_TOKEN` env var to the build environment would fix this.
+
+4. **Infrastructure-first priority:** Until at least 2 of 4 sources return items, every build cycle is wasted. The dashboard's current content (from prior successful builds, if any exist in `docs/`) is the only signal reaching readers. Fixing source access before any content work is the right priority order.
+
+### Q: Is the build environment's network proxy policy restricting outbound HTTPS to all external APIs and RSS feeds, or only to specific domains (arXiv, HN)?
+
+**Context:** Prior builds showed arXiv and HN failing while RSS succeeded. This build shows all sources failing simultaneously. A proxy status check or domain allowlist review would clarify scope and speed up the fix.
+
+**Answer:** _add reply here_
+
