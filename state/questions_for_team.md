@@ -10476,3 +10476,31 @@ The build environment's outbound HTTPS proxy is blocking all external requests. 
 
 **Note:** This is the second build in the same calendar day (2026-09-01) to fail with a total 4-source blackout. The prior failure note (2026-09-01T00:00:00Z) contains the full investigation checklist. The situation is unchanged; the team should prioritize the proxy/network fix before the next cron tick.
 
+
+## Build 2026-09-01T13:04:08+00:00 (audit: partial)
+
+### Q: Should the build define a minimum signal threshold — e.g., 5+ items with composite >= 30 — below which it publishes a static 'no new signal' notice rather than rendering a thin edition?
+
+**Context:** This build produced 4 items, none above composite=45 and three below 40. Prior questions about schedule reduction and suspension (raised from build 2026-08-17 onward) remain unanswered. A threshold policy would make the stopping rule explicit and end the recurring per-build judgment call.
+
+**Answer:** _add reply here_
+
+### Q: Princeton AI Lab's DeepOCR provides full training code for a DeepSeek-OCR reproduction. Has the team assessed whether this training recipe is applicable to hallucination studies in the OCR-VLM family, given that DeepSeek-OCR 2 is on the IDP Leaderboard competitive set?
+
+**Context:** DeepSeek-OCR 2 (January 2026; 3B params; 91.09% OmniDocBench v1.5) is a named competitive entry. Published training code enables controlled hallucination induction experiments distinct from behavioral evaluation — complementary to the team's mechanistic interpretability line if architectures are compatible.
+
+**Answer:** _add reply here_
+
+### Q: PSPDFKit (nutrient-skills) and LandingAI (ade-document-processing-skills, seen in prior builds) have both published agent-skill packages targeting Claude Code, Gemini CLI, and Cursor. Does Nanonets have a comparable distribution artifact, and if not, is this a gap worth closing?
+
+**Context:** Agent-skill packages place a vendor's API inside the default tool set of coding assistants. Without one, Nanonets Agentic Data Extraction is absent from pipelines where developers default to in-context agent-skill discovery. The distribution cost is low; the upside is passive developer reach.
+
+**Answer:** _add reply here_
+
+### Q: Community projects (GdoczAI this build; MinerU, opendataloader-pdf in prior builds) consistently choose OlmOCR2 as their extraction baseline rather than OCR-3. Is this primarily an API access/pricing issue, a discoverability issue, or a model-size preference (OlmOCR2 is 3B, open-weight)?
+
+**Context:** Understanding the root cause shapes the response: a pricing issue suggests a developer-tier offering; a discoverability issue suggests documentation or registry presence; a model-size preference suggests an open-weight OCR-3 variant would shift community benchmark coverage. Without team input, the build assigns this to monitoring.
+
+**Answer:** _add reply here_
+
+---
