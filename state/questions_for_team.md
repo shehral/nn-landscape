@@ -10504,3 +10504,31 @@ The build environment's outbound HTTPS proxy is blocking all external requests. 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-01T18:57:18+00:00 (audit: partial)
+
+### Q: Should LiteParse (run-llama/liteparse) be added to the explicit competitive set in data/nanonets_context.md alongside LlamaParse?
+
+**Context:** LiteParse is now the highest-starred active document-parser repository on GitHub (12K+ stars) and is maintained by the LlamaIndex team. It is mentioned in the existing context under LlamaParse/LlamaIndex but not listed as a named competitive entry. Given its adoption, it may warrant its own scoring anchor in the competitive registry.
+
+**Answer:** _add reply here_
+
+### Q: All four standard ingest sources have now failed in every build on 2026-09-01 (three prior builds today plus this one). Should the build schedule be suspended until network proxy access is restored?
+
+**Context:** The current fallback (MCP GitHub Search) produces only low-composite items (max 45 this build). The dashboard has not received research-grade signal from arXiv or quality editorial signal from RSS for multiple consecutive builds. Continuing the 6-hourly schedule wastes API tokens while delivering minimal value. This question has been raised in multiple prior builds without a team response.
+
+**Answer:** _add reply here_
+
+### Q: Does Nanonets have an official .NET/C# SDK, or is the community-built tryAGI/Nanonets SDK the current answer for enterprise .NET integrators?
+
+**Context:** tryAGI/Nanonets is a community-authored C# SDK for the Nanonets API, updated as of August 2026. Prior builds have also raised this regarding Java/JVM SDKs. LlamaParse has official SDKs in six languages including .NET. If OCR-3 is accessible only via REST from .NET, enterprise banking and ERP integrators face higher switching costs.
+
+**Answer:** _add reply here_
+
+### Q: The community documents-parsing comparison notebook names Nanonets alongside Dolphin, MonkeyOCR, and Marker. If results are published, would the team want to respond via blog or IDP Leaderboard update?
+
+**Context:** Independent practitioner benchmarks shape purchasing decisions independently of the official IDP Leaderboard. If the notebook produces unfavorable or methodology-limited results, a timely response (IDP Leaderboard entry, a blog post citing the discrepancy) has more reach than silence. Knowing the team's preferred response posture in advance would let future builds route such items to 'reply' vs. 'monitor'.
+
+**Answer:** _add reply here_
+
+---
