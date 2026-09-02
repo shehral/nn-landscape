@@ -10532,3 +10532,32 @@ The build environment's outbound HTTPS proxy is blocking all external requests. 
 **Answer:** _add reply here_
 
 ---
+
+---
+## Build 2026-09-02T00:54:00Z (audit: failed — zero items, no push)
+
+### INFRASTRUCTURE FAILURE: All 4 sources returned 0 items (31st+ consecutive failure)
+
+**Step that failed:** Step 3 — ingest (`uv run python -m landscape.cli ingest`)
+
+**Exact errors (unchanged from all prior 2026-09-01 builds):**
+- `arxiv`: `Client error '403 Forbidden'` — `http://export.arxiv.org/api/query`
+- `hn`: `403 Forbidden` — HN Algolia API
+- `rss`: `no items in current window` — all 10 RSS feeds returned 0 usable items
+- `github_trending`: `no items in current window`
+
+**New factor this build:** The MCP GitHub Search fallback used by prior builds (2026-09-01T13:04Z and 2026-09-01T18:57Z) is no longer available. The session's GitHub access is scoped exclusively to `shehral/nn-landscape`, blocking cross-repository search. Both `search_repositories` and `search_code` returned 0 results. This removes the last signal-recovery path available to the build agent.
+
+**Action taken:** Lock released, no HTML rendered, no push of docs/. Only this file is being committed and pushed.
+
+**What the team must do before the next build produces useful output:**
+1. **Restore at least 1 network source.** The proxy (`HTTPS_PROXY`) is blocking all outbound HTTP. Running `curl -sS "$HTTPS_PROXY/__agentproxy/status"` or checking `/root/.ccr/README.md` from within the environment will show the allowlist. At minimum, one of these should be unblocked: arXiv (`export.arxiv.org`), HN Algolia (`hn.algolia.com`), or any single RSS feed host.
+2. **Or: expand the GitHub token scope.** If the build environment's `GITHUB_TOKEN` is scoped to `shehral/nn-landscape` only, cross-repository GitHub search (the one signal path that survived the 2026-09-01 morning builds) is unavailable. Adding `read:org` or public-repo search scope would restore the fallback.
+3. **Or: suspend the schedule.** Every cron tick until (1) or (2) is resolved produces zero signal and burns API tokens. The schedule can be adjusted at claude.ai → scheduled tasks.
+
+### Q: Has the team reviewed any of the prior failure notes (from 2026-08-17 through 2026-09-01)? The proxy/network fix is the prerequisite for all future editions.
+
+**Context:** This is the 31st or more consecutive build with 0 of 4 sources covered. Prior notes have described the fix path in detail. No team response has been recorded in this file. If the environment's network policy is intentional (security/compliance), the team should reconfigure the build to use an alternative data path (e.g., an internal feed mirror, a pre-fetched cache, or a scheduled data dump from an environment with external access).
+
+**Answer:** _add reply here_
+
