@@ -10561,3 +10561,25 @@ The build environment's outbound HTTPS proxy is blocking all external requests. 
 
 **Answer:** _add reply here_
 
+
+## Build 2026-09-02T00:30:00+00:00 (audit: partial)
+
+### Q: The nanonets_context.md was last updated 2026-07-26 but it is now 2026-09-02. Several models released since then (HunyuanOCR-1.5, Mistral OCR 4.1, Claude Sonnet 5, Claude Opus 5, GPT-5.6 Sol/Terra/Luna price cuts, Gemini 3.6 Flash) are not yet in the context file. Should the refresh-nanonets-context skill be invoked in the next build that has network access?
+
+**Context:** The editorial grounding is 37 days stale. Without an update, this build's scoring rubric would misclassify several now-current competitive models. Since all network sources are blocked and there are no items to score, this cycle is a good time to flag the drift rather than act on stale grounding.
+
+**Answer:** _add reply here_
+
+### Q: Would a pre-fetched static cache — a JSON file of the last successful build's items, stored in state/cache/last_good_edition.json — allow the dashboard to serve stale-but-useful content during infrastructure-failure builds, with a clearly labeled staleness banner?
+
+**Context:** The current failure mode produces an empty dashboard. A cached fallback would maintain editorial continuity for readers (and avoid the impression the service is broken) while the network issue persists. The publish step already tracks seen.json; a parallel cache file would be a small addition.
+
+**Answer:** _add reply here_
+
+### Q: Should a Slack or webhook notification be triggered when all 4 ingest sources fail, independent of the questions_for_team.md log? This file accumulates silently; a push notification to a monitored channel would surface the failure faster.
+
+**Context:** The failure has been logged in this file across many consecutive builds without a team response. The most plausible explanation is that no one is reading the file. A webhook triggered by the lock-acquire step (before ingest) if the prior build also had 0 items would reach on-call attention more reliably.
+
+**Answer:** _add reply here_
+
+---
