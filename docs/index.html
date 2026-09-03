@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 02, 2026 · 00:30 UTC · 0 items scored</span>
+  <span class="built-at">Built Sep 03, 2026 · 18:00 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,18 +79,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">The nanonets_context.md was last updated 2026-07-26 but it is now 2026-09-02. Several models released since then (HunyuanOCR-1.5, Mistral OCR 4.1, Claude Sonnet 5, Claude Opus 5, GPT-5.6 Sol/Terra/Luna price cuts, Gemini 3.6 Flash) are not yet in the context file. Should the refresh-nanonets-context skill be invoked in the next build that has network access?</p>
-    <p class="question-context">The editorial grounding is 37 days stale. Without an update, this build&#39;s scoring rubric would misclassify several now-current competitive models. Since all network sources are blocked and there are no items to score, this cycle is a good time to flag the drift rather than act on stale grounding.</p>
+    <p class="question-text">All four sources returned zero usable items this build — does the &#39;no items in current window&#39; failure for RSS and github_trending indicate a seen.json saturation problem, or a network policy change?</p>
+    <p class="question-context">seen.json now holds 841 entries. If the ingest pipeline filters out items that appear in seen.json before comparing to the recency window, a large seen.json could mask genuinely fresh items. Separately, if RSS and github_trending are being blocked at the network level alongside arXiv and HN, the failure mode is different and requires a different fix.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Would a pre-fetched static cache — a JSON file of the last successful build&#39;s items, stored in state/cache/last_good_edition.json — allow the dashboard to serve stale-but-useful content during infrastructure-failure builds, with a clearly labeled staleness banner?</p>
-    <p class="question-context">The current failure mode produces an empty dashboard. A cached fallback would maintain editorial continuity for readers (and avoid the impression the service is broken) while the network issue persists. The publish step already tracks seen.json; a parallel cache file would be a small addition.</p>
+    <p class="question-text">The arXiv and HN 403 failures have persisted for 15+ consecutive builds without a team response; is this an environment-level network restriction that requires infrastructure intervention rather than a source-config change?</p>
+    <p class="question-context">This question subsumes all prior unanswered questions about arXiv/HN access. The OAI-PMH, HN Firebase API, and Semantic Scholar alternatives have been suggested in prior builds. If the environment&#39;s egress policy blocks these domains entirely, no source-level fix will work without a network policy change.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should a Slack or webhook notification be triggered when all 4 ingest sources fail, independent of the questions_for_team.md log? This file accumulates silently; a push notification to a monitored channel would surface the failure faster.</p>
-    <p class="question-context">The failure has been logged in this file across many consecutive builds without a team response. The most plausible explanation is that no one is reading the file. A webhook triggered by the lock-acquire step (before ingest) if the prior build also had 0 items would reach on-call attention more reliably.</p>
+    <p class="question-text">Should the seen.json deduplication window be capped or rolled over periodically so that sources with a fixed recency window (github_trending: 1 day, hn: 3 days) continue to yield new items as the seen set grows?</p>
+    <p class="question-context">With 841 entries in seen.json, the pipeline may be filtering items that are genuinely new within a source&#39;s configured window but were seen in earlier builds. If seen.json acts as a lifetime dedup key with no expiry, eventually all trending repos and HN posts will have been seen and the pipeline will permanently yield nothing from those sources.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -102,7 +102,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-02T00:30:00+00:00
+    sources covered:     · failed: 4 · built at 2026-09-03T18:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

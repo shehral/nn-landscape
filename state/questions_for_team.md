@@ -10672,3 +10672,25 @@ The build environment's outbound HTTPS proxy is blocking all external requests. 
 2. Suspend this scheduled task at claude.ai scheduled tasks until the policy is updated.
 
 No new AI-partner questions this build. All open questions from prior builds remain unanswered.
+
+## Build 2026-09-03T18:00:00+00:00 (audit: partial)
+
+### Q: All four sources returned zero usable items this build — does the 'no items in current window' failure for RSS and github_trending indicate a seen.json saturation problem, or a network policy change?
+
+**Context:** seen.json now holds 841 entries. If the ingest pipeline filters out items that appear in seen.json before comparing to the recency window, a large seen.json could mask genuinely fresh items. Separately, if RSS and github_trending are being blocked at the network level alongside arXiv and HN, the failure mode is different and requires a different fix.
+
+**Answer:** _add reply here_
+
+### Q: The arXiv and HN 403 failures have persisted for 15+ consecutive builds without a team response; is this an environment-level network restriction that requires infrastructure intervention rather than a source-config change?
+
+**Context:** This question subsumes all prior unanswered questions about arXiv/HN access. The OAI-PMH, HN Firebase API, and Semantic Scholar alternatives have been suggested in prior builds. If the environment's egress policy blocks these domains entirely, no source-level fix will work without a network policy change.
+
+**Answer:** _add reply here_
+
+### Q: Should the seen.json deduplication window be capped or rolled over periodically so that sources with a fixed recency window (github_trending: 1 day, hn: 3 days) continue to yield new items as the seen set grows?
+
+**Context:** With 841 entries in seen.json, the pipeline may be filtering items that are genuinely new within a source's configured window but were seen in earlier builds. If seen.json acts as a lifetime dedup key with no expiry, eventually all trending repos and HN posts will have been seen and the pipeline will permanently yield nothing from those sources.
+
+**Answer:** _add reply here_
+
+---
