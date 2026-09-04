@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 03, 2026 · 18:00 UTC · 0 items scored</span>
+  <span class="built-at">Built Sep 04, 2026 · 18:55 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,18 +79,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four sources returned zero usable items this build — does the &#39;no items in current window&#39; failure for RSS and github_trending indicate a seen.json saturation problem, or a network policy change?</p>
-    <p class="question-context">seen.json now holds 841 entries. If the ingest pipeline filters out items that appear in seen.json before comparing to the recency window, a large seen.json could mask genuinely fresh items. Separately, if RSS and github_trending are being blocked at the network level alongside arXiv and HN, the failure mode is different and requires a different fix.</p>
+    <p class="question-text">All four ingestion sources (arxiv, HN, RSS, GitHub Trending) returned zero items this build — arxiv and HN with HTTP 403, RSS and GitHub Trending with empty windows. Is the remote execution environment behind a network policy that blocks these hosts?</p>
+    <p class="question-context">This is the most complete source failure observed across all builds. Prior builds showed arxiv and HN 403 as a recurring issue, but RSS and GitHub Trending have previously produced items. A network-level block is the most parsimonious explanation; the team should check the cloud environment&#39;s outbound allowlist.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The arXiv and HN 403 failures have persisted for 15+ consecutive builds without a team response; is this an environment-level network restriction that requires infrastructure intervention rather than a source-config change?</p>
-    <p class="question-context">This question subsumes all prior unanswered questions about arXiv/HN access. The OAI-PMH, HN Firebase API, and Semantic Scholar alternatives have been suggested in prior builds. If the environment&#39;s egress policy blocks these domains entirely, no source-level fix will work without a network policy change.</p>
+    <p class="question-text">arXiv has returned HTTP 403 across multiple consecutive builds; should the ingestion path switch to the OAI-PMH daily snapshot endpoint (https://export.arxiv.org/oai2) which has different rate-limit characteristics?</p>
+    <p class="question-context">The keyword-search endpoint (export.arxiv.org/api/query) appears to be blocked or rate-limited in the current execution environment. OAI-PMH was raised in the Build 2026-05-21T08:58:57 questions and has not been acted on. This is now blocking the vlm_research and doc_ai axes every build.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the seen.json deduplication window be capped or rolled over periodically so that sources with a fixed recency window (github_trending: 1 day, hn: 3 days) continue to yield new items as the seen set grows?</p>
-    <p class="question-context">With 841 entries in seen.json, the pipeline may be filtering items that are genuinely new within a source&#39;s configured window but were seen in earlier builds. If seen.json acts as a lifetime dedup key with no expiry, eventually all trending repos and HN posts will have been seen and the pipeline will permanently yield nothing from those sources.</p>
+    <p class="question-text">RSS returned no items despite 10 configured feeds (Anthropic, OpenAI, DeepMind, HuggingFace, Latent Space, Interconnects, AINews, Stratechery, Import AI, Mistral). Should the per_feed_limit or recency window be relaxed, or do these feeds require authenticated access from the remote environment?</p>
+    <p class="question-context">Prior builds have successfully ingested from RSS. The failure this build may be a timing artifact (all feeds quiet in the window) or a network-level block on these hosts in the execution environment. Relaxing the recency window from 1 day to 3 days for the next build would disambiguate.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">GitHub Trending also returned no items; should the topics list in sources.yaml be extended or the days_back window widened from 1 to 3 to ensure at least one source produces output on every build?</p>
+    <p class="question-context">GitHub Trending has been a reliable fallback in prior builds when other sources failed. A days_back=1 window means a build running at a trough of trending activity will produce zero items. Widening to 3 would make it a more consistent backstop.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Should the build failure policy be tightened to: if sources_covered is empty, skip render and publish and only commit questions_for_team.md?</p>
+    <p class="question-context">The current policy says continue with partial-build banner if fewer than 3 of 4 sources covered. With 0 sources, rendering produces an empty dashboard that may mislead readers about coverage. A stricter policy would push the failure surfacing to the team sooner without creating a visible empty edition.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -102,7 +112,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-03T18:00:00+00:00
+    sources covered:     · failed: 4 · built at 2026-09-04T18:55:01+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

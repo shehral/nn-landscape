@@ -10759,3 +10759,37 @@ Proxy status: `selective: false`, `connect_rejected` on all external hosts (anth
 **Status:** Unchanged from all prior 2026-09-01 through 2026-09-04 builds. All open questions from prior builds remain unanswered. No new questions raised — the single blocking issue (egress allowlist) subsumes everything else.
 
 **If you are reading this and can act:** Add the external domains to the egress allowlist at claude.ai environment settings (see the 2026-09-02T06:00 build note for the full domain list), or suspend the schedule at claude.ai → scheduled tasks.
+
+## Build 2026-09-04T18:55:01+00:00 (audit: partial)
+
+### Q: All four ingestion sources (arxiv, HN, RSS, GitHub Trending) returned zero items this build — arxiv and HN with HTTP 403, RSS and GitHub Trending with empty windows. Is the remote execution environment behind a network policy that blocks these hosts?
+
+**Context:** This is the most complete source failure observed across all builds. Prior builds showed arxiv and HN 403 as a recurring issue, but RSS and GitHub Trending have previously produced items. A network-level block is the most parsimonious explanation; the team should check the cloud environment's outbound allowlist.
+
+**Answer:** _add reply here_
+
+### Q: arXiv has returned HTTP 403 across multiple consecutive builds; should the ingestion path switch to the OAI-PMH daily snapshot endpoint (https://export.arxiv.org/oai2) which has different rate-limit characteristics?
+
+**Context:** The keyword-search endpoint (export.arxiv.org/api/query) appears to be blocked or rate-limited in the current execution environment. OAI-PMH was raised in the Build 2026-05-21T08:58:57 questions and has not been acted on. This is now blocking the vlm_research and doc_ai axes every build.
+
+**Answer:** _add reply here_
+
+### Q: RSS returned no items despite 10 configured feeds (Anthropic, OpenAI, DeepMind, HuggingFace, Latent Space, Interconnects, AINews, Stratechery, Import AI, Mistral). Should the per_feed_limit or recency window be relaxed, or do these feeds require authenticated access from the remote environment?
+
+**Context:** Prior builds have successfully ingested from RSS. The failure this build may be a timing artifact (all feeds quiet in the window) or a network-level block on these hosts in the execution environment. Relaxing the recency window from 1 day to 3 days for the next build would disambiguate.
+
+**Answer:** _add reply here_
+
+### Q: GitHub Trending also returned no items; should the topics list in sources.yaml be extended or the days_back window widened from 1 to 3 to ensure at least one source produces output on every build?
+
+**Context:** GitHub Trending has been a reliable fallback in prior builds when other sources failed. A days_back=1 window means a build running at a trough of trending activity will produce zero items. Widening to 3 would make it a more consistent backstop.
+
+**Answer:** _add reply here_
+
+### Q: Should the build failure policy be tightened to: if sources_covered is empty, skip render and publish and only commit questions_for_team.md?
+
+**Context:** The current policy says continue with partial-build banner if fewer than 3 of 4 sources covered. With 0 sources, rendering produces an empty dashboard that may mislead readers about coverage. A stricter policy would push the failure surfacing to the team sooner without creating a visible empty edition.
+
+**Answer:** _add reply here_
+
+---
