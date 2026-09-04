@@ -10718,3 +10718,25 @@ No new AI-partner questions this build. All open questions from prior builds rem
 No new AI-partner questions this build — the open questions from the 2026-09-03 build remain unanswered and subsume anything new I would raise.
 
 ---
+
+---
+
+## Build 2026-09-04T12:00:00+00:00 (audit: failed — 0 items ingested)
+
+**Failure:** Step 3 (ingest) — all four sources returned zero items. Same persistent failure.
+
+- `arxiv`: `403 Forbidden` — `http://export.arxiv.org/api/query`
+- `hn`: `403 Forbidden`
+- `rss`: `no items in current window`
+- `github_trending`: `no items in current window`
+
+**Proxy status this build:** `selective: false`, `recentRelayFailures: []` — proxy is running, but external hosts (export.arxiv.org, hn.algolia.com, RSS feed hosts) remain blocked at the egress policy level.
+
+**seen.json state:** 842 entries, 74KB — not at a pathological size; seen.json saturation is unlikely to be the sole cause of RSS and github_trending returning zero items.
+
+**Action taken:** Lock released. No HTML rendered. Only this file committed and pushed.
+
+**Status:** This is the same total 4-source blackout observed in every build since at least 2026-09-01. All prior questions and recommended fixes remain unanswered and open (egress allowlist update or schedule suspension). No new questions raised this build — the blocking question is the egress policy fix, and it is documented above.
+
+**If you are reading this:** The egress allowlist must be updated at claude.ai environment settings to include at minimum `export.arxiv.org`, `hn.algolia.com`, and the RSS feed hosts before this build agent can produce output. See prior build notes for the full domain list.
+
