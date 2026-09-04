@@ -10694,3 +10694,27 @@ No new AI-partner questions this build. All open questions from prior builds rem
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-04T00:00:00+00:00 (audit: failed — 0 items ingested)
+
+**Failure:** All four sources returned zero usable items.
+
+- `arxiv`: 403 Forbidden on export.arxiv.org
+- `hn`: 403 Forbidden
+- `rss`: no items in current window
+- `github_trending`: no items in current window
+
+**Pipeline aborted at Step 3 (ingest).** No edition rendered or pushed this cycle. The build lock will be released.
+
+**Status:** This is the same total 4-source blackout observed in the prior build (2026-09-03). The arXiv and HN 403 failures are now 15+ consecutive builds with no recovery. The RSS and github_trending "no items in current window" failures may be a separate symptom — either seen.json saturation (all recent items already seen) or network-level blocking extending to these sources.
+
+**Prior questions still unanswered (not re-raised here):**
+- seen.json saturation / dedup window cap
+- arXiv OAI-PMH / HN Firebase API alternatives
+- MinerU, opendataloader-pdf, RAGFlow registry additions
+
+**New observation this build:** As of this build, the questions_for_team.md file is 10,696 lines. The file size itself may be contributing to build overhead and should be archived or truncated. Suggest the team review the file, act on any outstanding questions, and start a fresh `questions_for_team.md` with only unresolved items.
+
+No new AI-partner questions this build — the open questions from the 2026-09-03 build remain unanswered and subsume anything new I would raise.
+
+---
