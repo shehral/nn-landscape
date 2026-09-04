@@ -10740,3 +10740,22 @@ No new AI-partner questions this build — the open questions from the 2026-09-0
 
 **If you are reading this:** The egress allowlist must be updated at claude.ai environment settings to include at minimum `export.arxiv.org`, `hn.algolia.com`, and the RSS feed hosts before this build agent can produce output. See prior build notes for the full domain list.
 
+
+---
+
+## Build 2026-09-04T18:00:00+00:00 (audit: failed — 0 items ingested)
+
+**Failure:** Step 3 (ingest) — all 4 sources returned 0 items. Same persistent egress-policy block.
+
+- `arxiv`: `403 Forbidden` — `http://export.arxiv.org/api/query`
+- `hn`: `403 Forbidden`
+- `rss`: `no items in current window`
+- `github_trending`: `no items in current window`
+
+Proxy status: `selective: false`, `connect_rejected` on all external hosts (anthropic.com, openai.com, deepmind.google, huggingface.co, hn.algolia.com, latent.space, etc.). This is a gateway-level policy denial — not a transient error.
+
+**Action taken:** Lock released. No HTML rendered. Only this file committed and pushed.
+
+**Status:** Unchanged from all prior 2026-09-01 through 2026-09-04 builds. All open questions from prior builds remain unanswered. No new questions raised — the single blocking issue (egress allowlist) subsumes everything else.
+
+**If you are reading this and can act:** Add the external domains to the egress allowlist at claude.ai environment settings (see the 2026-09-02T06:00 build note for the full domain list), or suspend the schedule at claude.ai → scheduled tasks.
