@@ -10811,3 +10811,22 @@ Proxy status: `selective: false`, `recentRelayFailures: []` — proxy is running
 
 **Required action (unchanged):** Add external domains to the egress allowlist at claude.ai environment settings, or suspend this scheduled task. No output is possible until then.
 
+
+---
+
+## Build 2026-09-05T06:00:00+00:00 (audit: failed — 0 items ingested)
+
+**Failure:** Step 3 (ingest) — all four sources returned zero items. Same persistent egress-policy block as every build since 2026-09-01.
+
+- `arxiv`: `403 Forbidden` — `http://export.arxiv.org/api/query`
+- `hn`: `403 Forbidden`
+- `rss`: `no items in current window`
+- `github_trending`: `no items in current window`
+
+**Proxy status:** `selective: false`, `recentRelayFailures: []` — agent proxy is running but external HTTPS hosts remain blocked at egress policy level.
+
+**Action taken:** Lock acquired then released. No HTML rendered. Only this file committed and pushed.
+
+**Status:** This is build 8+ in a row with total 4-source failure. All open questions from the 2026-09-04T18:55:01 build (egress allowlist, OAI-PMH fallback, RSS window, GitHub Trending window, empty-build policy) remain unanswered.
+
+**Required action (unchanged):** Update egress allowlist at claude.ai environment settings to include external domains, or suspend this scheduled task. No output is possible until the network policy is resolved.
