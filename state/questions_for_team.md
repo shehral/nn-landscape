@@ -10845,3 +10845,33 @@ Proxy status: `selective: false`, `recentRelayFailures: []` — proxy is running
 **Action taken:** Lock acquired then released. No HTML rendered. Only this file committed and pushed.
 
 **Status:** All open questions from 2026-09-04T18:55:01 remain unanswered. The egress allowlist must be updated at claude.ai environment settings before this agent can produce output. The schedule should be suspended until that is resolved.
+
+---
+
+## Build 2026-09-05 (ABORTED — complete ingest failure)
+
+**Step failed:** Step 3 (ingest)
+**Built at:** 2026-09-05T00:00:00Z
+**Items produced:** 0 across all 4 sources
+
+### Failure detail
+
+All four sources returned zero items:
+
+- **arxiv**: `403 Forbidden` from `http://export.arxiv.org/api/query` — outbound HTTP to export.arxiv.org blocked by network proxy.
+- **HN (Hacker News Algolia)**: `403 Forbidden` — outbound HTTP to hn.algolia.com blocked by network proxy.
+- **RSS**: `no items in current window` — all 10 RSS feeds returned no items in the look-back window. Could indicate the look-back window is too narrow, or the feeds themselves returned 403/empty.
+- **github_trending**: `no items in current window` — trending API returned no items in look-back window.
+
+No edition was built. No HTML was rendered. The build lock has been released.
+
+### What the team should investigate
+
+1. **Proxy allowlist**: The remote execution environment routes outbound HTTPS through a pre-configured proxy. `export.arxiv.org` and `hn.algolia.com` are returning 403 — check whether these domains are on the proxy allowlist. See `/root/.ccr/README.md` and `curl -sS "$HTTPS_PROXY/__agentproxy/status"` for proxy state.
+
+2. **RSS window**: If the RSS feeds are actually fetching but the `per_feed_limit` or `days_back` window is returning zero items, the source config in `data/sources.yaml` may need a wider window. Worth checking `state/run/items_raw.jsonl` (currently empty) after a manual test fetch of one feed URL.
+
+3. **github_trending window**: Same as RSS — `days_back: 1` may be too narrow or the GitHub trending API endpoint may need adjustment.
+
+4. **Retry cadence**: The next scheduled cron tick should retry. If the proxy issue persists across multiple ticks, manual intervention to allowlist the above domains will be required before the dashboard can produce output again.
+
