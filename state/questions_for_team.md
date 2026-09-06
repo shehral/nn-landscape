@@ -10895,3 +10895,31 @@ No edition was built. No HTML was rendered. The build lock has been released.
 
 **Required action (unchanged):** Update the egress allowlist at claude.ai environment settings to include external domains (at minimum: `export.arxiv.org`, `hn.algolia.com`, and the RSS feed hosts listed in `data/sources.yaml`), OR suspend this scheduled task until the network policy is resolved. The questions_for_team.md file is now 10,877 lines — consider archiving it once the network issue is resolved.
 
+
+## Build 2026-09-06T12:00:00+00:00 (audit: passed)
+
+### Q: WebSearch was used as a substitute for the blocked ingest step (all four CLI sources returned 403 or empty). Should this be formalized as a fallback ingest path, or should the team fix the egress allowlist first?
+
+**Context:** The proxy blocks export.arxiv.org, hn.algolia.com, and all RSS feed hosts. WebSearch produced 14 items across 3 source types. This is the first build in 10+ cycles to produce content; but the pipeline's integrity depends on consistent sourcing methodology.
+
+**Answer:** _add reply here_
+
+### Q: GPT-6 Astra is scored competitive-primary by the strict tie-break rule (vision input, 1M context), but its announced focus is cybersecurity, coding, and scientific work — not document extraction. Should it be reclassified as frontier-primary?
+
+**Context:** No document-specific benchmark or extraction endpoint was announced for GPT-6 Astra. The context.md tie-break defaults to competitive when unsure, but this may over-weight competitive-axis signal for a model without clear document-AI positioning.
+
+**Answer:** _add reply here_
+
+### Q: HunyuanOCR-1.5 claims top on OmniDocBench v1.6, but OCR-3's #1 ranking is on IDP Leaderboard and OmniDocBench v1.5. Should the team run OCR-3 on v1.6 to verify the current competitive position?
+
+**Context:** Benchmark versioning (v1.5, v1.6, v1.7) means scores are not cross-comparable. Three builds have elapsed since v1.6 launched (April 10, 2026) without a confirmed cross-version comparison being surfaced.
+
+**Answer:** _add reply here_
+
+### Q: Three mechanistic interpretability papers in this build (arXiv 2606.08777, 2607.29412, 2605.13156) are directly applicable to the hallucination research line. Should the team maintain a running reading list in questions_for_team.md, or is a separate research backlog the right venue?
+
+**Context:** This is the third consecutive build to surface a cluster of vlm_research papers on the same mechanistic topic. Without a team reply, the build agent cannot determine whether these are being acted on.
+
+**Answer:** _add reply here_
+
+---
