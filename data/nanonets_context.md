@@ -51,9 +51,10 @@ The team also publicly maintains the **IDP Leaderboard**
 (`idp-leaderboard.org` / `benchmarking.nanonets.com`), an academic
 benchmark on document AI co-developed with IIT Indore. Items that
 publish leaderboard results, contest its methodology, or are released by
-models near the top of it (GPT-5.4, GPT-5.5, GPT-5.6 Sol/Terra/Luna, Gemini-3-Pro/Flash,
-Gemini 3.1 Pro, Gemini 3.5 Flash, Gemini 3.6 Flash, Claude 4.6 family, Claude Fable 5,
-Claude Sonnet 5, Claude Opus 4.8, Claude Opus 5, Qwen3-VL, Pixtral, GLM-OCR, Chandra OCR 2,
+models near the top of it (GPT-5.4, GPT-5.5, GPT-5.6 Sol/Terra/Luna, GPT-6 Astra,
+Gemini-3-Pro/Flash, Gemini 3.1 Pro, Gemini 3.5 Flash, Gemini 3.6 Flash, Gemini 3.8 Flash,
+Claude 4.6 family, Claude Fable 5, Claude Fable 5.1, Claude Mythos 5.1, Claude Sonnet 5,
+Claude Opus 4.8, Claude Opus 5, Qwen3-VL, Pixtral, GLM-OCR, Chandra OCR 2,
 LightOn OCR-2, DeepSeek-OCR 2) are competitive-axis relevant.
 
 ## Active research direction
@@ -118,7 +119,13 @@ Items that name, compare against, or are released by these companies are
   GPT-5.5, Claude Opus 4.8, Gemini 3.1 Pro); released Deep Split (2026;
   4 credits/page via API and Studio), an agentic splitting mode extending
   Split to documents running to thousands of pages across 150+ category
-  taxonomies, using the same agent harness architecture as Deep Extract.
+  taxonomies, using the same agent harness architecture as Deep Extract;
+  Reducto r-1 (preview, September 1, 2026; $10/1,000 pages all-in; unified single model
+  combining layout detection, reading order, tables, formatting, grounding, and granular
+  citations in one pass; reduces errors up to 20% versus prior multi-pass pipeline; up to
+  6× cheaper than comparable multi-tool approaches; available in preview with up to $5,000
+  in free credits for evaluation) positions Reducto's architecture as a single-model
+  replacement for multi-tool parsing stacks.
 - **LlamaParse (LlamaIndex / LlamaCloud)** — managed parsing service
   inside LlamaCloud; RAG-native, multimodal, often paired with or
   benchmarked against Reducto. LlamaParse v2 launched 2026 with
@@ -190,6 +197,11 @@ Items that name, compare against, or are released by these companies are
   architecture; 92.94 on OmniDocBench v1.5; uses Format-Constrained GRPO
   to enforce strict syntactic validity, eliminating structural hallucinations
   in tables and LaTeX; arXiv 2603.01840; Apache 2.0),
+  **MinerU2.5** (Shanghai AI Lab / OpenDataLab, 2026; 1.2B params; arXiv
+  2509.22186; decoupled two-stage VLM: global layout analysis on downsampled
+  images followed by targeted content recognition on native-resolution crops;
+  90.67 on OmniDocBench; open-source; HuggingFace: opendatalab/MinerU2.5-2509-1.2B;
+  MinerU2.5-Pro variant achieves 95.69 on OmniDocBench v1.6),
   **Pixtral** (Mistral),
   **Qwen3-VL** family (Alibaba; Qwen 3.6-VL is the 2026-series variant),
   **Llama-3.2-Vision** (Meta) — open-weight VLMs that appear on the IDP
@@ -255,21 +267,37 @@ Examples that are **competitive-primary**:
   chart, document, and image parsing; 1M-token context window; 128K
   synchronous output; $5/$25 per million input/output tokens; near-Fable-5
   performance at half the price; no IDP Leaderboard or ParseBench scores
-  yet available as of this refresh.
+  yet available as of this refresh; Claude Fable 5.1 and Claude Mythos 5.1
+  (both September 1, 2026) supersede Fable 5 — Fable 5.1 is generally
+  available (multimodal: text and image input; 1M-token context; $10/$50
+  per million input/output tokens; better performance than Fable 5 at lower
+  costs; positioned for coding, knowledge work, and long-running tasks);
+  Mythos 5.1 carries the same model weights with loosened safeguards for
+  vetted defenders and life-science researchers; no IDP Leaderboard or
+  ParseBench document-benchmark scores confirmed yet.
 - Google releases a Gemini-document-mode endpoint or a layout-aware
   OCR benchmark result (Gemini 3 Pro/Flash; Gemini 3.1 Pro released
   February 19, 2026; Gemini 3.5 Flash released May 2026 at Google I/O;
   Gemini 3.6 Flash released July 21, 2026 — Google's new default model,
   1M-token context window, accepts PDF and images as input, confirmed
   used by enterprise customers for document parsing and chart analysis;
-  3.5 Flash-Lite and 3.5 Flash Cyber released alongside it).
+  3.5 Flash-Lite and 3.5 Flash Cyber released alongside it; Gemini 3.8 Flash
+  released September 2, 2026 (gemini-3.8-flash; text, image, audio, video, and
+  PDF input; 1M-token context; 64K output; $0.75/$3.75 per million input/output
+  tokens; outperforms Gemini 3.7 Flash on all Google-published benchmarks; Gemini
+  3.8 Flash Cyber released alongside it; Google's third Flash release in six weeks)).
 - OpenAI announces GPT-5.x vision improvements on DocVQA / ChartQA /
   OmniDocBench / IDP Leaderboard (GPT-5.4 March 2026, GPT-5.5 April
   2026, GPT-5.6 Sol/Terra/Luna July 9 2026; all three tiers include
   vision input; Terra tier explicitly targets document analysis
   workflows; GPT-5.6 Luna price cut 80% and Terra cut 20%, effective
   July 30, 2026; Fast mode for GPT-5.6 Sol added at 2.5× speed at
-  twice the price).
+  twice the price; GPT-6 Astra (model ID gpt-6-astra; September 3–4, 2026
+  — limited preview September 3 for trusted partners, paid-user rollout
+  September 4) is OpenAI's new flagship for advanced analysis, deep research,
+  software engineering, and long-horizon agentic tasks; text and image input;
+  1.05M-token context; 128K output; $10/$50 per million input/output tokens;
+  no IDP Leaderboard or document-benchmark scores confirmed yet).
 - Mistral OCR is updated with new accuracy or pricing (Mistral OCR 4
   released June 23, 2026).
 - xAI ships Grok vision document handling; the Grok Collections API
@@ -1537,3 +1565,93 @@ Nanonets, do not respond.
 - Note: MinerU2.5 (OpenDataLab, arXiv 2509.22186, ACL 2026) is a new
   open-source document-parsing VLM to monitor; not yet confirmed in
   trade press alongside named competitors; not added to body text.
+
+---
+
+**Date:** 2026-09-06
+
+**Sources consulted:**
+
+- WebSearch: "Nanonets OCR-3 IDP leaderboard September 2026 ranking" —
+  #1 at 85.9% confirmed unchanged; benchmarking.nanonets.com and
+  idp-leaderboard.org URLs confirmed resolving; OLM-OCR 87.4 and
+  OmniDocBench 90.5 confirmed current
+- WebSearch: "site:huggingface.co/nanonets 2026 models" — open-weight
+  model lineup unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3
+  remains API-only
+- WebSearch: "nanonets arxiv 2026 research paper hallucination VLM" —
+  no team-authored papers surfaced; Nanonets-KIE dataset referenced in
+  third-party papers (as in prior refreshes)
+- WebSearch: "Nanonets product announcement blog September 2026" — no
+  new September 2026 Nanonets product announcements indexed
+- WebSearch: "Reducto AI document processing September 2026" — Reducto
+  r-1 (September 1, 2026) confirmed from PRNewswire, Dealroom, TipRanks,
+  and Enera Labs; pricing and feature claims confirmed across sources
+- WebSearch: "Reducto r-1 frontier parsing model September 2026 features
+  pricing benchmark" — r-1 specs ($10/1,000 pages; 20% error reduction;
+  6× cost reduction; single-model unified parse) confirmed from
+  PRNewswire press release and secondary trade coverage
+- WebSearch: "Claude Fable 5.1 Anthropic release date September 2026" —
+  September 1, 2026 release confirmed from MacRumors, Thurrott, emergent.sh,
+  llm-stats.com; multimodal (text and image); $10/$50 per million input/output
+  tokens; 1M-token context; same model as Mythos 5.1 with different safeguards
+- WebSearch: "GPT-6 Astra OpenAI release September 2026 document vision" —
+  gpt-6-astra confirmed released September 3–4, 2026 (limited preview
+  September 3; paid users September 4) from openai.com, CNBC, emergent.sh,
+  evolink.ai; text and image input; 1.05M-token context; $10/$50 per million
+  input/output tokens; flagship for analysis, research, engineering
+- WebSearch: "Gemini 3.8 Flash Google release September 2026 document OCR" —
+  gemini-3.8-flash confirmed released September 2, 2026 from 9to5google,
+  eesel AI, Enterprise DNA, codersera; handles text, image, audio, video,
+  and PDF input; 1M-token context; $0.75/$3.75 per million tokens; Gemini
+  3.8 Flash Cyber released alongside; Google's third Flash release in six weeks
+- WebSearch: "MinerU2.5 arXiv 2509.22186 document parsing benchmark
+  OmniDocBench score" — MinerU2.5 confirmed from arXiv 2509.22186, HuggingFace
+  (opendatalab/MinerU2.5-2509-1.2B), neurohive.io, and alphaXiv; 1.2B params;
+  90.67 on OmniDocBench; MinerU2.5-Pro variant confirmed at 95.69 on
+  OmniDocBench v1.6 (arXiv 2604.04771); resolves the "monitor" flag from
+  the 2026-08-30 refresh
+- WebSearch: "Mistral OCR September 2026 new model update" — no new model
+  since Mistral OCR 4.1 (full release August 13, 2026); all prior entries
+  confirmed current
+- WebSearch: "new OCR VLM document AI model September 2026 benchmark" — no
+  new entrants beyond those already confirmed; Qwen3.8-Max-0902 (Alibaba,
+  early September 2026) noted in release trackers but not confirmed on
+  document-extraction benchmarks; not added to body text
+- WebSearch: "Anthropic Google OpenAI xAI document extraction vision
+  September 2026" — confirmed Claude Fable 5.1, Gemini 3.8 Flash, GPT-6
+  Astra as major September 2026 multimodal releases; no dedicated new
+  document-extraction product from xAI
+
+**Material changes versus prior version (2026-08-30):**
+
+- Added **Reducto r-1** (preview, September 1, 2026; $10/1,000 pages;
+  single-model combining layout detection, reading order, tables,
+  formatting, grounding, and citations; reduces errors up to 20%; up to
+  6× cheaper than multi-tool alternatives) to the Reducto competitive
+  entry; positions as unified replacement for multi-pass parsing stacks.
+- Added **Claude Fable 5.1 and Claude Mythos 5.1** (both September 1,
+  2026) to the frontier-lab competitive-primary Anthropic example and IDP
+  Leaderboard comparables list; Fable 5.1 is generally available (text and
+  image input; 1M context; $10/$50 per million tokens); Mythos 5.1 is
+  trusted-access only with loosened safeguards; both supersede Fable 5;
+  no IDP Leaderboard or ParseBench document-benchmark scores confirmed yet.
+- Added **GPT-6 Astra** (OpenAI, September 3–4, 2026; gpt-6-astra; text
+  and image input; 1.05M-token context; $10/$50 per million tokens) to
+  the frontier-lab competitive-primary OpenAI example and IDP Leaderboard
+  comparables list; no document-benchmark scores confirmed yet.
+- Added **Gemini 3.8 Flash** (Google, September 2, 2026; gemini-3.8-flash;
+  text, image, audio, video, and PDF input; 1M-token context; $0.75/$3.75
+  per million tokens; Gemini 3.8 Flash Cyber released alongside) to the
+  frontier-lab competitive-primary Google example and IDP Leaderboard
+  comparables list.
+- Added **MinerU2.5** (Shanghai AI Lab / OpenDataLab, 2026; 1.2B params;
+  arXiv 2509.22186; 90.67 on OmniDocBench; MinerU2.5-Pro at 95.69 on
+  OmniDocBench v1.6; open-source) to the competitive set; resolves the
+  "monitor" flag from the 2026-08-30 entry.
+- Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
+  No new Nanonets models on HuggingFace. No Nanonets-authored arXiv
+  papers found. No September 2026 Nanonets blog posts indexed.
+- Note: Qwen3.8-Max-0902 (Alibaba, early September 2026) appears in
+  release trackers; not confirmed on document-extraction benchmarks; not
+  added to body text; monitor for OmniDocBench or IDP Leaderboard results.
