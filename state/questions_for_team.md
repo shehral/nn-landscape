@@ -10923,3 +10923,37 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-06T18:00:00+00:00 (audit: partial)
+
+### Q: GPT-6 Astra (ea74e2fffbc50210) is scored competitive-primary by the tie-break rule (vision input, 1.05M context), but its primary positioning is cybersecurity, coding, and science — not document extraction. Two consecutive builds have raised this without a team reply. Should it be reclassified frontier-primary, or should the context.md tie-break be tightened?
+
+**Context:** The strict disambiguation rule routes frontier-lab vision releases to competitive when they directly overlap the extraction surface. GPT-6 Astra has vision input but no document-AI benchmark scores. Without guidance, the tie-break defaults to competitive.
+
+**Answer:** _add reply here_
+
+### Q: HunyuanOCR-1.5 claims SOTA on OmniDocBench v1.6 (94.74) while OCR-3's confirmed score is on v1.5 (90.5). Should the team run OCR-3 on v1.6 to establish a current competitive position?
+
+**Context:** This question was also raised in the prior build without a reply. Three competitive models (HunyuanOCR-1.5, Reducto r-1, Mistral OCR 4.1 GA) are now benchmarking on v1.6; the version mismatch is now a consistent gap across multiple builds.
+
+**Answer:** _add reply here_
+
+### Q: Reducto r-1 is priced at $0.01/page all-in, below Nanonets' public per-page pricing, and claims 20% error reduction on complex documents. Should the team run a head-to-head quality comparison on a shared real-world test set?
+
+**Context:** r-1's launch (September 1, 2026) includes no shared benchmark evaluation; all comparisons are against hyperscaler products and internal baselines. A comparison on a neutral corpus would disambiguate the pricing-vs-quality trade-off.
+
+**Answer:** _add reply here_
+
+### Q: WebSearch has been the ingest fallback for consecutive builds due to the egress policy blocking CLI sources (arxiv, hn, rss, github_trending all return 403 or empty). Should this be formalized as a fallback mode in the pipeline, or should fixing the egress allowlist take priority?
+
+**Context:** The required domains are: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml. Without egress access, the pipeline cannot ingest primary research (arXiv) or discussion signals (HN). WebSearch is a partial substitute but lacks systematic coverage.
+
+**Answer:** _add reply here_
+
+### Q: Three mechanistic hallucination papers surfaced this build (VISOR, INFUSE, PaDoc) with reproduce or read-in-week recommendations. A running reading list in questions_for_team.md or a separate research-backlog file would prevent re-surfacing the same papers without acknowledgment. Should a seen-papers section be maintained?
+
+**Context:** Prior builds surfaced arXiv 2606.08777, 2607.29412, and 2605.13156 with the same recommendation; none have received a team reply. Without a backlog, each build re-discovers papers the team may have already triaged.
+
+**Answer:** _add reply here_
+
+---
