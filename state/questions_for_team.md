@@ -10957,3 +10957,37 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-07T00:00:00+00:00 (audit: passed)
+
+### Q: Claude Fable 5.1 introduced 3 breaking API changes on September 1. Do any Nanonets integrations wrap Anthropic API endpoints in ways that require compatibility updates?
+
+**Context:** Fable 5.1 is a point release; its document-AI capabilities are unchanged from Fable 5. The breaking changes are API-level, not model-level. Without knowing which Anthropic API surfaces Nanonets uses internally, this build cannot determine whether action is needed.
+
+**Answer:** _add reply here_
+
+### Q: Two no-retraining hallucination controls (TTH arXiv 2608.11474 and Implicit Feature Stabilization arXiv 2608.29924) appeared in August 2026. Should both be scheduled for reproduction, or is one clearly preferable given the team's current activation-patching infrastructure?
+
+**Context:** TTH operates at the token-validation level; Implicit Feature Stabilization at intermediate layer features. They are complementary mechanisms. Reproducing both would be duplicative effort; the team's existing tooling likely favors one approach over the other.
+
+**Answer:** _add reply here_
+
+### Q: MinerU-Diffusion (arXiv 2603.22458) reframes document parsing as inverse rendering. Is this architecturally interesting enough to add to the research reading queue, or is it too far from the team's VLM-centric work?
+
+**Context:** The diffusion-decoding approach is technically distinct from the team's MoE VLM research direction. If the team's work ever extends to degraded-scan recovery, this becomes relevant; otherwise it remains background reading.
+
+**Answer:** _add reply here_
+
+### Q: Reducto r-1's $0.01/page claim has no shared benchmark corpus. Should the team run a head-to-head quality evaluation on a neutral real-world test set to validate or refute the accuracy claims before treating the pricing as a true floor?
+
+**Context:** Prior build (Sep 6 18:00 UTC) raised a related question about running a head-to-head comparison; it has not received a team reply. This question is slightly different: it asks whether the quality claim should be verified before treating the pricing as competitive pressure.
+
+**Answer:** _add reply here_
+
+### Q: Gemini 3.8 Flash and GPT-6 Astra both lack IDP Leaderboard, ParseBench, or OmniDocBench scores as of this build. Should the IDP Leaderboard be updated to preemptively list these models, or only once submission scores are confirmed?
+
+**Context:** Three consecutive builds have included frontier-lab model launches without confirmed document-AI benchmark results. A policy on when to add models to the IDP Leaderboard comparables list would help the build agent avoid over- or under-counting competitors.
+
+**Answer:** _add reply here_
+
+---
