@@ -11019,3 +11019,31 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-07T06:58:42+00:00 (audit: passed)
+
+### Q: NaviDC-OCR's 96.87 on OmniDocBench v1.6 is now the fourth model above OCR-3's v1.5 score (90.5) surfaced across consecutive builds. Should the team establish a policy for running OCR-3 on new benchmark versions as they release — and if so, how should the IDP Leaderboard handle cross-version score comparisons?
+
+**Context:** The version gap (v1.5 vs v1.6) means published competitive scores cannot be directly compared. Four models now report v1.6 scores with no confirmed OCR-3 v1.6 result available to this build agent.
+
+**Answer:** _add reply here_
+
+### Q: Gemini 3.8 Flash ranks #1 on data extraction (97.3% on Roboflow Vision Evals) but #30 on OCR (87.3%). Should Nanonets' competitive positioning explicitly distinguish between data extraction (structured field retrieval from known schemas) and document OCR (text transcription) as separate capability dimensions?
+
+**Context:** Customers may conflate these two capabilities when comparing tools. A public disambiguation would let Nanonets position OCR-3's transcription accuracy separately from extraction accuracy — where different competitive models lead.
+
+**Answer:** _add reply here_
+
+### Q: FD-RL (CVPR 2026) and FireRed-OCR-2B's Format-Constrained GRPO (from a prior build) both apply RL training specifically to enforce structural output constraints. Should RL-based format enforcement be added to the research reading queue as a candidate improvement for OCR-3's training objective?
+
+**Context:** Both approaches address structural hallucination subtypes through the training signal rather than inference-time mitigation. They are complementary to the team's existing activation-patching work rather than replacements.
+
+**Answer:** _add reply here_
+
+### Q: This is the 12th+ consecutive build where WebSearch fallback produces 4-7 items versus the 20-80 items from CLI ingest. The questions_for_team.md file is now 11,000+ lines of unanswered questions. Should the scheduled task be suspended or its frequency reduced until the egress allowlist is updated?
+
+**Context:** Each WebSearch-fallback build produces lower signal-to-noise coverage and appends unanswered questions. Without the egress allowlist fix, the build agent cannot systematically cover arXiv, HN, or RSS feeds.
+
+**Answer:** _add reply here_
+
+---
