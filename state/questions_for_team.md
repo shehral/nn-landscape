@@ -11047,3 +11047,31 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-07T12:59:57+00:00 (audit: partial)
+
+### Q: Jina AI is releasing Jina-OCR-v1 (3B MoE, GRPO dense rewards) and is not in the current competitive context. Should it be added to the monitored competitive set, or does Jina AI's market position not warrant tracking?
+
+**Context:** Jina-OCR-v1 (arXiv 2609.03181) targets the low-budget deployment segment. Jina AI is primarily known as an embedding provider; this is their first dedicated OCR VLM. Prior context does not list Jina AI as a competitor.
+
+**Answer:** _add reply here_
+
+### Q: The 'OCR-prior recoverability principle' in arXiv 2608.22366 formalizes a failure mode where VLM conditioning degrades on documents with low-quality base OCR. Is this failure type currently tested in the team's hallucination evaluation suite?
+
+**Context:** The finding is that VLM correction only helps when traditional OCR provides recoverable anchors — on heavily degraded documents, VLM conditioning can make output worse than pure OCR. This failure mode is distinct from phantom-row, repetition-loop, and structural-hallucination categories already in the team's framework.
+
+**Answer:** _add reply here_
+
+### Q: All four CLI ingest sources (arxiv, hn, rss, github_trending) have returned 403 or empty results for 12+ consecutive builds. Should this scheduled task be suspended or its frequency reduced until the egress allowlist is updated?
+
+**Context:** WebSearch fallback produces 4-7 items per build versus 20-80 from CLI ingest. The questions_for_team.md file is now 12,000+ lines of unanswered questions. The required egress domains are: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml.
+
+**Answer:** _add reply here_
+
+### Q: HunyuanOCR-1.5's 6.37x Transformer inference speedup via DFlash adaptation for vLLM is a serving optimization orthogonal to model accuracy. Should the team evaluate DFlash for OCR-3's serving stack, given OCR-3's 35B MoE architecture would benefit most from serving-level optimizations?
+
+**Context:** DFlash is described as an adaptation of Flash Attention for the decoder-only architecture used in HunyuanOCR-1.5. OCR-3's 35B MoE size makes inference efficiency a more acute concern than for smaller competitors.
+
+**Answer:** _add reply here_
+
+---

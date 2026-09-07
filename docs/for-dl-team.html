@@ -22,9 +22,13 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 07, 2026 · 06:58 UTC · 7 items scored</span>
+  <span class="built-at">Built Sep 07, 2026 · 12:59 UTC · 6 items scored</span>
 </header>
 
+<div class="partial-banner">
+  <strong>Partial build.</strong> This edition was published with at least one
+  pre-publish check failed. See <a href="about.html">about</a> for details.
+</div>
 
 <p class="score-legend">
   Scores are 0–100 composites weighted by this view's per-axis emphasis. Hover any score chip to see the per-axis breakdown
@@ -49,10 +53,10 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Training-free VLM hallucination mitigation is splitting into distinct signal-path approaches — representation filtering (arXiv 2608.08167), per-instance subspace decomposition (arXiv 2608.09344), token-level validation (arXiv 2608.11474 from prior build) — without a dominant consensus method. Three consecutive builds have surfaced multiple papers in this cluster.</li>
-    <li>OmniDocBench v1.6 scores are accumulating for new models (NaviDC-OCR 96.87, MinerU2.5-Pro 95.69) while OCR-3&#39;s only confirmed comparable score remains on v1.5 (90.5). The benchmark-version gap now spans four or more competitor entries across consecutive builds.</li>
-    <li>Google has released three Flash models in six weeks (Gemini 3.6 Flash July 21, Gemini 3.8 Flash September 2, with Gemini 3.8 Flash Cyber alongside); each includes PDF/image input at progressively lower pricing. This release cadence is unique among frontier labs and signals a rapid competitive update channel for document AI.</li>
-    <li>RL-based format enforcement for structured OCR output is appearing in consecutive builds: FD-RL (CVPR 2026, format-decoupled RL) in this build; FireRed-OCR-2B&#39;s Format-Constrained GRPO in a prior build. Both address structural output quality through the training objective rather than inference-time intervention.</li>
+    <li>GRPO with deterministic structural rewards is converging as the post-training method for OCR structural correctness. Jina-OCR-v1 (dense verifiable rewards with partial credit), FireRed-OCR-2B (Format-Constrained GRPO, prior build), and Reducto r-1 (September 1) all apply RL-based format enforcement rather than SFT alone.</li>
+    <li>Inference efficiency — not accuracy alone — is now a first-class OCR VLM differentiator. HunyuanOCR-1.5 (6.37x speedup via DFlash), Jina-OCR-v1 (speculative decoding for low-budget GPUs), and Reducto r-1 (6x cheaper than multi-tool stacks, September 1) each position deployment cost as a primary axis.</li>
+    <li>Major frontier and competitive models (Mistral OCR 4.1, GPT-6 Astra, Gemini 3.8 Flash) are in production without confirmed IDP Leaderboard or OmniDocBench v1.6 scores, creating a persistent cross-version gap that prevents direct ranking comparison with OCR-3.</li>
+    <li>Hybrid VLM-over-OCR pipeline effectiveness is conditioned on base OCR quality, not a general improvement. The Arabic OCR cross-dataset study formalizes what practitioners already observe: VLM correction helps only when traditional OCR provides recoverable text anchors.</li>
   </ul>
 </section>
 
@@ -61,50 +65,25 @@
     <h2>VLM research</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="38">
+         data-score="62">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 4 = 38 (this view's weighting)">38</span>
+          title="doc_ai 2 · competitive 1 · frontier 2 · vlm_research 5 = 62 (this view's weighting)">62</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 100%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2608.09344" target="_blank" rel="nofollow noopener noreferrer">Beyond Global Editing: Per-Instance Disentangled Subspaces for Training-Free Hallucination Mitigation in LVLMs</a>
+    <a href="https://arxiv.org/abs/2608.29974" target="_blank" rel="nofollow noopener noreferrer">SpanCalib-VLM: Calibrated Hallucination Span Detection in Vision-Language Models</a>
   </p>
-  <p class="item-summary">BMVC 2026: per-instance subspace decomposition removes diverse hallucination modes from LVLMs at inference without retraining.</p>
+  <p class="item-summary">Hybrid span detector (multimodal tagger + generative VLM, Union-Calibrated Fusion) achieves 0.41 Pearson calibration on SHROOM-Visions hallucination spans.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct product implication.</dd>
+      <dd>No direct product implication. Span-level hallucination detection is inference-time only and would add latency in production extraction pipelines.</dd>
       <dt>Research</dt>
-      <dd>Constructs per-input hallucination subspaces from a contrastive corpus, applied at inference by composing subspaces into a sample-specific projection on hidden states. Improves on single-global-subspace correction methods; the per-instance adaptation is potentially applicable to the team&#39;s phantom-row and structural-hallucination subtypes.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="38">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 4 = 38 (this view's weighting)">38</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2608.08167" target="_blank" rel="nofollow noopener noreferrer">Wiener Representation Filtering for VLM Hallucination Suppression</a>
-  </p>
-  <p class="item-summary">Training-free hallucination suppression via Wiener-type estimator on VLM hidden states; models truthful and hallucination components jointly.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication.</dd>
-      <dt>Research</dt>
-      <dd>Models hidden states as a superposition of truthful and hallucination-associated components and derives a Wiener estimator to filter the hallucination contribution. Training-free and post-hoc; applicable to repetition-loop and structural-hallucination subtypes without modifying the base model.</dd>
+      <dd>Calibrated span detection (as opposed to binary hallucination flags) provides grounding coordinates for hallucinated content — potentially useful for the team&#39;s phantom-row and structural-hallucination characterization work. The Union-Calibrated Fusion strategy is worth reviewing alongside existing hallucination evaluation tooling.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
@@ -114,108 +93,81 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="64">
+         data-score="78">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 5 · competitive 5 · frontier 0 · vlm_research 3 = 64 (this view's weighting)">64</span>
+          title="doc_ai 5 · competitive 4 · frontier 2 · vlm_research 4 = 78 (this view's weighting)">78</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2608.12898" target="_blank" rel="nofollow noopener noreferrer">NaviDC-OCR: Navigating Document Parsing Across Digital and Camera-Captured Documents</a>
+    <a href="https://arxiv.org/abs/2607.04884" target="_blank" rel="nofollow noopener noreferrer">HunyuanOCR-1.5: Making Lightweight OCR VLMs Faster and Better</a>
   </p>
-  <p class="item-summary">ICDAR 2026 Sci-ImageMiner #1; 96.87 on OmniDocBench v1.6; deformation-aware VLM with adaptive sampling for camera-captured docs.</p>
+  <p class="item-summary">Tencent HunyuanOCR-1.5: 6.37x Transformer speedup via DFlash, agentic data flow for chart/table/multilingual training. Open-source.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>NaviDC-OCR&#39;s 96.87 on OmniDocBench v1.6 establishes a new benchmark ceiling on the same evaluation surface where OCR-3 holds its confirmed v1.5 score (90.5). Cross-version scores are not directly comparable, so the competitive gap cannot be precisely quantified without an OCR-3 v1.6 run.</dd>
+      <dd>6.37x Transformer inference speedup and DFlash vLLM optimization make HunyuanOCR-1.5 a credible candidate for high-throughput self-hosted deployments — a segment where OCR-3&#39;s MoE architecture also targets efficiency. Open-source release keeps this accessible to enterprises evaluating alternatives.</dd>
       <dt>Research</dt>
-      <dd>Deformation-aware learning and adaptive sampling address camera-captured document degradation — a category underrepresented in curated leaderboard test sets. The architecture could inform how the team approaches layout robustness in OCR-3&#39;s training distribution.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: competitive</p>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="56">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 0 · vlm_research 3 = 56 (this view's weighting)">56</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2509.22186" target="_blank" rel="nofollow noopener noreferrer">MinerU2.5: A Decoupled Vision-Language Model for Efficient High-Resolution Document Parsing</a>
-  </p>
-  <p class="item-summary">Decoupled 1.2B-param doc parser from Shanghai AI Lab/OpenDataLab; Pro variant scores 95.69 on OmniDocBench v1.6; open-source.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Adds another open-weight document parser benchmarking on OmniDocBench. The Pro variant&#39;s 95.69 on v1.6 and open-source availability lower the barrier for customers evaluating alternatives to API-based extractors like OCR-3.</dd>
-      <dt>Research</dt>
-      <dd>The two-stage decoupled approach — downsampled layout pass followed by full-resolution crop recognition — is a compute-efficiency pattern that may be worth comparing to OCR-3&#39;s inference architecture for high-resolution document handling.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: competitive</p>
-</article><article class="item "
-         data-source="github_trending"
-         data-score="56">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 0 · frontier 0 · vlm_research 4 = 56 (this view's weighting)">56</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">github_trending</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/DocTron-hub/FD-RL" target="_blank" rel="nofollow noopener noreferrer">FD-RL: Format Decoupled Reinforcement Learning for Document OCR (CVPR 2026)</a>
-  </p>
-  <p class="item-summary">CVPR 2026: RL training that decouples OCR output format from recognition quality to reduce structural output errors; code on GitHub.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication; this is a training methodology, not a deployed extraction product.</dd>
-      <dt>Research</dt>
-      <dd>Format-decoupled RL training separates output format compliance from recognition quality during training. This addresses structural hallucination subtypes (fabricated headers, mis-rendered tables) through the training objective rather than inference-time mitigation — a complementary approach to the team&#39;s existing activation-patching work.</dd>
+      <dd>The &#39;Agentic Data Flow&#39; pipeline addresses training-data scarcity for ancient-script and low-resource multilingual parsing via structured generation. The DFlash vLLM adaptation technique enabling the speedup is worth examining for OCR-3 serving optimization.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: vlm_research</p>
+  <p class="secondary-axes">also: competitive, vlm_research</p>
 </article><article class="item "
-         data-source="github_trending"
-         data-score="22">
+         data-source="arxiv"
+         data-score="74">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 2 · frontier 0 · vlm_research 0 = 22 (this view's weighting)">22</span>
+          title="doc_ai 5 · competitive 4 · frontier 1 · vlm_research 4 = 74 (this view's weighting)">74</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
     </span>
-    <span class="item-source">github_trending</span>
+    <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/firecrawl/anydoc" target="_blank" rel="nofollow noopener noreferrer">AnyDoc: Firecrawl open-sources Rust-based multi-format document-to-Markdown converter (14 formats, median 4.7ms/doc, MIT license)</a>
+    <a href="https://arxiv.org/abs/2609.03181" target="_blank" rel="nofollow noopener noreferrer">Jina-OCR-v1: Efficient Document Parsing with Speculative Decoding and Dense Verifiable Rewards</a>
   </p>
-  <p class="item-summary">Firecrawl open-sources Rust converter: 14 document formats to Markdown, no ML, zero external dependencies, 4.7ms median, MIT license.</p>
+  <p class="item-summary">Jina AI releases 3B MoE OCR model (~570M active params) with speculative decoding and GRPO dense verifiable rewards targeting low-budget GPUs.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>AnyDoc handles format conversion (docx, pptx, xlsx, pdf, etc.) with no ML dependency; it complements extraction-grade tools rather than replacing them. May accelerate customer adoption of Firecrawl as a preprocessing step before a dedicated extraction API, shifting where in the stack the make-vs-buy decision occurs.</dd>
+      <dd>Jina-OCR-v1&#39;s 3B MoE at ~570M active parameters per token targets the same low-budget deployment segment as Nanonets OCR2-1.5B-exp; its GRPO structural rewards follow the same pattern as FireRed-OCR-2B, suggesting this training approach is becoming the default for structural correctness among OCR VLMs.</dd>
       <dt>Research</dt>
-      <dd>No research implication.</dd>
+      <dd>Dense verifiable rewards with partial credit (deterministic table, formula, and structural checks) offer a more principled reward signal than binary pass/fail in OCR post-training. Speculative decoding via a shared draft block across K=3 prediction steps is a latency optimization orthogonal to model scaling.</dd>
       <dt>Action</dt>
-      <dd>no action</dd>
+      <dd>read in week</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive</p>
+  <p class="secondary-axes">also: competitive, vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="54">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 1 · frontier 1 · vlm_research 3 = 54 (this view's weighting)">54</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2608.22366" target="_blank" rel="nofollow noopener noreferrer">When Do VLMs Help Arabic Manuscript OCR? A Cross-Dataset Study</a>
+  </p>
+  <p class="item-summary">Eight-dataset cross-study: VLM conditioning on OCR output helps only when base OCR provides recoverable anchors (&#39;OCR-prior recoverability principle&#39;).</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>The &#39;OCR-prior recoverability principle&#39; implies hybrid VLM-over-OCR pipelines degrade on documents where base OCR provides no usable anchors — a known failure mode for severely degraded scans. This is a concrete failure boundary to test in any document pipeline that chains traditional OCR with VLM correction.</dd>
+      <dt>Research</dt>
+      <dd>The cross-dataset evaluation structure (eight Arabic text domains, four system types) is a methodology applicable to hallucination evaluations across document degradation levels, not just Arabic script.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
 </article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
@@ -225,25 +177,51 @@
     <h2>Competitive</h2>
 <article class="item "
          data-source="rss"
-         data-score="42">
+         data-score="60">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 4 · frontier 2 · vlm_research 1 = 42 (this view's weighting)">42</span>
+          title="doc_ai 5 · competitive 5 · frontier 3 · vlm_research 1 = 60 (this view's weighting)">60</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
+      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://deepmind.google/blog/gemini-3-8-flash" target="_blank" rel="nofollow noopener noreferrer">Gemini 3.8 Flash: Google&#39;s third Flash model in six weeks — text, image, audio, video, PDF input, 1M-token context, $0.75/$3.75 per million tokens</a>
+    <a href="https://docs.mistral.ai/capabilities/document/" target="_blank" rel="nofollow noopener noreferrer">Mistral OCR 4.1 now generally available; mistral-ocr-latest alias updated</a>
   </p>
-  <p class="item-summary">Google&#39;s third Flash release in six weeks; PDF/image input, 1M context; data extraction #1 at 97.3% but OCR #30 at 87.3% on Roboflow evals.</p>
+  <p class="item-summary">Mistral OCR 4.1 is now GA; mistral-ocr-latest now points to 4.1; block-level confidence scores added. Pricing unchanged at $4/1k pages.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Gemini 3.8 Flash accepts PDF input and ranks #1 on Roboflow data extraction (97.3%) while ranking #30 on OCR (87.3%) — a split profile relevant to customers who conflate structured-field retrieval with document transcription. Pricing at $0.75/$3.75 per million tokens is below OCR-3&#39;s per-page equivalent at high volume.</dd>
+      <dd>Mistral OCR 4.1 as the new default (mistral-ocr-latest) adds block-level confidence scores on top of 4.0&#39;s bounding boxes and structural block labels, narrowing the tooling gap with OCR-3&#39;s per-region quality signals. Pricing unchanged at $4/1,000 pages ($2 batch).</dd>
       <dt>Research</dt>
-      <dd>No VLM architecture paper accompanies the release; the capability split between extraction strength and OCR weakness is not explained in public documentation.</dd>
+      <dd>No direct research implication. Block-level confidence scoring is an inference-time feature, not a training advance.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai, frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="44">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 4 · frontier 4 · vlm_research 1 = 44 (this view's weighting)">44</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://artificialanalysis.ai/articles/benchmarking-gpt-6-astra" target="_blank" rel="nofollow noopener noreferrer">Artificial Analysis: GPT-6 Astra scores 61.2 on Intelligence Index, below Claude Fable 5.1</a>
+  </p>
+  <p class="item-summary">GPT-6 Astra benchmarks at 61.2 on Artificial Analysis Intelligence Index — behind Claude Fable 5.1 (65.7); no document-AI benchmark scores confirmed.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Astra&#39;s 61.2 general intelligence score sits below Fable 5.1 (65.7) and at parity with GPT-5.6 Sol on non-document benchmarks. Without dedicated document-AI scores, the competitive impact on OCR-3&#39;s positioning on the IDP Leaderboard remains unresolved.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication. General intelligence benchmarks do not predict document-extraction accuracy on FUNSD, CORD, or OmniDocBench.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
@@ -261,23 +239,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">NaviDC-OCR&#39;s 96.87 on OmniDocBench v1.6 is now the fourth model above OCR-3&#39;s v1.5 score (90.5) surfaced across consecutive builds. Should the team establish a policy for running OCR-3 on new benchmark versions as they release — and if so, how should the IDP Leaderboard handle cross-version score comparisons?</p>
-    <p class="question-context">The version gap (v1.5 vs v1.6) means published competitive scores cannot be directly compared. Four models now report v1.6 scores with no confirmed OCR-3 v1.6 result available to this build agent.</p>
+    <p class="question-text">Jina AI is releasing Jina-OCR-v1 (3B MoE, GRPO dense rewards) and is not in the current competitive context. Should it be added to the monitored competitive set, or does Jina AI&#39;s market position not warrant tracking?</p>
+    <p class="question-context">Jina-OCR-v1 (arXiv 2609.03181) targets the low-budget deployment segment. Jina AI is primarily known as an embedding provider; this is their first dedicated OCR VLM. Prior context does not list Jina AI as a competitor.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Gemini 3.8 Flash ranks #1 on data extraction (97.3% on Roboflow Vision Evals) but #30 on OCR (87.3%). Should Nanonets&#39; competitive positioning explicitly distinguish between data extraction (structured field retrieval from known schemas) and document OCR (text transcription) as separate capability dimensions?</p>
-    <p class="question-context">Customers may conflate these two capabilities when comparing tools. A public disambiguation would let Nanonets position OCR-3&#39;s transcription accuracy separately from extraction accuracy — where different competitive models lead.</p>
+    <p class="question-text">The &#39;OCR-prior recoverability principle&#39; in arXiv 2608.22366 formalizes a failure mode where VLM conditioning degrades on documents with low-quality base OCR. Is this failure type currently tested in the team&#39;s hallucination evaluation suite?</p>
+    <p class="question-context">The finding is that VLM correction only helps when traditional OCR provides recoverable anchors — on heavily degraded documents, VLM conditioning can make output worse than pure OCR. This failure mode is distinct from phantom-row, repetition-loop, and structural-hallucination categories already in the team&#39;s framework.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">FD-RL (CVPR 2026) and FireRed-OCR-2B&#39;s Format-Constrained GRPO (from a prior build) both apply RL training specifically to enforce structural output constraints. Should RL-based format enforcement be added to the research reading queue as a candidate improvement for OCR-3&#39;s training objective?</p>
-    <p class="question-context">Both approaches address structural hallucination subtypes through the training signal rather than inference-time mitigation. They are complementary to the team&#39;s existing activation-patching work rather than replacements.</p>
+    <p class="question-text">All four CLI ingest sources (arxiv, hn, rss, github_trending) have returned 403 or empty results for 12+ consecutive builds. Should this scheduled task be suspended or its frequency reduced until the egress allowlist is updated?</p>
+    <p class="question-context">WebSearch fallback produces 4-7 items per build versus 20-80 from CLI ingest. The questions_for_team.md file is now 12,000+ lines of unanswered questions. The required egress domains are: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">This is the 12th+ consecutive build where WebSearch fallback produces 4-7 items versus the 20-80 items from CLI ingest. The questions_for_team.md file is now 11,000+ lines of unanswered questions. Should the scheduled task be suspended or its frequency reduced until the egress allowlist is updated?</p>
-    <p class="question-context">Each WebSearch-fallback build produces lower signal-to-noise coverage and appends unanswered questions. Without the egress allowlist fix, the build agent cannot systematically cover arXiv, HN, or RSS feeds.</p>
+    <p class="question-text">HunyuanOCR-1.5&#39;s 6.37x Transformer inference speedup via DFlash adaptation for vLLM is a serving optimization orthogonal to model accuracy. Should the team evaluate DFlash for OCR-3&#39;s serving stack, given OCR-3&#39;s 35B MoE architecture would benefit most from serving-level optimizations?</p>
+    <p class="question-context">DFlash is described as an adaptation of Flash Attention for the decoder-only architecture used in HunyuanOCR-1.5. OCR-3&#39;s 35B MoE size makes inference efficiency a more acute concern than for smaller competitors.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -289,7 +267,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered: arxiv, rss, github_trending    · failed: 4 · built at 2026-09-07T06:58:42+00:00
+    sources covered:     · failed: 4 · built at 2026-09-07T12:59:57+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
