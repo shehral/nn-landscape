@@ -11075,3 +11075,31 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-07T19:05:00+00:00 (audit: partial)
+
+### Q: SHROOM-Visions 2026 (arXiv 2608.25662) establishes a community shared task for VLM hallucination detection. Does the team plan to submit a system or use its evaluation corpus as a benchmark for OCR-3's hallucination modes?
+
+**Context:** If the task corpus includes document-VLM inputs, it provides a standardized evaluation that could let the team compare their hallucination mitigation work against the participant baselines from a public competition. This build is the first to surface this task; the submission deadline is unknown.
+
+**Answer:** _add reply here_
+
+### Q: Google released Gemini 3.5, 3.6, and 3.8 Flash in six weeks. Should the competitive context tracker adopt a policy of only recording 'current default Google model' rather than cataloging each Flash revision individually?
+
+**Context:** Three consecutive builds have tracked separate Flash releases. At this cadence, the context file's Google entry may become outdated within days of each refresh. A 'current default' framing would reduce noise while ensuring the most-used model is always current.
+
+**Answer:** _add reply here_
+
+### Q: LayoutLite (arXiv 2607.22200) proposes implicit layout tokens in the OCR decoding stream as an alternative to explicit bounding-box prediction. Does OCR-3 use explicit layout bounding boxes as an intermediate representation, and would the implicit approach apply to its architecture?
+
+**Context:** The implicit approach eliminates a dedicated layout-detection pass. If OCR-3 already uses a unified decoding stream, the technique may not add value; if it uses a two-stage layout-then-OCR pipeline, the implicit approach could reduce per-page latency.
+
+**Answer:** _add reply here_
+
+### Q: OmniDocBench has three active versions (v1.5, v1.6, v1.7) with incomparable scores. Multiple competitors now publish v1.6 or v1.7 scores while OCR-3's public score (90.5) is on v1.5. Is there a plan to run OCR-3 on the current benchmark version, and if so, which version should be the target?
+
+**Context:** This is distinct from the prior 'benchmark version policy' question: it asks specifically which version to target for a run, given that v1.6 and v1.7 have different document sets and evaluation methods. Targeting v1.7 would be most current but has fewer published comparisons; v1.6 has the most published competitor scores.
+
+**Answer:** _add reply here_
+
+---
