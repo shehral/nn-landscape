@@ -10991,3 +10991,31 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-07T06:05:00+00:00 (audit: partial)
+
+### Q: The 2609.01575 paper proposes difficulty-aware curation selecting for layout diversity, fact-extractability, and cross-model consistency. Would this curation methodology improve OCR-3's fine-tuning data quality on hard cases, and does the team currently apply any similar hardness-based filtering?
+
+**Context:** The paper reports >50% cost reduction against the best competitive approach for a same-scale (35B MoE) architecture. The curation criteria are operationalizable without labeled data. This is the first build to surface this methodology.
+
+**Answer:** _add reply here_
+
+### Q: Semantic substitution (replacing a word with a plausible alternative) is identified as a VLM-OCR failure mode not captured by CER/WER (arXiv 2607.24077). Does the team's current hallucination evaluation suite include a test for this failure type, or is it subsumed under 'structural hallucinations'?
+
+**Context:** Semantic substitution is distinct from phantom-row, repetition-loop, and structural-hallucination categories already in the team's framework. On degraded historical documents, VLMs scored better on CER/WER but worse on semantic substitution than traditional OCR — a counterintuitive reversal that benchmarks would miss.
+
+**Answer:** _add reply here_
+
+### Q: Three consecutive builds have surfaced competitor cost-efficiency claims (Reducto r-1 at $0.01/page, 2609.01575 at >80% vs human baseline, Extend Parse 2.0 on production-document verticals). Does Nanonets publish a cost-adjusted quality metric that would let the team respond to these claims in public positioning?
+
+**Context:** None of the prior cost-efficiency questions have received a team reply. This question is narrower: it asks specifically whether a public metric exists, not whether to run a comparison study.
+
+**Answer:** _add reply here_
+
+### Q: This is the 10th+ consecutive build where all four CLI ingest sources (arxiv, hn, rss, github_trending) fail with HTTP 403 or empty results. The prior three builds have raised the egress allowlist question without a reply. Should this scheduled task be suspended until the network policy is resolved, or is the WebSearch fallback sufficient for the team's purposes?
+
+**Context:** WebSearch fallback produces 4 items this build; a healthy CLI ingest produces 20-80 items. The signal-to-noise ratio and systematic coverage are both materially lower under WebSearch fallback. questions_for_team.md is now 11,000+ lines and growing with unanswered questions each build.
+
+**Answer:** _add reply here_
+
+---
