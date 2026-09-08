@@ -11159,3 +11159,31 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-08T12:54:00+00:00 (audit: partial)
+
+### Q: Reducto r-1 was announced September 1 and has not appeared in any prior build's edition items despite being the most significant competitor pricing move this quarter. The prior Sept 6 context refresh added it to context.md but it was not scored as an item. Should a minimum lookback window (14 days) be enforced for high-composite competitive items to prevent the WebSearch fallback from missing major announcements that fall outside the default 3-day window?
+
+**Context:** All four CLI ingest sources have been blocked for 15+ consecutive builds. The WebSearch fallback appears to favor recent papers and news over structured competitive monitoring. Reducto r-1 and Mistral Agentic Search (Aug 20) both fell through this gap.
+
+**Answer:** _add reply here_
+
+### Q: NVIDIA's acquisition of Hugging Face was announced September 2-3 and did not appear in any prior build's edition items despite six builds running after the announcement. Should the WebSearch query set include infrastructure-level terms ('AI acquisition', 'model hosting', 'open-source platform') alongside the current document-AI and model-release terms?
+
+**Context:** The current sources.yaml keyword set is heavily weighted toward model releases and research papers. Ecosystem-level events (acquisitions, infrastructure changes) affecting open-weight model distribution are systematically missed.
+
+**Answer:** _add reply here_
+
+### Q: GPT-6 Astra's Daybreak access program means publicly evaluable document-benchmark scores may not exist for months. Should the team submit OCR-3 to a shared leaderboard comparison before Astra's scores land publicly, to establish a performance baseline while Astra is not yet widely available?
+
+**Context:** Gemini 3.8 Flash and GPT-6 Astra have both been released without IDP Leaderboard or OmniDocBench scores. A window exists between a frontier model's release and its first published document benchmark scores during which Nanonets can shape the comparative narrative.
+
+**Answer:** _add reply here_
+
+### Q: Nanonets' public open-weight models (OCR-s, OCR2-3B, OCR2-1.5B-exp) are hosted exclusively on Hugging Face. Should the team establish mirrored hosting on a second platform (Modelscope, Replicate, or self-hosted) as a hedge against potential policy changes following NVIDIA's acquisition?
+
+**Context:** The acquisition is expected to close in H1 2027. Hugging Face will remain an open platform per NVIDIA's stated intention, but governance of licensing, access control, and API terms may shift post-close. This question has not been raised in prior builds.
+
+**Answer:** _add reply here_
+
+---
