@@ -11103,3 +11103,37 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-08T01:02:34+00:00 (audit: partial)
+
+### Q: Should this scheduled task be suspended or its frequency reduced until the egress allowlist is updated?
+
+**Context:** All four CLI ingest sources (arxiv, hn, rss, github_trending) have returned 403 errors for 14+ consecutive builds. This build produces 7 items via WebSearch fallback; a healthy build yields 20-80 items. The questions_for_team.md file is now 12,000+ lines of unanswered questions. This is the same question raised in the prior three builds without a reply.
+
+**Answer:** _add reply here_
+
+### Q: Should the competitive context be updated to reflect Claude Fable 5.1's #2 ranking on OCR in Roboflow Vision Evals, and does this change how the team positions OCR-3's accuracy advantage?
+
+**Context:** Fable 5.1 ranks #2 on OCR across 53 models in Roboflow Vision Evals (Sept 1, 2026). OCR-3 does not appear in that benchmark. If a frontier general-purpose model now ranks #2 on raw OCR transcription, the 'only OCR model you need' positioning may require a more specific differentiation claim—e.g., document structure, multi-endpoint API surface, or throughput.
+
+**Answer:** _add reply here_
+
+### Q: Does Extend's real-world benchmark framing (RealDocBench, Light Parse results on regulated production documents) require a public response or evaluation run from the team?
+
+**Context:** Extend has published arXiv 2606.07401 (RealDocBench) and positioned Light Parse at 90.5% field accuracy on a benchmark covering mortgage, healthcare, logistics, and financial documents—Nanonets Agents' primary verticals. No OCR-3 results on RealDocBench are publicly available. If RealDocBench gains traction as an evaluation standard, the absence of OCR-3 results on it becomes a gap in competitive positioning.
+
+**Answer:** _add reply here_
+
+### Q: Should 'prompt-induced hallucination' be added as a distinct failure mode to the team's VLM hallucination taxonomy?
+
+**Context:** arXiv 2604.21911 demonstrates that text prompts can override visual grounding in LVLMs, inducing hallucinations about objects absent from the image. This is a separate causal mechanism from phantom-row (model generating content without visual anchor), structural hallucination (incorrect output formatting), and repetition loops. For document extraction, where prompts encode schemas, this failure mode may affect the /extract endpoint specifically.
+
+**Answer:** _add reply here_
+
+### Q: Has the team confirmed OCR-3's performance on OmniDocBench v1.6 or v1.7? The public score (90.5) is on v1.5; competitors now publish v1.6 and v1.7 scores that are not directly comparable.
+
+**Context:** This question was raised in the prior build without a reply. OmniDocBench v1.6 (April 10, 2026) and v1.7 (April 30, 2026) have different document sets and evaluation methodologies. Extend, MinerU2.5-Pro, and PaddleOCR-VL-1.6 all publish v1.6 scores above OCR-3's v1.5 score of 90.5. Without a v1.6 or v1.7 run, cross-version score comparisons are unresolvable.
+
+**Answer:** _add reply here_
+
+---
