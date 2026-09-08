@@ -11137,3 +11137,25 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-08T07:02:59+00:00 (audit: partial)
+
+### Q: The attention-head ablation paper (2608.24966) identifies 32 of LLaVA-1.5-7B's heads as responsible for object hallucination. Has the team run a comparable head-ranking pass on Nanonets-OCR2-3B to identify heads associated with phantom-row generation, or would this be a new probe?
+
+**Context:** The head-ranking methodology (hallucinate-token log-probability + ablation screen) is model-architecture-agnostic. If the team has existing activation traces from hallucination evaluation runs, head-ranking could be applied without new data collection. The answer determines whether 'reproduce' is a quick port or a new study.
+
+**Answer:** _add reply here_
+
+### Q: The logit-lens paper (2608.07302) shows that a lightweight classifier over token logits matches strong-VLM hallucination detection. Does the team's inference pipeline log per-token logit distributions during evaluation runs, or would capturing them require architecture instrumentation?
+
+**Context:** If per-token logits are already available from existing evaluation runs, this detection method is low-cost to pilot. If they require instrumenting the model, the cost is higher but still smaller than the alternative (running a full VLM detector on each output).
+
+**Answer:** _add reply here_
+
+### Q: Roboflow Vision Evals and the IDP Leaderboard are now being cited in different contexts to rank the same models differently. Should the IDP Leaderboard page or Nanonets documentation address the Roboflow benchmark specifically, to clarify for buyers why the two leaderboards produce different rankings?
+
+**Context:** Fable 5.1 is #2 OCR on Roboflow but has no confirmed IDP Leaderboard score. A buyer comparison that cites only Roboflow could create the impression that OCR-3's lead has been surpassed. A brief clarification of what each benchmark measures (document-centric vs. general transcription) would reduce that ambiguity.
+
+**Answer:** _add reply here_
+
+---

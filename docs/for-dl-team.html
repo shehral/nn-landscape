@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 08, 2026 · 01:02 UTC · 7 items scored</span>
+  <span class="built-at">Built Sep 08, 2026 · 07:02 UTC · 3 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,11 +53,9 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Frontier models are closing the specialist OCR accuracy gap. Claude Fable 5.1 ranks #2 on OCR in third-party vision evals, directly behind dedicated OCR models. The differentiation advantage from benchmark accuracy alone is eroding for specialist document AI vendors.</li>
-    <li>Competitor-controlled benchmarks are proliferating as a competitive tactic. Extend has published both RealDocBench (arXiv) and performance analysis pieces arguing that academic benchmarks systematically exclude production document types. Each new benchmark defines its own competitively advantaged evaluation frame.</li>
-    <li>Managed document parsing price floors have declined below $0.01/page. Reducto r-1 launched at $0.01/page (Sept 1); Extend Light Parse immediately followed at $0.00625/page. Cost-efficiency is now the primary competitive axis in market positioning, alongside accuracy.</li>
-    <li>Extraction and transcription capabilities are diverging in frontier models. Gemini 3.8 Flash ranks #1 on data extraction (97.3%) but #30 on OCR transcription (87.3%) across the same 36-model evaluation. These are not fungible capabilities even within a single model.</li>
-    <li>Prompt-driven hallucination mechanisms are emerging as a distinct research category. Two papers in this build address how text inputs—prompt structure and schema encoding—can induce hallucinations independently of image content. This failure mode is absent from current phantom-row, structural, and repetition-loop taxonomies.</li>
+    <li>Attention heads are emerging as the primary mechanistic unit for VLM hallucination localization: two independent papers this build (2608.07302 and 2608.24966) converge on head-level analysis rather than layer-level or neuron-level approaches.</li>
+    <li>General-purpose vision benchmarks (Roboflow Vision Evals) and document-specific benchmarks (IDP Leaderboard, OmniDocBench) are now measuring different capability profiles for the same models; Claude Fable 5.1 ranks #2 on OCR in Roboflow but has no confirmed score on document-centric benchmarks.</li>
+    <li>Post-training intervention methods (head-sliced LoRA, inference-time grounding controllers) are being shown to reduce hallucination metrics by 30-40% without full retraining; this suggests targeted fine-tuning on hallucination-relevant head subsets as a lower-cost mitigation path than full model retraining.</li>
   </ul>
 </section>
 
@@ -65,31 +63,6 @@
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
 <article class="item "
-         data-source="arxiv"
-         data-score="58">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 5 = 58 (this view's weighting)">58</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2604.21911" target="_blank" rel="nofollow noopener noreferrer">When Prompts Override Vision: Prompt-Induced Hallucinations in Large Vision-Language Models</a>
-  </p>
-  <p class="item-summary">Paper shows text prompts can override visual grounding in LVLMs, inducing hallucination of objects absent from the image—a failure mode distinct from object-frequency bias or phantom-row errors.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>In document extraction workflows, prompt templates encode expected output schemas. If prompts can override visual grounding independently of image content, schema-driven extraction may be systematically more vulnerable to hallucination than free-form transcription.</dd>
-      <dt>Research</dt>
-      <dd>Prompt-induced hallucination is a distinct failure mode from the team&#39;s current taxonomy of phantom-row, repetition-loop, structural, and cross-architecture hallucinations; the causal mechanism—prompt overriding visual grounding—warrants investigation against OCR-3&#39;s extraction endpoints.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
          data-source="arxiv"
          data-score="44">
   <div class="item-meta">
@@ -101,15 +74,40 @@
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2503.23573" target="_blank" rel="nofollow noopener noreferrer">DASH: Detection and Assessment of Systematic Hallucinations of VLMs</a>
+    <a href="https://arxiv.org/abs/2608.24966" target="_blank" rel="nofollow noopener noreferrer">Targeting the Attention Heads Behind Object Hallucination in LLaVA</a>
   </p>
-  <p class="item-summary">DASH distinguishes systematic (model-specific, reproducible) from incidental hallucinations in VLMs, introducing a scoring framework that quantifies which error types scale with deployment volume.</p>
+  <p class="item-summary">Ranks 32 attention heads in LLaVA-1.5-7B as hallucination-responsible; head-sliced LoRA + grounding controller cuts CHAIRs from 0.37 to 0.23.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Systematic hallucinations—reproduced consistently by a given model on specific input types—are more operationally damaging than stochastic errors because they accumulate predictably across document volumes. DASH&#39;s detection framework could be adapted for OCR-3 audit pipelines to identify high-risk document types.</dd>
+      <dd>Targeted head-level LoRA is architecturally compatible with fine-tuning workflows on decoder VLMs. Provides a direct protocol for measuring and reducing hallucination at head granularity on models the team already has access to.</dd>
       <dt>Research</dt>
-      <dd>The systematic/incidental distinction refines the existing hallucination taxonomy; DASH&#39;s methodology for identifying per-model systematic error patterns is compatible with causal-scrubbing approaches and may surface failure modes not visible in aggregate benchmark scores.</dd>
+      <dd>Replicate the head-ranking methodology (hallucination-token log probability + ablation screen) on Nanonets-OCR2-3B to locate phantom-row-relevant attention heads. The 32-head intervention set is small enough for a focused targeted-patching study.</dd>
+      <dt>Action</dt>
+      <dd>reproduce</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="38">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 4 = 38 (this view's weighting)">38</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2608.07302" target="_blank" rel="nofollow noopener noreferrer">Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination</a>
+  </p>
+  <p class="item-summary">Logit-lens over visual attention tokens detects LVLM object hallucination; lightweight classifier matches strong-VLM detection performance.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Detection adds no inference overhead beyond a small classifier on existing token probabilities; applicable to OCR-3 output as a post-hoc confidence signal. No architectural change required for a first integration.</dd>
+      <dt>Research</dt>
+      <dd>Logit-lens over visual attention tokens is a novel probe site complementing the team&#39;s activation-patching line. The linguistic NTP augmentation step (feeding generated text back to amplify signal) is worth replicating on document-VLM hallucination benchmarks.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
@@ -117,59 +115,8 @@
 </article>  </div>
   <div class="axis-col" data-axis="doc_ai">
     <h2>Document AI</h2>
-<article class="item "
-         data-source="arxiv"
-         data-score="38">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 3 · frontier 0 · vlm_research 1 = 38 (this view's weighting)">38</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
+      <p class="item-summary">No top-N items this build.</p>
   </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2606.07401" target="_blank" rel="nofollow noopener noreferrer">RealDocBench: Field-Level QA and Layout Understanding on Real-World Regulated Documents</a>
-  </p>
-  <p class="item-summary">Extend&#39;s benchmark paper evaluates parsers on mortgage, healthcare, logistics, and finance documents—production verticals systematically absent from curated academic OCR benchmarks.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>RealDocBench&#39;s document category selection—regulated financial forms, healthcare intake, bills of lading—directly overlaps with Nanonets Agents&#39; primary target verticals. A competitor-controlled benchmark on those exact categories sets a comparison baseline Nanonets has not yet published results against.</dd>
-      <dt>Research</dt>
-      <dd>The field-level QA methodology is more diagnostically specific than OmniDocBench&#39;s aggregate accuracy; if adopted as a secondary standard alongside academic benchmarks, it would shift competitive comparisons toward production failure modes.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: competitive</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="38">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 3 · frontier 0 · vlm_research 1 = 38 (this view's weighting)">38</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.extend.ai/resources/ocr-benchmarks-real-world-documents" target="_blank" rel="nofollow noopener noreferrer">OCR Benchmarks &amp; Real-World Documents: Extend&#39;s July 2026 Competitive Analysis</a>
-  </p>
-  <p class="item-summary">Extend argues OmniDocBench and OlmOCR exclude production failure modes; positions field-level accuracy on real-world regulated verticals as the benchmark category that determines production value.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Extend&#39;s benchmark narrative challenges the validity of OmniDocBench and IDP Leaderboard scores—benchmarks where OCR-3 holds top rankings. If field-level accuracy on production verticals becomes the primary evaluation frame, existing leaderboard standings lose competitive weight in customer evaluations.</dd>
-      <dt>Research</dt>
-      <dd>Extend&#39;s critique that curated academic benchmarks systematically omit real-world document types is independently defensible; the argument is consistent with known coverage limitations in OmniDocBench&#39;s document type selection.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: competitive</p>
-</article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
       <p class="item-summary">No top-N items this build.</p>
@@ -178,81 +125,30 @@
     <h2>Competitive</h2>
 <article class="item "
          data-source="rss"
-         data-score="44">
+         data-score="40">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 5 · frontier 4 · vlm_research 0 = 44 (this view's weighting)">44</span>
+          title="doc_ai 2 · competitive 4 · frontier 3 · vlm_research 1 = 40 (this view's weighting)">40</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 0%"></span>
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://venturebeat.com/technology/anthropics-claude-fable-5-1-and-mythos-5-1-arrive-with-a-75-cost-reduction-for-fable-cache-reads" target="_blank" rel="nofollow noopener noreferrer">Claude Fable 5.1 and Mythos 5.1 Arrive with 75% Cache-Read Cost Cut</a>
+    <a href="https://playground.roboflow.com/models/anthropic/claude-fable-5-1" target="_blank" rel="nofollow noopener noreferrer">Claude Fable 5.1: #8 of 53 on Vision Evals, #2 OCR (94% transcription match at low effort)</a>
   </p>
-  <p class="item-summary">Fable 5.1 (Sept 1) supersedes Fable 5; ranks #2 on OCR in Roboflow Vision Evals; 75% reduction in prompt-cache costs; improved dense-chart and nested-PDF-table parsing.</p>
+  <p class="item-summary">Roboflow Vision Evals places Fable 5.1 #2 on OCR of 53 models; 94% transcription match at low effort, ranking above all other tested frontier models on that task.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Fable 5.1 reaches #2 on OCR in third-party evaluations, making Claude the sharpest frontier-lab challenger on raw transcription accuracy. The 75% cache-cost reduction lowers per-document API cost for customers running high-volume document pipelines against Anthropic&#39;s API.</dd>
+      <dd>Fable 5.1&#39;s #2 raw-OCR ranking (Roboflow Vision Evals) and OCR-3&#39;s #1 IDP Leaderboard ranking measure distinct things — general transcription accuracy versus document-centric extraction across table, KIE, and VQA tasks. Buyers who evaluate on Roboflow now see a frontier model competitive with OCR-3 on the transcription sub-task.</dd>
       <dt>Research</dt>
-      <dd>No architecture details published; the OCR ranking confirms Anthropic&#39;s vision stack now directly competes on specialist OCR benchmarks, narrowing the differentiation achievable from accuracy claims alone.</dd>
+      <dd>Roboflow Vision Evals does not publish model architecture or training data details. No direct research implication.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: frontier</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="36">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 4 · frontier 4 · vlm_research 0 = 36 (this view's weighting)">36</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://playground.roboflow.com/models/google/gemini-3-8-flash" target="_blank" rel="nofollow noopener noreferrer">Gemini 3.8 Flash: #3 Vision Evals, #1 Data Extraction (97.3%), #30 OCR (87.3%)</a>
-  </p>
-  <p class="item-summary">Gemini 3.8 Flash (Sept 2) leads 36-model Roboflow data-extraction eval at 97.3% but ranks #30 on OCR transcription at 87.3%, revealing an extraction/transcription capability split.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>The extraction-vs-OCR capability split in Gemini 3.8 Flash creates a differentiation opportunity: OCR-3&#39;s transcription-first architecture differs from frontier models optimized for schema-driven extraction. This gap may appear in customer evaluation criteria when comparing Nanonets to Gemini-native pipelines.</dd>
-      <dt>Research</dt>
-      <dd>The extraction/transcription split in Gemini 3.8 suggests the two tasks are independently optimized in frontier models; if confirmed at the architectural level, it validates a design choice in dedicated OCR models rather than treating all document AI as equivalent.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: frontier</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="32">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 0 · vlm_research 0 = 32 (this view's weighting)">32</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.extend.ai/resources/introducing-light-parse" target="_blank" rel="nofollow noopener noreferrer">Extend Introduces Light Parse: $0.00625/Page, 90.5% Accuracy on RealDocBench</a>
-  </p>
-  <p class="item-summary">Extend Light Parse adds a $0.00625/page tier with 90.5% per-field accuracy on RealDocBench, claiming to match Reducto r-1 accuracy at 58% lower cost.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Light Parse intensifies cost pressure at the lower end of the document-parsing market. At $0.00625/page, Extend undercuts Reducto r-1 ($0.01/page) on price while claiming comparable accuracy on Extend&#39;s own benchmark—RealDocBench, a competitor-controlled evaluation corpus.</dd>
-      <dt>Research</dt>
-      <dd>No technical methodology disclosed for Light Parse&#39;s cost reduction. RealDocBench is Extend&#39;s proprietary benchmark, which limits independent verification of the accuracy claim and the benchmark&#39;s generalizability.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
 </article>  </div>
 </section>
 
@@ -265,28 +161,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Should this scheduled task be suspended or its frequency reduced until the egress allowlist is updated?</p>
-    <p class="question-context">All four CLI ingest sources (arxiv, hn, rss, github_trending) have returned 403 errors for 14+ consecutive builds. This build produces 7 items via WebSearch fallback; a healthy build yields 20-80 items. The questions_for_team.md file is now 12,000+ lines of unanswered questions. This is the same question raised in the prior three builds without a reply.</p>
+    <p class="question-text">The attention-head ablation paper (2608.24966) identifies 32 of LLaVA-1.5-7B&#39;s heads as responsible for object hallucination. Has the team run a comparable head-ranking pass on Nanonets-OCR2-3B to identify heads associated with phantom-row generation, or would this be a new probe?</p>
+    <p class="question-context">The head-ranking methodology (hallucinate-token log-probability + ablation screen) is model-architecture-agnostic. If the team has existing activation traces from hallucination evaluation runs, head-ranking could be applied without new data collection. The answer determines whether &#39;reproduce&#39; is a quick port or a new study.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the competitive context be updated to reflect Claude Fable 5.1&#39;s #2 ranking on OCR in Roboflow Vision Evals, and does this change how the team positions OCR-3&#39;s accuracy advantage?</p>
-    <p class="question-context">Fable 5.1 ranks #2 on OCR across 53 models in Roboflow Vision Evals (Sept 1, 2026). OCR-3 does not appear in that benchmark. If a frontier general-purpose model now ranks #2 on raw OCR transcription, the &#39;only OCR model you need&#39; positioning may require a more specific differentiation claim—e.g., document structure, multi-endpoint API surface, or throughput.</p>
+    <p class="question-text">The logit-lens paper (2608.07302) shows that a lightweight classifier over token logits matches strong-VLM hallucination detection. Does the team&#39;s inference pipeline log per-token logit distributions during evaluation runs, or would capturing them require architecture instrumentation?</p>
+    <p class="question-context">If per-token logits are already available from existing evaluation runs, this detection method is low-cost to pilot. If they require instrumenting the model, the cost is higher but still smaller than the alternative (running a full VLM detector on each output).</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Does Extend&#39;s real-world benchmark framing (RealDocBench, Light Parse results on regulated production documents) require a public response or evaluation run from the team?</p>
-    <p class="question-context">Extend has published arXiv 2606.07401 (RealDocBench) and positioned Light Parse at 90.5% field accuracy on a benchmark covering mortgage, healthcare, logistics, and financial documents—Nanonets Agents&#39; primary verticals. No OCR-3 results on RealDocBench are publicly available. If RealDocBench gains traction as an evaluation standard, the absence of OCR-3 results on it becomes a gap in competitive positioning.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">Should &#39;prompt-induced hallucination&#39; be added as a distinct failure mode to the team&#39;s VLM hallucination taxonomy?</p>
-    <p class="question-context">arXiv 2604.21911 demonstrates that text prompts can override visual grounding in LVLMs, inducing hallucinations about objects absent from the image. This is a separate causal mechanism from phantom-row (model generating content without visual anchor), structural hallucination (incorrect output formatting), and repetition loops. For document extraction, where prompts encode schemas, this failure mode may affect the /extract endpoint specifically.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">Has the team confirmed OCR-3&#39;s performance on OmniDocBench v1.6 or v1.7? The public score (90.5) is on v1.5; competitors now publish v1.6 and v1.7 scores that are not directly comparable.</p>
-    <p class="question-context">This question was raised in the prior build without a reply. OmniDocBench v1.6 (April 10, 2026) and v1.7 (April 30, 2026) have different document sets and evaluation methodologies. Extend, MinerU2.5-Pro, and PaddleOCR-VL-1.6 all publish v1.6 scores above OCR-3&#39;s v1.5 score of 90.5. Without a v1.6 or v1.7 run, cross-version score comparisons are unresolvable.</p>
+    <p class="question-text">Roboflow Vision Evals and the IDP Leaderboard are now being cited in different contexts to rank the same models differently. Should the IDP Leaderboard page or Nanonets documentation address the Roboflow benchmark specifically, to clarify for buyers why the two leaderboards produce different rankings?</p>
+    <p class="question-context">Fable 5.1 is #2 OCR on Roboflow but has no confirmed IDP Leaderboard score. A buyer comparison that cites only Roboflow could create the impression that OCR-3&#39;s lead has been surpassed. A brief clarification of what each benchmark measures (document-centric vs. general transcription) would reduce that ambiguity.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -298,7 +184,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-08T01:02:34+00:00
+    sources covered:     · failed: 4 · built at 2026-09-08T07:02:59+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
