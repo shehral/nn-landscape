@@ -11187,3 +11187,37 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-08T14:00:00+00:00 (audit: partial)
+
+### Q: Should the team submit OCR-3 to RealDocBench and the Roboflow Vision Evals benchmark before Extend and Fable 5.1 establish those benchmarks as the reference points for buyers in Nanonets Agents' core verticals?
+
+**Context:** Extend Light Parse (90.5% on RealDocBench) and Claude Fable 5.1 (#2 OCR on Roboflow) now have public scores on benchmarks where OCR-3 has no result. RealDocBench specifically covers mortgage, healthcare, logistics, and financial documents — the primary Nanonets Agents verticals. The absence of OCR-3 scores on these benchmarks is increasingly visible to buyers doing independent comparisons.
+
+**Answer:** _add reply here_
+
+### Q: Does the team have a secondary model-hosting channel beyond Hugging Face for OCR-s, OCR2-3B, and OCR2-1.5B-exp, and if not, what is the contingency if post-NVIDIA-acquisition policy changes affect model availability?
+
+**Context:** NVIDIA's $12.9B acquisition (closing H1 2027) will introduce governance uncertainty over Hugging Face's licensing and access-control terms. The open-weight Nanonets models are currently hosted exclusively on Hugging Face. This question was raised in the prior build; the NVIDIA deal's announcement makes it more urgent.
+
+**Answer:** _add reply here_
+
+### Q: What is the team's posture toward Reducto r-1's $0.01/page pricing claim — is this an API-access reduction in margins, or is OCR-3's accuracy and feature surface (confidence scores, structured JSON, multi-endpoint) sufficient differentiation at current pricing?
+
+**Context:** Reducto r-1 prices the same extraction capability at one cent per page all-in, claiming 20% error reduction versus its prior multi-pass stack and 6x cost reduction versus multi-tool approaches. A public pricing or cost-adjusted quality comparison between OCR-3 and r-1 on a shared benchmark would settle the question empirically. This is the third consecutive build raising the cost-efficiency question without a team reply.
+
+**Answer:** _add reply here_
+
+### Q: Should all four CLI ingest sources be unblocked before the next scheduled build? The required egress allowlist additions are: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml.
+
+**Context:** All four sources have returned HTTP 403 for 16+ consecutive builds. This build (WebSearch fallback) produces 12 items versus the expected 20-80 from a healthy ingest. The questions_for_team.md file is now 14,000+ lines of unanswered questions. Without the egress fix, each build adds noise rather than signal.
+
+**Answer:** _add reply here_
+
+### Q: Should NTP-based hallucination detection (arXiv 2509.20379) be piloted as a low-cost production signal on OCR-3's inference outputs, ahead of the mechanistic interpretability work that requires deeper architecture access?
+
+**Context:** Three papers this build (arXiv 2509.20379, 2609.00231, 2608.11024) converge on lightweight inference-time hallucination detection achieving parity with full VLM detectors. If OCR-3's serving stack already logs token probabilities, NTP-based detection is low-cost to pilot. The team's existing mechanistic work and this approach are complementary rather than substitutes.
+
+**Answer:** _add reply here_
+
+---
