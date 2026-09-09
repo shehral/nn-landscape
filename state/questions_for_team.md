@@ -11317,3 +11317,37 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-09T19:00:32+00:00 (audit: partial)
+
+### Q: Cohere is not in the competitive context file, but Parse 5 directly overlaps Nanonets' document-to-Markdown API surface. Should Cohere be added to data/nanonets_context.md as a competitive-axis entrant, and should it be classified alongside infrastructure-as-competitor entries (like Firecrawl) or with purpose-built document parsers?
+
+**Context:** Parse 5 (August 27, 2026) scores 79.2 on ParseBench at $1.50/1,000 pages. Cohere's existing enterprise install base gives it a distribution advantage that a standalone parser would not have. Jina-OCR-v1 (raised in the Sept 9 07:02 build) raises the same question from a different angle. Both Cohere and Jina suggest a new competitive class: infrastructure providers bundling OCR.
+
+**Answer:** _add reply here_
+
+### Q: All four CLI ingest sources have returned HTTP 403 for 18 consecutive builds. The questions_for_team.md file now exceeds 11,000 lines of unanswered questions. Should the scheduled build frequency be reduced from 6-hourly to weekly until the egress allowlist is fixed?
+
+**Context:** Required egress additions: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml. WebSearch fallback yields 6-7 items per build versus 20-80 from healthy CLI ingest. At the current 6-hour cadence, each build adds noise rather than signal and appends 4-5 more unanswered questions to an already-unread backlog.
+
+**Answer:** _add reply here_
+
+### Q: PCNet (arXiv 2605.05953) and the prior builds' NTP-based detection papers both require per-token residual-stream or logit data from inference. Does OCR-3's current serving infrastructure log this data as a standard artifact, or would capturing it require instrumentation changes?
+
+**Context:** This is the fourth consecutive build raising inference-time hallucination detection without a team reply on log availability. The answer determines whether 'reproduce' is a one-day pilot or a multi-week instrumentation project.
+
+**Answer:** _add reply here_
+
+### Q: The Structured Output Benchmark (SOB, arXiv 2604.25359) covers invoices and medical records — two of Nanonets Agents' primary verticals — and is gaining citation traction. Should the team publish OCR-3 results on SOB before it is adopted as a buyer reference benchmark in these verticals?
+
+**Context:** SOB's text-normalization design means it isolates structured-output quality from raw vision pipeline accuracy. An OCR-3 result on it would need to be interpreted carefully in that light; but absence of a result cedes the benchmark narrative to models that have already run it.
+
+**Answer:** _add reply here_
+
+### Q: nanonets.com/blog is not in the RSS feed registry (data/sources.yaml). The nanonets IDP Leaderboard v1.5 blog post was not captured by any prior build. Should the feed be added so that Nanonets' own published evaluations appear in the dashboard's doc_ai axis?
+
+**Context:** This was raised in the Sept 9 07:02 build. The nanonets.com/blog is a high-priority doc_ai source — Nanonets-authored benchmarks and model announcements are the highest-relevance items the monitor could surface. The fix is a one-line addition to data/sources.yaml.
+
+**Answer:** _add reply here_
+
+---
