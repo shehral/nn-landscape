@@ -11221,3 +11221,37 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-09T00:57:51+00:00 (audit: partial)
+
+### Q: Should Jina AI be added to the competitive context file as a confirmed OCR VLM competitor?
+
+**Context:** Jina-OCR-v1 (arXiv 2609.03181, Sept 2, 2026) scores 91.14 on OmniDocBench v1.6 and 83.4 on olmOCR-Bench at 3B MoE scale. Jina AI is primarily an embedding/search provider, not a document-AI company. The prior build (Sept 7) raised whether to add them; the paper is now confirmed. If added, the competitive set would include a new type of entrant: embedding infrastructure providers shipping OCR as a vertical extension.
+
+**Answer:** _add reply here_
+
+### Q: Does Reducto r-1's $0.01/page all-in pricing require a public pricing or cost-adjusted quality response from the team?
+
+**Context:** Reducto r-1 (Sept 1, 2026) is the first direct competitor to publish a one-cent-per-page all-in rate with a single-model architecture. Prior multi-tool approaches ran $0.03-0.06/page. This is the fourth consecutive build raising the cost-efficiency gap without a team reply. A public benchmark or pricing table comparing OCR-3 and r-1 on a shared evaluation set would resolve the competitive framing question empirically.
+
+**Answer:** _add reply here_
+
+### Q: Should the team run OCR-3 on OmniDocBench v1.6 before GPT-6 Astra and Gemini 3.8 Flash publish their first document-specific benchmark scores?
+
+**Context:** Astra (Sept 3) and Gemini 3.8 Flash (Sept 2) have image input and are being evaluated by the community, but no IDP Leaderboard or OmniDocBench scores are confirmed yet. OCR-3's public score of 90.5 is on v1.5 while five competitors now have v1.6 scores above it. A window exists between a frontier model's release and its first published document benchmark scores during which OCR-3 can establish the reference point.
+
+**Answer:** _add reply here_
+
+### Q: Are NaviDC-OCR's content-structure decoupled learning and deformation-aware learning techniques applicable to the team's existing hallucination evaluation framework?
+
+**Context:** NaviDC-OCR (arXiv 2608.12898) proposes architectural mechanisms that directly address structural hallucination and redundant generation in end-to-end VLM document parsers — failure modes in the team's taxonomy. The team's existing work focuses on activation patching and logit-lens analysis; deformation-aware learning targets a geometric distortion → layout error chain that is distinct. The question is whether these are compatible research threads or competing approaches.
+
+**Answer:** _add reply here_
+
+### Q: All four CLI ingest sources have returned 403 or empty results for 17+ consecutive builds. Should the scheduled task frequency be reduced until the egress allowlist is updated?
+
+**Context:** This question was raised in each of the last five builds without a reply. The required egress additions are: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml. WebSearch fallback yields 7-12 items per build versus 20-80 from healthy CLI ingest. The questions_for_team.md file now exceeds 14,000 lines of unanswered questions. Reducing build frequency to weekly until the allowlist is fixed would reduce noise.
+
+**Answer:** _add reply here_
+
+---
