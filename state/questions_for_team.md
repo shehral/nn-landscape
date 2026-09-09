@@ -11255,3 +11255,31 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-09T07:02:36+00:00 (audit: partial)
+
+### Q: Should MiniMax M3 be added to the competitive context file as a confirmed document-AI entrant?
+
+**Context:** A third-party OmniDocBench 1.5 tracker (llm-stats.com) shows MiniMax M3 leading at 0.916 as of September 2026. MiniMax is not in the current competitive context. The score could not be verified against the official OmniDocBench leaderboard due to egress restrictions. If confirmed, MiniMax joins Jina AI as a second infrastructure-provider entrant into document-AI benchmarking.
+
+**Answer:** _add reply here_
+
+### Q: The Nanonets IDP Leaderboard v1.5 blog post (nanonets.com/blog/idp-leaderboard-1-5/) was not captured by any prior build despite being live. Is the nanonets.com/blog RSS feed included in the source registry, and should it be added?
+
+**Context:** The current data/sources.yaml RSS feed list does not include nanonets.com/blog. Nanonets' own published evaluations and benchmark posts are high-priority doc_ai items. Missing them is a coverage gap specific to the ingest configuration, not the egress blockage.
+
+**Answer:** _add reply here_
+
+### Q: With seen.json now at 909 entries accumulated across WebSearch-fallback builds, is URL-level deduplication against seen.json causing the fallback search to systematically exclude legitimate recurrences of ongoing competitive events?
+
+**Context:** Items like Reducto r-1 (PRNewswire seen, MarkTechPost coverage unseen) and Gemini 3.8 Flash are publishing new coverage across multiple outlets over multiple days. The seen.json deduplication logic assumes stable canonical URLs; in a fallback-search regime, new coverage of the same event arrives at different URLs and should be collapsed by editorial judgment, not URL matching.
+
+**Answer:** _add reply here_
+
+### Q: arXiv paper 2603.25035 on mechanistic interpretability of visual token compression in VLMs was published March 2026 but was not captured in any prior build. Are there other March-through-June 2026 arXiv papers in cs.CV or cs.CL that the WebSearch fallback has systematically missed due to its recency bias?
+
+**Context:** The WebSearch fallback appears to surface recently-published papers and news over older-but-relevant ones. Papers from March-June 2026 that were published before the ingest blockage began (approximately August 2026) may have been eligible for the June-July builds but were missed because arxiv export was already blocked by then. A one-time manual search of relevant arXiv papers in that window might recover high-value research items.
+
+**Answer:** _add reply here_
+
+---
