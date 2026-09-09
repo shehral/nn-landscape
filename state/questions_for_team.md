@@ -11283,3 +11283,37 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-09T08:30:00+00:00 (audit: partial)
+
+### Q: OCR-3 is absent from Roboflow Vision Evals (53 models as of September 5, 2026). Is this because OCR-3 lacks a public real-time inference endpoint that Roboflow can poll, or is there a deliberate decision not to register?
+
+**Context:** Roboflow Vision Evals ranks Claude Fable 5.1 top-3 for OCR and GPT-6 Astra #1 overall and is becoming a buyer reference point independent of the IDP Leaderboard. The absence of OCR-3 is increasingly visible to buyers doing independent model comparisons using this tool.
+
+**Answer:** _add reply here_
+
+### Q: Three frontier models (GPT-6 Astra, Gemini 3.8 Flash, Claude Fable 5.1) all released within four days. Should the build pipeline add a 'major frontier release' alert path — a deeper competitive framing pass triggered the first time a new frontier model with document input appears — rather than treating all items equally in the standard scoring pass?
+
+**Context:** The WebSearch fallback caught all three releases but with limited coverage depth. A dedicated competitive framing run immediately after a major frontier release would allow faster propagation of benchmark comparisons and pricing analysis into the dashboard.
+
+**Answer:** _add reply here_
+
+### Q: Three papers this build (arXiv 2509.20379, 2607.29412, 2608.29974) converge on inference-time hallucination detection requiring no VLM fine-tuning. Has any of these been piloted against OCR-3's production outputs — specifically for phantom rows and structural hallucinations in the /parse endpoint?
+
+**Context:** The NTP-based approach (2509.20379) requires only per-token probability logs from inference, which are available in standard transformer serving frameworks without model changes. This is the third consecutive build raising lightweight hallucination detection without a team reply on whether inference logs are available.
+
+**Answer:** _add reply here_
+
+### Q: MinerU2.5-Pro scores 95.69 on OmniDocBench v1.6 and Jina-OCR-v1 scores 91.14 on v1.6, while OCR-3's public score of 90.5 is on v1.5. If no v1.6 benchmark run is planned, should the dashboard explicitly display v1.5 for OCR-3 and v1.6 for competitors with a caveat that these benchmark versions are not directly comparable?
+
+**Context:** This is the sixth consecutive build where the benchmark-version comparison gap appears in the framing. Displaying scores without version disambiguation may create a misleading impression that OCR-3 trails MinerU2.5-Pro when the comparison is across different benchmark editions.
+
+**Answer:** _add reply here_
+
+### Q: Jina AI — primarily an embedding and search provider — shipped Jina-OCR-v1 (91.14 OmniDocBench v1.6) as a vertical extension of its infrastructure stack. Should the competitive context file be updated to include Jina AI as a new class of competitor: infrastructure providers bundling OCR as a product add-on?
+
+**Context:** The prior build (September 9, 07:02) raised this question without a reply. This build confirms the paper (arXiv 2609.03181) and the benchmark score. If infrastructure providers routinely bundle OCR, the competitive framing shifts from 'specialist vs. generalist VLM' to 'specialist vs. infrastructure add-on.'
+
+**Answer:** _add reply here_
+
+---
