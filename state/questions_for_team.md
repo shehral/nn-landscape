@@ -11379,3 +11379,37 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-10T08:00:00+00:00 (audit: partial)
+
+### Q: OmniDocBench version disambiguation: OCR-3's published score of 90.5 is on v1.5, while MinerU2.5-Pro (95.69) and Jina-OCR-v1 (91.14) report v1.6 scores. Should the dashboard add a benchmark-version annotation to all OmniDocBench scores to prevent cross-version comparison errors?
+
+**Context:** This gap has appeared in six or more consecutive builds without a team reply. The v1.5 vs. v1.6 comparison is not valid (per the context file), but readers viewing the rendered dashboard see raw scores without version labels, potentially inferring that OCR-3 trails when the comparison is across benchmark editions.
+
+**Answer:** _add reply here_
+
+### Q: Cohere Parse 5 and Jina-OCR-v1 represent infrastructure providers (embedding/search) bundling document extraction. Should data/nanonets_context.md be updated to add Cohere and Jina AI as competitive-axis entrants with a note on this class of competitor?
+
+**Context:** Prior builds raised Jina AI in Sept 9 builds without a team reply. Cohere is new this build. Both represent the same pattern: an infrastructure vendor shipping OCR as a vertical extension. Without a named registry entry, future builds will evaluate each new infrastructure entrant from scratch.
+
+**Answer:** _add reply here_
+
+### Q: Claude Fable 5.1 is ranked #2 in OCR on Roboflow Vision Evals (53 models) and GPT-6 Astra and Gemini 3.8 Flash both claim document/image input. Has the team run any of these three against OCR-3 on a shared benchmark (OmniDocBench or IDP Leaderboard) in the week following their releases?
+
+**Context:** All three frontier releases (Sept 1-4) lack confirmed IDP Leaderboard or OmniDocBench scores as of this build. Nanonets OCR-3 is absent from Roboflow Vision Evals where Fable 5.1 ranks. A window exists between a frontier model's release and its first published document-benchmark scores during which OCR-3 can establish the reference point.
+
+**Answer:** _add reply here_
+
+### Q: Four inference-time hallucination detection methods (Role-Break, HALP, Two-Token Features, SpanCalib-VLM) appeared across recent builds — all require no retraining. Should the team run a one-day pilot comparing at least one against OCR-3's /parse outputs on known structural failure cases?
+
+**Context:** NTP-based detection (arXiv 2509.20379), HALP, and the two-token classifier all require only per-token probability logs from inference, which are standard in transformer serving. This question has appeared in four prior builds without a reply on whether OCR-3's serving stack logs this data.
+
+**Answer:** _add reply here_
+
+### Q: All four CLI ingest sources have returned HTTP 403 for 20+ consecutive builds. This build is another in a long series raising whether the scheduled frequency should drop to daily or weekly until the egress allowlist is updated. Is there an owner and deadline for the allowlist fix (export.arxiv.org, hn.algolia.com, RSS feed hosts)?
+
+**Context:** WebSearch fallback yields 12-15 items per build versus 20-80 from healthy CLI ingest. The questions_for_team.md file now exceeds 15,000 lines of unanswered questions accumulated across 20+ partial builds. Framing it as a resolved policy decision (accept WebSearch-only) or assigning an owner and date would end the recurring question.
+
+**Answer:** _add reply here_
+
+---
