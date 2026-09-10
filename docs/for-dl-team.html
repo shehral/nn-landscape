@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 09, 2026 · 19:00 UTC · 6 items scored</span>
+  <span class="built-at">Built Sep 10, 2026 · 00:00 UTC · 6 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,11 +53,10 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Enterprise infrastructure providers — not specialist OCR startups — are entering document parsing as a product extension. Cohere (Parse 5, Aug 27) joins Jina AI (Jina-OCR-v1, Sept 2) as infrastructure-layer companies shipping OCR as a vertical bolt-on. The competitive surface for document extraction is widening beyond purpose-built players.</li>
-    <li>Capital concentration among frontier-OCR players is accelerating. Mistral&#39;s €3B Series D (Sept 8) follows Reducto&#39;s $108M total (Series B closed Feb 2026). The funding gap between frontier-lab competitors and startup-scale document AI players is widening, signaling that the endgame of the 2025-2026 document AI buildout is consolidation rather than fragmentation.</li>
-    <li>Inference-time hallucination detection without weight modification is converging across multiple methods this build cycle. PCNet (arXiv 2605.05953, probabilistic circuits) adds to the prior builds&#39; NTP-based detection papers (arXiv 2509.20379) and logit-lens methods. All three require only residual-stream or logit access, making them low-cost to pilot on an existing inference serving stack.</li>
-    <li>Benchmark proliferation is outpacing benchmark standardization. SOB (arXiv 2604.25359) and the IntuitionLabs pharma benchmark join ParseBench, LongExtractBench, RealDocBench, and OmniDocBench as domain-specific evaluation surfaces with incompatible methodologies. Buyers face an increasingly fragmented evaluation landscape; a company that runs OCR-3 on multiple benchmarks controls more of the comparative narrative.</li>
-    <li>The OpenAI Navier-Stokes claim establishes a new reference point for multi-agent system capability demonstrations, independent of its mathematical validity. The 10,000-agent / 88-hour framing is a marketing narrative about agentic scale. This framing pattern — large agent counts + hard milestone + dramatic timeline — will recur from other frontier labs and may affect buyer perception of what &#39;agentic&#39; means.</li>
+    <li>Three major frontier labs released multimodal models within a four-day window (Fable 5.1 Sept 1, Gemini 3.8 Flash Sept 2, Muse Spark 1.3 Sept 2, GPT-6 Astra Sept 3-4). The simultaneous release cycle compresses the evaluation window for document-AI teams and means no single model can be treated as the settled frontier baseline for benchmarking purposes.</li>
+    <li>Roboflow Vision Evals has reached 53 models and is being cited as a buyer reference benchmark for OCR independent of the IDP Leaderboard. The two benchmarks test different document types and produce different model rankings. OCR-3 is absent from Vision Evals; Claude Fable 5.1 (#2, 94.0%) and Muse Spark 1.2 (#3, 93.8%) dominate its top tier.</li>
+    <li>OmniDocBench leadership has shifted to a general-purpose reasoning model (Kimi K3, 91.1) rather than a specialized OCR VLM. Combined with GLM-5.3-Flash (Z.ai&#39;s first natively multimodal model from the same team as GLM-OCR), the trend suggests that OCR-specialized fine-tuning advantages are narrowing as frontier-scale general models improve on document tasks.</li>
+    <li>Mirage Probes (arXiv 2606.13870) identifies a class of VLM hallucination — confident, coherent outputs decoupled from visual input — that is distinct from the phantom-row and structural hallucination modes the team has characterized. The prior build surfaced two NTP-based detection papers (arXiv 2509.20379, 2607.29412); this build adds a third, forming a cluster of behavioral detection approaches that do not require model internals access.</li>
   </ul>
 </section>
 
@@ -66,50 +65,25 @@
     <h2>VLM research</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="56">
+         data-score="44">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 1 · vlm_research 5 = 56 (this view's weighting)">56</span>
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 4 = 44 (this view's weighting)">44</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 100%"></span>
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2605.05953" target="_blank" rel="nofollow noopener noreferrer">Hallucination as an Anomaly: Dynamic Intervention via Probabilistic Circuits (arXiv 2605.05953)</a>
+    <a href="https://arxiv.org/abs/2606.13870" target="_blank" rel="nofollow noopener noreferrer">Mirage Probes: How Vision Models Fake Visual Understanding (arXiv 2606.13870)</a>
   </p>
-  <p class="item-summary">PCNet trains a probabilistic circuit over the LLM residual stream to flag hallucinations as geometric anomalies at each decoding step, without sampling or weight modification.</p>
+  <p class="item-summary">Mirage Probes (arXiv 2606.13870): VLMs generate confident, coherent answers to image-grounded questions even when the image is absent or uninformative.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>If PCNet&#39;s inference-time anomaly gate can be applied to OCR-3&#39;s residual stream at generation time, it offers a per-token hallucination flag without architectural changes — relevant to the /parse and /extract endpoints where phantom rows appear.</dd>
+      <dd>The mirage hallucination class — confident outputs decoupled from visual input — is a failure mode relevant to OCR pipelines: a model might produce plausible-looking structured JSON from a low-quality or blank scan without signaling uncertainty. The behavioral signature (high confidence, low visual grounding) differs from phantom-row hallucinations and warrants a separate evaluation protocol.</dd>
       <dt>Research</dt>
-      <dd>The density-estimator approach (exact NLL over residual stream) is complementary to the team&#39;s existing activation-patching line: patching identifies causal circuits; PCNet provides a real-time detection signal. No fine-tuning required makes the pilot cost low if inference logs are available.</dd>
-      <dt>Action</dt>
-      <dd>reproduce</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="hn"
-         data-score="40">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 2 · vlm_research 4 = 40 (this view's weighting)">40</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">hn</span>
-  </div>
-  <p class="item-title">
-    <a href="https://darshanmakwana412.github.io/2026/09/extracting-steering-vectors-from-j-space/" target="_blank" rel="nofollow noopener noreferrer">Extracting Steering Vectors from the Jacobian Space of LLMs Without Fine-Tuning</a>
-  </p>
-  <p class="item-summary">Blog demonstrates deriving LLM steering vectors from the model&#39;s own Jacobian using concept tokens, bypassing fine-tuning; effective for simple behaviors, brittle for complex ones.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication.</dd>
-      <dt>Research</dt>
-      <dd>The J-space steering approach is a complement to the team&#39;s causal patching work — Jacobian-derived vectors are causally grounded by construction, which makes them potentially useful as initialization points for activation steering experiments on phantom-row generation. The reported brittleness on complex behaviors is a relevant limitation to assess.</dd>
+      <dd>The probe-based detection approach in 2606.13870 is complementary to the team&#39;s activation-patching and logit-lens work; it operates on intermediate representations without requiring ground-truth document annotations. Worth reading alongside the earlier Role-Break paper (arXiv 2607.29412) to compare detection signal quality.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
@@ -117,113 +91,142 @@
 </article>  </div>
   <div class="axis-col" data-axis="doc_ai">
     <h2>Document AI</h2>
-<article class="item "
-         data-source="arxiv"
-         data-score="44">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 2 · frontier 0 · vlm_research 2 = 44 (this view's weighting)">44</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
+      <p class="item-summary">No top-N items this build.</p>
   </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2604.25359" target="_blank" rel="nofollow noopener noreferrer">The Structured Output Benchmark (SOB): Multi-Source LLM Evaluation across Text, Image, and Audio (arXiv 2604.25359)</a>
-  </p>
-  <p class="item-summary">SOB benchmarks structured extraction from invoices, medical records, and PDFs across 5,000+ text and 209 image records using seven document types.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>SOB isolates structured-output capability from raw vision processing by normalizing all inputs to text — this methodological choice means results on SOB cannot be used to compare OCR-3&#39;s vision pipeline against LLM-only systems, which matters for how Nanonets positions the accuracy of the vision-to-structure pipeline.</dd>
-      <dt>Research</dt>
-      <dd>The benchmark&#39;s multi-modality design and focus on invoices and medical records covers two of Nanonets Agents&#39; primary verticals; if SOB gains traction as an evaluation standard, a public OCR-3 result on it would be useful positioning data.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
-<article class="item "
-         data-source="hn"
-         data-score="28">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 0 · competitive 2 · frontier 4 · vlm_research 1 = 28 (this view's weighting)">28</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">hn</span>
+      <p class="item-summary">No top-N items this build.</p>
   </div>
-  <p class="item-title">
-    <a href="https://openai.com/index/navier-stokes-solution/" target="_blank" rel="nofollow noopener noreferrer">OpenAI Claims Unreleased Model + 10,000 Agents Solved Navier-Stokes in 88 Hours</a>
-  </p>
-  <p class="item-summary">OpenAI&#39;s claimed Navier-Stokes proof uses an unreleased model with 10,000 agents; result unverified and disputed by competing researchers.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>The multi-agent architecture (10,000 agents, millions in compute, 88 hours) is a signal about OpenAI&#39;s internal research infrastructure, not a product surface that overlaps document extraction.</dd>
-      <dt>Research</dt>
-      <dd>Demonstrates that long-horizon agentic task completion with Lean formalization is now computationally feasible for frontier labs; the pattern is relevant to any team studying multi-agent reliability, but the math domain is distant from document VLM work.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article>  </div>
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
 <article class="item "
          data-source="rss"
-         data-score="48">
+         data-score="52">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 2 · vlm_research 1 = 48 (this view's weighting)">48</span>
+          title="doc_ai 3 · competitive 5 · frontier 4 · vlm_research 1 = 52 (this view's weighting)">52</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
+      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://cohere.com/blog/parse" target="_blank" rel="nofollow noopener noreferrer">Cohere Releases Parse 5: 2.3B Vision Parser at $1.50/1,000 Pages</a>
+    <a href="https://deepmind.google/technologies/gemini/gemini-3-8-flash" target="_blank" rel="nofollow noopener noreferrer">Gemini 3.8 Flash: #3 of 53 on Roboflow Vision Evals overall, #30 for OCR specifically</a>
   </p>
-  <p class="item-summary">Cohere launches Parse 5 (parse-v5.0), a 2.3B VLM for document-to-Markdown at $1.50/1K pages, scoring 79.2 on ParseBench.</p>
+  <p class="item-summary">Gemini 3.8 Flash (Sept 2) ranks #30/53 OCR on Vision Evals but leads Data Extraction; $0.75/$3.75 per million tokens.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Parse 5 adds Cohere — an enterprise platform already embedded in many Fortune 500 stacks — as a new entrant on the document-parsing competitive surface. At $1.50/1,000 pages and 4.5 pages/second, it undercuts OCR-3&#39;s per-page rate with a model sized for throughput over accuracy.</dd>
+      <dd>Gemini 3.8 Flash&#39;s weak OCR rank (#30/53 on Vision Evals, 87.3%) alongside its Data Extraction leadership suggests Google is optimizing for structured output quality over raw text transcription — a configuration that competes more directly with Nanonets&#39; extraction endpoints than with its OCR surface. The $0.75/$3.75 pricing narrows the gap with OCR-3 on a cost-per-page basis for extraction workloads.</dd>
       <dt>Research</dt>
-      <dd>79.2 on ParseBench (behind GPT-5.5 at 84.4, Opus 4.8 at 84.3, Gemini 3.5 Flash at 81.8) is a useful accuracy anchor for a 2.3B model; the model returns bounding boxes alongside Markdown, which is worth tracking as a lightweight grounding baseline.</dd>
+      <dd>No direct research implication; the OCR score gap relative to Data Extraction hints at architectural choices worth tracking as model weights or evals become available.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: doc_ai</p>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="44">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 4 · frontier 4 · vlm_research 1 = 44 (this view's weighting)">44</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://research.meta.ai/blog/introducing-muse-spark-1-3" target="_blank" rel="nofollow noopener noreferrer">Meta releases Muse Spark 1.3: multimodal, 1M context, top-3 OCR on Roboflow Vision Evals</a>
+  </p>
+  <p class="item-summary">Muse Spark 1.3 (Meta, Sept 2): 1M context, multimodal agentic model; Muse Spark 1.2 scored 93.8% OCR on Roboflow Vision Evals (#2).</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Meta Superintelligence Labs&#39; Muse Spark series (1.2 scoring 93.8% OCR on Roboflow, second only to Claude Fable 5) is the strongest new entrant on the Vision Evals OCR ranking this cycle. Muse Spark 1.3 adds long-horizon agentic workflows, which extends the competitive threat from raw OCR accuracy into the document-processing-agent layer that Nanonets Agents operates in.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication; architecture details are not published.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="github_trending"
+         data-score="44">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 4 · frontier 2 · vlm_research 2 = 44 (this view's weighting)">44</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://github.com/MoonshotAI/Kimi-K3" target="_blank" rel="nofollow noopener noreferrer">Kimi K3 (Moonshot AI): 2.8T open-weight MoE scores 91.1 on OmniDocBench, leads BenchLM.ai leaderboard</a>
+  </p>
+  <p class="item-summary">Kimi K3 (2.8T-A104B, open weights, July 2026) reports 91.1 OmniDocBench — highest on BenchLM.ai&#39;s tracked leaderboard as of Sept 2026.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Kimi K3&#39;s 91.1 OmniDocBench score, if confirmed on v1.5 (the version of OCR-3&#39;s public 90.5 score), would place an open-weight general-purpose reasoning model above OCR-3 on that benchmark for the first time. The benchmark version underlying the score is unconfirmed; scores across OmniDocBench v1.5 and v1.6 are not comparable. The open-weight release means any customer can self-host it.</dd>
+      <dt>Research</dt>
+      <dd>The gap between a 2.8T reasoning-first MoE and OCR-3 on OmniDocBench — if it closes — is informative for understanding how much of document parsing performance comes from scale alone versus task-specific fine-tuning and training data.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
 </article><article class="item "
          data-source="hn"
          data-score="34">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 5 · frontier 3 · vlm_research 0 = 34 (this view's weighting)">34</span>
+          title="doc_ai 2 · competitive 3 · frontier 2 · vlm_research 1 = 34 (this view's weighting)">34</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 100%"></span><span style="height: 60%"></span><span style="height: 0%"></span>
+      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">hn</span>
   </div>
   <p class="item-title">
-    <a href="https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/" target="_blank" rel="nofollow noopener noreferrer">Mistral AI Raises €3B Series D at €21B Valuation, Led by Samsung</a>
+    <a href="https://www.marktechpost.com/2026/08/26/z-ai-releases-glm-5-3-flash-a-320b-a18b-natively-multimodal-moe-with-a-1m-token-context/amp/" target="_blank" rel="nofollow noopener noreferrer">Z.ai releases GLM-5.3-Flash: 320B-A18B natively multimodal MoE, MIT license, 88.1% OCR on Vision Evals</a>
   </p>
-  <p class="item-summary">Mistral closes €3B Series D (Samsung-led) at €21B valuation — largest-ever European tech equity round, announced September 8, 2026.</p>
+  <p class="item-summary">Z.ai GLM-5.3-Flash (Aug 26): 320B-A18B natively multimodal, MIT license, 1M context, 88.1% OCR on Roboflow Vision Evals.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Mistral&#39;s €3B gives it the compute budget to accelerate the OCR 4.x roadmap and close the accuracy gap against OCR-3 on multi-lingual and low-quality document types. The sovereign-AI framing and European government co-investment signal that regulated-sector verticals (finance, healthcare, government) are the expansion target.</dd>
+      <dd>GLM-5.3-Flash is the first natively multimodal model from Z.ai (formerly Zhipu AI), the same team that maintains GLM-OCR — a direct OCR competitor. The MIT license and open weights mean downstream document AI systems can integrate Z.ai&#39;s vision capability without licensing constraints, extending the competitive surface Z.ai occupies beyond dedicated OCR into general document understanding.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication; funding does not change the OCR 4.1 technical baseline already in context.</dd>
+      <dd>No direct research implication; natively multimodal architecture approach is worth tracking relative to GLM-OCR&#39;s dedicated OCR design.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
+</article><article class="item "
+         data-source="hn"
+         data-score="26">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 4 · frontier 0 · vlm_research 0 = 26 (this view's weighting)">26</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">hn</span>
+  </div>
+  <p class="item-title">
+    <a href="https://playground.roboflow.com/evals/ocr" target="_blank" rel="nofollow noopener noreferrer">Roboflow Vision Evals OCR leaderboard: 53 models, Claude Fable 5.1 #2, OCR-3 absent</a>
+  </p>
+  <p class="item-summary">Roboflow Vision Evals OCR leaderboard covers 53 models; Claude Fable 5.1 #2 (94.0%), Muse Spark 1.2 #3 (93.8%); OCR-3 is not listed.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Roboflow Vision Evals is now cited by buyers as a live, independently-run OCR ranking with 53 models. OCR-3&#39;s absence from this benchmark means buyers running independent comparisons encounter a ranking that includes Fable 5.1 and Muse Spark 1.2 but not OCR-3. The IDP Leaderboard and Roboflow Vision Evals produce different rankings because they target different document types; without a public OCR-3 result on Vision Evals, the gap is invisible to buyers relying on it.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication; benchmark scope differences between Vision Evals (general OCR transcription) and IDP Leaderboard (document-AI extraction) are worth documenting publicly.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
 </article>  </div>
 </section>
 
@@ -236,28 +239,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Cohere is not in the competitive context file, but Parse 5 directly overlaps Nanonets&#39; document-to-Markdown API surface. Should Cohere be added to data/nanonets_context.md as a competitive-axis entrant, and should it be classified alongside infrastructure-as-competitor entries (like Firecrawl) or with purpose-built document parsers?</p>
-    <p class="question-context">Parse 5 (August 27, 2026) scores 79.2 on ParseBench at $1.50/1,000 pages. Cohere&#39;s existing enterprise install base gives it a distribution advantage that a standalone parser would not have. Jina-OCR-v1 (raised in the Sept 9 07:02 build) raises the same question from a different angle. Both Cohere and Jina suggest a new competitive class: infrastructure providers bundling OCR.</p>
+    <p class="question-text">OCR-3 is absent from Roboflow Vision Evals (53 models) and Extend&#39;s RealDocBench. Claude Fable 5.1 and Muse Spark 1.2 are visibly ranked on Vision Evals. Should the team submit OCR-3 results to Roboflow Vision Evals while GPT-6 Astra and Gemini 3.8 Flash have not yet published IDP Leaderboard or OmniDocBench scores?</p>
+    <p class="question-context">A window exists between a frontier model&#39;s release and its first published document-benchmark scores. Buyers comparing models on Vision Evals currently see a ranking that excludes OCR-3. This question was raised in the Sept 8 and Sept 9 builds without a team reply.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">All four CLI ingest sources have returned HTTP 403 for 18 consecutive builds. The questions_for_team.md file now exceeds 11,000 lines of unanswered questions. Should the scheduled build frequency be reduced from 6-hourly to weekly until the egress allowlist is fixed?</p>
-    <p class="question-context">Required egress additions: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml. WebSearch fallback yields 6-7 items per build versus 20-80 from healthy CLI ingest. At the current 6-hour cadence, each build adds noise rather than signal and appends 4-5 more unanswered questions to an already-unread backlog.</p>
+    <p class="question-text">Kimi K3&#39;s OmniDocBench score of 91.1 is reported by BenchLM.ai but the underlying benchmark version (v1.5 or v1.6) is unconfirmed. Should the dashboard add a benchmark-version annotation to all OmniDocBench scores to prevent cross-version comparison errors being surfaced to readers?</p>
+    <p class="question-context">OCR-3&#39;s public score of 90.5 is on v1.5. Several competitors now have v1.6 scores above it. Displaying scores without version disambig may create a misleading impression that OCR-3 trails when the comparison is across benchmark editions. This has been raised in six consecutive builds.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">PCNet (arXiv 2605.05953) and the prior builds&#39; NTP-based detection papers both require per-token residual-stream or logit data from inference. Does OCR-3&#39;s current serving infrastructure log this data as a standard artifact, or would capturing it require instrumentation changes?</p>
-    <p class="question-context">This is the fourth consecutive build raising inference-time hallucination detection without a team reply on log availability. The answer determines whether &#39;reproduce&#39; is a one-day pilot or a multi-week instrumentation project.</p>
+    <p class="question-text">All four CLI ingest sources have returned HTTP 403 for 19+ consecutive builds. Should the scheduled build frequency be reduced from 6-hourly to daily or weekly until the egress allowlist (export.arxiv.org, hn.algolia.com, RSS feed hosts) is updated?</p>
+    <p class="question-context">This question has been raised in every build since late August 2026 without a team reply. WebSearch fallback yields 6-10 items per build versus 20-80 from healthy CLI ingest. The questions_for_team.md file now exceeds 15,000 lines of unanswered questions.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The Structured Output Benchmark (SOB, arXiv 2604.25359) covers invoices and medical records — two of Nanonets Agents&#39; primary verticals — and is gaining citation traction. Should the team publish OCR-3 results on SOB before it is adopted as a buyer reference benchmark in these verticals?</p>
-    <p class="question-context">SOB&#39;s text-normalization design means it isolates structured-output quality from raw vision pipeline accuracy. An OCR-3 result on it would need to be interpreted carefully in that light; but absence of a result cedes the benchmark narrative to models that have already run it.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">nanonets.com/blog is not in the RSS feed registry (data/sources.yaml). The nanonets IDP Leaderboard v1.5 blog post was not captured by any prior build. Should the feed be added so that Nanonets&#39; own published evaluations appear in the dashboard&#39;s doc_ai axis?</p>
-    <p class="question-context">This was raised in the Sept 9 07:02 build. The nanonets.com/blog is a high-priority doc_ai source — Nanonets-authored benchmarks and model announcements are the highest-relevance items the monitor could surface. The fix is a one-line addition to data/sources.yaml.</p>
+    <p class="question-text">Mirage Probes (arXiv 2606.13870) characterizes a hallucination class where VLMs produce confident outputs despite absent or uninformative visual input. Does the team&#39;s current evaluation framework include this failure mode — e.g., submitting blank or scrambled scans to OCR-3&#39;s /parse endpoint and checking for coherent-but-groundless structured output?</p>
+    <p class="question-context">This is a behavioral test that requires no model-internals access and would take less than a day to run. Combined with the NTP-based detection papers from prior builds, it would round out a three-tier hallucination evaluation: behavioral (mirage), probabilistic (NTP), and mechanistic (activation patching).</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -269,7 +267,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-09T19:00:32+00:00
+    sources covered:     · failed: 4 · built at 2026-09-10T00:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

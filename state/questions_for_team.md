@@ -11351,3 +11351,31 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-10T00:00:00+00:00 (audit: partial)
+
+### Q: OCR-3 is absent from Roboflow Vision Evals (53 models) and Extend's RealDocBench. Claude Fable 5.1 and Muse Spark 1.2 are visibly ranked on Vision Evals. Should the team submit OCR-3 results to Roboflow Vision Evals while GPT-6 Astra and Gemini 3.8 Flash have not yet published IDP Leaderboard or OmniDocBench scores?
+
+**Context:** A window exists between a frontier model's release and its first published document-benchmark scores. Buyers comparing models on Vision Evals currently see a ranking that excludes OCR-3. This question was raised in the Sept 8 and Sept 9 builds without a team reply.
+
+**Answer:** _add reply here_
+
+### Q: Kimi K3's OmniDocBench score of 91.1 is reported by BenchLM.ai but the underlying benchmark version (v1.5 or v1.6) is unconfirmed. Should the dashboard add a benchmark-version annotation to all OmniDocBench scores to prevent cross-version comparison errors being surfaced to readers?
+
+**Context:** OCR-3's public score of 90.5 is on v1.5. Several competitors now have v1.6 scores above it. Displaying scores without version disambig may create a misleading impression that OCR-3 trails when the comparison is across benchmark editions. This has been raised in six consecutive builds.
+
+**Answer:** _add reply here_
+
+### Q: All four CLI ingest sources have returned HTTP 403 for 19+ consecutive builds. Should the scheduled build frequency be reduced from 6-hourly to daily or weekly until the egress allowlist (export.arxiv.org, hn.algolia.com, RSS feed hosts) is updated?
+
+**Context:** This question has been raised in every build since late August 2026 without a team reply. WebSearch fallback yields 6-10 items per build versus 20-80 from healthy CLI ingest. The questions_for_team.md file now exceeds 15,000 lines of unanswered questions.
+
+**Answer:** _add reply here_
+
+### Q: Mirage Probes (arXiv 2606.13870) characterizes a hallucination class where VLMs produce confident outputs despite absent or uninformative visual input. Does the team's current evaluation framework include this failure mode — e.g., submitting blank or scrambled scans to OCR-3's /parse endpoint and checking for coherent-but-groundless structured output?
+
+**Context:** This is a behavioral test that requires no model-internals access and would take less than a day to run. Combined with the NTP-based detection papers from prior builds, it would round out a three-tier hallucination evaluation: behavioral (mirage), probabilistic (NTP), and mechanistic (activation patching).
+
+**Answer:** _add reply here_
+
+---
