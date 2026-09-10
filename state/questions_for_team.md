@@ -11413,3 +11413,23 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-09-10 (FAILED — total ingest failure)
+
+**Step that failed:** Step 3 — Ingest (`python -m landscape.cli ingest`)
+
+**Errors:**
+- `arxiv`: HTTP 403 Forbidden on `export.arxiv.org/api/query` — same rate-limit/block seen in prior builds; still unresolved.
+- `hn`: HTTP 403 Forbidden — same pattern as prior builds.
+- `rss`: "no items in current window" — all RSS feeds returned within-window-duplicate or empty content.
+- `github_trending`: "no items in current window" — no trending repos matched topics in the configured window.
+
+**Result:** 0 of 4 sources covered. No items ingested. Build aborted; no HTML rendered or pushed.
+
+**What the team should investigate:**
+1. The arxiv and HN 403 pattern has persisted for multiple consecutive builds. Prior builds raised the OAI-PMH mirror question (unanswered). This needs a resolution before the dashboard recovers. The Algolia HN API (`hn.algolia.com`) may be a drop-in replacement; the arXiv OAI-PMH endpoint is a confirmed alternative.
+2. The `rss` and `github_trending` "no items in current window" failures are new this build — previously at least github_trending produced items. The "current window" check likely deduplicates against `state/seen.json`; if seen.json has grown to cover all trending repos and recent posts, the effective window is empty. Check whether the dedup window in `seen.json` needs to be pruned or the `days_back` parameters extended.
+3. If all four sources fail again in the next build, the dashboard will have been dark for 2+ consecutive cycles. Consider a fallback alert or a manual curated-item path for critical competitive events.
+
