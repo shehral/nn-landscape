@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 11, 2026 · 00:00 UTC · 0 items scored</span>
+  <span class="built-at">Built Sep 11, 2026 · 13:00 UTC · 8 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,7 +53,10 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>All four ingestion sources failed this build: arxiv and HN returned HTTP 403, RSS and GitHub Trending returned no in-window items. No items were scored or framed.</li>
+    <li>Frontier flagship launches (Fable 5.1, GPT-6 Astra, Gemini 3.8 Flash) cluster within 10 days and all accept document/PDF input, but none have published IDP Leaderboard or OmniDocBench scores — a recurring evaluation lag that leaves the benchmark comparison window open for OCR-3.</li>
+    <li>GPT-6 Astra leads Vision Evals overall (#1 of 53) but ranks 14th on the OCR sub-task, while Fable 5.1 ranks top-3 on OCR but 8th overall — confirming that OCR accuracy and general vision performance are not well-correlated at the frontier.</li>
+    <li>Two competitors this build (Reducto r-1, Jina-OCR-v1) released single-pass or parameter-efficient architectures that claim to match or exceed multi-stage systems at lower cost — a shift from pipeline optimization to end-to-end model replacement as the primary competitive strategy.</li>
+    <li>SHROOM-Visions 2026 and two participant papers in the same build window indicate VLM hallucination detection has matured into a formal shared-task research area (EMNLP 2026), with an explicit &#39;OCR problems&#39; category that directly maps to document-extraction failure modes.</li>
   </ul>
 </section>
 
@@ -64,16 +67,219 @@
   </div>
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
-      <p class="item-summary">No top-N items this build.</p>
+<article class="item "
+         data-source="arxiv"
+         data-score="62">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 4 · frontier 1 · vlm_research 2 = 62 (this view's weighting)">62</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
   </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2609.03181" target="_blank" rel="nofollow noopener noreferrer">Jina-OCR-v1: Efficient Document Parsing with Speculative Decoding and Dense Verifiable Rewards</a>
+  </p>
+  <p class="item-summary">Jina AI releases 570M-active-param OCR model scoring 91.14 on OmniDocBench v1.6 at 2.57 pages/sec on low-budget GPUs.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Jina AI — primarily an embedding and search infrastructure provider — has shipped a purpose-built document parser that scores above OCR-3&#39;s published OmniDocBench score (though on the incomparable v1.6 edition). The throughput figure (2.57 pages/sec on low-budget hardware) positions it as a cost-tier competitor for high-volume extraction pipelines.</dd>
+      <dt>Research</dt>
+      <dd>Speculative decoding applied to document parsing is a novel architecture choice; the dense verifiable reward training regime is a potential reference for RL-based structured-output fidelity work.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="60">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 4 · frontier 3 · vlm_research 1 = 60 (this view's weighting)">60</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://playground.roboflow.com/models/openai/gpt-6-astra" target="_blank" rel="nofollow noopener noreferrer">GPT-6 Astra ranks #1 of 53 overall on Roboflow Vision Evals but #14 on OCR (91.9%)</a>
+  </p>
+  <p class="item-summary">GPT-6 Astra leads Vision Evals overall (86.6%) but ranks only 14th on OCR; no IDP Leaderboard scores yet.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>GPT-6 Astra&#39;s relative weakness on specialized OCR tasks (91.9%, rank 14 of 53) versus its dominant overall vision score (86.6%, rank 1) suggests frontier generalist models do not yet close the gap with specialized document parsers on extraction accuracy. That gap is the primary defensible moat for OCR-3.</dd>
+      <dt>Research</dt>
+      <dd>No IDP Leaderboard, ParseBench, or OmniDocBench scores have been published for GPT-6 Astra; benchmarking it on the same evaluation set as OCR-3 would quantify the gap with a comparable metric.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="60">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 4 · frontier 3 · vlm_research 1 = 60 (this view's weighting)">60</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://deepmind.google/models/gemini/flash/" target="_blank" rel="nofollow noopener noreferrer">Gemini 3.8 Flash: PDF and image input, 3x more agentic tasks than 3.7 Flash, $0.75/M tokens</a>
+  </p>
+  <p class="item-summary">Gemini 3.8 Flash (Sep 2) accepts PDF input, 1M-token context, claims 3x agentic task completion vs prior Flash at $0.75/M.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Gemini 3.8 Flash&#39;s price point ($0.75/M input tokens) combined with native PDF input and a 3x agentic task improvement makes it a credible alternative for customers building document-heavy pipelines who do not need specialized extraction accuracy. Its position as the third Google Flash release in six weeks signals aggressive incremental iteration on this capability surface.</dd>
+      <dt>Research</dt>
+      <dd>No OmniDocBench or IDP Leaderboard scores have been published; without structured-extraction benchmarks, its actual document-parsing accuracy relative to OCR-3 remains unquantified.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="60">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 4 · frontier 3 · vlm_research 1 = 60 (this view's weighting)">60</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://playground.roboflow.com/models/anthropic/claude-fable-5-1" target="_blank" rel="nofollow noopener noreferrer">Claude Fable 5.1 ranks #8 of 53 overall and top-3 on OCR on Roboflow Vision Evals</a>
+  </p>
+  <p class="item-summary">Fable 5.1 places top-3 on Roboflow OCR evals (81.3% avg, #8 overall of 53); pricing updated Sep 7.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Claude Fable 5.1 in the top-3 on Roboflow&#39;s OCR task — and ahead of GPT-6 Astra on that specific sub-task — is the first confirmed document-benchmark placement for the Fable 5.1 generation. This is competitive signal: Anthropic is closing the OCR gap faster than prior generations suggested.</dd>
+      <dt>Research</dt>
+      <dd>Roboflow&#39;s Vision Evals OCR task is a transcription-accuracy metric distinct from the structured-extraction tasks on IDP Leaderboard and OmniDocBench; a Fable 5.1 result on those benchmarks would provide a more relevant comparison for OCR-3.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="54">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 5 · frontier 0 · vlm_research 1 = 54 (this view's weighting)">54</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://www.marktechpost.com/2026/09/07/reducto-releases-r-1-a-single-pass-document-parsing-model-that-cuts-errors-20-at-1-cent-per-page/" target="_blank" rel="nofollow noopener noreferrer">Reducto r-1: single-pass document parsing model, 20% error reduction, $10/1,000 pages in preview</a>
+  </p>
+  <p class="item-summary">Reducto r-1 (Sep 1, preview) unifies layout, reading order, tables, and citations in one pass; 20% fewer errors, 1¢/page.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Reducto r-1 directly challenges multi-stage parsing stacks by collapsing layout detection, reading order, tables, formatting, and citation grounding into a single model pass. At 1¢/page, it undercuts multi-tool alternatives by up to 6x on Reducto&#39;s own benchmark; r-1 mini is in the roadmap for further cost and speed reduction.</dd>
+      <dt>Research</dt>
+      <dd>The single-pass architecture trades interpretability for latency and cost. If r-1&#39;s accuracy claims hold under independent evaluation, it establishes a new architectural baseline for the competitive parsing space.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+</article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
       <p class="item-summary">No top-N items this build.</p>
   </div>
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
-      <p class="item-summary">No top-N items this build.</p>
+<article class="item "
+         data-source="arxiv"
+         data-score="36">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 5 = 36 (this view's weighting)">36</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
   </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2608.25662" target="_blank" rel="nofollow noopener noreferrer">SHROOM-Visions 2026: Shared Task on Hallucination Detection in Large Vision-Language Models (EMNLP 2026)</a>
+  </p>
+  <p class="item-summary">SHROOM-Visions 2026 (EMNLP) defines a 5-class VLM hallucination taxonomy including OCR errors; 28+ system submissions.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>The &#39;OCR problems&#39; category in SHROOM-Visions&#39; taxonomy formalizes a hallucination class that directly corresponds to failure modes in production document extraction. Systems evaluated against this taxonomy are generating a publicly comparable hallucination-error profile.</dd>
+      <dt>Research</dt>
+      <dd>The SHEEP dataset and 5-class taxonomy (invention, mischaracterization, OCR problems, miscounting, other) are now a shared evaluation surface. Aligning the team&#39;s hallucination characterization work to this taxonomy would enable direct comparison with 28+ submitted systems.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="30">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 1 · vlm_research 4 = 30 (this view's weighting)">30</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2609.10244" target="_blank" rel="nofollow noopener noreferrer">Two-Token Features and Small-Large Ensembles for VLM Hallucination Detection (arXiv 2609.10244)</a>
+  </p>
+  <p class="item-summary">Small 4B VLM fine-tuned as per-token classifier using two-token hidden-state features, ensembled with 400B judge; 6th/28 SHROOM-EN.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication; the technique operates on general VLM output, not document-extraction–specific failure modes.</dd>
+      <dt>Research</dt>
+      <dd>The two-token feature approach extracts a hallucination signal from off-the-shelf VLM hidden states without retraining the base model. If OCR-3&#39;s inference stack exposes per-token hidden states, this approach could be applied directly to the /parse or /vqa output stream as a confidence signal.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="30">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 1 · vlm_research 4 = 30 (this view's weighting)">30</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2608.29974" target="_blank" rel="nofollow noopener noreferrer">SpanCalib-VLM: Calibrated Hallucination Span Detection in Vision-Language Models (arXiv 2608.29974)</a>
+  </p>
+  <p class="item-summary">Multimodal sequence tagger fused with SigLIP + fine-tuned Qwen3.5-4B detects and calibrates hallucination spans in VLM output.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication at this stage; span-level calibration is useful for building confidence overlays on extracted fields, not a production capability on its own.</dd>
+      <dt>Research</dt>
+      <dd>The XLM-RoBERTa-Large + SigLIP fusion architecture for span tagging is a practical alternative to causal-patching approaches. Its calibration framing — assigning uncertainty scores to output spans — fits the team&#39;s hallucination characterization work and could complement existing activation-patching methods.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article>  </div>
 </section>
 
 <aside class="ai-partner" aria-label="Questions from your AI partner">
@@ -85,28 +291,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">arxiv and HN both returned HTTP 403 this build — is the outbound network policy for this runner blocking requests to export.arxiv.org and hn.algolia.com?</p>
-    <p class="question-context">Two consecutive sources returned 403 (not rate-limit 429, not timeout). This suggests a proxy or firewall block rather than a transient network error. Checking the proxy allowlist or outbound policy for the remote execution environment would confirm.</p>
+    <p class="question-text">SHROOM-Visions 2026 defines &#39;OCR problems&#39; as a formal hallucination category in the SHEEP dataset used across 28+ competing systems. Has the team evaluated OCR-3 against this dataset, and if so, should the SHROOM taxonomy be adopted as a standard classification layer for the team&#39;s own hallucination characterization work?</p>
+    <p class="question-context">The SHEEP dataset and SHROOM taxonomy are now a public benchmark surface with cross-system comparability. Adopting the taxonomy would make the team&#39;s internal hallucination research directly publishable against a known reference. A negative result (OCR-3 performs well on SHEEP) would also be a publishable finding.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">RSS feeds returned zero in-window items this build — should the per_feed_limit or days_back window in sources.yaml be widened to make builds more resilient to quiet windows?</p>
-    <p class="question-context">The RSS source is configured with per_feed_limit=15 and a time window. If the window is too narrow (e.g., 6 hours to match the cron cadence), a quiet window on all 10 feeds produces zero items. Widening to 24-48 hours with dedup handling duplicates across builds is the standard mitigation.</p>
+    <p class="question-text">Jina-OCR-v1 (91.14 on OmniDocBench v1.6, 2.57 pages/sec) comes from an infrastructure provider, not a document-AI specialist. Should the competitive monitoring scope in data/nanonets_context.md be extended to cover infrastructure providers (Jina AI, Cohere) that bundle OCR as a vertical product?</p>
+    <p class="question-context">Prior builds raised this question for Jina AI without a team reply. This build confirms both a published benchmark score and a public arXiv paper, making Jina-OCR-v1 a documented competitive entrant. A one-line addition to the context file would ensure future builds score it correctly from the start.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the build abort and notify rather than render an empty edition when all 4 sources fail?</p>
-    <p class="question-context">The current playbook says to continue with a partial-build banner even with 0 of 4 sources covered. Publishing an empty dashboard to GitHub Pages may confuse readers who see stale data. An alternative is to retain the prior edition and push only a &#39;build attempted, no new items&#39; note to questions_for_team.md.</p>
+    <p class="question-text">Reducto&#39;s r-1 roadmap includes &#39;r-1 mini&#39; — a smaller, cheaper variant for speed- and cost-sensitive workloads, plus automatic routing that selects the model per page. If this shipping, does Nanonets&#39; Agentic Data Extraction positioning need to address sub-cent-per-page extraction at the tier where simple documents are involved?</p>
+    <p class="question-context">Reducto r-1 is priced at $10/1,000 pages for the hardest documents; r-1 mini would target simpler documents at lower cost. Automatic routing is structurally similar to OCR-3&#39;s endpoint architecture. The question is whether the price floor has moved in a way that changes the competitive tier analysis.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">GitHub Trending returned no in-window items — is the github_trending source reading a local cache, and if so, when was it last populated?</p>
-    <p class="question-context">The github_trending source uses days_back=1 and the build runs every 6 hours. If the trending endpoint returns results only once per day or uses a cached scrape, every build except the first of the day may see an empty window.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">Should the build lock be held across a zero-item build, or released immediately so the next cron tick can retry?</p>
-    <p class="question-context">With all sources failing, there is no value in the lock preventing a retry within the same 6-hour window. Releasing early and letting the scheduler retry sooner would improve freshness during source-outage events.</p>
+    <p class="question-text">Gemini 3.8 Flash is the third Flash-tier release from Google in six weeks. The rapid iteration cadence suggests Google is prioritizing this tier over flagship releases for document-heavy enterprise workflows. Should this build cadence factor into how the monitor weights Google entries — e.g., treating each new Flash release as a first-class competitive event rather than a minor update?</p>
+    <p class="question-context">Gemini 3.5 Flash (May), 3.6 Flash (July 21), and 3.8 Flash (September 2) have all appeared in the landscape. The context file treats each as competitive-primary. The question is whether the scoring rubric should reflect that Google&#39;s Flash family is now iterating faster than the 6-week context refresh cycle.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -118,7 +319,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-11T00:00:00+00:00
+    sources covered:     · failed: 4 · built at 2026-09-11T13:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

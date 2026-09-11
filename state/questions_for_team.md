@@ -11501,3 +11501,31 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-11T13:00:00+00:00 (audit: partial)
+
+### Q: SHROOM-Visions 2026 defines 'OCR problems' as a formal hallucination category in the SHEEP dataset used across 28+ competing systems. Has the team evaluated OCR-3 against this dataset, and if so, should the SHROOM taxonomy be adopted as a standard classification layer for the team's own hallucination characterization work?
+
+**Context:** The SHEEP dataset and SHROOM taxonomy are now a public benchmark surface with cross-system comparability. Adopting the taxonomy would make the team's internal hallucination research directly publishable against a known reference. A negative result (OCR-3 performs well on SHEEP) would also be a publishable finding.
+
+**Answer:** _add reply here_
+
+### Q: Jina-OCR-v1 (91.14 on OmniDocBench v1.6, 2.57 pages/sec) comes from an infrastructure provider, not a document-AI specialist. Should the competitive monitoring scope in data/nanonets_context.md be extended to cover infrastructure providers (Jina AI, Cohere) that bundle OCR as a vertical product?
+
+**Context:** Prior builds raised this question for Jina AI without a team reply. This build confirms both a published benchmark score and a public arXiv paper, making Jina-OCR-v1 a documented competitive entrant. A one-line addition to the context file would ensure future builds score it correctly from the start.
+
+**Answer:** _add reply here_
+
+### Q: Reducto's r-1 roadmap includes 'r-1 mini' — a smaller, cheaper variant for speed- and cost-sensitive workloads, plus automatic routing that selects the model per page. If this shipping, does Nanonets' Agentic Data Extraction positioning need to address sub-cent-per-page extraction at the tier where simple documents are involved?
+
+**Context:** Reducto r-1 is priced at $10/1,000 pages for the hardest documents; r-1 mini would target simpler documents at lower cost. Automatic routing is structurally similar to OCR-3's endpoint architecture. The question is whether the price floor has moved in a way that changes the competitive tier analysis.
+
+**Answer:** _add reply here_
+
+### Q: Gemini 3.8 Flash is the third Flash-tier release from Google in six weeks. The rapid iteration cadence suggests Google is prioritizing this tier over flagship releases for document-heavy enterprise workflows. Should this build cadence factor into how the monitor weights Google entries — e.g., treating each new Flash release as a first-class competitive event rather than a minor update?
+
+**Context:** Gemini 3.5 Flash (May), 3.6 Flash (July 21), and 3.8 Flash (September 2) have all appeared in the landscape. The context file treats each as competitive-primary. The question is whether the scoring rubric should reflect that Google's Flash family is now iterating faster than the 6-week context refresh cycle.
+
+**Answer:** _add reply here_
+
+---
