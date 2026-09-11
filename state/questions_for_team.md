@@ -11467,3 +11467,37 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-11T00:00:00+00:00 (audit: partial)
+
+### Q: arxiv and HN both returned HTTP 403 this build — is the outbound network policy for this runner blocking requests to export.arxiv.org and hn.algolia.com?
+
+**Context:** Two consecutive sources returned 403 (not rate-limit 429, not timeout). This suggests a proxy or firewall block rather than a transient network error. Checking the proxy allowlist or outbound policy for the remote execution environment would confirm.
+
+**Answer:** _add reply here_
+
+### Q: RSS feeds returned zero in-window items this build — should the per_feed_limit or days_back window in sources.yaml be widened to make builds more resilient to quiet windows?
+
+**Context:** The RSS source is configured with per_feed_limit=15 and a time window. If the window is too narrow (e.g., 6 hours to match the cron cadence), a quiet window on all 10 feeds produces zero items. Widening to 24-48 hours with dedup handling duplicates across builds is the standard mitigation.
+
+**Answer:** _add reply here_
+
+### Q: Should the build abort and notify rather than render an empty edition when all 4 sources fail?
+
+**Context:** The current playbook says to continue with a partial-build banner even with 0 of 4 sources covered. Publishing an empty dashboard to GitHub Pages may confuse readers who see stale data. An alternative is to retain the prior edition and push only a 'build attempted, no new items' note to questions_for_team.md.
+
+**Answer:** _add reply here_
+
+### Q: GitHub Trending returned no in-window items — is the github_trending source reading a local cache, and if so, when was it last populated?
+
+**Context:** The github_trending source uses days_back=1 and the build runs every 6 hours. If the trending endpoint returns results only once per day or uses a cached scrape, every build except the first of the day may see an empty window.
+
+**Answer:** _add reply here_
+
+### Q: Should the build lock be held across a zero-item build, or released immediately so the next cron tick can retry?
+
+**Context:** With all sources failing, there is no value in the lock preventing a retry within the same 6-hour window. Releasing early and letting the scheduler retry sooner would improve freshness during source-outage events.
+
+**Answer:** _add reply here_
+
+---
