@@ -11529,3 +11529,37 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-11T19:00:00+00:00 (audit: partial)
+
+### Q: Bodhan AI is not in data/nanonets_context.md. Its OmniDocBench v1.6 score (92.76) exceeds OCR-3's published v1.5 score (90.5) on different benchmark versions. Should Bodhan AI be added to the context file as a new competitive entrant?
+
+**Context:** Bodhan AI focuses on 22 Indian languages and published IndicOCR-Printed results. If Nanonets serves enterprise customers in South Asia or handles mixed-script documents, this entrant is directly relevant. Without a context entry, future builds will evaluate it from scratch each cycle.
+
+**Answer:** _add reply here_
+
+### Q: Dr. DocBench (2077AI/Stanford/Harvard, arXiv 2606.01393) benchmarks parsers on expert-level documents where SOTA systems fail. Is running OCR-3 on Dr. DocBench in scope for the team in the near term?
+
+**Context:** The benchmark targets chemical formulas, music notation, and complex cross-page tables — document types that appear in Nanonets' enterprise verticals (contracts, healthcare, financial). Publishing results before competitors would establish a credible hard-document position. This question was not raised in prior builds; Dr. DocBench is a new item this cycle.
+
+**Answer:** _add reply here_
+
+### Q: All four CLI ingest sources (arxiv, HN, RSS, github_trending) have returned 403 or empty for 21+ consecutive builds. This build's WebSearch fallback produced only 6 new items versus 20-80 from healthy CLI ingest. Is there an owner and a target date for the egress allowlist fix?
+
+**Context:** Required egress additions: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml. The questions_for_team.md file now exceeds 15,000 lines of unanswered questions. A policy decision — either fix the allowlist or formally accept WebSearch-only as the operating mode — would end the recurring question.
+
+**Answer:** _add reply here_
+
+### Q: The BenchLM OmniDocBench snapshot shows Gemini-3-Flash at 90.1% on v1.5, while OCR-3's published score is 90.5 on v1.5. Are these scored on the same evaluation methodology, and should the IDP Leaderboard page explicitly note its methodology differences from third-party trackers?
+
+**Context:** Third-party trackers (BenchLM, llm-stats.com) increasingly surface benchmark scores that contradict or diverge from the IDP Leaderboard results. Readers comparing models across these surfaces may reach incorrect conclusions. A methodology-disclosure note on the IDP Leaderboard would preempt this.
+
+**Answer:** _add reply here_
+
+### Q: arXiv 2508.16652 (ICCV'25) diagnoses VLM compositional failures via CLIP MLP superposition. Has this paper been reviewed by the team's research line, and does the superposition analysis methodology apply to structural hallucination characterization in OCR-3?
+
+**Context:** The paper uses mechanistic interpretability (activation-space decomposition of CLIP MLP neurons) to trace compositional failures to multi-feature entanglement. This is methodologically compatible with the team's activation patching and SAE work. If superposition in vision encoders is a shared root cause of object-binding and structural hallucinations, the two research threads could be unified.
+
+**Answer:** _add reply here_
+
+---
