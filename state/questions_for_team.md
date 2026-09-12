@@ -11563,3 +11563,19 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-12T00:00:00+00:00 (FAILED — zero items ingested)
+
+**Failure summary:** All four ingest sources returned 0 items. arxiv (export.arxiv.org) and HN (hn.algolia.com) returned HTTP 403 from the proxy; RSS and github_trending returned empty windows. With 0 items the build cannot produce a meaningful edition.
+
+**Step that failed:** Step 3 (ingest) — 0 of 4 sources returned data.
+
+**Errors logged:**
+- FAILED arxiv: Client error '403 Forbidden' for url 'http://export.arxiv.org/api/query?...'
+- FAILED hn: 403 Forbidden
+- FAILED rss: no items in current window
+- FAILED github_trending: no items in current window
+
+**Team action needed:** The prior build's Q on the egress allowlist (see immediately above) still stands unanswered and unresolved. This is the same systemic failure. No new question raised — the existing one covers it. Please add `export.arxiv.org`, `hn.algolia.com`, and the RSS hosts from `data/sources.yaml` to the egress allowlist, or formally document the decision to run in WebSearch-only fallback mode and update the build playbook accordingly.
+
+---
