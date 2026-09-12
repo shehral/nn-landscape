@@ -11607,3 +11607,13 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-12T12:55:01Z (FAILED — zero items ingested)
+
+**Failure summary:** All four ingest sources returned 0 items for the third consecutive build today. arxiv (export.arxiv.org) and HN (hn.algolia.com) returned HTTP 403 from the proxy; RSS and github_trending returned empty windows. This is the same failure as the 00:00 and 07:01 builds today.
+
+**Step that failed:** Step 3 (ingest) — 0 of 4 sources returned data.
+
+**No new questions raised** — the existing question from the 2026-09-12T00:00:00 build covers this. The egress allowlist issue remains the root cause. The build will continue to fail at this cadence until export.arxiv.org, hn.algolia.com, and the RSS hosts in data/sources.yaml are added to the outbound network allowlist.
+
+---
