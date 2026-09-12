@@ -11617,3 +11617,37 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **No new questions raised** — the existing question from the 2026-09-12T00:00:00 build covers this. The egress allowlist issue remains the root cause. The build will continue to fail at this cadence until export.arxiv.org, hn.algolia.com, and the RSS hosts in data/sources.yaml are added to the outbound network allowlist.
 
 ---
+
+## Build 2026-09-12T18:58:57+00:00 (audit: partial)
+
+### Q: GPT-6 Astra, Fable 5.1, and Gemini 3.8 Flash shipped Sep 1-4 with no IDP Leaderboard or document-extraction benchmark scores. Is the team planning to run OCR-3 benchmarks against any of these models, and if so, on what timeline?
+
+**Context:** All three are listed in the IDP Leaderboard comparables list in context.md but have no confirmed document scores as of this build. Each prior frontier release (Opus 4.7, Fable 5, Opus 5) remained without scores for 2-8 weeks after launch; a standing 'we will benchmark within N weeks' policy would allow the agent to stop surfacing this question each cycle.
+
+**Answer:** _add reply here_
+
+### Q: Reducto r-1 is priced at $0.01/page all-in. OCR-3 pricing is not reflected in data/nanonets_context.md. Should the context file include a public-facing price reference so future builds can frame price-compression events accurately relative to OCR-3's own tier?
+
+**Context:** Without pricing context, the agent cannot determine whether $0.01/page undercuts, matches, or exceeds OCR-3's positioning. This gap recurs whenever a competitor moves on price; a single line in context.md would resolve it permanently.
+
+**Answer:** _add reply here_
+
+### Q: The CLI ingest sources have failed for 21+ consecutive builds. The questions file now exceeds 11,600 lines. Is there a named owner and a target date for the egress allowlist fix, or has the decision been made to operate in permanent WebSearch-fallback mode?
+
+**Context:** Required egress additions: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml. WebSearch fallback produced 8 items this build versus 20-80 from healthy CLI ingest. A formal policy decision — fix the allowlist or accept WebSearch-only — would end the recurring question and allow the playbook to be updated accordingly.
+
+**Answer:** _add reply here_
+
+### Q: LlamaIndex argues OmniDocBench is saturated. The IDP Leaderboard is Nanonets-maintained and composite across three benchmarks. Does the IDP Leaderboard face the same saturation risk, and if so, are harder sub-tasks (LongExtractBench, Dr. DocBench) candidates for inclusion in the composite?
+
+**Context:** The IDP Leaderboard's current composite covers OlmOCR, OmniDocBench, and IDP Core. If OmniDocBench loses discriminating power as a component, the composite score becomes less reliable. Replacing or augmenting it with harder benchmarks would maintain the leaderboard's utility as a market signal.
+
+**Answer:** _add reply here_
+
+### Q: Mistral's blog RSS feed is configured in sources.yaml but has been returning empty windows along with all other RSS sources. Should the Reducto blog and/or the Mistral changelog feed be added to sources.yaml so those sources are captured without WebSearch fallback once egress is restored?
+
+**Context:** Mistral Agentic Search and Reducto r-1 were both significant competitive events that were not captured by the CLI RSS source. Adding blog.mistral.ai/rss/ (already in sources.yaml) and reducto.ai/blog/rss (if available) or a Reducto news feed would improve coverage. This is a low-cost change with egress-restoration as the gating dependency.
+
+**Answer:** _add reply here_
+
+---
