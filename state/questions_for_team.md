@@ -11579,3 +11579,31 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Team action needed:** The prior build's Q on the egress allowlist (see immediately above) still stands unanswered and unresolved. This is the same systemic failure. No new question raised — the existing one covers it. Please add `export.arxiv.org`, `hn.algolia.com`, and the RSS hosts from `data/sources.yaml` to the egress allowlist, or formally document the decision to run in WebSearch-only fallback mode and update the build playbook accordingly.
 
 ---
+
+## Build 2026-09-12T07:01:42+00:00 (audit: partial)
+
+### Q: DeepSeek V4.1-Flash is not in data/nanonets_context.md. It has native image understanding and is priced at $0.15/MTok uncached input. Should it be added as a competitive-monitoring entry, or classified as frontier-only given that DeepSeek's dedicated OCR product is DeepSeek-OCR 2?
+
+**Context:** The disambiguation rule defaults to competitive when unsure; DeepSeek V4.1-Flash was scored frontier-primary this build because it lacks a dedicated document-extraction product posture. Updating the context file with a classification decision would make future scoring consistent.
+
+**Answer:** _add reply here_
+
+### Q: The OpenTI survey (arXiv 2609.07629) proposes a unified evaluation framework for tabular insight extraction. Does this framework map usefully onto OCR-3's /extract and /vqa endpoints, and would publishing OCR-3 results on OpenTI benchmark tasks be a meaningful positioning move?
+
+**Context:** OpenTI spans table QA, text-to-SQL, and data-analysis-agent tasks. If OCR-3's table extraction already exceeds SOTA on these sub-tasks, participating in the OpenTI benchmark ecosystem could extend the IDP Leaderboard lead to a second benchmark surface.
+
+**Answer:** _add reply here_
+
+### Q: ABBYY holds a Gartner 2026 IDP Magic Quadrant Leader position (second consecutive recognition). The context file classifies ABBYY as a legacy vendor Nanonets positions against. Does the Gartner Leader position change how ABBYY should be framed in competitive analysis — should it be elevated from 'legacy' to 'established enterprise' in the context file?
+
+**Context:** Gartner Magic Quadrant Leader status is a procurement-cycle signal that affects enterprise buyers' shortlists. If Nanonets competes in RFPs where Gartner rankings are cited, ABBYY's sustained analyst presence is competitively material in ways that 'legacy vendor' framing may understate.
+
+**Answer:** _add reply here_
+
+### Q: This build produced only 3 items via WebSearch fallback (CLI sources blocked for 21+ consecutive builds). The prior question about the egress allowlist remains unanswered. Is a 3-item edition useful enough to publish, or should the team define a minimum-item threshold below which the build should skip rendering and push only a status note?
+
+**Context:** The prior question asked for an owner and timeline on the egress allowlist fix. This question is a different framing: it asks for a policy decision on minimum-viable edition size that would help the build agent decide between partial-render and no-render modes.
+
+**Answer:** _add reply here_
+
+---
