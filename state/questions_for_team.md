@@ -11651,3 +11651,31 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-13T01:30:00+00:00 (audit: partial)
+
+### Q: Nutrient Data Extraction API is not in data/nanonets_context.md. Its 0.932 on opendataloader-bench and four-tier processing architecture place it in the same competitive tier as Reducto and LlamaParse. Should it be added to the competitive set for future builds?
+
+**Context:** Nutrient launched GA on September 10, 2026. It is not a named company in the current context file, so future builds will score it from scratch without prior competitive framing. A single context entry would ensure consistent classification.
+
+**Answer:** _add reply here_
+
+### Q: ExtractBench (LlamaIndex, arXiv 2607.29677) evaluates schema-guided structured extraction across 370 enterprise documents in 8 business domains — directly testing OCR-3's /extract endpoint use case. Has the team run OCR-3 on ExtractBench, and if not, should it be prioritized before competitor results establish the reference frame?
+
+**Context:** LlamaIndex authored ExtractBench, making LlamaExtract the implicit baseline. Reducto, GPT-5.5, and other named competitors are expected to appear in ExtractBench result tables. Publishing OCR-3 results first would be a proactive positioning move.
+
+**Answer:** _add reply here_
+
+### Q: Reducto r-1 is priced at $0.01/page all-in. OCR-3 pricing is absent from data/nanonets_context.md, making it structurally impossible for this build to frame price-compression events accurately relative to OCR-3's own tier. Should a public-facing price reference be added to the context file?
+
+**Context:** This question was raised in the prior build (2026-09-12T18:58:57+00:00) without a team response. Reducto r-1's launch makes it newly urgent: without an OCR-3 price anchor, the agent cannot assess whether $0.01/page undercuts, matches, or exceeds Nanonets' positioning.
+
+**Answer:** _add reply here_
+
+### Q: All four CLI ingest sources have failed for 22+ consecutive builds due to proxy 403s on export.arxiv.org and hn.algolia.com, with RSS and github_trending producing empty windows. Is there a named owner and a target date for the egress allowlist fix?
+
+**Context:** The questions file now exceeds 11,600 lines of unanswered questions on this topic. Required egress additions: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml. WebSearch fallback produced 11 items this build; healthy CLI ingest typically produces 20-80.
+
+**Answer:** _add reply here_
+
+---
