@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 13, 2026 · 13:30 UTC · 12 items scored</span>
+  <span class="built-at">Built Sep 13, 2026 · 19:30 UTC · 4 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,11 +53,9 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Google&#39;s Flash-tier iteration cadence has reached four releases in four months (May, July, July, September). No other frontier lab has matched this release frequency. The pattern suggests Google is treating Flash as a continuous-improvement product line targeting document and enterprise workloads rather than a versioned model.</li>
-    <li>VLM hallucination detection is converging on standardized benchmark surfaces: SHROOM-Visions 2026 (28 systems, four languages), OmniHallu-Bench (10,000 cross-modal samples, six task types), and CADMP all published within the same build window. The field is moving from ad-hoc evaluation toward shared leaderboards, mirroring what happened with OCR benchmarks in 2025.</li>
-    <li>The single-pass vs. multi-pass architecture debate is active across both research and commercial document AI. Reducto r-1 replaces Deep Extract&#39;s multi-pass pipeline with a single unified model; Multimodal OCR: Parse Anything takes the same architectural position. The design question — one model vs. pipeline composition — is being resolved differently by different labs.</li>
-    <li>Table parsing is attracting dedicated research attention separate from general document parsing. StrucTab, POTATR, and MinerU2.5&#39;s two-stage decoupled approach all treat table structure as a distinct subproblem. This diverges from the &#39;one model for everything&#39; framing of recent commercial releases.</li>
-    <li>Multiple labs in the competitive set released general-purpose multimodal models this build (GLM-5.3-Flash, DeepSeek V4 Flash Vision, GPT-6 Astra, Fable 5.1) without publishing document-extraction benchmark scores. The absence of scores after launch is now the norm rather than the exception — it extends the competitive uncertainty window and delays head-to-head comparison.</li>
+    <li>Chart and table extraction benchmarks are becoming harder: WB-ChartExtract (7x denser than ChartQA) and TABVERSE both push beyond existing saturated benchmarks toward real-world complexity.</li>
+    <li>Inference-time ensembling is emerging as an accuracy lever that does not require retraining: chart self-ensembling (23% gain) parallels Reducto r-1&#39;s single-pass architecture and prior multi-pass agentic correction approaches.</li>
+    <li>Activation-space steering is expanding from text LLMs to VLMs and VLAs; the common thread is no fine-tuning required, which reduces the cost of behavioral intervention experiments.</li>
   </ul>
 </section>
 
@@ -66,314 +64,112 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="56">
+         data-score="40">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 2 · frontier 1 · vlm_research 4 = 56 (this view's weighting)">56</span>
+          title="doc_ai 4 · competitive 0 · frontier 0 · vlm_research 4 = 40 (this view's weighting)">40</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+      <span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2603.13032" target="_blank" rel="nofollow noopener noreferrer">Multimodal OCR: Parse Anything from Documents</a>
+    <a href="https://arxiv.org/abs/2605.27298" target="_blank" rel="nofollow noopener noreferrer">Self-Ensembling Vision-Language Models for Chart Data Extraction</a>
   </p>
-  <p class="item-summary">Unified page-level parsing model (Mar 2026) covering documents, webpages, UIs, and scene text; recovers visual symbols as renderable code.</p>
+  <p class="item-summary">Per-cell median self-ensembling over VLM outputs; 23% gain on WB-ChartExtract (7x denser than ChartQA).</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>The &#39;parse anything&#39; design — one model across document types, UIs, and scene text — is directionally aligned with OCR-3&#39;s five-endpoint single-model positioning. If this approach proves accurate on structured extraction tasks, it validates OCR-3&#39;s architectural bet.</dd>
+      <dd>Self-ensembling with per-cell median aggregation improves chart extraction accuracy by up to 23% relative on harder benchmarks; directly applicable to OCR-3&#39;s /vqa endpoint for complex charts. WB-ChartExtract provides a harder evaluation surface than ChartQA for measuring chart parsing quality.</dd>
       <dt>Research</dt>
-      <dd>The visual-symbol-to-renderable-code output modality is novel: rather than text-only output, the model emits reconstructed visual representations. This could be relevant to Nanonets&#39; chart and table output fidelity work.</dd>
+      <dd>The convergence detection and uncertainty estimation components are low-overhead additions to any VLM inference loop. Reproducing WB-ChartExtract results would establish a direct comparison baseline for OCR-3 chart performance.</dd>
       <dt>Action</dt>
-      <dd>read in week</dd>
+      <dd>reproduce</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: vlm_research</p>
 </article><article class="item "
          data-source="arxiv"
-         data-score="49">
+         data-score="30">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 2 · frontier 0 · vlm_research 3 = 49 (this view's weighting)">49</span>
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 3 = 30 (this view's weighting)">30</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2606.29905" target="_blank" rel="nofollow noopener noreferrer">StrucTab: Structured Optimization for Table Parsing</a>
+    <a href="https://arxiv.org/abs/2606.09578" target="_blank" rel="nofollow noopener noreferrer">TABVERSE: Benchmarking Cross-Format Table Understanding in LLMs and VLMs</a>
   </p>
-  <p class="item-summary">Decomposes table parsing into row/column counting and merged-cell analysis as sequential reasoning subtasks; Jun 2026.</p>
+  <p class="item-summary">700-sample benchmark: HTML tables outperform rendered images for table QA; format choice causes measurable accuracy gaps.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>The structured subtask decomposition directly targets the phantom-row and merged-cell failure modes that are known OCR-VLM weaknesses. If the framework generalizes beyond its test corpora, it could be an extraction-layer addition to OCR-3&#39;s /extract endpoint behavior.</dd>
+      <dd>Image-format tables consistently underperform structured-text tables (HTML &gt; LaTeX &gt; Markdown &gt; image) across LLMs and VLMs. For OCR-3&#39;s /extract endpoint, this implies that output format selection for downstream consumption has measurable accuracy impact.</dd>
       <dt>Research</dt>
-      <dd>The sequential-reasoning-over-subtasks paradigm is methodologically distinct from end-to-end VLM table parsing. Would be a useful comparison baseline for the team&#39;s phantom-row mitigation work.</dd>
+      <dd>The representation sensitivity finding applies to benchmark methodology: evaluating OCR-3 table outputs in different formats (JSON, Markdown, HTML) would quantify this effect in Nanonets&#39; domain.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="36">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 1 · frontier 0 · vlm_research 3 = 36 (this view's weighting)">36</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2606.09788" target="_blank" rel="nofollow noopener noreferrer">POTATR: Lightweight Image-to-Graph Table Extraction</a>
-  </p>
-  <p class="item-summary">Page-level table localization and structure detection in a single lightweight image-to-graph pass; Jun 2026.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>A lightweight, single-pass table localization approach is a potential inference-efficiency improvement for OCR-3&#39;s table-extraction workloads, particularly for documents with many tables. Graph-structured output could improve downstream structured extraction.</dd>
-      <dt>Research</dt>
-      <dd>The image-to-graph paradigm avoids explicit sequence generation for table structure, potentially reducing structural hallucination risk compared to autoregressive table generation.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="36">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 1 · frontier 0 · vlm_research 3 = 36 (this view's weighting)">36</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2507.15085" target="_blank" rel="nofollow noopener noreferrer">OCRGenBench: Evaluating OCR Generative Capabilities</a>
-  </p>
-  <p class="item-summary">Benchmark covering 5 text categories and 33 OCR generative tasks including document dewarping, handwriting removal, and text editing; Jul 2026.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>OCRGenBench&#39;s generative tasks (dewarping, handwriting removal, document layout generation) extend the traditional OCR benchmark surface toward output-generation capabilities. If OCR-3&#39;s endpoints can be evaluated on these tasks, it would expand the competitive comparison surface beyond extraction accuracy.</dd>
-      <dt>Research</dt>
-      <dd>Generative OCR tasks are methodologically distinct from the team&#39;s current hallucination characterization work, but document dewarping quality directly affects downstream extraction accuracy.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
+  <p class="secondary-axes">also: vlm_research</p>
 </article>  </div>
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
+      <p class="item-summary">No top-N items this build.</p>
+  </div>
+  <div class="axis-col" data-axis="frontier">
+    <h2>Frontier</h2>
 <article class="item "
          data-source="rss"
-         data-score="66">
+         data-score="18">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 5 · frontier 3 · vlm_research 1 = 66 (this view's weighting)">66</span>
+          title="doc_ai 0 · competitive 1 · frontier 3 · vlm_research 0 = 18 (this view's weighting)">18</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
+      <span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 60%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://en.wikipedia.org/wiki/GPT-6_Astra" target="_blank" rel="nofollow noopener noreferrer">GPT-6 Astra</a>
+    <a href="https://cellcog.ai/blog/grok-4-7-release-date/" target="_blank" rel="nofollow noopener noreferrer">Grok 4.7: 2.1T-parameter model announced by xAI, release delayed past September 11 target</a>
   </p>
-  <p class="item-summary">OpenAI GPT-6 Astra (Sept 3-4, 2026): multimodal flagship, 1M-token context, 128K output; no IDP Leaderboard or document-benchmark scores confirmed.</p>
+  <p class="item-summary">xAI&#39;s Grok 4.7 (2.1T params, SpaceX data) missed its Sep 11 deadline; no model card, benchmarks, or API ID published.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>GPT-6 Astra adds to the make-vs-buy pressure on customers comparing general-purpose vision APIs against Nanonets OCR-3. No document-extraction benchmark results are published yet; until scores appear, the competitive threat remains unquantifiable.</dd>
+      <dd>Grok 4.7 has not shipped and has no confirmed document-extraction surface. Like Grok 4.6, it appears to be a general-purpose model; no document AI positioning announced.</dd>
       <dt>Research</dt>
-      <dd>No architecture details published. Once available, hallucination characterization comparisons against OCR-3 would be informative.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: frontier</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="66">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 5 · frontier 3 · vlm_research 1 = 66 (this view's weighting)">66</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://ai.google.dev/gemini-api/docs/changelog" target="_blank" rel="nofollow noopener noreferrer">Gemini 3.8 Flash (September 2, 2026)</a>
-  </p>
-  <p class="item-summary">Gemini 3.8 Flash (Sept 2, 2026): Google&#39;s fourth Flash release in four months; PDF/image input, 1M context, $0.75/$3.75 per million input/output tokens.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Gemini 3.8 Flash&#39;s PDF-native input and sub-dollar-per-million-token pricing sustains downward pricing pressure on document-AI APIs. Google&#39;s four Flash releases in four months signals a fast-iteration posture targeting enterprise document workflows directly.</dd>
-      <dt>Research</dt>
-      <dd>Rapid Flash-tier iteration without published document-benchmark scores makes meaningful accuracy comparison impossible without in-house benchmarking. FUNSD/CORD/OmniDocBench runs against 3.8 Flash would close the gap.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: frontier</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="58">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 5 · frontier 0 · vlm_research 0 = 58 (this view's weighting)">58</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://reducto.ai/blog/reducto-deep-extract-agent" target="_blank" rel="nofollow noopener noreferrer">Reducto Deep Extract: Agentic Extraction with Multi-Pass Verification</a>
-  </p>
-  <p class="item-summary">Reducto Deep Extract uses iterative self-correction loops to reach 100% completeness on LongExtractBench (225 long documents, July 2026); now superseded by r-1 single-pass model.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Deep Extract&#39;s LongExtractBench #1 result is the prior-generation Reducto claim; r-1 (Sept 2026) replaces the multi-pass pipeline with a single-pass model at $0.01/page. Together these constitute a two-phase competitive move: establish accuracy credibility, then compress cost.</dd>
-      <dt>Research</dt>
-      <dd>The multi-pass agentic verification architecture underpins the benchmark result. If single-pass r-1 achieves comparable accuracy, the accuracy-vs-latency tradeoff in agentic extraction is being resolved in favor of unified models.</dd>
-      <dt>Action</dt>
-      <dd>investigate</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="rss"
-         data-score="53">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 4 · frontier 3 · vlm_research 1 = 53 (this view's weighting)">53</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://releasebot.io/updates/anthropic/claude" target="_blank" rel="nofollow noopener noreferrer">Claude Fable 5.1 and Mythos 5.1 (September 1, 2026)</a>
-  </p>
-  <p class="item-summary">Anthropic Fable 5.1/Mythos 5.1 (Sept 1, 2026): 75% cheaper cache reads, cybersecurity focus; multimodal; no ParseBench or IDP Leaderboard scores confirmed.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>The 75% cache-read price reduction (to $0.25/million tokens) makes Fable 5.1 substantially cheaper for document pipelines that reuse model state across pages. No document-benchmark scores have been confirmed; the competitive weight remains the same as Fable 5 until results are published.</dd>
-      <dt>Research</dt>
-      <dd>Cybersecurity false-positive reduction (60% lower) is not directly relevant to document AI. Vision architecture details are not disclosed in the announcement.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: frontier</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="45">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 4 · frontier 0 · vlm_research 0 = 45 (this view's weighting)">45</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.llamaindex.ai/blog/extending-the-llamaparse-mcp-for-more-document-processing-power" target="_blank" rel="nofollow noopener noreferrer">LlamaParse MCP: Extract and Index v2 Tools</a>
-  </p>
-  <p class="item-summary">LlamaParse MCP server adds generateExtractionConfig, extractFile, and Index v2 for agentic structured JSON extraction and document retrieval; Jun 2026.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>MCP-native extraction and retrieval tools make LlamaParse natively composable in agentic pipelines without SDK wrapping. This extends LlamaParse&#39;s reach into agent frameworks that prefer MCP over direct API calls — a distribution channel OCR-3 does not yet have a public MCP offering for.</dd>
-      <dt>Research</dt>
-      <dd>No research implication.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="rss"
-         data-score="43">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 3 · frontier 2 · vlm_research 1 = 43 (this view's weighting)">43</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://local-ai-zone.github.io/blog/September_2026_AI_Model_Updates.html" target="_blank" rel="nofollow noopener noreferrer">September 2026 AI Model Updates: GLM-5.3-Flash and DeepSeek V4 Flash Vision</a>
-  </p>
-  <p class="item-summary">GLM-5.3-Flash (Z.ai, Sept 2026): natively multimodal, 320B/18B params, 1M context. DeepSeek V4 Flash Vision: experimental multimodal release from DeepSeek.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>GLM-5.3-Flash is a general-purpose multimodal successor from Z.ai, whose dedicated OCR product (GLM-OCR) already benchmarks on OmniDocBench. The general-model expansion from document-specialist labs broadens their competitive surface beyond OCR-specific products. No document-extraction benchmarks published for either model.</dd>
-      <dt>Research</dt>
-      <dd>No direct research implication until benchmark results are published.</dd>
+      <dd>No confirmed architecture or capability details. SpaceX training data may improve structured data reasoning but this is speculative until release.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
 </article>  </div>
-  <div class="axis-col" data-axis="frontier">
-    <h2>Frontier</h2>
-      <p class="item-summary">No top-N items this build.</p>
-  </div>
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="39">
+         data-score="17">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 1 · vlm_research 5 = 39 (this view's weighting)">39</span>
+          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 2 = 17 (this view's weighting)">17</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 100%"></span>
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.11244" target="_blank" rel="nofollow noopener noreferrer">OmniHallu: Unified Hallucination Detection for Cross-Modal MLLMs</a>
+    <a href="https://arxiv.org/abs/2509.00328" target="_blank" rel="nofollow noopener noreferrer">Mechanistic interpretability for steering vision-language-action models</a>
   </p>
-  <p class="item-summary">Multi-agent hallucination detection framework for image/video/audio MLLMs; introduces OmniHallu-Bench with 10,000 samples across 6 cross-modal tasks; Sept 2026.</p>
+  <p class="item-summary">Activation-projection steering for VLA robotics models (Pi0, OpenVLA); zero-shot behavior control without fine-tuning.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>OmniHallu-Bench covers image comprehension hallucination as one of its six task types. If document parsing VLMs are evaluated on it, OCR-3&#39;s hallucination profile would be directly comparable to other systems.</dd>
+      <dd>No direct product implication; the work targets robotics VLAs, not document VLMs.</dd>
       <dt>Research</dt>
-      <dd>The multi-agent detection architecture — where different agents handle different modality hallucination types — is a potential model for modular hallucination monitoring in document VLMs. The 10,000-sample benchmark is the most comprehensive cross-modal hallucination benchmark available as of Sept 2026.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="26">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 4 = 26 (this view's weighting)">26</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.02028" target="_blank" rel="nofollow noopener noreferrer">CADMP: Detecting Object Hallucinations via Cross-Modal Attention Drifts</a>
-  </p>
-  <p class="item-summary">Lightweight LVLM hallucination detection combining adjacent-layer cross-modal attention drift quantification with masked visual prediction sensitivity; Sept 2026.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication. The detection framework operates at inference time without retraining.</dd>
-      <dt>Research</dt>
-      <dd>Cross-modal attention drift as a hallucination signal is methodologically compatible with the team&#39;s mechanistic interpretability approach. The masking-based verification component could generalize to table-cell hallucination detection in OCR VLMs.</dd>
+      <dd>The activation-projection steering method (no fine-tuning required, identifies sparse semantic directions in feedforward layers) is methodologically transferable to document VLMs. If analogous directions exist in OCR-3&#39;s feedforward layers, the approach could inform hallucination steering experiments.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
@@ -390,23 +186,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Grok 4.7 (xAI) was announced with a September 12, 2026 target at 2.1 trillion parameters but had not shipped as of September 13. How should the agent handle announced-but-not-yet-released models: score them on announcement details, hold them until a release confirmation, or flag them as pending?</p>
-    <p class="question-context">The current playbook does not address pre-release announcements. Grok 4.7&#39;s non-release means this build does not include it. A standing policy — e.g., &#39;score on release confirmation only&#39; — would prevent inconsistent treatment across builds.</p>
+    <p class="question-text">Should OCR-3 be evaluated on WB-ChartExtract (arXiv:2605.27298), and if so, is the current chart VQA capability adequate for the 7x-denser benchmark or does it expose gaps?</p>
+    <p class="question-context">WB-ChartExtract uses World Bank charts averaging 7x more datapoints than ChartQA. Self-ensembling over the same VLM yields 23% improvement, which suggests single-pass extraction has meaningful headroom. If OCR-3&#39;s /vqa endpoint underperforms on WB-ChartExtract, that is a positioning gap before competitors benchmark it.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">GLM-5.3-Flash from Z.ai is a general-purpose multimodal model (not OCR-specific), distinct from Z.ai&#39;s dedicated GLM-OCR product. Should the two be tracked separately in data/nanonets_context.md — one entry for the OCR specialist, one for the general VLM — or merged under a single Z.ai entry?</p>
-    <p class="question-context">The current context file has a single GLM-OCR entry under Z.ai. GLM-5.3-Flash scored competitive-primary by default (frontier-lab with vision, tie-breaks to competitive). Separate entries would allow more precise scoring; a merged entry risks conflating a document-specialist model with a general VLM.</p>
+    <p class="question-text">TABVERSE finds HTML consistently outperforms image-format tables across LLMs and VLMs. Does OCR-3&#39;s /extract endpoint output format (JSON vs. Markdown vs. raw text) measurably affect downstream consumer accuracy, and should this be documented?</p>
+    <p class="question-context">If representation format causes comparable accuracy deltas in OCR-3&#39;s extraction pipeline, publishing format-specific accuracy numbers would be a differentiation move. The finding also suggests that benchmarking OCR-3 in only one output format may misrepresent its range.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">OmniHallu-Bench (arXiv 2609.11244) is the most comprehensive cross-modal hallucination benchmark as of September 2026, covering 10,000 samples across image/video/audio. Has the team reviewed whether OCR-3&#39;s document parsing failure modes map onto OmniHallu-Bench&#39;s image-comprehension task category?</p>
-    <p class="question-context">If OCR-3&#39;s hallucination patterns are representable in OmniHallu-Bench&#39;s taxonomy, the team could publish comparative results on a publicly recognized benchmark. The benchmark&#39;s multi-modal scope (image, video, audio) goes beyond document parsing but the image-comprehension slice is directly relevant.</p>
+    <p class="question-text">Activation-projection steering (arXiv:2509.00328) identifies sparse directions in feedforward layers that control behavior without fine-tuning. Is the team&#39;s mechanistic interpretability work on document VLMs at the stage where analogous sparse direction searches could be run on OCR-3&#39;s feedforward layers?</p>
+    <p class="question-context">The VLA steering paper uses the token embedding basis as the projection target. If OCR-3 has accessible hidden states during inference (or through a test harness), running a similar search for &#39;table hallucination&#39; or &#39;phantom row&#39; directions would be a direct extension of the team&#39;s current activation patching work.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">This build (September 13) is the 24th+ consecutive build with CLI ingest failures. WebSearch fallback produces 8-12 items per build versus 20-80 from healthy CLI ingest. Is the team&#39;s intent to restore CLI access (egress allowlist fix) or to formally operate in WebSearch-only mode with a wider query scope?</p>
-    <p class="question-context">The prior build raised this question; it remains unanswered. A formal policy decision would allow the playbook to be updated: either fix the allowlist (blocking item: export.arxiv.org, hn.algolia.com, and RSS feed hosts) or commit to WebSearch-only with adjusted scope and cadence.</p>
+    <p class="question-text">Grok 4.7 (2.1T params) has now missed its announced September 11 deadline for the second time in two weeks. At what scale or capability level does an announced-but-unshipped xAI model become worth tracking as a competitive rather than frontier item, and should a pre-release policy be added to the context file?</p>
+    <p class="question-context">The prior build raised this as a policy question (how to handle announced-but-unshipped models). It remains unanswered. Adding a one-line policy to data/nanonets_context.md — e.g., &#39;score on release confirmation only; announced models with no model card are frontier-monitor until shipped&#39; — would make future scoring consistent.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -418,7 +214,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-13T13:30:00+00:00
+    sources covered:     · failed: 4 · built at 2026-09-13T19:30:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

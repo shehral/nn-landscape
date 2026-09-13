@@ -11741,3 +11741,31 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-13T19:30:00+00:00 (audit: partial)
+
+### Q: Should OCR-3 be evaluated on WB-ChartExtract (arXiv:2605.27298), and if so, is the current chart VQA capability adequate for the 7x-denser benchmark or does it expose gaps?
+
+**Context:** WB-ChartExtract uses World Bank charts averaging 7x more datapoints than ChartQA. Self-ensembling over the same VLM yields 23% improvement, which suggests single-pass extraction has meaningful headroom. If OCR-3's /vqa endpoint underperforms on WB-ChartExtract, that is a positioning gap before competitors benchmark it.
+
+**Answer:** _add reply here_
+
+### Q: TABVERSE finds HTML consistently outperforms image-format tables across LLMs and VLMs. Does OCR-3's /extract endpoint output format (JSON vs. Markdown vs. raw text) measurably affect downstream consumer accuracy, and should this be documented?
+
+**Context:** If representation format causes comparable accuracy deltas in OCR-3's extraction pipeline, publishing format-specific accuracy numbers would be a differentiation move. The finding also suggests that benchmarking OCR-3 in only one output format may misrepresent its range.
+
+**Answer:** _add reply here_
+
+### Q: Activation-projection steering (arXiv:2509.00328) identifies sparse directions in feedforward layers that control behavior without fine-tuning. Is the team's mechanistic interpretability work on document VLMs at the stage where analogous sparse direction searches could be run on OCR-3's feedforward layers?
+
+**Context:** The VLA steering paper uses the token embedding basis as the projection target. If OCR-3 has accessible hidden states during inference (or through a test harness), running a similar search for 'table hallucination' or 'phantom row' directions would be a direct extension of the team's current activation patching work.
+
+**Answer:** _add reply here_
+
+### Q: Grok 4.7 (2.1T params) has now missed its announced September 11 deadline for the second time in two weeks. At what scale or capability level does an announced-but-unshipped xAI model become worth tracking as a competitive rather than frontier item, and should a pre-release policy be added to the context file?
+
+**Context:** The prior build raised this as a policy question (how to handle announced-but-unshipped models). It remains unanswered. Adding a one-line policy to data/nanonets_context.md — e.g., 'score on release confirmation only; announced models with no model card are frontier-monitor until shipped' — would make future scoring consistent.
+
+**Answer:** _add reply here_
+
+---
