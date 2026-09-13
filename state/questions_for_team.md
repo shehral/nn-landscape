@@ -11679,3 +11679,37 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-13T06:59:44+00:00 (audit: partial)
+
+### Q: Qwen3.8-Max (92.1), MiniMax M3 (91.6), and Kimi K3 (91.1) all exceed OCR-3's published OmniDocBench v1.5 score (90.5). Has OCR-3 been evaluated on OmniDocBench v1.6 or v1.7, and if so, what is the score?
+
+**Context:** The context file tracks OCR-3 at 90.5 on OmniDocBench (presumably v1.5). Three new entrants in this build exceed that score on v1.5. The IDP Leaderboard composite may still favor OCR-3 via OlmOCR and IDP Core, but the OmniDocBench component is now contested. A published v1.6/v1.7 score for OCR-3 would resolve the comparison.
+
+**Answer:** _add reply here_
+
+### Q: MiniMax M3 and Kimi K3 both have OmniDocBench scores exceeding several named context.md competitors but are absent from the context file. Should they be added as competitive monitoring entries?
+
+**Context:** MiniMax M3 (June 2026, open-weight, 91.6% OmniDocBench v1.5) and Kimi K3 (Moonshot AI, July 2026, open-source, 91.1% OmniDocBench) are not general-purpose APIs with dedicated document-extraction products, but their benchmark presence makes them relevant for leaderboard comparisons. Without a context entry, future builds will evaluate them from scratch each cycle.
+
+**Answer:** _add reply here_
+
+### Q: Fable 5.1 now has published OCR scores (94% on Roboflow Vision Evals, #2 of 53). Should Nanonets run OCR-3 on the same Roboflow Vision Evals benchmark to establish a direct comparison?
+
+**Context:** Prior builds noted Fable 5.1 lacked document-extraction benchmark scores. Roboflow Vision Evals is a published leaderboard; OCR-3 participating would create a public cross-benchmark comparison that is visible to potential customers evaluating both products.
+
+**Answer:** _add reply here_
+
+### Q: The arXiv 2609.10244 two-token hallucination classifier uses hidden states from a 4B model to flag hallucinated tokens in VLM output. Is this approach compatible with OCR-3's inference pipeline, and is the team's hallucination detection infrastructure token-level or output-level?
+
+**Context:** The paper's per-token classifier uses two consecutive hidden-state vectors (layer 16) to identify hallucination at the token boundary. If OCR-3's output is generated auto-regressively with accessible hidden states, this approach could be integrated as a lightweight monitoring layer. Understanding whether the team's current detection infrastructure operates at token or output level would determine whether this paper is worth reproducing.
+
+**Answer:** _add reply here_
+
+### Q: All four CLI ingest sources have failed for 23+ consecutive builds. The WebSearch fallback produced 8 items this build. Has a minimum viable item count been decided for rendering versus skipping, and does the team want a different fallback — e.g., a curated weekly WebSearch pass with broader queries — rather than per-build 6-hour retries that consistently return small item sets?
+
+**Context:** The per-build WebSearch fallback is structurally limited: 6-hour cadence with broad queries produces diminishing returns between major announcements. A weekly curated pass (broader scope, more queries, more items) might be more useful than 28 partial editions per week with 5-11 items each. This is a different framing from the prior egress-allowlist question: it asks about operating mode rather than infrastructure fix.
+
+**Answer:** _add reply here_
+
+---
