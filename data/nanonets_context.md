@@ -54,7 +54,7 @@ publish leaderboard results, contest its methodology, or are released by
 models near the top of it (GPT-5.4, GPT-5.5, GPT-5.6 Sol/Terra/Luna, GPT-6 Astra,
 Gemini-3-Pro/Flash, Gemini 3.1 Pro, Gemini 3.5 Flash, Gemini 3.6 Flash, Gemini 3.8 Flash,
 Claude 4.6 family, Claude Fable 5, Claude Fable 5.1, Claude Mythos 5.1, Claude Sonnet 5,
-Claude Opus 4.8, Claude Opus 5, Qwen3-VL, Pixtral, GLM-OCR, Chandra OCR 2,
+Claude Opus 4.8, Claude Opus 5, Qwen3-VL, Qwen3.8-Max, Pixtral, GLM-OCR, Chandra OCR 2,
 LightOn OCR-2, DeepSeek-OCR 2) are competitive-axis relevant.
 
 ## Active research direction
@@ -103,6 +103,15 @@ Items that name, compare against, or are released by these companies are
   accuracy on busy, marked-up pages (annotated contracts, stamped
   medical reports, hand-filled forms, highlighted scans); performance
   benchmarks and pricing unchanged from OCR 4.
+  Mistral Agentic Search (August 20, 2026) is a multi-step document
+  retrieval layer that gives models five operations — search, open,
+  navigate, read, grep — to inspect complex documents and verify answers
+  rather than relying on one-shot RAG chunk retrieval; accuracy improves
+  from 26.7% to 86% on FinanceBench and from 6.3% to 51.9% on OfficeQA
+  Pro; up to 39.6% lower p90 latency and up to one-third less token
+  usage; available through Mistral Search Toolkit (Libraries, Studio,
+  Vibe); not an OCR extraction-endpoint replacement but extends Mistral's
+  document-intelligence surface into multi-step structured retrieval.
 - **Reducto** — competitor on structured extraction with multi-pass
   agentic correction; exposes Parse / Extract / Split / Edit endpoints
   similar to OCR-3's surface. Raised $75M Series B (Andreessen
@@ -131,7 +140,10 @@ Items that name, compare against, or are released by these companies are
   benchmarked against Reducto. LlamaParse v2 launched 2026 with
   simplified tier config and ~50% cost reduction. LlamaIndex also
   open-sourced LiteParse, a lightweight TypeScript-native local parser
-  (March 2026). ParseBench launched April 2026 as a LlamaIndex-run
+  (March 2026); LiteParse v2.1 (June 2026) is a Rust rewrite with no
+  ML dependencies that outperforms all existing open-source model-free
+  parsers on olmOCR0-bench, opendataloader-bench, and ParseBench;
+  Apache 2.0. ParseBench launched April 2026 as a LlamaIndex-run
   document-OCR benchmark for AI agents; ParseBench accepted to CVPR
   2026. LlamaParse Agentic Plus mode adds bounding-box citations for
   complex formulas, handwriting, and infographics; word-, line-, and
@@ -203,7 +215,14 @@ Items that name, compare against, or are released by these companies are
   90.67 on OmniDocBench; open-source; HuggingFace: opendatalab/MinerU2.5-2509-1.2B;
   MinerU2.5-Pro variant achieves 95.69 on OmniDocBench v1.6),
   **Pixtral** (Mistral),
-  **Qwen3-VL** family (Alibaba; Qwen 3.6-VL is the 2026-series variant),
+  **Qwen3-VL** family (Alibaba; Qwen 3.6-VL is an earlier 2026-series
+  variant; Qwen3.8-Max (API, August 3, 2026; 2.4T MoE, 95B active
+  parameters; 92.1% on OmniDocBench 1.5; vision input via API; the
+  open-weight Qwen3.8-2.4T-A95B variant released August 12, 2026 is
+  text-only) and Qwen3.8-27B (dense, Apache 2.0, released August 13–14,
+  2026; 28B parameters with vision encoder; runs on a single GPU) are
+  the current Alibaba multimodal frontier releases appearing on document
+  benchmarks),
   **Llama-3.2-Vision** (Meta) — open-weight VLMs that appear on the IDP
   Leaderboard as direct comparables. Note: OmniDocBench was updated from
   v1.5 to v1.6 (April 10, 2026; +296 pages, MGAM evaluation methodology)
@@ -1655,3 +1674,94 @@ Nanonets, do not respond.
 - Note: Qwen3.8-Max-0902 (Alibaba, early September 2026) appears in
   release trackers; not confirmed on document-extraction benchmarks; not
   added to body text; monitor for OmniDocBench or IDP Leaderboard results.
+
+---
+
+**Date:** 2026-09-13
+
+**Sources consulted:**
+
+- WebSearch: "Nanonets OCR-3 IDP leaderboard September 2026 ranking" —
+  #1 at 85.9% confirmed unchanged; 87.4 OLM-OCR and 90.5 OmniDocBench
+  confirmed current; benchmarking.nanonets.com and idp-leaderboard.org
+  URLs confirmed resolving
+- WebSearch: "site:huggingface.co/nanonets" — open-weight model lineup
+  unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains API-only
+- WebSearch: "nanonets arxiv 2026 research paper hallucination VLM" —
+  no team-authored papers surfaced; Nanonets-KIE dataset referenced in
+  third-party papers (as in prior refreshes)
+- WebSearch: "Nanonets product announcement blog September 2026" — no
+  new September 2026 Nanonets product announcements indexed
+- WebSearch: "Mistral OCR September 2026 new model update" — no new
+  model since Mistral OCR 4.1 (full release August 13, 2026); all prior
+  entries confirmed current
+- WebSearch: "Mistral Agentic Search document retrieval 2026" — Mistral
+  Agentic Search (August 20, 2026) confirmed from mistral.ai/news and
+  multiple trade sources; multi-step document retrieval layer with
+  search, open, navigate, read, grep operations; 86% accuracy on
+  FinanceBench (up from 26.7%), 51.9% on OfficeQA Pro (up from 6.3%)
+- WebSearch: "Reducto AI document processing September 2026" — Reducto
+  r-1 (September 1, 2026) confirmed current from prior context;
+  PRNewswire r-1 press release cites "1B+ pages/month" as current
+  throughput rate (distinct from the cumulative "4B+ pages to date"
+  figure already in body text)
+- WebSearch: "LlamaParse LlamaIndex September 2026 new product update"
+  — no new September 2026 products; LiteParse v2.1 (June 2026)
+  confirmed from llamaindex.ai/blog and GitHub run-llama/liteparse
+- WebSearch: "LiteParse v2.1 LlamaIndex open source PDF parser June 2026"
+  — v2.1 Rust rewrite confirmed; outperforms all open-source model-free
+  parsers on olmOCR0-bench, opendataloader-bench, and ParseBench;
+  Apache 2.0
+- WebSearch: "Anthropic Claude document extraction vision September 2026
+  new model" — Claude Haiku 4.5 (October 2025) confirmed in current
+  lineup; Claude Fable 5.1 and prior Anthropic models confirmed current;
+  no new September 2026 Anthropic document-extraction product
+- WebSearch: "Google Gemini document OCR vision September 2026 new model"
+  — no new model beyond Gemini 3.8 Flash (September 2, 2026) already
+  in context
+- WebSearch: "OpenAI GPT-6 Astra document vision September 2026 update"
+  — GPT-6 Astra confirmed current; no new September 2026 OpenAI models
+- WebSearch: "xAI Grok document extraction OCR September 2026" — Grok
+  Collections API confirmed current; Grok Build and Grok Bot for
+  enterprises are workflow/automation products, not document-extraction
+  endpoints; no material change to xAI entry
+- WebSearch: "new OCR VLM model document AI September 2026 benchmark" —
+  no new major entrants beyond those already in context
+- WebSearch: "Qwen3.8-Max VLM release date open weights August 2026
+  document OCR" — Qwen3.8-Max (API, August 3, 2026; 2.4T MoE, 95B
+  active) and Qwen3.8-27B (dense, Apache 2.0, August 13–14, 2026;
+  vision encoder) confirmed; 92.1% on OmniDocBench 1.5 (API model);
+  open-weight Qwen3.8-2.4T-A95B is text-only; resolves monitoring note
+  from 2026-09-06
+- WebSearch: "Extend AI document processing September 2026 update" —
+  zero data retention available to all customers (August 2026); Extend
+  Templates added; all prior entries confirmed current
+- WebSearch: "Rossum Docsumo ABBYY Kofax Tungsten Automation operating
+  September 2026" — all confirmed operating; no renames or closures
+- WebSearch: "Firecrawl Unstructured Docling September 2026 new product"
+  — AnyDoc (already in context); Docling MCP server noted (minor);
+  no major new product announcement from any of these three
+
+**Material changes versus prior version (2026-09-06):**
+
+- Updated **Qwen3-VL** competitive entry: added Qwen3.8-Max (API,
+  August 3, 2026; 2.4T MoE, 95B active; 92.1% on OmniDocBench 1.5;
+  vision via API) and Qwen3.8-27B (dense, August 13–14, 2026; Apache
+  2.0; 28B with vision encoder) as current Alibaba multimodal frontier
+  releases on document benchmarks; open-weight MoE (Qwen3.8-2.4T-A95B)
+  is text-only; added Qwen3.8-Max to IDP Leaderboard comparables list.
+  Resolves the monitoring note for "Qwen3.8-Max-0902" from the
+  2026-09-06 refresh.
+- Added **Mistral Agentic Search** (August 20, 2026) note to the Mistral
+  competitive entry: multi-step document retrieval layer with five
+  operations (search, open, navigate, read, grep); 86% accuracy on
+  FinanceBench (up from 26.7%), 51.9% on OfficeQA Pro (up from 6.3%);
+  extends Mistral's document-intelligence surface into structured
+  retrieval without replacing OCR-3's extraction-endpoint surface.
+- Updated **LiteParse** reference in the LlamaParse entry: LiteParse v2.1
+  (June 2026) is a Rust rewrite, model-free, that outperforms all
+  open-source model-free parsers on olmOCR0-bench, opendataloader-bench,
+  and ParseBench; Apache 2.0.
+- Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
+  No new Nanonets models on HuggingFace. No Nanonets-authored arXiv
+  papers found. No September 2026 Nanonets blog posts indexed.
