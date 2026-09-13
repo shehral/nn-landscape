@@ -11713,3 +11713,31 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-13T13:30:00+00:00 (audit: partial)
+
+### Q: Grok 4.7 (xAI) was announced with a September 12, 2026 target at 2.1 trillion parameters but had not shipped as of September 13. How should the agent handle announced-but-not-yet-released models: score them on announcement details, hold them until a release confirmation, or flag them as pending?
+
+**Context:** The current playbook does not address pre-release announcements. Grok 4.7's non-release means this build does not include it. A standing policy — e.g., 'score on release confirmation only' — would prevent inconsistent treatment across builds.
+
+**Answer:** _add reply here_
+
+### Q: GLM-5.3-Flash from Z.ai is a general-purpose multimodal model (not OCR-specific), distinct from Z.ai's dedicated GLM-OCR product. Should the two be tracked separately in data/nanonets_context.md — one entry for the OCR specialist, one for the general VLM — or merged under a single Z.ai entry?
+
+**Context:** The current context file has a single GLM-OCR entry under Z.ai. GLM-5.3-Flash scored competitive-primary by default (frontier-lab with vision, tie-breaks to competitive). Separate entries would allow more precise scoring; a merged entry risks conflating a document-specialist model with a general VLM.
+
+**Answer:** _add reply here_
+
+### Q: OmniHallu-Bench (arXiv 2609.11244) is the most comprehensive cross-modal hallucination benchmark as of September 2026, covering 10,000 samples across image/video/audio. Has the team reviewed whether OCR-3's document parsing failure modes map onto OmniHallu-Bench's image-comprehension task category?
+
+**Context:** If OCR-3's hallucination patterns are representable in OmniHallu-Bench's taxonomy, the team could publish comparative results on a publicly recognized benchmark. The benchmark's multi-modal scope (image, video, audio) goes beyond document parsing but the image-comprehension slice is directly relevant.
+
+**Answer:** _add reply here_
+
+### Q: This build (September 13) is the 24th+ consecutive build with CLI ingest failures. WebSearch fallback produces 8-12 items per build versus 20-80 from healthy CLI ingest. Is the team's intent to restore CLI access (egress allowlist fix) or to formally operate in WebSearch-only mode with a wider query scope?
+
+**Context:** The prior build raised this question; it remains unanswered. A formal policy decision would allow the playbook to be updated: either fix the allowlist (blocking item: export.arxiv.org, hn.algolia.com, and RSS feed hosts) or commit to WebSearch-only with adjusted scope and cadence.
+
+**Answer:** _add reply here_
+
+---
