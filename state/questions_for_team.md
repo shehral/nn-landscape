@@ -11797,3 +11797,37 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-14T06:30:00+00:00 (audit: partial)
+
+### Q: OCR-3 is absent from the Roboflow Vision Evals OCR leaderboard, where Claude Fable 5.1 placed #2 and GPT-6 Astra placed #14 among 53 models (updated September 5, 2026). Should OCR-3 be submitted to Vision Evals?
+
+**Context:** The Roboflow OCR sub-task is now used as a market signal by general-purpose VLMs. Absence from this leaderboard means customers who compare models via Roboflow cannot find a Nanonets data point. Submitting would take a single evaluation pass and would provide a public cross-benchmark comparison visible to potential customers.
+
+**Answer:** _add reply here_
+
+### Q: HunyuanOCR-1.5's verl/GRPO training stack is open-sourced with a CVPR 2026 peer-reviewed paper. Does the team's hallucination mitigation research plan to evaluate or build on this public RL recipe?
+
+**Context:** The open-sourced stack makes RL training for OCR VLMs reproducible. If the team's own RL training approach is separate, a comparison would surface whether GRPO outperforms the team's methodology on structural hallucination reduction. If the team's approach is not yet RL-based, this is the most accessible published starting point.
+
+**Answer:** _add reply here_
+
+### Q: VAREX (arXiv 2603.15118) is the fourth structured-extraction benchmark surfaced in recent builds for which OCR-3 has no published score, alongside ExtractBench, Dr. DocBench, and LongExtractBench. Should the team prioritize publishing results on any of these before competitors establish the reference frame?
+
+**Context:** Each benchmark where OCR-3 lacks a published score is a positioning gap. Competitors (Reducto, LlamaExtract, GPT-5.5) have already appeared in at least two of these. Publishing results on the most widely cited benchmark first would be the highest-leverage action.
+
+**Answer:** _add reply here_
+
+### Q: All four CLI ingest sources have failed for 26+ consecutive builds due to proxy egress blocks (export.arxiv.org, hn.algolia.com) and empty windows (RSS, github_trending). Should the playbook be formally updated to document WebSearch-only as the operating mode, or is an egress allowlist fix still the target?
+
+**Context:** Required egress additions: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml. WebSearch fallback produced 7 items this build versus 20-80 from healthy CLI ingest. The questions_for_team.md file now exceeds 11,800 lines. A one-line policy decision would end the recurring question.
+
+**Answer:** _add reply here_
+
+### Q: Mistral OCR 4.1 added paragraph-level bounding boxes and block-level confidence scores targeting annotated contracts and stamped medical reports. Does OCR-3's /parse endpoint return bounding-box output, and if not, is this a planned capability?
+
+**Context:** Bounding-box and confidence-score output is now available from both Mistral OCR 4 and 4.1. If OCR-3 does not expose these fields, the absence is a documented product gap relative to Mistral's public API surface. If it does, a comparison on complex annotated documents would be a defensible positioning move.
+
+**Answer:** _add reply here_
+
+---
