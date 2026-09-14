@@ -11831,3 +11831,63 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-09-14T12:30:00+00:00 (audit: ABORTED — total source failure)
+
+**Failure summary:** All four CLI ingest sources returned zero items. This build produced no output and did not render or push new HTML.
+
+- arxiv: `Client error '403 Forbidden'` from `http://export.arxiv.org/api/query` — network egress blocked
+- hn: `403 Forbidden` from `hn.algolia.com` — network egress blocked
+- rss: `no items in current window` — feeds fetched but returned zero items within the configured window
+- github_trending: `no items in current window` — zero matching repos in the 1-day window
+
+The 06:30 build today (2026-09-14T06:30) already ran via WebSearch fallback and is the current live dashboard. This build's rendered HTML was NOT updated to avoid overwriting a non-empty edition with blank pages.
+
+### Q: Both rss and github_trending now return 'no items in current window' on top of the long-running arxiv and HN 403 blocks. Is the rss empty-window a proxy issue (domains like anthropic.com/news, openai.com/blog blocked), or has the per-feed window filter in the source registry become too narrow?
+
+**Context:** Prior builds (as recently as 2026-09-13T19:30) still produced 8–12 items from WebSearch fallback; those same builds note RSS was failing then too. If anthropic.com, openai.com, and huggingface.co RSS hosts are also blocked by the egress policy, the only remaining unblocked source is potentially WebSearch. The github_trending empty window may simply reflect a quiet trending day, but the pattern across multiple sources points to a wider egress block rather than source-specific quiet.
+
+**Answer:** _add reply here_
+
+### Q: Should the build playbook explicitly document WebSearch-only fallback as a first-class operating mode (with its own item schema, citation fields, and source label) rather than treating it as an ad hoc workaround?
+
+**Context:** The last several builds have all operated in WebSearch-only mode despite the CLI ingest layer. The playbook (SKILL.md) does not mention WebSearch fallback, so each build agent improvises independently. A documented fallback mode with consistent citation format would give WebSearch-based items the same schema reliability as CLI-ingested items.
+
+**Answer:** _add reply here_
+
+
+## Build 2026-09-14T12:30:00+00:00 (audit: partial)
+
+### Q: Should Nutrient Data Extraction API be added to the competitive registry in data/nanonets_context.md?
+
+**Context:** Nutrient is a legacy PDF SDK vendor (PSPDFKit lineage) adding AI extraction at GA on September 9-10, 2026. Its 0.932 opendataloader-bench score and free 5K-credit tier make it an evaluation-stage competitor. The customer segment (developers already using Nutrient PDF SDKs) may partially overlap with Nanonets' API users; confirming the overlap or distinguishing it from Nanonets' primary segment would stabilize future scoring.
+
+**Answer:** _add reply here_
+
+### Q: OCR-3 is now absent from three named evaluation frames in a single build: Roboflow Vision Evals OCR, RealDoc-Bench, and the Pharma Document Extraction Benchmark. Is there an owner and submission queue for third-party benchmark coverage?
+
+**Context:** Each benchmark absence is a customer-facing positioning gap where competitors (Claude Fable 5.1, GPT-6 Astra, Reducto, Extend) have established scores and OCR-3 has not. The gaps are additive across customer evaluation workflows. A single person owning submission queue decisions would allow the dashboard to track progress rather than re-surfacing the same absences each build.
+
+**Answer:** _add reply here_
+
+### Q: Has any team member run a head-to-head comparison between Reducto r-1 and OCR-3 on a common test set, now that r-1 has been available since September 1 with up to $5,000 in free evaluation credits?
+
+**Context:** r-1 launched September 1 with explicit positioning as a single-model replacement for multi-tool parsing stacks; the same architectural claim OCR-3 makes. Reducto's up-to-$5,000 evaluation credit removes the cost barrier. A comparison on FUNSD, CORD, or the IDP Leaderboard test set would produce a concrete competitive data point.
+
+**Answer:** _add reply here_
+
+### Q: The 6-hour build cadence produces two WebSearch-based builds per day with partially overlapping item pools; should cadence be reduced to 12 hours while CLI ingest sources remain blocked?
+
+**Context:** This is the second build of September 14 (following 06:30 UTC). Both builds draw from the same WebSearch result pool covering the same 7-day window; item overlap is expected. Reducing cadence while the CLI sources remain unavailable would reduce redundancy without missing major news, since WebSearch can cover any item published in the last 7 days at any cadence.
+
+**Answer:** _add reply here_
+
+### Q: HunyuanOCR-1.5's verl/GRPO training stack is open-sourced with a CVPR 2026 peer-reviewed methodology for structural hallucination reduction via format-constrained RL. Does the team's hallucination research plan to evaluate or cite this approach?
+
+**Context:** The open-sourced stack makes RL training for OCR VLMs reproducible from a published, peer-reviewed baseline. If the team's approach uses a different RL recipe, a direct comparison would surface whether GRPO outperforms the team's methodology on structural hallucination reduction. If the team's approach is not yet RL-based, the CVPR 2026 recipe is the most accessible published starting point.
+
+**Answer:** _add reply here_
+
+---
