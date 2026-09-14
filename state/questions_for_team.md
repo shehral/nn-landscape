@@ -11891,3 +11891,37 @@ The 06:30 build today (2026-09-14T06:30) already ran via WebSearch fallback and 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-14T18:30:00+00:00 (audit: partial)
+
+### Q: Nutrient Data Extraction API reports a self-assessed ParseBench score of 73.5 (internal run, #7 of 84 systems). Should OCR-3 be evaluated on opendataloader-bench to establish a public comparable, since Nutrient is now actively marketing against that benchmark as a GA product?
+
+**Context:** Nutrient's opendataloader-bench corpus is open-source with community-maintained ground truth and an open evaluation harness. An independent OCR-3 run would produce a public data point on the same evaluation frame Nutrient is using for customer comparisons. Without a published score, customers evaluating the two products have only Nutrient's self-reported number as the reference.
+
+**Answer:** _add reply here_
+
+### Q: Three frontier models (Fable 5.1, GPT-6 Astra, Gemini 3.8 Flash) shipped in a 72-hour window with no IDP Leaderboard or ParseBench document-benchmark scores. Should the IDP Leaderboard team proactively queue evaluation jobs for these three models, or wait for labs to self-submit?
+
+**Context:** The IDP Leaderboard currently lists 29 models. Each frontier release without a published IDP score is a data gap customers will notice when comparing OCR-3 against the same frontier models. Proactive evaluation would require API access to all three models, which is publicly available, and a single leaderboard evaluation pass per model.
+
+**Answer:** _add reply here_
+
+### Q: INFUSE (arXiv 2608.29924) reduces hallucinations 46-63% on Qwen3-VL-8B via bidirectional contrastive feature stabilization. Is the team's hallucination research infrastructure able to run an equivalent ablation on a smaller variant of OCR-3, given that Qwen3-VL-8B shares decoder-family lineage with OCR-3's architecture?
+
+**Context:** INFUSE operates on intermediate layer activations during training, not inference. Running it requires access to training-time activations or a retrain on a smaller model variant. If the team's current infrastructure supports this, INFUSE is the most recent published method with a quantified reduction rate on a comparable architecture.
+
+**Answer:** _add reply here_
+
+### Q: MinerU2.5-Pro now scores 95.69 on OmniDocBench v1.6. OCR-3's published score (90.5) was measured at launch on OmniDocBench (version unspecified). Has OCR-3 been re-evaluated on OmniDocBench v1.6 since the benchmark updated on April 10, 2026, and if so, what is the current score?
+
+**Context:** OmniDocBench v1.6 (+296 pages, MGAM evaluation methodology) is the current scoring version; v1.5 and v1.6 scores are not directly comparable. If OCR-3's 90.5 is a v1.5 score, the comparison with MinerU2.5-Pro (95.69 on v1.6) is not apples-to-apples and should not be used in customer-facing materials without a version qualifier.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has failed for 30+ consecutive builds (arxiv 403, HN 403, RSS empty window, github_trending empty). This build adds to the pattern. The team has been asked the same question since late August; since no answer has been logged, is there a channel other than this file where the infrastructure question is being tracked?
+
+**Context:** The questions_for_team.md file now exceeds 11,800 lines. If the egress allowlist fix is in progress and is tracked elsewhere, adding a one-line note here (e.g., 'under investigation, ETA X') would prevent the build agent from re-raising it each cycle. If it is not being tracked, the required allowlist additions are: export.arxiv.org, hn.algolia.com, and the RSS feed hosts listed in data/sources.yaml.
+
+**Answer:** _add reply here_
+
+---
