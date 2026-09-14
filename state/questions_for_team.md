@@ -11769,3 +11769,31 @@ No edition was built. No HTML was rendered. The build lock has been released.
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-14T00:00:00+00:00 (audit: partial)
+
+### Q: All four ingest sources returned zero items this build (arxiv: 403, HN: 403, RSS: empty, GitHub Trending: empty); is the proxy network policy blocking outbound requests to these hosts, or is this a transient failure?
+
+**Context:** This is at least the 4th-5th consecutive build where arxiv and HN have returned 403. The RSS and github_trending failures appearing together in the same build suggest a wider network-level block rather than source-specific issues. The managed remote execution environment may have stricter egress rules than the prior execution environment.
+
+**Answer:** _add reply here_
+
+### Q: Should the build pipeline add a local fallback corpus (e.g., a seeded JSONL of the last successful build's items) so that when all sources fail, the render step can still produce a 'last known good' dashboard rather than an empty page?
+
+**Context:** An empty rendered dashboard (0 items, audit_passed=false) is worse for readers than the prior build's content with a staleness banner. A fallback mode would degrade gracefully rather than publishing a blank edition.
+
+**Answer:** _add reply here_
+
+### Q: The RSS feeds (Anthropic, OpenAI, HuggingFace, etc.) returned no items in the current window despite being public feeds that don't require authentication; is the 'current window' filter set too narrowly, or is there a proxy issue specifically with these domains?
+
+**Context:** Previous builds surfaced 109 items from RSS alone. A sudden drop to zero from the same feed list, on the same day, likely points to a network-side issue rather than the feeds themselves going quiet.
+
+**Answer:** _add reply here_
+
+### Q: Given that multiple consecutive builds are failing due to infrastructure rather than editorial reasons, should a human be notified by a channel other than this file (e.g., a Slack alert from the scheduled runner) when 0 items are ingested?
+
+**Context:** The current failure mode is silent from the team's perspective unless they happen to check the dashboard. A zero-item build is indistinguishable from a normal build in the GitHub Pages output until someone clicks through to see the empty view.
+
+**Answer:** _add reply here_
+
+---
