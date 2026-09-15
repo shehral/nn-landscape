@@ -12009,3 +12009,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-15T19:00:00+00:00 (audit: partial)
+
+### Q: This build confirmed that OCR-3 provides bounding boxes, confidence scores, and an /extract-with-bounding-boxes endpoint per nanonets.com/research/nanonets-ocr-3. A prior build (2026-09-14T06:30) asked whether this capability existed. Should data/nanonets_context.md be updated to explicitly document OCR-3's bounding-box output so future builds can score and frame Mistral OCR 4.1's paragraph-level bounding boxes as a gap or parity rather than an unknown?
+
+**Context:** Mistral OCR 4.1 (August 13, 2026) specifically added paragraph-level bounding boxes and block-level confidence scores. Prior builds raised this as a product gap question. The nanonets.com research page confirms OCR-3 has spatial coordinates for every element and per-field confidence scores. If the context file reflected this, competitive framing on Mistral OCR 4.1 would change from 'unknown gap' to 'parity or differentiated'.
+
+**Answer:** _add reply here_
+
+### Q: OCR-3's published OmniDocBench score of 90.5 is now below both MiniMax M3 (91.6% on v1.5) and MinerU2.5-Pro (95.69% on v1.6). The benchmark versions differ and are not directly comparable per the April 10, 2026 methodology update. Is OCR-3's 90.5 from OmniDocBench v1.5 or v1.6? The answer determines whether OCR-3 currently leads or trails on this benchmark and whether the nanonets_context.md entry needs a version qualifier.
+
+**Context:** OmniDocBench v1.6 added 296 pages and switched to MGAM evaluation on April 10, 2026. OCR-3 launched April 2, 2026 — before the v1.6 update — making the launch score almost certainly v1.5 or the unversioned original. However, the context file does not specify the version. Confirming and documenting the version would resolve the comparison ambiguity that has appeared in every build since July.
+
+**Answer:** _add reply here_
+
+### Q: Reducto r-1 launched September 1 with explicit $5,000 in free evaluation credits and explicit 'single-model replacement for multi-tool stacks' positioning. Has any team member started a comparison run on FUNSD, CORD, or the IDP Leaderboard test set? The free-credit window provides a cost-free opportunity to produce a verifiable competitive data point before the preview period closes.
+
+**Context:** This question has not been raised in prior builds in this exact form. Reducto r-1 has been available for 14 days as of this build. The IDP Leaderboard test set would provide the most defensible comparison frame since it is the benchmark Nanonets maintains. A side-by-side on the same test set, run while free credits are available, would be higher-priority than waiting for Reducto to publish independent evaluations.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has failed for 33+ consecutive builds. arxiv (export.arxiv.org) and HN (hn.algolia.com) return 403; RSS and github_trending return empty windows. This question has appeared in every build since late August with no logged answer. Is the egress allowlist fix in progress, and is there an ETA? A one-line status note here would stop the recurrence.
+
+**Context:** Required egress additions: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml (anthropic.com/news, openai.com/blog, deepmind.google/blog, huggingface.co/blog, latent.space, interconnects.ai, etc.). WebSearch fallback produced 15 items this build versus 20-80 from healthy CLI ingest. The questions_for_team.md file now exceeds 12,100 lines primarily from repeated infrastructure and benchmark-coverage questions.
+
+**Answer:** _add reply here_
+
+### Q: Should a one-line pre-release scoring policy be added to data/nanonets_context.md: 'score on release confirmation only; models with no model card or API ID are frontier-monitor until shipped'? Grok 4.7 has now missed two announced launch windows (September 11, September 12) and Musk has downgraded its expected capability to 'roughly Opus 5.0, not 5.1'. The question has appeared in four consecutive builds without a logged answer.
+
+**Context:** Without a standing policy, each build agent independently decides how to handle announced-but-unshipped models. The policy question has been raised since September 13. A one-line rule in the context file would produce consistent scoring and end the recurrence. The current posture — not scoring Grok 4.7 until a model ID appears in the xAI API — is consistent with the proposed rule.
+
+**Answer:** _add reply here_
+
+---
