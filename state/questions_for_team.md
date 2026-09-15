@@ -11959,3 +11959,19 @@ The 06:30 build today (2026-09-14T06:30) already ran via WebSearch fallback and 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-15T06:54:51Z (audit: failed — zero items)
+
+**Failure report — Step 3 (ingest)**
+
+All 4 CLI sources returned zero items:
+
+- `arxiv`: HTTP 403 (export.arxiv.org egress-blocked — persistent for 32+ consecutive builds)
+- `hn`: HTTP 403 (hn.algolia.com egress-blocked — persistent for 32+ consecutive builds)
+- `rss`: no items in current lookback window
+- `github_trending`: no items in current lookback window
+
+Zero items produced. Nothing to score, frame, or render. Build aborted per playbook; no HTML or edition.json written this cycle.
+
+**No new questions.** The prior build today (2026-09-15T00:59:24 UTC) already raised the infrastructure question and all open editorial questions. Adding the same questions again only grows this file; action is needed on the egress allowlist (export.arxiv.org, hn.algolia.com, and RSS hosts in data/sources.yaml) or on documenting the WebSearch fallback path so future builds can replicate what the 00:59:24 build did.
+
