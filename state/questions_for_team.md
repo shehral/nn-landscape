@@ -11925,3 +11925,37 @@ The 06:30 build today (2026-09-14T06:30) already ran via WebSearch fallback and 
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-15T00:59:24+00:00 (audit: partial)
+
+### Q: MiniMax M3 leads OmniDocBench 1.5 at 91.6%, above OCR-3's published 90.5 on OmniDocBench (version unspecified at launch). Should MiniMax M3 be added to the competitive registry in data/nanonets_context.md, and is OCR-3's 90.5 score from OmniDocBench v1.5 or v1.6?
+
+**Context:** The version matters: v1.5 and v1.6 scores are not comparable (v1.6 added 296 pages and MGAM evaluation on April 10, 2026). If OCR-3's 90.5 is v1.5, MiniMax M3 leads by 1.1 points on the same version. If OCR-3's is v1.6, the comparison requires new MiniMax M3 v1.6 runs. MiniMax M3 is open-weight (HuggingFace), reducing the cost of running a comparison.
+
+**Answer:** _add reply here_
+
+### Q: The CLI ingest infrastructure has failed for 31+ consecutive builds (arxiv 403, HN 403, RSS empty, github_trending empty). The same question has been raised in every build since late August with no logged answer. Is this being tracked elsewhere, and if so, what is the ETA?
+
+**Context:** Required egress additions: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml. WebSearch fallback this build produced 15 items; healthy CLI ingest produces 20-80. The questions_for_team.md file now exceeds 11,900 lines primarily from repeated infrastructure questions. A one-line status update here would prevent this from recurrence.
+
+**Answer:** _add reply here_
+
+### Q: INFUSE (arXiv 2608.29924) achieves 46-63% AMBER CHAIR reduction on Qwen3-VL-8B with no inference overhead. Given Qwen3-VL-8B's decoder-family lineage overlap with OCR-3's architecture, is the team's current hallucination research infrastructure able to reproduce INFUSE in an ablation setting on a smaller OCR-3 variant?
+
+**Context:** INFUSE requires training-time access to hidden states (bidirectional contrastive objective). If OCR-3 has a smaller open-weight sibling (OCR2-3B or OCR2-1.5B-exp), those could serve as ablation targets without full OCR-3 retraining. A positive reproduction would validate the method on a document-OCR architecture specifically.
+
+**Answer:** _add reply here_
+
+### Q: Grok 4.7 missed its September 12 deadline for the second time in two weeks. The prior build raised whether a policy for announced-but-unshipped models should be added to data/nanonets_context.md. Should the context file include a one-line rule: 'score on release confirmation only; models announced with no model card or benchmark are frontier-monitor until shipped'?
+
+**Context:** Without such a rule, each build agent re-debates this individually for Grok 4.7, any future pre-release announcements from xAI, OpenAI, or Anthropic. A one-line policy would produce consistent scoring and prevent the question from recurrence.
+
+**Answer:** _add reply here_
+
+### Q: Reducto r-1 (Sept 1), MiniMax M3 (June 1), and the three-way benchmark (Sept 6) are all active in this build but OCR-3 has no published comparison against any of them. Is there a designated owner for third-party benchmark submission and competitive comparison publication?
+
+**Context:** Multiple comparison frames are now live (Reducto r-1, Roboflow Vision Evals, LongExtractBench, RealDoc-Bench) where OCR-3 has no score. Each absence is a customer-facing positioning gap. A single designated owner for the submission queue would allow this dashboard to track submission status rather than re-surfacing each absence each build.
+
+**Answer:** _add reply here_
+
+---
