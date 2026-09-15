@@ -11975,3 +11975,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 
 **No new questions.** The prior build today (2026-09-15T00:59:24 UTC) already raised the infrastructure question and all open editorial questions. Adding the same questions again only grows this file; action is needed on the egress allowlist (export.arxiv.org, hn.algolia.com, and RSS hosts in data/sources.yaml) or on documenting the WebSearch fallback path so future builds can replicate what the 00:59:24 build did.
 
+
+## Build 2026-09-15T12:59:10+00:00 (audit: partial)
+
+### Q: Should OCR-3 be submitted to the Roboflow Vision Evals OCR leaderboard, and is there a designated owner for third-party benchmark submissions?
+
+**Context:** Roboflow Vision Evals OCR (31 models, updated Aug 20) shows Claude Fable 5 at 94.0%, GPT-6 Astra overall at 86.6%, and no OCR-3 score. Similarly, RealDoc-Bench, opendataloader-bench, and OCRBench are all evaluation frames where competitors have published scores but OCR-3 has none. A designated submission owner would allow this dashboard to track submission status rather than re-surfacing each absence each build.
+
+**Answer:** _add reply here_
+
+### Q: Is OCR-3's published OmniDocBench score of 90.5 from v1.5 or v1.6, and should MiniMax M3 be added to data/nanonets_context.md as a competitive monitoring entry?
+
+**Context:** MiniMax M3 (open-weight, June 2026) reports 91.6% on OmniDocBench v1.5. If OCR-3's 90.5 is v1.5, M3 leads by 1.1 points on the same version. OmniDocBench v1.6 uses a different evaluation methodology (MGAM, +296 pages); scores across versions are not directly comparable. Clarifying the version used in OCR-3's published score would allow accurate competitive positioning.
+
+**Answer:** _add reply here_
+
+### Q: Should Nutrient Data Extraction API be added to the competitive registry in data/nanonets_context.md?
+
+**Context:** Nutrient (PSPDFKit lineage) GA'd September 9-10 with 0.932 on opendataloader-bench, per-field confidence scores, and source citations — capabilities marketed at the same enterprise RAG and agent pipeline segment as Nanonets Agentic Data Extraction. Its PSPDFKit distribution channel provides access to existing enterprise PDF SDK customers. Without a context entry, future builds will evaluate it from scratch each cycle.
+
+**Answer:** _add reply here_
+
+### Q: Should data/nanonets_context.md include a one-line policy for pre-release model scoring: 'score on release confirmation only; models with no model card or API ID are frontier-monitor until shipped'?
+
+**Context:** Grok 4.7 (announced 2.1T params) missed its September 12 target for the second time. Without a standing policy, each build debates how to score announced-but-unshipped models independently. This question was raised in the prior two builds without a logged answer. A one-line rule would produce consistent treatment across xAI, OpenAI, and Anthropic pre-release announcements.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has failed for 32+ consecutive builds. arxiv and HN are 403-blocked; RSS and github_trending return empty windows. Is this being tracked outside this file, and what is the ETA for restoration?
+
+**Context:** Required egress allowlist entries: export.arxiv.org, hn.algolia.com, and the RSS feed hosts listed in data/sources.yaml (anthropic.com/news, openai.com/blog, deepmind.google/blog, huggingface.co/blog, latent.space, interconnects.ai, etc.). WebSearch fallback produced 11 items this build versus 20-80 from healthy CLI ingest. The questions_for_team.md file now exceeds 12,000 lines. A one-line status update here would prevent this question from recurring each build.
+
+**Answer:** _add reply here_
+
+---
