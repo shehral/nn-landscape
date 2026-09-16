@@ -12077,3 +12077,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-16T07:03:20+00:00 (audit: partial)
+
+### Q: Claude Fable 5.1 achieves 81.3% average on six vision benchmark tasks with OCR as its strongest relative result; Gemini 3.8 Flash leads Roboflow Data Extraction at 97.3%. Neither has IDP Leaderboard or ParseBench scores. Should the IDP Leaderboard team queue evaluation jobs for Fable 5.1, Gemini 3.8 Flash, DeepSeek V4.1-Flash, and GPT-6 Astra, or wait for labs to self-submit?
+
+**Context:** Three frontier models shipped in the first ten days of September with no document-benchmark evaluations. Each absent score is a gap customers notice when comparing OCR-3. Proactive evaluation requires API access (publicly available for all three) and one leaderboard evaluation pass per model. The IDP Leaderboard currently lists 29 models; adding these four would raise it to 33.
+
+**Answer:** _add reply here_
+
+### Q: NaviDC-OCR (96.87 on OmniDocBench v1.6) and MinerU2.5-Pro (95.69 on v1.6) both exceed OCR-3's published 90.5. Is OCR-3's published score from OmniDocBench v1.5, v1.6, or the unversioned original? Has OCR-3 been re-evaluated on v1.6?
+
+**Context:** OCR-3 launched April 2, 2026 — eight days before OmniDocBench v1.6 released on April 10, 2026 with +296 pages and MGAM evaluation. If OCR-3's 90.5 is pre-v1.6, the gap with NaviDC-OCR on the current benchmark version is roughly 6 points. This question has appeared in every build since July without a logged answer. A version qualifier on the nanonets_context.md entry would resolve it.
+
+**Answer:** _add reply here_
+
+### Q: Reducto r-1 has been in preview since September 1 with $5,000 in free evaluation credits and has not yet been compared against OCR-3 on any published test set. The free-credit window provides a cost-free opportunity to produce a verifiable data point before the preview closes. Has any team member started a comparison run on FUNSD, CORD, or the IDP Leaderboard test set?
+
+**Context:** This question has been raised in the last three consecutive builds without a logged answer. Each build cycle without a comparison is a cycle where r-1's benchmark claims compound without rebuttal. The IDP Leaderboard test set would produce the most defensible comparison frame since Nanonets maintains it.
+
+**Answer:** _add reply here_
+
+### Q: The Transcoders paper (arXiv 2605.22902) achieves AUC 0.68 for hallucination prediction from mechanistic graph features on open-weight VLMs. This question was raised two builds ago with no answer. Does the team's current interpretability stack include transcoders as a decomposition method, and if not, is there interest in running this on OCR2-3B as an ablation?
+
+**Context:** OCR2-3B (open-weight on Hugging Face) is small enough for this ablation without full OCR-3 retraining. The transcoder approach is complementary to the existing stack (logit lens, activation patching, causal scrubbing, sparse autoencoders, steering vectors) and would provide a functional MLP-sublayer decomposition as a new analysis layer.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has failed for 35+ consecutive builds: arxiv (export.arxiv.org 403), HN (hn.algolia.com 403), RSS (empty window), github_trending (empty window). This build adds to the pattern; 15 items were gathered via WebSearch fallback. Is the egress allowlist fix in progress, and what is the ETA?
+
+**Context:** Required egress allowlist additions: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml (anthropic.com/news, openai.com/blog, deepmind.google/blog, huggingface.co/blog, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai). WebSearch fallback produces fewer items and misses GitHub trending, which is the primary signal for open-source model momentum. A one-line status note here would prevent this question recurring in every build.
+
+**Answer:** _add reply here_
+
+---
