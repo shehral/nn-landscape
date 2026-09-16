@@ -12043,3 +12043,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-16T06:00:00+00:00 (audit: partial)
+
+### Q: OCR-3's published OmniDocBench score of 90.5 has now been referenced in every build since July without a version qualifier. NaviDC-OCR scores 96.87 on v1.6, MinerU2.5-Pro scores 95.69 on v1.6, and MiniMax M3 scores 91.6 on v1.5. OCR-3 launched April 2, before the v1.6 update on April 10. Is the team's published 90.5 from v1.5 or the unversioned original, and has OCR-3 been re-evaluated on v1.6?
+
+**Context:** The answer determines whether OCR-3 leads or trails the field on the most current benchmark version. If 90.5 is v1.5, OCR-3 trails both MiniMax M3 (91.6) and all v1.6 leaders by a meaningful gap. Customer-facing comparisons using the unversioned score are potentially misleading.
+
+**Answer:** _add reply here_
+
+### Q: Nvidia's acquisition of Hugging Face is pending regulatory review with an H1 2027 close target. Nanonets hosts three open-weight models on Hugging Face (OCR-s, OCR2-3B, OCR2-1.5B-exp). Does the team have a contingency distribution plan if Hugging Face's terms change post-acquisition?
+
+**Context:** Nvidia has stated the platform will remain open, but regulatory conditions or post-close policy changes could affect model hosting, API access, or visibility in model search. A mirror on a neutral platform (e.g., ModelScope, Ollama registry) would reduce single-point-of-failure risk.
+
+**Answer:** _add reply here_
+
+### Q: Three circuit-attribution papers appeared in this build (arXiv 2605.22902, 2606.08777, 2506.09047), all using transcoder- or circuit-based methods to localize VLM hallucinations. Does the team's current interpretability stack (logit lens, activation patching, causal scrubbing, sparse autoencoders, steering vectors) include transcoders, and if not, is there interest in running arXiv 2605.22902's approach on OCR2-3B as an ablation?
+
+**Context:** Transcoders are sparse approximations of MLP sublayers; the arXiv 2605.22902 result (AUC 0.68 for hallucination prediction from mechanistic graph features) is the strongest single-paper evidence in the current literature for transcoder utility. The OCR2-3B open-weight model is small enough for this ablation without full OCR-3 retraining.
+
+**Answer:** _add reply here_
+
+### Q: Reducto r-1 has been available since September 1 with up to $5,000 in free evaluation credits and explicit 'single-model replacement for multi-tool stacks' positioning. Has any team member run a comparison against OCR-3 on a common test set? The free-credit window provides a cost-free opportunity before the preview period closes.
+
+**Context:** This is the third consecutive build raising this question without a logged answer. The IDP Leaderboard test set, FUNSD, or CORD would produce the most defensible comparison frame. Each build without a data point is a cycle where r-1's benchmark advantages compound without rebuttal.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has failed for 34+ consecutive builds: arxiv (export.arxiv.org 403), HN (hn.algolia.com 403), RSS (empty window), github_trending (empty window). This build again operates on WebSearch fallback. Is the egress allowlist fix in progress, and what is the ETA? A one-line status note here would prevent this question recurring in every build.
+
+**Context:** Required egress allowlist additions: export.arxiv.org, hn.algolia.com, and the RSS feed hosts in data/sources.yaml (anthropic.com/news, openai.com/blog, deepmind.google/blog, huggingface.co/blog, latent.space, interconnects.ai, buttondown.com, stratechery.com, importai.substack.com, blog.mistral.ai). The questions_for_team.md file now exceeds 12,500 lines primarily from repeated infrastructure questions.
+
+**Answer:** _add reply here_
+
+---
