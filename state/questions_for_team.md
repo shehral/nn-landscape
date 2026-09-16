@@ -12111,3 +12111,25 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-16T13:00:30+00:00 (audit: partial)
+
+### Q: Kimi K3 (Moonshot AI, 2.8T params, July 2026) scores 91.1% on OmniDocBench and leads the public snapshot. Should it be added to data/nanonets_context.md as a competitive monitoring entry?
+
+**Context:** Kimi K3 is a general-purpose frontier model, not an OCR specialist, but its OmniDocBench score leads the current leaderboard snapshot above OCR-3. It is not currently in the competitive context file. Adding it would allow future builds to score and frame Kimi K3 releases accurately rather than evaluating from scratch.
+
+**Answer:** _add reply here_
+
+### Q: Samsung's €3B Mistral Series D creates a semiconductor-AI hardware partnership for OCR 4.x. Does the team have a view on whether this changes the competitive calculus for on-premise or edge OCR deployment scenarios where Nanonets competes?
+
+**Context:** Mistral OCR 4.1 is already a direct document-extraction competitor. Samsung's chip-integration partnership could accelerate optimized inference on Samsung hardware (data centers, edge devices). If on-premise deployment is a Nanonets differentiator, this partnership narrows it. If it isn't, the funding is only a capital-durability signal.
+
+**Answer:** _add reply here_
+
+### Q: OvisOCR2 (0.9B) and NaviDC-OCR (1.2B) both exceed OCR-3's published 90.5 on OmniDocBench v1.6. Is this gap a benchmark-version issue (OCR-3 scored on v1.5 pre-MGAM), a genuine capability gap, or a use-case difference (single-page vs. structured extraction)?
+
+**Context:** Both models are sub-1.3B parameter end-to-end parsers targeting the single-page-to-markdown output format. OCR-3's published 90.5 may be on OmniDocBench v1.5 (before the April 10 MGAM methodology update). If OCR-3 has not been re-evaluated on v1.6, the comparison is between different benchmark versions. A version qualifier in nanonets_context.md would allow accurate framing in every future build.
+
+**Answer:** _add reply here_
+
+---
