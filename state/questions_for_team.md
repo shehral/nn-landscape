@@ -12133,3 +12133,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-16T19:00:00+00:00 (audit: partial)
+
+### Q: Is OCR-3's published OmniDocBench score of 90.5 from v1.5, v1.6, or the unversioned original?
+
+**Context:** This question has appeared in every build since July without a logged answer. NaviDC-OCR (96.87), OvisOCR2 (96.58), and MinerU2.5-Pro (95.69) all report v1.6 scores. OCR-3 launched April 2, eight days before the v1.6 MGAM update on April 10. If the 90.5 is pre-v1.6, the gap with current leaders on the latest benchmark version is roughly 6 points. A one-line annotation in nanonets_context.md would close this recurrence.
+
+**Answer:** _add reply here_
+
+### Q: Should OvisOCR2 (arXiv 2607.13639) and NaviDC-OCR (arXiv 2608.12898) be added to nanonets_context.md as competitive monitoring entries?
+
+**Context:** Both score above OCR-3 on OmniDocBench v1.6 and are open-weight models with published training details. OvisOCR2 uses RL+distillation on Qwen3.5-0.8B; NaviDC-OCR targets dual digital/camera document parsing. Without context entries, each build evaluates them from scratch.
+
+**Answer:** _add reply here_
+
+### Q: Has any team member run Reducto r-1 against OCR-3 on a common test set before the free-credit preview closes?
+
+**Context:** Reducto r-1 launched September 1 with $5,000 in free evaluation credits and explicit 'single-model replacement for multi-tool stacks' positioning. This question has appeared in three consecutive builds without a logged answer. The IDP Leaderboard test set would produce the most defensible comparison frame since Nanonets maintains it.
+
+**Answer:** _add reply here_
+
+### Q: Does HunyuanOCR-1.5's open-sourced DFlash training pipeline (6.37x Transformer speedup for OCR decoding) overlap with the team's current inference or training stack for OCR2-3B?
+
+**Context:** The full SFT/DFlash/vLLM stack is publicly available under Tencent-Hunyuan on GitHub. If the team uses similar attention-efficient decoding for long structured outputs, the overlap would provide a public baseline for comparing efficiency improvements. If not, this is the most complete open reference for OCR-specialized VLM training currently available.
+
+**Answer:** _add reply here_
+
+### Q: Should a pre-release model scoring policy be added to nanonets_context.md: 'score on confirmed release only; models with no model card or API ID are frontier-monitor until shipped'?
+
+**Context:** Grok 4.7 has missed two announced launch windows and Musk has downgraded the capability claim to 'roughly par with Opus 5.0'. This question has appeared in four consecutive builds without a logged answer. Without a standing policy, each build agent independently handles announced-but-unshipped models.
+
+**Answer:** _add reply here_
+
+---
