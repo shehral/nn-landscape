@@ -12167,3 +12167,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-17T00:00:00+00:00 (audit: partial)
+
+### Q: September 1-4 saw Fable 5.1, Gemini 3.8 Flash, and GPT-6 Astra launch with no IDP Leaderboard or ParseBench scores. Is the IDP Leaderboard team queuing evaluation jobs for these models, or waiting for labs to self-submit?
+
+**Context:** Three frontier models with confirmed image/PDF input capability now appear in customer comparisons without IDP Leaderboard scores. Each absent score is a gap customers use when evaluating OCR-3 against general-purpose alternatives. API access for all three is publicly available. Proactive evaluation would raise the leaderboard from 29 to 32+ models.
+
+**Answer:** _add reply here_
+
+### Q: Mistral Agentic Search adds five-operation document retrieval (search, open, navigate, read, grep) on top of Mistral OCR 4.x. Does this compete with Nanonets' /chunk and /vqa endpoints, or is it positioned at a different customer segment (enterprise search vs. structured extraction)?
+
+**Context:** Agentic Search is not an OCR-endpoint replacement — Mistral explicitly positions it as a retrieval layer above extraction. But if Nanonets' /chunk and /vqa are used for retrieval-oriented workflows, the competitive surface is wider than OCR benchmark comparisons capture. The FinanceBench improvement (26.7%→86%) is in a document segment Nanonets targets.
+
+**Answer:** _add reply here_
+
+### Q: Reducto r-1 prices at $10/1,000 pages ($0.01/page) all-in, with explicit 'single-model replacement for multi-tool stacks' positioning. What is OCR-3's current production price at comparable page volumes, and does r-1's economics put any specific customer tier at direct risk?
+
+**Context:** r-1 has been in preview since September 1 with $5,000 in free evaluation credits. Without knowing OCR-3's published or negotiated page-level pricing, this build cannot assess whether r-1's pricing is a direct threat to a specific customer segment or only a long-tail positioning play. This is a new question; the prior builds asked whether a comparison run had been started, not about pricing competitive risk.
+
+**Answer:** _add reply here_
+
+### Q: HunyuanOCR-1.5 open-sources a complete verl-based RL training stack for OCR-specialized VLMs (github.com/Tencent-Hunyuan/HunyuanOCR). Does the team's current training pipeline include RL post-SFT, and if not, would this public reference reduce the cost of adding it to OCR2-3B fine-tuning?
+
+**Context:** This is the third build cycle with a GRPO/RL paper directly applicable to OCR training. The HunyuanOCR-1.5 stack is the most complete public reference available: SFT → GRPO → verl RL, all open-sourced. OCR2-3B is small enough to run this without OCR-3-scale compute. If the team's training pipeline already includes RL, this question can be marked resolved.
+
+**Answer:** _add reply here_
+
+### Q: Kimi K3 (Moonshot AI, 2.8T params) is the current OmniDocBench v1.5 leader at 91.1%, above OCR-3's published 90.5. Should Kimi K3 be added to data/nanonets_context.md as a competitive monitoring entry, and does the team have context on whether its OmniDocBench score reflects extraction capability or general VLM strength?
+
+**Context:** Kimi K3 is a general-purpose frontier model, not an OCR specialist. Its OmniDocBench lead may reflect broad VLM capability rather than structured extraction performance. If OCR-3 leads on extraction-specific tasks while trailing on general VLM benchmarks, the two are not directly comparable — but the gap is visible to customers in benchmark dashboards. A context entry would let future builds score and frame Kimi K3 releases consistently.
+
+**Answer:** _add reply here_
+
+---
