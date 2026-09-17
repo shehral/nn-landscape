@@ -12202,6 +12202,38 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 
 ---
 
+## Build 2026-09-17T12:57:00+00:00 (audit: FAILED — build aborted, no output pushed)
+
+### INFRASTRUCTURE FAILURE — Step 3 (ingest): all 4 sources returned 0 items
+
+**What failed:** `python -m landscape.cli ingest` returned 0 items with all four sources reporting errors:
+- `arxiv`: 403 Forbidden (`export.arxiv.org`)
+- `hn`: 403 Forbidden (`hn.algolia.com`)
+- `rss`: "no items in current window" (all RSS feed hosts blocked by proxy)
+- `github_trending`: "no items in current window"
+
+**Root cause confirmed from proxy status:** The outbound proxy (`/__agentproxy/status`) shows `connect_rejected` (policy denial) for every external host including `hn.algolia.com`, `www.anthropic.com`, `openai.com`, `deepmind.google`, `huggingface.co`, and all RSS feed hosts. This is a complete egress block — not a rate-limit or authentication issue.
+
+**New regression vs. prior builds:** Prior builds degraded to github_trending-only or WebSearch fallback; this build has no working source at all. Per `state/questions_for_team.md` (build 2026-09-17T06:10), the previous cycle produced only 4 items via WebSearch fallback. WebSearch is also unavailable this cycle as it routes through the same blocked proxy.
+
+**Action taken:** Build lock released. No partial output pushed. Only this file committed.
+
+**What the team should investigate:**
+
+1. The managed remote execution environment's network egress allowlist has narrowed since the 06:10 UTC build six hours ago. The previous build accessed WebSearch; this build cannot. Something changed between 06:10 and 12:57 UTC. Check the environment's network policy configuration for any change in the allowlist.
+
+2. If the egress block is intentional or long-running, the 6-hour cadence cannot produce useful output. The prior question (build 2026-09-17T06:10) asked whether to pause or move to weekly schedule — this build amplifies that recommendation. A build that cannot reach any source produces no value and accumulates failed commits.
+
+3. The quickest restore path without infrastructure changes: add a `data/` directory fixture file with manually curated items that the build agent can use as a fallback corpus when all live sources fail. This would allow trend and framing analysis on a stale but non-empty item set, rather than a silent no-op.
+
+### Q: Has the outbound network policy for the remote execution environment changed between the 06:10 UTC and 12:57 UTC builds on 2026-09-17, and if so, is the change permanent?
+
+**Context:** The 06:10 UTC build accessed external sources via WebSearch fallback; this build cannot reach any external host including WebSearch. The proxy reports policy denial for every external host. If this is permanent, the scheduled build cadence should be suspended until the allowlist is repaired.
+
+**Answer:** _add reply here_
+
+---
+
 ## Build 2026-09-17T06:10:00+00:00 (audit: partial)
 
 ### Q: Should the build agent prioritize SHROOM-Visions 2026 workshop papers as a batch, given that multiple submissions (arXiv 2609.10244, 2609.17327, 2608.29974) have now appeared from the same shared task and collectively benchmark VLM hallucination detection methods?
