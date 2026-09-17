@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 17, 2026 · 06:10 UTC · 4 items scored</span>
+  <span class="built-at">Built Sep 17, 2026 · 19:01 UTC · 5 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,9 +53,10 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Three independent mechanistic interpretability papers in this build (arXiv 2608.27417, 2609.18823, 2608.00077) all identify narrow, causally necessary head or token subsets governing VLM OCR and visual grounding behavior; the convergence suggests circuit-level analysis is becoming the primary lens for understanding VLM extraction failures.</li>
-    <li>Two papers (arXiv 2609.18823, 2608.27417) independently find that what appear to be specialized OCR or retrieval functions in VLMs are implemented by small, general-purpose head subsets rather than text-specific circuits; this functional overlap has implications for targeted intervention — disrupting one function may disrupt others.</li>
-    <li>Span- and token-level localization is emerging as a distinct evaluation granularity for VLM hallucination (arXiv 2609.17327 at character-span level; arXiv 2608.00077 at visual-token-origin level), representing a move beyond coarse hallucination-rate metrics toward evidence-traceable auditing.</li>
+    <li>Three papers this build (HEAL, SAVOR, SAE-NOs) converge on localization-before-mitigation: identifying WHERE in the model computation hallucinations originate before applying any correction, rather than post-hoc output filtering.</li>
+    <li>HEAL and SAVOR both intervene at inference time without full retraining — HEAL via value-vector calibration, SAVOR via RL-tuned grounding. Training-free or lightweight-training mitigation has appeared in three of the last four builds&#39; top VLM papers.</li>
+    <li>Domain specificity emerges as a hard constraint: the hallucination detection paper (2609.11878) shows general-domain detectors fail (F1 0.52) on domain-shifted data, reinforcing a pattern visible across the last three builds&#39; NLP-hallucination papers.</li>
+    <li>This build&#39;s entire new item set is from the vlm_research axis. No competitive, doc_ai, or frontier items appear as new entries. This is the fifth consecutive WebSearch fallback build producing exclusively research-axis items; competitive and product coverage is running on stale cache.</li>
   </ul>
 </section>
 
@@ -70,83 +71,33 @@
   </div>
   <div class="axis-col" data-axis="doc_ai">
     <h2>Document AI</h2>
-<article class="item "
-         data-source="arxiv"
-         data-score="24">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 0 · frontier 0 · vlm_research 4 = 24 (this view's weighting)">24</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
+      <p class="item-summary">No top-N items this build.</p>
   </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2608.00077" target="_blank" rel="nofollow noopener noreferrer">Beyond Accuracy: Auditing Spatial Provenance in Visual Token Pruning for OCR-Critical MLLM Inference</a>
-  </p>
-  <p class="item-summary">Evidence-risk audit for OCR MLLMs shows token pruning can silently remove OCR evidence even when answer accuracy is maintained; evaluated on Qwen3-VL-8B.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Token pruning in MLLM inference can remove OCR evidence tokens while answer accuracy stays flat. Applying this provenance audit before any token-reduction optimization in OCR-3&#39;s serving stack would prevent accuracy-invisible regression in extraction completeness.</dd>
-      <dt>Research</dt>
-      <dd>The evidence-risk framework decouples output accuracy from token-origin coverage, directly applicable to the team&#39;s structural hallucination research. The audit is training-free and post-hoc; Qwen3-VL-8B is already evaluated in the paper.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: vlm_research</p>
-</article>  </div>
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="22">
+         data-score="18">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 5 = 22 (this view's weighting)">22</span>
+          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 4 = 18 (this view's weighting)">18</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.18823" target="_blank" rel="nofollow noopener noreferrer">Using OCR Heads to Verbalize Image Semantics</a>
+    <a href="https://arxiv.org/abs/2509.03738" target="_blank" rel="nofollow noopener noreferrer">Mechanistic Interpretability with Sparse Autoencoder Neural Operators</a>
   </p>
-  <p class="item-summary">Causally identifies OCR attention heads in VLMs (incl. Qwen3-VL-8B) as general semantic heads; verbalization lens shows language-aligned image representations from layer 0.</p>
+  <p class="item-summary">SAE-NOs parameterize interpretability features as Fourier-domain functions, capturing spatial structure standard SAEs miss in VLMs.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>OCR heads govern both text-reading and non-textual semantics in the same head subset; this implies structural hallucinations and phantom rows may arise from the same circuit, not a text-specific failure mode. This reframes where targeted interventions on OCR-3 should look.</dd>
+      <dd>Standard SAEs applied to OCR-3 activations may miss spatially-varying features. SAE-NOs would capture how hallucination-prone concepts vary across token positions within table cells or document regions.</dd>
       <dt>Research</dt>
-      <dd>The verbalization lens is a training-free probe yielding interpretable semantic labels from hidden states at every layer. Applying it to OCR2-3B (open-weight, Qwen3-based) would extend the mechanistic interpretability stack without retraining, complementing activation patching and sparse autoencoders.</dd>
+      <dd>The function-space SAE approach is compatible with the team&#39;s existing SAE stack. OCR2-3B&#39;s smaller scale makes it tractable for an SAE-NO ablation that would extend the interpretability stack with positional/functional concept decomposition.</dd>
       <dt>Action</dt>
-      <dd>reproduce</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="22">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 5 = 22 (this view's weighting)">22</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2608.27417" target="_blank" rel="nofollow noopener noreferrer">Retrieval Heads Meet Vision: Uncovering How VLMs Locate and Extract Visual Information</a>
-  </p>
-  <p class="item-summary">Visual Retrieval Heads (VRHs, ~1.7-2.6% of heads) causally govern text-to-region grounding across 11 VLMs; masking top 20 drops grounding accuracy by up to 80 points.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>A small, causally necessary head subset controls all visual grounding in tested VLMs. Disrupting these heads is a candidate mechanism for phantom-row generation in OCR-3, where a table row appears ungrounded in the source image.</dd>
-      <dt>Research</dt>
-      <dd>The unified head-scoring framework spans 11 VLMs and 5 referring-expression benchmarks. Running the VRH identification protocol on OCR2-3B alongside the OCR-heads method from arXiv 2609.18823 would produce a two-piece circuit map (what-heads vs. where-heads) for the team&#39;s hallucination interpretability work.</dd>
-      <dt>Action</dt>
-      <dd>reproduce</dd>
+      <dd>read in week</dd>
     </dl>
   </div>
 </article><article class="item "
@@ -161,17 +112,94 @@
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.17327" target="_blank" rel="nofollow noopener noreferrer">Vroom-Vroom at SHROOM-Visions 2026: A Multi-Judge Committee for Detecting Hallucinated Spans in Vision-Language Outputs</a>
+    <a href="https://arxiv.org/abs/2609.09206" target="_blank" rel="nofollow noopener noreferrer">MLLMs Hallucinate when Information Distribution Drifts in Synergy Heads</a>
   </p>
-  <p class="item-summary">Multi-judge majority voting ensemble ranks first in 3/4 languages at SHROOM-Visions 2026; OCR is a distinct hallucination category in the five-class taxonomy.</p>
+  <p class="item-summary">HEAL traces MLLM hallucinations to information-distribution drift in cross-modal synergy heads, not to modality-specific head count.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct product implication; the shared task evaluates general VQA and captioning contexts, not document extraction specifically.</dd>
+      <dd>The synergy-head mechanism provides a circuit-level explanation for structural hallucinations: phantom rows and mis-attributed fields may arise when specific cross-modal attention heads lose their factual-grounding signal. Diagnostic runs on OCR2-3B could localize which heads drive table-level failures.</dd>
       <dt>Research</dt>
-      <dd>Multi-judge majority voting across diverse fine-tuned VLMs outperforms single-model detection and is robust to annotation disagreement. The five-class taxonomy (invention, mischaracterization, OCR, miscounting, other) treats OCR as a named hallucination category, providing a classification scheme the team could adopt for structured OCR hallucination benchmarking.</dd>
+      <dd>HEAL&#39;s causal noise intervention protocol is adjacent to the team&#39;s activation patching and causal scrubbing methods. The key addition is the counterfactual Difference-in-Differences framing for head-type categorization; running it on OCR2-3B would yield a head-level complement to the existing layer-level diagnostic stack.</dd>
+      <dt>Action</dt>
+      <dd>reproduce</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="14">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 3 = 14 (this view's weighting)">14</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2609.16601" target="_blank" rel="nofollow noopener noreferrer">SAVOR: Self-Aware Visual Grounding via Confidence-Calibrated Reinforcement Learning for Multimodal Hallucination Mitigation</a>
+  </p>
+  <p class="item-summary">SAVOR applies confidence-calibrated RL to improve visual grounding in VLMs, reducing hallucinations at ICONIP 2026.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Confidence calibration during RL post-training could reduce confident-but-wrong field extractions in structured document outputs, where miscalibrated confidence on visually similar fields is a known failure mode in document VQA.</dd>
+      <dt>Research</dt>
+      <dd>The confidence-calibrated RL approach is a peer-reviewed complement to the team&#39;s SFT line and to the HunyuanOCR-1.5 verl/GRPO stack already in context. The ICONIP 2026 venue confirms the method cleared peer review; implementation details in the paper would allow a direct comparison to existing mitigation protocols.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="10">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 3 = 10 (this view's weighting)">10</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2509.10345" target="_blank" rel="nofollow noopener noreferrer">Towards Understanding Visual Grounding in Vision-Language Models</a>
+  </p>
+  <p class="item-summary">Systematic analysis of visual grounding mechanisms in VLMs; identifies conditions where token-level visual-to-text routing breaks down.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Grounding breakdown conditions likely overlap with cross-page table and multi-column layout failure modes in production document extraction; the analysis provides a diagnostic vocabulary for which input types most reliably trigger misgrounding in document VLMs.</dd>
+      <dt>Research</dt>
+      <dd>The grounding mechanism analysis extends the hallucination taxonomy at the token-routing level, which is complementary to the layer-level and head-level diagnostics from the team&#39;s existing stack. Findings could guide which document layout types to over-represent in OCR fine-tuning data.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="8">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 2 = 8 (this view's weighting)">8</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2609.11878" target="_blank" rel="nofollow noopener noreferrer">Domain-Specific Hallucination Detection in Large Language Models</a>
+  </p>
+  <p class="item-summary">DeBERTa+MC-Dropout+calibration pipeline achieves F1=0.915 on HaluEval; cross-domain transfer drops to F1=0.52 without domain-matched pretraining.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>The cross-domain transfer failure is directly relevant to doc-AI: a general-domain hallucination detector trained on QA or summarization will not reliably generalize to document extraction. This validates the need for domain-matched detection rather than borrowing a general-purpose model.</dd>
+      <dt>Research</dt>
+      <dd>The PubMedBERT domain-matching result (F1 0.63 vs 0.52 for cross-domain) reinforces the case for training hallucination detectors directly on document-extraction pairs rather than repurposing existing open-domain models.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
     </dl>
   </div>
 </article>  </div>
@@ -186,28 +214,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Should the build agent prioritize SHROOM-Visions 2026 workshop papers as a batch, given that multiple submissions (arXiv 2609.10244, 2609.17327, 2608.29974) have now appeared from the same shared task and collectively benchmark VLM hallucination detection methods?</p>
-    <p class="question-context">Each paper has been surfaced individually across separate builds without linking them as a connected research event. Treating SHROOM-Visions as a trackable venue (co-located with EMNLP 2026) would allow the team to assess the collective state of VLM hallucination detection in one view rather than piecemeal.</p>
+    <p class="question-text">HEAL (arXiv 2609.09206) finds hallucinations trace to information-distribution drift in synergy heads, not to modality-specific head counts. Does the team&#39;s current activation-patching protocol isolate synergy heads specifically, or does it ablate all cross-modal heads?</p>
+    <p class="question-context">If the existing protocol ablates all cross-modal heads indiscriminately, it will average over synergy and non-synergy heads, diluting the signal. Re-running head classification under HEAL&#39;s causal-noise-intervention protocol on OCR2-3B would take one inference pass per head and requires no retraining.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">arXiv 2609.18823 identifies OCR heads in Qwen3-VL-8B; since Nanonets OCR2-3B is also Qwen3-based and open-weight, does the team have interest in running the verbalization lens protocol on OCR2-3B to characterize its OCR computation graph?</p>
-    <p class="question-context">The verbalization lens is training-free and requires only inference. OCR2-3B&#39;s smaller scale makes it tractable for mechanistic experiments. A positive result would be the first published circuit-level characterization of a Nanonets model and could anchor the hallucination research program.</p>
+    <p class="question-text">This build again contains only vlm_research items — no competitive, doc_ai, or frontier items are new. Should the WebSearch fallback query set include product-oriented searches (&#39;document extraction API launch&#39;, &#39;OCR benchmark new result&#39;) to restore competitive coverage?</p>
+    <p class="question-context">The CLI ingest failure (37th+ consecutive build) eliminates arxiv, HN, RSS, and GitHub trending as live sources. WebSearch fallback is driven by research-oriented keywords, producing exclusively academic papers. The competitive and frontier axes have had no new items in five or more consecutive builds.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The token-pruning provenance audit (arXiv 2608.00077) is training-free and post-hoc; does OCR-3&#39;s production inference stack include any token-reduction or KV-cache compression that could inadvertently drop OCR evidence tokens without accuracy-visible signal?</p>
-    <p class="question-context">The paper shows that standard accuracy metrics on the pruned model can remain flat while the proportion of answers lacking direct token-origin provenance increases. If OCR-3 uses token pruning for cost or latency, this is a silent correctness risk on high-stakes extraction workflows.</p>
+    <p class="question-text">CLI ingest has failed for 37+ consecutive builds: all four sources blocked by proxy policy denial. The previous build (12:57 UTC today) also had no WebSearch; this build recovered WebSearch but found only 5 new items. Is the egress allowlist fix in progress?</p>
+    <p class="question-context">Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. The questions_for_team.md file now exceeds 13,000 lines primarily from this recurring infrastructure question. A one-line status update here would end the recurrence.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">This build&#39;s entire item set comes from the vlm_research axis; with CLI sources failing for 36+ consecutive builds and WebSearch fallback yielding only 4 new items this cycle, should the build be paused or converted to a weekly schedule until the egress allowlist is repaired?</p>
-    <p class="question-context">The seen.json now contains 1,003 entries accumulated from WebSearch fallback builds. The remaining new items per build is declining as the search space is exhausted. Running a 6-hour cadence to produce 4 items per edition may not justify the compute and storage overhead compared to a daily or weekly cadence with richer coverage.</p>
+    <p class="question-text">SAE-NOs (arXiv 2509.03738) parameterize SAE features as functions in Fourier space, capturing spatially-varying concepts that fixed-dimension SAEs miss. Combined with the prior unanswered question about Transcoders (arXiv 2605.22902) and OCR heads (arXiv 2609.18823), three complementary mechanistic tools have now appeared across six builds without a recorded evaluation decision. Should these be batched into a single &#39;interpretability tools sprint&#39; against OCR2-3B?</p>
+    <p class="question-context">All three methods are training-free on the inference side and tractable on OCR2-3B&#39;s scale. Running them in a single sprint would produce a comparative view of what each tool reveals about the model&#39;s OCR computation graph, rather than evaluating them piecemeal or not at all.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The Vroom-Vroom paper (arXiv 2609.17327) uses a five-class hallucination taxonomy including an explicit OCR category. Does the team&#39;s current hallucination evaluation framework distinguish OCR-type hallucinations (incorrect text transcription) from structural hallucinations (phantom rows, mis-attributed fields) as separate categories?</p>
-    <p class="question-context">If the team uses a coarser taxonomy internally, adopting the SHROOM-Visions five-class scheme (or a document-specific extension) would allow cross-benchmark comparisons with the growing body of literature using this taxonomy, and would make research publications easier to position.</p>
+    <p class="question-text">Is OCR-3&#39;s published OmniDocBench score of 90.5 from v1.5, v1.6, or the unversioned original?</p>
+    <p class="question-context">This question has appeared every build since July without a logged answer. MiniMax M3 (91.6%), Kimi K3 (91.1%), NaviDC-OCR (96.87%), and MinerU2.5-Pro (95.69%) all report v1.6 scores. OCR-3 launched April 2, eight days before the v1.6 MGAM update on April 10. A one-line annotation in nanonets_context.md — &#39;OCR-3 90.5 is on OmniDocBench v1.5&#39; — would end the recurrence.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -219,7 +247,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-17T06:10:00+00:00
+    sources covered: arxiv    · failed: 3 · built at 2026-09-17T19:01:50.684798+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

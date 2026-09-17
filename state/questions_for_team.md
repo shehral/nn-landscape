@@ -12267,3 +12267,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-17T19:01:50.684798+00:00 (audit: partial)
+
+### Q: HEAL (arXiv 2609.09206) finds hallucinations trace to information-distribution drift in synergy heads, not to modality-specific head counts. Does the team's current activation-patching protocol isolate synergy heads specifically, or does it ablate all cross-modal heads?
+
+**Context:** If the existing protocol ablates all cross-modal heads indiscriminately, it will average over synergy and non-synergy heads, diluting the signal. Re-running head classification under HEAL's causal-noise-intervention protocol on OCR2-3B would take one inference pass per head and requires no retraining.
+
+**Answer:** _add reply here_
+
+### Q: This build again contains only vlm_research items — no competitive, doc_ai, or frontier items are new. Should the WebSearch fallback query set include product-oriented searches ('document extraction API launch', 'OCR benchmark new result') to restore competitive coverage?
+
+**Context:** The CLI ingest failure (37th+ consecutive build) eliminates arxiv, HN, RSS, and GitHub trending as live sources. WebSearch fallback is driven by research-oriented keywords, producing exclusively academic papers. The competitive and frontier axes have had no new items in five or more consecutive builds.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has failed for 37+ consecutive builds: all four sources blocked by proxy policy denial. The previous build (12:57 UTC today) also had no WebSearch; this build recovered WebSearch but found only 5 new items. Is the egress allowlist fix in progress?
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. The questions_for_team.md file now exceeds 13,000 lines primarily from this recurring infrastructure question. A one-line status update here would end the recurrence.
+
+**Answer:** _add reply here_
+
+### Q: SAE-NOs (arXiv 2509.03738) parameterize SAE features as functions in Fourier space, capturing spatially-varying concepts that fixed-dimension SAEs miss. Combined with the prior unanswered question about Transcoders (arXiv 2605.22902) and OCR heads (arXiv 2609.18823), three complementary mechanistic tools have now appeared across six builds without a recorded evaluation decision. Should these be batched into a single 'interpretability tools sprint' against OCR2-3B?
+
+**Context:** All three methods are training-free on the inference side and tractable on OCR2-3B's scale. Running them in a single sprint would produce a comparative view of what each tool reveals about the model's OCR computation graph, rather than evaluating them piecemeal or not at all.
+
+**Answer:** _add reply here_
+
+### Q: Is OCR-3's published OmniDocBench score of 90.5 from v1.5, v1.6, or the unversioned original?
+
+**Context:** This question has appeared every build since July without a logged answer. MiniMax M3 (91.6%), Kimi K3 (91.1%), NaviDC-OCR (96.87%), and MinerU2.5-Pro (95.69%) all report v1.6 scores. OCR-3 launched April 2, eight days before the v1.6 MGAM update on April 10. A one-line annotation in nanonets_context.md — 'OCR-3 90.5 is on OmniDocBench v1.5' — would end the recurrence.
+
+**Answer:** _add reply here_
+
+---
