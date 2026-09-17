@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 17, 2026 · 00:00 UTC · 13 items scored</span>
+  <span class="built-at">Built Sep 17, 2026 · 06:10 UTC · 4 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,225 +53,17 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Three top-tier frontier models (GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash) shipped within a four-day window September 1-4 with image+PDF input but no published IDP Leaderboard or OmniDocBench scores. The simultaneous release of three make-vs-buy alternatives compresses the evaluation window for document-AI buyers.</li>
-    <li>GRPO reinforcement learning is converging as the post-SFT alignment method for document OCR VLMs: HunyuanOCR-1.5 uses verl-based GRPO, &#39;Seeing is Believing?&#39; proposes a multi-objective GRPO reward for OCR hallucination, and FireRed-OCR-2B (prior builds) used Format-Constrained GRPO. Three independent implementations now exist as public references.</li>
-    <li>Single-model, unified-pass parsing is the dominant competitive framing: Reducto r-1 (&#39;unified single model, one all-in price&#39;), MinerU2.5 (decoupled but one artifact), and Nutrient Data Extraction API all position against multi-tool pipeline cost as the product differentiator — not accuracy alone.</li>
-    <li>OCR-3 has no confirmed score on two publicly-tracked evaluation surfaces: Roboflow Vision Evals (31 models, updated Aug 20) and OmniDocBench v1.6 (post-April 10 MGAM methodology). Both absences are visible to customers in competitive comparisons and have compounded across multiple builds without resolution.</li>
-    <li>Mechanistic circuit attribution for VLM hallucinations is an active research direction across at least two papers this build: arXiv 2606.08777 (counterfactual circuits) and arXiv 2602.11824 (sparse latent steering), both complementary to the team&#39;s existing interpretability stack. The research front is moving toward inference-time interventions rather than training-time fixes.</li>
+    <li>Three independent mechanistic interpretability papers in this build (arXiv 2608.27417, 2609.18823, 2608.00077) all identify narrow, causally necessary head or token subsets governing VLM OCR and visual grounding behavior; the convergence suggests circuit-level analysis is becoming the primary lens for understanding VLM extraction failures.</li>
+    <li>Two papers (arXiv 2609.18823, 2608.27417) independently find that what appear to be specialized OCR or retrieval functions in VLMs are implemented by small, general-purpose head subsets rather than text-specific circuits; this functional overlap has implications for targeted intervention — disrupting one function may disrupt others.</li>
+    <li>Span- and token-level localization is emerging as a distinct evaluation granularity for VLM hallucination (arXiv 2609.17327 at character-span level; arXiv 2608.00077 at visual-token-origin level), representing a move beyond coarse hallucination-rate metrics toward evidence-traceable auditing.</li>
   </ul>
 </section>
 
 <section class="axes" aria-label="Items by axis">
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
-<article class="item "
-         data-source="rss"
-         data-score="88">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 5 · frontier 5 · vlm_research 1 = 88 (this view's weighting)">88</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
+      <p class="item-summary">No top-N items this build.</p>
   </div>
-  <p class="item-title">
-    <a href="https://openai.com/blog/gpt-6-astra" target="_blank" rel="nofollow noopener noreferrer">GPT-6 Astra (OpenAI, September 3-4 2026): 1.05M context, image input, $10/$50 per million tokens</a>
-  </p>
-  <p class="item-summary">OpenAI&#39;s new flagship for advanced analysis and agentic tasks; text+image input; $10/$50/M tokens; 128K output.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>GPT-6 Astra enters the frontier tier with image input and explicit document-analysis positioning, increasing make-vs-buy pressure on Nanonets&#39; extraction endpoints. No IDP Leaderboard or ParseBench scores published yet — a gap the IDP team could fill before customers benchmark it themselves.</dd>
-      <dt>Research</dt>
-      <dd>No architecture or training details disclosed. Relevant as a hallucination evaluation target once API access is confirmed.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: frontier</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="84">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 5 · frontier 4 · vlm_research 2 = 84 (this view's weighting)">84</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.anthropic.com/news/claude-fable-5-1" target="_blank" rel="nofollow noopener noreferrer">Claude Fable 5.1 (Anthropic, September 1 2026): GA, multimodal, 1M context, better than Fable 5 at lower cost</a>
-  </p>
-  <p class="item-summary">Fable 5.1 is GA; text+image input; 1M context; $10/$50/M tokens; outperforms Fable 5 at lower price.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Fable 5.1 supersedes Fable 5 on the ParseBench leaderboard where it already appeared. The lower price point narrows the cost gap versus OCR-3 for customers evaluating general-purpose vision alternatives. No IDP Leaderboard or ParseBench scores for 5.1 confirmed yet.</dd>
-      <dt>Research</dt>
-      <dd>Architecture details not disclosed. As an IDP Leaderboard-adjacent model, an evaluation run would establish whether 5.1 improves on Fable 5&#39;s document benchmark position.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: frontier, doc_ai</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="82">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 5 · frontier 4 · vlm_research 1 = 82 (this view's weighting)">82</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://deepmind.google/blog/gemini-3-8-flash" target="_blank" rel="nofollow noopener noreferrer">Gemini 3.8 Flash (Google, September 2 2026): PDF input, 1M context, $0.75/$3.75/M tokens</a>
-  </p>
-  <p class="item-summary">Google&#39;s third Flash release in six weeks; PDF and image input; 64K output; $0.75/$3.75/M tokens; outperforms Gemini 3.7 Flash on all Google-published benchmarks.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>At $0.75/M input tokens — roughly 13× cheaper than Fable 5.1 — Gemini 3.8 Flash is the cost-efficient option for high-volume document parsing pipelines. Enterprise customers already using Gemini for document workflows have a new default to test. No IDP Leaderboard or OmniDocBench scores confirmed.</dd>
-      <dt>Research</dt>
-      <dd>Google&#39;s third Flash release in six weeks suggests rapid iteration cadence. Relevant as a benchmark comparison target on DocVQA and OmniDocBench once results are available.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: frontier</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="64">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 4 · frontier 3 · vlm_research 1 = 64 (this view's weighting)">64</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://benchlm.ai/benchmarks/omnidocbench" target="_blank" rel="nofollow noopener noreferrer">OmniDocBench September 2026 update: Kimi K3 (Moonshot AI, 91.1%), TeleOCR and OvisOCR2 added</a>
-  </p>
-  <p class="item-summary">OmniDocBench v1.5 leaderboard updated September 2026; Kimi K3 (2.8T params) at 91.1% leads; TeleOCR and OvisOCR2 added as new entries.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Kimi K3 at 91.1% on OmniDocBench v1.5 leads the public snapshot. OCR-3&#39;s published 90.5 is likely v1.5 (OCR-3 launched April 2, eight days before the v1.6 MGAM update). If that version interpretation is correct, Kimi K3 leads OCR-3 on the same benchmark version by 0.6 points. Kimi K3 is a 2.8T general-purpose model — the competitive framing depends on whether customers compare on specialized extraction or general VLM performance.</dd>
-      <dt>Research</dt>
-      <dd>No direct research implication. The benchmark version ambiguity is a measurement question.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="rss"
-         data-score="62">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 2 · vlm_research 1 = 62 (this view's weighting)">62</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://mistral.ai/news/mistral-agentic-search" target="_blank" rel="nofollow noopener noreferrer">Mistral Agentic Search (August 20 2026): multi-step document retrieval, FinanceBench 26.7%→86%, 39.6% lower p90 latency</a>
-  </p>
-  <p class="item-summary">Mistral adds multi-step document retrieval (search/open/navigate/read/grep) on top of OCR 4.x; not an extraction-endpoint replacement; accuracy 6.3%→51.9% on OfficeQA Pro.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Agentic Search extends Mistral&#39;s document-intelligence surface into retrieval workflows, adjacent to but not replacing Mistral OCR 4.1&#39;s extraction endpoints. If Nanonets&#39; /chunk and /vqa endpoints serve retrieval-oriented use cases, Mistral now competes there directly. The 86% FinanceBench accuracy is a concrete competitive data point for the financial-document segment.</dd>
-      <dt>Research</dt>
-      <dd>Multi-step retrieval with verify-via-document-operations (grep, navigate) is a different architecture than RAG chunk retrieval. Relevant to the team if the research line extends to document grounding and citation accuracy.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="62">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 2 · vlm_research 1 = 62 (this view's weighting)">62</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://playground.roboflow.com/evals/ocr" target="_blank" rel="nofollow noopener noreferrer">Roboflow Vision Evals OCR Leaderboard (Aug 20 2026): 31 models; Claude Fable 5 leads at 94.0%; OCR-3 absent</a>
-  </p>
-  <p class="item-summary">Roboflow OCR leaderboard has 31 models including Fable 5 (94.0%), Muse Spark 1.2 (93.8%), GPT-6 Astra (86.6%); OCR-3 not listed.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Roboflow&#39;s OCR leaderboard is visible to customers comparing solutions. OCR-3&#39;s absence from a 31-model lineup including multiple frontier models creates a blind spot in external benchmark coverage. GPT-6 Astra&#39;s 86.6% is below OCR-3&#39;s IDP Leaderboard position; a Roboflow score would quantify the difference on Roboflow&#39;s test set.</dd>
-      <dt>Research</dt>
-      <dd>No research implication. Benchmark participation is a product visibility and GTM question.</dd>
-      <dt>Action</dt>
-      <dd>investigate</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="62">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 5 · competitive 5 · frontier 0 · vlm_research 1 = 62 (this view's weighting)">62</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://reducto.ai/blog/parse-r-1-model" target="_blank" rel="nofollow noopener noreferrer">Reducto r-1: single-model document parser at $10/1,000 pages ($0.01/page), up to 20% fewer errors</a>
-  </p>
-  <p class="item-summary">Reducto&#39;s r-1 unifies layout, reading order, tables, and citations in one model; 1¢/page all-in; preview open; $5,000 free credits.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>r-1 is a direct product-surface competitor: single model covering layout, reading order, tables, formatting, and citations — the same endpoint categories as OCR-3&#39;s /parse and /extract. The $0.01/page all-in price is an explicit counter to multi-tool pipeline costs. The ongoing free-credit window remains available for comparison runs against OCR-3 on FUNSD, CORD, or the IDP Leaderboard test set.</dd>
-      <dt>Research</dt>
-      <dd>No architecture details published. Single-pass versus multi-pass tradeoffs in production document parsing are directly relevant to the team&#39;s applied research context.</dd>
-      <dt>Action</dt>
-      <dd>investigate</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="48">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 0 · vlm_research 0 = 48 (this view's weighting)">48</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.nutrient.io/api/data-extraction-api" target="_blank" rel="nofollow noopener noreferrer">Nutrient Data Extraction API GA (September 9-10 2026): 0.932 on opendataloader-bench, per-field citations and bounding boxes</a>
-  </p>
-  <p class="item-summary">PSPDFKit-lineage Nutrient Data Extraction API GA; schema-defined extraction with per-field confidence, bounding boxes, and source citations; 0.932 on opendataloader-bench.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Nutrient&#39;s GA covers the same enterprise RAG and agentic pipeline segment as Nanonets Agentic Data Extraction: schema-defined extraction, per-field confidence, source citations, bounding boxes, and human-review routing. PSPDFKit&#39;s existing enterprise PDF SDK customer base provides immediate distribution to a segment Nanonets sells into. The 0.932 opendataloader-bench score is a publicly audited data point on a common benchmark.</dd>
-      <dt>Research</dt>
-      <dd>No direct research implication.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
       <p class="item-summary">No top-N items this build.</p>
@@ -280,51 +72,25 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="66">
+         data-score="24">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 5 · competitive 4 · frontier 1 · vlm_research 4 = 66 (this view's weighting)">66</span>
+          title="doc_ai 4 · competitive 0 · frontier 0 · vlm_research 4 = 24 (this view's weighting)">24</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+      <span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2509.22186" target="_blank" rel="nofollow noopener noreferrer">MinerU2.5: A Decoupled Vision-Language Model for Efficient High-Resolution Document Parsing (arXiv 2509.22186)</a>
+    <a href="https://arxiv.org/abs/2608.00077" target="_blank" rel="nofollow noopener noreferrer">Beyond Accuracy: Auditing Spatial Provenance in Visual Token Pruning for OCR-Critical MLLM Inference</a>
   </p>
-  <p class="item-summary">1.2B-param decoupled VLM: global layout on downsampled image, then native-resolution crop recognition; 90.67 OmniDocBench; MinerU2.5-Pro 95.69 on v1.6.</p>
+  <p class="item-summary">Evidence-risk audit for OCR MLLMs shows token pruning can silently remove OCR evidence even when answer accuracy is maintained; evaluated on Qwen3-VL-8B.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>MinerU2.5-Pro&#39;s 95.69 on OmniDocBench v1.6 leads that benchmark version. OCR-3&#39;s published 90.5 was measured before v1.6 (April 10 MGAM update), making direct comparison across versions invalid. The two-stage decoupled architecture — layout on downsampled, recognition on native-resolution crops — achieves 2.12 pages/s with a 1.2B model, relevant for cost-sensitive deployment scenarios.</dd>
+      <dd>Token pruning in MLLM inference can remove OCR evidence tokens while answer accuracy stays flat. Applying this provenance audit before any token-reduction optimization in OCR-3&#39;s serving stack would prevent accuracy-invisible regression in extraction completeness.</dd>
       <dt>Research</dt>
-      <dd>The coarse-to-fine decoupling is a publicly documented architecture alternative to end-to-end single-pass models. Directly applicable to the team&#39;s work on throughput-versus-accuracy tradeoffs in document VLMs.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: competitive, vlm_research</p>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="56">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 3 · frontier 1 · vlm_research 5 = 56 (this view's weighting)">56</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 100%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2607.04884" target="_blank" rel="nofollow noopener noreferrer">HunyuanOCR-1.5: Making Lightweight OCR VLMs Faster and Better via DFlash and verl-based RL (arXiv 2607.04884)</a>
-  </p>
-  <p class="item-summary">Tencent&#39;s upgraded OCR VLM adds DFlash speculative decoding, open-sourced verl-based RL stack, and hallucination evaluation; CVPR 2026 paper accepted.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>HunyuanOCR-1.5 is a direct OmniDocBench competitor and improves on long-tail capabilities: ancient-script OCR, fine-grained chart/table parsing, and hallucination evaluation. The 6.37× Transformer speedup from DFlash is relevant for inference cost at scale.</dd>
-      <dt>Research</dt>
-      <dd>The full verl-based RL training stack is open-sourced on GitHub (Tencent-Hunyuan/HunyuanOCR). GRPO post-SFT is the convergent methodology across three models in this build. If the team&#39;s training pipeline lacks RL post-SFT, this is the clearest public reference implementation currently available.</dd>
+      <dd>The evidence-risk framework decouples output accuracy from token-origin coverage, directly applicable to the team&#39;s structural hallucination research. The audit is training-free and post-hoc; Qwen3-VL-8B is already evaluated in the paper.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
@@ -345,43 +111,42 @@
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2506.20168" target="_blank" rel="nofollow noopener noreferrer">Seeing is Believing? Mitigating OCR Hallucinations in MLLMs via GRPO-Based Multi-Objective Reward (arXiv 2506.20168)</a>
+    <a href="https://arxiv.org/abs/2609.18823" target="_blank" rel="nofollow noopener noreferrer">Using OCR Heads to Verbalize Image Semantics</a>
   </p>
-  <p class="item-summary">GRPO-based multi-objective reward framework enforces vision-faithful reasoning in OCR MLLMs; targets hallucinations in degraded document recognition.</p>
+  <p class="item-summary">Causally identifies OCR attention heads in VLMs (incl. Qwen3-VL-8B) as general semantic heads; verbalization lens shows language-aligned image representations from layer 0.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Direct relevance to hallucination mitigation for document-degraded inputs (scans, low-quality images). The GRPO reward formulation enforces OCR accuracy without sacrificing generation coherence — applicable to the OCR2-3B training line.</dd>
+      <dd>OCR heads govern both text-reading and non-textual semantics in the same head subset; this implies structural hallucinations and phantom rows may arise from the same circuit, not a text-specific failure mode. This reframes where targeted interventions on OCR-3 should look.</dd>
       <dt>Research</dt>
-      <dd>This is the third GRPO-for-OCR paper in this build window (alongside HunyuanOCR-1.5 and FireRed-OCR-2B from prior builds). The multi-objective reward — simultaneous accuracy and coherence supervision — is a distinct framing from Format-Constrained GRPO. Comparing the reward designs across these papers would clarify which approach generalizes to phantom-row and structural hallucination mitigation.</dd>
+      <dd>The verbalization lens is a training-free probe yielding interpretable semantic labels from hidden states at every layer. Applying it to OCR2-3B (open-weight, Qwen3-based) would extend the mechanistic interpretability stack without retraining, complementing activation patching and sparse autoencoders.</dd>
       <dt>Action</dt>
       <dd>reproduce</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: doc_ai</p>
 </article><article class="item "
          data-source="arxiv"
-         data-score="18">
+         data-score="22">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 5 = 18 (this view's weighting)">18</span>
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 5 = 22 (this view's weighting)">22</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2606.08777" target="_blank" rel="nofollow noopener noreferrer">How Many Counterfactuals Does It Take? Probing VLM Hallucinations Through Circuits and Causal Effects (arXiv 2606.08777)</a>
+    <a href="https://arxiv.org/abs/2608.27417" target="_blank" rel="nofollow noopener noreferrer">Retrieval Heads Meet Vision: Uncovering How VLMs Locate and Extract Visual Information</a>
   </p>
-  <p class="item-summary">Circuit-based causal analysis of VLM hallucinations using counterfactual interventions; localizes hallucination sources to specific model components.</p>
+  <p class="item-summary">Visual Retrieval Heads (VRHs, ~1.7-2.6% of heads) causally govern text-to-region grounding across 11 VLMs; masking top 20 drops grounding accuracy by up to 80 points.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct product implication. If the circuit-localization method extends to document VLMs, it could inform targeted fine-tuning on phantom-row and structural hallucination modes.</dd>
+      <dd>A small, causally necessary head subset controls all visual grounding in tested VLMs. Disrupting these heads is a candidate mechanism for phantom-row generation in OCR-3, where a table row appears ungrounded in the source image.</dd>
       <dt>Research</dt>
-      <dd>Directly extends the team&#39;s existing mechanistic interpretability stack (activation patching, causal scrubbing). The counterfactual-circuit framing provides a complementary localization method to logit lens and sparse autoencoders. Overlap with arXiv 2605.22902 (transcoder-based hallucination prediction, raised in prior builds) suggests a converging circuit-attribution research front.</dd>
+      <dd>The unified head-scoring framework spans 11 VLMs and 5 referring-expression benchmarks. Running the VRH identification protocol on OCR2-3B alongside the OCR-heads method from arXiv 2609.18823 would produce a two-piece circuit map (what-heads vs. where-heads) for the team&#39;s hallucination interpretability work.</dd>
       <dt>Action</dt>
-      <dd>read in week</dd>
+      <dd>reproduce</dd>
     </dl>
   </div>
 </article><article class="item "
@@ -396,15 +161,15 @@
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2602.11824" target="_blank" rel="nofollow noopener noreferrer">Revis: Sparse Latent Steering to Mitigate Object Hallucination in Large Vision-Language Models (arXiv 2602.11824)</a>
+    <a href="https://arxiv.org/abs/2609.17327" target="_blank" rel="nofollow noopener noreferrer">Vroom-Vroom at SHROOM-Visions 2026: A Multi-Judge Committee for Detecting Hallucinated Spans in Vision-Language Outputs</a>
   </p>
-  <p class="item-summary">Sparse latent steering vectors reduce object hallucinations in VLMs without fine-tuning; inference-time intervention on residual stream.</p>
+  <p class="item-summary">Multi-judge majority voting ensemble ranks first in 3/4 languages at SHROOM-Visions 2026; OCR is a distinct hallucination category in the five-class taxonomy.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>An inference-time hallucination mitigation method that does not require fine-tuning is lower-cost to deploy than RL or SFT approaches. Applicable to OCR-3 or OCR2-3B as a runtime quality layer, particularly for structural hallucination modes.</dd>
+      <dd>No direct product implication; the shared task evaluates general VQA and captioning contexts, not document extraction specifically.</dd>
       <dt>Research</dt>
-      <dd>Steering vectors are already in the team&#39;s methodology (context file). Revis extends this to sparse latent vectors with a principled selection criterion. Comparison against the team&#39;s existing steering-vector ablations would establish whether the sparse formulation improves on dense steering in document contexts.</dd>
+      <dd>Multi-judge majority voting across diverse fine-tuned VLMs outperforms single-model detection and is robust to annotation disagreement. The five-class taxonomy (invention, mischaracterization, OCR, miscounting, other) treats OCR as a named hallucination category, providing a classification scheme the team could adopt for structured OCR hallucination benchmarking.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
@@ -421,28 +186,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">September 1-4 saw Fable 5.1, Gemini 3.8 Flash, and GPT-6 Astra launch with no IDP Leaderboard or ParseBench scores. Is the IDP Leaderboard team queuing evaluation jobs for these models, or waiting for labs to self-submit?</p>
-    <p class="question-context">Three frontier models with confirmed image/PDF input capability now appear in customer comparisons without IDP Leaderboard scores. Each absent score is a gap customers use when evaluating OCR-3 against general-purpose alternatives. API access for all three is publicly available. Proactive evaluation would raise the leaderboard from 29 to 32+ models.</p>
+    <p class="question-text">Should the build agent prioritize SHROOM-Visions 2026 workshop papers as a batch, given that multiple submissions (arXiv 2609.10244, 2609.17327, 2608.29974) have now appeared from the same shared task and collectively benchmark VLM hallucination detection methods?</p>
+    <p class="question-context">Each paper has been surfaced individually across separate builds without linking them as a connected research event. Treating SHROOM-Visions as a trackable venue (co-located with EMNLP 2026) would allow the team to assess the collective state of VLM hallucination detection in one view rather than piecemeal.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Mistral Agentic Search adds five-operation document retrieval (search, open, navigate, read, grep) on top of Mistral OCR 4.x. Does this compete with Nanonets&#39; /chunk and /vqa endpoints, or is it positioned at a different customer segment (enterprise search vs. structured extraction)?</p>
-    <p class="question-context">Agentic Search is not an OCR-endpoint replacement — Mistral explicitly positions it as a retrieval layer above extraction. But if Nanonets&#39; /chunk and /vqa are used for retrieval-oriented workflows, the competitive surface is wider than OCR benchmark comparisons capture. The FinanceBench improvement (26.7%→86%) is in a document segment Nanonets targets.</p>
+    <p class="question-text">arXiv 2609.18823 identifies OCR heads in Qwen3-VL-8B; since Nanonets OCR2-3B is also Qwen3-based and open-weight, does the team have interest in running the verbalization lens protocol on OCR2-3B to characterize its OCR computation graph?</p>
+    <p class="question-context">The verbalization lens is training-free and requires only inference. OCR2-3B&#39;s smaller scale makes it tractable for mechanistic experiments. A positive result would be the first published circuit-level characterization of a Nanonets model and could anchor the hallucination research program.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Reducto r-1 prices at $10/1,000 pages ($0.01/page) all-in, with explicit &#39;single-model replacement for multi-tool stacks&#39; positioning. What is OCR-3&#39;s current production price at comparable page volumes, and does r-1&#39;s economics put any specific customer tier at direct risk?</p>
-    <p class="question-context">r-1 has been in preview since September 1 with $5,000 in free evaluation credits. Without knowing OCR-3&#39;s published or negotiated page-level pricing, this build cannot assess whether r-1&#39;s pricing is a direct threat to a specific customer segment or only a long-tail positioning play. This is a new question; the prior builds asked whether a comparison run had been started, not about pricing competitive risk.</p>
+    <p class="question-text">The token-pruning provenance audit (arXiv 2608.00077) is training-free and post-hoc; does OCR-3&#39;s production inference stack include any token-reduction or KV-cache compression that could inadvertently drop OCR evidence tokens without accuracy-visible signal?</p>
+    <p class="question-context">The paper shows that standard accuracy metrics on the pruned model can remain flat while the proportion of answers lacking direct token-origin provenance increases. If OCR-3 uses token pruning for cost or latency, this is a silent correctness risk on high-stakes extraction workflows.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">HunyuanOCR-1.5 open-sources a complete verl-based RL training stack for OCR-specialized VLMs (github.com/Tencent-Hunyuan/HunyuanOCR). Does the team&#39;s current training pipeline include RL post-SFT, and if not, would this public reference reduce the cost of adding it to OCR2-3B fine-tuning?</p>
-    <p class="question-context">This is the third build cycle with a GRPO/RL paper directly applicable to OCR training. The HunyuanOCR-1.5 stack is the most complete public reference available: SFT → GRPO → verl RL, all open-sourced. OCR2-3B is small enough to run this without OCR-3-scale compute. If the team&#39;s training pipeline already includes RL, this question can be marked resolved.</p>
+    <p class="question-text">This build&#39;s entire item set comes from the vlm_research axis; with CLI sources failing for 36+ consecutive builds and WebSearch fallback yielding only 4 new items this cycle, should the build be paused or converted to a weekly schedule until the egress allowlist is repaired?</p>
+    <p class="question-context">The seen.json now contains 1,003 entries accumulated from WebSearch fallback builds. The remaining new items per build is declining as the search space is exhausted. Running a 6-hour cadence to produce 4 items per edition may not justify the compute and storage overhead compared to a daily or weekly cadence with richer coverage.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Kimi K3 (Moonshot AI, 2.8T params) is the current OmniDocBench v1.5 leader at 91.1%, above OCR-3&#39;s published 90.5. Should Kimi K3 be added to data/nanonets_context.md as a competitive monitoring entry, and does the team have context on whether its OmniDocBench score reflects extraction capability or general VLM strength?</p>
-    <p class="question-context">Kimi K3 is a general-purpose frontier model, not an OCR specialist. Its OmniDocBench lead may reflect broad VLM capability rather than structured extraction performance. If OCR-3 leads on extraction-specific tasks while trailing on general VLM benchmarks, the two are not directly comparable — but the gap is visible to customers in benchmark dashboards. A context entry would let future builds score and frame Kimi K3 releases consistently.</p>
+    <p class="question-text">The Vroom-Vroom paper (arXiv 2609.17327) uses a five-class hallucination taxonomy including an explicit OCR category. Does the team&#39;s current hallucination evaluation framework distinguish OCR-type hallucinations (incorrect text transcription) from structural hallucinations (phantom rows, mis-attributed fields) as separate categories?</p>
+    <p class="question-context">If the team uses a coarser taxonomy internally, adopting the SHROOM-Visions five-class scheme (or a document-specific extension) would allow cross-benchmark comparisons with the growing body of literature using this taxonomy, and would make research publications easier to position.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -454,7 +219,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-17T00:00:00+00:00
+    sources covered:     · failed: 4 · built at 2026-09-17T06:10:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

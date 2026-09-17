@@ -12201,3 +12201,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-17T06:10:00+00:00 (audit: partial)
+
+### Q: Should the build agent prioritize SHROOM-Visions 2026 workshop papers as a batch, given that multiple submissions (arXiv 2609.10244, 2609.17327, 2608.29974) have now appeared from the same shared task and collectively benchmark VLM hallucination detection methods?
+
+**Context:** Each paper has been surfaced individually across separate builds without linking them as a connected research event. Treating SHROOM-Visions as a trackable venue (co-located with EMNLP 2026) would allow the team to assess the collective state of VLM hallucination detection in one view rather than piecemeal.
+
+**Answer:** _add reply here_
+
+### Q: arXiv 2609.18823 identifies OCR heads in Qwen3-VL-8B; since Nanonets OCR2-3B is also Qwen3-based and open-weight, does the team have interest in running the verbalization lens protocol on OCR2-3B to characterize its OCR computation graph?
+
+**Context:** The verbalization lens is training-free and requires only inference. OCR2-3B's smaller scale makes it tractable for mechanistic experiments. A positive result would be the first published circuit-level characterization of a Nanonets model and could anchor the hallucination research program.
+
+**Answer:** _add reply here_
+
+### Q: The token-pruning provenance audit (arXiv 2608.00077) is training-free and post-hoc; does OCR-3's production inference stack include any token-reduction or KV-cache compression that could inadvertently drop OCR evidence tokens without accuracy-visible signal?
+
+**Context:** The paper shows that standard accuracy metrics on the pruned model can remain flat while the proportion of answers lacking direct token-origin provenance increases. If OCR-3 uses token pruning for cost or latency, this is a silent correctness risk on high-stakes extraction workflows.
+
+**Answer:** _add reply here_
+
+### Q: This build's entire item set comes from the vlm_research axis; with CLI sources failing for 36+ consecutive builds and WebSearch fallback yielding only 4 new items this cycle, should the build be paused or converted to a weekly schedule until the egress allowlist is repaired?
+
+**Context:** The seen.json now contains 1,003 entries accumulated from WebSearch fallback builds. The remaining new items per build is declining as the search space is exhausted. Running a 6-hour cadence to produce 4 items per edition may not justify the compute and storage overhead compared to a daily or weekly cadence with richer coverage.
+
+**Answer:** _add reply here_
+
+### Q: The Vroom-Vroom paper (arXiv 2609.17327) uses a five-class hallucination taxonomy including an explicit OCR category. Does the team's current hallucination evaluation framework distinguish OCR-type hallucinations (incorrect text transcription) from structural hallucinations (phantom rows, mis-attributed fields) as separate categories?
+
+**Context:** If the team uses a coarser taxonomy internally, adopting the SHROOM-Visions five-class scheme (or a document-specific extension) would allow cross-benchmark comparisons with the growing body of literature using this taxonomy, and would make research publications easier to position.
+
+**Answer:** _add reply here_
+
+---
