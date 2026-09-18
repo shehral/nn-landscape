@@ -12369,3 +12369,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-18T13:00:00+00:00 (audit: partial)
+
+### Q: Should OCR-3 or OCR2-3B be evaluated on LoopBench (the repetition-loop benchmark introduced in arXiv 2604.10044)?
+
+**Context:** LoopBench is the first benchmark designed specifically for attention-loop conditions — the same failure mode Nanonets has identified as 'repetition loops' in its research direction. The benchmark is inference-only and tractable on OCR2-3B. A result would anchor the team's loop-mitigation work to a public comparator.
+
+**Answer:** _add reply here_
+
+### Q: Should OCR-3 be submitted to the Dr.DocBench challenge before the October 10, 2026 deadline?
+
+**Context:** This question appeared in the previous build (2026-09-18T00:58) without a logged answer. The challenge closes in 22 days. Three prior competitive systems (PaddleOCR-VL-1.5, MinerU-VLM, Gemini 3.1 Pro) already have results. A late entry is still possible. The team's decision here would end this recurring question.
+
+**Answer:** _add reply here_
+
+### Q: Is Nanonets' internal table evaluation using semantic metrics or string-match metrics such as TEDS?
+
+**Context:** Two items this build (DISCO, Benchmarking PDF Parsers) independently show that TEDS-based evaluation tolerates phantom-row and cell-misassignment failures that semantic evaluation catches. If internal evaluations use TEDS, they may be systematically underreporting table accuracy gaps that manifest in production.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has failed for 40+ consecutive builds; all four sources blocked by proxy policy. A one-line status update — even 'under investigation, ETA unknown' — would end this recurring question.
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. This build found 11 new items via WebSearch fallback. Coverage is declining as the WebSearch result space is progressively exhausted. Each build without CLI access reduces the dashboard's competitive and frontier coverage.
+
+**Answer:** _add reply here_
+
+### Q: Should FinDocBench (introduced by LingDT-VL-OCR, arXiv 2603.11044) be added to the IDP Leaderboard or benchmarking.nanonets.com evaluation suite?
+
+**Context:** FinDocBench targets financial PDF parsing with cross-page continuity and TOC structure metrics — gaps in OmniDocBench that matter directly for Nanonets' AP and contract verticals. Since Nanonets maintains the IDP Leaderboard, adding FinDocBench would make the leaderboard more authoritative for the financial-document customer segment while naturally positioning OCR-3 on a benchmark where its vertical focus is an advantage.
+
+**Answer:** _add reply here_
+
+---
