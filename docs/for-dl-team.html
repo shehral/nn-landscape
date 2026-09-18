@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 17, 2026 · 19:01 UTC · 5 items scored</span>
+  <span class="built-at">Built Sep 18, 2026 · 00:58 UTC · 11 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,10 +53,11 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Three papers this build (HEAL, SAVOR, SAE-NOs) converge on localization-before-mitigation: identifying WHERE in the model computation hallucinations originate before applying any correction, rather than post-hoc output filtering.</li>
-    <li>HEAL and SAVOR both intervene at inference time without full retraining — HEAL via value-vector calibration, SAVOR via RL-tuned grounding. Training-free or lightweight-training mitigation has appeared in three of the last four builds&#39; top VLM papers.</li>
-    <li>Domain specificity emerges as a hard constraint: the hallucination detection paper (2609.11878) shows general-domain detectors fail (F1 0.52) on domain-shifted data, reinforcing a pattern visible across the last three builds&#39; NLP-hallucination papers.</li>
-    <li>This build&#39;s entire new item set is from the vlm_research axis. No competitive, doc_ai, or frontier items appear as new entries. This is the fifth consecutive WebSearch fallback build producing exclusively research-axis items; competitive and product coverage is running on stale cache.</li>
+    <li>Sub-2B parameter open-weight OCR VLMs are pushing OmniDocBench v1.6 scores above 96, materially above OCR-3&#39;s published 90.5 (benchmark version unconfirmed). TeleOCR (1.2B, 96.87), OvisOCR2 (0.9B, 96.58), and MinerU2.5-Pro (1.2B, 95.69) form a cluster of lightweight models that collectively challenge the value proposition of API-only large-MoE OCR services on accuracy alone.</li>
+    <li>Two direct competitors (Reducto and Extend) now maintain named Nanonets comparison/review pages, each framing Nanonets as finance-document-specialized with limitations on edge-case accuracy and agentic pipelines. This is a market-positioning signal: Nanonets is being used as the reference category by adjacent platforms building new AI-pipeline customers.</li>
+    <li>OCR evaluation is fragmenting into specialized axes: standard benchmark accuracy (OmniDocBench), physical-world robustness (Real5-OmniDocBench), RAG-pipeline quality (InduOCRBench / When Good OCR Is Not Enough), and expert-difficulty pages (Dr.DocBench). No single benchmark covers all four, meaning high scores on any one may not translate to the others.</li>
+    <li>Agentic document extraction platforms — LandingAI ADE Gen2 (Sep 9), Reducto r-1 (Sep 1), Nutrient Data Extraction API (Sep 10) — all launched in the first two weeks of September 2026, each emphasizing single-pass or agentic workflows, per-character or flat-rate pricing, and grounded citations. The pricing-and-architecture convergence suggests a commodity floor is forming in the API-document-extraction market.</li>
+    <li>EMNLP 2026&#39;s DocInsights workshop and Dr.DocBench challenge formalize difficulty-aware document parsing evaluation: pages are curated by inter-parser disagreement, filtering out the easy majority that all strong systems already solve. This methodology — sampling from the model disagreement frontier rather than the whole benchmark distribution — is an emerging evaluation standard distinct from population-level metrics.</li>
   </ul>
 </section>
 
@@ -65,144 +66,256 @@
     <h2>VLM research</h2>
 <article class="item "
          data-source="arxiv"
+         data-score="54">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 0 · frontier 1 · vlm_research 4 = 54 (this view's weighting)">54</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2603.24326" target="_blank" rel="nofollow noopener noreferrer">Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing</a>
+  </p>
+  <p class="item-summary">Hierarchical coarse-to-fine visual processing improves OCR VLM efficiency by routing high-resolution crops only where layout analysis flags complex content.</p>
+  <p class="secondary-axes">also: doc_ai</p>
+</article>  </div>
+  <div class="axis-col" data-axis="doc_ai">
+    <h2>Document AI</h2>
+<article class="item "
+         data-source="arxiv"
+         data-score="52">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 2 · frontier 0 · vlm_research 3 = 52 (this view's weighting)">52</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2603.04205" target="_blank" rel="nofollow noopener noreferrer">Real5-OmniDocBench: A Full-Scale Physical Reconstruction Benchmark for Robust Document Parsing in the Wild</a>
+  </p>
+  <p class="item-summary">Real5-OmniDocBench tests 1,355 OmniDocBench pages across 5 physical capture conditions to measure OCR robustness under real-world acquisition.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Document parsing products that score well on standard benchmarks may degrade significantly on physically-acquired documents (warped, photographed under poor illumination, skewed). Real5-OmniDocBench provides the first controlled attribution of degradation by capture condition, which is directly relevant for any OCR product marketed to customers who process scanned or mobile-captured documents.</dd>
+      <dt>Research</dt>
+      <dd>The benchmark&#39;s factor-wise degradation attribution — digital vs. each of five physical conditions, with identical GT annotations — would allow the team to quantify OCR-3 or OCR2-3B performance drops by capture condition rather than as a single aggregate score.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="52">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 2 · frontier 0 · vlm_research 3 = 52 (this view's weighting)">52</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://docinsights-workshop.github.io/docinsights-2026/" target="_blank" rel="nofollow noopener noreferrer">DocInsights 2026 Workshop + Dr.DocBench Challenge at EMNLP 2026 (runs to Oct 10)</a>
+  </p>
+  <p class="item-summary">DocInsights 2026 at EMNLP hosts Dr.DocBench Challenge: expert-level parsing of 4,514 pages across 52 domains where strong systems disagree. Ends Oct 10.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Dr.DocBench evaluates pages that PaddleOCR-VL-1.5, MinerU-VLM, and Gemini-3.1-pro-preview disagree on — a curated hard set that captures the long tail of real-world document difficulty. Submitting OCR-3 to this challenge would produce a leaderboard entry on a difficulty-aware evaluation that standard benchmarks exclude.</dd>
+      <dt>Research</dt>
+      <dd>The difficulty-aware sampling pipeline (retaining high inter-parser-disagreement pages) is a methodological contribution beyond the benchmark itself; the team&#39;s hallucination research could apply a similar inter-model-disagreement criterion to identify VLM failure modes that don&#39;t surface on agreement-dominated benchmark sets.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="50">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 1 · frontier 0 · vlm_research 3 = 50 (this view's weighting)">50</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2605.00911" target="_blank" rel="nofollow noopener noreferrer">When Good OCR Is Not Enough: Benchmarking OCR Robustness for Retrieval-Augmented Generation</a>
+  </p>
+  <p class="item-summary">ACL 2026 paper: high OCR WER/CER accuracy doesn&#39;t guarantee RAG retrieval performance; InduOCRBench covers 11 industrial document types.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>The paper&#39;s core finding — structural and semantic OCR errors cause retrieval failures even when character-error-rate is low — directly affects how Nanonets should position /parse and /extract outputs for RAG pipelines. Accuracy metrics on controlled benchmarks may understate failure rates in the retrieval context where customers actually use the outputs.</dd>
+      <dt>Research</dt>
+      <dd>InduOCRBench&#39;s 11 industrial document categories (extreme layouts, watermarked backgrounds, non-standard reading orders, tables with formulas) is a useful evaluation complement to IDP Leaderboard for assessing OCR output quality in downstream agent pipelines rather than extraction accuracy in isolation.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
          data-score="44">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 4 = 44 (this view's weighting)">44</span>
+          title="doc_ai 4 · competitive 2 · frontier 0 · vlm_research 2 = 44 (this view's weighting)">44</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.09206" target="_blank" rel="nofollow noopener noreferrer">MLLMs Hallucinate when Information Distribution Drifts in Synergy Heads</a>
+    <a href="https://arxiv.org/abs/2602.12247" target="_blank" rel="nofollow noopener noreferrer">ExtractBench: A Benchmark and Evaluation Methodology for Complex Structured Extraction</a>
   </p>
-  <p class="item-summary">HEAL traces MLLM hallucinations to information-distribution drift in cross-modal synergy heads, not to modality-specific head count.</p>
+  <p class="item-summary">ExtractBench introduces field-level evaluation methodology for complex structured extraction tasks beyond character accuracy metrics.</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="44">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 1 · frontier 0 · vlm_research 3 = 44 (this view's weighting)">44</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2604.02692" target="_blank" rel="nofollow noopener noreferrer">Parser-Oriented Structural Refinement for a Stable Layout Interface in Document Parsing</a>
+  </p>
+  <p class="item-summary">Structural refinement method stabilizes layout interface outputs for downstream parsers by enforcing block-order and type consistency constraints.</p>
+  <p class="secondary-axes">also: vlm_research</p>
+</article>  </div>
+  <div class="axis-col" data-axis="frontier">
+    <h2>Frontier</h2>
+<article class="item "
+         data-source="rss"
+         data-score="14">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 1 · frontier 3 · vlm_research 0 = 14 (this view's weighting)">14</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 60%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://thehackernews.com/2026/09/google-anthropic-and-openai-unveil.html" target="_blank" rel="nofollow noopener noreferrer">Google, Anthropic, and OpenAI unveil cyber AI models, safeguards, and access programs (Sep 18)</a>
+  </p>
+  <p class="item-summary">Gemini 3.8 Flash Cyber, GPT-6 Astra Daybreak Blue, and Fable 5.1/Mythos 5.1 Preparedness updates all target cybersecurity — no document extraction angle.</p>
+</article>  </div>
+  <div class="axis-col" data-axis="competitive">
+    <h2>Competitive</h2>
+<article class="item "
+         data-source="github_trending"
+         data-score="56">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 5 · competitive 5 · frontier 0 · vlm_research 2 = 56 (this view's weighting)">56</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">github_trending</span>
+  </div>
+  <p class="item-title">
+    <a href="https://huggingface.co/StarDoc-AI/TeleOCR" target="_blank" rel="nofollow noopener noreferrer">TeleOCR: NaviDC-OCR renamed; 96.87 on OmniDocBench v1.6, ICDAR 2026 Sci-ImageMiner #1</a>
+  </p>
+  <p class="item-summary">NaviDC-OCR rebranded TeleOCR (Sep 10); 1.2B open-weight VLM scores 96.87 OmniDocBench v1.6, ICDAR 2026 first.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>The synergy-head mechanism provides a circuit-level explanation for structural hallucinations: phantom rows and mis-attributed fields may arise when specific cross-modal attention heads lose their factual-grounding signal. Diagnostic runs on OCR2-3B could localize which heads drive table-level failures.</dd>
+      <dd>TeleOCR&#39;s 96.87 on OmniDocBench v1.6 extends the gap above OCR-3&#39;s published 90.5 — a benchmark customers cite when comparing models. At 1.2B parameters it is deployable on commodity hardware, which widens the addressable self-hosting segment against which OCR-3&#39;s API-only positioning competes.</dd>
       <dt>Research</dt>
-      <dd>HEAL&#39;s causal noise intervention protocol is adjacent to the team&#39;s activation patching and causal scrubbing methods. The key addition is the counterfactual Difference-in-Differences framing for head-type categorization; running it on OCR2-3B would yield a head-level complement to the existing layer-level diagnostic stack.</dd>
+      <dd>The model&#39;s unified framework for digital and camera-captured documents (a key design axis) is benchmarked on Wild OmniDocBench (88.53), a distribution that tests robustness beyond controlled scan conditions. Worth reading to assess whether the dual-domain training approach transfers to structured-extraction tasks.</dd>
       <dt>Action</dt>
-      <dd>reproduce</dd>
+      <dd>monitor</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: doc_ai</p>
 </article><article class="item "
-         data-source="arxiv"
-         data-score="42">
+         data-source="rss"
+         data-score="46">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 4 = 42 (this view's weighting)">42</span>
+          title="doc_ai 5 · competitive 4 · frontier 0 · vlm_research 1 = 46 (this view's weighting)">46</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
     </span>
-    <span class="item-source">arxiv</span>
+    <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2509.03738" target="_blank" rel="nofollow noopener noreferrer">Mechanistic Interpretability with Sparse Autoencoder Neural Operators</a>
+    <a href="https://www.marktechpost.com/2026/09/09/landingai-releases-agentic-document-extraction-gen2-with-dpt-3-pro-and-dpt-3-verity/" target="_blank" rel="nofollow noopener noreferrer">LandingAI releases Agentic Document Extraction Gen2 with DPT-3 Pro and DPT-3 Verity</a>
   </p>
-  <p class="item-summary">SAE-NOs parameterize interpretability features as Fourier-domain functions, capturing spatial structure standard SAEs miss in VLMs.</p>
+  <p class="item-summary">LandingAI ships ADE Gen2 (Sep 9) with DPT-3 Pro/Verity; prices per output character; positions as layout-first agentic document stack.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Standard SAEs applied to OCR-3 activations may miss spatially-varying features. SAE-NOs would capture how hallucination-prone concepts vary across token positions within table cells or document regions.</dd>
+      <dd>LandingAI&#39;s ADE Gen2 exposes Parse and Extract endpoints with per-output-character pricing and grounded citations — an API surface that overlaps directly with OCR-3&#39;s /parse and /extract. DPT-3 Verity is priced at roughly 0.3x DPT-3 Pro credits per page plus 0.2x per 1,000 characters, making it structurally competitive on cost for high-volume extraction.</dd>
       <dt>Research</dt>
-      <dd>The function-space SAE approach is compatible with the team&#39;s existing SAE stack. OCR2-3B&#39;s smaller scale makes it tractable for an SAE-NO ablation that would extend the interpretability stack with positional/functional concept decomposition.</dd>
+      <dd>DPT-3 Pro&#39;s layout-first approach (block-type detection before word recognition, reading-order return) is architecturally similar to the layout-as-graph paradigm appearing in the research literature. No benchmark scores against IDP Leaderboard or OmniDocBench confirmed; monitoring for evaluation results.</dd>
       <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="36">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 3 = 36 (this view's weighting)">36</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.16601" target="_blank" rel="nofollow noopener noreferrer">SAVOR: Self-Aware Visual Grounding via Confidence-Calibrated Reinforcement Learning for Multimodal Hallucination Mitigation</a>
-  </p>
-  <p class="item-summary">SAVOR applies confidence-calibrated RL to improve visual grounding in VLMs, reducing hallucinations at ICONIP 2026.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Confidence calibration during RL post-training could reduce confident-but-wrong field extractions in structured document outputs, where miscalibrated confidence on visually similar fields is a known failure mode in document VQA.</dd>
-      <dt>Research</dt>
-      <dd>The confidence-calibrated RL approach is a peer-reviewed complement to the team&#39;s SFT line and to the HunyuanOCR-1.5 verl/GRPO stack already in context. The ICONIP 2026 venue confirms the method cleared peer review; implementation details in the paper would allow a direct comparison to existing mitigation protocols.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
+      <dd>monitor</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: doc_ai</p>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="30">
+</article><article class="item hostility"
+         data-source="rss"
+         data-score="16">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 3 = 30 (this view's weighting)">30</span>
+          title="doc_ai 1 · competitive 5 · frontier 0 · vlm_research 0 = 16 (this view's weighting)">16</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+      <span style="height: 20%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
-    <span class="item-source">arxiv</span>
-  </div>
+    <span class="item-source">rss</span>
+<span title="competitor commentary; descriptive framing">⚐</span>  </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2509.10345" target="_blank" rel="nofollow noopener noreferrer">Towards Understanding Visual Grounding in Vision-Language Models</a>
+    <a href="https://llms.reducto.ai/reducto-vs-nanonets" target="_blank" rel="nofollow noopener noreferrer">Reducto vs Nanonets: An AI-First Comparison for Enterprise Document Intelligence</a>
   </p>
-  <p class="item-summary">Systematic analysis of visual grounding mechanisms in VLMs; identifies conditions where token-level visual-to-text routing breaks down.</p>
+  <p class="item-summary">Reducto&#39;s own comparison page positions Nanonets as finance-document-focused with HITL annotation dependencies; recommends Reducto for agentic pipelines.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Grounding breakdown conditions likely overlap with cross-page table and multi-column layout failure modes in production document extraction; the analysis provides a diagnostic vocabulary for which input types most reliably trigger misgrounding in document VLMs.</dd>
+      <dd>Reducto&#39;s comparison page characterizes Nanonets as specialized in financial document automation (invoices, POs, receipts) and cites HITL annotation requirements for non-standard documents and US-based multi-tenant cloud as limitations. The page concludes with a &#39;run both&#39; recommendation — Nanonets for established workflow automation, Reducto for new agentic pipelines — which positions Reducto as the default for net-new AI work.</dd>
       <dt>Research</dt>
-      <dd>The grounding mechanism analysis extends the hallucination taxonomy at the token-routing level, which is complementary to the layer-level and head-level diagnostics from the team&#39;s existing stack. Findings could guide which document layout types to over-represent in OCR fine-tuning data.</dd>
+      <dd>No research implication. This is competitive marketing content, not technical analysis.</dd>
       <dt>Action</dt>
-      <dd>read in week</dd>
+      <dd>monitor</dd>
     </dl>
   </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="22">
+</article><article class="item hostility"
+         data-source="rss"
+         data-score="14">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 2 = 22 (this view's weighting)">22</span>
+          title="doc_ai 1 · competitive 4 · frontier 0 · vlm_research 0 = 14 (this view's weighting)">14</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+      <span style="height: 20%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
-    <span class="item-source">arxiv</span>
-  </div>
+    <span class="item-source">rss</span>
+<span title="competitor commentary; descriptive framing">⚐</span>  </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.11878" target="_blank" rel="nofollow noopener noreferrer">Domain-Specific Hallucination Detection in Large Language Models</a>
+    <a href="https://www.extend.ai/resources/nanonets-review-features-pricing-alternatives" target="_blank" rel="nofollow noopener noreferrer">Nanonets Review: Pricing &amp; Alternatives Mar 2026 (Extend)</a>
   </p>
-  <p class="item-summary">DeBERTa+MC-Dropout+calibration pipeline achieves F1=0.915 on HaluEval; cross-domain transfer drops to F1=0.52 without domain-matched pretraining.</p>
+  <p class="item-summary">Extend.ai competitor review of Nanonets identifies accuracy gaps on edge cases and positions Extend as the alternative for production document processing.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>The cross-domain transfer failure is directly relevant to doc-AI: a general-domain hallucination detector trained on QA or summarization will not reliably generalize to document extraction. This validates the need for domain-matched detection rather than borrowing a general-purpose model.</dd>
+      <dd>Extend.ai&#39;s review page names Nanonets directly as a comparison target, listing accuracy limitations on edge cases and positioning Extend as the alternative for complex, real-world document processing. This is a standard competitive SEO pattern — both Reducto and Extend now maintain named Nanonets comparison pages, indicating Nanonets is used as a reference category for the document-AI market.</dd>
       <dt>Research</dt>
-      <dd>The PubMedBERT domain-matching result (F1 0.63 vs 0.52 for cross-domain) reinforces the case for training hallucination detectors directly on document-extraction pairs rather than repurposing existing open-domain models.</dd>
+      <dd>No research implication. Competitor-authored review content without disclosed methodology.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
 </article>  </div>
-  <div class="axis-col" data-axis="doc_ai">
-    <h2>Document AI</h2>
-      <p class="item-summary">No top-N items this build.</p>
-  </div>
-  <div class="axis-col" data-axis="frontier">
-    <h2>Frontier</h2>
-      <p class="item-summary">No top-N items this build.</p>
-  </div>
-  <div class="axis-col" data-axis="competitive">
-    <h2>Competitive</h2>
-      <p class="item-summary">No top-N items this build.</p>
-  </div>
 </section>
 
 <aside class="ai-partner" aria-label="Questions from your AI partner">
@@ -214,28 +327,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">HEAL (arXiv 2609.09206) finds hallucinations trace to information-distribution drift in synergy heads, not to modality-specific head counts. Does the team&#39;s current activation-patching protocol isolate synergy heads specifically, or does it ablate all cross-modal heads?</p>
-    <p class="question-context">If the existing protocol ablates all cross-modal heads indiscriminately, it will average over synergy and non-synergy heads, diluting the signal. Re-running head classification under HEAL&#39;s causal-noise-intervention protocol on OCR2-3B would take one inference pass per head and requires no retraining.</p>
+    <p class="question-text">Should LandingAI (ADE Gen2 / DPT-3 Pro + Verity, September 9, 2026) be added to data/nanonets_context.md as a competitive monitoring entry?</p>
+    <p class="question-context">LandingAI exposes Parse and Extract endpoints with per-output-character pricing and source-grounded citations — an API surface that directly overlaps OCR-3&#39;s /parse and /extract. DPT-3 has no confirmed IDP Leaderboard or OmniDocBench scores yet, but is actively marketed to the same enterprise-agentic-pipeline customer segment. Without a context entry, each build evaluates LandingAI from scratch.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">This build again contains only vlm_research items — no competitive, doc_ai, or frontier items are new. Should the WebSearch fallback query set include product-oriented searches (&#39;document extraction API launch&#39;, &#39;OCR benchmark new result&#39;) to restore competitive coverage?</p>
-    <p class="question-context">The CLI ingest failure (37th+ consecutive build) eliminates arxiv, HN, RSS, and GitHub trending as live sources. WebSearch fallback is driven by research-oriented keywords, producing exclusively academic papers. The competitive and frontier axes have had no new items in five or more consecutive builds.</p>
+    <p class="question-text">Has OCR-3 been evaluated on OmniDocBench v1.6 (released April 10, 2026)? The published 90.5 score may be on the pre-MGAM v1.5.</p>
+    <p class="question-context">TeleOCR (1.2B, 96.87), OvisOCR2 (0.9B, 96.58), and MinerU2.5-Pro (95.69) all report v1.6 scores. OCR-3 launched April 2, eight days before the v1.6 methodology update. A one-line annotation in nanonets_context.md — &#39;OCR-3 90.5 is on OmniDocBench v1.5&#39; — would end this recurring question and allow future builds to accurately frame the benchmark-version gap.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">CLI ingest has failed for 37+ consecutive builds: all four sources blocked by proxy policy denial. The previous build (12:57 UTC today) also had no WebSearch; this build recovered WebSearch but found only 5 new items. Is the egress allowlist fix in progress?</p>
-    <p class="question-context">Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. The questions_for_team.md file now exceeds 13,000 lines primarily from this recurring infrastructure question. A one-line status update here would end the recurrence.</p>
+    <p class="question-text">Should the team evaluate OCR-3 on Dr.DocBench before October 10, 2026 (challenge deadline)?</p>
+    <p class="question-context">Dr.DocBench curates 4,514 pages where strong systems (PaddleOCR-VL-1.5, MinerU-VLM, Gemini-3.1-pro) disagree, covering 52 BISAC subject domains. A leaderboard entry on this difficulty-aware benchmark would complement the IDP Leaderboard and provide a defensible positioning point on expert-level structured parsing. The challenge closes Oct 10, 2026; $3,000 in prizes.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">SAE-NOs (arXiv 2509.03738) parameterize SAE features as functions in Fourier space, capturing spatially-varying concepts that fixed-dimension SAEs miss. Combined with the prior unanswered question about Transcoders (arXiv 2605.22902) and OCR heads (arXiv 2609.18823), three complementary mechanistic tools have now appeared across six builds without a recorded evaluation decision. Should these be batched into a single &#39;interpretability tools sprint&#39; against OCR2-3B?</p>
-    <p class="question-context">All three methods are training-free on the inference side and tractable on OCR2-3B&#39;s scale. Running them in a single sprint would produce a comparative view of what each tool reveals about the model&#39;s OCR computation graph, rather than evaluating them piecemeal or not at all.</p>
+    <p class="question-text">Reducto&#39;s and Extend&#39;s named Nanonets comparison pages characterize Nanonets as finance-document-focused with HITL dependencies on edge cases. Is this framing accurate, and if not, should it be addressed in public documentation or benchmark positioning?</p>
+    <p class="question-context">Both pages are SEO-optimized and rank in searches for Nanonets alternatives. The &#39;finance-document-focused&#39; characterization may undercount OCR-3&#39;s general-purpose extraction capability. If OCR-3 handles non-financial documents well, a public benchmark comparison against the document types the competitor pages flag as weak points would be the most direct counter to this framing.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Is OCR-3&#39;s published OmniDocBench score of 90.5 from v1.5, v1.6, or the unversioned original?</p>
-    <p class="question-context">This question has appeared every build since July without a logged answer. MiniMax M3 (91.6%), Kimi K3 (91.1%), NaviDC-OCR (96.87%), and MinerU2.5-Pro (95.69%) all report v1.6 scores. OCR-3 launched April 2, eight days before the v1.6 MGAM update on April 10. A one-line annotation in nanonets_context.md — &#39;OCR-3 90.5 is on OmniDocBench v1.5&#39; — would end the recurrence.</p>
+    <p class="question-text">CLI ingest has failed for 38+ consecutive builds. The egress allowlist questions have appeared in this file since July without a logged answer. A one-line status update here — even &#39;under investigation, ETA unknown&#39; — would prevent this question recurring every build.</p>
+    <p class="question-context">Required allowlist: export.arxiv.org, hn.algolia.com, and all RSS hosts in data/sources.yaml. This build used WebSearch fallback to gather 11 items. Coverage is declining as WebSearch returns fewer unseen items per build. A fix or a deliberate policy change (move to weekly schedule; add static corpus fallback) is needed to restore the build&#39;s value.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -247,7 +360,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered: arxiv    · failed: 3 · built at 2026-09-17T19:01:50.684798+00:00
+    sources covered:     · failed: 4 · built at 2026-09-18T00:58:47+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

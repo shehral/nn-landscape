@@ -12301,3 +12301,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-18T00:58:47+00:00 (audit: partial)
+
+### Q: Should LandingAI (ADE Gen2 / DPT-3 Pro + Verity, September 9, 2026) be added to data/nanonets_context.md as a competitive monitoring entry?
+
+**Context:** LandingAI exposes Parse and Extract endpoints with per-output-character pricing and source-grounded citations — an API surface that directly overlaps OCR-3's /parse and /extract. DPT-3 has no confirmed IDP Leaderboard or OmniDocBench scores yet, but is actively marketed to the same enterprise-agentic-pipeline customer segment. Without a context entry, each build evaluates LandingAI from scratch.
+
+**Answer:** _add reply here_
+
+### Q: Has OCR-3 been evaluated on OmniDocBench v1.6 (released April 10, 2026)? The published 90.5 score may be on the pre-MGAM v1.5.
+
+**Context:** TeleOCR (1.2B, 96.87), OvisOCR2 (0.9B, 96.58), and MinerU2.5-Pro (95.69) all report v1.6 scores. OCR-3 launched April 2, eight days before the v1.6 methodology update. A one-line annotation in nanonets_context.md — 'OCR-3 90.5 is on OmniDocBench v1.5' — would end this recurring question and allow future builds to accurately frame the benchmark-version gap.
+
+**Answer:** _add reply here_
+
+### Q: Should the team evaluate OCR-3 on Dr.DocBench before October 10, 2026 (challenge deadline)?
+
+**Context:** Dr.DocBench curates 4,514 pages where strong systems (PaddleOCR-VL-1.5, MinerU-VLM, Gemini-3.1-pro) disagree, covering 52 BISAC subject domains. A leaderboard entry on this difficulty-aware benchmark would complement the IDP Leaderboard and provide a defensible positioning point on expert-level structured parsing. The challenge closes Oct 10, 2026; $3,000 in prizes.
+
+**Answer:** _add reply here_
+
+### Q: Reducto's and Extend's named Nanonets comparison pages characterize Nanonets as finance-document-focused with HITL dependencies on edge cases. Is this framing accurate, and if not, should it be addressed in public documentation or benchmark positioning?
+
+**Context:** Both pages are SEO-optimized and rank in searches for Nanonets alternatives. The 'finance-document-focused' characterization may undercount OCR-3's general-purpose extraction capability. If OCR-3 handles non-financial documents well, a public benchmark comparison against the document types the competitor pages flag as weak points would be the most direct counter to this framing.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has failed for 38+ consecutive builds. The egress allowlist questions have appeared in this file since July without a logged answer. A one-line status update here — even 'under investigation, ETA unknown' — would prevent this question recurring every build.
+
+**Context:** Required allowlist: export.arxiv.org, hn.algolia.com, and all RSS hosts in data/sources.yaml. This build used WebSearch fallback to gather 11 items. Coverage is declining as WebSearch returns fewer unseen items per build. A fix or a deliberate policy change (move to weekly schedule; add static corpus fallback) is needed to restore the build's value.
+
+**Answer:** _add reply here_
+
+---
