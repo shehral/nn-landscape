@@ -12335,3 +12335,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-18T07:00:42.777224+00:00 (audit: partial)
+
+### Q: Should Cohere be added to data/nanonets_context.md as a competitive monitoring entry?
+
+**Context:** Cohere Parse 5 (parse-v5.0, August 27, 2026) exposes Parse/Extract endpoints in Markdown+bounding-box format at $1.50/1,000 pages — identical price point to OCR-3. Cohere is a well-capitalized enterprise NLP vendor now directly competing on the same API surface. Without a context entry, each build evaluates Cohere from scratch.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has failed for 39+ consecutive builds; all four sources are blocked by proxy policy. A one-line status update — even 'under investigation, ETA unknown' — would end this recurring question.
+
+**Context:** Required allowlist: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. This build used WebSearch fallback to surface 6 new items. Coverage is declining as the WebSearch result space is progressively exhausted.
+
+**Answer:** _add reply here_
+
+### Q: Has OCR-3's OmniDocBench score of 90.5 been confirmed as v1.5 or v1.6?
+
+**Context:** OCR-3 launched April 2, 2026 — eight days before OmniDocBench v1.6's MGAM methodology update on April 10. MonkeyOCRv2 and Cohere Parse 5 are evaluated on v1.6. A one-line annotation in nanonets_context.md ('OCR-3 90.5 is on OmniDocBench v1.5') would end this recurring question and allow accurate benchmark-version framing.
+
+**Answer:** _add reply here_
+
+### Q: Should the SCORE evaluation framework (arXiv 2509.19345) be applied to OCR-3 and OCR2-3B as a cross-generational hallucination comparison?
+
+**Context:** SCORE's token-level hallucination-vs-omission diagnostic and spatial-tolerance table evaluation directly map to the team's phantom-row research axis. Running both models on SCORE's benchmark suite would yield structured evidence on whether hallucination rates changed between generations — a dataset the current evaluation setup cannot produce.
+
+**Answer:** _add reply here_
+
+### Q: Does MonkeyOCRv2's joint image-to-text generation + pixel-level document reconstruction pretraining strategy have applicability to OCR2-3B fine-tuning?
+
+**Context:** MonkeyOCRv2 achieves SOTA on MDPBench with a 0.7B model (11x smaller encoder than 3B-class comparisons). The pixel-level reconstruction objective preserves character strokes and layout details in a way that pure next-token prediction does not. If this objective can be added as a fine-tuning signal, it may improve OCR2-3B's structural fidelity on document parsing tasks.
+
+**Answer:** _add reply here_
+
+---
