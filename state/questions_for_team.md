@@ -12403,3 +12403,25 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-18T19:02:08+00:00 (audit: partial)
+
+### Q: Has OCR-3 been submitted to OCRBench v2?
+
+**Context:** The 2026 OCRBench v2 leaderboard currently leads with Qwen3 VL 32B Thinking at 68.4% across 12 models. Standard benchmarks appear saturated (>90% for leading models); OCRBench v2 is emerging as a harder, more defensible public accuracy signal. An OCR-3 submission would clarify its real-world complex-document positioning.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has failed for 41+ consecutive builds; all four sources blocked by proxy policy. A one-line status update — even 'under investigation, ETA unknown' — would end this recurring question.
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. This build found only 3 new items via WebSearch fallback, all arXiv papers from Jan–May 2026. WebSearch coverage is nearing exhaustion for this date range — fewer new items per build each cycle.
+
+**Answer:** _add reply here_
+
+### Q: Should the WebSearch fallback query set rotate toward September 2026 product and competitive news rather than exclusively academic searches?
+
+**Context:** This build found only arXiv-origin research papers. The competitive and frontier axes have had minimal new coverage for several consecutive builds. Adding product-oriented queries (new OCR API releases, pricing changes, competitive funding rounds, IDP Leaderboard updates) would restore coverage that the CLI HN and RSS sources normally provide.
+
+**Answer:** _add reply here_
+
+---

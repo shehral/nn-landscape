@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 18, 2026 · 13:00 UTC · 11 items scored</span>
+  <span class="built-at">Built Sep 18, 2026 · 19:02 UTC · 3 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,10 +53,9 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Table extraction evaluation is shifting from string-match metrics (TEDS) to semantic evaluation: three builds this week surface benchmarks that expose failures TEDS tolerates. The implication is that published TEDS-based leaderboard positions understate real-world accuracy gaps.</li>
-    <li>Inference-time and training-time interventions for repetition loops are converging on the KV cache as the leverage point: LoopGuard prunes the cache to break attention loops, while ReLoop&#39;s closed-loop training embeds a verification pass before the KV cache is finalized.</li>
-    <li>Domain-specific document benchmarks are proliferating: FinDocBench (finance, cross-page continuity), Dr.DocBench (expert-level difficulty-aware), and DISCO (multi-domain heterogeneous) each address gaps in OmniDocBench that matter for enterprise procurement — but none yet includes OCR-3.</li>
-    <li>EMNLP 2026 DocInsights workshop is emerging as the academic venue for document AI research, co-hosting Dr.DocBench and related challenges — a signal that document AI is gaining dedicated workshop status at a top-tier NLP venue, following CVPR acceptance of OmniDocBench and ParseBench.</li>
+    <li>Benchmark fragmentation is accelerating: OCRBench v2, MPDocBench-Parse, VISTA-Bench, and Dr.DocBench all released in 2026 measure orthogonal failure modes that standard DocVQA/TextVQA benchmarks do not expose, making benchmark selection a strategic decision.</li>
+    <li>Models claiming &gt;90% on saturated standard benchmarks score below 50% on OCRBench v2, widening the gap between reported accuracy and real-world complex-document performance.</li>
+    <li>The modality gap identified by VISTA-Bench — VLMs degrading when the same semantic content is rendered as image text — aligns with the team&#39;s structural hallucination research, suggesting a shared perceptual mechanism underlying multiple hallucination subtypes.</li>
   </ul>
 </section>
 
@@ -65,139 +64,54 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="62">
+         data-score="63">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 5 · competitive 3 · frontier 0 · vlm_research 3 = 62 (this view's weighting)">62</span>
+          title="doc_ai 4 · competitive 3 · frontier 2 · vlm_research 3 = 63 (this view's weighting)">63</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 60%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2603.18652" target="_blank" rel="nofollow noopener noreferrer">Beyond String Matching: Semantic Evaluation of PDF Table Extraction</a>
+    <a href="https://arxiv.org/abs/2501.00321" target="_blank" rel="nofollow noopener noreferrer">OCRBench v2: An Improved Benchmark for Evaluating Large Multimodal Models on Visual Text Localization and Reasoning</a>
   </p>
-  <p class="item-summary">Semantic evaluation framework for PDF table extraction benchmarks VLM decoders including LightOnOCR and DeepSeek-OCR.</p>
+  <p class="item-summary">OCRBench v2: 23 subtasks, 31 scenarios; models &gt;90% on standard benchmarks fall below 50% here.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Table extraction quality is the primary differentiator for enterprise AP and contract workflows. This framework exposes where string-match metrics hide semantic failures in complex tables — failures that enterprise customers notice even when TEDS scores look clean.</dd>
+      <dd>Standard benchmarks systematically overstate OCR accuracy; a submission to OCRBench v2 would give OCR-3 a more defensible public positioning, particularly given that Qwen3 VL 32B Thinking currently leads at 68.4%.</dd>
       <dt>Research</dt>
-      <dd>The semantic evaluation protocol is a methodological upgrade over TEDS; adoption would surface phantom-row failures that TEDS tolerates. Running OCR-3 and OCR2-3B on this benchmark would yield a structured comparison missing from existing evaluations.</dd>
-      <dt>Action</dt>
-      <dd>reproduce</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: competitive, vlm_research</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="52">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 3 · frontier 0 · vlm_research 2 = 52 (this view's weighting)">52</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://drdocbench-challenge.abaka-pages.com/" target="_blank" rel="nofollow noopener noreferrer">Dr.DocBench Challenge — Expert-Level Document Parsing, EMNLP 2026 DocInsights</a>
-  </p>
-  <p class="item-summary">EMNLP 2026 document parsing challenge on 4,514 expert-level pages across 52 domains; October 10 deadline; $3,000+ prizes.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Dr.DocBench targets the exact document edge cases — rotated scans, multi-page loan agreements, handwritten annotations, chemistry notation — where general-purpose VLMs fail and specialized extraction systems differentiate. A leaderboard entry before October 10 would be visible in competitive procurement comparisons where IDP Leaderboard and OmniDocBench are already cited.</dd>
-      <dt>Research</dt>
-      <dd>The difficulty-aware selection methodology (pages where strong systems including PaddleOCR-VL-1.5 and MinerU-VLM disagree) stress-tests hallucination-prone document types more rigorously than curated OCR benchmarks.</dd>
+      <dd>The benchmark&#39;s localization and reasoning subtasks probe failure modes closely related to structural hallucinations and phantom-row generation. The saturation gap between standard and v2 scores suggests current evaluations undercount real-world error rates.</dd>
       <dt>Action</dt>
       <dd>investigate</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive</p>
 </article><article class="item "
          data-source="arxiv"
-         data-score="49">
+         data-score="43">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 2 · frontier 0 · vlm_research 3 = 49 (this view's weighting)">49</span>
+          title="doc_ai 3 · competitive 2 · frontier 1 · vlm_research 2 = 43 (this view's weighting)">43</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2603.23511" target="_blank" rel="nofollow noopener noreferrer">DISCO: Document Intelligence Suite for COmparative Evaluation</a>
+    <a href="https://arxiv.org/abs/2605.22100" target="_blank" rel="nofollow noopener noreferrer">MPDocBench-Parse: Benchmarking Practical Multi-page Document Parsing</a>
   </p>
-  <p class="item-summary">ICLR 2026 Workshop benchmark evaluates OCR pipelines and VLMs on parsing and QA across handwriting, multilingual, and medical forms.</p>
+  <p class="item-summary">8-dimensional multi-page parsing benchmark covering semantic continuity, hierarchy recovery, and multimodal visual content extraction.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>DISCO&#39;s cross-document-type evaluation matches Nanonets&#39; pitch of handling heterogeneous real-world documents. Performance on DISCO&#39;s hard subsets — handwriting, medical forms, multilingual scripts — would be meaningful public evidence for enterprise procurement comparisons.</dd>
+      <dd>Semantic continuity across page boundaries and hierarchy recovery are practical gaps most single-page benchmarks miss. This suite would reveal whether OCR-3&#39;s chunk endpoint handles cross-page structure correctly.</dd>
       <dt>Research</dt>
-      <dd>Decoupled parsing/QA scoring isolates OCR failures from downstream reasoning failures, a cleaner diagnostic than end-to-end DocVQA for attributing phantom-row vs. extraction errors.</dd>
+      <dd>The hierarchy-recovery dimension creates a structured evaluation surface for measuring structural hallucination rates in multi-page documents, extending the team&#39;s existing phantom-row work to full document spans.</dd>
       <dt>Action</dt>
-      <dd>read in week</dd>
+      <dd>monitor</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: vlm_research</p>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="49">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 2 · frontier 0 · vlm_research 3 = 49 (this view's weighting)">49</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2603.11044" target="_blank" rel="nofollow noopener noreferrer">LingDT-VL-OCR: Structure-Aware Document-Level Parsing with Fine-Grained Visual Reference</a>
-  </p>
-  <p class="item-summary">Financial-domain VLM for ultra-long PDF parsing introduces cross-page structure reconstruction, cell-level grounding, and FinDocBench.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Financial documents are a named Nanonets vertical — AP, contracts, vendor onboarding. LingDT-VL-OCR&#39;s FinDocBench is the first finance-specific evaluation that covers cross-page continuity and TOC structure, gaps that OmniDocBench does not test and that customers in AP workflows surface as production failures.</dd>
-      <dt>Research</dt>
-      <dd>Curriculum learning for table parsing with CellBBoxRegressor uses structural anchor tokens to localize table cells without external detectors — an approach orthogonal to current training approaches and directly applicable to phantom-row mitigation in financial tables.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: vlm_research</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="39">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 2 · frontier 0 · vlm_research 2 = 39 (this view's weighting)">39</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://github.com/docinsights-workshop/docinsights-2026" target="_blank" rel="nofollow noopener noreferrer">DocInsights 2026 — Document Intelligence Workshop and Challenges at EMNLP 2026</a>
-  </p>
-  <p class="item-summary">EMNLP 2026 document intelligence workshop hosting Dr.DocBench challenge and two competitive tracks with $5,000+ combined prize pool.</p>
-  <p class="secondary-axes">also: competitive</p>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="30">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 1 · frontier 1 · vlm_research 2 = 30 (this view's weighting)">30</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2607.08143" target="_blank" rel="nofollow noopener noreferrer">ICDAR 2026 HIPE-OCRepair Competition on LLM-Assisted OCR Post-Correction for Historical Documents</a>
-  </p>
-  <p class="item-summary">ICDAR 2026 competition on LLM-assisted OCR error correction for historical multilingual newspapers; four systems submitted.</p>
 </article>  </div>
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
@@ -211,31 +125,6 @@
     <h2>VLM research</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="33">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 1 · vlm_research 5 = 33 (this view's weighting)">33</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 100%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2604.10044" target="_blank" rel="nofollow noopener noreferrer">LoopGuard: Breaking Self-Reinforcing Attention Loops via Dynamic KV Cache Intervention</a>
-  </p>
-  <p class="item-summary">Plug-in KV cache guard detects attention-loop onset at inference time and prunes the feedback cycle to stop repetition; introduces LoopBench.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Repetition loops on long documents are a production failure mode for OCR models; a plug-in inference-time guard that requires no model retraining would reduce truncated-output errors on high-page-count documents without requiring OCR-3 retraining.</dd>
-      <dt>Research</dt>
-      <dd>LoopBench is the first dedicated benchmark with explicit loop-inducing conditions and loop-oriented metrics — directly applicable to OCR2-3B evaluation on pathological documents such as repetitive tables and continuous-form layouts.</dd>
-      <dt>Action</dt>
-      <dd>reproduce</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
          data-score="30">
   <div class="item-meta">
     <span class="item-score"
@@ -246,64 +135,19 @@
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2507.04943" target="_blank" rel="nofollow noopener noreferrer">ReLoop: Seeing Twice and Thinking Backwards via Closed-loop Training to Mitigate Hallucinations in Multimodal Understanding</a>
+    <a href="https://arxiv.org/abs/2602.04802" target="_blank" rel="nofollow noopener noreferrer">VISTA-Bench: Do Vision-Language Models Really Understand Visualized Text as Well as Pure Text?</a>
   </p>
-  <p class="item-summary">Closed-loop multimodal training — generate, verify with second-pass, regenerate — cuts hallucination on VQA and image-text alignment tasks.</p>
+  <p class="item-summary">30+ VLMs show modality gap: accuracy drops when identical semantic content is rendered as image text vs. pure text input.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct product implication; requires model retraining.</dd>
+      <dd>The modality gap means OCR-3 customers using document images as VLM inputs may see systematically different accuracy than benchmarks measured on clean text. Quantifying this gap on OCR-3 would clarify accuracy guarantees for image-heavy document types.</dd>
       <dt>Research</dt>
-      <dd>The closed-loop SFT paradigm is compatible with OCR2-3B fine-tuning and could reduce phantom-row generation by training the model to verify its own structured output before committing — a lower-overhead alternative to RLHF-based post-training.</dd>
+      <dd>The controlled rendering methodology—same semantic content, different modality—provides a clean design for isolating perceptual vs. semantic hallucination sources, directly applicable to the team&#39;s phantom-row research.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="20">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 3 = 20 (this view's weighting)">20</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.00581" target="_blank" rel="nofollow noopener noreferrer">Enoki: Efficient Multi-Level Hallucination Detection</a>
-  </p>
-  <p class="item-summary">OIE-based hallucination detector unifies claim- and span-level verification at competitive accuracy with lower compute; releases EnokiQA dataset.</p>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="20">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 3 = 20 (this view's weighting)">20</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2606.07537" target="_blank" rel="nofollow noopener noreferrer">From Architecture to Output: Structural Origins of Hallucination in Large Language Models and the Amplifying Role of Data</a>
-  </p>
-  <p class="item-summary">Analytical framework maps self-attention, MLE, and autoregressive decoding to specific hallucination types; dataset pathologies amplify but do not originate hallucination.</p>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="16">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 0 · vlm_research 3 = 16 (this view's weighting)">16</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2601.18240" target="_blank" rel="nofollow noopener noreferrer">V-Loop: Visual Logical Loop Verification for Hallucination Detection in Medical Visual Question Answering</a>
-  </p>
-  <p class="item-summary">Loop-based logical verification for VQA hallucination detection; applied to medical imaging, with methodology transferable to document VQA.</p>
 </article>  </div>
 </section>
 
@@ -316,28 +160,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Should OCR-3 or OCR2-3B be evaluated on LoopBench (the repetition-loop benchmark introduced in arXiv 2604.10044)?</p>
-    <p class="question-context">LoopBench is the first benchmark designed specifically for attention-loop conditions — the same failure mode Nanonets has identified as &#39;repetition loops&#39; in its research direction. The benchmark is inference-only and tractable on OCR2-3B. A result would anchor the team&#39;s loop-mitigation work to a public comparator.</p>
+    <p class="question-text">Has OCR-3 been submitted to OCRBench v2?</p>
+    <p class="question-context">The 2026 OCRBench v2 leaderboard currently leads with Qwen3 VL 32B Thinking at 68.4% across 12 models. Standard benchmarks appear saturated (&gt;90% for leading models); OCRBench v2 is emerging as a harder, more defensible public accuracy signal. An OCR-3 submission would clarify its real-world complex-document positioning.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should OCR-3 be submitted to the Dr.DocBench challenge before the October 10, 2026 deadline?</p>
-    <p class="question-context">This question appeared in the previous build (2026-09-18T00:58) without a logged answer. The challenge closes in 22 days. Three prior competitive systems (PaddleOCR-VL-1.5, MinerU-VLM, Gemini 3.1 Pro) already have results. A late entry is still possible. The team&#39;s decision here would end this recurring question.</p>
+    <p class="question-text">CLI ingest has failed for 41+ consecutive builds; all four sources blocked by proxy policy. A one-line status update — even &#39;under investigation, ETA unknown&#39; — would end this recurring question.</p>
+    <p class="question-context">Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. This build found only 3 new items via WebSearch fallback, all arXiv papers from Jan–May 2026. WebSearch coverage is nearing exhaustion for this date range — fewer new items per build each cycle.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Is Nanonets&#39; internal table evaluation using semantic metrics or string-match metrics such as TEDS?</p>
-    <p class="question-context">Two items this build (DISCO, Benchmarking PDF Parsers) independently show that TEDS-based evaluation tolerates phantom-row and cell-misassignment failures that semantic evaluation catches. If internal evaluations use TEDS, they may be systematically underreporting table accuracy gaps that manifest in production.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">CLI ingest has failed for 40+ consecutive builds; all four sources blocked by proxy policy. A one-line status update — even &#39;under investigation, ETA unknown&#39; — would end this recurring question.</p>
-    <p class="question-context">Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. This build found 11 new items via WebSearch fallback. Coverage is declining as the WebSearch result space is progressively exhausted. Each build without CLI access reduces the dashboard&#39;s competitive and frontier coverage.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">Should FinDocBench (introduced by LingDT-VL-OCR, arXiv 2603.11044) be added to the IDP Leaderboard or benchmarking.nanonets.com evaluation suite?</p>
-    <p class="question-context">FinDocBench targets financial PDF parsing with cross-page continuity and TOC structure metrics — gaps in OmniDocBench that matter directly for Nanonets&#39; AP and contract verticals. Since Nanonets maintains the IDP Leaderboard, adding FinDocBench would make the leaderboard more authoritative for the financial-document customer segment while naturally positioning OCR-3 on a benchmark where its vertical focus is an advantage.</p>
+    <p class="question-text">Should the WebSearch fallback query set rotate toward September 2026 product and competitive news rather than exclusively academic searches?</p>
+    <p class="question-context">This build found only arXiv-origin research papers. The competitive and frontier axes have had minimal new coverage for several consecutive builds. Adding product-oriented queries (new OCR API releases, pricing changes, competitive funding rounds, IDP Leaderboard updates) would restore coverage that the CLI HN and RSS sources normally provide.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -349,7 +183,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-18T13:00:00+00:00
+    sources covered:     · failed: 4 · built at 2026-09-18T19:02:08+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
