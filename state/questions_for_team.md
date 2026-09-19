@@ -12425,3 +12425,31 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-19T01:00:00+00:00 (audit: partial)
+
+### Q: arXiv 2605.27750 shows VLMs rely on language priors for OCR in low-resource contexts (Ancient Greek). Has OCR-3 or OCR2-3B been tested on non-Latin script extraction to assess whether the same visual-grounding-deficit mechanism appears at similar rates?
+
+**Context:** The paper introduces a training-free grounding diagnostic (conditional vs. image-free decoding distributions). If OCR-3 serves customers in Arabic, Devanagari, or CJK contexts where language priors are strong, this failure mode may be silent and accuracy-benchmark-invisible.
+
+**Answer:** _add reply here_
+
+### Q: Cohere Parse 5 (Aug 27, $1.50/1K pages, $1.50 = OCR-3 price tier) has now appeared in multiple builds without a context.md competitive entry. Is the omission intentional — the team decided Cohere is not a significant competitive threat — or should it be added?
+
+**Context:** Cohere has enterprise distribution via its Command and Embed products already used in document retrieval workflows. Parse 5 gives those customers a native extraction endpoint, potentially reducing the need for a separate OCR vendor.
+
+**Answer:** _add reply here_
+
+### Q: OCR-3's OmniDocBench score of 90.5 remains unlabeled as v1.5 or v1.6. TeleOCR (96.87) and OvisOCR2 (96.58) both report v1.6 scores. If OCR-3's 90.5 is on v1.5, the competitive gap on v1.6 is unknown and potentially larger. A one-line annotation in nanonets_context.md would end this recurring question.
+
+**Context:** OCR-3 launched April 2, 2026, eight days before OmniDocBench v1.6's MGAM methodology update on April 10. The scores are likely not directly comparable. This ambiguity has appeared in more than ten consecutive builds.
+
+**Answer:** _add reply here_
+
+### Q: Falcon OCR (TII UAE, 300M params, March 2026; 88.64 OmniDocBench, 80.3% olmOCR) is an open-weight OCR-VLM from a well-resourced Gulf research institute now appearing on open benchmarks. Should it be added to nanonets_context.md as a monitored competitive entry?
+
+**Context:** TII UAE (Technology Innovation Institute) has the resources to maintain and iterate the model. Falcon OCR is already on Hugging Face (tiiuae/Falcon-OCR). Its early-fusion architecture is distinct from all other OCR models in the competitive set.
+
+**Answer:** _add reply here_
+
+---
