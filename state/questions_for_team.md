@@ -12453,3 +12453,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-19T07:00:00+00:00 (audit: partial)
+
+### Q: Has OCR-3's OmniDocBench score of 90.5 been confirmed as v1.5 or v1.6? TeleOCR (96.87) and OvisOCR2 (96.47) are both on v1.6; if OCR-3's score is on v1.5, the competitive gap on v1.6 is unknown and potentially larger than the raw number difference suggests.
+
+**Context:** This question has appeared in more than ten consecutive builds without a team response. OCR-3 launched April 2, 2026 — eight days before OmniDocBench v1.6's MGAM methodology update on April 10. A one-line annotation in nanonets_context.md would end this recurring question and allow accurate benchmark-version framing.
+
+**Answer:** _add reply here_
+
+### Q: Should OCR-3 be benchmarked against Reducto r-1 on a common held-out document set before Reducto publishes a technical report? r-1 is available in preview; running an independent head-to-head on complex tables, multi-page forms, and handwritten scans would give the team private accuracy data before any vendor-run comparison appears publicly.
+
+**Context:** Reducto r-1 claims 20% error reduction on complex documents and positions itself as a single-model replacement for multi-tool parsing stacks. The team has not previously done a recorded comparison against r-1 in public channels.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has now failed for 42+ consecutive builds; all four source types (arxiv, hn, rss, github_trending) are blocked by the proxy policy. Can the team confirm whether access restoration is under investigation, and if not, authorize the build agent to add WebSearch queries for competitive product news (new OCR API releases, pricing changes, funding rounds) in addition to academic paper searches?
+
+**Context:** The last build (2026-09-19T01:00) found only arXiv papers from Jan-May 2026 via WebSearch. This build used expanded queries and found product-level items, but coverage remains dependent on search engine indexing latency rather than direct source feeds. Required allowlist additions remain: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml.
+
+**Answer:** _add reply here_
+
+### Q: Should the SHROOM-Visions 2026 shared task (character-level VLM hallucination detection) be used as a structured evaluation framework for OCR-3 or OCR2-3B? The task has a public leaderboard and standardized metrics for detecting fabricated versus omitted spans.
+
+**Context:** Two SHROOM-Visions 2026 systems appeared in this build (arXiv 2609.10244, 2609.17327). The task evaluates exactly the span-level hallucination detection capability that maps to the team's phantom-row and structural-hallucination research axis. Participating or adapting the benchmark would give a structured external comparator.
+
+**Answer:** _add reply here_
+
+### Q: Cohere Parse 5 is now the third consecutive build where a Cohere document-extraction competitor entry appears without a nanonets_context.md registry entry. Is the omission deliberate — the team decided Cohere's document market presence is not material — or should Parse 5 be added to the competitive set?
+
+**Context:** Cohere has enterprise distribution through its Command and Embed customer base, and Parse 5 at $1.50/1K pages gives those customers a native extraction endpoint. The team's position on Cohere's competitive relevance would stabilize scoring across future builds.
+
+**Answer:** _add reply here_
+
+---
