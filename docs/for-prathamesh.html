@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 19, 2026 · 07:00 UTC · 10 items scored</span>
+  <span class="built-at">Built Sep 19, 2026 · 13:10 UTC · 9 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,11 +53,10 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>The OmniDocBench v1.6 frontier has moved to 96+ in the same build window: TeleOCR (96.87) and OvisOCR2 (96.47) both submitted results in September 2026, establishing a cluster roughly 6 points above OCR-3&#39;s public score (version unconfirmed). This is the fastest two-model benchmark advancement on this leaderboard in a single month.</li>
-    <li>Three frontier-lab releases in a 72-hour window (Claude Fable 5.1, Gemini 3.8 Flash, GPT-6 Astra — all September 1-3) are all priced at or below OCR-3&#39;s tier and include image/PDF input. None has IDP Leaderboard or ParseBench scores yet; their document-extraction accuracy relative to dedicated OCR models remains unestablished.</li>
-    <li>Document-parsing pricing is compressing from two directions simultaneously: Reducto r-1 at $0.01/page from a dedicated competitor and Cohere Parse 5 at $1.50/1K pages from a general-purpose language model vendor. Both position against the same $2-4/1K page tier that Mistral OCR 4 and Nanonets occupy.</li>
-    <li>Document retrieval is shifting toward multi-step agentic loops: Mistral Agentic Search adds five operations (search, open, navigate, read, grep) over document corpora. This architecture separates retrieval accuracy from extraction accuracy in a way that single-pass RAG cannot, and directly competes with the workflow-automation layer rather than the OCR layer.</li>
-    <li>The SHROOM-Visions 2026 shared task has produced its first published systems for character-level VLM hallucination detection, including a small-large ensemble approach (2609.10244) and a multi-judge committee approach (2609.17327). This represents the first organized benchmark results specifically on VLM hallucination detection as a standalone task, separate from downstream document-accuracy metrics.</li>
+    <li>Agent-assisted and sparse-feature approaches are becoming the active frontier of mechanistic interpretability: two papers this build (arXiv 2606.24026, 2607.07316) and multiple prior-build items converge on automated circuit discovery and SAE-based feature localization as the methods now scaling to production-sized VLMs.</li>
+    <li>Cross-page document structure and multilingual coverage are emerging as the next evaluation gap after accuracy on standard single-page benchmarks: MinerU-Popo and MORE independently identify these as unaddressed by current OCR-VLM systems, suggesting a class of production failures invisible to existing leaderboards.</li>
+    <li>Real-world deployment reports are now quantifying VLM failure modes that lab benchmarks do not surface: Procedural Knowledge Extraction (132:15 false-to-true repetition-loop ratio) and DenTab (arithmetic failures despite perfect structural input) both document gaps between benchmark accuracy and production reliability.</li>
+    <li>The document extraction API surface is converging on a common endpoint taxonomy (Parse, Extract, Split, Classify) with per-page or per-character pricing tiers: LandingAI ADE Gen2&#39;s two-model (Pro/Verity) tiering mirrors the same pattern as Reducto r-1 and OCR-3&#39;s five canonical endpoints, indicating the market is standardizing on this interface.</li>
   </ul>
 </section>
 
@@ -66,156 +65,27 @@
     <h2>Competitive</h2>
 <article class="item "
          data-source="rss"
-         data-score="86">
+         data-score="60">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 5 · frontier 5 · vlm_research 2 = 86 (this view's weighting)">86</span>
+          title="doc_ai 5 · competitive 5 · frontier 0 · vlm_research 0 = 60 (this view's weighting)">60</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 40%"></span>
+      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://openai.com/blog/gpt-6-astra" target="_blank" rel="nofollow noopener noreferrer">GPT-6 Astra: OpenAI flagship with image input, 1.05M-token context, $10/$50 per million tokens</a>
+    <a href="https://landing.ai/blog/introducing-agentic-document-extraction-gen2" target="_blank" rel="nofollow noopener noreferrer">LandingAI Releases Agentic Document Extraction Gen2 with DPT-3 Pro and DPT-3 Verity</a>
   </p>
-  <p class="item-summary">OpenAI&#39;s new flagship GPT-6 Astra (Sept 3-4) adds image input and 1.05M context; priced at parity with Fable 5.1.</p>
+  <p class="item-summary">LandingAI ADE Gen2 (Sept 9) adds DPT-3 Pro + Verity endpoints with per-character pricing and word-level bounding boxes.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>GPT-6 Astra enters the long-document analysis market at the same price point as Claude Fable 5.1 and with explicit positioning for advanced analysis and agentic tasks. No IDP Leaderboard or ParseBench document-benchmark scores are confirmed yet, leaving its document-extraction accuracy unestablished.</dd>
+      <dd>LandingAI now exposes Parse and Extract endpoints with per-output-character pricing and source-grounded word-level bounding boxes, directly overlapping OCR-3&#39;s five canonical endpoints and the same enterprise-agentic-pipeline customer segment. DPT-3 Verity&#39;s deterministic path for clean PDFs at roughly 40% lower cost than DPT-3 Pro signals deliberate price-tier competition aimed at high-volume document pipeline customers.</dd>
       <dt>Research</dt>
-      <dd>No document-benchmark results available; architecture details not disclosed. When scores arrive, the hallucination-on-complex-tables profile will be the comparison point most relevant to the team&#39;s research line.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: frontier</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="86">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 5 · frontier 5 · vlm_research 2 = 86 (this view's weighting)">86</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.anthropic.com/news/claude-fable-5-1" target="_blank" rel="nofollow noopener noreferrer">Claude Fable 5.1 generally available; Mythos 5.1 for vetted researchers — multimodal, $10/$50 per million tokens, 75% cheaper cache reads</a>
-  </p>
-  <p class="item-summary">Fable 5.1 goes GA (Sept 1) with multimodal input and 75% cache-read discount; Mythos 5.1 adds loosened safeguards for researchers.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Fable 5.1&#39;s 75% cache-read price cut makes it cost-competitive for high-volume document-processing pipelines that previously chose Fable 5 over dedicated OCR APIs on throughput economics. No IDP Leaderboard or ParseBench document-benchmark scores are confirmed yet.</dd>
-      <dt>Research</dt>
-      <dd>Mythos 5.1&#39;s loosened safeguards for vetted researchers may make it more useful than Fable 5.1 as a research-side comparison model. No document-AI benchmark data yet; the team should watch for ParseBench submission.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: frontier</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="70">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 4 · frontier 4 · vlm_research 1 = 70 (this view's weighting)">70</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://blog.google/products/gemini/gemini-3-8-flash/" target="_blank" rel="nofollow noopener noreferrer">Gemini 3.8 Flash: Google&#39;s third Flash model in six weeks — PDF input, 1M context, $0.75/$3.75 per million tokens</a>
-  </p>
-  <p class="item-summary">Gemini 3.8 Flash (Sept 2) beats prior Flash on every Google-published benchmark; PDF input; leads on finance/legal reasoning but trails on dense document extraction.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>At $0.75/$3.75 per million tokens with PDF input, Gemini 3.8 Flash is Google&#39;s third competitive document-processing price point in six weeks. One independent source noted it trails on dense document extraction, which is the specific workload OCR-3 targets; this gap is worth benchmarking on FUNSD/CORD/OmniDocBench to quantify.</dd>
-      <dt>Research</dt>
-      <dd>No document-specific benchmark scores released. Google&#39;s rapid Flash iteration pace suggests they are tuning on usage signals from enterprise document workflows. If that data is surfaced via a technical report, it would be worth reading for distribution of document types encountered.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: frontier</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="66">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 5 · frontier 1 · vlm_research 2 = 66 (this view's weighting)">66</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://reducto.ai/blog/parse-r-1-model" target="_blank" rel="nofollow noopener noreferrer">Reducto r-1: single-pass document parsing model unifying layout, tables, grounding, and citations at $0.01/page</a>
-  </p>
-  <p class="item-summary">Reducto r-1 (Sept 1, preview) replaces its multi-pass pipeline with a single model at 1 cent/page, 20% fewer errors.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>r-1&#39;s pricing at $0.01/page (10x cheaper than Reducto&#39;s prior $0.10/page tier and vs OCR-3&#39;s comparable tier) combined with claimed 20% error reduction on complex documents is the sharpest single price-accuracy move from a direct competitor this quarter. The r-1 family roadmap (r-1 mini, automatic model routing) signals intent to compete across all price tiers.</dd>
-      <dt>Research</dt>
-      <dd>Reducto&#39;s architecture claims no direct research precedent from a paper, but a single model for layout, reading order, tables, formatting, grounding, and citations inverts the classic pipeline assumption. If r-1 ships a technical report, it will be worth reading to understand whether their single-model architecture avoids the cascade-of-errors problem that motivated the team&#39;s hallucination research.</dd>
+      <dd>No direct research implication. The two-model routing architecture (high-quality Pro vs. deterministic Verity) is worth noting as a productization pattern for confidence-scored extraction.</dd>
       <dt>Action</dt>
       <dd>investigate</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="rss"
-         data-score="62">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 2 · vlm_research 1 = 62 (this view's weighting)">62</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://mistral.ai/news/agentic-search/" target="_blank" rel="nofollow noopener noreferrer">Mistral Agentic Search: five-operation document retrieval loop raises FinanceBench accuracy from 26.7% to 86%</a>
-  </p>
-  <p class="item-summary">Mistral Agentic Search (Aug 20) adds search/open/navigate/read/grep ops to document corpora; FinanceBench 26.7%→86%, OfficeQA Pro 6.3%→51.9%.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Mistral Agentic Search is not an OCR extraction-endpoint replacement but extends Mistral&#39;s document-intelligence surface into multi-step structured retrieval. This competes with the agent-layer of Nanonets Agents rather than the extraction API layer, by letting users inspect and verify answers across long documents rather than relying on single-pass RAG chunk retrieval.</dd>
-      <dt>Research</dt>
-      <dd>The five-operation retrieval loop (search, open, navigate, read, grep) is an agent architecture rather than a model architecture; its accuracy gains come from iterative verification rather than a better underlying parser. No structural or hallucination-mitigation component.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="56">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 1 · vlm_research 1 = 56 (this view's weighting)">56</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.infoq.com/news/2026/09/cohere-multimodal-parse/" target="_blank" rel="nofollow noopener noreferrer">Cohere Parse 5: 2.3B VLM for enterprise document parsing at $1.50 per 1,000 pages, 79.2 on ParseBench</a>
-  </p>
-  <p class="item-summary">Cohere Parse 5 (Aug 27, $1.50/1K pages) scores 79.2 on ParseBench, behind frontier LLMs but ahead of AWS Textract and Google Document AI.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Parse 5 targets Cohere&#39;s existing enterprise Command and Embed customer base with a native extraction endpoint at $1.50/1K pages. Its 79.2 ParseBench score falls below OCR-3&#39;s IDP Leaderboard position and below frontier LLMs, but its enterprise distribution channel (Cohere customers already in regulated industries) means it may displace dedicated OCR vendors in those accounts without competing on accuracy alone.</dd>
-      <dt>Research</dt>
-      <dd>No direct research implication; it is a production deployment of existing VLM technology. Parse 5&#39;s ParseBench participation makes it a useful comparison point for future OCR-3 ParseBench submissions.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: doc_ai</p>
@@ -228,106 +98,203 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="66">
+         data-score="36">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 5 · competitive 4 · frontier 1 · vlm_research 4 = 66 (this view's weighting)">66</span>
+          title="doc_ai 4 · competitive 2 · frontier 0 · vlm_research 2 = 36 (this view's weighting)">36</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2608.12898" target="_blank" rel="nofollow noopener noreferrer">TeleOCR: 1.2B-param OCR-VLM reaches 96.87 on OmniDocBench v1.6 via content-structure decoupled learning</a>
+    <a href="https://arxiv.org/abs/2605.24973" target="_blank" rel="nofollow noopener noreferrer">MinerU-Popo: Universal Post-Processing Model for Structured Document Parsing</a>
   </p>
-  <p class="item-summary">TeleOCR (1.2B) hits 96.87 OmniDocBench v1.6 via content-structure decoupling; ranks first in ICDAR 2026 Sci-ImageMiner.</p>
+  <p class="item-summary">Lightweight VLM-agnostic post-processor (OpenDataLab) restores cross-page paragraph and table continuity in OCR output.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>TeleOCR&#39;s 96.87 on OmniDocBench v1.6 is the highest public score on that benchmark version, substantially above OCR-3&#39;s 90.5 (benchmark version unconfirmed). At 1.2B parameters, it raises the efficiency frontier for dedicated OCR-VLMs — a data point for make-vs-buy decisions by customers comparing OCR-3 to open-weight alternatives.</dd>
+      <dd>The framework addresses a production failure mode — cross-page table and paragraph truncation — that affects any VLM-based parser including OCR-3. A compatible post-processing layer over OCR-3&#39;s /parse output could reduce structural errors on multi-page documents without model retraining.</dd>
       <dt>Research</dt>
-      <dd>The content-structure decoupled learning strategy explicitly separates structural prediction from content generation across a four-stage progressive training pipeline. This is methodologically adjacent to the team&#39;s structural-hallucination work: if structural and content generation are learned separately, the locus of structural hallucinations may shift in diagnosable ways.</dd>
+      <dd>MinerU-Popo is VLM-agnostic and open-source; it could serve as a structural-fidelity baseline or a composable post-processing module in the team&#39;s evaluation pipeline for multi-page document parsing.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive, vlm_research</p>
 </article><article class="item "
          data-source="arxiv"
-         data-score="60">
+         data-score="36">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 1 · vlm_research 3 = 60 (this view's weighting)">60</span>
+          title="doc_ai 4 · competitive 2 · frontier 0 · vlm_research 2 = 36 (this view's weighting)">36</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2607.13639" target="_blank" rel="nofollow noopener noreferrer">OvisOCR2: 96.47 on OmniDocBench v1.6, leading across text, formula, table, and reading-order metrics</a>
+    <a href="https://arxiv.org/abs/2607.02956" target="_blank" rel="nofollow noopener noreferrer">MORE: A Multilingual Document Parsing Benchmark and Evaluation</a>
   </p>
-  <p class="item-summary">OvisOCR2 (arXiv Jul 2026) achieves 96.47 OmniDocBench v1.6, leading across text, formula, table, and reading-order subtasks.</p>
+  <p class="item-summary">ICML 2026 benchmark covering 149 languages and structural elements (code, tables, catalogs) for VLM document parsing evaluation.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>OvisOCR2 and TeleOCR in the same benchmark window establish a new OmniDocBench v1.6 cluster above 96, compared to OCR-3&#39;s 90.5 (version uncertain). Both are open-weight; their benchmark presence will appear in customer evaluations comparing specialized OCR models to OCR-3.</dd>
+      <dd>OCR-3&#39;s multilingual coverage claims now have an externally-audited 149-language evaluation suite. A result on MORE would provide a defensible multilingual positioning point distinct from the English-dominant IDP Leaderboard.</dd>
       <dt>Research</dt>
-      <dd>OvisOCR2&#39;s leading performance across four subtask types (text, formula, table, reading order) simultaneously suggests architectural improvements on multi-task document understanding. The table submetric result is directly comparable to the team&#39;s phantom-row evaluation suite.</dd>
+      <dd>MORE&#39;s model-assisted, human-refined annotation pipeline sets a new standard for low-resource language document OCR evaluation. Useful if the team expands multilingual benchmark coverage on the IDP Leaderboard.</dd>
       <dt>Action</dt>
-      <dd>read in week</dd>
+      <dd>monitor</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive</p>
 </article><article class="item "
          data-source="arxiv"
-         data-score="50">
+         data-score="16">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 5 · competitive 2 · frontier 1 · vlm_research 4 = 50 (this view's weighting)">50</span>
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 2 = 16 (this view's weighting)">16</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.01575" target="_blank" rel="nofollow noopener noreferrer">Difficulty-Aware Data Curation for Document VLMs: 35B MoE on single H100 cuts cost 80% vs human baseline</a>
+    <a href="https://arxiv.org/abs/2604.16099" target="_blank" rel="nofollow noopener noreferrer">DenTab: A Dataset for Table Recognition and Visual QA on Real-World Dental Estimates</a>
   </p>
-  <p class="item-summary">T-Tech paper (arXiv 2609.01575): Difficulty-Aware pipeline for document VLM fine-tuning leads all deployable baselines on regulated-industry extraction.</p>
+  <p class="item-summary">2,208-question VQA dataset on real dental estimate tables benchmarks 16 VLMs; strong structure recovery does not translate to arithmetic accuracy.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>A 35B MoE model fine-tuned on difficulty-curated data fitting a single H100 and outperforming larger models sets a data point for what is achievable in a production-constrained deployment scenario. The 80% cost reduction vs human baseline is the metric most relevant to customer ROI conversations.</dd>
+      <dd>The finding — strong table structure recovery does not consistently translate to reliable multi-step arithmetic — is directly testable against OCR-3&#39;s /vqa endpoint on the healthcare and AP document verticals Nanonets Agents targets. The Table Router Pipeline (deterministic execution for arithmetic questions) is a deployable pattern.</dd>
       <dt>Research</dt>
-      <dd>The Difficulty-Aware pipeline filters training data by layout diversity, fact-extractability, and cross-model consistency — three criteria directly applicable to improving OCR-3 or OCR2-3B fine-tuning quality without increasing training data volume. The cross-model consistency criterion may be specifically useful for reducing structural hallucinations by removing ambiguous ground truth.</dd>
+      <dd>DenTab establishes that multi-step arithmetic and consistency checks over table data remain unsolved even with perfect structural input. Useful as an evaluation suite for the team&#39;s /vqa endpoint on transactional documents.</dd>
       <dt>Action</dt>
-      <dd>read in week</dd>
+      <dd>monitor</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: vlm_research</p>
 </article>  </div>
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="36">
+         data-score="20">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 1 · frontier 1 · vlm_research 5 = 36 (this view's weighting)">36</span>
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 4 = 20 (this view's weighting)">20</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 100%"></span>
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.10244" target="_blank" rel="nofollow noopener noreferrer">Two-Token Features and Small-Large Ensembles for VLM Hallucination Detection (SHROOM-Visions 2026 shared task)</a>
+    <a href="https://arxiv.org/abs/2601.22754" target="_blank" rel="nofollow noopener noreferrer">Procedural Knowledge Extraction from Industrial Troubleshooting Guides Using Vision Language Models</a>
   </p>
-  <p class="item-summary">SHROOM-Visions 2026 system: 4B VLM per-token classifier ensembled with 400B zero-shot judge for character-level hallucination detection; 6th/28 EN.</p>
+  <p class="item-summary">Industrial VLM deployment report documents &#39;infinite loop collapse&#39; in production: 132 false positives vs 15 true positives in one guide.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No near-term product implication; this is a shared-task system, not a productized detection tool.</dd>
+      <dd>An industrial deployment report quantifying repetition-loop failure at 132:15 false-to-true positive ratio directly documents the failure mode Nanonets names &#39;repetition loops&#39; in its research direction. This is the first external report providing production-scale impact numbers for this mode.</dd>
       <dt>Research</dt>
-      <dd>The two-token hidden-state feature approach provides a per-token hallucination signal without a separate verifier model. Ensembling a 4B fine-tuned classifier with a 400B zero-shot judge adds accuracy at inference time; the diversity from synthetic hallucination data as the source of ensemble disagreement is directly applicable to the team&#39;s existing hallucination detection work on document VLMs.</dd>
+      <dd>The paper provides an entity-level annotated dataset of loop-collapse events in industrial guides. This could complement existing synthetic loop benchmarks in the team&#39;s evaluation suite and anchors the mode to a public, reproducible corpus.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="18">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 0 · frontier 2 · vlm_research 3 = 18 (this view's weighting)">18</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2606.24026" target="_blank" rel="nofollow noopener noreferrer">Can Language Model Agents be Helpful Circuit Explainers in Mechanistic Interpretability?</a>
+  </p>
+  <p class="item-summary">Investigates whether LLM agents can automate circuit discovery and explanation in mechanistic interpretability workflows.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Agent-assisted circuit discovery could accelerate the team&#39;s mechanistic interpretability work by automating circuit identification over OCR2-3B&#39;s attention heads, reducing manual patching sweeps required to locate OCR-relevant circuits.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="16">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 4 = 16 (this view's weighting)">16</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2604.20366" target="_blank" rel="nofollow noopener noreferrer">Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation</a>
+  </p>
+  <p class="item-summary">MPD framework uses semantic-aware component disentanglement and selective parameter updates to reduce hallucinations without degrading generation quality.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No near-term product implication.</dd>
+      <dt>Research</dt>
+      <dd>MPD&#39;s semantic-aware component disentanglement extends the team&#39;s activation-patching methodology for hallucination isolation. The &#39;interpretable parameter updates&#39; framing maps to the team&#39;s steering-vector approach; the dual-stage framework could complement causal scrubbing experiments on OCR2-3B.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="16">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 4 = 16 (this view's weighting)">16</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2509.23236" target="_blank" rel="nofollow noopener noreferrer">Reducing Hallucinations in Vision-Language Models via Latent Space Steering</a>
+  </p>
+  <p class="item-summary">Latent-space steering vectors reduce VLM hallucinations by identifying and suppressing hallucinatory directions in hidden-state representations.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No near-term product implication.</dd>
+      <dt>Research</dt>
+      <dd>Latent-space steering is directly in the team&#39;s stated methodology (steering vectors). This paper provides a public comparator for similar experiments on OCR-VLMs and establishes a self-consistency diagnostic framework applicable to OCR2-3B.</dd>
+      <dt>Action</dt>
+      <dd>reproduce</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="12">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 3 = 12 (this view's weighting)">12</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2607.07316" target="_blank" rel="nofollow noopener noreferrer">Mechanistic Interpretability for Neural Networks: Circuits, Sparse Features and Symbolic Reasoning</a>
+  </p>
+  <p class="item-summary">Survey covering circuits, sparse autoencoders, and symbolic reasoning in mechanistic interpretability for neural networks.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Comprehensive reference covering the team&#39;s methodology vocabulary (circuits, SAEs, symbolic reasoning). Useful as a common vocabulary document for new team members and as a benchmark for what the field considers state of practice as of mid-2026.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
@@ -344,28 +311,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Has OCR-3&#39;s OmniDocBench score of 90.5 been confirmed as v1.5 or v1.6? TeleOCR (96.87) and OvisOCR2 (96.47) are both on v1.6; if OCR-3&#39;s score is on v1.5, the competitive gap on v1.6 is unknown and potentially larger than the raw number difference suggests.</p>
-    <p class="question-context">This question has appeared in more than ten consecutive builds without a team response. OCR-3 launched April 2, 2026 — eight days before OmniDocBench v1.6&#39;s MGAM methodology update on April 10. A one-line annotation in nanonets_context.md would end this recurring question and allow accurate benchmark-version framing.</p>
+    <p class="question-text">Would a VLM-agnostic post-processing layer (like MinerU-Popo, arXiv 2605.24973) improve OCR-3&#39;s cross-page continuity on multi-page PDFs without requiring model retraining, and is this a gap customers are reporting?</p>
+    <p class="question-context">MinerU-Popo is open-source and VLM-agnostic. If cross-page paragraph and table truncation is a documented failure mode in customer OCR-3 usage, a compatible post-processing step could be added to the /parse pipeline without touching the model itself.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should OCR-3 be benchmarked against Reducto r-1 on a common held-out document set before Reducto publishes a technical report? r-1 is available in preview; running an independent head-to-head on complex tables, multi-page forms, and handwritten scans would give the team private accuracy data before any vendor-run comparison appears publicly.</p>
-    <p class="question-context">Reducto r-1 claims 20% error reduction on complex documents and positions itself as a single-model replacement for multi-tool parsing stacks. The team has not previously done a recorded comparison against r-1 in public channels.</p>
+    <p class="question-text">Should OCR-3 be evaluated on the MORE benchmark (ICML 2026, arXiv 2607.02956)? It covers 149 languages on real-world documents and would provide a public multilingual positioning point distinct from the English-dominant IDP Leaderboard.</p>
+    <p class="question-context">MORE&#39;s annotation covers structural elements (tables, code, catalogs) beyond plain text and uses model-assisted, human-refined annotations — closer to production document quality than most existing multilingual OCR benchmarks.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">CLI ingest has now failed for 42+ consecutive builds; all four source types (arxiv, hn, rss, github_trending) are blocked by the proxy policy. Can the team confirm whether access restoration is under investigation, and if not, authorize the build agent to add WebSearch queries for competitive product news (new OCR API releases, pricing changes, funding rounds) in addition to academic paper searches?</p>
-    <p class="question-context">The last build (2026-09-19T01:00) found only arXiv papers from Jan-May 2026 via WebSearch. This build used expanded queries and found product-level items, but coverage remains dependent on search engine indexing latency rather than direct source feeds. Required allowlist additions remain: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml.</p>
+    <p class="question-text">CLI ingest has now failed for 43+ consecutive builds; all four source types (arxiv, hn, rss, github_trending) are blocked by proxy policy. Can the team confirm whether allowlist restoration is under investigation, and if not, authorize expanded product-news queries in the WebSearch fallback?</p>
+    <p class="question-context">Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. This build found 9 items via WebSearch fallback. Competitive and frontier coverage depends on direct feeds for timely signals.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the SHROOM-Visions 2026 shared task (character-level VLM hallucination detection) be used as a structured evaluation framework for OCR-3 or OCR2-3B? The task has a public leaderboard and standardized metrics for detecting fabricated versus omitted spans.</p>
-    <p class="question-context">Two SHROOM-Visions 2026 systems appeared in this build (arXiv 2609.10244, 2609.17327). The task evaluates exactly the span-level hallucination detection capability that maps to the team&#39;s phantom-row and structural-hallucination research axis. Participating or adapting the benchmark would give a structured external comparator.</p>
+    <p class="question-text">The industrial-guide deployment paper (arXiv 2601.22754) reports a 132:15 false-to-true positive ratio in a repetition-loop failure. Does Nanonets have per-document-type failure statistics from customer data that confirm or contradict this severity estimate?</p>
+    <p class="question-context">This is the first public dataset with production-scale repetition-loop impact numbers. If customer data shows similar rates on specific document types, it could prioritize the team&#39;s loop-mitigation research agenda.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Cohere Parse 5 is now the third consecutive build where a Cohere document-extraction competitor entry appears without a nanonets_context.md registry entry. Is the omission deliberate — the team decided Cohere&#39;s document market presence is not material — or should Parse 5 be added to the competitive set?</p>
-    <p class="question-context">Cohere has enterprise distribution through its Command and Embed customer base, and Parse 5 at $1.50/1K pages gives those customers a native extraction endpoint. The team&#39;s position on Cohere&#39;s competitive relevance would stabilize scoring across future builds.</p>
+    <p class="question-text">LandingAI&#39;s DPT-3 Verity is priced at roughly 40% below DPT-3 Pro for clean digital PDFs, which positions it below OCR-3&#39;s standard tier on cost. Has the team done a head-to-head accuracy comparison on clean digital-born PDFs to assess whether the cost difference can be defended on accuracy grounds?</p>
+    <p class="question-context">LandingAI ADE Gen2 (September 9, 2026) is the newest entrant with overlapping Parse/Extract/Split endpoints and enterprise-grade deployment options. Without a public benchmark comparison, the competitive positioning on clean-PDF accuracy is unanchored.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -377,7 +344,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-19T07:00:00+00:00
+    sources covered:     · failed: 4 · built at 2026-09-19T13:10:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

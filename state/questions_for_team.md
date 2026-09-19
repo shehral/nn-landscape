@@ -12487,3 +12487,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-19T13:10:00+00:00 (audit: partial)
+
+### Q: Would a VLM-agnostic post-processing layer (like MinerU-Popo, arXiv 2605.24973) improve OCR-3's cross-page continuity on multi-page PDFs without requiring model retraining, and is this a gap customers are reporting?
+
+**Context:** MinerU-Popo is open-source and VLM-agnostic. If cross-page paragraph and table truncation is a documented failure mode in customer OCR-3 usage, a compatible post-processing step could be added to the /parse pipeline without touching the model itself.
+
+**Answer:** _add reply here_
+
+### Q: Should OCR-3 be evaluated on the MORE benchmark (ICML 2026, arXiv 2607.02956)? It covers 149 languages on real-world documents and would provide a public multilingual positioning point distinct from the English-dominant IDP Leaderboard.
+
+**Context:** MORE's annotation covers structural elements (tables, code, catalogs) beyond plain text and uses model-assisted, human-refined annotations — closer to production document quality than most existing multilingual OCR benchmarks.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has now failed for 43+ consecutive builds; all four source types (arxiv, hn, rss, github_trending) are blocked by proxy policy. Can the team confirm whether allowlist restoration is under investigation, and if not, authorize expanded product-news queries in the WebSearch fallback?
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. This build found 9 items via WebSearch fallback. Competitive and frontier coverage depends on direct feeds for timely signals.
+
+**Answer:** _add reply here_
+
+### Q: The industrial-guide deployment paper (arXiv 2601.22754) reports a 132:15 false-to-true positive ratio in a repetition-loop failure. Does Nanonets have per-document-type failure statistics from customer data that confirm or contradict this severity estimate?
+
+**Context:** This is the first public dataset with production-scale repetition-loop impact numbers. If customer data shows similar rates on specific document types, it could prioritize the team's loop-mitigation research agenda.
+
+**Answer:** _add reply here_
+
+### Q: LandingAI's DPT-3 Verity is priced at roughly 40% below DPT-3 Pro for clean digital PDFs, which positions it below OCR-3's standard tier on cost. Has the team done a head-to-head accuracy comparison on clean digital-born PDFs to assess whether the cost difference can be defended on accuracy grounds?
+
+**Context:** LandingAI ADE Gen2 (September 9, 2026) is the newest entrant with overlapping Parse/Extract/Split endpoints and enterprise-grade deployment options. Without a public benchmark comparison, the competitive positioning on clean-PDF accuracy is unanchored.
+
+**Answer:** _add reply here_
+
+---
