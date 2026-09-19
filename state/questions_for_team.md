@@ -12521,3 +12521,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-19T19:00:00+00:00 (audit: partial)
+
+### Q: Has OCR-3's OmniDocBench score of 90.5 been confirmed as v1.5 or v1.6?
+
+**Context:** OCR-3 launched April 2, 2026 — eight days before OmniDocBench v1.6's MGAM methodology update on April 10. HunyuanOCR (94.1) and Qianfan-VL (93.12) are both confirmed on v1.5; if OCR-3's 90.5 is also on v1.5, the competitive gap is defined. If it is on v1.6, the comparison to HunyuanOCR and Qianfan-VL is not cross-version valid. A one-line annotation in nanonets_context.md would end this question, which has appeared in 11+ consecutive builds.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has failed for 44+ consecutive builds; all four source types remain blocked by proxy policy. Can the team confirm whether allowlist restoration is under investigation?
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. This build found 15 items via WebSearch fallback (all arXiv papers). HN and RSS coverage remains zero, meaning competitive news items that appear on HN or in lab RSS feeds are invisible to each build. A one-line status update — even 'under investigation, ETA unknown' — would prevent this question recurring.
+
+**Answer:** _add reply here_
+
+### Q: Should OCR-3 be evaluated on READoc (arXiv 2409.05137) as a production-diversity benchmark complement to OmniDocBench?
+
+**Context:** READoc covers realistic document structured extraction with diverse, noisy inputs and multi-granularity evaluation. No public OCR-3 result on READoc exists. The benchmark's coverage of production-like document variety would anchor OCR-3's performance claims on documents that curated benchmarks systematically exclude.
+
+**Answer:** _add reply here_
+
+### Q: Does Qwen3-VL-Embedding's unified extract+embed architecture represent a competitive threat to OCR-3's /chunk endpoint in agentic RAG pipelines?
+
+**Context:** Qwen3-VL-Embedding (arXiv 2601.04720) provides multimodal document retrieval and reranking in a single model, which could replace separate OCR-3 + embedding-model stacks. If customers are building agentic pipelines that require both extraction and retrieval, a single Qwen3-VL-based solution may reduce willingness to adopt OCR-3 for the extraction step. The team's position on this competitive vector would help prioritize /chunk endpoint development.
+
+**Answer:** _add reply here_
+
+### Q: Should the DELTA table structure decomposition methodology (arXiv 2609.17458) be applied to OCR-3's table output pipeline to improve phantom-row attribution?
+
+**Context:** DELTA separates physical structure recognition, logical structure, and OCR into three distinct subtasks, outputting OTSL. If OCR-3's phantom-row failures cluster at logical structure boundary misassignments rather than raw OCR errors, DELTA's decomposition would allow precise failure attribution. The paper also includes a Hindi table benchmark (TORQUE) directly relevant to OCR-3's multilingual evaluation gaps.
+
+**Answer:** _add reply here_
+
+---

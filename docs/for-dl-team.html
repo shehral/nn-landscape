@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 19, 2026 · 13:10 UTC · 9 items scored</span>
+  <span class="built-at">Built Sep 19, 2026 · 19:00 UTC · 15 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,10 +53,11 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Agent-assisted and sparse-feature approaches are becoming the active frontier of mechanistic interpretability: two papers this build (arXiv 2606.24026, 2607.07316) and multiple prior-build items converge on automated circuit discovery and SAE-based feature localization as the methods now scaling to production-sized VLMs.</li>
-    <li>Cross-page document structure and multilingual coverage are emerging as the next evaluation gap after accuracy on standard single-page benchmarks: MinerU-Popo and MORE independently identify these as unaddressed by current OCR-VLM systems, suggesting a class of production failures invisible to existing leaderboards.</li>
-    <li>Real-world deployment reports are now quantifying VLM failure modes that lab benchmarks do not surface: Procedural Knowledge Extraction (132:15 false-to-true repetition-loop ratio) and DenTab (arithmetic failures despite perfect structural input) both document gaps between benchmark accuracy and production reliability.</li>
-    <li>The document extraction API surface is converging on a common endpoint taxonomy (Parse, Extract, Split, Classify) with per-page or per-character pricing tiers: LandingAI ADE Gen2&#39;s two-model (Pro/Verity) tiering mirrors the same pattern as Reducto r-1 and OCR-3&#39;s five canonical endpoints, indicating the market is standardizing on this interface.</li>
+    <li>Risk calibration and abstention are emerging as first-class OCR-VLM capabilities: three papers this build independently approach VLM OCR from the angle of selective confidence and abstention rather than accuracy maximization, signaling a research convergence around reliability engineering for production OCR pipelines.</li>
+    <li>Table understanding is becoming a multi-layer evaluation problem: papers on DELTA, Visual-TableQA, and READoc all decompose table accuracy into physical structure, logical structure, and semantic content — a shift from TEDS string-match to structure-aware metrics that tolerate fewer phantom-row and cell-misassignment failures silently.</li>
+    <li>Competitive VLM technical reports are arriving months after initial model releases, providing delayed but authoritative architectural detail for top-ranked IDP Leaderboard models: Qwen3-VL (Nov 2025 paper), HunyuanOCR (Nov 2025), and Qianfan-VL (Sep 2025) all released technical reports well after their benchmark appearances.</li>
+    <li>Multilingual document benchmarking infrastructure is maturing independently of the IDP Leaderboard: MDPBench and the DELTA Hindi benchmark (TORQUE) both introduce structured multilingual evaluation surfaces covering document types and scripts systematically absent from OmniDocBench.</li>
+    <li>Hallucination mitigation is diversifying across three parallel tracks — training-time preference optimization, inference-time latent probing, and risk-calibrated generation — with no single approach yet dominating; all three are applicable to OCR-specific failure modes rather than general VLM hallucination only.</li>
   </ul>
 </section>
 
@@ -65,157 +66,204 @@
     <h2>VLM research</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="50">
+         data-score="58">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 4 = 50 (this view's weighting)">50</span>
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 5 = 58 (this view's weighting)">58</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2601.22754" target="_blank" rel="nofollow noopener noreferrer">Procedural Knowledge Extraction from Industrial Troubleshooting Guides Using Vision Language Models</a>
+    <a href="https://arxiv.org/abs/2605.16411" target="_blank" rel="nofollow noopener noreferrer">Reducing Hallucination in Vision-Language Models via Stage-wise Preference Optimization under Distribution Shift</a>
   </p>
-  <p class="item-summary">Industrial VLM deployment report documents &#39;infinite loop collapse&#39; in production: 132 false positives vs 15 true positives in one guide.</p>
+  <p class="item-summary">Stage-wise DPO under distribution shift reduces VLM hallucinations with robust cross-domain generalization.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>An industrial deployment report quantifying repetition-loop failure at 132:15 false-to-true positive ratio directly documents the failure mode Nanonets names &#39;repetition loops&#39; in its research direction. This is the first external report providing production-scale impact numbers for this mode.</dd>
+      <dd>No direct near-term product implication; the method targets general VLM hallucination patterns rather than OCR-specific structural failure modes.</dd>
       <dt>Research</dt>
-      <dd>The paper provides an entity-level annotated dataset of loop-collapse events in industrial guides. This could complement existing synthetic loop benchmarks in the team&#39;s evaluation suite and anchors the mode to a public, reproducible corpus.</dd>
+      <dd>Stage-wise preference optimization under distribution shift maps directly onto the team&#39;s hallucination mitigation research axis; the distribution-shift framing is relevant to OCR-3&#39;s cross-domain behavior on out-of-distribution document types.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
+  <p class="secondary-axes">also: doc_ai</p>
 </article><article class="item "
          data-source="arxiv"
-         data-score="44">
+         data-score="36">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 4 = 44 (this view's weighting)">44</span>
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 3 = 36 (this view's weighting)">36</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2604.20366" target="_blank" rel="nofollow noopener noreferrer">Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation</a>
+    <a href="https://arxiv.org/abs/2502.15563" target="_blank" rel="nofollow noopener noreferrer">Bridging VLM Evaluation Gaps with a Framework for Scalable and Cost-Effective Benchmark Generation</a>
   </p>
-  <p class="item-summary">MPD framework uses semantic-aware component disentanglement and selective parameter updates to reduce hallucinations without degrading generation quality.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No near-term product implication.</dd>
-      <dt>Research</dt>
-      <dd>MPD&#39;s semantic-aware component disentanglement extends the team&#39;s activation-patching methodology for hallucination isolation. The &#39;interpretable parameter updates&#39; framing maps to the team&#39;s steering-vector approach; the dual-stage framework could complement causal scrubbing experiments on OCR2-3B.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="44">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 4 = 44 (this view's weighting)">44</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2509.23236" target="_blank" rel="nofollow noopener noreferrer">Reducing Hallucinations in Vision-Language Models via Latent Space Steering</a>
-  </p>
-  <p class="item-summary">Latent-space steering vectors reduce VLM hallucinations by identifying and suppressing hallucinatory directions in hidden-state representations.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No near-term product implication.</dd>
-      <dt>Research</dt>
-      <dd>Latent-space steering is directly in the team&#39;s stated methodology (steering vectors). This paper provides a public comparator for similar experiments on OCR-VLMs and establishes a self-consistency diagnostic framework applicable to OCR2-3B.</dd>
-      <dt>Action</dt>
-      <dd>reproduce</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="32">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 2 · vlm_research 3 = 32 (this view's weighting)">32</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2606.24026" target="_blank" rel="nofollow noopener noreferrer">Can Language Model Agents be Helpful Circuit Explainers in Mechanistic Interpretability?</a>
-  </p>
-  <p class="item-summary">Investigates whether LLM agents can automate circuit discovery and explanation in mechanistic interpretability workflows.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication.</dd>
-      <dt>Research</dt>
-      <dd>Agent-assisted circuit discovery could accelerate the team&#39;s mechanistic interpretability work by automating circuit identification over OCR2-3B&#39;s attention heads, reducing manual patching sweeps required to locate OCR-relevant circuits.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="28">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 0 · competitive 0 · frontier 1 · vlm_research 3 = 28 (this view's weighting)">28</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2607.07316" target="_blank" rel="nofollow noopener noreferrer">Mechanistic Interpretability for Neural Networks: Circuits, Sparse Features and Symbolic Reasoning</a>
-  </p>
-  <p class="item-summary">Survey covering circuits, sparse autoencoders, and symbolic reasoning in mechanistic interpretability for neural networks.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication.</dd>
-      <dt>Research</dt>
-      <dd>Comprehensive reference covering the team&#39;s methodology vocabulary (circuits, SAEs, symbolic reasoning). Useful as a common vocabulary document for new team members and as a benchmark for what the field considers state of practice as of mid-2026.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
+  <p class="item-summary">Scalable VLM benchmark generation framework synthesizes evaluation data at low cost using model-in-the-loop annotation.</p>
 </article>  </div>
   <div class="axis-col" data-axis="doc_ai">
     <h2>Document AI</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="44">
+         data-score="56">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 2 · frontier 0 · vlm_research 2 = 44 (this view's weighting)">44</span>
+          title="doc_ai 4 · competitive 0 · frontier 0 · vlm_research 4 = 56 (this view's weighting)">56</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+      <span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2605.24973" target="_blank" rel="nofollow noopener noreferrer">MinerU-Popo: Universal Post-Processing Model for Structured Document Parsing</a>
+    <a href="https://arxiv.org/abs/2511.19806" target="_blank" rel="nofollow noopener noreferrer">Reading Between the Lines: Abstaining from VLM-Generated OCR Errors via Latent Representation Probes</a>
   </p>
-  <p class="item-summary">Lightweight VLM-agnostic post-processor (OpenDataLab) restores cross-page paragraph and table continuity in OCR output.</p>
+  <p class="item-summary">Latent probes detect when a VLM OCR decoder should abstain rather than hallucinate; training-free and model-agnostic.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>The framework addresses a production failure mode — cross-page table and paragraph truncation — that affects any VLM-based parser including OCR-3. A compatible post-processing layer over OCR-3&#39;s /parse output could reduce structural errors on multi-page documents without model retraining.</dd>
+      <dd>Abstention-from-OCR-error mechanism applicable to OCR-3&#39;s /parse endpoint to flag low-confidence transcriptions rather than silently hallucinate. Requires only inference-time latent probing — no model retraining.</dd>
       <dt>Research</dt>
-      <dd>MinerU-Popo is VLM-agnostic and open-source; it could serve as a structural-fidelity baseline or a composable post-processing module in the team&#39;s evaluation pipeline for multi-page document parsing.</dd>
+      <dd>Latent representation probes extend the team&#39;s phantom-row detection work: the method isolates which latent states precede OCR errors, providing a diagnostic path into hallucination onset.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="56">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 0 · frontier 0 · vlm_research 4 = 56 (this view's weighting)">56</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2603.19790" target="_blank" rel="nofollow noopener noreferrer">From Plausibility to Verifiability: Risk-Controlled Generative OCR for Vision-Language Models</a>
+  </p>
+  <p class="item-summary">Risk-controlled OCR framework calibrates VLM confidence to replace hallucinated transcriptions with structured abstentions.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Risk-controlled generation applies directly to OCR-3&#39;s output pipeline: the method enables selective abstention rather than hallucination when confidence is low, reducing downstream extraction errors on degraded inputs.</dd>
+      <dt>Research</dt>
+      <dd>The paper&#39;s risk calibration formalism provides a principled framework for the team&#39;s phantom-row mitigation work, linking hallucination probability estimates to abstention thresholds.</dd>
+      <dt>Action</dt>
+      <dd>reproduce</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="54">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 3 · frontier 0 · vlm_research 3 = 54 (this view's weighting)">54</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2511.19575" target="_blank" rel="nofollow noopener noreferrer">HunyuanOCR Technical Report</a>
+  </p>
+  <p class="item-summary">HunyuanOCR (Tencent, 1B params) technical report covers end-to-end VLM multitask training for OCR with 94.1 OmniDocBench.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>HunyuanOCR at 1B params achieves 94.1 on OmniDocBench, above OCR-3&#39;s 90.5. The technical report provides architectural detail on the multitask training setup and language coverage (100+ languages) used to reach those scores.</dd>
+      <dt>Research</dt>
+      <dd>The DFlash adaptation for structured OCR decoding (6.37x Transformer inference speedup) is worth reviewing for applicability to long-document OCR latency in OCR-3&#39;s generation stack.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive, vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="48">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 0 · frontier 0 · vlm_research 3 = 48 (this view's weighting)">48</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2504.11101" target="_blank" rel="nofollow noopener noreferrer">Consensus Entropy: Harnessing Multi-VLM Agreement for Self-Verifying and Self-Improving OCR</a>
+  </p>
+  <p class="item-summary">Ensemble OCR with consensus entropy signal self-corrects VLM transcription errors without labeled feedback.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Multi-VLM consensus could strengthen OCR-3&#39;s confidence-scoring surface on ambiguous scanned documents, trading latency for accuracy on low-confidence pages.</dd>
+      <dt>Research</dt>
+      <dd>The entropy-of-agreement signal is a lightweight alternative to activation-patching diagnostics for identifying unreliable VLM generations without mechanistic analysis.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="48">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 0 · frontier 0 · vlm_research 3 = 48 (this view's weighting)">48</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2509.07966" target="_blank" rel="nofollow noopener noreferrer">Visual-TableQA: Open-Domain Benchmark for Reasoning over Table Images</a>
+  </p>
+  <p class="item-summary">Open-domain benchmark for VLM reasoning over table images covering heterogeneous formats and cross-table inference.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>An open-domain table-image reasoning benchmark provides a structured external comparator for OCR-3&#39;s /vqa endpoint on complex table inputs.</dd>
+      <dt>Research</dt>
+      <dd>The benchmark covers heterogeneous table formats and cross-table inference — evaluation gaps that TEDS-based string-match metrics systematically miss on phantom-row-class failures.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="48">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 0 · frontier 0 · vlm_research 3 = 48 (this view's weighting)">48</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2609.17458" target="_blank" rel="nofollow noopener noreferrer">Tables Decoded: DELTA for Structure, TarQA for Understanding</a>
+  </p>
+  <p class="item-summary">DELTA decouples table structure recognition into physical/logical layers with OTSL output; TarQA evaluates multi-hop table reasoning.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>DELTA&#39;s OTSL output format and three-layer structure decomposition are applicable to OCR-3&#39;s table output pipeline; the Hindi benchmark (TORQUE) extends evaluation to non-Latin scripts relevant to OCR-3&#39;s multilingual positioning.</dd>
+      <dt>Research</dt>
+      <dd>Separating physical structure recognition, logical structure, and OCR into distinct subtasks maps directly to where phantom-row failures occur — logical structure boundary misassignments rather than raw OCR errors.</dd>
+      <dt>Action</dt>
+      <dd>reproduce</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
 </article><article class="item "
          data-source="arxiv"
          data-score="44">
@@ -228,19 +276,71 @@
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2607.02956" target="_blank" rel="nofollow noopener noreferrer">MORE: A Multilingual Document Parsing Benchmark and Evaluation</a>
+    <a href="https://arxiv.org/abs/2603.28130" target="_blank" rel="nofollow noopener noreferrer">MDPBench: A Benchmark for Multilingual Document Parsing in Real-World Scenarios</a>
   </p>
-  <p class="item-summary">ICML 2026 benchmark covering 149 languages and structural elements (code, tables, catalogs) for VLM document parsing evaluation.</p>
+  <p class="item-summary">MDPBench evaluates multilingual document parsing across languages and document types with scene-text and structured-page splits.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>OCR-3&#39;s multilingual coverage claims now have an externally-audited 149-language evaluation suite. A result on MORE would provide a defensible multilingual positioning point distinct from the English-dominant IDP Leaderboard.</dd>
+      <dd>MDPBench provides an evaluation surface for OCR-3&#39;s multilingual capability claims beyond the English-dominant IDP Leaderboard. Running OCR-3 on MDPBench would anchor its multilingual positioning with a publicly reproducible methodology.</dd>
       <dt>Research</dt>
-      <dd>MORE&#39;s model-assisted, human-refined annotation pipeline sets a new standard for low-resource language document OCR evaluation. Useful if the team expands multilingual benchmark coverage on the IDP Leaderboard.</dd>
+      <dd>Scene-text and structured-page splits allow methodologically clean separation of OCR accuracy from layout parsing, useful for isolating hallucination sources in multilingual contexts.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="42">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 1 · frontier 0 · vlm_research 2 = 42 (this view's weighting)">42</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2409.05137" target="_blank" rel="nofollow noopener noreferrer">READoc: A Unified Benchmark for Realistic Document Structured Extraction</a>
+  </p>
+  <p class="item-summary">READoc benchmark targets realistic document structured extraction covering diverse, noisy document types and multi-granularity evaluation.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Running OCR-3 on READoc would anchor its performance on production-quality varied inputs, complementing OmniDocBench&#39;s curated distribution and providing a public result on real-world document diversity.</dd>
+      <dt>Research</dt>
+      <dd>Multi-granularity evaluation methodology in READoc allows distinguishing span-level from structural errors, applicable to the team&#39;s hallucination analysis pipeline.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="40">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 3 · frontier 0 · vlm_research 2 = 40 (this view's weighting)">40</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2512.02498" target="_blank" rel="nofollow noopener noreferrer">dots.ocr: Multilingual Document Layout Parsing in a Single Vision-Language Model</a>
+  </p>
+  <p class="item-summary">dots.ocr (rebranded dots.mocr) integrates OCR and layout parsing in a single multilingual VLM for document-structured output.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>dots.mocr combines OCR and layout parsing in a single multilingual VLM, competing with OCR-3&#39;s integrated /parse endpoint. The architectural approach — one model handling both tasks — is a direct comparison point for OCR-3&#39;s MoE design.</dd>
+      <dt>Research</dt>
+      <dd>The single-model OCR+layout approach avoids the hallucination accumulation risks of multi-stage pipelines; relevant context for evaluating OCR-3&#39;s per-page processing architecture.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
+  <p class="secondary-axes">also: competitive</p>
 </article><article class="item "
          data-source="arxiv"
          data-score="34">
@@ -253,19 +353,9 @@
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2604.16099" target="_blank" rel="nofollow noopener noreferrer">DenTab: A Dataset for Table Recognition and Visual QA on Real-World Dental Estimates</a>
+    <a href="https://arxiv.org/abs/2509.07666" target="_blank" rel="nofollow noopener noreferrer">MoLoRAG: Bootstrapping Document Understanding via Multi-modal Logic-aware Retrieval</a>
   </p>
-  <p class="item-summary">2,208-question VQA dataset on real dental estimate tables benchmarks 16 VLMs; strong structure recovery does not translate to arithmetic accuracy.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>The finding — strong table structure recovery does not consistently translate to reliable multi-step arithmetic — is directly testable against OCR-3&#39;s /vqa endpoint on the healthcare and AP document verticals Nanonets Agents targets. The Table Router Pipeline (deterministic execution for arithmetic questions) is a deployable pattern.</dd>
-      <dt>Research</dt>
-      <dd>DenTab establishes that multi-step arithmetic and consistency checks over table data remain unsolved even with perfect structural input. Useful as an evaluation suite for the team&#39;s /vqa endpoint on transactional documents.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
+  <p class="item-summary">Logic-aware page graph for multi-page PDF retrieval enables a lightweight VLM to traverse document structure.</p>
 </article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
@@ -274,28 +364,80 @@
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
 <article class="item "
-         data-source="rss"
-         data-score="40">
+         data-source="arxiv"
+         data-score="58">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 5 · competitive 5 · frontier 0 · vlm_research 0 = 40 (this view's weighting)">40</span>
+          title="doc_ai 3 · competitive 4 · frontier 2 · vlm_research 3 = 58 (this view's weighting)">58</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 60%"></span>
     </span>
-    <span class="item-source">rss</span>
+    <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://landing.ai/blog/introducing-agentic-document-extraction-gen2" target="_blank" rel="nofollow noopener noreferrer">LandingAI Releases Agentic Document Extraction Gen2 with DPT-3 Pro and DPT-3 Verity</a>
+    <a href="https://arxiv.org/abs/2511.21631" target="_blank" rel="nofollow noopener noreferrer">Qwen3-VL Technical Report</a>
   </p>
-  <p class="item-summary">LandingAI ADE Gen2 (Sept 9) adds DPT-3 Pro + Verity endpoints with per-character pricing and word-level bounding boxes.</p>
+  <p class="item-summary">Qwen3-VL technical report covers architecture, training, and benchmark results including OCR and document-understanding evals.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>LandingAI now exposes Parse and Extract endpoints with per-output-character pricing and source-grounded word-level bounding boxes, directly overlapping OCR-3&#39;s five canonical endpoints and the same enterprise-agentic-pipeline customer segment. DPT-3 Verity&#39;s deterministic path for clean PDFs at roughly 40% lower cost than DPT-3 Pro signals deliberate price-tier competition aimed at high-volume document pipeline customers.</dd>
+      <dd>Qwen3-VL appears on the IDP Leaderboard as a direct comparable to OCR-3. The technical report exposes training choices, benchmark methodology, and capability boundaries that inform how to position OCR-3 against the Qwen3 family.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication. The two-model routing architecture (high-quality Pro vs. deterministic Verity) is worth noting as a productization pattern for confidence-scored extraction.</dd>
+      <dd>Architecture details on Qwen3-VL&#39;s vision encoder and cross-modal attention design provide a reference baseline for the team&#39;s mechanistic interpretability work on VLM hallucinations.</dd>
       <dt>Action</dt>
-      <dd>investigate</dd>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai, vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="42">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 3 · frontier 0 · vlm_research 3 = 42 (this view's weighting)">42</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2509.18189" target="_blank" rel="nofollow noopener noreferrer">Qianfan-VL: Domain-Enhanced Universal Vision-Language Models</a>
+  </p>
+  <p class="item-summary">Qianfan-VL technical report covers domain-enhanced VLM training for vertical enterprise tasks including document parsing.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Qianfan-VL is the underlying model behind Qianfan-OCR (93.12 OmniDocBench v1.5, 880 OCRBench), a direct IDP Leaderboard competitor. The technical report exposes the domain-enhancement training that drives its document-parsing accuracy.</dd>
+      <dt>Research</dt>
+      <dd>Domain-enhanced VLM training using vertical-specific data mixtures is a methodology worth reviewing for applicability to OCR-3&#39;s fine-tuning approach on specific document verticals.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="38">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 3 · frontier 1 · vlm_research 2 = 38 (this view's weighting)">38</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2601.04720" target="_blank" rel="nofollow noopener noreferrer">Qwen3-VL-Embedding and Qwen3-VL-Reranker: A Unified Framework for State-of-the-Art Multimodal Retrieval and Ranking</a>
+  </p>
+  <p class="item-summary">Qwen3-VL-Embedding unifies multimodal document retrieval and reranking, extending Qwen3 from extraction into the RAG stack.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Qwen3-VL-Embedding extends the Qwen3-VL competitive surface from extraction into retrieval, potentially reducing the need for a separate OCR-3 + embedding stack in agentic pipelines.</dd>
+      <dt>Research</dt>
+      <dd>The multimodal embedding architecture is relevant to OCR-3&#39;s /chunk endpoint positioning for RAG workflows; the combined extract+embed approach is a one-model alternative to multi-step pipelines.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: doc_ai</p>
@@ -311,28 +453,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Would a VLM-agnostic post-processing layer (like MinerU-Popo, arXiv 2605.24973) improve OCR-3&#39;s cross-page continuity on multi-page PDFs without requiring model retraining, and is this a gap customers are reporting?</p>
-    <p class="question-context">MinerU-Popo is open-source and VLM-agnostic. If cross-page paragraph and table truncation is a documented failure mode in customer OCR-3 usage, a compatible post-processing step could be added to the /parse pipeline without touching the model itself.</p>
+    <p class="question-text">Has OCR-3&#39;s OmniDocBench score of 90.5 been confirmed as v1.5 or v1.6?</p>
+    <p class="question-context">OCR-3 launched April 2, 2026 — eight days before OmniDocBench v1.6&#39;s MGAM methodology update on April 10. HunyuanOCR (94.1) and Qianfan-VL (93.12) are both confirmed on v1.5; if OCR-3&#39;s 90.5 is also on v1.5, the competitive gap is defined. If it is on v1.6, the comparison to HunyuanOCR and Qianfan-VL is not cross-version valid. A one-line annotation in nanonets_context.md would end this question, which has appeared in 11+ consecutive builds.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should OCR-3 be evaluated on the MORE benchmark (ICML 2026, arXiv 2607.02956)? It covers 149 languages on real-world documents and would provide a public multilingual positioning point distinct from the English-dominant IDP Leaderboard.</p>
-    <p class="question-context">MORE&#39;s annotation covers structural elements (tables, code, catalogs) beyond plain text and uses model-assisted, human-refined annotations — closer to production document quality than most existing multilingual OCR benchmarks.</p>
+    <p class="question-text">CLI ingest has failed for 44+ consecutive builds; all four source types remain blocked by proxy policy. Can the team confirm whether allowlist restoration is under investigation?</p>
+    <p class="question-context">Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. This build found 15 items via WebSearch fallback (all arXiv papers). HN and RSS coverage remains zero, meaning competitive news items that appear on HN or in lab RSS feeds are invisible to each build. A one-line status update — even &#39;under investigation, ETA unknown&#39; — would prevent this question recurring.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">CLI ingest has now failed for 43+ consecutive builds; all four source types (arxiv, hn, rss, github_trending) are blocked by proxy policy. Can the team confirm whether allowlist restoration is under investigation, and if not, authorize expanded product-news queries in the WebSearch fallback?</p>
-    <p class="question-context">Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. This build found 9 items via WebSearch fallback. Competitive and frontier coverage depends on direct feeds for timely signals.</p>
+    <p class="question-text">Should OCR-3 be evaluated on READoc (arXiv 2409.05137) as a production-diversity benchmark complement to OmniDocBench?</p>
+    <p class="question-context">READoc covers realistic document structured extraction with diverse, noisy inputs and multi-granularity evaluation. No public OCR-3 result on READoc exists. The benchmark&#39;s coverage of production-like document variety would anchor OCR-3&#39;s performance claims on documents that curated benchmarks systematically exclude.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The industrial-guide deployment paper (arXiv 2601.22754) reports a 132:15 false-to-true positive ratio in a repetition-loop failure. Does Nanonets have per-document-type failure statistics from customer data that confirm or contradict this severity estimate?</p>
-    <p class="question-context">This is the first public dataset with production-scale repetition-loop impact numbers. If customer data shows similar rates on specific document types, it could prioritize the team&#39;s loop-mitigation research agenda.</p>
+    <p class="question-text">Does Qwen3-VL-Embedding&#39;s unified extract+embed architecture represent a competitive threat to OCR-3&#39;s /chunk endpoint in agentic RAG pipelines?</p>
+    <p class="question-context">Qwen3-VL-Embedding (arXiv 2601.04720) provides multimodal document retrieval and reranking in a single model, which could replace separate OCR-3 + embedding-model stacks. If customers are building agentic pipelines that require both extraction and retrieval, a single Qwen3-VL-based solution may reduce willingness to adopt OCR-3 for the extraction step. The team&#39;s position on this competitive vector would help prioritize /chunk endpoint development.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">LandingAI&#39;s DPT-3 Verity is priced at roughly 40% below DPT-3 Pro for clean digital PDFs, which positions it below OCR-3&#39;s standard tier on cost. Has the team done a head-to-head accuracy comparison on clean digital-born PDFs to assess whether the cost difference can be defended on accuracy grounds?</p>
-    <p class="question-context">LandingAI ADE Gen2 (September 9, 2026) is the newest entrant with overlapping Parse/Extract/Split endpoints and enterprise-grade deployment options. Without a public benchmark comparison, the competitive positioning on clean-PDF accuracy is unanchored.</p>
+    <p class="question-text">Should the DELTA table structure decomposition methodology (arXiv 2609.17458) be applied to OCR-3&#39;s table output pipeline to improve phantom-row attribution?</p>
+    <p class="question-context">DELTA separates physical structure recognition, logical structure, and OCR into three distinct subtasks, outputting OTSL. If OCR-3&#39;s phantom-row failures cluster at logical structure boundary misassignments rather than raw OCR errors, DELTA&#39;s decomposition would allow precise failure attribution. The paper also includes a Hindi table benchmark (TORQUE) directly relevant to OCR-3&#39;s multilingual evaluation gaps.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -344,7 +486,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-19T13:10:00+00:00
+    sources covered:     · failed: 4 · built at 2026-09-19T19:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
