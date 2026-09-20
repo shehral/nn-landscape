@@ -12583,3 +12583,31 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-20T19:10:00+00:00 (audit: passed)
+
+### Q: OvisOCR2 uses a 3-stage pipeline (SFT → multi-component RL → on-policy distillation to 0.8B) to achieve 96.58 on OmniDocBench v1.6. Does this RL+distillation recipe warrant investigation as a structural hallucination mitigation path for OCR-3?
+
+**Context:** OvisOCR2 scored above all larger models at 0.8B. The RL phase targets multi-component reward signals that appear to reduce phantom-row outputs on complex tables — directly relevant to the team's ongoing hallucination mitigation work.
+
+**Answer:** _add reply here_
+
+### Q: MiniMax M3 (428B MoE, open-weight, 91.6% OmniDocBench 1.5 reported) has now appeared in multiple consecutive build comparisons without an entry in the context.md competitive registry. Should it be added?
+
+**Context:** The model appears in third-party comparisons and is cited in OmniDocBench discussions. Absence from context.md means scoring is inconsistent across builds.
+
+**Answer:** _add reply here_
+
+### Q: GPT-6 Astra, Claude Fable 5.1, and Gemini 3.8 Flash all launched in the first week of September 2026 with image input but no IDP Leaderboard or OmniDocBench numbers. Is there a plan to run these on standard document benchmarks before third-party comparisons establish the reference frame?
+
+**Context:** Three consecutive builds have flagged this gap. If no internal benchmarking is planned, the competitive narrative on frontier document AI will be set by third parties within 2-3 weeks.
+
+**Answer:** _add reply here_
+
+### Q: LlamaIndex's 'LlamaParse vs Nanonets' page categorizes Nanonets as a business-automation platform unsuitable for programmatic use cases, while positioning LlamaParse as the developer/agentic choice. Does the team consider this framing accurate, and does the Agentic Data Extraction API positioning need a public update?
+
+**Context:** The page is indexed and likely surfaces in buyer evaluation searches. If the 'business automation' categorization is inaccurate, a response via documentation or a direct comparison page would address it.
+
+**Answer:** _add reply here_
+
+---
