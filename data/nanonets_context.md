@@ -1765,3 +1765,63 @@ Nanonets, do not respond.
 - Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
   No new Nanonets models on HuggingFace. No Nanonets-authored arXiv
   papers found. No September 2026 Nanonets blog posts indexed.
+
+---
+
+**Date:** 2026-09-20
+
+**Sources consulted:**
+
+- WebSearch: "Nanonets OCR-3 IDP leaderboard September 2026 ranking" —
+  #1 at 85.9% confirmed unchanged; 87.4 OLM-OCR and 90.5 OmniDocBench
+  confirmed current; benchmarking.nanonets.com and idp-leaderboard.org
+  URLs confirmed resolving
+- WebSearch: "site:huggingface.co/nanonets 2026" — open-weight model
+  lineup unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains
+  API-only
+- WebSearch: "nanonets arxiv 2026 research paper hallucination VLM" —
+  no team-authored papers surfaced; Nanonets-KIE dataset referenced in
+  third-party papers (as in prior refreshes)
+- WebSearch: "Nanonets product announcement blog September 2026" — no
+  new September 2026 Nanonets product announcements indexed
+- WebSearch: Mistral OCR September 2026 — no new model since OCR 4.1
+  (full release August 13, 2026); all prior entries confirmed current
+- WebSearch: Reducto AI document processing September 2026 — r-1
+  (September 1, 2026) confirmed current from prior context; no new
+  announcements this week
+- WebSearch: LlamaParse LlamaIndex September 2026 — no new major
+  product beyond what's in context; all prior entries confirmed current
+- WebSearch: Anthropic Claude document extraction vision September 2026
+  — Claude Docs (new feature for creating editable documents in the
+  claude.ai chat interface) noted; this is a document creation /
+  co-authoring UX feature, not a document-extraction API surface; no
+  material change to competitive axis classification; Claude Fable 5.1
+  and prior Anthropic models confirmed current
+- WebSearch: OpenAI GPT-6 document vision September 2026 — ChatGPT
+  updated its default model to GPT-6 Astra on September 8, 2026; this
+  is a product/deployment update, not a new model; GPT-6 Astra API
+  already in context (September 3–4, 2026 release); no new models
+- WebSearch: Google Gemini document OCR vision September 2026 — no
+  new model beyond Gemini 3.8 Flash (September 2, 2026) already in
+  context
+- WebSearch: xAI Grok document extraction OCR September 2026 — Grok
+  Collections API confirmed current; Grok Build operational/UI updates
+  noted; no new dedicated document-extraction product
+- WebSearch: Qwen3-VL Alibaba VLM document OCR September 2026 — no
+  new release; Qwen3.8-Max and Qwen3.8-27B confirmed current
+- WebSearch: Rossum / Docsumo / ABBYY / Kofax (Tungsten Automation)
+  September 2026 — all confirmed operating; no renames or closures
+- WebSearch: Firecrawl / Unstructured / Docling / Extend September
+  2026 — all confirmed operating; no major new product announcements
+- WebSearch: new OCR VLM document AI model September 2026 benchmark —
+  no new major entrants identified; market stable relative to
+  2026-09-13 snapshot
+
+**Material changes versus prior version (2026-09-13):**
+
+No material changes detected today. All body-text entries confirmed
+current. Nanonets OCR-3 retains #1 on IDP Leaderboard (85.9). No new
+Nanonets models, arXiv papers, or product announcements. No new
+competitive entrants or meaningful pivots among the listed companies.
+Claude Docs (Anthropic) is a document creation/co-authoring UI feature,
+not an extraction-API competitor; no change to competitive classification.
