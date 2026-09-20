@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 20, 2026 · 23:30 UTC · 6 items scored</span>
+  <span class="built-at">Built Sep 20, 2026 · 19:00 UTC · 10 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,10 +53,11 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Three open-weight document VLMs covered in this build — WeVisDoc-4B, PaddleOCR-VL-1.6, and Fire-PDF&#39;s embedded GLM-OCR — all match or exceed OCR-3&#39;s public OmniDocBench score at zero marginal inference cost, collectively anchoring a free-tier alternative for cost-sensitive pipelines.</li>
-    <li>OmniDocBench v1.6 is consolidating as the primary public evaluation surface for document parsers; both WeVisDoc (95.38) and PaddleOCR-VL-1.6 (96.33) report v1.6 scores, while OCR-3&#39;s reference score of 90.5 predates v1.6 and is not directly comparable.</li>
-    <li>Both new table and document-QA papers decompose their respective tasks into explicit intermediate representations (bounding-box predictions in BGTR, per-element routing decisions in capability-routed retrieval), pointing toward structured intermediate steps as the community&#39;s preferred accuracy lever over end-to-end sequence decoding.</li>
-    <li>Open-source document AI tools are acquiring academic legitimacy (Docling at ACM DocEng 2026) and production-default integrations (Fire-PDF shipping GLM-OCR as default) simultaneously, tightening the open-source wedge against commercial API pricing.</li>
+    <li>Compact models (1-3B parameters) now match or exceed 70B+ VLMs on document benchmarks through domain-specific training and RL post-training — efficient specialization is outpacing scale for structured document tasks.</li>
+    <li>Reinforcement learning with verifiable structured-output rewards (compilable LaTeX, layout-correctness checks) has become the standard post-training approach for document parsing, appearing across independent research groups this cycle.</li>
+    <li>Table structure recognition is a concentrated active sub-problem with at least three concurrent independent architecture approaches in this build: instruction conditioning, encoder-only transformers, and RL-based output verification.</li>
+    <li>Frontier labs are shifting from general-purpose document extraction APIs to domain-vertical document intelligence products — Astra for Law is the first named GPT-6 vertical configuration, signaling a go-to-market strategy change.</li>
+    <li>Mechanistic interpretability methods are reaching document AI: the OCR routing bottleneck in VLM hidden states is now locatable via PCA, enabling layer-level attribution for extraction failures rather than black-box debugging.</li>
   </ul>
 </section>
 
@@ -65,170 +66,264 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="65">
+         data-score="72">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 1 · vlm_research 3 = 65 (this view's weighting)">65</span>
+          title="doc_ai 5 · competitive 4 · frontier 1 · vlm_research 3 = 72 (this view's weighting)">72</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.20423" target="_blank" rel="nofollow noopener noreferrer">WeVisDoc: From Coverage to Capability for Robust End-to-End Document Parsing</a>
+    <a href="https://arxiv.org/abs/2506.05218" target="_blank" rel="nofollow noopener noreferrer">MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradigm</a>
   </p>
-  <p class="item-summary">Tencent WeVisDoc-4B reaches 95.38 on OmniDocBench v1.6, #1 among end-to-end document parsers; open-weight Qwen3-VL fine-tune.</p>
+  <p class="item-summary">3B model matches 72B+ VLMs on OmniDocBench via structure-recognition-relation triplet training.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>WeVisDoc-4B posts 95.38 on OmniDocBench v1.6, exceeding OCR-3&#39;s public 90.5 score; customers benchmarking document parsers on that metric now have a new open-weight reference point from a large tech vendor.</dd>
+      <dd>MonkeyOCR reports 89.3 on OmniDocBench with a 3B model, outperforming Qwen2.5-72B — direct benchmark overlap with OCR-3&#39;s reported 90.5. A head-to-head on the same OmniDocBench version would confirm relative standing.</dd>
       <dt>Research</dt>
-      <dd>The two-stage data-centric curriculum — coverage expansion then residual-error probe rebalancing — is a reproducible training recipe applicable to any document VLM with a targeted accuracy gap.</dd>
+      <dd>The structure-recognition-relation triplet merges layout detection and relation parsing into one stage, which may simplify Nanonets&#39; current multi-stage pipeline and reduce error propagation between stages.</dd>
       <dt>Action</dt>
-      <dd>monitor</dd>
+      <dd>read in week</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: competitive</p>
 </article><article class="item "
-         data-source="rss"
-         data-score="39">
+         data-source="arxiv"
+         data-score="47">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 3 · frontier 0 · vlm_research 0 = 39 (this view's weighting)">39</span>
+          title="doc_ai 4 · competitive 1 · frontier 1 · vlm_research 3 = 47 (this view's weighting)">47</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
     </span>
-    <span class="item-source">rss</span>
+    <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://www.firecrawl.dev/blog/fire-pdf-launch" target="_blank" rel="nofollow noopener noreferrer">Fire-PDF: Firecrawl&#39;s Neural Document Layout and GLM-OCR PDF Parsing Engine Now Live for All Users</a>
+    <a href="https://arxiv.org/abs/2506.03197" target="_blank" rel="nofollow noopener noreferrer">Infinity Parser: Layout Aware Reinforcement Learning for Scanned Document Parsing</a>
   </p>
-  <p class="item-summary">Firecrawl Fire-PDF pairs a neural layout model with GLM-OCR as scan backend, now default for all users; extends Firecrawl into scanned PDF extraction.</p>
+  <p class="item-summary">RL with layout-correctness rewards improves scanned document parsing over supervised baselines.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Firecrawl Fire-PDF reduces friction for developers building document-extraction pipelines without a dedicated OCR API; GLM-OCR integration lowers the marginal cost to near-zero for scanned documents.</dd>
+      <dd>RL-tuned layout-aware parsing on scanned documents narrows accuracy gaps on handwritten and degraded-scan inputs, relevant to Nanonets&#39; enterprise scan workloads.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication.</dd>
+      <dd>Reinforcement learning with layout correctness as a verifiable reward signal could supplement the OCR-3 fine-tuning approach for edge-case scan types where ground truth is structurally checkable.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="40">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 1 · frontier 1 · vlm_research 3 = 40 (this view's weighting)">40</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2509.17589" target="_blank" rel="nofollow noopener noreferrer">Table2LaTeX-RL: High-Fidelity LaTeX Code Generation from Table Images via Reinforced Multimodal Language Models</a>
+  </p>
+  <p class="item-summary">RL with compilable-LaTeX verification reward improves table-to-LaTeX fidelity over supervised training.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>High-fidelity LaTeX table generation addresses a niche but high-value use case for scientific and technical document customers on the Nanonets platform.</dd>
+      <dt>Research</dt>
+      <dd>Compilable-LaTeX as a verifiable reward for RL training is a clean formulation applicable to any structured output task with a syntax validator, including JSON and XML extraction.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="37">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 1 · frontier 1 · vlm_research 2 = 37 (this view's weighting)">37</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2603.23885" target="_blank" rel="nofollow noopener noreferrer">Towards Real-World Document Parsing via Realistic Scene Synthesis and Document-Aware Training</a>
+  </p>
+  <p class="item-summary">Synthetic degraded-scene rendering plus document-aware training improves real-world scan parsing robustness.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Scalable synthetic scene synthesis for document degradation provides a training data strategy for long-tail scan conditions encountered in Nanonets&#39; enterprise deployments.</dd>
+      <dt>Research</dt>
+      <dd>Document-aware training on synthesized degraded scenes could supplement the current OCR-3 training corpus to improve robustness on low-quality and mixed-condition scans.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="33">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 1 · frontier 0 · vlm_research 2 = 33 (this view's weighting)">33</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2604.02880" target="_blank" rel="nofollow noopener noreferrer">InstructTable: Improving Table Structure Recognition Through Instructions</a>
+  </p>
+  <p class="item-summary">Instruction conditioning for table structure recognition enables task-specific extraction without per-task fine-tuning.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Instruction-conditioned structure recognition could enable customer-driven extraction templates without model fine-tuning, relevant to the Nanonets Agents configuration surface.</dd>
+      <dt>Research</dt>
+      <dd>Instruction conditioning as a training signal for structure recognition is adjacent to the team&#39;s current layout work; useful reference for the flexible-output research direction.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="33">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 1 · frontier 0 · vlm_research 2 = 33 (this view's weighting)">33</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2506.07015" target="_blank" rel="nofollow noopener noreferrer">TABLET: Table Structure Recognition using Encoder-only Transformers</a>
+  </p>
+  <p class="item-summary">Encoder-only transformer matches decoder-based table structure recognition with lower inference cost.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Encoder-only architecture for table structure recognition may reduce inference latency compared to decoder-heavy alternatives; worth benchmarking against current pipeline latency if table parsing is a bottleneck.</dd>
+      <dt>Research</dt>
+      <dd>The encoder-only formulation trades generation flexibility for speed; useful reference if the team evaluates inference-time optimization for table parsing at scale.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
 </article>  </div>
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
 <article class="item "
-         data-source="arxiv"
-         data-score="68">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 5 · frontier 1 · vlm_research 2 = 68 (this view's weighting)">68</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2606.03264" target="_blank" rel="nofollow noopener noreferrer">PaddleOCR-VL-1.6: Expanding the Frontier of Document Parsing with Under-Optimized Region Refinement and Progressive Post-Training</a>
-  </p>
-  <p class="item-summary">PaddlePaddle open-weight 0.9B VLM hits 96.33 on OmniDocBench v1.6 via region refinement post-training, leading that benchmark version.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>At 96.33 on OmniDocBench v1.6 with a sub-1B open-weight model, PaddleOCR-VL-1.6 anchors the &#39;good-enough at zero marginal cost&#39; case for document parsing in cost-sensitive pipelines.</dd>
-      <dt>Research</dt>
-      <dd>Under-optimized region refinement — iterative passes targeting high-error-density zones — is a post-training technique applicable to OCR-3&#39;s hard document classes without full retraining.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article><article class="item "
          data-source="rss"
-         data-score="45">
+         data-score="50">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 4 · frontier 0 · vlm_research 0 = 45 (this view's weighting)">45</span>
+          title="doc_ai 2 · competitive 4 · frontier 3 · vlm_research 0 = 50 (this view's weighting)">50</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://dl.acm.org/doi/10.1145/3820755.3830337" target="_blank" rel="nofollow noopener noreferrer">Docling: An Efficient Open-Source Toolkit for AI-Driven Document Conversion (ACM DocEng 2026)</a>
+    <a href="https://openai.com/index/astra-for-law/" target="_blank" rel="nofollow noopener noreferrer">Introducing Astra for Law</a>
   </p>
-  <p class="item-summary">IBM Docling receives ACM DocEng 2026 publication, providing academic grounding for the open-source document conversion toolkit.</p>
+  <p class="item-summary">OpenAI launches Astra for Law, its first domain-vertical document intelligence product targeting legal due diligence.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>An ACM peer-reviewed paper strengthens Docling&#39;s credibility in enterprise procurement and academic citations, supporting IBM&#39;s commercial Docling for watsonx at $4/1,000 pages.</dd>
+      <dd>OpenAI&#39;s first domain-vertical document intelligence product targets legal due diligence and contract review — a segment where Nanonets&#39; enterprise OCR customers are concentrated. Increases pressure on Nanonets&#39; legal-vertical pipeline positioning.</dd>
       <dt>Research</dt>
-      <dd>The paper&#39;s architecture description may surface implementation details useful for ablation comparisons against OCR-3&#39;s parser components.</dd>
+      <dd>No direct research implication; the capability appears to be prompt engineering and retrieval over GPT-6 vision, not a new model architecture.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="rss"
+         data-score="36">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 3 · frontier 2 · vlm_research 1 = 36 (this view's weighting)">36</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://datanorth.ai/news/z-ai-releases-glm-5-3-flash" target="_blank" rel="nofollow noopener noreferrer">Z.ai GLM-5.3-Flash: First Natively Multimodal GLM-5</a>
+  </p>
+  <p class="item-summary">Z.ai releases GLM-5.3-Flash, the first natively multimodal model in the GLM-5 family.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Z.ai&#39;s first natively multimodal GLM-5 model expands the open-weight competitive surface for general-purpose document extraction; context.md tracks GLM-OCR separately and this divergence warrants clarification.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication at this release; relevance is as a future benchmarking baseline for OCR-3 against open-weight multimodal competitors.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article>  </div>
+  <div class="axis-col" data-axis="frontier">
+    <h2>Frontier</h2>
+<article class="item "
+         data-source="arxiv"
+         data-score="18">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 0 · frontier 2 · vlm_research 1 = 18 (this view's weighting)">18</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2603.20354" target="_blank" rel="nofollow noopener noreferrer">Leum-VL Technical Report</a>
+  </p>
+  <p class="item-summary">Leum-VL is a general-purpose vision-language model technical report with no document-specific evaluation.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication; Leum-VL has no document-specific benchmarks in the technical report.</dd>
+      <dt>Research</dt>
+      <dd>General-purpose VLM; not relevant to current research line.</dd>
       <dt>Action</dt>
       <dd>no action</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: doc_ai</p>
 </article>  </div>
-  <div class="axis-col" data-axis="frontier">
-    <h2>Frontier</h2>
-      <p class="item-summary">No top-N items this build.</p>
-  </div>
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="33">
+         data-score="44">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 4 = 33 (this view's weighting)">33</span>
+          title="doc_ai 3 · competitive 0 · frontier 2 · vlm_research 5 = 44 (this view's weighting)">44</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 100%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.08705" target="_blank" rel="nofollow noopener noreferrer">Enhancing Table Structure Recognition via Bounding Box Guidance</a>
+    <a href="https://arxiv.org/abs/2602.22918" target="_blank" rel="nofollow noopener noreferrer">Where Vision Becomes Text: Locating the OCR Routing Bottleneck in Vision-Language Models</a>
   </p>
-  <p class="item-summary">BGTR predicts cell bounding boxes first, then conditions HTML sequence generation on them, decoupling geometry from content in table parsing.</p>
+  <p class="item-summary">PCA on VLM hidden states reveals a recoverable OCR routing direction concentrated in early vision-encoder layers.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct product implication; addresses table-cell hallucination at a method level, not a product integration.</dd>
+      <dd>The OCR routing bottleneck in early VLM layers suggests visual encoding quality disproportionately affects extraction accuracy on complex tables — relevant to diagnosing OCR-3 failure modes on dense layouts.</dd>
       <dt>Research</dt>
-      <dd>Bounding-box conditioning as a structural constraint in table sequence models directly targets merged-cell and phantom-cell failures — the same failure class as OCR-3&#39;s structural hallucination research line; applicable as a lightweight auxiliary training signal.</dd>
+      <dd>PCA-recoverable routing direction enables targeted layer-level diagnosis; potential tooling for Nanonets&#39; hallucination investigation pipeline where failure attribution is currently coarse.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="33">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 4 = 33 (this view's weighting)">33</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.13268" target="_blank" rel="nofollow noopener noreferrer">Capability-Routed Visual Retrieval and Evidence Threading for Long-Context Document QA</a>
-  </p>
-  <p class="item-summary">Capability-aware routing across document element types with evidence threading improves multi-hop accuracy on long reports and infographic layouts.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Capability-routed retrieval would improve accuracy on the /vqa endpoint for complex mixed-layout reports; no off-the-shelf integration path exists from the paper.</dd>
-      <dt>Research</dt>
-      <dd>Evidence threading through multi-hop chains is directly relevant to structured VQA over enterprise documents; the architecture provides a comparison point for the team&#39;s VQA benchmark evaluations.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
 </article>  </div>
 </section>
 
@@ -241,28 +336,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">WeVisDoc-4B (arXiv 2609.20423) from Tencent WeChat Vision scores 95.38 on OmniDocBench v1.6 and leads among end-to-end parsers. Should it be added to context.md&#39;s competitive set alongside HunyuanOCR-1.5 as a second Tencent document-AI entry?</p>
-    <p class="question-context">WeVisDoc is from the WeChat Vision team, distinct from the HunyuanOCR team; both are Tencent products. context.md currently lists only HunyuanOCR. Without an entry, future builds will score WeVisDoc inconsistently.</p>
+    <p class="question-text">Has MonkeyOCR (3B, claims 89.3 on OmniDocBench) been benchmarked against OCR-3 on the same OmniDocBench version?</p>
+    <p class="question-context">MonkeyOCR&#39;s reported 89.3 is close to OCR-3&#39;s 90.5. Without knowing whether both scores are on the same OmniDocBench version (v1.5 vs v1.6), the relative standing cannot be confirmed or communicated externally.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">OCR-3&#39;s OmniDocBench score of 90.5 remains unversioned in context.md. PaddleOCR-VL-1.6 leads v1.6 at 96.33 and WeVisDoc leads among end-to-end parsers at 95.38 on v1.6. Was OCR-3&#39;s 90.5 measured on v1.5 or v1.6?</p>
-    <p class="question-context">OmniDocBench v1.6 changed methodology (MGAM) on April 10, 2026; OCR-3 launched April 2, 2026, making v1.5 the likely benchmark. This question has appeared in 13+ consecutive builds. A one-line version annotation in context.md permanently resolves it.</p>
+    <p class="question-text">Should Astra for Law route to the competitive axis or remain at frontier? It is a domain-vertical document intelligence product, not a general-purpose model release.</p>
+    <p class="question-context">Per the axis disambiguation rule, frontier-lab releases that overlap Nanonets&#39; product surface route to competitive. Astra for Law targets legal document extraction — the same segment as Nanonets&#39; enterprise OCR customers — which argues for competitive. Scored competitive=4 this build; flagging for team confirmation.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">CLI ingest has failed in every build on record; this build covers 2 of 4 source types via WebSearch fallback, yielding audit_passed=false. Should the audit criterion be revised to treat WebSearch fallback as valid source coverage, or should restoring the proxy allowlist remain the priority?</p>
-    <p class="question-context">Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. Builds that find 3+ source types via fallback have passed; this build found only arxiv and rss types.</p>
+    <p class="question-text">OCR-3&#39;s OmniDocBench score of 90.5 remains unversioned (v1.5 vs v1.6) in context.md — this is now the 13th+ consecutive build where this question has appeared without a team answer.</p>
+    <p class="question-context">Two papers this build directly benchmark against OmniDocBench. Without a version anchor in context.md, scoring relative to OCR-3 requires a caveat. Recommend the team pin the version or confirm the score applies to both.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">BGTR (arXiv 2609.08705) introduces bounding-box conditioning as a structural constraint in table sequence decoding, directly targeting merged-cell and phantom-cell failures that overlap with OCR-3&#39;s structural hallucination research. Does this warrant reproduction against OCR-3&#39;s table extraction pipeline?</p>
-    <p class="question-context">The &#39;read in week&#39; recommendation reflects uncertainty about current research capacity. If the team is actively investigating structural hallucinations, BGTR&#39;s constraint mechanism is directly applicable and a reproduction would take 1-2 weeks.</p>
+    <p class="question-text">Should GLM-5.3-Flash (Z.ai&#39;s first multimodal general-purpose GLM-5) be tracked separately from GLM-OCR in context.md?</p>
+    <p class="question-context">context.md tracks GLM-OCR as a document-specific competitor. GLM-5.3-Flash is a general-purpose multimodal model from the same lab. As Z.ai&#39;s multimodal strategy expands, merging or splitting these entries will affect competitive scoring in future builds.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Firecrawl now uses GLM-OCR as the default scan backend for Fire-PDF. Should context.md be updated to note GLM-OCR&#39;s commercial adoption as a component in a named adjacent competitor&#39;s product, changing its classification from &#39;model comparison baseline&#39; to &#39;deployed competitor infrastructure&#39;?</p>
-    <p class="question-context">GLM-OCR is listed in context.md as a competitive OCR model (0.9B, 94.62 OmniDocBench V1.5). Its deployment inside Firecrawl&#39;s PDF pipeline changes its ecosystem role: it is no longer only a point-in-time benchmark reference but an actively embedded component.</p>
+    <p class="question-text">CLI ingest has now failed for 45+ consecutive builds due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. Is proxy allowlist restoration under investigation?</p>
+    <p class="question-context">This build used WebSearch fallback to find 10 new items from arxiv and rss source types, but HN and GitHub Trending produced no qualifying new items via WebSearch. The WebSearch fallback covers less surface area and misses time-sensitive HN discussions. Allowlist additions required: export.arxiv.org, hn.algolia.com, feeds.feedburner.com, and all hosts listed in data/sources.yaml rss.feeds.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -274,7 +369,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered: arxiv, rss    · failed: 2 · built at 2026-09-20T23:30:00+00:00
+    sources covered: arxiv, rss    · failed: 2 · built at 2026-09-20T19:00:32+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

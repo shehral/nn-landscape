@@ -12645,3 +12645,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-20T19:00:32+00:00 (audit: partial)
+
+### Q: Has MonkeyOCR (3B, claims 89.3 on OmniDocBench) been benchmarked against OCR-3 on the same OmniDocBench version?
+
+**Context:** MonkeyOCR's reported 89.3 is close to OCR-3's 90.5. Without knowing whether both scores are on the same OmniDocBench version (v1.5 vs v1.6), the relative standing cannot be confirmed or communicated externally.
+
+**Answer:** _add reply here_
+
+### Q: Should Astra for Law route to the competitive axis or remain at frontier? It is a domain-vertical document intelligence product, not a general-purpose model release.
+
+**Context:** Per the axis disambiguation rule, frontier-lab releases that overlap Nanonets' product surface route to competitive. Astra for Law targets legal document extraction — the same segment as Nanonets' enterprise OCR customers — which argues for competitive. Scored competitive=4 this build; flagging for team confirmation.
+
+**Answer:** _add reply here_
+
+### Q: OCR-3's OmniDocBench score of 90.5 remains unversioned (v1.5 vs v1.6) in context.md — this is now the 13th+ consecutive build where this question has appeared without a team answer.
+
+**Context:** Two papers this build directly benchmark against OmniDocBench. Without a version anchor in context.md, scoring relative to OCR-3 requires a caveat. Recommend the team pin the version or confirm the score applies to both.
+
+**Answer:** _add reply here_
+
+### Q: Should GLM-5.3-Flash (Z.ai's first multimodal general-purpose GLM-5) be tracked separately from GLM-OCR in context.md?
+
+**Context:** context.md tracks GLM-OCR as a document-specific competitor. GLM-5.3-Flash is a general-purpose multimodal model from the same lab. As Z.ai's multimodal strategy expands, merging or splitting these entries will affect competitive scoring in future builds.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has now failed for 45+ consecutive builds due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. Is proxy allowlist restoration under investigation?
+
+**Context:** This build used WebSearch fallback to find 10 new items from arxiv and rss source types, but HN and GitHub Trending produced no qualifying new items via WebSearch. The WebSearch fallback covers less surface area and misses time-sensitive HN discussions. Allowlist additions required: export.arxiv.org, hn.algolia.com, feeds.feedburner.com, and all hosts listed in data/sources.yaml rss.feeds.
+
+**Answer:** _add reply here_
+
+---
