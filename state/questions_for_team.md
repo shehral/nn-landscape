@@ -12611,3 +12611,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-20T23:30:00+00:00 (audit: partial)
+
+### Q: WeVisDoc-4B (arXiv 2609.20423) from Tencent WeChat Vision scores 95.38 on OmniDocBench v1.6 and leads among end-to-end parsers. Should it be added to context.md's competitive set alongside HunyuanOCR-1.5 as a second Tencent document-AI entry?
+
+**Context:** WeVisDoc is from the WeChat Vision team, distinct from the HunyuanOCR team; both are Tencent products. context.md currently lists only HunyuanOCR. Without an entry, future builds will score WeVisDoc inconsistently.
+
+**Answer:** _add reply here_
+
+### Q: OCR-3's OmniDocBench score of 90.5 remains unversioned in context.md. PaddleOCR-VL-1.6 leads v1.6 at 96.33 and WeVisDoc leads among end-to-end parsers at 95.38 on v1.6. Was OCR-3's 90.5 measured on v1.5 or v1.6?
+
+**Context:** OmniDocBench v1.6 changed methodology (MGAM) on April 10, 2026; OCR-3 launched April 2, 2026, making v1.5 the likely benchmark. This question has appeared in 13+ consecutive builds. A one-line version annotation in context.md permanently resolves it.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has failed in every build on record; this build covers 2 of 4 source types via WebSearch fallback, yielding audit_passed=false. Should the audit criterion be revised to treat WebSearch fallback as valid source coverage, or should restoring the proxy allowlist remain the priority?
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. Builds that find 3+ source types via fallback have passed; this build found only arxiv and rss types.
+
+**Answer:** _add reply here_
+
+### Q: BGTR (arXiv 2609.08705) introduces bounding-box conditioning as a structural constraint in table sequence decoding, directly targeting merged-cell and phantom-cell failures that overlap with OCR-3's structural hallucination research. Does this warrant reproduction against OCR-3's table extraction pipeline?
+
+**Context:** The 'read in week' recommendation reflects uncertainty about current research capacity. If the team is actively investigating structural hallucinations, BGTR's constraint mechanism is directly applicable and a reproduction would take 1-2 weeks.
+
+**Answer:** _add reply here_
+
+### Q: Firecrawl now uses GLM-OCR as the default scan backend for Fire-PDF. Should context.md be updated to note GLM-OCR's commercial adoption as a component in a named adjacent competitor's product, changing its classification from 'model comparison baseline' to 'deployed competitor infrastructure'?
+
+**Context:** GLM-OCR is listed in context.md as a competitive OCR model (0.9B, 94.62 OmniDocBench V1.5). Its deployment inside Firecrawl's PDF pipeline changes its ecosystem role: it is no longer only a point-in-time benchmark reference but an actively embedded component.
+
+**Answer:** _add reply here_
+
+---

@@ -22,9 +22,13 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 20, 2026 · 19:10 UTC · 10 items scored</span>
+  <span class="built-at">Built Sep 20, 2026 · 23:30 UTC · 6 items scored</span>
 </header>
 
+<div class="partial-banner">
+  <strong>Partial build.</strong> This edition was published with at least one
+  pre-publish check failed. See <a href="about.html">about</a> for details.
+</div>
 
 <p class="score-legend">
   Scores are 0–100 composites weighted by this view's per-axis emphasis. Hover any score chip to see the per-axis breakdown
@@ -49,118 +53,92 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>OmniDocBench v1.6 leaderboard has three confirmed entries above Nanonets OCR-3&#39;s cited 90.5 score (TeleOCR 96.91, OvisOCR2 96.58, MinerU2.5-Pro 95.69), all using VLM-native approaches rather than pipeline methods.</li>
-    <li>Document extraction API pricing is compressing simultaneously: Cohere Parse v5.0 ($1.50/1K), Reducto r-1 ($10/1K), and Mistral OCR 4.1 ($4/$2 batch) all updated within the same 72-hour window.</li>
-    <li>The September 2026 frontier cluster (GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash) all released with image input capabilities but zero IDP Leaderboard or OmniDocBench scores have been published, leaving document-AI impact unquantified.</li>
-    <li>Sub-1B parameter document VLMs now match large models on OmniDocBench v1.6: OvisOCR2 (0.8B) at 96.58 indicates that parameter count is no longer the primary accuracy driver for structured document extraction.</li>
+    <li>Three open-weight document VLMs covered in this build — WeVisDoc-4B, PaddleOCR-VL-1.6, and Fire-PDF&#39;s embedded GLM-OCR — all match or exceed OCR-3&#39;s public OmniDocBench score at zero marginal inference cost, collectively anchoring a free-tier alternative for cost-sensitive pipelines.</li>
+    <li>OmniDocBench v1.6 is consolidating as the primary public evaluation surface for document parsers; both WeVisDoc (95.38) and PaddleOCR-VL-1.6 (96.33) report v1.6 scores, while OCR-3&#39;s reference score of 90.5 predates v1.6 and is not directly comparable.</li>
+    <li>Both new table and document-QA papers decompose their respective tasks into explicit intermediate representations (bounding-box predictions in BGTR, per-element routing decisions in capability-routed retrieval), pointing toward structured intermediate steps as the community&#39;s preferred accuracy lever over end-to-end sequence decoding.</li>
+    <li>Open-source document AI tools are acquiring academic legitimacy (Docling at ACM DocEng 2026) and production-default integrations (Fire-PDF shipping GLM-OCR as default) simultaneously, tightening the open-source wedge against commercial API pricing.</li>
   </ul>
 </section>
 
 <section class="axes" aria-label="Items by axis">
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
-      <p class="item-summary">No top-N items this build.</p>
+<article class="item "
+         data-source="arxiv"
+         data-score="50">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 4 = 50 (this view's weighting)">50</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
   </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2609.08705" target="_blank" rel="nofollow noopener noreferrer">Enhancing Table Structure Recognition via Bounding Box Guidance</a>
+  </p>
+  <p class="item-summary">BGTR predicts cell bounding boxes first, then conditions HTML sequence generation on them, decoupling geometry from content in table parsing.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication; addresses table-cell hallucination at a method level, not a product integration.</dd>
+      <dt>Research</dt>
+      <dd>Bounding-box conditioning as a structural constraint in table sequence models directly targets merged-cell and phantom-cell failures — the same failure class as OCR-3&#39;s structural hallucination research line; applicable as a lightweight auxiliary training signal.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="50">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 4 = 50 (this view's weighting)">50</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2609.13268" target="_blank" rel="nofollow noopener noreferrer">Capability-Routed Visual Retrieval and Evidence Threading for Long-Context Document QA</a>
+  </p>
+  <p class="item-summary">Capability-aware routing across document element types with evidence threading improves multi-hop accuracy on long reports and infographic layouts.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Capability-routed retrieval would improve accuracy on the /vqa endpoint for complex mixed-layout reports; no off-the-shelf integration path exists from the paper.</dd>
+      <dt>Research</dt>
+      <dd>Evidence threading through multi-hop chains is directly relevant to structured VQA over enterprise documents; the architecture provides a comparison point for the team&#39;s VQA benchmark evaluations.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article>  </div>
   <div class="axis-col" data-axis="doc_ai">
     <h2>Document AI</h2>
 <article class="item "
-         data-source="hn"
-         data-score="64">
+         data-source="arxiv"
+         data-score="60">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 0 · vlm_research 4 = 64 (this view's weighting)">64</span>
+          title="doc_ai 4 · competitive 4 · frontier 1 · vlm_research 3 = 60 (this view's weighting)">60</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
     </span>
-    <span class="item-source">hn</span>
-<span>×2</span>  </div>
+    <span class="item-source">arxiv</span>
+  </div>
   <p class="item-title">
-    <a href="https://aiweekly.co/p/ovisocr2-the-08b-model-that-tops" target="_blank" rel="nofollow noopener noreferrer">OvisOCR2: 0.8B model tops OmniDocBench v1.6 at 96.58 via RL + on-policy distillation</a>
+    <a href="https://arxiv.org/abs/2609.20423" target="_blank" rel="nofollow noopener noreferrer">WeVisDoc: From Coverage to Capability for Robust End-to-End Document Parsing</a>
   </p>
-  <p class="item-summary">OvisOCR2 (0.8B) achieves 96.58 on OmniDocBench v1.6 using SFT → multi-component RL → on-policy distillation, outperforming all larger models.</p>
+  <p class="item-summary">Tencent WeVisDoc-4B reaches 95.38 on OmniDocBench v1.6, #1 among end-to-end document parsers; open-weight Qwen3-VL fine-tune.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>A 0.8B model matching or exceeding Nanonets OCR-3 on structured document extraction makes self-hosted deployment economically viable for customers who choose Nanonets for data-residency. The compactness directly challenges Nanonets&#39; &#39;best accuracy&#39; positioning.</dd>
+      <dd>WeVisDoc-4B posts 95.38 on OmniDocBench v1.6, exceeding OCR-3&#39;s public 90.5 score; customers benchmarking document parsers on that metric now have a new open-weight reference point from a large tech vendor.</dd>
       <dt>Research</dt>
-      <dd>The 3-stage RL+distillation recipe (SFT → multi-component RL → on-policy distillation to 0.8B) is directly relevant to hallucination mitigation and model compression; OvisOCR2&#39;s phantom-row performance on complex tables is worth reproducing.</dd>
-      <dt>Action</dt>
-      <dd>reproduce</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: competitive, vlm_research</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="54">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 3 · frontier 2 · vlm_research 2 = 54 (this view's weighting)">54</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.extend.ai/blog/ocr-and-ai-vision-language-models" target="_blank" rel="nofollow noopener noreferrer">Extend.ai: OCR and AI Vision-Language Models — category explainer by a competitor</a>
-  </p>
-  <p class="item-summary">Extend.ai publishes a category explainer framing VLM-native OCR as superseding legacy pipelines, authored to position their own product as the modern alternative.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Extend.ai&#39;s explainer frames their product as the natural VLM-native successor to legacy OCR; increases the informational surface area competitors control in the category narrative. No Nanonets mention.</dd>
-      <dt>Research</dt>
-      <dd>The post&#39;s technical framing aligns with the team&#39;s existing view on VLM-native OCR; no new methodological claims.</dd>
-      <dt>Action</dt>
-      <dd>no action</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="hn"
-         data-score="40">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 0 · vlm_research 1 = 40 (this view's weighting)">40</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">hn</span>
-  </div>
-  <p class="item-title">
-    <a href="https://eneralabs.com/blog/reducto-r1-review" target="_blank" rel="nofollow noopener noreferrer">Reducto r-1 extended review: $10/1K pages, strong financial-table fidelity</a>
-  </p>
-  <p class="item-summary">Independent review of Reducto r-1 reports strong structured-output fidelity on financial tables at $10/1K pages; no Nanonets comparison included.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Third-party validation of Reducto r-1&#39;s financial-table accuracy at $10/1K pages covers the same IDP enterprise use case as Nanonets&#39; core offering. Absence from the comparison means Nanonets is not part of the reference frame.</dd>
-      <dt>Research</dt>
-      <dd>Review cites layout-graph representation as the technical differentiator for Reducto&#39;s table accuracy; relevant to evaluating whether Nanonets&#39; layout pass covers the same representation class.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: competitive</p>
-</article><article class="item "
-         data-source="hn"
-         data-score="40">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 0 · vlm_research 1 = 40 (this view's weighting)">40</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">hn</span>
-  </div>
-  <p class="item-title">
-    <a href="https://ai-tldr.dev/releases/cohere-parse-v5-0/" target="_blank" rel="nofollow noopener noreferrer">Cohere Parse v5.0: pricing cut to $1.50/1K pages, new multi-column layout support</a>
-  </p>
-  <p class="item-summary">Cohere Parse v5.0 cuts pricing to $1.50/1K pages and adds multi-column layout support, making it the lowest-cost cloud extraction API in the current comparison set.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>At $1.50/1K pages, Cohere Parse is now the lowest-cost cloud extraction API in the comparison set, creating direct pricing pressure on Nanonets&#39; Standard tier for cost-sensitive workloads.</dd>
-      <dt>Research</dt>
-      <dd>No architectural changes disclosed in the release notes; multi-column layout support is incremental.</dd>
+      <dd>The two-stage data-centric curriculum — coverage expansion then residual-error probe rebalancing — is a reproducible training recipe applicable to any document VLM with a targeted accuracy gap.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
@@ -168,21 +146,6 @@
   <p class="secondary-axes">also: competitive</p>
 </article><article class="item "
          data-source="rss"
-         data-score="34">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 2 · frontier 1 · vlm_research 1 = 34 (this view's weighting)">34</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://docupath.ai/blog/q2-2026-document-ai-report" target="_blank" rel="nofollow noopener noreferrer">DocuPath Q2 2026 Document AI Market Report</a>
-  </p>
-  <p class="item-summary">DocuPath&#39;s Q2 2026 report surveys adoption trends in document AI; Nanonets listed in the SMB IDP segment.</p>
-</article><article class="item hostility"
-         data-source="hn"
          data-score="24">
   <div class="item-meta">
     <span class="item-score"
@@ -190,37 +153,23 @@
     <span class="sparkline" aria-hidden="true">
       <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
-    <span class="item-source">hn</span>
-<span title="competitor commentary; descriptive framing">⚐</span>  </div>
+    <span class="item-source">rss</span>
+  </div>
   <p class="item-title">
-    <a href="https://www.llamaindex.ai/blog/llamaparse-vs-nanonets" target="_blank" rel="nofollow noopener noreferrer">LlamaParse vs Nanonets: LlamaIndex positions Nanonets as business-automation, LlamaParse as developer/agentic</a>
+    <a href="https://www.firecrawl.dev/blog/fire-pdf-launch" target="_blank" rel="nofollow noopener noreferrer">Fire-PDF: Firecrawl&#39;s Neural Document Layout and GLM-OCR PDF Parsing Engine Now Live for All Users</a>
   </p>
-  <p class="item-summary">LlamaIndex blog frames Nanonets as a business-automation platform unsuitable for programmatic use, while positioning LlamaParse as the developer/agentic extraction choice.</p>
+  <p class="item-summary">Firecrawl Fire-PDF pairs a neural layout model with GLM-OCR as scan backend, now default for all users; extends Firecrawl into scanned PDF extraction.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>LlamaIndex categorizes Nanonets as business-automation and LlamaParse as developer/agentic, a framing that routes developer and pipeline buyers away from Nanonets. Methodology for capability claims is not disclosed.</dd>
+      <dd>Firecrawl Fire-PDF reduces friction for developers building document-extraction pipelines without a dedicated OCR API; GLM-OCR integration lowers the marginal cost to near-zero for scanned documents.</dd>
       <dt>Research</dt>
-      <dd>No research implication. The framing gap between &#39;business automation&#39; and &#39;agentic data extraction&#39; is a positioning question.</dd>
+      <dd>No direct research implication.</dd>
       <dt>Action</dt>
-      <dd>investigate</dd>
+      <dd>monitor</dd>
     </dl>
   </div>
-</article><article class="item "
-         data-source="hn"
-         data-score="22">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 2 · frontier 0 · vlm_research 0 = 22 (this view's weighting)">22</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">hn</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.llamaindex.ai/blog/best-alternatives-to-reducto-r1" target="_blank" rel="nofollow noopener noreferrer">Best alternatives to Reducto r-1: LlamaIndex roundup includes LlamaParse, Nanonets, Cohere Parse</a>
-  </p>
-  <p class="item-summary">LlamaIndex publishes a Reducto r-1 alternatives roundup that includes Nanonets; framing is neutral, positioning it alongside LlamaParse and Cohere Parse.</p>
+  <p class="secondary-axes">also: competitive</p>
 </article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
@@ -229,82 +178,57 @@
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
 <article class="item "
-         data-source="github_trending"
-         data-score="56">
+         data-source="arxiv"
+         data-score="54">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 0 · vlm_research 3 = 56 (this view's weighting)">56</span>
+          title="doc_ai 4 · competitive 5 · frontier 1 · vlm_research 2 = 54 (this view's weighting)">54</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
     </span>
-    <span class="item-source">github_trending</span>
+    <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://github.com/opendatalab/OmniDocBench/pull/257" target="_blank" rel="nofollow noopener noreferrer">OmniDocBench v1.6: leaderboard update adds TeleOCR, OvisOCR2, MinerU2.5-Pro entries</a>
+    <a href="https://arxiv.org/abs/2606.03264" target="_blank" rel="nofollow noopener noreferrer">PaddleOCR-VL-1.6: Expanding the Frontier of Document Parsing with Under-Optimized Region Refinement and Progressive Post-Training</a>
   </p>
-  <p class="item-summary">OmniDocBench v1.6 PR #257 adds new leaderboard entries; OCR-3&#39;s cited 90.5 now sits below TeleOCR (96.91), OvisOCR2 (96.58), MinerU2.5-Pro (95.69).</p>
+  <p class="item-summary">PaddlePaddle open-weight 0.9B VLM hits 96.33 on OmniDocBench v1.6 via region refinement post-training, leading that benchmark version.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Nanonets OCR-3&#39;s cited score (90.5) now ranks below at least three v1.6 leaders. Customers comparing on this benchmark will see Nanonets ranked mid-field on the reference leaderboard.</dd>
+      <dd>At 96.33 on OmniDocBench v1.6 with a sub-1B open-weight model, PaddleOCR-VL-1.6 anchors the &#39;good-enough at zero marginal cost&#39; case for document parsing in cost-sensitive pipelines.</dd>
       <dt>Research</dt>
-      <dd>The v1.6 leaderboard shift shows end-to-end VLM-native approaches overtaking pipeline methods; attention-based layout handling remains the category where OCR-3 retains measurable margin.</dd>
+      <dd>Under-optimized region refinement — iterative passes targeting high-error-density zones — is a post-training technique applicable to OCR-3&#39;s hard document classes without full retraining.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: doc_ai</p>
 </article><article class="item "
-         data-source="hn"
-         data-score="42">
+         data-source="rss"
+         data-score="26">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 3 · frontier 4 · vlm_research 1 = 42 (this view's weighting)">42</span>
+          title="doc_ai 3 · competitive 4 · frontier 0 · vlm_research 0 = 26 (this view's weighting)">26</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
+      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
-    <span class="item-source">hn</span>
-<span>×3</span>  </div>
+    <span class="item-source">rss</span>
+  </div>
   <p class="item-title">
-    <a href="https://benchlm.ai/models/gpt-6-astra" target="_blank" rel="nofollow noopener noreferrer">GPT-6 Astra: BenchLM early benchmarks on image reasoning and document tasks</a>
+    <a href="https://dl.acm.org/doi/10.1145/3820755.3830337" target="_blank" rel="nofollow noopener noreferrer">Docling: An Efficient Open-Source Toolkit for AI-Driven Document Conversion (ACM DocEng 2026)</a>
   </p>
-  <p class="item-summary">GPT-6 Astra achieves strong image reasoning scores on BenchLM, but no IDP Leaderboard or OmniDocBench results have been published as of this build.</p>
+  <p class="item-summary">IBM Docling receives ACM DocEng 2026 publication, providing academic grounding for the open-source document conversion toolkit.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>If GPT-6 Astra matches Nanonets OCR-3 on document tasks, it shifts the make-vs-buy calculus for enterprise customers. No IDP Leaderboard or OmniDocBench scores are available yet to assess the overlap.</dd>
+      <dd>An ACM peer-reviewed paper strengthens Docling&#39;s credibility in enterprise procurement and academic citations, supporting IBM&#39;s commercial Docling for watsonx at $4/1,000 pages.</dd>
       <dt>Research</dt>
-      <dd>Architecture details not disclosed. Benchmarking on FUNSD, CORD, and OmniDocBench against Nanonets OCR-3 is pending; third-party comparisons will likely appear within weeks.</dd>
+      <dd>The paper&#39;s architecture description may surface implementation details useful for ablation comparisons against OCR-3&#39;s parser components.</dd>
       <dt>Action</dt>
-      <dd>monitor</dd>
+      <dd>no action</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: frontier</p>
-</article><article class="item "
-         data-source="hn"
-         data-score="38">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 4 · frontier 1 · vlm_research 1 = 38 (this view's weighting)">38</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">hn</span>
-<span>×2</span>  </div>
-  <p class="item-title">
-    <a href="https://www.intuitionlabs.ai/blog/mistral-ocr-41-vs-cohere-parse-50" target="_blank" rel="nofollow noopener noreferrer">Mistral OCR 4.1 vs Cohere Parse 5.0: independent benchmark comparison</a>
-  </p>
-  <p class="item-summary">Third-party head-to-head positions Mistral OCR 4.1 and Cohere Parse 5.0 as the two reference points mid-market buyers use; Nanonets absent from the comparison frame.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>This comparison is becoming a default reference in buyer evaluation. With Nanonets absent, the narrative defaults to a Mistral/Cohere binary choice for document extraction workloads.</dd>
-      <dt>Research</dt>
-      <dd>The comparison dataset and methodology are published; replicating with Nanonets OCR-3 would close the positioning gap on third-party reference material.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
+  <p class="secondary-axes">also: doc_ai</p>
 </article>  </div>
 </section>
 
@@ -317,23 +241,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">OvisOCR2 uses a 3-stage pipeline (SFT → multi-component RL → on-policy distillation to 0.8B) to achieve 96.58 on OmniDocBench v1.6. Does this RL+distillation recipe warrant investigation as a structural hallucination mitigation path for OCR-3?</p>
-    <p class="question-context">OvisOCR2 scored above all larger models at 0.8B. The RL phase targets multi-component reward signals that appear to reduce phantom-row outputs on complex tables — directly relevant to the team&#39;s ongoing hallucination mitigation work.</p>
+    <p class="question-text">WeVisDoc-4B (arXiv 2609.20423) from Tencent WeChat Vision scores 95.38 on OmniDocBench v1.6 and leads among end-to-end parsers. Should it be added to context.md&#39;s competitive set alongside HunyuanOCR-1.5 as a second Tencent document-AI entry?</p>
+    <p class="question-context">WeVisDoc is from the WeChat Vision team, distinct from the HunyuanOCR team; both are Tencent products. context.md currently lists only HunyuanOCR. Without an entry, future builds will score WeVisDoc inconsistently.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">MiniMax M3 (428B MoE, open-weight, 91.6% OmniDocBench 1.5 reported) has now appeared in multiple consecutive build comparisons without an entry in the context.md competitive registry. Should it be added?</p>
-    <p class="question-context">The model appears in third-party comparisons and is cited in OmniDocBench discussions. Absence from context.md means scoring is inconsistent across builds.</p>
+    <p class="question-text">OCR-3&#39;s OmniDocBench score of 90.5 remains unversioned in context.md. PaddleOCR-VL-1.6 leads v1.6 at 96.33 and WeVisDoc leads among end-to-end parsers at 95.38 on v1.6. Was OCR-3&#39;s 90.5 measured on v1.5 or v1.6?</p>
+    <p class="question-context">OmniDocBench v1.6 changed methodology (MGAM) on April 10, 2026; OCR-3 launched April 2, 2026, making v1.5 the likely benchmark. This question has appeared in 13+ consecutive builds. A one-line version annotation in context.md permanently resolves it.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">GPT-6 Astra, Claude Fable 5.1, and Gemini 3.8 Flash all launched in the first week of September 2026 with image input but no IDP Leaderboard or OmniDocBench numbers. Is there a plan to run these on standard document benchmarks before third-party comparisons establish the reference frame?</p>
-    <p class="question-context">Three consecutive builds have flagged this gap. If no internal benchmarking is planned, the competitive narrative on frontier document AI will be set by third parties within 2-3 weeks.</p>
+    <p class="question-text">CLI ingest has failed in every build on record; this build covers 2 of 4 source types via WebSearch fallback, yielding audit_passed=false. Should the audit criterion be revised to treat WebSearch fallback as valid source coverage, or should restoring the proxy allowlist remain the priority?</p>
+    <p class="question-context">Required allowlist additions: export.arxiv.org, hn.algolia.com, and all RSS feed hosts in data/sources.yaml. Builds that find 3+ source types via fallback have passed; this build found only arxiv and rss types.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">LlamaIndex&#39;s &#39;LlamaParse vs Nanonets&#39; page categorizes Nanonets as a business-automation platform unsuitable for programmatic use cases, while positioning LlamaParse as the developer/agentic choice. Does the team consider this framing accurate, and does the Agentic Data Extraction API positioning need a public update?</p>
-    <p class="question-context">The page is indexed and likely surfaces in buyer evaluation searches. If the &#39;business automation&#39; categorization is inaccurate, a response via documentation or a direct comparison page would address it.</p>
+    <p class="question-text">BGTR (arXiv 2609.08705) introduces bounding-box conditioning as a structural constraint in table sequence decoding, directly targeting merged-cell and phantom-cell failures that overlap with OCR-3&#39;s structural hallucination research. Does this warrant reproduction against OCR-3&#39;s table extraction pipeline?</p>
+    <p class="question-context">The &#39;read in week&#39; recommendation reflects uncertainty about current research capacity. If the team is actively investigating structural hallucinations, BGTR&#39;s constraint mechanism is directly applicable and a reproduction would take 1-2 weeks.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Firecrawl now uses GLM-OCR as the default scan backend for Fire-PDF. Should context.md be updated to note GLM-OCR&#39;s commercial adoption as a component in a named adjacent competitor&#39;s product, changing its classification from &#39;model comparison baseline&#39; to &#39;deployed competitor infrastructure&#39;?</p>
+    <p class="question-context">GLM-OCR is listed in context.md as a competitive OCR model (0.9B, 94.62 OmniDocBench V1.5). Its deployment inside Firecrawl&#39;s PDF pipeline changes its ecosystem role: it is no longer only a point-in-time benchmark reference but an actively embedded component.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -345,7 +274,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered: arxiv, github_trending, hn, rss    · failed: 4 · built at 2026-09-20T19:10:00+00:00
+    sources covered: arxiv, rss    · failed: 2 · built at 2026-09-20T23:30:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
