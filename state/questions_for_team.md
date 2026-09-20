@@ -12555,3 +12555,31 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-20T08:30:00+00:00 (audit: passed)
+
+### Q: MiniMax M3 is not in context.md's competitive set but leads OmniDocBench 1.5 at 91.6% — should it be added, and if so, at what tier?
+
+**Context:** MiniMax M3 (428B MoE, released June 1, 2026) surpasses Nanonets OCR-3's 90.5 score on OmniDocBench 1.5 and is open-weight. It was not listed in the Sep 13 context.md update. The competitive set currently tracks 20+ named competitors; this entry appears in multiple benchmark comparisons but no team answer has confirmed whether to track it.
+
+**Answer:** _add reply here_
+
+### Q: OmniDocBench 1.5 and 1.6 are both referenced across competitive entries — are we tracking both versions intentionally, and should the IDP Leaderboard note which version each score corresponds to?
+
+**Context:** MiniMax M3 leads OmniDocBench 1.5 at 91.6%; MinerU2.5-Pro leads OmniDocBench v1.6 at 95.69. Nanonets OCR-3 is listed at 90.5 (version unspecified in context.md). Cross-version comparisons in build framings may be misleading if the version distinction is not surfaced.
+
+**Answer:** _add reply here_
+
+### Q: PP-OCRv6 and PaddleOCR-VL-1.6 are distinct product lines from the same PaddlePaddle team — should context.md track both separately, or consolidate under a single 'PaddlePaddle OCR' entry?
+
+**Context:** context.md currently lists 'PaddleOCR-VL-1.6' as a VLM-based competitor. PP-OCRv6 (arXiv 2606.13108) is a compact non-VLM OCR series targeting efficiency. They address different market tiers and benchmark differently.
+
+**Answer:** _add reply here_
+
+### Q: Should NanoNets/docext be framed in build editions, or treated as internal Nanonets infrastructure not subject to competitive scoring?
+
+**Context:** docext is Nanonets' own open-source repository linked to the IDP Leaderboard. Including it in the landscape build creates a feedback loop where we score our own tooling. The current build framed it as an external-facing project; team guidance would clarify whether to include or suppress it in future editions.
+
+**Answer:** _add reply here_
+
+---
