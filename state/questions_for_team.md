@@ -12753,3 +12753,31 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-21T19:03:19+00:00 (audit: partial)
+
+### Q: Artificial Analysis now runs an OCR/document processing comparison (artificialanalysis.ai/agents/ocr) that covers Textract, Azure, Google Doc AI, Mistral OCR, ABBYY, LlamaParse, Reducto, and others — but does not appear to list Nanonets. Should the team contact Artificial Analysis to request inclusion, or would that draw attention to a comparison that might be unfavorable?
+
+**Context:** Artificial Analysis is the reference benchmark site for LLM pricing and quality; their comparisons are widely cited in buyer evaluation. Absence from their OCR comparison carries perception risk proportional to Artificial Analysis's audience reach in the developer community.
+
+**Answer:** _add reply here_
+
+### Q: VLM Run Gateway (public alpha since Sep 1, 2026) aggregates six open-weight OCR models behind a single OpenAI-compatible API at $60/100K pages, including direct competitors GLM-OCR, DeepSeek-OCR-2, and PP-OCRv6. Does the team want OCR-3 submitted for inclusion on the VLM Run Gateway, and if so, is the API surface compatible with their endpoint spec?
+
+**Context:** VLM Run Gateway normalizes output to Markdown+JSON and bounding boxes across all models. Including OCR-3 would give the gateway's users a direct head-to-head comparison with the open-weight alternatives, but also positions OCR-3 as the quality ceiling for the comparison set.
+
+**Answer:** _add reply here_
+
+### Q: The CLI ingest pipeline has failed in 45+ consecutive builds due to proxy policy denying egress to export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This build found 4 items via WebSearch fallback vs. 80-120 items in prior successful builds. Is proxy allowlist restoration an active ticket, or should the build configuration move to a WebSearch-only architecture?
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. The WebSearch fallback covers roughly 3-5% of the item surface area of direct feed ingestion and systematically under-represents time-sensitive signals like HN discussions and same-day arXiv submissions.
+
+**Answer:** _add reply here_
+
+### Q: Three consecutive builds have flagged that GPT-6 Astra, Claude Fable 5.1, and Gemini 3.8 Flash all launched in early September 2026 with image input but no IDP Leaderboard or OmniDocBench numbers yet. Has any internal benchmarking been run on these models against OCR-3's standard evaluation suite?
+
+**Context:** The competitive framing for all three models is currently 'monitor' with no document benchmark scores. Third-party comparisons (e.g., improvado.io, datacamp.com, tech-insider.org) are already publishing head-to-head comparisons on coding and general tasks; document-specific benchmarks from external parties are likely within 2-4 weeks.
+
+**Answer:** _add reply here_
+
+---
