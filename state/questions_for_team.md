@@ -12701,3 +12701,27 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-09-21 (FAILED — network policy denial, no items ingested)
+
+### FAILURE: Step 3 (ingest) — all 4 sources blocked by egress policy
+
+**Step that failed:** Step 3 — `python -m landscape.cli ingest`
+
+**Errors:**
+- arxiv: `403 Forbidden` on `http://export.arxiv.org/api/query` (CONNECT rejected by proxy policy)
+- hn: `403 Forbidden` on `hn.algolia.com:443` (CONNECT rejected by proxy policy)
+- rss: `no items in current window` — RSS feeds for Anthropic, OpenAI, DeepMind, HuggingFace, Latent Space, Interconnects, AINews, Stratechery, ImportAI, Mistral AI all returned no items; proxy logs confirm these hosts are policy-blocked (e.g., `www.anthropic.com:443`, `openai.com:443`, `deepmind.google:443`, `huggingface.co:443` all 403 CONNECT rejected)
+- github_trending: `no items in current window`
+
+**Proxy diagnosis:** `curl $HTTPS_PROXY/__agentproxy/status` confirms `connect_rejected` with `"gateway answered 403 to CONNECT (policy denial or upstream failure)"` for all external hosts. The proxy README explicitly states: "Do not retry or route around it — report the blocked host."
+
+**No edition published.** Zero items ingested; dashboard would be empty. Build lock released.
+
+**What the team should investigate:**
+1. The egress network policy for this execution environment is blocking all external HTTPS hosts the ingest pipeline needs. Either the policy needs to allow the required hosts (export.arxiv.org, hn.algolia.com, rss feed domains), or the build needs to run in a different environment where these hosts are permitted.
+2. This affects every build: all previous successful builds must have run in an environment with broader egress permissions. Check whether the schedule/trigger configuration changed, or whether the environment was recently locked down.
+3. Affected hosts that need to be whitelisted (at minimum): `export.arxiv.org`, `hn.algolia.com`, `www.anthropic.com`, `openai.com`, `deepmind.google`, `huggingface.co`, `www.latent.space`, `www.interconnects.ai`, `buttondown.com`, `stratechery.com`, `importai.substack.com`, `blog.mistral.ai`.
+
