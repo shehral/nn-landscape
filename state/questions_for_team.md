@@ -12679,3 +12679,25 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-21T00:00:00+00:00 (audit: partial)
+
+### Q: Are arxiv and HN endpoints intentionally blocked by the network proxy, or is this a transient configuration issue?
+
+**Context:** Both arxiv (export.arxiv.org) and HN (hn.algolia.com) returned HTTP 403 from the proxy on this build. This has been a recurring pattern. If the proxy policy permanently blocks these, sources.yaml should remove them to avoid spurious failure logs; if transient, the proxy allowlist should be updated.
+
+**Answer:** _add reply here_
+
+### Q: Why did RSS return zero items when the prior build's primary source was RSS (109 of 112 items)?
+
+**Context:** This build's RSS source returned 'no items in current window.' The seen.json now has 1105 entries. It is possible that the time-window filter or the seen-dedup filter is excluding all current RSS content. Should the per-feed window be widened, or should seen.json be pruned of entries older than 14 days?
+
+**Answer:** _add reply here_
+
+### Q: Should github_trending be given a longer lookback window than 1 day, given that it consistently returns 0 items?
+
+**Context:** github_trending is configured with days_back=1 in sources.yaml. Combined with the seen.json dedup, this yields 0 new items across multiple consecutive builds. Extending days_back to 3 or 7 would surface more repositories at the cost of older content.
+
+**Answer:** _add reply here_
+
+---
