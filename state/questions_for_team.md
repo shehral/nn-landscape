@@ -12725,3 +12725,31 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 2. This affects every build: all previous successful builds must have run in an environment with broader egress permissions. Check whether the schedule/trigger configuration changed, or whether the environment was recently locked down.
 3. Affected hosts that need to be whitelisted (at minimum): `export.arxiv.org`, `hn.algolia.com`, `www.anthropic.com`, `openai.com`, `deepmind.google`, `huggingface.co`, `www.latent.space`, `www.interconnects.ai`, `buttondown.com`, `stratechery.com`, `importai.substack.com`, `blog.mistral.ai`.
 
+
+## Build 2026-09-21T06:00:00+00:00 (audit: partial)
+
+### Q: Has OCR-3 been evaluated on OmniDocBench v1.6, and if not, is there a plan to do so before third-party comparisons set the reference frame?
+
+**Context:** OCR-3's reported 90.5 is on an unspecified benchmark version. TeleOCR (96.87) and OvisOCR2 (96.58) are both on v1.6 (MGAM methodology). The cross-version gap is not a valid comparison, but it appears as one in search results. This question has appeared in 14+ consecutive builds without a team answer.
+
+**Answer:** _add reply here_
+
+### Q: Would applying PrismAlign's Bayesian multi-VLM consensus approach as a post-processing layer on OCR-3 table outputs reduce phantom-row false positives without requiring model retraining?
+
+**Context:** PrismAlign uses three open-source VLMs (PaddleOCR-VL 1.5, MinerU 2.5, DocExpert-1B) to vote on table cell content. OCR-3 is not one of the tested models, but the framework is model-agnostic. A low-cost reproduction that replaces two of the three VLMs with OCR-3 would test whether the consensus approach addresses the team's known phantom-row failure mode.
+
+**Answer:** _add reply here_
+
+### Q: The OCR-specialist mechanistic study (arXiv:2609.21543) identified OCR-head sets in GLM-OCR, MinerU2.5, and PaddleOCR-VL-1.6 — should the same causal-intervention protocol be applied to OCR-3 to establish a structural hallucination baseline?
+
+**Context:** The paper uses held-out causal interventions to identify sparse, stable head sets responsible for OCR output. Running the same protocol on OCR-3 would produce the first published mechanistic characterization of the model's OCR circuit and could localize the layer range where phantom-row failures originate.
+
+**Answer:** _add reply here_
+
+### Q: CLI ingest has failed in all recorded builds due to proxy policy blocking arxiv, hn.algolia.com, and all RSS feed hosts. This build found 4 items via WebSearch fallback. Is proxy allowlist restoration under investigation, or should the build configuration be updated to skip CLI ingest and use WebSearch directly?
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback finds fewer items than direct feed ingestion. Alternatively, updating sources.yaml to use WebSearch-compatible endpoints would make the pipeline more reliable in the current network environment.
+
+**Answer:** _add reply here_
+
+---
