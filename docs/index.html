@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 22, 2026 · 13:30 UTC · 5 items scored</span>
+  <span class="built-at">Built Sep 22, 2026 · 19:00 UTC · 8 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,9 +53,10 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Two September 2026 papers independently converge on decomposition-based repair as the correct fix for VLM parsing failures: arXiv:2609.23592 (collapse-conditioned decomposition) and arXiv:2608.09842 (DEC: Decompose-Enhance-Correct). Both find that reasoning mode does not fix degenerate outputs; region decomposition does.</li>
-    <li>OmniDocBench aggregate scores are under pressure as a credibility signal: arXiv:2608.09842 shows a 93+ → 85 TEDS performance gap on real-world tables. This extends a pattern already set by RealDoc-Bench (Extend, July 2026) and LongExtractBench (Reducto, July 2026) — the benchmark ecosystem is bifurcating into cleanroom and real-world tracks.</li>
-    <li>Developer-facing document AI APIs are commoditizing on self-serve access and per-page pricing. Infrrd IDPForge joins Reducto r-1 (1c/page) and Extend Parse 2.0 in targeting no-sales-cycle developer onboarding; LlamaParse is consolidating its API surface to compete on simplicity.</li>
+    <li>Enterprise IDP incumbents are opening developer-facing API surfaces: LandingAI (DPT-2/ADE GA SDK) and Infrrd (IDPForge) both entered the self-serve developer segment this build, compressing the segment previously occupied by API-native players.</li>
+    <li>A gap between curated-benchmark performance and noisy-document extraction accuracy is a recurring finding across recent builds (TableParseMap, RealDoc-Bench, and now From Pixels to Pairs), suggesting benchmark-led positioning understates real-world variability.</li>
+    <li>Frontier-lab coordination (proposed AI standards body) and document-AI API commoditization (LandingAI, Infrrd) are occurring in the same window — competitive pressure on extraction APIs is arriving from both the top (frontier models) and the legacy IDP segment simultaneously.</li>
+    <li>Joint SAEs and multi-modal mechanistic interpretability tools are maturing: this build&#39;s vlm_research item uses cross-modal activation factorization, extending a research thread on VLM internals visible in earlier builds (Transcoders, Revis, causal tracing papers).</li>
   </ul>
 </section>
 
@@ -63,140 +64,207 @@
   <div class="axis-col" data-axis="doc_ai">
     <h2>Document AI</h2>
 <article class="item "
-         data-source="arxiv"
+         data-source="rss"
+         data-score="66">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 5 · competitive 4 · frontier 1 · vlm_research 1 = 66 (this view's weighting)">66</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+<span>×2</span>  </div>
+  <p class="item-title">
+    <a href="https://www.hpcwire.com/off-the-wire/landingai-introduces-ade-dpt-2-for-improved-extraction-from-text-tables-and-visual-data/" target="_blank" rel="nofollow noopener noreferrer">LandingAI Introduces ADE DPT-2 for Improved Extraction from Text, Tables, and Visual Data</a>
+  </p>
+  <p class="item-summary">LandingAI releases DPT-2, a document-pretrained transformer for text/table/visual extraction; GA Python SDK available</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>DPT-2 positions LandingAI&#39;s ADE directly against Nanonets&#39; extraction API surface — text, tables, and visual data in one pass with a GA developer SDK, which reduces integration friction for developers comparing alternatives. No benchmark numbers against OmniDocBench or IDP Leaderboard have surfaced in the launch coverage.</dd>
+      <dt>Research</dt>
+      <dd>Document-domain pretraining as a distinct architectural thesis from general VLM fine-tuning is worth tracking. The decoupled predict-layout-then-extract-cell approach for tables deserves benchmarking against OCR-3 on complex merged-cell documents.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="66">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 5 · competitive 4 · frontier 1 · vlm_research 1 = 66 (this view's weighting)">66</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+<span>×2</span>  </div>
+  <p class="item-title">
+    <a href="https://landing.ai/blog/breakthrough-table-extraction-with-dpt-2-agentic-document-extraction-by-landingai" target="_blank" rel="nofollow noopener noreferrer">Breakthrough Table Extraction with Document Pre-trained Transformer (DPT-2) — LandingAI Blog</a>
+  </p>
+  <p class="item-summary">LandingAI DPT-2 claims breakthrough table accuracy via layout prediction plus cell-level extraction with page-grounded citations</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>LandingAI&#39;s claim of cell-by-cell extraction with merged-cell and multi-level header support covers the table endpoint in OCR-3&#39;s feature set. The page-grounded citation trail is a direct functional comparison with OCR-3&#39;s /extract output.</dd>
+      <dt>Research</dt>
+      <dd>No novel research method described in the blog post. The technical report (if published) would clarify whether DPT-2 represents a genuinely new architecture or primarily a fine-tuned VLM.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="rss"
          data-score="59">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 5 · competitive 2 · frontier 0 · vlm_research 4 = 59 (this view's weighting)">59</span>
+          title="doc_ai 4 · competitive 4 · frontier 1 · vlm_research 1 = 59 (this view's weighting)">59</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2608.09842" target="_blank" rel="nofollow noopener noreferrer">From Diagnosis to Correction: Benchmarking and Improving Real-World Table Parsing</a>
-  </p>
-  <p class="item-summary">TableParseMap shows parsers scoring 93+ on OmniDocBench v1.6 drop to 85 TEDS on 916 real-world tables; DEC agentic repair recovers losses.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Aggregate OmniDocBench scores overstate real-world table extraction performance — parsers at 93+ TEDS drop to 85 on complex tables. OCR-3&#39;s 90.5 OmniDocBench score lacks a real-world complement, which competitors can exploit in customer evaluations.</dd>
-      <dt>Research</dt>
-      <dd>TableParseMap&#39;s five failure scenarios (large tables exceeding single-pass scale, ambiguous visual cues, visual inconsistency) map directly to phantom-row and structural hallucination characterization. Reproducing DEC on OCR-3 would establish a real-world table-parsing baseline beyond OmniDocBench.</dd>
-      <dt>Action</dt>
-      <dd>reproduce</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: vlm_research</p>
-</article>  </div>
-  <div class="axis-col" data-axis="competitive">
-    <h2>Competitive</h2>
-<article class="item "
-         data-source="rss"
-         data-score="45">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 4 · frontier 0 · vlm_research 0 = 45 (this view's weighting)">45</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">rss</span>
-  </div>
+<span>×2</span>  </div>
   <p class="item-title">
-    <a href="https://salestechstar.com/predictive-ai-artificial-intelligence/infrrd-launches-idpforge-a-self-serve-document-automation-api-for-developers/" target="_blank" rel="nofollow noopener noreferrer">Infrrd Launches IDPForge, a Self-Serve Document Automation API for Developers</a>
+    <a href="https://automationtoday.net/news/infrrd-opens-document-automation-platform-to-developers-with-idpforge/" target="_blank" rel="nofollow noopener noreferrer">Infrrd Opens Document Automation Platform to Developers with IDPForge</a>
   </p>
-  <p class="item-summary">Infrrd (10B+ pages, 10yr enterprise base) launches self-serve developer API with multi-LLM routing and BYOK — September 19, 2026.</p>
+  <p class="item-summary">Infrrd launches IDPForge, self-serve developer API for document parsing, classification, and extraction with multi-LLM routing</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Infrrd&#39;s developer API positions on multi-LLM routing, BYOK, and corrections — the same developer-facing extraction surface as Nanonets&#39; Agentic Data Extraction API. The self-serve, no-sales-cycle positioning mirrors moves by Reducto and Extend; Infrrd&#39;s 10B-page enterprise base adds credibility in regulated verticals.</dd>
+      <dd>IDPForge opens Infrrd&#39;s enterprise IDP stack as a self-serve developer API — removing the sales cycle that historically gated Infrrd from direct comparison with Nanonets&#39; Agentic Data Extraction API. Infrrd cites 10B+ pages and 10+ years of enterprise experience as differentiators.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication.</dd>
+      <dd>No research implication. The multi-LLM routing architecture (route each processing stage to a different model) is a product configuration feature, not a published method.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
+  <p class="secondary-axes">also: competitive</p>
 </article><article class="item "
          data-source="rss"
-         data-score="32">
+         data-score="59">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 3 · frontier 0 · vlm_research 0 = 32 (this view's weighting)">32</span>
+          title="doc_ai 4 · competitive 4 · frontier 1 · vlm_research 1 = 59 (this view's weighting)">59</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">rss</span>
-  </div>
+<span>×2</span>  </div>
   <p class="item-title">
-    <a href="https://developers.llamaindex.ai/llamaparse/changelog/2026-09/" target="_blank" rel="nofollow noopener noreferrer">LlamaParse September 2026 Changelog: Project Credit Limits, Sheets API Deprecated</a>
+    <a href="https://www.idpforge.ai/" target="_blank" rel="nofollow noopener noreferrer">IDPForge: Agentic Data Extraction for Developers (Infrrd)</a>
   </p>
-  <p class="item-summary">LlamaParse deprecates Sheets API, consolidating spreadsheet handling into Parse/Extract modes; adds project-level credit caps.</p>
+  <p class="item-summary">IDPForge product site — Infrrd&#39;s developer-facing agentic extraction API with multi-LLM routing and human-in-the-loop review</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>LlamaParse is consolidating its fragmented endpoint surface — removing Sheets as a standalone API and folding spreadsheet processing into Parse and Extract. This signals LlamaIndex moving toward a unified extraction API, narrowing a feature-differentiation gap.</dd>
+      <dd>Same competitive event as the automationtoday article (190f53a26e9de24f) — second URL for the Infrrd IDPForge launch. The product site emphasizes accuracy compounding through customer-scoped correction learning, positioning against extraction APIs that require a separate correction workflow.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication.</dd>
+      <dd>No research implication.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
-</article>  </div>
-  <div class="axis-col" data-axis="frontier">
-    <h2>Frontier</h2>
-      <p class="item-summary">No top-N items this build.</p>
-  </div>
-  <div class="axis-col" data-axis="vlm_research">
-    <h2>VLM research</h2>
-<article class="item "
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
          data-source="arxiv"
          data-score="53">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 1 · frontier 1 · vlm_research 5 = 53 (this view's weighting)">53</span>
+          title="doc_ai 4 · competitive 2 · frontier 1 · vlm_research 3 = 53 (this view's weighting)">53</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 100%"></span>
+      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.23592" target="_blank" rel="nofollow noopener noreferrer">Collapse, Not Complexity: Failure-Conditioned Decomposition Repair for End-to-End Document Parsing</a>
+    <a href="https://arxiv.org/abs/2609.17538" target="_blank" rel="nofollow noopener noreferrer">From Pixels to Pairs: A Comprehensive Benchmark of LLM-Based Key-Value Extraction in Noisy Document Settings</a>
   </p>
-  <p class="item-summary">End-to-end doc VLMs fail via repetition collapse, not input complexity; decompose-and-re-parse repairs 83% of recurrent failures.</p>
+  <p class="item-summary">Benchmark showing LLM key-value extraction accuracy degrades sharply under OCR noise; tests multiple models on 916 noisy documents</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Degenerate-repetition failures in document parsers stem from structural collapse, not input complexity — adding token budget or reasoning mode does not repair them. A decompose-and-re-parse step is tractable and does not require model retraining.</dd>
+      <dd>Shows that LLM extraction accuracy on key-value pairs degrades substantially under OCR noise — a scenario Nanonets&#39; /extract endpoint encounters on low-quality scans. The benchmark provides an independent evaluation set applicable to noisy-document accuracy claims.</dd>
       <dt>Research</dt>
-      <dd>The paper&#39;s collapse-detection method (tracing output divergence in the ordinary pass) offers a practical diagnostic for OCR-3&#39;s repetition-loop failure mode. The finding that 83% of collapses recur under reasoning mode updates the prior that chain-of-thought mitigates this class of error.</dd>
+      <dd>Methodology for systematically degrading OCR quality and measuring downstream extraction accuracy could be adapted to stress-test OCR-3&#39;s /extract endpoint, establishing a noisy-input accuracy baseline that complements clean-document benchmark scores.</dd>
       <dt>Action</dt>
-      <dd>reproduce</dd>
+      <dd>read in week</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: doc_ai</p>
 </article><article class="item "
          data-source="arxiv"
-         data-score="20">
+         data-score="37">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 1 · competitive 0 · frontier 1 · vlm_research 3 = 20 (this view's weighting)">20</span>
+          title="doc_ai 3 · competitive 1 · frontier 1 · vlm_research 2 = 37 (this view's weighting)">37</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.05149" target="_blank" rel="nofollow noopener noreferrer">From Vision to Language: Investigating Causal Information Flow in Multimodal Decision-Making</a>
+    <a href="https://arxiv.org/abs/2505.13535" target="_blank" rel="nofollow noopener noreferrer">Information Extraction from Visually Rich Documents using LLM-based Organization of Documents into Independent Textual Segments</a>
   </p>
-  <p class="item-summary">Causal intervention on VLM attention shows visual input is integrated at answer-option processing time, not during early token generation.</p>
+  <p class="item-summary">Framework for extraction from visually rich documents via LLM-driven segmentation into independent text units before extraction</p>
+</article>  </div>
+  <div class="axis-col" data-axis="competitive">
+    <h2>Competitive</h2>
+      <p class="item-summary">No top-N items this build.</p>
+  </div>
+  <div class="axis-col" data-axis="frontier">
+    <h2>Frontier</h2>
+<article class="item "
+         data-source="rss"
+         data-score="44">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 3 · frontier 4 · vlm_research 1 = 44 (this view's weighting)">44</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://techxplore.com/news/2026-09-openai-anthropic-google-ai-standards.html" target="_blank" rel="nofollow noopener noreferrer">OpenAI, Anthropic and Google are working to create an AI standards body</a>
+  </p>
+  <p class="item-summary">OpenAI, Anthropic, Google in talks to form a self-regulatory AI standards body; scope and benchmark endorsements not yet public</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>If this body endorses specific document-AI benchmarks (ParseBench, LongExtractBench, RealDoc-Bench) as authoritative evaluations, the IDP Leaderboard&#39;s influence in enterprise buyer evaluations may be affected. The body&#39;s scope is not yet public.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication. Benchmark methodology standards from such a body could eventually affect how VLM evaluation results are reported and compared.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article>  </div>
+  <div class="axis-col" data-axis="vlm_research">
+    <h2>VLM research</h2>
+<article class="item "
+         data-source="arxiv"
+         data-score="33">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 1 · competitive 1 · frontier 2 · vlm_research 4 = 33 (this view's weighting)">33</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 20%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2606.25657" target="_blank" rel="nofollow noopener noreferrer">Steering Vision-Language Models with Joint Sparse Autoencoders</a>
+  </p>
+  <p class="item-summary">Joint SAE factorizes shared vision-language activations into interpretable features, enabling cross-modal hallucination localization in VLMs</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
       <dd>No direct product implication.</dd>
       <dt>Research</dt>
-      <dd>Visual information is integrated at the model&#39;s answer-option processing stage, not in early generation. For document extraction, this suggests OCR-3&#39;s hallucination failure point may lie in the decoding phase rather than the vision encoder — relevant to the team&#39;s causal-patching protocol.</dd>
+      <dd>Joint SAE extends single-modality SAEs by jointly factorizing vision and language activations, making cross-modal features interpretable and steerable. Applied to OCR-3&#39;s intermediate representations, shared image-text features could localize vision-text misalignments underlying structural hallucinations.</dd>
       <dt>Action</dt>
-      <dd>read in week</dd>
+      <dd>reproduce</dd>
     </dl>
   </div>
 </article>  </div>
@@ -211,23 +279,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Should TableParseMap (arXiv:2608.09842) be run against OCR-3 to establish a real-world table-parsing baseline?</p>
-    <p class="question-context">TableParseMap shows parsers scoring 93+ on OmniDocBench v1.6 drop to 85 TEDS on 916 real-world tables. OCR-3&#39;s 90.5 OmniDocBench score lacks a real-world complement; third-party comparisons on this benchmark would set the reference frame before the team has numbers.</p>
+    <p class="question-text">Has the team evaluated LandingAI DPT-2&#39;s table extraction on the same complex merged-cell test documents used for OCR-3 evaluation? If not, does the team want to run a head-to-head before third-party comparisons set the reference frame?</p>
+    <p class="question-context">DPT-2 claims breakthrough table accuracy on merged cells and multi-level headers — directly the table failure types OCR-3 is evaluated on. No DPT-2 numbers against OmniDocBench or IDP Leaderboard have surfaced yet. First-mover comparison data would be valuable here.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should Infrrd be added to context.md&#39;s competitive set for future builds?</p>
-    <p class="question-context">Infrrd (10B+ pages, enterprise IDP, 10+ years) launched IDPForge on September 19, 2026 as a self-serve developer API with multi-LLM routing and BYOK. It competes directly with Nanonets&#39; Agentic Data Extraction API but is not listed in context.md&#39;s competitive set.</p>
+    <p class="question-text">Should Infrrd be added to context.md&#39;s competitive set for future builds? IDPForge&#39;s September 2026 launch moves Infrrd from a legacy enterprise IDP vendor into the self-serve API segment that context.md currently covers.</p>
+    <p class="question-context">Infrrd (idpforge.ai) now offers parsing, classification, extraction, validation, and multi-LLM routing via a developer API — overlapping with Nanonets&#39; Agentic Data Extraction API surface. The prior question about this (from the 2026-09-22T13:30 build) has not received a team answer.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The collapse-detection method in arXiv:2609.23592 could serve as a runtime monitor for OCR-3&#39;s repetition-loop failure mode — has this class of diagnostic been explored?</p>
-    <p class="question-context">The paper detects collapse from the ordinary-pass output trace (degenerate repetition before EOS is distinguishable from normal output). Applied to OCR-3, this would let the inference pipeline flag repetition-loop outputs and trigger a decompose-and-re-parse retry, without model retraining.</p>
+    <p class="question-text">The proposed AI standards body (OpenAI/Anthropic/Google) could set authoritative benchmarks for document AI. Is the team monitoring this and considering whether to engage with the process to ensure the IDP Leaderboard&#39;s methodology is represented?</p>
+    <p class="question-context">If the body endorses ParseBench, LongExtractBench, or RealDoc-Bench as reference evaluations, the IDP Leaderboard&#39;s buyer influence could diminish. The body&#39;s scope has not been made public; this is a 2-6 month horizon risk.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The CLI ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This build found 5 items via WebSearch fallback vs. 80-120 items in prior successful builds. Is proxy allowlist restoration under active investigation?</p>
-    <p class="question-context">Required allowlist additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers roughly 4-6% of the item surface area of direct feed ingestion and systematically under-represents same-day arXiv submissions and HN front-page discussions. Dashboard signal quality degrades with each build under this constraint.</p>
+    <p class="question-text">The CLI ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This build found 8 items via WebSearch fallback vs. 80-120 items in prior successful builds. Is proxy allowlist restoration under active investigation?</p>
+    <p class="question-context">Required additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers ~5-10% of the item surface. Dashboard signal quality degrades with each build under this constraint.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -239,7 +307,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-22T13:30:00+00:00
+    sources covered: arxiv, rss    · failed: 4 · built at 2026-09-22T19:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

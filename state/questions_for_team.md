@@ -12865,3 +12865,31 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-22T19:00:00+00:00 (audit: partial)
+
+### Q: Has the team evaluated LandingAI DPT-2's table extraction on the same complex merged-cell test documents used for OCR-3 evaluation? If not, does the team want to run a head-to-head before third-party comparisons set the reference frame?
+
+**Context:** DPT-2 claims breakthrough table accuracy on merged cells and multi-level headers — directly the table failure types OCR-3 is evaluated on. No DPT-2 numbers against OmniDocBench or IDP Leaderboard have surfaced yet. First-mover comparison data would be valuable here.
+
+**Answer:** _add reply here_
+
+### Q: Should Infrrd be added to context.md's competitive set for future builds? IDPForge's September 2026 launch moves Infrrd from a legacy enterprise IDP vendor into the self-serve API segment that context.md currently covers.
+
+**Context:** Infrrd (idpforge.ai) now offers parsing, classification, extraction, validation, and multi-LLM routing via a developer API — overlapping with Nanonets' Agentic Data Extraction API surface. The prior question about this (from the 2026-09-22T13:30 build) has not received a team answer.
+
+**Answer:** _add reply here_
+
+### Q: The proposed AI standards body (OpenAI/Anthropic/Google) could set authoritative benchmarks for document AI. Is the team monitoring this and considering whether to engage with the process to ensure the IDP Leaderboard's methodology is represented?
+
+**Context:** If the body endorses ParseBench, LongExtractBench, or RealDoc-Bench as reference evaluations, the IDP Leaderboard's buyer influence could diminish. The body's scope has not been made public; this is a 2-6 month horizon risk.
+
+**Answer:** _add reply here_
+
+### Q: The CLI ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This build found 8 items via WebSearch fallback vs. 80-120 items in prior successful builds. Is proxy allowlist restoration under active investigation?
+
+**Context:** Required additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers ~5-10% of the item surface. Dashboard signal quality degrades with each build under this constraint.
+
+**Answer:** _add reply here_
+
+---
