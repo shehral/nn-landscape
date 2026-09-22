@@ -12781,3 +12781,31 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-22T01:30:00+00:00 (audit: partial)
+
+### Q: The Visual Insensitivity Gap (arXiv:2609.00868) shows VLMs ignore visual input on 40-97% of samples despite having the visual perception capacity. Should the team apply the Visual Sensitivity Index to OCR-3 outputs on standard table evaluation sets to determine whether phantom-row failures correlate with low VSI scores?
+
+**Context:** If phantom-row hallucinations systematically occur on low-VSI inputs (inputs where OCR-3's vision tower perceives the table but the generation ignores it), then VSI could become a pre-generation filter or a calibration signal for confidence scoring on OCR-3's table endpoint.
+
+**Answer:** _add reply here_
+
+### Q: LandingAI's DPT-2 is positioned as a document-domain pretrained transformer for ADE, directly competing with OCR-3's extraction surface. Is there a public technical report or arXiv preprint for DPT-2 that describes its pretraining data, architecture, and document-extraction benchmarks?
+
+**Context:** Without benchmark numbers for DPT-2, the competitive framing defaults to 'monitor.' If DPT-2 publishes scores on OmniDocBench, IDP Leaderboard, or LongExtractBench, the competitive positioning changes substantially.
+
+**Answer:** _add reply here_
+
+### Q: The CLI ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This build found 4 items via WebSearch fallback versus the 80-120 items available from direct feed ingestion. Is there a plan to restore proxy allowlist access or move ingest to a permissive network environment?
+
+**Context:** WebSearch fallback systematically under-represents time-sensitive signals: same-day arXiv submissions, HN front-page discussions, and RSS feed content from the 10 configured feeds. The dashboard is losing signal freshness with each build. Required allowlist additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds.
+
+**Answer:** _add reply here_
+
+### Q: Should the proposed OpenAI/Anthropic/Google AI standards body be tracked as a competitive intelligence item, given that its benchmark and audit methodology could determine which third-party document-AI evaluations become authoritative?
+
+**Context:** Nanonets maintains the IDP Leaderboard. If a frontier-lab-backed standards body endorses competing benchmarks (e.g., ParseBench, RealDoc-Bench, LongExtractBench) as the reference evaluations, the IDP Leaderboard's influence in buyer evaluations could diminish.
+
+**Answer:** _add reply here_
+
+---
