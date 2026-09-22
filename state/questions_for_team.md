@@ -12837,3 +12837,31 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-22T13:30:00+00:00 (audit: partial)
+
+### Q: Should TableParseMap (arXiv:2608.09842) be run against OCR-3 to establish a real-world table-parsing baseline?
+
+**Context:** TableParseMap shows parsers scoring 93+ on OmniDocBench v1.6 drop to 85 TEDS on 916 real-world tables. OCR-3's 90.5 OmniDocBench score lacks a real-world complement; third-party comparisons on this benchmark would set the reference frame before the team has numbers.
+
+**Answer:** _add reply here_
+
+### Q: Should Infrrd be added to context.md's competitive set for future builds?
+
+**Context:** Infrrd (10B+ pages, enterprise IDP, 10+ years) launched IDPForge on September 19, 2026 as a self-serve developer API with multi-LLM routing and BYOK. It competes directly with Nanonets' Agentic Data Extraction API but is not listed in context.md's competitive set.
+
+**Answer:** _add reply here_
+
+### Q: The collapse-detection method in arXiv:2609.23592 could serve as a runtime monitor for OCR-3's repetition-loop failure mode — has this class of diagnostic been explored?
+
+**Context:** The paper detects collapse from the ordinary-pass output trace (degenerate repetition before EOS is distinguishable from normal output). Applied to OCR-3, this would let the inference pipeline flag repetition-loop outputs and trigger a decompose-and-re-parse retry, without model retraining.
+
+**Answer:** _add reply here_
+
+### Q: The CLI ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This build found 5 items via WebSearch fallback vs. 80-120 items in prior successful builds. Is proxy allowlist restoration under active investigation?
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers roughly 4-6% of the item surface area of direct feed ingestion and systematically under-represents same-day arXiv submissions and HN front-page discussions. Dashboard signal quality degrades with each build under this constraint.
+
+**Answer:** _add reply here_
+
+---
