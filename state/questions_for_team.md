@@ -12809,3 +12809,31 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-22T07:00:00+00:00 (audit: partial)
+
+### Q: RSS feeds are now failing with 403 alongside arxiv and HN — is this network policy change permanent?
+
+**Context:** Prior builds had RSS coverage (e.g., build 2026-05-21 drew 109 of 112 items from RSS). Proxy logs for this build show 403 CONNECT rejections for every RSS feed host (anthropic.com, openai.com, deepmind.google, huggingface.co, etc.). This is the first build in which RSS also returned zero items due to network blocks, not just slow feeds. If the policy is permanent, the source registry needs to be rebuilt around data paths the environment permits.
+
+**Answer:** _add reply here_
+
+### Q: github_trending has shifted from producing items in recent builds to 'no items in current window' — has the GitHub API access path changed?
+
+**Context:** Multiple prior builds identified github_trending as the last functioning source. This build returned zero items with 'no items in current window', which suggests either the GitHub trending API endpoint changed, the network policy now also blocks github.com, or no repos matched the configured topics/keywords in the past 24 hours. Proxy failures did not log a github.com CONNECT rejection, so the cause is ambiguous. The team should check whether api.github.com or the trending scrape target is still reachable from this environment.
+
+**Answer:** _add reply here_
+
+### Q: Should the build system emit a notification and halt early — rather than publishing an empty dashboard — when all sources return zero items?
+
+**Context:** This is the first build where all four sources returned zero items. Publishing an empty dashboard (no items, no trends, no competitive signal) produces content of negative value: readers see a blank page with no indication of whether this is a data gap or a product signal. A pre-ingest gate that fires a notification and exits cleanly when the expected item count is zero would preserve dashboard credibility and reduce reader confusion.
+
+**Answer:** _add reply here_
+
+### Q: Should the team configure a fallback data path — such as a pre-cached JSONL snapshot or a webhook push from a team member — for builds where the network environment blocks all external HTTPS?
+
+**Context:** This environment blocks outbound HTTPS to all external research and news sources (arxiv, HN, RSS hosts, and now potentially GitHub). The monitor's value depends entirely on live data ingestion. A team-side push mechanism — a daily JSONL drop of curated items into state/run/items_raw.jsonl — would let the scoring, framing, and rendering pipeline run on human-curated signal even when automated ingest fails.
+
+**Answer:** _add reply here_
+
+---
