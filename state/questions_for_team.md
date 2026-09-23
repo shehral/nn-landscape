@@ -12921,3 +12921,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-23T07:00:00+00:00 (audit: partial)
+
+### Q: The CLI ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This is the 47th consecutive build using WebSearch fallback (7 items vs. 80-120 in a normal build). Is proxy allowlist restoration under active investigation?
+
+**Context:** Required allowlist: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. Without it, coverage is 3-5% of normal. This question has appeared in every build since 2026-07-07 without a team answer.
+
+**Answer:** _add reply here_
+
+### Q: Reducto r-1 mini is confirmed as coming at below $0.01/page. Is there a current public pricing statement for Nanonets OCR-3 extraction endpoints that addresses this new cost floor?
+
+**Context:** Three competitors now have confirmed sub-$0.01 or near-sub-$0.01 pricing: Reducto r-1 at $0.01, Extend at $0.00625, LandingAI DPT-3 Verity sub-$0.01. The cost floor change has likely shifted buyer evaluation frames without a corresponding Nanonets pricing signal.
+
+**Answer:** _add reply here_
+
+### Q: arXiv 2609.21543 identifies OCR-head sets in GLM-OCR, MinerU2.5, and PaddleOCR-VL-1.6 via causal interventions but not in OCR-3. Should the team apply the same protocol to OCR-3 proactively?
+
+**Context:** The paper is under ICLR 2027 review. Once published, it will be cited as the reference methodology for OCR-circuit analysis. Running the protocol on OCR-3 now would produce the first published mechanistic characterization of OCR-3's OCR circuit and could localize phantom-row failure origins before the paper establishes a standard.
+
+**Answer:** _add reply here_
+
+### Q: GPT-6 Astra, Claude Fable 5.1, and Gemini 3.8 Flash have all been available for 3+ weeks with image input and no published document-benchmark scores. Has the team benchmarked any of these models on OCR-3's standard evaluation suite internally?
+
+**Context:** This question has appeared in three consecutive builds. Third-party comparisons on general tasks (FrontierMath, coding) are already published. Document-specific benchmark numbers from external parties are likely within 2-4 weeks; an internal first-mover evaluation would allow the team to set the frame.
+
+**Answer:** _add reply here_
+
+### Q: Bodhan AI IndicOCR reports 92.76 on OmniDocBench v1.6 English subset vs. OCR-3's published 90.5. These are different benchmark versions. Has OCR-3 been evaluated on OmniDocBench v1.6 for a direct comparison?
+
+**Context:** OmniDocBench was updated from v1.5 to v1.6 in April 2026 (+296 pages, MGAM evaluation methodology). OCR-3's published 90.5 score lacks a confirmed benchmark version. Multiple competitors now report v1.6 scores; the absence of a v1.6 OCR-3 score creates a comparison gap.
+
+**Answer:** _add reply here_
+
+---
