@@ -12893,3 +12893,31 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-23T01:04:15+00:00 (audit: partial)
+
+### Q: The CLI ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This is the 46th consecutive build using WebSearch fallback (5 items vs. 80-120 in a normal build). Is proxy allowlist restoration under active investigation?
+
+**Context:** Required allowlist: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. Without it, coverage is 3-5% of normal. This question has appeared in every build since 2026-07-07 without a team answer.
+
+**Answer:** _add reply here_
+
+### Q: Should Infrrd be added to context.md's competitive set? IDPForge (GA Sep 21, 2026) moves Infrrd from legacy enterprise IDP into the self-serve API segment Nanonets occupies.
+
+**Context:** This is the third consecutive build raising this question. The launch materially changes Infrrd's competitive profile from enterprise-only to developer-first, which is Nanonets' core segment.
+
+**Answer:** _add reply here_
+
+### Q: Unsiloed AI claims 88.0 on olmOCR-Bench vs. OCR-3's published 87.4, using a 'deterministic pass-rate' methodology. Has the team verified whether this is the same benchmark version and methodology used for OCR-3's published score?
+
+**Context:** OCR-3 is publicly marketed as #1 on OLM-OCR at 87.4. A displacement claim from a direct competitor warrants verification before the number is cited in external materials. The LLM-as-judge vs. deterministic pass-rate difference could account for the gap, but this needs confirmation.
+
+**Answer:** _add reply here_
+
+### Q: Three competitors now offer sub-cent or near-sub-cent parsing as of September 2026 (Extend at $0.00625, Reducto r-1 at $0.01, LandingAI DPT-3 Verity at sub-$0.01). Is there a current public pricing comparison or cost-efficiency claim for Nanonets OCR-3's extraction endpoints that should be refreshed?
+
+**Context:** The cost floor for non-agentic parsing has moved structurally lower this month. This changes the make-vs-buy calculus for customers evaluating OCR-3 against these alternatives.
+
+**Answer:** _add reply here_
+
+---
