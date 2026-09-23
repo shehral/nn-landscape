@@ -12989,3 +12989,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-23T18:55:41+00:00 (audit: partial)
+
+### Q: Has Reducto r-1 (September 1, 2026; $10/1,000 pages; single-model unified parse) been benchmarked on OmniDocBench or the IDP Leaderboard test set, and do the stated gains hold on Nanonets customer document types?
+
+**Context:** Reducto r-1 claims 20% error reduction and 6x cost reduction vs multi-tool stacks. It is priced above OCR-3's extraction surface. Without a head-to-head on the same test set, the competitive scoring in future builds must rely on the vendor's self-reported numbers, which are not independently verifiable.
+
+**Answer:** _add reply here_
+
+### Q: Is the IDP Leaderboard team planning evaluation runs for GPT-6 Astra (September 3–4, 2026) and Claude Fable 5.1 (September 1, 2026), and what is the expected lead time from model launch to leaderboard publication?
+
+**Context:** Both models launched in the first week of September 2026 without IDP Leaderboard or ParseBench scores. Both carry vision and image-input support that places them in the competitive axis. Without leaderboard scores, future builds cannot quantify the accuracy gap between OCR-3 and these models. A known submission timeline would allow the dashboard to set a 'monitor until date X' note rather than flagging each build.
+
+**Answer:** _add reply here_
+
+### Q: Should the github_trending days_back parameter in data/sources.yaml be extended from 1 to 3 or 7 to reduce the risk of empty windows?
+
+**Context:** This build is the first where github_trending returned 'no items in current window' (previously it returned items even when arxiv and HN failed). If days_back=1 consistently produces empty windows on low-activity periods (weekends, holidays), raising it to 3 would trade freshness for resilience without adding new sources. The team should confirm whether this is an acceptable tradeoff.
+
+**Answer:** _add reply here_
+
+### Q: Has OmniDocBench v1.6 or v1.7 been run on Nanonets OCR-3, and does the #1 IDP Leaderboard position (85.9 on IDP Leaderboard; 90.5 on what appears to be OmniDocBench v1.5) hold on the updated benchmark versions?
+
+**Context:** MinerU2.5-Pro achieves 95.69 on OmniDocBench v1.6, and PaddleOCR-VL-1.6 achieves 96.33. If these scores are on the updated benchmark version while OCR-3's 90.5 is on v1.5, the ranking comparison is methodologically unsound. The IDP Leaderboard may use different versioning than OmniDocBench, but the relationship is not confirmed in the editorial grounding.
+
+**Answer:** _add reply here_
+
+### Q: Does Mistral Agentic Search's multi-step document retrieval paradigm (86% vs 26.7% on FinanceBench) represent a distinct competitive surface from Mistral OCR 4.1, and does Nanonets Agentic Data Extraction have an equivalent multi-step retrieval mode?
+
+**Context:** Mistral Agentic Search (August 20, 2026) uses five operations (search, open, navigate, read, grep) to verify answers across complex documents rather than relying on single-pass RAG. Its large FinanceBench and OfficeQA Pro accuracy gains suggest a product surface distinct from OCR extraction. If Nanonets Agents handles multi-step document retrieval equivalently, the competitive classification should reflect that; if not, this is a product gap worth naming.
+
+**Answer:** _add reply here_
+
+---
