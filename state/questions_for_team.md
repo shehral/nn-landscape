@@ -12955,3 +12955,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-23T13:30:00+00:00 (audit: partial)
+
+### Q: The OCR-heads paper (arXiv 2609.21543) identifies OCR-head sets in GLM-OCR, MinerU2.5, and PaddleOCR-VL-1.6 via causal interventions but does not cover OCR-3. Should the team run the held-out causal intervention protocol on OCR-3 proactively before this methodology becomes a standard ICLR 2027 reference?
+
+**Context:** The paper is under ICLR 2027 review. Running the protocol on OCR-3 now would produce the first published mechanistic characterization of OCR-3 and could localize phantom-row failure origins. The overlap between OCR-heads and textual retrieval heads (73.3%+) suggests targeted intervention on those heads could suppress repetition-loop failures.
+
+**Answer:** _add reply here_
+
+### Q: NaviDC-OCR scores 96.87 on OmniDocBench v1.6 and Bodhan IndicOCR scores 92.76 on the v1.6 English subset. OCR-3's published 90.5 is on v1.5. Has OCR-3 been evaluated on OmniDocBench v1.6 for a like-for-like comparison?
+
+**Context:** The v1.5-to-v1.6 transition introduced MGAM evaluation methodology (+296 pages), meaning scores are not directly comparable. Without a v1.6 OCR-3 score, third-party comparisons will routinely show newer models outperforming OCR-3 on a version the team has not measured. The IDP Leaderboard currently shows OCR-3 at 85.9 but it is unclear whether that reflects a v1.6 OmniDocBench run.
+
+**Answer:** _add reply here_
+
+### Q: PrismAlign (arXiv 2609.21351) demonstrates Bayesian multi-VLM alignment that reaches SOTA on OmniDocBench 1.5 table category by suppressing the same phantom structural hallucinations the team studies. Should this be queued for reproduction against OCR-3's table endpoint?
+
+**Context:** The paper's decoupled structural-alignment / cell-content-alignment objective and Bayesian rule-violation detection are described as near-drop-in framework additions. A reproduction run on OCR-3 would establish whether the phantom-row reduction transfers to a MoE VLM or is architecture-specific.
+
+**Answer:** _add reply here_
+
+### Q: Three competitors confirmed sub-$0.02/page pricing in September 2026 (Extend $0.00625, Reducto r-1 $0.01, LandingAI DPT-3 Verity reduced credits). Is there a current public pricing statement for Nanonets OCR-3 extraction endpoints that addresses this new cost floor?
+
+**Context:** Without a public price point, buyer comparisons will use competitor pricing as the reference frame. The absence of a stated price is also an implicit signal to cost-sensitive buyers evaluating OCR-3 for high-volume workloads.
+
+**Answer:** _add reply here_
+
+### Q: The CLI ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This is the 48th consecutive build using WebSearch fallback (10 items vs. 80-120 in a normal build). Is proxy allowlist restoration under active investigation?
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers roughly 5-10% of the item surface area of direct feed ingestion and systematically under-represents same-day arXiv submissions and HN front-page discussions. This question has appeared in every build since 2026-07-07 without a team answer.
+
+**Answer:** _add reply here_
+
+---
