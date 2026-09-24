@@ -13079,3 +13079,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-24T11:15:00+00:00 (audit: partial)
+
+### Q: Role-Break (arXiv 2607.29412) demonstrates a no-fine-tuning linear hallucination detector at AUROC 93.23 using attention head deviations. Has the team assessed whether OCR-3's attention head structure is compatible with this approach for deployment as a lightweight confidence gate on /extract outputs?
+
+**Context:** The detector's feature dimension stays below 5,000 and requires no additional VLM training. The mechanism covers content-inconsistent-with-input failures, which matches phantom-row and structural hallucination patterns in document VLMs. If the team has the activation capture infrastructure, this could be a near-zero-cost production confidence signal.
+
+**Answer:** _add reply here_
+
+### Q: WeVisDoc and arXiv 2609.01575 both independently arrive at difficulty-aware data curation as the key lever for closing the cost-quality gap in document VLMs. Are there production telemetry signals available from OCR-3 that could support a similar difficulty-stratified curation pass for the next training cycle?
+
+**Context:** Both papers use residual-error measurement within structural clusters to reallocate training token budgets toward hard cases. arXiv 2609.01575 achieves this on a 35B MoE with 3B active parameters — OCR-3's architectural profile. Production confidence scores and correction rates, if available, could serve as a ready-made difficulty signal.
+
+**Answer:** _add reply here_
+
+### Q: SHROOM-Visions 2026 introduces an OCR-specific hallucination category at character granularity. Has the team considered submitting OCR-3 outputs to the shared task's evaluation infrastructure for external character-level hallucination benchmarking independent of F1-aggregate metrics?
+
+**Context:** The shared task covers character-level misreadings as a named hallucination category distinct from invention or structural hallucination. An OCR-3 evaluation on this dataset would produce the first published character-granularity hallucination profile for OCR-3, which F1 on FUNSD/CORD does not capture.
+
+**Answer:** _add reply here_
+
+### Q: Claude Opus 5.5 ranks #37 of 57 on OCR-specific Vision Evals (87.8%) despite Fable 5.1-parity performance overall. This is a published external signal showing OCR weakness. Has the team considered a head-to-head OCR-3 vs. Opus 5.5 comparison on FUNSD, CORD, or OmniDocBench v1.6 to establish the accuracy gap in public?
+
+**Context:** Luna ($0.10/$0.50/MTok) is now positioned for extraction at scale. Opus 5.5's documented OCR weakness at a much higher price point provides a specific benchmark differentiation opportunity for OCR-3. A published head-to-head would set the reference frame before third-party comparisons do.
+
+**Answer:** _add reply here_
+
+### Q: LandingAI DPT-3 prices by characters returned rather than by page. Has the team modeled whether OCR-3's per-page pricing creates a cost disadvantage on image-heavy or sparse-text documents where per-character pricing yields lower charges for the customer?
+
+**Context:** Per-character pricing is cheaper for sparse documents (e.g., diagrams with minimal text, blank-heavy forms) and more expensive for dense documents. Without visibility into OCR-3's pricing structure, it is unclear whether DPT-3's pricing model is a genuine competitive advantage on certain document types or primarily a marketing reframe.
+
+**Answer:** _add reply here_
+
+---

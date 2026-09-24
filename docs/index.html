@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 24, 2026 · 06:58 UTC · 4 items scored</span>
+  <span class="built-at">Built Sep 24, 2026 · 11:15 UTC · 9 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,9 +53,11 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Cost floor for non-agentic document parsing is consolidating at or below $0.01-$0.02 per page: Reducto r-1 ($0.01), Extend ($0.00625), and LandingAI DPT-3 Verity have each published structured pricing tables in September 2026, making this the public buyer reference frame.</li>
-    <li>Frontier-lab multimodal pricing is declining alongside capability increases: Claude Opus 5.5 at $4/$20 per MTok (down from Opus 5&#39;s $5/$25) continues the pattern of 6-month price reductions that narrows the premium for specialized extraction over general-purpose APIs.</li>
-    <li>Structural fidelity remains the persistent gap in document VLMs: FormStruct-Bench shows a consistent pattern where systems scoring 80%+ at document level fall below 18% on fine-grained structural hierarchy recovery — the same failure mode the team studies through phantom-row and structural-hallucination research.</li>
+    <li>OmniDocBench v1.6 has become the de facto 2026 benchmark for end-to-end document parsers, with TeleOCR (96.87), WeVisDoc-4B (95.38), and MinerU2.5-Pro (95.69) all reporting v1.6 scores while OCR-3&#39;s published 90.5 remains on v1.5. The version gap is widening with each new submission.</li>
+    <li>Frontier model price compression accelerated on September 22, 2026: Anthropic cut Opus 5.5 to $4/$20/MTok (40% below Opus 5) and OpenAI halved GPT-6 Sol and Luna prices on the same day. Both moves arrived the week Claude Opus 5.5&#39;s OCR-specific benchmark weakness was published externally, creating an unusual moment where competitive pricing pressure increased while accuracy differentiation for OCR narrowed.</li>
+    <li>Difficulty-aware data curation is converging as a training methodology in document VLMs: arXiv 2609.01575 and WeVisDoc both independently apply difficulty-stratified training data selection — measuring residual errors within structural clusters to guide targeted data reallocation — and both achieve state-of-the-art cost-quality tradeoffs on their respective evaluation sets.</li>
+    <li>Hallucination detection in VLMs is moving from offline characterization to lightweight production-deployable artifacts: Role-Break (no fine-tuning, AUROC 93.23, feature dimension &lt;5,000) and SHROOM-Visions (character-granularity shared task infrastructure with five hallucination categories) both provide evaluation or inference tools that can be applied to a production VLM without retraining.</li>
+    <li>Document AI product differentiation is shifting from accuracy to deployment architecture: LandingAI DPT-3 introduces per-character pricing and tree-structured document output; Reducto r-1 uses a single-model unified parse at 1 cent/page with an upcoming mini variant. Both represent architecture-level product changes rather than incremental accuracy improvements.</li>
   </ul>
 </section>
 
@@ -64,25 +66,103 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="46">
+         data-score="71">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 1 · frontier 0 · vlm_research 4 = 46 (this view's weighting)">46</span>
+          title="doc_ai 5 · competitive 4 · frontier 0 · vlm_research 4 = 71 (this view's weighting)">71</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2608.10396" target="_blank" rel="nofollow noopener noreferrer">FormStruct-Bench: A Hierarchical and Diagnostic Benchmark for Table-Form Document Structure Recognition</a>
+    <a href="https://arxiv.org/abs/2609.20423" target="_blank" rel="nofollow noopener noreferrer">WeVisDoc-4B: Tencent difficulty-aware document parser scores 95.38 on OmniDocBench v1.6, first among end-to-end parsers</a>
   </p>
-  <p class="item-summary">FormStruct-Bench (SIGKDD 2026): 14 systems score 83%+ at document level but below 18% on fine-grained structural recovery of table hierarchies.</p>
+  <p class="item-summary">Tencent WeVisDoc-4B: two-stage difficulty-aware curation + probe-guided reallocation; 95.38 on OmniDocBench v1.6, #1 among end-to-end parsers.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>FormStruct-Bench documents a persistent gap between aggregate document-level scores and structural fidelity for table-form documents. Nanonets&#39; table-extraction endpoints operate on the same multilevel hierarchy; this benchmark offers a diagnostic frame for validating where OCR-3 accuracy numbers carry through to structural completeness.</dd>
+      <dd>A 4B-parameter open model at 95.38 on OmniDocBench v1.6 widens the benchmark-version gap further, as OCR-3&#39;s published 90.5 is on v1.5; without a v1.6 re-evaluation of OCR-3, comparisons are methodologically unsound. The model targets the same page-to-structured-Markdown task OCR-3 occupies.</dd>
       <dt>Research</dt>
-      <dd>The benchmark&#39;s diagnostic design — tracing aggregate score gaps to specific structural failure modes across difficulty, layout constraints, and visual degradation — maps directly to the team&#39;s phantom-row and structural-hallucination work. OCR-3 does not appear among the 14 tested systems; running it on FormStruct-Bench would establish a baseline before the benchmark gains wider citation.</dd>
+      <dd>WeVisDoc&#39;s two-stage approach — measuring residual errors within visual-structural clusters to guide targeted data reallocation — is directly reproducible for diagnosing OCR-3&#39;s hard-case distribution and prioritizing training data acquisition.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive, vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="68">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 5 · competitive 4 · frontier 0 · vlm_research 3 = 68 (this view's weighting)">68</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2608.12898" target="_blank" rel="nofollow noopener noreferrer">TeleOCR (renamed from NaviDC-OCR, Sep 10): 1.2B-param VLM scores 96.87 on OmniDocBench v1.6, wins ICDAR 2026 Sci-ImageMiner</a>
+  </p>
+  <p class="item-summary">TeleOCR: 1.2B VLM (renamed from NaviDC-OCR Sep 10), 96.87 on OmniDocBench v1.6, #1 ICDAR 2026 Sci-ImageMiner; unified digital + camera-capture parsing.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>A 1.2B model at 96.87 on OmniDocBench v1.6 is the highest reported score on that benchmark version and reinforces the case that OCR-3 needs a v1.6 evaluation; without it, TeleOCR will be cited in competitor comparisons as having surpassed OCR-3.</dd>
+      <dt>Research</dt>
+      <dd>TeleOCR&#39;s unified digital and camera-captured document model covers degraded-input types under-represented in IDP Leaderboard evaluation; a head-to-head on camera-captured scans would expose OCR-3&#39;s robustness gap on that document class.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="63">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 5 · competitive 2 · frontier 1 · vlm_research 4 = 63 (this view's weighting)">63</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 100%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2609.01575" target="_blank" rel="nofollow noopener noreferrer">Closing Cost-Quality Gap in Document VLMs: Difficulty-Aware Data Curation and Quality-Adjusted Deployment Economics (arXiv:2609.01575)</a>
+  </p>
+  <p class="item-summary">35B MoE (3B active) document VLM on single H100 cuts expected cost 80% vs human annotation via difficulty-aware curation; leads all non-reasoning baselines up to 10x larger.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Validates that a 35B MoE with 3B active parameters — OCR-3&#39;s architectural profile — can outperform larger commercial zero-shot baselines at 80% lower per-document cost when trained with difficulty-aware production data; directly supports OCR-3&#39;s deployment economics claims.</dd>
+      <dt>Research</dt>
+      <dd>The difficulty-aware curation pipeline (layout diversity + fact-extractability + cross-model consistency criteria) is described in enough detail to reproduce; applying it to OCR-3 training data could reduce inference costs while preserving accuracy on the hard tail of complex documents.</dd>
+      <dt>Action</dt>
+      <dd>reproduce</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="56">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 2 · frontier 1 · vlm_research 4 = 56 (this view's weighting)">56</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2609.15706" target="_blank" rel="nofollow noopener noreferrer">Beyond Accuracy: Robustness, Cost, and Governance Trade-offs for VLMs in Templated Document Extraction (arXiv:2609.15706)</a>
+  </p>
+  <p class="item-summary">750-document evaluation of 11 systems: fine-tuned open-source VLMs at F1 0.98+ beat every zero-shot commercial system; GPT-5 leads commercial pool; governance axis favors on-premises models.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>The finding that fine-tuned open-source VLMs consistently exceed zero-shot commercial API accuracy on constrained templated extraction validates OCR-3&#39;s task-specific fine-tuning value proposition; the governance and data-sovereignty axis in the selection framework explicitly favors on-premises deployment.</dd>
+      <dt>Research</dt>
+      <dd>The practitioner selection framework maps task profiles (quality, latency, governance, volume) to recommended deployment approaches — applicable as a structure for OCR-3 customer segmentation across extraction task types.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
@@ -93,25 +173,51 @@
     <h2>Competitive</h2>
 <article class="item "
          data-source="rss"
-         data-score="66">
+         data-score="70">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 5 · frontier 3 · vlm_research 1 = 66 (this view's weighting)">66</span>
+          title="doc_ai 3 · competitive 5 · frontier 4 · vlm_research 1 = 70 (this view's weighting)">70</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
+      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://www.anthropic.com/claude-opus-5-5" target="_blank" rel="nofollow noopener noreferrer">Anthropic releases Claude Opus 5.5: Fable-level performance at 40% lower cost</a>
+    <a href="https://www.anthropic.com/news/claude-opus-5-5" target="_blank" rel="nofollow noopener noreferrer">Anthropic releases Claude Opus 5.5: Fable 5.1-level performance at $4/$20 per million tokens, 40% below Opus 5</a>
   </p>
-  <p class="item-summary">Anthropic releases Claude Opus 5.5 at $4/$20 per MTok; Fable 5.1-level performance with 40% cost reduction and 30%+ speed increase.</p>
+  <p class="item-summary">Opus 5.5 delivers Fable 5.1-parity at $4/$20/MTok; 1M context; vision included; OCR-specific ranking #37 of 57 on external Vision Evals.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Claude Opus 5.5 at $4/$20 per MTok prices into the enterprise segment with confirmed visual chart recognition and multimodal input. The 40% cost reduction from Opus 5 and 30%+ speed improvement tighten the cost gap for buyers comparing general-purpose multimodal APIs against specialized extraction services.</dd>
+      <dd>The 40% price reduction narrows the cost gap between using Claude as an extraction baseline and using OCR-3; however, Opus 5.5&#39;s weak OCR ranking (#37 of 57 on Roboflow Vision Evals, 87.8%) limits its direct threat to structured extraction endpoints. Make-vs-buy decisions are most affected in mixed document-conversation workflows rather than pure extraction pipelines.</dd>
       <dt>Research</dt>
-      <dd>No IDP Leaderboard, ParseBench, or OmniDocBench scores have been released for Opus 5.5. Extraction accuracy versus OCR-3 cannot be established until document-benchmark results appear.</dd>
+      <dd>No new mechanistic transparency; improved output speed may be useful for accelerating evaluation runs. OCR weakness at #37 is a documented external signal supporting OCR-3&#39;s positioning on extraction-specific tasks.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="61">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 4 · frontier 4 · vlm_research 0 = 61 (this view's weighting)">61</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://venturebeat.com/technology/openai-releases-gpt-6-sol-and-luna-models-slashing-api-costs-50-or-more" target="_blank" rel="nofollow noopener noreferrer">OpenAI cuts GPT-6 Sol and Luna API prices by 50%+; Luna explicitly targets high-volume extraction and summarization</a>
+  </p>
+  <p class="item-summary">OpenAI halves GPT-6 Sol ($2/$10/MTok) and Luna ($0.10/$0.50/MTok) API prices permanently; Luna targets summarization, extraction, and routine question answering at scale.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Luna at $0.10/$0.50/MTok makes GPT-6 cost-competitive with specialized extraction APIs for high-volume document pre-classification and triage pipelines that don&#39;t require structured output fidelity; the price floor change shifts the make-vs-buy threshold for customers at &gt;1M pages/month.</dd>
+      <dt>Research</dt>
+      <dd>No research content; pricing changes affect which models are practical as cost baselines in ablation studies of specialized-vs-general approaches to document processing.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
@@ -129,43 +235,17 @@
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://www.eneralabs.com/blog/reducto-r1-enterprise-document-ai-agents-2026/" target="_blank" rel="nofollow noopener noreferrer">Reducto r-1: Document parsing for AI agents at 1 cent a page — technical analysis</a>
+    <a href="https://landing.ai/blog/introducing-agentic-document-extraction-gen2" target="_blank" rel="nofollow noopener noreferrer">LandingAI launches Agentic Document Extraction Gen2 with DPT-3 Pro and DPT-3 Verity; tree-structured docs, per-character pricing</a>
   </p>
-  <p class="item-summary">Third-party analysis of Reducto r-1 confirms $0.01 parse, $0.02 extract, $0.04 deep-extract pricing structure and 20% error reduction claim.</p>
+  <p class="item-summary">LandingAI DPT-3 Gen2: Pro (high-accuracy complex docs) and Verity (lower-cost digital text); tree-structured output, per-character pricing, word-level citation grounding, on-premises available.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Third-party technical coverage is cementing $0.01/page as the public reference price for non-agentic single-model parsing. As more analyses circulate, this price point becomes the buyer anchor for evaluating any document-parsing service on cost.</dd>
+      <dd>DPT-3&#39;s per-character pricing and tree-structured document model pressure OCR-3&#39;s per-page pricing on image-heavy or sparse-text documents; on-premises availability across AWS, Azure, GCP, Snowflake, and private VPCs directly targets the enterprise on-premises segment.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication.</dd>
+      <dd>DPT-3 Pro&#39;s layout-before-words reading order is consistent with approaches in current OmniDocBench leaders; no model architecture or training data is disclosed, limiting external reproducibility.</dd>
       <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="45">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 4 · frontier 0 · vlm_research 0 = 45 (this view's weighting)">45</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://landing.ai/blog/agentic-document-extraction-pricing-gen1-vs-gen2-sample-projects" target="_blank" rel="nofollow noopener noreferrer">Agentic Document Extraction Pricing: Gen1 vs Gen2 cost comparison across sample projects</a>
-  </p>
-  <p class="item-summary">LandingAI publishes Gen1-vs-Gen2 ADE pricing comparison; DPT-3 Verity positioned as lower-cost path for digitally created content and tables.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>LandingAI&#39;s published pricing breakdown for DPT-3 Verity as the low-cost path for clean digital text adds another public price reference point alongside Reducto r-1 and Extend. Buyers now have three structured pricing tables to compare at sub-$0.02/page for standard document types.</dd>
-      <dt>Research</dt>
-      <dd>No research implication.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
+      <dd>investigate</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: doc_ai</p>
@@ -176,8 +256,57 @@
   </div>
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
-      <p class="item-summary">No top-N items this build.</p>
+<article class="item "
+         data-source="arxiv"
+         data-score="33">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 1 · vlm_research 5 = 33 (this view's weighting)">33</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 100%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
   </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2608.25662" target="_blank" rel="nofollow noopener noreferrer">SHROOM-Visions 2026: Shared task on character-level hallucination span detection in VLMs across five categories including OCR</a>
+  </p>
+  <p class="item-summary">SHROOM-Visions 2026: shared task annotates character-granularity hallucination spans in VLM outputs across invention, mischaracterization, OCR, miscounting, and other categories.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>The OCR hallucination category covers character-level misreadings — directly maps to OCR-3&#39;s character-error failure mode; the shared task infrastructure provides an external evaluation harness without requiring new annotation setup.</dd>
+      <dt>Research</dt>
+      <dd>Character-granularity hallucination annotation is finer than the team&#39;s current FUNSD/CORD/OmniDocBench aggregate metrics; the five-category taxonomy (invention, mischaracterization, OCR, miscounting, other) aligns with the team&#39;s structural hallucination research program and could be adopted as a diagnostic layer.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="29">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 5 = 29 (this view's weighting)">29</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2607.29412" target="_blank" rel="nofollow noopener noreferrer">Role-Break in Attention Heads: linear hallucination detector achieves AUROC 93.23 across 6 VLMs with no fine-tuning</a>
+  </p>
+  <p class="item-summary">Role-Break: localized attention head deviations from faithful contextual behavior detect hallucinations via linear probe; AUROC 93.23 across 6 VLMs, feature dimension &lt;5,000, no retraining.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>A no-fine-tuning linear detector at AUROC 93.23 could be deployed as a lightweight post-processing confidence gate on OCR-3 /extract outputs; the feature dimension below 5,000 means it runs with negligible overhead on production traffic.</dd>
+      <dt>Research</dt>
+      <dd>Role-Break&#39;s linear readability of hallucination from head-identity-preserved deviations is compatible with the team&#39;s existing activation patching toolkit; the method covers the same failure mode (content inconsistent with input) as phantom-row and structural hallucinations in document VLMs.</dd>
+      <dt>Action</dt>
+      <dd>reproduce</dd>
+    </dl>
+  </div>
+</article>  </div>
 </section>
 
 <aside class="ai-partner" aria-label="Questions from your AI partner">
@@ -189,18 +318,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">FormStruct-Bench (SIGKDD 2026) evaluates 14 systems on hierarchical table-form document structure but OCR-3 is not among them. Should the team run OCR-3 on FormStruct-Bench before the benchmark accumulates more citations and third-party comparisons set the reference frame?</p>
-    <p class="question-context">The benchmark&#39;s diagnostic slices — difficulty, structural constraints, visual degradation — map to OCR-3&#39;s commercial use cases (invoices, forms, contracts). No other Nanonets model appears in the 14-system comparison. A proactive run would establish a public baseline.</p>
+    <p class="question-text">Role-Break (arXiv 2607.29412) demonstrates a no-fine-tuning linear hallucination detector at AUROC 93.23 using attention head deviations. Has the team assessed whether OCR-3&#39;s attention head structure is compatible with this approach for deployment as a lightweight confidence gate on /extract outputs?</p>
+    <p class="question-context">The detector&#39;s feature dimension stays below 5,000 and requires no additional VLM training. The mechanism covers content-inconsistent-with-input failures, which matches phantom-row and structural hallucination patterns in document VLMs. If the team has the activation capture infrastructure, this could be a near-zero-cost production confidence signal.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Has the team run any internal extraction benchmark on Claude Opus 5.5 (released September 22, 2026), and do its visual chart recognition gains translate to document-parsing accuracy gains that close the gap with OCR-3 on FUNSD, CORD, or OmniDocBench?</p>
-    <p class="question-context">Opus 5.5 claims Fable 5.1-level performance with confirmed visual chart recognition, but Anthropic has not published IDP Leaderboard or ParseBench scores. This is the third consecutive 6-hour build window with no public document-benchmark scores for Opus 5.5.</p>
+    <p class="question-text">WeVisDoc and arXiv 2609.01575 both independently arrive at difficulty-aware data curation as the key lever for closing the cost-quality gap in document VLMs. Are there production telemetry signals available from OCR-3 that could support a similar difficulty-stratified curation pass for the next training cycle?</p>
+    <p class="question-context">Both papers use residual-error measurement within structural clusters to reallocate training token budgets toward hard cases. arXiv 2609.01575 achieves this on a 35B MoE with 3B active parameters — OCR-3&#39;s architectural profile. Production confidence scores and correction rates, if available, could serve as a ready-made difficulty signal.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The ingest pipeline has run in WebSearch-fallback mode for 50 consecutive builds, consistently returning 3-8 items versus the 80-120 items a fully functioning pipeline would provide. Is there an alternative ingest fallback — such as a small allowed-origin HTTP proxy for arxiv.org and hn.algolia.com — that could be added to the CLI without requiring the full allowlist?</p>
-    <p class="question-context">This is not a repeat of the proxy-allowlist question (which has been asked 49 times). It is asking specifically whether a narrower, lighter-weight workaround exists that might be easier to approve than an allowlist covering all sources. A partial fix covering only arxiv and HN would recover roughly 80% of the normal item volume.</p>
+    <p class="question-text">SHROOM-Visions 2026 introduces an OCR-specific hallucination category at character granularity. Has the team considered submitting OCR-3 outputs to the shared task&#39;s evaluation infrastructure for external character-level hallucination benchmarking independent of F1-aggregate metrics?</p>
+    <p class="question-context">The shared task covers character-level misreadings as a named hallucination category distinct from invention or structural hallucination. An OCR-3 evaluation on this dataset would produce the first published character-granularity hallucination profile for OCR-3, which F1 on FUNSD/CORD does not capture.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Claude Opus 5.5 ranks #37 of 57 on OCR-specific Vision Evals (87.8%) despite Fable 5.1-parity performance overall. This is a published external signal showing OCR weakness. Has the team considered a head-to-head OCR-3 vs. Opus 5.5 comparison on FUNSD, CORD, or OmniDocBench v1.6 to establish the accuracy gap in public?</p>
+    <p class="question-context">Luna ($0.10/$0.50/MTok) is now positioned for extraction at scale. Opus 5.5&#39;s documented OCR weakness at a much higher price point provides a specific benchmark differentiation opportunity for OCR-3. A published head-to-head would set the reference frame before third-party comparisons do.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">LandingAI DPT-3 prices by characters returned rather than by page. Has the team modeled whether OCR-3&#39;s per-page pricing creates a cost disadvantage on image-heavy or sparse-text documents where per-character pricing yields lower charges for the customer?</p>
+    <p class="question-context">Per-character pricing is cheaper for sparse documents (e.g., diagrams with minimal text, blank-heavy forms) and more expensive for dense documents. Without visibility into OCR-3&#39;s pricing structure, it is unclear whether DPT-3&#39;s pricing model is a genuine competitive advantage on certain document types or primarily a marketing reframe.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -212,7 +351,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-24T06:58:20+00:00
+    sources covered:     · failed: 4 · built at 2026-09-24T11:15:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
