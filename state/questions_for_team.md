@@ -13113,3 +13113,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-24T16:00:00+00:00 (audit: partial)
+
+### Q: Claude Opus 5.5 ranks #38/59 on OCR-specific Vision Evals (87.8%) despite Fable 5.1-level general performance. Has the team benchmarked Opus 5.5 on FUNSD, CORD, or OmniDocBench to establish OCR-3's accuracy advantage before third-party comparisons set the frame?
+
+**Context:** Opus 5.5 is priced at ~$0.058/page — above dedicated OCR pricing — but carries Anthropic brand trust and general-purpose capabilities. A published OCR-3 vs. Opus 5.5 head-to-head on standard document benchmarks would be a concrete differentiation signal. This question first appeared in the Sep 24 11:15 build.
+
+**Answer:** _add reply here_
+
+### Q: The ingest pipeline has failed in every recorded build due to proxy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This is the 51st consecutive build in WebSearch fallback. Is proxy allowlist restoration under active investigation?
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers roughly 5-10% of normal item volume. This question has appeared in every build since 2026-07-07 without a team answer.
+
+**Answer:** _add reply here_
+
+### Q: PrismAlign (arXiv 2609.21351, EMNLP 2026 industry) decouples structural alignment from cell-content alignment using Bayesian row/column count checks before cell content is evaluated — a direct analogue to OCR-3's phantom-row failure mode. Does the team's current phantom-row mitigation stack apply an equivalent structural prior, or is this approach architecturally distinct?
+
+**Context:** PrismAlign reaches SOTA on OmniDocBench 1.5 table category. If the structural-prior constraint is absent from OCR-3's current mitigation path, a reproduction run on /extract table outputs is a concrete next step. The paper is EMNLP 2026 industry track, so methodology and code are expected to be public shortly.
+
+**Answer:** _add reply here_
+
+### Q: LandingAI DPT-3 Gen2 uses per-character pricing, which is cheaper than per-page pricing on sparse documents (diagrams, blank-heavy forms, image-only pages). Has the team modeled whether OCR-3's pricing structure creates a cost disadvantage on specific document types that DPT-3 targets?
+
+**Context:** Per-character pricing favors sparse content; per-page pricing favors dense content. The answer shapes how OCR-3 should be positioned against DPT-3 Verity in competitive comparisons. This question appeared in the Sep 24 11:15 build and is repeated because no answer has been recorded.
+
+**Answer:** _add reply here_
+
+### Q: SHROOM-Visions 2026 (arXiv 2609.10244, 2609.17327) introduces OCR as a named character-level hallucination category evaluated independently of aggregate accuracy metrics. Has the team considered submitting OCR-3 outputs to the shared task's evaluation infrastructure to obtain an external character-level hallucination profile?
+
+**Context:** F1 on FUNSD/CORD does not capture character-level fabrication that arXiv 2607.24077 documents in VLM-based OCR. SHROOM-Visions provides an independent evaluation surface. A submission would generate the first published character-granularity hallucination profile for OCR-3.
+
+**Answer:** _add reply here_
+
+---
