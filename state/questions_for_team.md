@@ -13023,3 +13023,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-24T10:00:00+00:00 (audit: partial)
+
+### Q: The CLI ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This is the 49th consecutive build using WebSearch fallback. Is proxy allowlist restoration under active investigation?
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers roughly 5-10% of the item surface area of direct feed ingestion. This question has appeared in every build since 2026-07-07 without a team answer.
+
+**Answer:** _add reply here_
+
+### Q: GPT-6 Luna is priced at $0.10/$0.50 per million input/output tokens and explicitly supports extraction and classification at scale. Has the team modeled the volume threshold at which Luna becomes cost-competitive with OCR-3 for document triage or pre-classification workloads?
+
+**Context:** Luna's pricing is roughly 20x cheaper than Astra and competes in the high-volume bulk tier. At that price point, the make-vs-buy calculus for document-type classification (not full extraction) changes materially. Without an OCR-3 price anchor, the comparison defaults to competitor framing.
+
+**Answer:** _add reply here_
+
+### Q: Has the team benchmarked LandingAI DPT-3 Pro and Verity against OCR-3 on the IDP Leaderboard test set or an equivalent internal evaluation set?
+
+**Context:** DPT-3 Gen2 launched September 9 with no independent benchmark scores. LandingAI's self-reported accuracy claims cover their own benchmark. Without a head-to-head on the IDP Leaderboard or OmniDocBench test set, buyer comparisons will use vendor-reported numbers as the reference frame.
+
+**Answer:** _add reply here_
+
+### Q: This is the fourth consecutive build raising the question: should Infrrd (IDPForge GA, September 19, 2026) be added to context.md's competitive set?
+
+**Context:** IDPForge moves Infrrd from legacy enterprise IDP into the self-serve developer API segment Nanonets occupies. The question has been raised in the Sep 22 (13:30), Sep 22 (19:00), Sep 23 (01:04), and Sep 23 (13:30) builds without a team answer. If the team decides Infrrd is not relevant, a one-line reply here would prevent the question from recurring.
+
+**Answer:** _add reply here_
+
+### Q: Has OCR-3 been evaluated on TableParseMap's 916-table real-world benchmark (arXiv:2608.09842)?
+
+**Context:** TableParseMap shows models scoring 93+ on OmniDocBench dropping ~8 TEDS points on real-world tables. OCR-3's published 90.5 OmniDocBench score likely drops similarly; the prior build (Sep 23 07:00) also flagged this question. Establishing OCR-3's number proactively allows the team to set the reference frame before third-party comparisons do.
+
+**Answer:** _add reply here_
+
+---
