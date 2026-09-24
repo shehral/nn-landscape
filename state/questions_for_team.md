@@ -13057,3 +13057,25 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-24T06:58:20+00:00 (audit: partial)
+
+### Q: FormStruct-Bench (SIGKDD 2026) evaluates 14 systems on hierarchical table-form document structure but OCR-3 is not among them. Should the team run OCR-3 on FormStruct-Bench before the benchmark accumulates more citations and third-party comparisons set the reference frame?
+
+**Context:** The benchmark's diagnostic slices — difficulty, structural constraints, visual degradation — map to OCR-3's commercial use cases (invoices, forms, contracts). No other Nanonets model appears in the 14-system comparison. A proactive run would establish a public baseline.
+
+**Answer:** _add reply here_
+
+### Q: Has the team run any internal extraction benchmark on Claude Opus 5.5 (released September 22, 2026), and do its visual chart recognition gains translate to document-parsing accuracy gains that close the gap with OCR-3 on FUNSD, CORD, or OmniDocBench?
+
+**Context:** Opus 5.5 claims Fable 5.1-level performance with confirmed visual chart recognition, but Anthropic has not published IDP Leaderboard or ParseBench scores. This is the third consecutive 6-hour build window with no public document-benchmark scores for Opus 5.5.
+
+**Answer:** _add reply here_
+
+### Q: The ingest pipeline has run in WebSearch-fallback mode for 50 consecutive builds, consistently returning 3-8 items versus the 80-120 items a fully functioning pipeline would provide. Is there an alternative ingest fallback — such as a small allowed-origin HTTP proxy for arxiv.org and hn.algolia.com — that could be added to the CLI without requiring the full allowlist?
+
+**Context:** This is not a repeat of the proxy-allowlist question (which has been asked 49 times). It is asking specifically whether a narrower, lighter-weight workaround exists that might be easier to approve than an allowlist covering all sources. A partial fix covering only arxiv and HN would recover roughly 80% of the normal item volume.
+
+**Answer:** _add reply here_
+
+---

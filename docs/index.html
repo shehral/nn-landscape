@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 24, 2026 · 10:00 UTC · 9 items scored</span>
+  <span class="built-at">Built Sep 24, 2026 · 06:58 UTC · 4 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,10 +53,9 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>OpenAI and Anthropic both released vision-capable models on September 22 (GPT-6 Sol/Luna and Opus 5.5), completing a dense three-week period that saw Gemini 3.8 Flash (Sep 2), Claude Fable 5.1 (Sep 1), GPT-6 Astra (Sep 3), and now two additional tiers — the frontier lab multimodal release cadence has not paused between builds.</li>
-    <li>Document parsing pricing is compressing structurally: LandingAI DPT-3 Gen2 cuts per-page costs 25-40% vs prior generation, GPT-6 Luna enables extraction workloads at $0.10/M input tokens, and a research paper demonstrates 80%+ cost reduction over human annotation via difficulty-aware MoE VLM training — the cost floor for managed extraction is moving lower this quarter across multiple vectors.</li>
-    <li>The gap between standard benchmark scores and real-world parsing performance is now doubly quantified: TableParseMap shows 93+ OmniDocBench models dropping ~8 TEDS points on 916 real-world tables; LongDocBench shows parsers achieving only 0.55 Macro TEDS on cross-page TOC recovery despite strong page-level scores — curated benchmarks systematically overstate deployment-grade accuracy.</li>
-    <li>Established enterprise IDP vendors are entering the self-serve developer API segment: Infrrd (IDPForge GA, Sep 19) and LandingAI (DPT-3 Gen2, Sep 9) both launched developer-first API products this month, joining Reducto, LlamaParse, and Nanonets in a segment that was dominated by newer entrants 12 months ago.</li>
+    <li>Cost floor for non-agentic document parsing is consolidating at or below $0.01-$0.02 per page: Reducto r-1 ($0.01), Extend ($0.00625), and LandingAI DPT-3 Verity have each published structured pricing tables in September 2026, making this the public buyer reference frame.</li>
+    <li>Frontier-lab multimodal pricing is declining alongside capability increases: Claude Opus 5.5 at $4/$20 per MTok (down from Opus 5&#39;s $5/$25) continues the pattern of 6-month price reductions that narrows the premium for specialized extraction over general-purpose APIs.</li>
+    <li>Structural fidelity remains the persistent gap in document VLMs: FormStruct-Bench shows a consistent pattern where systems scoring 80%+ at document level fall below 18% on fine-grained structural hierarchy recovery — the same failure mode the team studies through phantom-row and structural-hallucination research.</li>
   </ul>
 </section>
 
@@ -64,83 +63,6 @@
   <div class="axis-col" data-axis="doc_ai">
     <h2>Document AI</h2>
 <article class="item "
-         data-source="arxiv"
-         data-score="69">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 5 · competitive 3 · frontier 1 · vlm_research 4 = 69 (this view's weighting)">69</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.01575" target="_blank" rel="nofollow noopener noreferrer">Closing Cost-Quality Gap in Document VLMs: Difficulty-Aware Data Curation and Quality-Adjusted Deployment Economics</a>
-  </p>
-  <p class="item-summary">Deployed 35B MoE VLM (3B active) achieves 80%+ cost reduction vs human annotation via difficulty-aware curation and quality-adjusted deployment economics; fits on a single H100.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>A MoE architecture with 3B active parameters (matching OCR-3&#39;s scale tier) outperforms baselines up to an order of magnitude larger on heterogeneous document workflows. This provides external validation that OCR-3&#39;s parameter efficiency approach is viable and that difficulty-stratified serving (routing easy documents to smaller models) is production-grade.</dd>
-      <dt>Research</dt>
-      <dd>The difficulty-aware curation pipeline — selecting for layout diversity, fact-extractability, and cross-model consistency — is a near-direct framework for auditing OCR-3&#39;s training data mix. The quality-adjusted cost analysis with production telemetry calibration is applicable to the team&#39;s existing evaluation infrastructure as a method for measuring real deployment ROI.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: vlm_research</p>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="59">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 5 · competitive 2 · frontier 0 · vlm_research 4 = 59 (this view's weighting)">59</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2608.09842" target="_blank" rel="nofollow noopener noreferrer">From Diagnosis to Correction: Benchmarking and Improving Real-World Table Parsing (TableParseMap)</a>
-  </p>
-  <p class="item-summary">TableParseMap evaluates 916 real-world tables; models scoring 93+ on OmniDocBench drop to ~85 TEDS in practice; a diagnosis-then-correction framework recovers 6+ points.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Without an OCR-3 run on TableParseMap&#39;s 916-table real-world set, third-party evaluations will set the reference frame for OCR-3&#39;s real-world table accuracy. OCR-3&#39;s 90.5 OmniDocBench score likely drops on this suite; establishing the number proactively is preferable to a competitor publishing the comparison first.</dd>
-      <dt>Research</dt>
-      <dd>The diagnosis-then-correction framework — classifying table errors into actionable types and applying targeted correction prompts — recovers approximately 6 TEDS points on real-world tables. This is directly applicable to OCR-3&#39;s table endpoint and complements the phantom-row hallucination research axis.</dd>
-      <dt>Action</dt>
-      <dd>reproduce</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: vlm_research</p>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="49">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 2 · frontier 0 · vlm_research 3 = 49 (this view's weighting)">49</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2608.22842" target="_blank" rel="nofollow noopener noreferrer">FinixDoc: Rethinking Financial Document Parsing Beyond Saturated Benchmarks</a>
-  </p>
-  <p class="item-summary">FinixDoc-VL (4B on Qwen3-VL-4B) achieves 81.43 on FinixDocBench across digital-native, camera-captured, and ultra-large financial pages; introduces a capability matrix by visual quality and document scale.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>FinixDocBench targets the financial-document categories (invoices, annual reports, camera-captured pages) Nanonets serves directly. No Nanonets model is evaluated; without a submission, the benchmark will set buyer expectations using competitors as the reference.</dd>
-      <dt>Research</dt>
-      <dd>The homoglyph-aware contrastive learning and multi-stage domain RL recipe improves financial OCR accuracy on complex document types. The confidence-aware expert review Data Factory is a labeling methodology applicable to OCR-3 fine-tuning data for the financial vertical.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
          data-source="arxiv"
          data-score="46">
   <div class="item-meta">
@@ -152,15 +74,15 @@
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2608.15064" target="_blank" rel="nofollow noopener noreferrer">LongDocBench: Benchmarking TOC Hierarchy and Contextual Relationship Recovery in Long Documents</a>
+    <a href="https://arxiv.org/abs/2608.10396" target="_blank" rel="nofollow noopener noreferrer">FormStruct-Bench: A Hierarchical and Diagnostic Benchmark for Table-Form Document Structure Recognition</a>
   </p>
-  <p class="item-summary">LongDocBench (85 real-world docs, 2582 pages) shows parsers achieving 0.55 Macro TEDS on cross-page TOC recovery despite strong page-level performance; correct structure improves QA from 33% to 54%.</p>
+  <p class="item-summary">FormStruct-Bench (SIGKDD 2026): 14 systems score 83%+ at document level but below 18% on fine-grained structural recovery of table hierarchies.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>For Nanonets Agents workflows processing multi-page financial reports and textbooks, cross-page TOC recovery and contextual relationship links directly affect downstream retrieval accuracy. The 21-point QA improvement from correct structure recovery is a measurable product quality gap against human annotation.</dd>
+      <dd>FormStruct-Bench documents a persistent gap between aggregate document-level scores and structural fidelity for table-form documents. Nanonets&#39; table-extraction endpoints operate on the same multilevel hierarchy; this benchmark offers a diagnostic frame for validating where OCR-3 accuracy numbers carry through to structural completeness.</dd>
       <dt>Research</dt>
-      <dd>LongDocBench reveals a structural-parsing failure mode orthogonal to the team&#39;s current hallucination taxonomy: parsers that produce correct page-level content still fail at cross-page structure. This is a new research axis distinct from phantom-row and infinite-generation work but connected to the structural-hallucinations subtype.</dd>
+      <dd>The benchmark&#39;s diagnostic design — tracing aggregate score gaps to specific structural failure modes across difficulty, layout constraints, and visual degradation — maps directly to the team&#39;s phantom-row and structural-hallucination work. OCR-3 does not appear among the 14 tested systems; running it on FormStruct-Bench would establish a baseline before the benchmark gains wider citation.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
@@ -171,25 +93,25 @@
     <h2>Competitive</h2>
 <article class="item "
          data-source="rss"
-         data-score="77">
+         data-score="66">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 5 · frontier 4 · vlm_research 1 = 77 (this view's weighting)">77</span>
+          title="doc_ai 3 · competitive 5 · frontier 3 · vlm_research 1 = 66 (this view's weighting)">66</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
+      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 60%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://www.anthropic.com/news/claude-opus-5-5" target="_blank" rel="nofollow noopener noreferrer">Anthropic releases Claude Opus 5.5</a>
+    <a href="https://www.anthropic.com/claude-opus-5-5" target="_blank" rel="nofollow noopener noreferrer">Anthropic releases Claude Opus 5.5: Fable-level performance at 40% lower cost</a>
   </p>
-  <p class="item-summary">Anthropic&#39;s Opus 5.5 matches Fable 5.1 on most tasks at 40% lower cost; explicitly confirmed for document extraction, charts, and dense-document visual analysis.</p>
+  <p class="item-summary">Anthropic releases Claude Opus 5.5 at $4/$20 per MTok; Fable 5.1-level performance with 40% cost reduction and 30%+ speed increase.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Anthropic markets Opus 5.5 as reliable for document extraction, visual analysis, and complex imagery interpretation at 40% lower cost than Opus 5 and Fable 5.1-equivalent performance. This compresses the make-vs-buy calculus for document AI customers who previously cited cost as a reason to avoid frontier models.</dd>
+      <dd>Claude Opus 5.5 at $4/$20 per MTok prices into the enterprise segment with confirmed visual chart recognition and multimodal input. The 40% cost reduction from Opus 5 and 30%+ speed improvement tighten the cost gap for buyers comparing general-purpose multimodal APIs against specialized extraction services.</dd>
       <dt>Research</dt>
-      <dd>No IDP Leaderboard or ParseBench scores published. Biology-focused safety evaluations and METR external testing suggest Anthropic&#39;s research-priority domain is life sciences, not OCR; document extraction capability is positioned as a general-purpose benefit, not a benchmark-driven specialization.</dd>
+      <dd>No IDP Leaderboard, ParseBench, or OmniDocBench scores have been released for Opus 5.5. Extraction accuracy versus OCR-3 cannot be established until document-benchmark results appear.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
@@ -197,77 +119,51 @@
   <p class="secondary-axes">also: frontier</p>
 </article><article class="item "
          data-source="rss"
-         data-score="71">
+         data-score="61">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 5 · competitive 5 · frontier 0 · vlm_research 2 = 71 (this view's weighting)">71</span>
+          title="doc_ai 4 · competitive 5 · frontier 0 · vlm_research 1 = 61 (this view's weighting)">61</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://landing.ai/blog/introducing-agentic-document-extraction-gen2" target="_blank" rel="nofollow noopener noreferrer">LandingAI releases Agentic Document Extraction Gen2 with DPT-3 Pro and DPT-3 Verity</a>
+    <a href="https://www.eneralabs.com/blog/reducto-r1-enterprise-document-ai-agents-2026/" target="_blank" rel="nofollow noopener noreferrer">Reducto r-1: Document parsing for AI agents at 1 cent a page — technical analysis</a>
   </p>
-  <p class="item-summary">LandingAI&#39;s DPT-3 Gen2 (Sep 9) introduces layout-first parsing and per-component billing; average per-page cost drops 25-40% vs prior generation.</p>
+  <p class="item-summary">Third-party analysis of Reducto r-1 confirms $0.01 parse, $0.02 extract, $0.04 deep-extract pricing structure and 20% error reduction claim.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>DPT-3 Verity&#39;s per-component pricing (0.3 credits/page + 0.2 credits per 1,000 output characters) is explicitly designed for high-volume digital-native documents, the segment where Nanonets competes for cost-sensitive customers. The automated routing between Pro and Verity planned for fall 2026 would further reduce average cost without buyer configuration effort.</dd>
+      <dd>Third-party technical coverage is cementing $0.01/page as the public reference price for non-agentic single-model parsing. As more analyses circulate, this price point becomes the buyer anchor for evaluating any document-parsing service on cost.</dd>
       <dt>Research</dt>
-      <dd>DPT-3 Pro&#39;s layout-first architecture — detecting block types (tables, figures, marginalia, signatures) before reading content — parallels OCR-3&#39;s design philosophy. No third-party benchmark scores published at launch; LandingAI&#39;s self-reported numbers are the only available comparison.</dd>
+      <dd>No direct research implication.</dd>
       <dt>Action</dt>
-      <dd>investigate</dd>
+      <dd>monitor</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: doc_ai</p>
 </article><article class="item "
          data-source="rss"
-         data-score="70">
+         data-score="45">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 5 · frontier 4 · vlm_research 1 = 70 (this view's weighting)">70</span>
+          title="doc_ai 3 · competitive 4 · frontier 0 · vlm_research 0 = 45 (this view's weighting)">45</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
+      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://openai.com/index/introducing-gpt-6-sol-and-luna/" target="_blank" rel="nofollow noopener noreferrer">OpenAI releases GPT-6 Sol and Luna with 50% API price cuts</a>
+    <a href="https://landing.ai/blog/agentic-document-extraction-pricing-gen1-vs-gen2-sample-projects" target="_blank" rel="nofollow noopener noreferrer">Agentic Document Extraction Pricing: Gen1 vs Gen2 cost comparison across sample projects</a>
   </p>
-  <p class="item-summary">GPT-6 Sol ($2/$10/M tokens) and Luna ($0.10/$0.50/M tokens) expand OpenAI&#39;s GPT-6 family; both include vision input and confirm extraction and classification use cases.</p>
+  <p class="item-summary">LandingAI publishes Gen1-vs-Gen2 ADE pricing comparison; DPT-3 Verity positioned as lower-cost path for digitally created content and tables.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>GPT-6 Luna at $0.10 per million input tokens is priced at roughly one-twentieth of Astra and positions OpenAI as viable for high-volume document triage and classification workflows. The three-tier GPT-6 family (Astra/Sol/Luna) covers the full cost spectrum from enterprise reasoning to bulk extraction, removing OpenAI from the &#39;too expensive for extraction&#39; category.</dd>
+      <dd>LandingAI&#39;s published pricing breakdown for DPT-3 Verity as the low-cost path for clean digital text adds another public price reference point alongside Reducto r-1 and Extend. Buyers now have three structured pricing tables to compare at sub-$0.02/page for standard document types.</dd>
       <dt>Research</dt>
-      <dd>No document-specific benchmarks published for Sol or Luna; claimed vision gains (Roboflow detection/counting) are for general object detection, not document AI. Research relevance depends on future ParseBench or OmniDocBench submissions.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: frontier</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="52">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 0 · vlm_research 0 = 52 (this view's weighting)">52</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://www.idpforge.ai/" target="_blank" rel="nofollow noopener noreferrer">Infrrd launches IDPForge GA: self-serve developer API for document automation</a>
-  </p>
-  <p class="item-summary">Infrrd&#39;s IDPForge (GA Sep 19) opens enterprise IDP to developers via self-serve API with parse/classify/extract/validate and multi-LLM routing with BYOK.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Infrrd enters the self-serve developer API segment — previously occupied by Reducto, LlamaParse, and Nanonets — with a decade of enterprise IDP brand recognition in mortgage, financial services, insurance, and logistics. The BYOK model eliminates Infrrd&#39;s per-call margin for customers with existing model contracts, which is a differentiator in regulated industries where data residency requirements drive API key ownership.</dd>
-      <dt>Research</dt>
-      <dd>No technical architecture details published.</dd>
+      <dd>No research implication.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
@@ -280,32 +176,8 @@
   </div>
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
-<article class="item "
-         data-source="arxiv"
-         data-score="29">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 5 = 29 (this view's weighting)">29</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
+      <p class="item-summary">No top-N items this build.</p>
   </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2608.25662" target="_blank" rel="nofollow noopener noreferrer">Overview of SHROOM-Visions 2026: A Shared Task on Hallucination Detection in Large Vision-Language Models</a>
-  </p>
-  <p class="item-summary">SHROOM-Visions 2026 (EMNLP) defines a five-category VLM hallucination taxonomy including OCR-class errors; span-level character-granularity annotations across four languages.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product implication; this is a shared task benchmark, not a deployed model or product.</dd>
-      <dt>Research</dt>
-      <dd>SHROOM-Visions 2026 provides a five-category taxonomy (invention, mischaracterization, OCR, miscounting, other) with character-granularity span-level annotations across Chinese, English, French, and Italian. The OCR category maps directly to structural hallucinations in the team&#39;s research taxonomy; participating in or citing this evaluation would give the team an external, multilingual hallucination detection benchmark with published system comparison baselines.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article>  </div>
 </section>
 
 <aside class="ai-partner" aria-label="Questions from your AI partner">
@@ -317,28 +189,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">The CLI ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This is the 49th consecutive build using WebSearch fallback. Is proxy allowlist restoration under active investigation?</p>
-    <p class="question-context">Required allowlist additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers roughly 5-10% of the item surface area of direct feed ingestion. This question has appeared in every build since 2026-07-07 without a team answer.</p>
+    <p class="question-text">FormStruct-Bench (SIGKDD 2026) evaluates 14 systems on hierarchical table-form document structure but OCR-3 is not among them. Should the team run OCR-3 on FormStruct-Bench before the benchmark accumulates more citations and third-party comparisons set the reference frame?</p>
+    <p class="question-context">The benchmark&#39;s diagnostic slices — difficulty, structural constraints, visual degradation — map to OCR-3&#39;s commercial use cases (invoices, forms, contracts). No other Nanonets model appears in the 14-system comparison. A proactive run would establish a public baseline.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">GPT-6 Luna is priced at $0.10/$0.50 per million input/output tokens and explicitly supports extraction and classification at scale. Has the team modeled the volume threshold at which Luna becomes cost-competitive with OCR-3 for document triage or pre-classification workloads?</p>
-    <p class="question-context">Luna&#39;s pricing is roughly 20x cheaper than Astra and competes in the high-volume bulk tier. At that price point, the make-vs-buy calculus for document-type classification (not full extraction) changes materially. Without an OCR-3 price anchor, the comparison defaults to competitor framing.</p>
+    <p class="question-text">Has the team run any internal extraction benchmark on Claude Opus 5.5 (released September 22, 2026), and do its visual chart recognition gains translate to document-parsing accuracy gains that close the gap with OCR-3 on FUNSD, CORD, or OmniDocBench?</p>
+    <p class="question-context">Opus 5.5 claims Fable 5.1-level performance with confirmed visual chart recognition, but Anthropic has not published IDP Leaderboard or ParseBench scores. This is the third consecutive 6-hour build window with no public document-benchmark scores for Opus 5.5.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Has the team benchmarked LandingAI DPT-3 Pro and Verity against OCR-3 on the IDP Leaderboard test set or an equivalent internal evaluation set?</p>
-    <p class="question-context">DPT-3 Gen2 launched September 9 with no independent benchmark scores. LandingAI&#39;s self-reported accuracy claims cover their own benchmark. Without a head-to-head on the IDP Leaderboard or OmniDocBench test set, buyer comparisons will use vendor-reported numbers as the reference frame.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">This is the fourth consecutive build raising the question: should Infrrd (IDPForge GA, September 19, 2026) be added to context.md&#39;s competitive set?</p>
-    <p class="question-context">IDPForge moves Infrrd from legacy enterprise IDP into the self-serve developer API segment Nanonets occupies. The question has been raised in the Sep 22 (13:30), Sep 22 (19:00), Sep 23 (01:04), and Sep 23 (13:30) builds without a team answer. If the team decides Infrrd is not relevant, a one-line reply here would prevent the question from recurring.</p>
-    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
-  </div>
-  <div class="question">
-    <p class="question-text">Has OCR-3 been evaluated on TableParseMap&#39;s 916-table real-world benchmark (arXiv:2608.09842)?</p>
-    <p class="question-context">TableParseMap shows models scoring 93+ on OmniDocBench dropping ~8 TEDS points on real-world tables. OCR-3&#39;s published 90.5 OmniDocBench score likely drops similarly; the prior build (Sep 23 07:00) also flagged this question. Establishing OCR-3&#39;s number proactively allows the team to set the reference frame before third-party comparisons do.</p>
+    <p class="question-text">The ingest pipeline has run in WebSearch-fallback mode for 50 consecutive builds, consistently returning 3-8 items versus the 80-120 items a fully functioning pipeline would provide. Is there an alternative ingest fallback — such as a small allowed-origin HTTP proxy for arxiv.org and hn.algolia.com — that could be added to the CLI without requiring the full allowlist?</p>
+    <p class="question-context">This is not a repeat of the proxy-allowlist question (which has been asked 49 times). It is asking specifically whether a narrower, lighter-weight workaround exists that might be easier to approve than an allowlist covering all sources. A partial fix covering only arxiv and HN would recover roughly 80% of the normal item volume.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -350,7 +212,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-24T10:00:00+00:00
+    sources covered:     · failed: 4 · built at 2026-09-24T06:58:20+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
