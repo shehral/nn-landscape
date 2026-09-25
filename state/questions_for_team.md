@@ -13147,3 +13147,25 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-25T00:54:34+00:00 (audit: partial)
+
+### Q: All four ingestion sources (arxiv, hn, rss, github_trending) failed this build due to 403/proxy errors — should the network egress policy be updated to allow outbound HTTPS to these endpoints?
+
+**Context:** arxiv returned '403 Forbidden' on the API query endpoint; HN Algolia search returned '403 Forbidden'; RSS feeds returned no items (all blocked); GitHub trending returned no items (likely blocked). The build produced 0 items. This is not an application bug — it is a network policy issue. The session runs in a remote Claude Code environment that routes HTTPS through an agent proxy (CA bundle at /root/.ccr/ca-bundle.crt). The proxy appears to be blocking all four external data sources. Until egress is permitted to these domains, no build will produce items.
+
+**Answer:** _add reply here_
+
+### Q: Should the build pipeline add a pre-ingest network health check that probes each source's reachability before acquiring the lock, so that a proxy-blocked run fails fast and releases the lock immediately?
+
+**Context:** Currently the lock is acquired before ingest; if all sources are blocked the build holds the lock for the full ingest run before discovering 0 items. A 5-second preflight check would reduce wasted lock-hold time and make the failure reason visible earlier in the log.
+
+**Answer:** _add reply here_
+
+### Q: Given that nanonets.com and related Nanonets domains have returned 403 on all builds since May 2026, should the nanonets_context.md refresh process be moved to a team-side manual step rather than relying on automated web access?
+
+**Context:** The context file is currently refreshed weekly by a separate skill, but that skill also relies on outbound web access. If the agent proxy blocks Nanonets-owned domains, the grounding file will drift unless the team updates it manually. The most recent refresh was 2026-09-20; the next one is due soon.
+
+**Answer:** _add reply here_
+
+---
