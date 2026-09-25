@@ -13203,3 +13203,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-25T12:00:00+00:00 (audit: partial)
+
+### Q: MiniMax M3 (91.6% OmniDocBench 1.5) and Kimi K3 (91.1%) both post scores above OCR-3's published 90.5 and are not in context.md. Should both be added to the competitive set, and does the team have an OmniDocBench v1.6 run for OCR-3 to re-establish the comparison baseline?
+
+**Context:** Neither MiniMax M3 (released June 2026) nor Kimi K3 (released July 2026) appears in data/nanonets_context.md. Both have document-benchmark scores directly comparable to OCR-3. The current context.md OmniDocBench score for OCR-3 (90.5) is on an unconfirmed benchmark version; v1.6 scores from other models are materially higher.
+
+**Answer:** _add reply here_
+
+### Q: The ingest pipeline has failed in every recorded build due to proxy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This is the 53rd consecutive WebSearch-fallback build. Is proxy allowlist restoration under active investigation?
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers roughly 5-10% of normal item volume and cannot access same-day arXiv submissions or HN front-page discussions reliably. This question has appeared in every build since 2026-07-07 without a team answer.
+
+**Answer:** _add reply here_
+
+### Q: PP-OCRv6 (PaddlePaddle, June 2026) reaches near-VLM OCR accuracy at 34.5M parameters across 50 languages and is not in context.md. Should it be added to the competitive set as the canonical lightweight open-source OCR baseline?
+
+**Context:** PP-OCRv6 outperforms Qwen3-VL-235B by 8.3 points on text recognition and Gemini 3.1 Pro by 39.4 points on detection Hmean at 34.5M parameters. As the maintained successor to PaddleOCR (which already appears in the IDP Leaderboard comparison set), PP-OCRv6 is likely to be cited in third-party OCR evaluations. Its absence from context.md means future builds will not flag it.
+
+**Answer:** _add reply here_
+
+### Q: arXiv 2609.01575 applies a difficulty-aware data curation pipeline to a 35B MoE (3B active) document VLM — architecturally identical to OCR-3 — and achieves 80%+ cost reduction over human annotation baselines. Has the team assessed whether a similar curation pass is applicable to OCR-3's next training cycle?
+
+**Context:** The paper describes the curation criteria (layout diversity, fact-extractability, cross-model consistency) as measurable from a deployed model's prediction residuals. If production confidence scores and correction rates are available from OCR-3, a difficulty-stratified curation pass may not require additional annotation infrastructure.
+
+**Answer:** _add reply here_
+
+### Q: Infrrd IDPForge GA has been raised as a competitive monitoring question in five consecutive builds without a team reply. If Infrrd is not a relevant competitor, a one-line reply here would prevent the question from recurring.
+
+**Context:** IDPForge moves Infrrd from legacy enterprise IDP into the self-serve developer API segment Nanonets occupies. Infrrd's blog compares IDPForge directly against Reducto and LandingAI, which are both in context.md. The absence of a team answer leaves it in the rotation indefinitely.
+
+**Answer:** _add reply here_
+
+---
