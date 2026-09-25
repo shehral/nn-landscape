@@ -13169,3 +13169,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-25T04:00:00+00:00 (audit: partial)
+
+### Q: Does OCR-3 use VQ (vector-quantized) image tokenization or a continuous visual encoder?
+
+**Context:** The cross-architecture hallucination circuit in arXiv:2609.29048 applies specifically to VQ-tokenized VLMs; the three-gate diagnostic does not transfer to continuous encoders. Knowing OCR-3's tokenization path determines whether this paper's findings are directly applicable or architecturally irrelevant.
+
+**Answer:** _add reply here_
+
+### Q: Has the team tested whether Nanonets Agents' multi-step pipeline outperforms OCR-3 single-pass /extract on MMLongBench-Doc or LongDocURL?
+
+**Context:** arXiv:2609.29933 shows agentic pipelines underperform static page input at sub-frontier model scales and only win with frontier API models. If the same crossover pattern appears in Nanonets Agents, it constrains the use cases where the multi-step product delivers an accuracy advantage over a direct /extract call.
+
+**Answer:** _add reply here_
+
+### Q: Does OCR-3 maintain intermediate rendering state during /parse that could support a closed-loop rendering-simulation diagnostic as described in arXiv:2609.03445?
+
+**Context:** OCR-EDR's repair loop requires rendering the predicted text back to an image and comparing to the source. If OCR-3's inference path discards the intermediate layout prediction before returning the response, the diagnostic would require a second API call with rendering overhead.
+
+**Answer:** _add reply here_
+
+### Q: Three consecutive builds have surfaced new arXiv preprints on VLM hallucination characterization with no Nanonets-authored preprint appearing in the same citation cluster. Should a Nanonets preprint on phantom-row or structural hallucination characterization be a near-term priority to establish a public research position?
+
+**Context:** arXiv:2609.29048, arXiv:2609.21351, and arXiv:2607.29412 (Role-Break, from prior builds) are all framing the hallucination characterization problem using methods adjacent to the team's described research line. Without a public artifact, third-party citations define the field's reference frame. This question has not appeared in prior builds in this form.
+
+**Answer:** _add reply here_
+
+### Q: The ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This is the 52nd consecutive build in WebSearch fallback. Is proxy allowlist restoration under active investigation?
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers roughly 5-10% of normal item volume and cannot access same-day arXiv submissions or HN front-page discussions reliably. This question has appeared in every build since 2026-07-07 without a team answer.
+
+**Answer:** _add reply here_
+
+---
