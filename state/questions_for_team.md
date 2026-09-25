@@ -13237,3 +13237,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-25T19:01:11+00:00 (audit: partial)
+
+### Q: Should OCR-3 be evaluated on the FaithC4 benchmark (arXiv:2607.21617) to establish a published faithfulness score against frontier models?
+
+**Context:** FaithC4 directly tests the faithfulness advantage of OCR-specialized VLMs over general-purpose VLMs on perturbed text. OCR-3 would be expected to score well relative to Claude and GPT on this measure, making a positive result a differentiating public datapoint. The benchmark covers English, Chinese, and Korean with three perturbation families.
+
+**Answer:** _add reply here_
+
+### Q: Nanonets was absent from three independent developer benchmarks published this build. Is there a process for ensuring OCR-3 is included in third-party evaluations that developers use for vendor selection?
+
+**Context:** The Unsiloed AI comparison, DEV Community 7-API test, and Heron Data financial ranking all name Reducto, Extend, Claude, and each other as the reference set without including Nanonets. Developer-authored benchmarks tend to be cited by enterprise buyers in the mid-market; being absent from the default comparison set has a compounding effect on organic discovery.
+
+**Answer:** _add reply here_
+
+### Q: Does OCR-3 have a quantized deployment variant, and if so, has its hallucination behavior been validated to match the FP16 reference using item-level grounding comparison rather than aggregate accuracy?
+
+**Context:** GHOST-Q (arXiv:2609.29999) shows that five of six quantized 8B VLMs preserve aggregate accuracy within ±2 points while still showing significant item-level shifts in grounding behavior on hallucination-sensitive conditions. Aggregate benchmarks would not detect this regression.
+
+**Answer:** _add reply here_
+
+### Q: Are the Heron Data and DocuClipper competitor reviews citing OCR-3 evaluations or pre-OCR-3 model performance?
+
+**Context:** Heron Data, toolsforhumans.ai, and DocuClipper all identify the same accuracy gaps (handwriting, non-standard formats) and pricing/setup criticisms without referencing OCR-3 by name. If these are based on OCR-2 evaluations, they are stale; if based on OCR-3, the gaps are current product signals. The 2026-07-07 build first flagged the proxy issue preventing automated tracking of review sites; this question has not been asked before.
+
+**Answer:** _add reply here_
+
+### Q: The ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. Is proxy allowlist restoration under active investigation?
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers a fraction of normal item volume and cannot access same-day arXiv submissions or HN front-page discussions reliably. This question has appeared in every build since 2026-07-07 without a team answer.
+
+**Answer:** _add reply here_
+
+---
