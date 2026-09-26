@@ -13373,3 +13373,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-26T18:30:00+00:00 (audit: partial)
+
+### Q: OCR-3's OmniDocBench score (90.5) is on v1.5; three models this build post v1.6 scores of 95-97. Has the team run OCR-3 on OmniDocBench v1.6, and if not, is there a plan before developer comparison grids establish WeVisDoc and TeleOCR as the reference points?
+
+**Context:** TeleOCR (96.87), WeVisDoc-4B (95.38), and MinerU2.5-Pro (95.69) all have published v1.6 scores. The benchmark versions are not directly comparable per context.md, but that nuance is invisible to developers searching leaderboard tables. This question first appeared in build 2026-09-26T06:45:00 and repeats because no answer has been recorded.
+
+**Answer:** _add reply here_
+
+### Q: PrismAlign (arXiv:2609.21351) achieves SOTA on OmniDocBench 1.5 table category at inference time without retraining. Does OCR-3's inference pipeline expose intermediate VLM outputs in a form compatible with a multi-VLM Bayesian alignment wrapper, or is it a single-model forward pass?
+
+**Context:** PrismAlign decouples structural alignment (row/column counts) from cell-content alignment and applies a Bayesian decision strategy over multiple VLM outputs. Single-model inference would require an ensemble wrapper at additional latency and cost. Knowing the architecture boundary determines whether 'reproduce' is realistic for this item.
+
+**Answer:** _add reply here_
+
+### Q: Reducto r-1 ($0.01/page) and LandingAI DPT-3 Gen2 (per-character) represent two different pricing model attacks on OCR-3's per-page rate. Has the team modeled OCR-3's cost position on sparse-content document types — image-heavy forms, short invoices under 1 page, template-heavy documents — where per-character pricing would be materially cheaper?
+
+**Context:** Neither r-1 nor DPT-3 Gen2 has published an accuracy comparison against OCR-3. The competitive threat is pricing model architecture rather than current accuracy. If OCR-3's accuracy premium on sparse-content types is measurable, a published cost-per-accurate-extraction comparison would be the appropriate response.
+
+**Answer:** _add reply here_
+
+### Q: WeVisDoc's Stage II residual-error-guided data curation loop is architecture-agnostic at the data level. Has the team assessed whether OCR-3's production confidence scores and correction rates are available as a data source to run a similar Stage II curation pass, independent of the backbone architecture difference?
+
+**Context:** WeVisDoc applies the technique to a 4B Qwen3-VL fine-tune; the data-level signal (measuring which visual-structural clusters have the highest residual error rates) does not depend on the base model architecture. OCR-3's 35B MoE and production deployment might provide a richer signal than a research-lab fine-tune.
+
+**Answer:** _add reply here_
+
+### Q: The ingest pipeline has failed in every recorded build since 2026-07-07 due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This is the 56th consecutive WebSearch-fallback build. Per the prior build's question, this will not be repeated further if no answer is received — please confirm whether proxy restoration is being tracked elsewhere, or whether WebSearch fallback should be formalized as the permanent pipeline design.
+
+**Context:** Required allowlist: export.arxiv.org, hn.algolia.com, and all hosts listed in data/sources.yaml rss.feeds. WebSearch fallback covers roughly 5-10% of normal item volume and cannot access same-day arXiv submissions or HN front-page discussions. Formalizing it as the design would allow retiring this standing question.
+
+**Answer:** _add reply here_
+
+---
