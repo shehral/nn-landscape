@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 26, 2026 · 06:00 UTC · 13 items scored</span>
+  <span class="built-at">Built Sep 26, 2026 · 06:45 UTC · 19 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,11 +53,11 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>All three top frontier labs shipped vision-capable models accepting PDF and image input in the first four days of September 2026 (Fable 5.1, GPT-6 Astra, Gemini 3.8 Flash). Developer comparison articles are now framing them as document-workflow alternatives, compressing the context in which customers evaluate specialized extraction against general-purpose APIs.</li>
-    <li>Three independent arXiv papers this build converge on table structure as the highest-hallucination regime in document VLMs, proposing different mitigations: multi-VLM structural consensus (PrismAlign), cross-architecture circuit localization (arXiv:2609.29048), and RL-based reward sharpening (DocPO). The techniques are complementary rather than competing.</li>
-    <li>Document parsing vendors are stratifying pricing by accuracy tier: Reducto now offers three tiers ($0.01 parse, $0.02 extract, $0.04 deep extract) and LandingAI DPT-3 plans per-character routing. Both reflect deliberate product-line segmentation by cost vs. accuracy, establishing reference prices that enterprise customer evaluations will now cite.</li>
-    <li>Lightweight proxy models for on-the-fly VLM hallucination detection are consolidating: NTP-based features (arXiv:2509.20379) and two-token ensemble methods (arXiv:2609.10244) both achieve VLM-level detection without secondary VLM calls. Both papers suggest deployment-ready confidence gate implementations at negligible inference overhead.</li>
-    <li>A new class of developer-first document API entrant (LandingAI DPT-3 Gen2, Infrrd IDPForge) is targeting self-serve workflows with model-specific pricing and BYOK routing. Neither names Nanonets as a comparison target, suggesting Nanonets is not in the default reference set for this entrant cohort.</li>
+    <li>Per-page pricing is converging on sub-$0.01 as a competitive threshold: Reducto r-1 ($0.01 all-in), LandingAI DPT-3 Verity (projected under $0.01 on mixed workloads), and Mistral OCR 4 ($0.004 with batch discount) all target or claim this price point. Pricing has moved from a quality differentiator to a table-stakes constraint.</li>
+    <li>Structural hallucination in tables is crystallizing as a distinct research subfield: PrismAlign, SHROOM-Visions 2026, and FormStruct-Bench all specifically target tables, and the shared-task format of SHROOM-Visions suggests community benchmarking around this problem is stabilizing.</li>
+    <li>Mechanistic interpretability methods from LLM research (transcoders, sparse autoencoders, steering vectors, causal patching) are being systematically applied to VLMs at the circuit level. Three independent papers this build all address VLM hallucination via internal circuit analysis rather than behavioral evaluation alone.</li>
+    <li>Document parsing benchmarks are proliferating faster than evaluation protocols can standardize: ExtractBench (schema-guided), FormStruct-Bench (table-form structure), LongDocBench (long-document hierarchy), and TeleOCR&#39;s OmniDocBench v1.6 results all appear in the same build window, each targeting different document types. Cross-system comparison is increasingly difficult.</li>
+    <li>The self-serve developer API tier for document extraction is filling in: LandingAI DPT-3 Gen2, Infrrd IDPForge, and LlamaParse&#39;s ChatGPT plugin all launched or added capabilities in this build window. Three separate products are now competing for the developer API adoption path that Nanonets&#39; Agentic Data Extraction API occupies.</li>
   </ul>
 </section>
 
@@ -66,25 +66,25 @@
     <h2>VLM research</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="72">
+         data-score="64">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 2 · frontier 1 · vlm_research 5 = 72 (this view's weighting)">72</span>
+          title="doc_ai 4 · competitive 0 · frontier 0 · vlm_research 5 = 64 (this view's weighting)">64</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 100%"></span>
+      <span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
     <a href="https://arxiv.org/abs/2609.21351" target="_blank" rel="nofollow noopener noreferrer">PrismAlign: Prior-Steered Multi-View VLM Alignment for Hallucination-Robust Table OCR</a>
   </p>
-  <p class="item-summary">PrismAlign uses multi-VLM cross-model consensus with Bayesian structural priors to achieve SOTA on OmniDocBench 1.5 table category without additional training.</p>
+  <p class="item-summary">PrismAlign uses multi-VLM ensemble with Bayesian alignment to reduce structural hallucinations in table OCR without retraining.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>PrismAlign resolves structural and semantic hallucinations in table OCR by applying cross-model consensus rather than single-model patching. If the methodology is applicable at inference time on /extract outputs, it could reduce phantom-row failures without a training run.</dd>
+      <dd>Multi-VLM Bayesian alignment for table OCR reduces structural hallucinations at inference time without model retraining. Applicable to OCR-3&#39;s table extraction endpoints if ensemble overhead is acceptable in production.</dd>
       <dt>Research</dt>
-      <dd>The framework applies a Bayesian row/column count check as a structural prior before cell-content evaluation, which is architecturally distinct from the team&#39;s current patching protocols. Reproduction on OCR-3&#39;s table outputs would clarify whether the structural prior or the multi-view alignment is the primary driver of the SOTA result.</dd>
+      <dd>Decoupled structural and cell-content alignment with a Bayesian decision strategy is directly applicable to the phantom-row hallucination research line; the approach resolves cell-level ambiguity via prior integration rather than model fine-tuning.</dd>
       <dt>Action</dt>
       <dd>reproduce</dd>
     </dl>
@@ -92,25 +92,25 @@
   <p class="secondary-axes">also: doc_ai</p>
 </article><article class="item "
          data-source="arxiv"
-         data-score="68">
+         data-score="58">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 1 · frontier 2 · vlm_research 5 = 68 (this view's weighting)">68</span>
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 5 = 58 (this view's weighting)">58</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 100%"></span>
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
     <a href="https://arxiv.org/abs/2609.29048" target="_blank" rel="nofollow noopener noreferrer">Where Hallucinations Live: A Cross-Architecture Circuit in VQ-Tokenized Vision-Language Models</a>
   </p>
-  <p class="item-summary">Activation patching across 25 VLMs identifies a shared hallucination circuit in VQ-tokenized architectures; three-gate diagnostic distinguishes affected models; submitted EMNLP 2026.</p>
+  <p class="item-summary">Cross-architecture hallucination circuit identified in VQ-tokenized VLMs; three-gate diagnostic protocol proposed.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct product implication unless OCR-3 uses VQ image tokenization; the circuit characterization and diagnostic apply specifically to VQ-tokenized architectures.</dd>
+      <dd>Applicability depends on OCR-3&#39;s tokenizer architecture. If VQ tokenization is used, the three-gate diagnostic applies directly. If OCR-3 uses a continuous encoder, the circuit finding does not transfer.</dd>
       <dt>Research</dt>
-      <dd>If OCR-3 uses VQ tokenization, the three-gate diagnostic provides a structured method for localizing its hallucination circuit using activation patching — the same class of tools already in the team&#39;s described methodology. The diagnostic was validated across eight LLM families and 25 VLMs, making cross-architecture transfer tractable.</dd>
+      <dd>Cross-architecture shared hallucination circuit with a deployable diagnostic is the most specific mechanistic finding about structural hallucinations in this build; directly intersects the team&#39;s cross-architecture hallucination transfer work.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
@@ -118,85 +118,134 @@
   <p class="secondary-axes">also: doc_ai</p>
 </article><article class="item "
          data-source="arxiv"
-         data-score="60">
+         data-score="52">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 1 · frontier 2 · vlm_research 4 = 60 (this view's weighting)">60</span>
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 5 = 52 (this view's weighting)">52</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 80%"></span>
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.01575" target="_blank" rel="nofollow noopener noreferrer">Closing the Cost-Quality Gap in Document VLMs via Difficulty-Aware Data Curation</a>
+    <a href="https://arxiv.org/abs/2605.22902" target="_blank" rel="nofollow noopener noreferrer">Transcoders Trace Visual Grounding and Hallucinations in Vision-Language Models</a>
   </p>
-  <p class="item-summary">Difficulty-aware training data curation on a 35B MoE document VLM cuts annotation cost 80%+ by routing budget to high-residual-error examples identified from model predictions.</p>
+  <p class="item-summary">Transcoders isolate visual grounding from linguistic priors in VLMs, enabling circuit-level attribution of hallucination to specific components.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct near-term product implication.</dd>
+      <dd>No direct product implication.</dd>
       <dt>Research</dt>
-      <dd>The curation criteria — layout diversity, fact-extractability, cross-model consistency — are measurable from a deployed model&#39;s prediction residuals. The paper applies to a 35B MoE with 3B active parameters, which matches OCR-3&#39;s published architecture profile. If production error signals are available from OCR-3 inference logs, a difficulty-stratified curation pass could be applied without additional annotation infrastructure.</dd>
+      <dd>Transcoders enable circuit-level attribution of hallucinations by isolating visual grounding from linguistic priors; compatible with the team&#39;s activation patching and causal scrubbing methodology.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: doc_ai</p>
 </article><article class="item "
          data-source="arxiv"
-         data-score="54">
+         data-score="52">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 0 · frontier 1 · vlm_research 4 = 54 (this view's weighting)">54</span>
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 5 = 52 (this view's weighting)">52</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2509.20379" target="_blank" rel="nofollow noopener noreferrer">Leveraging NTPs for Efficient Hallucination Detection in VLMs</a>
+    <a href="https://arxiv.org/abs/2606.25657" target="_blank" rel="nofollow noopener noreferrer">Steering Vision-Language Models with Joint Sparse Autoencoders</a>
   </p>
-  <p class="item-summary">Next-token probabilities as lightweight hallucination signals in VLMs: fast ML models trained on NTPs match strong-VLM detection performance at deployment-feasible cost.</p>
+  <p class="item-summary">Joint SAEs align vision-language activations into shared interpretable features; structured sparsity resolves modality-splitting artifacts.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Joint sparse autoencoders with structured sparsity address modality-splitting artifacts that complicate monosemantic feature extraction in VLMs; relevant to the team&#39;s SAE and steering vector work on hallucination localization.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="52">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 5 = 52 (this view's weighting)">52</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2509.14837" target="_blank" rel="nofollow noopener noreferrer">V-SEAM: Visual Semantic Editing and Attention Modulating for Causal Interpretability of Vision-Language Models</a>
+  </p>
+  <p class="item-summary">V-SEAM enables causal interpretability via semantic editing and attention modulation without model retraining.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>No direct product implication.</dd>
+      <dt>Research</dt>
+      <dd>Attention modulation combined with semantic editing for causal interpretability is retraining-free; compatible with the team&#39;s current mechanistic interpretability toolchain and applicable to hallucination circuit analysis.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="44">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 4 = 44 (this view's weighting)">44</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2608.25662" target="_blank" rel="nofollow noopener noreferrer">Overview of SHROOM-Visions 2026: A Shared Task on Hallucination Detection in Large Vision-Language Models</a>
+  </p>
+  <p class="item-summary">SHROOM-Visions 2026 benchmarks character-level VLM hallucination detection across OCR, miscounting, and mischaracterization categories.</p>
   <p class="secondary-axes">also: doc_ai</p>
 </article><article class="item "
          data-source="arxiv"
-         data-score="48">
+         data-score="44">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 1 · vlm_research 4 = 48 (this view's weighting)">48</span>
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 4 = 44 (this view's weighting)">44</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 80%"></span>
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
     <a href="https://arxiv.org/abs/2609.10244" target="_blank" rel="nofollow noopener noreferrer">Two-Token Features and Small-Large Ensembles for VLM Hallucination Detection</a>
   </p>
-  <p class="item-summary">SHROOM-Visions 2026 entry: two-token feature engineering with small-large ensemble for span-level VLM hallucination detection at character granularity.</p>
+  <p class="item-summary">Two-token probe ensemble detects character-level hallucinated spans in VLM outputs with minimal inference overhead.</p>
 </article>  </div>
   <div class="axis-col" data-axis="doc_ai">
     <h2>Document AI</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="68">
+         data-score="62">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 2 · frontier 2 · vlm_research 4 = 68 (this view's weighting)">68</span>
+          title="doc_ai 4 · competitive 3 · frontier 0 · vlm_research 4 = 62 (this view's weighting)">62</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 40%"></span><span style="height: 80%"></span>
+      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2607.21617" target="_blank" rel="nofollow noopener noreferrer">Do VLMs Read or Rewrite? On Transcription Faithfulness in Vision-Language Models (FaithC4)</a>
+    <a href="https://arxiv.org/abs/2608.12898" target="_blank" rel="nofollow noopener noreferrer">TeleOCR: Navigating Document Parsing Across Digital and Camera-Captured Documents</a>
   </p>
-  <p class="item-summary">FaithC4 benchmarks transcription faithfulness across English, Chinese, Korean with three perturbation families; OCR-specialized VLMs measurably outperform general-purpose frontier models.</p>
+  <p class="item-summary">TeleOCR (1.2B params, ICDAR 2026 #1) achieves 96.87 OmniDocBench v1.6 via deformation-aware and structure-decoupled learning.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>OCR-specialized VLMs outperform general-purpose models on FaithC4&#39;s faithfulness tasks. An OCR-3 evaluation on FaithC4 would produce a published faithfulness score that is structurally distinct from F1-aggregate metrics and directly interpretable against Claude, GPT-6, and Gemini scores.</dd>
+      <dd>TeleOCR reports 96.87 on OmniDocBench v1.6 with 1.2B parameters, the highest score observed on that benchmark version this build. OCR-3&#39;s published 90.5 is on an earlier version; a direct v1.6 comparison has not been published.</dd>
       <dt>Research</dt>
-      <dd>The paper characterizes when VLMs substitute plausible text for exact source transcription — directly related to the team&#39;s structural hallucination research line. The perturbation families cover substitution, insertion, and deletion, each matching subtypes in the team&#39;s described hallucination taxonomy.</dd>
+      <dd>Content-structure decoupled training for formula grammars and table structure is directly relevant to OCR-3&#39;s structural hallucination and phantom-row mitigation work.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
@@ -204,29 +253,102 @@
   <p class="secondary-axes">also: vlm_research</p>
 </article><article class="item "
          data-source="arxiv"
-         data-score="66">
+         data-score="58">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 1 · frontier 2 · vlm_research 4 = 66 (this view's weighting)">66</span>
+          title="doc_ai 4 · competitive 1 · frontier 0 · vlm_research 4 = 58 (this view's weighting)">58</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 40%"></span><span style="height: 80%"></span>
+      <span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2608.00536" target="_blank" rel="nofollow noopener noreferrer">DocPO: Advancing Document Policy Optimization via Tailored Step-Aware Rewards</a>
+    <a href="https://arxiv.org/abs/2609.01575" target="_blank" rel="nofollow noopener noreferrer">Closing Cost-Quality Gap in Document VLMs: Difficulty-Aware Data Curation and Quality-Adjusted Deployment Economics</a>
   </p>
-  <p class="item-summary">DocPO applies step-aware reward annealing to RL for document parsing; achieves SOTA on a standard VLM without vision-encoder modifications or specialized architectures.</p>
+  <p class="item-summary">Difficulty-aware curation on a 35B MoE doc-VLM achieves 80%+ annotation cost reduction using a deployed model&#39;s residuals.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>No direct near-term product implication; the method targets model training.</dd>
+      <dd>The curation pipeline is described at the scale of a 35B MoE document VLM, architecturally matching OCR-3. Measurable cost reduction from production residuals rather than manual annotation is directly applicable.</dd>
       <dt>Research</dt>
-      <dd>Step-aware reward annealing (SAA) amplifies discriminative signal among high-quality samples in the RL training regime where edit-distance rewards are weakly discriminative. The approach uses NED for text and TEDS for tables — both are standard metrics in document parsing — and achieves SOTA on a general-purpose VLM without additional pretraining or architecture modifications, making it applicable to OCR-3&#39;s training setup.</dd>
+      <dd>Selection criteria (layout diversity, fact-extractability, cross-model consistency) are implementable from production confidence scores and correction rates without additional annotation infrastructure.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="44">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 2 · frontier 0 · vlm_research 2 = 44 (this view's weighting)">44</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2607.29677" target="_blank" rel="nofollow noopener noreferrer">ExtractBench: A Benchmark for Schema-Guided Enterprise Document Extraction</a>
+  </p>
+  <p class="item-summary">ExtractBench evaluates schema-guided structured extraction from enterprise documents, filling a gap in OCR-centric benchmarks.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>ExtractBench targets schema-guided extraction from enterprise documents (contracts, invoices, financials), which maps to OCR-3&#39;s /extract endpoint. Running OCR-3 on ExtractBench would yield a published position in the schema-extraction segment.</dd>
+      <dt>Research</dt>
+      <dd>The benchmark&#39;s enterprise document focus captures cross-field relationships and schema-conformance failures not covered by OCR-centric benchmarks.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="42">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 3 = 42 (this view's weighting)">42</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2608.10396" target="_blank" rel="nofollow noopener noreferrer">FormStruct-Bench: A Hierarchical and Diagnostic Benchmark for Table-Form Document Structure Recognition</a>
+  </p>
+  <p class="item-summary">FormStruct-Bench provides hierarchical diagnostic evaluation for table-form structure recognition across 38K annotated samples.</p>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="42">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 3 = 42 (this view's weighting)">42</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2608.15064" target="_blank" rel="nofollow noopener noreferrer">LongDocBench: Benchmarking TOC Hierarchy and Contextual Relationship Recovery in Long Documents</a>
+  </p>
+  <p class="item-summary">LongDocBench evaluates TOC hierarchy recovery and cross-section contextual relationships in multi-page long documents.</p>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="42">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 0 · frontier 0 · vlm_research 3 = 42 (this view's weighting)">42</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2603.18652" target="_blank" rel="nofollow noopener noreferrer">Beyond String Matching: Semantic Evaluation of PDF Table Extraction</a>
+  </p>
+  <p class="item-summary">Semantic evaluation framework for PDF table extraction classifies tables by complexity and measures structural and content accuracy.</p>
   <p class="secondary-axes">also: vlm_research</p>
 </article><article class="item "
          data-source="rss"
@@ -240,17 +362,17 @@
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://aiforbusinessautomation.com/tools/nanonets-review/" target="_blank" rel="nofollow noopener noreferrer">Nanonets named Everest Group PEAK Matrix Leader (IDP 2026); reviews flag pricing predictability</a>
+    <a href="https://developers.llamaindex.ai/llamaparse/changelog/2026-09/" target="_blank" rel="nofollow noopener noreferrer">LlamaParse September 2026: ChatGPT Plugin Connector and High-Effort Mode with Confidence Scoring</a>
   </p>
-  <p class="item-summary">Nanonets placed in Everest Group&#39;s 2026 IDP PEAK Matrix Leader quadrant; multiple reviews flag unpredictable per-block pricing at production scale as a primary friction point.</p>
+  <p class="item-summary">LlamaParse adds ChatGPT plugin connector and high-effort mode with page-level confidence scores at 5 additional credits/page.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Leader recognition in the Everest Group PEAK Matrix is a useful third-party anchor in enterprise evaluations. Reviews consistently identifying pay-per-block pricing predictability as a friction point represent a recurring objection in the customer evaluation stage, independent of accuracy.</dd>
+      <dd>The ChatGPT plugin connector extends LlamaParse distribution into the ChatGPT ecosystem; high-effort mode with page-level confidence scores adds an assurance tier that OCR-3 does not currently expose via a named mode.</dd>
       <dt>Research</dt>
       <dd>No direct research implication.</dd>
       <dt>Action</dt>
-      <dd>no action</dd>
+      <dd>monitor</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: competitive</p>
@@ -262,26 +384,52 @@
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
 <article class="item "
-         data-source="hn"
-         data-score="56">
+         data-source="rss"
+         data-score="40">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 5 · frontier 3 · vlm_research 2 = 56 (this view's weighting)">56</span>
+          title="doc_ai 5 · competitive 5 · frontier 0 · vlm_research 0 = 40 (this view's weighting)">40</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 60%"></span><span style="height: 40%"></span>
+      <span style="height: 100%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
-    <span class="item-source">hn</span>
+    <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://playground.roboflow.com/models/anthropic/claude-opus-5-5" target="_blank" rel="nofollow noopener noreferrer">Claude Opus 5.5: #3 of 59 on Vision Evals, #38 on OCR-specific tasks</a>
+    <a href="https://www.prnewswire.com/news-releases/reducto-unveils-a-frontier-parsing-model-that-makes-the-worlds-hardest-documents-ai-ready-for-1-a-page-302866077.html" target="_blank" rel="nofollow noopener noreferrer">Reducto Unveils r-1: A Frontier Parsing Model at $10/1,000 Pages</a>
   </p>
-  <p class="item-summary">Claude Opus 5.5 ranks #38/59 on OCR-specific Vision Evals (87.8%), below the field median (88.7%), despite placing #3 overall across six vision task categories.</p>
+  <p class="item-summary">Reducto r-1 preview: single-model parse claiming 20% error reduction, 6x cost vs multi-tool stacks, at $10/1K pages.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Opus 5.5&#39;s OCR score (87.8%, slightly below the 88.7% field median) at general-purpose API pricing (~$0.058/page-equivalent) provides a concrete differentiation frame for OCR-3 in enterprise evaluations comparing specialized extraction to frontier general-purpose APIs. A published head-to-head on OmniDocBench would crystallize this gap.</dd>
+      <dd>Reducto r-1 consolidates layout detection, reading order, tables, and grounding into one pass at $10/1K pages, claiming 20% lower errors and 6x cost reduction over multi-tool stacks. The single-model positioning directly challenges OCR-3&#39;s five-endpoint agentic architecture.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication; the score gap is on an external benchmark (Roboflow Vision Evals) using aggregate methods not described in the available source.</dd>
+      <dd>Single-pass architecture trades modular interpretability for throughput efficiency; the granular citation claim is relevant to structural hallucination attribution work.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="40">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 4 · frontier 5 · vlm_research 0 = 40 (this view's weighting)">40</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="nofollow noopener noreferrer">OpenAI Releases GPT-6 Astra: Flagship Model with Image Input and 1.05M Context</a>
+  </p>
+  <p class="item-summary">GPT-6 Astra: OpenAI flagship with image input, 1.05M context, $10/$50/M tokens; no document-benchmark scores confirmed yet.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>GPT-6 Astra includes image input at $10/$50/M tokens with no published IDP Leaderboard or OmniDocBench scores. Its general-analysis positioning shifts the make-vs-buy decision for customers comparing document-specific APIs against frontier general models.</dd>
+      <dt>Research</dt>
+      <dd>No architecture details disclosed; relevant as a benchmark comparison target once document extraction evaluation results are published.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
@@ -289,53 +437,27 @@
   <p class="secondary-axes">also: frontier</p>
 </article><article class="item "
          data-source="rss"
-         data-score="52">
+         data-score="32">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 5 · frontier 4 · vlm_research 1 = 52 (this view's weighting)">52</span>
+          title="doc_ai 4 · competitive 4 · frontier 0 · vlm_research 0 = 32 (this view's weighting)">32</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
+      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://www.nextdocs.io/blogs/september-2026-ai-model-wave-for-documents" target="_blank" rel="nofollow noopener noreferrer">The September 2026 model wave, explained for people who make documents</a>
+    <a href="https://landing.ai/blog/introducing-agentic-document-extraction-gen2" target="_blank" rel="nofollow noopener noreferrer">LandingAI Releases Agentic Document Extraction Gen2: DPT-3 Pro and DPT-3 Verity</a>
   </p>
-  <p class="item-summary">Developer analysis of GPT-6 Astra, Claude Fable 5.1, and Gemini 3.8 Flash Sept releases: pricing gap 13x; all three accept PDF/image input.</p>
+  <p class="item-summary">LandingAI DPT-3 Gen2: two-tier parse architecture with per-character output pricing, projecting sub-1¢/page on mixed workloads.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>All three models accept image and PDF input and are being framed in developer comparison articles as document-workflow alternatives to specialized parsers. Benchmark positioning for OCR-3 against GPT-6 Astra ($10/MTok) and Gemini 3.8 Flash ($0.75/MTok) should be refreshed now that this comparison set is being cited in vendor evaluations.</dd>
+      <dd>DPT-3 Pro and Verity introduce per-character output pricing, projecting 25-80% cost reductions on mixed workloads. Per-character pricing structurally advantages sparse-document workflows over per-page models and is a differentiation risk for OCR-3&#39;s pricing approach.</dd>
       <dt>Research</dt>
-      <dd>No architectural detail has been disclosed for any of the three models; document-benchmark scores for Claude Fable 5.1 and GPT-6 Astra on OmniDocBench or IDP Leaderboard remain unpublished.</dd>
+      <dd>DPT-3 Pro&#39;s block-level reading-order detection and multi-block type classification overlap directly with structured output capabilities in OCR-3&#39;s /parse endpoint.</dd>
       <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: frontier</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="46">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 5 · frontier 1 · vlm_research 1 = 46 (this view's weighting)">46</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 100%"></span><span style="height: 20%"></span><span style="height: 20%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://landing.ai/blog/introducing-agentic-document-extraction-gen2" target="_blank" rel="nofollow noopener noreferrer">LandingAI releases Agentic Document Extraction Gen2 with DPT-3 Pro and DPT-3 Verity</a>
-  </p>
-  <p class="item-summary">LandingAI&#39;s 2nd-gen extraction stack pairs DPT-3 Pro (layout-first, scanned docs) with DPT-3 Verity (high-accuracy digital text); per-character pricing and auto-routing planned for fall 2026.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>DPT-3 Pro and DPT-3 Verity introduce a two-model accuracy-tier structure with hierarchy-aware output (pages → elements → cells → lines). Per-character pricing, planned for fall 2026, would be cheaper than per-page pricing on sparse or image-heavy documents, potentially creating a cost disadvantage for OCR-3&#39;s per-page model on specific document types.</dd>
-      <dt>Research</dt>
-      <dd>No direct research implication; product positioning is structural.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
+      <dd>investigate</dd>
     </dl>
   </div>
   <p class="secondary-axes">also: doc_ai</p>
@@ -344,51 +466,53 @@
          data-score="32">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 5 · frontier 1 · vlm_research 0 = 32 (this view's weighting)">32</span>
+          title="doc_ai 2 · competitive 4 · frontier 3 · vlm_research 0 = 32 (this view's weighting)">32</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://reducto.ai/blog/parse-r-1-model" target="_blank" rel="nofollow noopener noreferrer">Reducto restructures pricing: r-1 Parse $0.01/page, Extract $0.02, Deep Extract $0.04</a>
+    <a href="https://www.cnbc.com/2026/09/08/mistral-ai-funding-valuation-samsung.html" target="_blank" rel="nofollow noopener noreferrer">Samsung Leads €3 Billion Mistral Series D, Valuing the Company at €21 Billion</a>
   </p>
-  <p class="item-summary">Reducto moves to per-product pricing: r-1 Parse at $0.01/page, Extract at $0.02, Deep Extract at $0.04, effective September 1, 2026; r-1 remains in preview.</p>
+  <p class="item-summary">Samsung leads €3B Mistral Series D at €21B valuation; partnership targets semiconductor AI, not document extraction products.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Reducto&#39;s new pricing drops the effective parse+extract all-in rate to $0.02/page (from $0.045), narrowing the effective price gap with Nanonets. The $0.01/page parse-only tier sets a reference price that customer price-comparison tables will cite. r-1 is in preview; pricing of the GA model may differ.</dd>
+      <dd>The Samsung investment and €21B valuation extend Mistral&#39;s runway without directly affecting Mistral OCR 4.1 pricing or roadmap. The partnership focuses on semiconductor manufacturing AI; no near-term OCR product changes announced.</dd>
       <dt>Research</dt>
       <dd>No direct research implication.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
+  <p class="secondary-axes">also: frontier</p>
 </article><article class="item "
          data-source="rss"
-         data-score="30">
+         data-score="26">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 4 · frontier 1 · vlm_research 0 = 30 (this view's weighting)">30</span>
+          title="doc_ai 3 · competitive 4 · frontier 0 · vlm_research 0 = 26 (this view's weighting)">26</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://www.infrrd.ai/idp-forge/blogs/best-document-extraction-api" target="_blank" rel="nofollow noopener noreferrer">Infrrd launches IDPForge: self-serve document automation API for developers with BYOK routing</a>
+    <a href="https://salestechstar.com/predictive-ai-artificial-intelligence/infrrd-launches-idpforge-a-self-serve-document-automation-api-for-developers/" target="_blank" rel="nofollow noopener noreferrer">Infrrd Launches IDPForge: Self-Serve Document Automation API for Developers</a>
   </p>
-  <p class="item-summary">Infrrd&#39;s IDPForge opens its enterprise IDP pipeline to developers via self-serve API with bring-your-own-key model routing and pipeline-specific model selection.</p>
+  <p class="item-summary">Infrrd IDPForge GA: self-serve developer API with multi-LLM routing, BYOK support, and embeddable correction interface.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>IDPForge&#39;s developer self-serve positioning and BYOK routing targets the same mid-market developer segment as Nanonets&#39; API. Infrrd&#39;s own comparison blog names Reducto and LandingAI as the reference set; Nanonets is not included, suggesting absence from this emerging comparison frame.</dd>
+      <dd>IDPForge moves Infrrd from enterprise IDP into self-serve developer API territory with BYOK and embeddable correction; it competes directly in the developer extraction API segment Nanonets occupies. Infrrd&#39;s comparison set names Reducto and LandingAI, not Nanonets.</dd>
       <dt>Research</dt>
       <dd>No direct research implication.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
+  <p class="secondary-axes">also: doc_ai</p>
 </article>  </div>
 </section>
 
@@ -401,28 +525,28 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Does OCR-3 use VQ (vector-quantized) image tokenization or a continuous visual encoder?</p>
-    <p class="question-context">arXiv:2609.29048 identifies a hallucination circuit shared across VQ-tokenized VLMs and proposes a three-gate diagnostic for it. The diagnostic and the circuit characterization do not transfer to continuous encoders. Knowing OCR-3&#39;s tokenization path determines whether the paper&#39;s findings are directly applicable or architecturally irrelevant to the team&#39;s mechanistic interpretability work.</p>
+    <p class="question-text">TeleOCR scores 96.87 on OmniDocBench v1.6. OCR-3&#39;s published score of 90.5 is on an earlier benchmark version. Has OCR-3 been evaluated on OmniDocBench v1.6, and if not, is there a plan to publish a v1.6 result before third-party comparisons use the version gap against OCR-3?</p>
+    <p class="question-context">OmniDocBench versions are not directly comparable (v1.5 vs v1.6 differ in page count and evaluation methodology per context.md). The absence of an OCR-3 v1.6 score creates a visible gap in benchmark coverage that developers searching for comparisons will encounter.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">LandingAI DPT-3 plans per-character pricing (fall 2026) that would be cheaper than per-page pricing on sparse documents. Has the team modeled whether OCR-3&#39;s pricing structure creates a cost disadvantage on specific document types DPT-3 targets?</p>
-    <p class="question-context">Per-character pricing favors sparse content (diagrams, blank-heavy forms, image-only pages) and is more expensive for dense content. Without visibility into OCR-3&#39;s pricing structure, it is unclear whether DPT-3&#39;s planned model is a genuine competitive advantage on certain document types or primarily a marketing reframe.</p>
+    <p class="question-text">PrismAlign&#39;s multi-VLM Bayesian alignment for table OCR hallucination reduction operates at inference time without retraining. Is this architecture compatible with OCR-3&#39;s inference pipeline, or does it require white-box access to multiple VLMs that would make production deployment prohibitive?</p>
+    <p class="question-context">PrismAlign (arXiv:2609.21351) decouples structural alignment from cell-content alignment and uses a Bayesian decision strategy over multiple VLM outputs. It directly targets phantom-row and structural hallucinations in table OCR, which aligns with the team&#39;s primary research direction.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Claude Opus 5.5 ranks #38/59 on OCR-specific Vision Evals (87.8%), slightly below the field median. Has the team considered a published head-to-head OCR-3 vs. Opus 5.5 benchmark on OmniDocBench or FUNSD to establish the accuracy gap before third-party comparisons set the frame?</p>
-    <p class="question-context">Opus 5.5&#39;s documented OCR weakness at general-purpose API pricing provides a specific benchmark differentiation opportunity. A published comparison would be the first to establish OCR-3&#39;s accuracy advantage in an external, citable format. This question first appeared in the Sep 24 builds.</p>
+    <p class="question-text">LandingAI DPT-3 Gen2 introduces per-character output pricing, projecting cost reductions of 25-80% on mixed workloads. Has the team assessed whether OCR-3&#39;s per-page pricing model creates a cost disadvantage on the sparse-document types DPT-3 Verity is targeting?</p>
+    <p class="question-context">Per-character pricing favors sparse content (blank-heavy forms, image-only pages, short documents) and is more expensive than per-page on dense content. Without visibility into OCR-3&#39;s pricing structure it is unclear whether this is a genuine competitive disadvantage or primarily a marketing reframe.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">FaithC4 (arXiv:2607.21617) benchmarks transcription faithfulness across three languages and three perturbation families; OCR-specialized VLMs measurably outperform general-purpose models on it. Has the team evaluated OCR-3 on FaithC4 to obtain a published faithfulness score?</p>
-    <p class="question-context">F1 on FUNSD/CORD does not capture substitution-type faithfulness failures. FaithC4 provides an independent evaluation surface where OCR-3 would be expected to perform well relative to frontier general-purpose models. A submission would produce the first published character-level faithfulness profile for OCR-3.</p>
+    <p class="question-text">Infrrd IDPForge&#39;s comparison set names Reducto and LandingAI as reference competitors but does not include Nanonets. Is this an awareness gap in the developer segment, and if so, is there a mechanism for ensuring Nanonets appears in self-authored developer comparison materials?</p>
+    <p class="question-context">Absence from the default comparison set in developer-authored benchmarks and vendor comparisons has a compounding effect on organic discovery in the mid-market. IDPForge targets the same developer API surface as Nanonets Agentic Data Extraction.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This is the 54th consecutive build in WebSearch fallback. Is proxy allowlist restoration under active investigation?</p>
-    <p class="question-context">Required allowlist additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers roughly 5-10% of normal item volume and cannot access same-day arXiv submissions or HN discussions reliably. This question has appeared in every build since 2026-07-07 without a team answer.</p>
+    <p class="question-text">The ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This is the 55th consecutive WebSearch-fallback build. This question will not be repeated after this build if no answer is recorded — please confirm whether proxy restoration is being tracked elsewhere or can be closed.</p>
+    <p class="question-context">Required allowlist: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers roughly 5-10% of normal item volume. If the allowlist issue is not resolvable, the fallback should be formalized as the pipeline design and the question retired.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -434,7 +558,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-26T06:00:00+00:00
+    sources covered:     · failed: 4 · built at 2026-09-26T06:45:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

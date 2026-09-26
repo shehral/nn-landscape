@@ -13305,3 +13305,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-26T06:45:00+00:00 (audit: partial)
+
+### Q: TeleOCR scores 96.87 on OmniDocBench v1.6. OCR-3's published score of 90.5 is on an earlier benchmark version. Has OCR-3 been evaluated on OmniDocBench v1.6, and if not, is there a plan to publish a v1.6 result before third-party comparisons use the version gap against OCR-3?
+
+**Context:** OmniDocBench versions are not directly comparable (v1.5 vs v1.6 differ in page count and evaluation methodology per context.md). The absence of an OCR-3 v1.6 score creates a visible gap in benchmark coverage that developers searching for comparisons will encounter.
+
+**Answer:** _add reply here_
+
+### Q: PrismAlign's multi-VLM Bayesian alignment for table OCR hallucination reduction operates at inference time without retraining. Is this architecture compatible with OCR-3's inference pipeline, or does it require white-box access to multiple VLMs that would make production deployment prohibitive?
+
+**Context:** PrismAlign (arXiv:2609.21351) decouples structural alignment from cell-content alignment and uses a Bayesian decision strategy over multiple VLM outputs. It directly targets phantom-row and structural hallucinations in table OCR, which aligns with the team's primary research direction.
+
+**Answer:** _add reply here_
+
+### Q: LandingAI DPT-3 Gen2 introduces per-character output pricing, projecting cost reductions of 25-80% on mixed workloads. Has the team assessed whether OCR-3's per-page pricing model creates a cost disadvantage on the sparse-document types DPT-3 Verity is targeting?
+
+**Context:** Per-character pricing favors sparse content (blank-heavy forms, image-only pages, short documents) and is more expensive than per-page on dense content. Without visibility into OCR-3's pricing structure it is unclear whether this is a genuine competitive disadvantage or primarily a marketing reframe.
+
+**Answer:** _add reply here_
+
+### Q: Infrrd IDPForge's comparison set names Reducto and LandingAI as reference competitors but does not include Nanonets. Is this an awareness gap in the developer segment, and if so, is there a mechanism for ensuring Nanonets appears in self-authored developer comparison materials?
+
+**Context:** Absence from the default comparison set in developer-authored benchmarks and vendor comparisons has a compounding effect on organic discovery in the mid-market. IDPForge targets the same developer API surface as Nanonets Agentic Data Extraction.
+
+**Answer:** _add reply here_
+
+### Q: The ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This is the 55th consecutive WebSearch-fallback build. This question will not be repeated after this build if no answer is recorded — please confirm whether proxy restoration is being tracked elsewhere or can be closed.
+
+**Context:** Required allowlist: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers roughly 5-10% of normal item volume. If the allowlist issue is not resolvable, the fallback should be formalized as the pipeline design and the question retired.
+
+**Answer:** _add reply here_
+
+---
