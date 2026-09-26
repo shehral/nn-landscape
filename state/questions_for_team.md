@@ -13271,3 +13271,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-26T06:00:00+00:00 (audit: partial)
+
+### Q: Does OCR-3 use VQ (vector-quantized) image tokenization or a continuous visual encoder?
+
+**Context:** arXiv:2609.29048 identifies a hallucination circuit shared across VQ-tokenized VLMs and proposes a three-gate diagnostic for it. The diagnostic and the circuit characterization do not transfer to continuous encoders. Knowing OCR-3's tokenization path determines whether the paper's findings are directly applicable or architecturally irrelevant to the team's mechanistic interpretability work.
+
+**Answer:** _add reply here_
+
+### Q: LandingAI DPT-3 plans per-character pricing (fall 2026) that would be cheaper than per-page pricing on sparse documents. Has the team modeled whether OCR-3's pricing structure creates a cost disadvantage on specific document types DPT-3 targets?
+
+**Context:** Per-character pricing favors sparse content (diagrams, blank-heavy forms, image-only pages) and is more expensive for dense content. Without visibility into OCR-3's pricing structure, it is unclear whether DPT-3's planned model is a genuine competitive advantage on certain document types or primarily a marketing reframe.
+
+**Answer:** _add reply here_
+
+### Q: Claude Opus 5.5 ranks #38/59 on OCR-specific Vision Evals (87.8%), slightly below the field median. Has the team considered a published head-to-head OCR-3 vs. Opus 5.5 benchmark on OmniDocBench or FUNSD to establish the accuracy gap before third-party comparisons set the frame?
+
+**Context:** Opus 5.5's documented OCR weakness at general-purpose API pricing provides a specific benchmark differentiation opportunity. A published comparison would be the first to establish OCR-3's accuracy advantage in an external, citable format. This question first appeared in the Sep 24 builds.
+
+**Answer:** _add reply here_
+
+### Q: FaithC4 (arXiv:2607.21617) benchmarks transcription faithfulness across three languages and three perturbation families; OCR-specialized VLMs measurably outperform general-purpose models on it. Has the team evaluated OCR-3 on FaithC4 to obtain a published faithfulness score?
+
+**Context:** F1 on FUNSD/CORD does not capture substitution-type faithfulness failures. FaithC4 provides an independent evaluation surface where OCR-3 would be expected to perform well relative to frontier general-purpose models. A submission would produce the first published character-level faithfulness profile for OCR-3.
+
+**Answer:** _add reply here_
+
+### Q: The ingest pipeline has failed in every recorded build due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This is the 54th consecutive build in WebSearch fallback. Is proxy allowlist restoration under active investigation?
+
+**Context:** Required allowlist additions: export.arxiv.org, hn.algolia.com, and all hosts in data/sources.yaml rss.feeds. WebSearch fallback covers roughly 5-10% of normal item volume and cannot access same-day arXiv submissions or HN discussions reliably. This question has appeared in every build since 2026-07-07 without a team answer.
+
+**Answer:** _add reply here_
+
+---
