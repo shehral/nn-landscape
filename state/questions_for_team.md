@@ -13339,3 +13339,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-26T12:58:04+00:00 (audit: partial)
+
+### Q: Claude Opus 5.5 ranks #3/59 overall on Roboflow Vision Evals but only #38/59 on OCR specifically (87.8%). Has the team benchmarked OCR-3 on the same Vision Evals suite to establish a public comparative position before developer comparison grids propagate this data?
+
+**Context:** Roboflow Vision Evals is used as a developer-facing comparison surface. OCR-3's absence from it means the 87.8% Opus 5.5 OCR figure becomes the implicit reference point in the frontier-vs-specialized comparison. This is a different surface from IDP Leaderboard.
+
+**Answer:** _add reply here_
+
+### Q: GPT-6 Luna is priced at $0.10/$0.50 per million tokens with image input and explicit positioning for high-volume extraction and classification. Does the team have a model for how per-token API pricing from frontier models affects OCR-3's per-page pricing in customer conversations?
+
+**Context:** Luna's price point for commodity extraction tasks is materially lower than prior frontier models. The competitive dynamic shifts when the cost-per-document for a frontier API drops below what OCR-3's specialized accuracy justifies as a premium.
+
+**Answer:** _add reply here_
+
+### Q: Dr.DocBench Challenge (EMNLP 2026, Oct 10 deadline) evaluates parsing of dense tables, LaTeX formulas, chemistry notation, and musical notation. Is entering an external challenge that would produce a citable, third-party difficulty-stratified accuracy profile a near-term priority?
+
+**Context:** Competitors who submit results will set the public comparison baseline for hard-document types before the next IDP Leaderboard refresh. Not entering means third-party comparisons will not include OCR-3 on this evaluation surface.
+
+**Answer:** _add reply here_
+
+### Q: Samsung's €3B investment in Mistral (Sept 9) was not covered in prior builds. Should the Mistral competitive entry in nanonets_context.md be updated to reflect this funding event and its chip-development partnership angle?
+
+**Context:** Context.md's Mistral entry currently covers OCR product versions and pricing. A hardware-partnership-backed competitor has a different long-term cost-structure trajectory than a software-only one. This note would prevent future builds from treating this as new information.
+
+**Answer:** _add reply here_
+
+### Q: The arXiv:2608.09842 table parsing benchmark and the Dr.DocBench Challenge both classify document failures at sub-OmniDocBench granularity. Is there value in publishing OCR-3 error rates using these finer taxonomies, distinct from the headline OmniDocBench aggregate score?
+
+**Context:** Aggregate benchmark scores (OmniDocBench, IDP Leaderboard) do not distinguish between cell-merge errors, reading-order errors, and structural hallucinations. A published fine-grained error profile would differentiate OCR-3's positioning from models that score similarly on aggregates.
+
+**Answer:** _add reply here_
+
+---
