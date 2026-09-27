@@ -51,10 +51,10 @@ The team also publicly maintains the **IDP Leaderboard**
 (`idp-leaderboard.org` / `benchmarking.nanonets.com`), an academic
 benchmark on document AI co-developed with IIT Indore. Items that
 publish leaderboard results, contest its methodology, or are released by
-models near the top of it (GPT-5.4, GPT-5.5, GPT-5.6 Sol/Terra/Luna, GPT-6 Astra,
+models near the top of it (GPT-5.4, GPT-5.5, GPT-5.6 Sol/Terra/Luna, GPT-6 Astra, GPT-6 Sol, GPT-6 Luna,
 Gemini-3-Pro/Flash, Gemini 3.1 Pro, Gemini 3.5 Flash, Gemini 3.6 Flash, Gemini 3.8 Flash,
 Claude 4.6 family, Claude Fable 5, Claude Fable 5.1, Claude Mythos 5.1, Claude Sonnet 5,
-Claude Opus 4.8, Claude Opus 5, Qwen3-VL, Qwen3.8-Max, Pixtral, GLM-OCR, Chandra OCR 2,
+Claude Opus 4.8, Claude Opus 5, Claude Opus 5.5, Qwen3-VL, Qwen3.8-Max, Pixtral, GLM-OCR, Chandra OCR 2,
 LightOn OCR-2, DeepSeek-OCR 2) are competitive-axis relevant.
 
 ## Active research direction
@@ -151,7 +151,10 @@ Items that name, compare against, or are released by these companies are
   Parse-Flow launched June 2026 for visual document intelligence
   workflows. LlamaIndex partnered with LanceDB (July 7, 2026) on a
   hybrid pipeline pairing LiteParse with multimodal storage to decompose
-  complex enterprise PDFs into pages, chunks, and assets.
+  complex enterprise PDFs into pages, chunks, and assets. LlamaParse
+  Extract API Turbo mode (September 2026, beta) offers lower latency with
+  accuracy comparable to Agentic mode; single-page documents with simple
+  schemas complete in as little as three seconds.
 - **Unstructured.io** — competitor and frequent integration partner;
   document parsing infrastructure. Expanded Microsoft Azure integration
   announced June 3, 2026, covering Azure AI Search and Blob Storage
@@ -293,7 +296,14 @@ Examples that are **competitive-primary**:
   costs; positioned for coding, knowledge work, and long-running tasks);
   Mythos 5.1 carries the same model weights with loosened safeguards for
   vetted defenders and life-science researchers; no IDP Leaderboard or
-  ParseBench document-benchmark scores confirmed yet.
+  ParseBench document-benchmark scores confirmed yet; Claude Opus 5.5
+  (September 22, 2026; model ID claude-opus-5-5; first model in the Claude
+  5.5 family; text and image input; 1M-token context; 128K output; $4/$20
+  per million input/output tokens; 40% lower cost than Opus 5; described by
+  Anthropic as its strongest Opus release for vision and computer use with
+  improved dense document, chart, and diagram parsing; ranked #3 of 59 on
+  Roboflow Vision Evals at 85.5%; no IDP Leaderboard or ParseBench
+  document-benchmark scores confirmed yet).
 - Google releases a Gemini-document-mode endpoint or a layout-aware
   OCR benchmark result (Gemini 3 Pro/Flash; Gemini 3.1 Pro released
   February 19, 2026; Gemini 3.5 Flash released May 2026 at Google I/O;
@@ -316,7 +326,13 @@ Examples that are **competitive-primary**:
   September 4) is OpenAI's new flagship for advanced analysis, deep research,
   software engineering, and long-horizon agentic tasks; text and image input;
   1.05M-token context; 128K output; $10/$50 per million input/output tokens;
-  no IDP Leaderboard or document-benchmark scores confirmed yet).
+  no IDP Leaderboard or document-benchmark scores confirmed yet; GPT-6 Sol
+  and GPT-6 Luna (both September 22, 2026) are additional GPT-6 tiers below
+  Astra; both accept text and image input with 1.05M-token context and 128K
+  output; Sol at $2/$10 per million tokens (balance of intelligence and cost);
+  Luna at $0.10/$0.50 per million tokens (high-volume efficient tier); API
+  prices 50% lower than their GPT-5.6 counterparts; no IDP Leaderboard or
+  document-benchmark scores confirmed yet).
 - Mistral OCR is updated with new accuracy or pricing (Mistral OCR 4
   released June 23, 2026).
 - xAI ships Grok vision document handling; the Grok Collections API
@@ -330,7 +346,11 @@ Examples that are **competitive-primary**:
   text, image, audio inputs) is a general-purpose model focused on
   agentic automation and extended project workflows; not a dedicated
   document-extraction product and does not add a new surface competing
-  with OCR-3's extraction endpoints.
+  with OCR-3's extraction endpoints. Grok 4.7 (September 21, 2026; 500K
+  context; $2/$6 per million tokens; text and image inputs; flexible
+  reasoning levels) is focused on coding, agentic tasks, and knowledge
+  work; not a dedicated document-extraction product; Grok Collections API
+  remains the primary xAI document-extraction signal.
 - Meta releases a Llama-vision model with explicit document focus.
 
 The `frontier` axis is reserved for capability releases that **do not
@@ -1825,3 +1845,98 @@ Nanonets models, arXiv papers, or product announcements. No new
 competitive entrants or meaningful pivots among the listed companies.
 Claude Docs (Anthropic) is a document creation/co-authoring UI feature,
 not an extraction-API competitor; no change to competitive classification.
+
+---
+
+**Date:** 2026-09-27
+
+**Sources consulted:**
+
+- WebSearch: "Nanonets OCR-3 IDP leaderboard September 2026 ranking" —
+  #1 at 85.9% confirmed unchanged (29 models evaluated); 87.4 OLM-OCR
+  and 90.5 OmniDocBench confirmed current; idp-leaderboard.org and
+  benchmarking.nanonets.com URLs confirmed resolving
+- WebSearch: "site:huggingface.co/nanonets 2026" — open-weight model
+  lineup unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains
+  API-only
+- WebSearch: "nanonets arxiv 2026 research paper" — no team-authored
+  papers surfaced; one "NanoNet" paper found but not Nanonets-team-authored
+- WebSearch: "Nanonets product announcement blog September 2026" — no
+  new September 2026 Nanonets product announcements indexed
+- WebSearch: "Mistral OCR September 2026 new model update" — no new
+  model since Mistral OCR 4.1 (full release August 13, 2026); all prior
+  entries confirmed current
+- WebSearch: "Reducto AI document processing September 2026 new
+  announcement" — Reducto r-1 (September 1, 2026) confirmed current
+  from prior context; no new announcements this week
+- WebSearch: "LlamaParse LlamaIndex September 2026 new product update"
+  — LlamaParse September changelog confirmed; Turbo mode for Extract
+  API (beta) confirmed from developers.llamaindex.ai
+- WebSearch: "Anthropic Claude new model September 2026 document
+  vision" — Claude Opus 5.5 (September 22, 2026) confirmed from
+  Anthropic release notes, emergent.sh, benchlm.ai, codersera.com
+- WebSearch: "Claude Opus 5.5 vision multimodal image input capabilities
+  September 2026" — text and image input confirmed; ranked #3 of 59 on
+  Roboflow Vision Evals (85.5%); described as strongest Opus release for
+  vision and computer use; $4/$20 per million tokens; 1M context;
+  model ID claude-opus-5-5
+- WebSearch: "OpenAI GPT-6 new model release September 2026" — GPT-6
+  Sol and Luna confirmed released September 22, 2026 from openai.com,
+  TechCrunch, MacRumors
+- WebSearch: "GPT-6 Sol Luna vision image document input API September
+  2026" — both confirmed text and image input; Sol $2/$10, Luna
+  $0.10/$0.50 per million tokens; 1.05M context; 128K output
+- WebSearch: "Google Gemini new model September 2026 document OCR" —
+  no new model beyond Gemini 3.8 Flash (September 2, 2026) already in
+  context
+- WebSearch: "xAI Grok document extraction OCR September 2026 new
+  product" and "Grok 4.7 xAI release September 2026 features pricing
+  context" — Grok 4.7 (September 21, 2026) confirmed from xAI API
+  docs, xenospectrum.com, kingy.ai, llm-stats.com; coding/agentic
+  tasks model; 500K context; $2/$6 per million tokens; not document-
+  extraction specific
+- WebSearch: "Qwen VLM DeepSeek OCR new model September 2026" — no
+  new models; Qwen3.8-Max and Qwen3.8-27B confirmed current;
+  DeepSeek-OCR 2 (January 2026) confirmed unchanged
+- WebSearch: "Rossum Docsumo ABBYY Kofax Tungsten Automation operating
+  September 2026" — all confirmed operating; no renames or closures
+- WebSearch: "Firecrawl Unstructured Docling Extend document AI
+  September 2026 new update" — no major new product announcements;
+  AnyDoc and prior entries confirmed current
+- WebSearch: "new OCR VLM document AI model September 2026 benchmark
+  release" — no new major entrants identified beyond those already in
+  context
+
+**Material changes versus prior version (2026-09-20):**
+
+- Added **Claude Opus 5.5** (Anthropic, September 22, 2026; model ID
+  claude-opus-5-5; first model in the Claude 5.5 family) to the
+  frontier-lab competitive-primary Anthropic example and IDP Leaderboard
+  comparables list; text and image input; 1M-token context; 128K output;
+  $4/$20 per million tokens; 40% lower cost than Opus 5; described by
+  Anthropic as its strongest Opus release for vision and computer use with
+  improved dense document, chart, and diagram parsing; ranked #3 of 59
+  on Roboflow Vision Evals (85.5%); no IDP Leaderboard or ParseBench
+  document-benchmark scores confirmed yet.
+- Added **GPT-6 Sol and GPT-6 Luna** (OpenAI, September 22, 2026) to
+  the frontier-lab competitive-primary OpenAI example and IDP Leaderboard
+  comparables list; both accept text and image input; 1.05M-token context;
+  128K output; Sol at $2/$10 per million tokens (balance of intelligence
+  and cost); Luna at $0.10/$0.50 per million tokens (high-volume efficient
+  tier); API prices 50% lower than their GPT-5.6 counterparts; no IDP
+  Leaderboard or document-benchmark scores confirmed yet.
+- Added **Grok 4.7** (xAI, September 21, 2026) note to the xAI entry:
+  500K context; $2/$6 per million tokens; text and image inputs; flexible
+  reasoning levels; focused on coding, agentic tasks, and knowledge work;
+  not a dedicated document-extraction product; Grok Collections API
+  remains the primary xAI document-extraction signal.
+- Updated **LlamaParse** entry: added Extract API Turbo mode (September
+  2026, beta; lower latency with accuracy comparable to Agentic mode;
+  single-page simple-schema documents complete in as little as three
+  seconds).
+- Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
+  No new Nanonets models on HuggingFace. No Nanonets-authored arXiv
+  papers found. No September 2026 Nanonets product announcements indexed.
+- Mistral OCR 4.1, Reducto r-1, and all other competitive set entries
+  confirmed current. No new entrants identified in the OCR/document-AI
+  market this week.
