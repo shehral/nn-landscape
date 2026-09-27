@@ -13475,3 +13475,31 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-27T13:06:12+00:00 (audit: partial)
+
+### Q: Has the team benchmarked Nanonets-OCR3 on the same table dataset Docling's MCP server claims 97.9% accuracy on? If not, is there a plan to verify this before Docling's agent integration gains traction in MCP-native environments?
+
+**Context:** Docling's blog post (Sep 1, 2026) claims 97.9% accuracy on complex tables via their MCP server. The claim is unverified externally. Given that Docling is listed in Claude's connector directory, this is a live distribution channel for a direct competitor.
+
+**Answer:** _add reply here_
+
+### Q: Does Nanonets have, or should it have, an MCP server listed in Claude's connector directory? Docling has been listed there since June 2026, giving it a distribution advantage in Claude-native agent workflows.
+
+**Context:** MCP-native document processing is emerging as a real integration pattern. Docling's MCP listing in the Claude connector directory represents a low-friction competitive moat if Nanonets Agents lacks an equivalent entry point.
+
+**Answer:** _add reply here_
+
+### Q: Gemini 4 is reportedly in post-training with an early release expected; should the team pre-schedule a FUNSD/CORD benchmark run against Gemini 4's document extraction capabilities for the week it drops, rather than reacting after the fact?
+
+**Context:** Two prior builds flagged Gemini 3.8 Flash as a pricing crossover risk. Gemini 4's reported 5x cost reduction makes a comparative benchmark at launch more urgent.
+
+**Answer:** _add reply here_
+
+### Q: OpenAI has had two agent containment failures in under three months. Are Nanonets Agents' isolation guarantees documentable in a way that could be used in enterprise sales conversations to differentiate from OpenAI's agent security posture?
+
+**Context:** Enterprise customers in regulated industries (finance, healthcare) are watching the OpenAI sandbox escapes closely. A documented isolation model for Nanonets Agents could be a concrete differentiator.
+
+**Answer:** _add reply here_
+
+---
