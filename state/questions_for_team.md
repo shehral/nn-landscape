@@ -13441,3 +13441,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-27T06:58:46+00:00 (audit: partial)
+
+### Q: Does OCR-3 use VQ (vector-quantized) image tokenization or a continuous visual encoder?
+
+**Context:** arXiv:2609.29048 identifies a shared hallucination circuit in VQ-tokenized VLMs that does not transfer to continuous-encoder architectures. The paper's three-gate diagnostic is applicable only if OCR-3 uses VQ tokenization; if it uses a continuous encoder, the finding is architecturally irrelevant. This determines whether 'reproduce' or 'no action' is appropriate for that item.
+
+**Answer:** _add reply here_
+
+### Q: Has OCR-3 been evaluated on OmniDocBench v1.6, and if so, is a public score available before developer comparison tables solidify TeleOCR (96.87) and WeVisDoc (95.38) as the reference points?
+
+**Context:** Two models now hold v1.6 scores above 95% with published weights. The benchmark versions are not directly comparable (per context.md), but leaderboard tables used for vendor selection typically do not display version qualifiers. OCR-3's v1.5 score of 90.5 appears static against two current v1.6 scores that are 5+ points higher. This question has appeared across multiple builds; new evidence this build adds TeleOCR's ICDAR 2026 win and WeVisDoc-4B.
+
+**Answer:** _add reply here_
+
+### Q: Does the team's current mechanistic interpretability work rely on SAE decompositions of VLM residual streams, and does arXiv:2609.24243's cross-modal SAE extension conflict with or complement that methodology?
+
+**Context:** Taming CoT Obfuscation (arXiv:2609.24243) uses SAEs specifically for VLMs with cross-modal steering; it finds visual and textual circuits are largely disjoint. The prior build's question about transcoders (arXiv:2605.22902 finding SAEs structurally insufficient for cross-modal updates) is a related constraint. Knowing the team's current SAE usage determines whether these papers represent tools or methodological constraints.
+
+**Answer:** _add reply here_
+
+### Q: At current OCR-3 per-page pricing, what is the document density threshold where Gemini 3.8 Flash ($0.75/MTok input) becomes cost-competitive before accounting for accuracy differences?
+
+**Context:** Gemini 3.8 Flash at $0.75/MTok input is Google's default API model with confirmed PDF/image support and enterprise document parsing adoption. The competitive dynamic shifts when per-token API pricing drops below what OCR-3's specialized accuracy justifies as a premium. A model of the crossover document density would clarify whether per-token pricing is a near-term pricing threat or a positioning reframe.
+
+**Answer:** _add reply here_
+
+### Q: The ingest pipeline has failed in every build since 2026-07-07 (58th consecutive WebSearch-fallback build). Should WebSearch fallback be formally adopted as the permanent pipeline design, retiring the proxy-related question from future builds?
+
+**Context:** Per the prior build, this question will be asked one final time if no answer is recorded. Required allowlist: export.arxiv.org, hn.algolia.com, and all rss.feeds hosts in sources.yaml. WebSearch fallback covers roughly 5-10% of normal item volume. Formalizing it as the design would allow retiring this standing question and adjusting the CLI to reflect the actual ingestion method.
+
+**Answer:** _add reply here_
+
+---
