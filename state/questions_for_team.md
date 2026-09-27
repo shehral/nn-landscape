@@ -13407,3 +13407,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-27T06:00:00+00:00 (audit: partial)
+
+### Q: Does OCR-3 have an accessible batch-inference interface that returns per-token or per-field confidence scores, and if so, has the team assessed whether those scores provide the prediction-residual signal needed to run a WeVisDoc/arXiv:2609.01575-style difficulty-aware curation pass on existing production data?
+
+**Context:** Both WeVisDoc (arXiv:2609.20423) and the difficulty-aware curation paper (arXiv:2609.01575) use deployed-model residuals to identify hard training examples without additional annotation. The method's primary dependency is access to batch confidence scores from a production model, not architectural changes. OCR-3's production deployment at scale makes it a favorable candidate for this approach if the interface exists.
+
+**Answer:** _add reply here_
+
+### Q: OmniDocBench v1.6 now has multiple models scoring above 95% while OCR-3's only published score is 90.5 on v1.5. Has OCR-3 been evaluated on OmniDocBench v1.6, and if not, is there a timeline before developer comparison grids canonize WeVisDoc and TeleOCR as the reference points?
+
+**Context:** The benchmark versions are not directly comparable (per nanonets_context.md), but leaderboard tables used for developer vendor selection typically do not display version qualifiers. Three models now show v1.6 scores above 95% with publicly available model weights; a developer running an independent evaluation would encounter OCR-3's v1.5 score of 90.5 as a static figure while competitors have current v1.6 scores.
+
+**Answer:** _add reply here_
+
+### Q: LandingAI DPT-3 Gen2 introduces per-character output pricing, which is structurally cheaper than per-page pricing on sparse-document types. Has the team modeled OCR-3's cost position on sparse-content documents — image-heavy forms, short invoices, low-density template pages — versus DPT-3 Verity at character-level pricing?
+
+**Context:** Per-character pricing favors sparse content and penalizes dense-text documents. Without visibility into OCR-3's pricing structure relative to output density, it is unclear whether DPT-3 Gen2's pricing model creates a genuine cost disadvantage on specific document types or is primarily a reframing of existing per-page economics.
+
+**Answer:** _add reply here_
+
+### Q: Transcoders Trace VLMs (arXiv:2605.22902) finds that SAEs are structurally insufficient to isolate cross-modal functional updates in VLMs, and that transcoders are required for this. Does the team's current mechanistic interpretability work use SAEs, activation patching, or transcoder-based methods, and does this finding affect the planned methodology?
+
+**Context:** The SAE insufficiency result applies specifically to VLMs (cross-modal interactions are not captured by the SAE decomposition of single-modality residual streams). Activation patching and causal scrubbing are not affected by this finding. If the team's hallucination-attribution work relies on SAE decompositions, this paper represents a methodological constraint worth reviewing before the next experimental cycle.
+
+**Answer:** _add reply here_
+
+### Q: The SHROOM-Visions 2026 shared task (EMNLP) is the primary community benchmark for VLM hallucination span detection. Would participating in the task — or submitting OCR-3 results to the evaluation suite — produce a citable published hallucination-span profile that the IDP Leaderboard and OmniDocBench do not currently cover?
+
+**Context:** FaithC4 (arXiv:2607.21617) and SHROOM-Visions 2026 both benchmark the faithfulness dimension of VLM text generation, which is distinct from extraction accuracy (F1 on FUNSD/CORD). A positive result on either benchmark would be the first published evidence of OCR-3's accuracy advantage in the faithfulness dimension specifically, where OCR-specialized models would be expected to outperform general-purpose frontier models.
+
+**Answer:** _add reply here_
+
+---
