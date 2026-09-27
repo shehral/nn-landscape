@@ -13503,3 +13503,31 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-27T19:00:00+00:00 (audit: partial)
+
+### Q: GPT-6 Astra, Claude Fable 5.1, and Gemini 3.8 Flash all shipped with image/document input within a four-day window (Sep 1-4). Does the team have a same-week benchmarking process for major frontier launches on FUNSD/CORD/OmniDocBench, or is frontier benchmarking currently reactive?
+
+**Context:** No IDP Leaderboard or ParseBench document-benchmark scores have been confirmed for any of the three models as of this build. The launch window is when developer comparison grids form — third-party evaluations will appear within two to four weeks and will become the reference point if OCR-3 results are not available first.
+
+**Answer:** _add reply here_
+
+### Q: TeleOCR is a 1.2B-parameter open-weight model scoring 96.87 on OmniDocBench v1.6, compared to OCR-3's 35B MoE at 90.5 on v1.5. Is OCR-3's competitive positioning best defended by publishing a v1.6 score, or by emphasizing production-quality dimensions (bounding boxes, per-word confidence, latency SLAs, agentic endpoint surface) that OmniDocBench does not capture?
+
+**Context:** The 29x parameter efficiency gap is now large enough to appear in developer comparison tables without additional commentary. The two defensible responses are: (1) show OCR-3's v1.6 score closes the gap, or (2) reframe the comparison on production metrics where OCR-3's architecture provides measurable advantages. Without a public v1.6 score, the default framing advantages TeleOCR.
+
+**Answer:** _add reply here_
+
+### Q: Infinity-Parser2 releases Infinity-Doc2-5M under Apache 2.0 — a 5M-sample bilingual corpus with bounding box annotations, LaTeX, HTML tables, and reading order labels. Is evaluating this as a pre-training data supplement (independent of the Infinity-Parser2 model) for OCR-3's hard-document failure modes within scope of the current data work?
+
+**Context:** The corpus covers the document types where OCR-3's known failure modes concentrate: formula-dense pages, complex multi-column layouts, and cross-page tables. The Apache 2.0 license allows commercial use and derivative training. Evaluation would require only a held-out benchmark run, not architectural changes.
+
+**Answer:** _add reply here_
+
+### Q: FormStruct-Bench finds the best-performing systems reach 83.85% document-level accuracy while fine-grained structural scores stay below 18% across all 14 tested systems. Does OCR-3's per-field confidence scoring and structured output surface give it a measurable structural precision advantage on table-form documents that this benchmark would capture?
+
+**Context:** FormStruct-Bench uses five complementary metrics across difficulty, structural constraints, and visual degradation — finer granularity than OmniDocBench. If OCR-3's per-field confidence represents a genuine structural precision advantage, submitting results would differentiate OCR-3 on the dimension where all existing systems perform weakest, independent of OmniDocBench headline scores.
+
+**Answer:** _add reply here_
+
+---

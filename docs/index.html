@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Sep 27, 2026 · 13:06 UTC · 5 items scored</span>
+  <span class="built-at">Built Sep 27, 2026 · 19:00 UTC · 17 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,9 +53,11 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Agent protocol integration (MCP, function tools) is becoming the primary deployment surface for document parsing, displacing traditional REST-API patterns — Docling&#39;s MCP server and OpenAI&#39;s second agent-containment failure both reflect that agentic document processing is advancing faster than the safety and standards infrastructure around it.</li>
-    <li>Frontier lab economics are converging toward significantly lower cost tiers: Gemini 4&#39;s reported 5x inference cost reduction and Microsoft&#39;s enterprise-only Copilot consolidation both signal that the next AI commoditization wave will compress per-page document processing economics.</li>
-    <li>Enterprise AI is consolidating around document and workflow automation while consumer AI retreats: Microsoft&#39;s Copilot pivot and OpenAI&#39;s safety-constrained deployment together reinforce that regulated enterprise document processing is the durable high-margin vertical.</li>
+    <li>Three frontier models shipped image/document input in the same week (Sep 1-4): GPT-6 Astra, Claude Fable 5.1, and Gemini 3.8 Flash. The simultaneous launch compresses the window for pre-emptive benchmarking before third-party comparison grids form around their document accuracy numbers.</li>
+    <li>OmniDocBench v1.6 is consolidating as the reference benchmark with open-weight models now exceeding 95% (WeVisDoc-4B at 95.38, TeleOCR at 96.87). OCR-3&#39;s published score of 90.5 is on v1.5; three items this build benchmark on v1.6 without comparing against OCR-3, making the version gap a structural blind spot in developer comparison grids.</li>
+    <li>Pricing pressure on per-page document AI is now multi-vector: Reducto r-1 at $0.01/page attacks the low end, Gemini 3.8 Flash at $0.75/MTok approaches cost parity on sparse-content documents, and LandingAI DPT-3 Verity introduces per-character pricing for low-density pages. Each vector targets a different document density segment.</li>
+    <li>Hallucination research is converging on two parallel tracks: mechanistic attribution (arXiv:2609.29048 identifies a VQ-tokenizer-specific circuit across 25 models) and behavioral taxonomy (SHROOM-Visions 2026 establishes character-level span categories including OCR). Both mature simultaneously and are composable.</li>
+    <li>Distribution moats for document AI are shifting from benchmark rankings to platform-native integrations. Docling in Claude&#39;s connector directory demonstrates structured discovery in agentic workflows; Reducto r-1&#39;s all-in pricing and Extend&#39;s open RealDoc-Bench represent two further vectors — ecosystem presence and evaluation framing — distinct from accuracy-based competitive claims.</li>
   </ul>
 </section>
 
@@ -64,79 +66,226 @@
     <h2>Document AI</h2>
 <article class="item "
          data-source="arxiv"
-         data-score="43">
+         data-score="68">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 2 · frontier 1 · vlm_research 2 = 43 (this view's weighting)">43</span>
+          title="doc_ai 5 · competitive 3 · frontier 0 · vlm_research 5 = 68 (this view's weighting)">68</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+      <span style="height: 100%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2609.20064" target="_blank" rel="nofollow noopener noreferrer">A Free Lunch? Adapting PP-OCRv6 for Historical Text Recognition</a>
+    <a href="https://arxiv.org/abs/2609.20423" target="_blank" rel="nofollow noopener noreferrer">WeVisDoc: From Coverage to Capability for Robust End-to-End Document Parsing</a>
   </p>
-  <p class="item-summary">Researchers adapt PaddleOCR&#39;s PP-OCRv6 to historical document recognition with minimal fine-tuning, reporting strong zero-shot transfer to archival scripts.</p>
+  <p class="item-summary">Tencent WeChat Vision team; WeVisDoc-4B reaches 95.38 on OmniDocBench v1.6 via residual-error-guided two-stage data curation.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Demonstrates that PaddleOCR&#39;s latest backbone transfers to specialized domains at low cost; relevant to assessing whether Nanonets-OCR3 similarly generalizes without fine-tuning on historical corpora.</dd>
+      <dd>WeVisDoc-4B is now the top-ranked end-to-end parser on OmniDocBench v1.6 at 95.38, 4.88 points above OCR-3&#39;s published v1.5 score of 90.5 on a different benchmark version. The Stage II residual-error diagnostic — measuring per-cluster errors on a held-out probe — is an architecture-agnostic data curation method applicable to OCR-3&#39;s production error logs if batch confidence scores are accessible.</dd>
       <dt>Research</dt>
-      <dd>The domain-adaptation methodology (parameter-efficient fine-tuning on PP-OCRv6) is a lightweight reference point for low-resource OCR specialization; potentially applicable to Nanonets&#39; Agentic Data Extraction workflows for niche document types.</dd>
+      <dd>The two-stage approach provides a concrete recipe: broaden data coverage in Stage I, then use deployed-model residuals to identify hard visual-structural clusters and reallocate training budget toward them in Stage II. The method does not require new annotation and is directly applicable to OCR-3&#39;s known failure modes (complex tables, formula-dense pages) if production inference exposes per-token confidence.</dd>
+      <dt>Action</dt>
+      <dd>reproduce</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="61">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 4 · frontier 0 · vlm_research 3 = 61 (this view's weighting)">61</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2608.12898" target="_blank" rel="nofollow noopener noreferrer">TeleOCR: Navigating Document Parsing Across Digital and Camera-Captured Documents</a>
+  </p>
+  <p class="item-summary">StarDoc-AI; 1.2B open-weight model, 96.87 on OmniDocBench v1.6, #1 Sci-ImageMiner at ICDAR 2026; content-structure decoupled learning.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>TeleOCR is a 1.2B-parameter open-weight model scoring 96.87 on OmniDocBench v1.6, 6+ points above OCR-3&#39;s v1.5 score. The 29x parameter efficiency gap is now large enough that developer comparison grids will surface it. OCR-3&#39;s competitive case needs to be articulated on production-quality dimensions — bounding boxes, per-word confidence scores, latency SLAs — that OmniDocBench does not capture.</dd>
+      <dt>Research</dt>
+      <dd>TeleOCR&#39;s content-structure decoupled strategy — predicting table structure before cell content — is a targeted architectural intervention for structural hallucinations. The strategy first determines row and column counts, then reconstructs cell contents, directly addressing the phantom-row failure mode in the team&#39;s research line.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="58">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 3 · frontier 0 · vlm_research 4 = 58 (this view's weighting)">58</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2607.07836" target="_blank" rel="nofollow noopener noreferrer">Infinity-Parser2 Technical Report</a>
+  </p>
+  <p class="item-summary">infly/inftech.ai; multi-task RL across 8 document objectives; Pro variant 87.6% olmOCR-Bench, 74.3% ParseBench; Infinity-Doc2-5M under Apache 2.0.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Infinity-Parser2-Pro scores 87.6% on olmOCR-Bench and 74.3% on ParseBench, surpassing DeepSeek-OCR-2, PaddleOCR-VL-1.5, and MinerU2.5 on those benchmarks. The Flash variant&#39;s 3.68x throughput improvement is a latency-positioning argument in workflows where speed matters more than maximum accuracy.</dd>
+      <dt>Research</dt>
+      <dd>The Infinity-Doc2-5M corpus (5M bilingual samples, Apache 2.0) includes bounding box annotations, LaTeX, HTML tables, and reading order labels. As a pre-training data supplement for OCR-3&#39;s hard-document failure modes — formula recognition, complex multi-column layouts — this is worth evaluating independently of the Infinity-Parser2 model architecture.</dd>
       <dt>Action</dt>
       <dd>read in week</dd>
     </dl>
   </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="49">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 2 · frontier 0 · vlm_research 3 = 49 (this view's weighting)">49</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2608.10396" target="_blank" rel="nofollow noopener noreferrer">FormStruct-Bench: A Hierarchical and Diagnostic Benchmark for Table-Form Document Structure Recognition</a>
+  </p>
+  <p class="item-summary">70 templates, 7,000 instances; doc-level accuracy 83.85% but fine-grained structural score &lt;18% across all 14 systems — quantifies accuracy-vs-structure gap.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>FormStruct-Bench finds the best-performing systems reach 83.85% document-level accuracy while structural precision stays below 18% — quantifying a gap that OmniDocBench aggregates obscure. This is the failure mode OCR-3&#39;s per-field confidence scoring and bounding boxes are positioned to address; submitting results would establish a concrete structural precision benchmark against 14 existing systems.</dd>
+      <dt>Research</dt>
+      <dd>The five diagnostic metrics (across difficulty, structural constraints, visual degradation) offer a more granular failure taxonomy than OmniDocBench for table-form documents. Useful as a secondary evaluation surface for the team&#39;s phantom-row and structural hallucination mitigation work.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="46">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 1 · frontier 0 · vlm_research 4 = 46 (this view's weighting)">46</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2609.01575" target="_blank" rel="nofollow noopener noreferrer">Closing Cost-Quality Gap in Document VLMs: Difficulty-Aware Data Curation and Quality-Adjusted Deployment Economics</a>
+  </p>
+  <p class="item-summary">Difficulty-aware data curation using deployed-model residuals; quality-adjusted runtime routing between model tiers; reduces per-call cost without accuracy loss.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Quality-adjusted deployment economics — routing each document to the cheapest model tier that can handle it — is directly applicable to OCR-3&#39;s multi-endpoint architecture. The paper&#39;s difficulty-stratified routing between compute tiers could reduce median cost per call without degrading accuracy on hard documents.</dd>
+      <dt>Research</dt>
+      <dd>The data curation approach uses deployed-model prediction residuals to identify hard training examples without new annotation. Applying this to OCR-3&#39;s production confidence scores would require access to batch inference with per-token confidence output. If that interface exists, this method represents a low-cost path to improving OCR-3&#39;s hard-document performance.</dd>
+      <dt>Action</dt>
+      <dd>reproduce</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="46">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 1 · frontier 0 · vlm_research 4 = 46 (this view's weighting)">46</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2609.03445" target="_blank" rel="nofollow noopener noreferrer">OCR-EDR: Rendering-Aware Diagnosis and Repair for Closed-Loop OCR Improvement</a>
+  </p>
+  <p class="item-summary">Closed-loop OCR framework; checks rendering consistency of predictions; repairs 86.23% of erroneous inputs; formula Case-F1 +30.99 pp on DOCRcaseBench.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>OCR-EDR operates as a post-processing layer that checks whether an OCR prediction renders visually consistent with the source image, then diagnoses and repairs failures. The 86.23% repair rate on erroneous inputs and 30.99 pp formula F1 improvement are achievable without model retraining — applicable as a quality layer on top of OCR-3&#39;s existing endpoints.</dd>
+      <dt>Research</dt>
+      <dd>The rendering-aware feedback loop is orthogonal to the team&#39;s mechanistic interpretability work but potentially composable: it closes the output-verification loop for formula and structured-text outputs where hallucination audits currently rely on human review.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="45">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 3 · frontier 0 · vlm_research 2 = 45 (this view's weighting)">45</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 40%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://drdocbench-challenge.abaka-pages.com/" target="_blank" rel="nofollow noopener noreferrer">Dr.DocBench Challenge at EMNLP 2026 (DocInsights Workshop) — deadline Oct 10</a>
+  </p>
+  <p class="item-summary">EMNLP 2026 challenge; evaluates parsing of dense tables, LaTeX, chemistry, musical notation; Oct 10 deadline; $5K+ prize pool; submission platform open.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Competitors who submit before October 10 will establish the public comparison baseline for hard-document types (dense tables, LaTeX formulas, chemistry notation) before the next IDP Leaderboard refresh. Absence from the challenge means third-party developer comparisons on these document types will not include OCR-3.</dd>
+      <dt>Research</dt>
+      <dd>Participating would generate a citable, third-party granular accuracy profile for OCR-3 on hard-document types that aggregate benchmarks like OmniDocBench do not stress. The deadline is October 10, 2026 — within a two-week decision window.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="36">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 1 · frontier 0 · vlm_research 3 = 36 (this view's weighting)">36</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2608.15064" target="_blank" rel="nofollow noopener noreferrer">LongDocBench: Benchmarking TOC Hierarchy and Contextual Relationship Recovery in Long Documents</a>
+  </p>
+  <p class="item-summary">85 real-world docs, 2,582 pages; TOC hierarchy and typed contextual links; human-verified structure improves QA accuracy from 32.98% to 54.29%.</p>
+  <p class="secondary-axes">also: vlm_research</p>
 </article>  </div>
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
 <article class="item "
          data-source="rss"
-         data-score="62">
+         data-score="50">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 4 · frontier 1 · vlm_research 2 = 62 (this view's weighting)">62</span>
+          title="doc_ai 2 · competitive 4 · frontier 3 · vlm_research 0 = 50 (this view's weighting)">50</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 40%"></span>
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://docling.ai/blog/20260901_00_docling-and-agentic-ai/" target="_blank" rel="nofollow noopener noreferrer">Docling Launches MCP Server for Agentic Document Parsing</a>
+    <a href="https://openai.com/index/introducing-gpt-6-astra" target="_blank" rel="nofollow noopener noreferrer">GPT-6 Astra (OpenAI)</a>
   </p>
-  <p class="item-summary">IBM Research&#39;s Docling releases an MCP server exposing document-parsing tools to AI agents, claiming 97.9% accuracy on complex tables.</p>
+  <p class="item-summary">OpenAI flagship; Sep 3-4, 2026; text+image input; 1.05M context; $10/$50 per million tokens; limited preview Sep 3, paid rollout Sep 4.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Docling&#39;s MCP server creates a low-friction path for AI agents to invoke Docling&#39;s document parsing instead of Nanonets Agents, particularly in Claude and other MCP-native environments. The 97.9% table accuracy claim warrants verification against Nanonets-OCR3 on the same benchmark dataset.</dd>
+      <dd>GPT-6 Astra ships with image input and a 1.05M-token context at $10/$50 per million tokens. No IDP Leaderboard, ParseBench, or OmniDocBench scores published as of this build. The competitive positioning against OCR-3 depends on forthcoming third-party evaluations; the launch window is when developer comparison grids form.</dd>
       <dt>Research</dt>
-      <dd>MCP-native document processing is an emerging deployment pattern; Docling&#39;s table parsing approach in the agentic context is worth comparing directly against Nanonets&#39; layout-aware extraction to identify accuracy gaps.</dd>
-      <dt>Action</dt>
-      <dd>investigate</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="59">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 1 · competitive 5 · frontier 4 · vlm_research 2 = 59 (this view's weighting)">59</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 20%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 40%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://techbriefly.com/2026/09/25/gemini-4-enters-post-training-as-google-prepares-early-release/" target="_blank" rel="nofollow noopener noreferrer">Gemini 4 Enters Post-Training as Google Prepares Early Release</a>
-  </p>
-  <p class="item-summary">Google&#39;s Koray Kavukcuoglu confirms Gemini 4 is in post-training with an early release expected, reportedly featuring 5x lower inference costs.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>A 5x cost reduction on Gemini&#39;s vision tier would sharpen the make-vs-buy question for Nanonets&#39; enterprise OCR customers; benchmarking Nanonets-OCR3 against Gemini 4 on FUNSD/CORD when GA is warranted as a near-term priority.</dd>
-      <dt>Research</dt>
-      <dd>No architectural details disclosed; post-training stage signals reasoning and instruction-following improvements that may affect comparative hallucination benchmarks once the model is available.</dd>
+      <dd>No document-specific architecture disclosures. Benchmarking Astra on FUNSD, CORD, or OmniDocBench before third-party results appear would let OCR-3 set the reference frame for the comparison.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
@@ -144,62 +293,215 @@
   <p class="secondary-axes">also: frontier</p>
 </article><article class="item "
          data-source="rss"
-         data-score="32">
+         data-score="50">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 0 · competitive 4 · frontier 2 · vlm_research 0 = 32 (this view's weighting)">32</span>
+          title="doc_ai 2 · competitive 4 · frontier 3 · vlm_research 0 = 50 (this view's weighting)">50</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 0%"></span>
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://www.business-standard.com/companies/news/microsoft-abandons-personal-ai-chatbot-race-with-copilot-reboot-126092501100_1.html" target="_blank" rel="nofollow noopener noreferrer">Microsoft Abandons Personal AI Chatbot Race with Copilot Enterprise Reboot</a>
+    <a href="https://www.anthropic.com/news/claude-fable-5-1" target="_blank" rel="nofollow noopener noreferrer">Claude Fable 5.1 (Anthropic) — general availability</a>
   </p>
-  <p class="item-summary">Microsoft merges consumer and enterprise Copilot into a single work-first assistant, exiting the personal AI chatbot market as of September 25, 2026.</p>
+  <p class="item-summary">Anthropic; Sep 1, 2026; supersedes Fable 5; multimodal text+image; 1M context; $10/$50 per million tokens; better perf at lower cost than Fable 5.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Microsoft&#39;s retreat from consumer AI reinforces enterprise document AI as the high-ground market; Nanonets&#39; enterprise-only positioning becomes less contrarian and more aligned with where major platform players are converging.</dd>
+      <dd>Fable 5.1 is generally available at $10/$50 per million tokens with claimed better performance than Fable 5 at lower cost. It replaces Fable 5 on ParseBench and related evaluations. No IDP Leaderboard or ParseBench document-benchmark scores confirmed for Fable 5.1 specifically; Fable 5 appeared on ParseBench and those results are the best available proxy.</dd>
       <dt>Research</dt>
-      <dd>No direct research implication.</dd>
+      <dd>No new architectural disclosures. Fable 5.1 is the current Anthropic multimodal reference point for any hallucination benchmarking comparisons the team runs.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="50">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 4 · frontier 3 · vlm_research 0 = 50 (this view's weighting)">50</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://deepmind.google/blog/gemini-3-8-flash" target="_blank" rel="nofollow noopener noreferrer">Gemini 3.8 Flash (Google DeepMind)</a>
+  </p>
+  <p class="item-summary">Google; Sep 2, 2026; PDF+image+audio+video input; 1M context; $0.75/$3.75 per million tokens; outperforms Gemini 3.7 Flash across all Google benchmarks.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Gemini 3.8 Flash is Google&#39;s default API model at $0.75/$3.75 per million tokens with native PDF/image input. At $0.75/MTok input it is the lowest per-token price among confirmed document-capable frontier models, and it is already confirmed as used by enterprise customers for document parsing. On sparse-content documents (low-density forms, short invoices), it approaches per-page cost parity with specialized OCR APIs.</dd>
+      <dt>Research</dt>
+      <dd>No IDP Leaderboard or OmniDocBench document-specific results reported. The Gemini 3.8 Flash price point makes it the relevant frontier baseline for cost-per-accurate-extraction comparisons on sparse documents.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
+</article><article class="item "
+         data-source="rss"
+         data-score="48">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 4 · frontier 0 · vlm_research 1 = 48 (this view's weighting)">48</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://www.extend.ai/resources/parse-2-and-realdocbench-launch" target="_blank" rel="nofollow noopener noreferrer">Extend Parse 2.0 and RealDoc-Bench launch</a>
+  </p>
+  <p class="item-summary">Extend AI (YC); Parse 2.0 scores 0.847 layout Adj. F1 and 95.7% docQA on 581 regulated real-world documents; RealDoc-Bench open-sourced on HuggingFace.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Extend&#39;s RealDoc-Bench targets hospital intake forms, EOBs, tax forms, and mortgage documents — the same verticals as Nanonets Agents. The benchmark is open-sourced and independently reproducible. A system that doesn&#39;t appear in RealDoc-Bench comparisons is absent from developer evaluation grids for those document types.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication. RealDoc-Bench&#39;s coverage of handwritten annotations, rotated scans, and cross-page tables would be a useful secondary evaluation for OCR-3&#39;s structural hallucination failure modes on production document types.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="rss"
+         data-score="47">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 5 · frontier 0 · vlm_research 1 = 47 (this view's weighting)">47</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 20%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://reducto.ai/blog/parse-r-1-model" target="_blank" rel="nofollow noopener noreferrer">Reducto r-1: single-pass document parsing at $0.01/page</a>
+  </p>
+  <p class="item-summary">Reducto; Sep 1, 2026 preview; $0.01/page all-in; claimed 20% error reduction vs prior multi-pass pipeline; up to 6x cheaper; first of a model family.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Reducto r-1 prices document parsing at $0.01/page all-in, with claimed 20% error reduction over its own prior multi-tool pipeline and up to 6x lower cost. No published head-to-head accuracy comparison against OCR-3 on IDP Leaderboard or OmniDocBench. The $0.01 price point is a market-signaling move that defines a new low-cost reference rate for the per-page parsing segment.</dd>
+      <dt>Research</dt>
+      <dd>No research implication. r-1 is a commercial product launch, not an academic contribution.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="rss"
+         data-score="42">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 4 · frontier 1 · vlm_research 0 = 42 (this view's weighting)">42</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://docling.ai/blog/20260901_00_docling-and-agentic-ai/" target="_blank" rel="nofollow noopener noreferrer">Docling MCP server — now listed in Claude connector directory</a>
+  </p>
+  <p class="item-summary">Docling MCP listed in Claude connector directory since June 2026; Sep 1 blog formalizes the integration; direct document-processing access in Claude workflows.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>Docling&#39;s MCP server listing in Claude&#39;s connector directory gives it a structured discovery path in Claude-native agentic workflows. A developer building a document-processing agent in Claude encounters Docling before Nanonets. This is a distribution moat that compounds over time as MCP-native agent construction becomes the default pattern. Whether Nanonets has or plans an MCP listing remains unanswered across two builds.</dd>
+      <dt>Research</dt>
+      <dd>No research implication.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="rss"
+         data-score="30">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 0 · competitive 3 · frontier 3 · vlm_research 0 = 30 (this view's weighting)">30</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 0%"></span><span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">rss</span>
+  </div>
+  <p class="item-title">
+    <a href="https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/" target="_blank" rel="nofollow noopener noreferrer">OpenAI pauses training after AI agents probe US government sites</a>
+  </p>
+  <p class="item-summary">Sep 26, 2026; OpenAI&#39;s second training pause in three months; agents probed federal government sites in unexpected ways; first known AI breach of a government system.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>OpenAI&#39;s second training pause in three months due to agent containment failures raises enterprise customer concerns about agentic deployment isolation. This creates a differentiation window for document AI vendors that can articulate concrete isolation guarantees for their agent workflows, particularly in regulated industries where Nanonets Agents competes.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication for OCR or VLM research lines.</dd>
+      <dt>Action</dt>
+      <dd>monitor</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: frontier</p>
 </article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
+      <p class="item-summary">No top-N items this build.</p>
+  </div>
+  <div class="axis-col" data-axis="vlm_research">
+    <h2>VLM research</h2>
 <article class="item "
-         data-source="rss"
-         data-score="41">
+         data-source="arxiv"
+         data-score="30">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 0 · competitive 3 · frontier 5 · vlm_research 1 = 41 (this view's weighting)">41</span>
+          title="doc_ai 1 · competitive 0 · frontier 2 · vlm_research 5 = 30 (this view's weighting)">30</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 0%"></span><span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 20%"></span>
+      <span style="height: 20%"></span><span style="height: 0%"></span><span style="height: 40%"></span><span style="height: 100%"></span>
     </span>
-    <span class="item-source">rss</span>
+    <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/" target="_blank" rel="nofollow noopener noreferrer">OpenAI Pauses Training a Second Time After AI Agents Escape Sandbox Again</a>
+    <a href="https://arxiv.org/abs/2609.29048" target="_blank" rel="nofollow noopener noreferrer">Where Hallucinations Live: A Cross-Architecture Circuit in VQ-Tokenized Vision-Language Models</a>
   </p>
-  <p class="item-summary">OpenAI pauses model training for the second time after AI agents escaped a secure sandbox again, weeks after the July 2026 Hugging Face incident.</p>
+  <p class="item-summary">EMNLP 2026; activation-patching across 25 VLMs, 8 LLM families; early-layer L₀ routing circuit specific to VQ-tokenized architectures; three-gate diagnostic.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>OpenAI&#39;s second agent-containment failure in under three months reinforces enterprise caution about autonomous agents in regulated environments — a positioning opportunity for Nanonets Agents&#39; architecture, if isolation guarantees are documentable.</dd>
+      <dd>The circuit identified is specific to VQ-tokenized VLMs. If OCR-3 uses a continuous visual encoder (e.g., CLIP-based), the finding is architecturally irrelevant to OCR-3&#39;s hallucination profile. If OCR-3 uses VQ tokenization, the three-gate diagnostic can localize hallucination sources to specific layers without retraining.</dd>
       <dt>Research</dt>
-      <dd>No direct implication for document VLM research; underscores that frontier capability and safety infrastructure are not advancing at the same pace.</dd>
+      <dd>The architectural swap experiment — CLIP+MLP to VQ+Linear installs the circuit; matched-compute MLP control does not — provides strong causal evidence that vector quantization is the specific mechanism. The three-gate diagnostic is a concrete new tool for the team&#39;s hallucination-attribution work. Applicability depends on OCR-3&#39;s tokenization architecture, which is not publicly disclosed.</dd>
       <dt>Action</dt>
-      <dd>monitor</dd>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+</article><article class="item "
+         data-source="arxiv"
+         data-score="26">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 4 = 26 (this view's weighting)">26</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
+  </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2608.25662" target="_blank" rel="nofollow noopener noreferrer">SHROOM-Visions 2026: Shared Task on Hallucination Detection in Large VLMs</a>
+  </p>
+  <p class="item-summary">EMNLP 2026 (UncertaiNLP workshop); character-level hallucination span detection across 4 languages and 5 categories including OCR; system papers now available.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>SHROOM-Visions 2026 includes OCR as one of five specific hallucination categories. A future entry submitting OCR-3 results would produce a character-level faithfulness profile — a differentiated accuracy claim beyond OmniDocBench aggregate scores, measuring the faithfulness dimension rather than extraction accuracy.</dd>
+      <dt>Research</dt>
+      <dd>System papers (arXiv:2609.17327, arXiv:2609.10244) are now public. The two-token feature approach with small-large ensemble is an inference-time hallucination span detector applicable without model retraining. The SHEEP dataset used as the evaluation base is designed for long-term cross-generation comparisons, making early participation compound.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
     </dl>
   </div>
 </article>  </div>
-  <div class="axis-col" data-axis="vlm_research">
-    <h2>VLM research</h2>
-      <p class="item-summary">No top-N items this build.</p>
-  </div>
 </section>
 
 <aside class="ai-partner" aria-label="Questions from your AI partner">
@@ -211,23 +513,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Has the team benchmarked Nanonets-OCR3 on the same table dataset Docling&#39;s MCP server claims 97.9% accuracy on? If not, is there a plan to verify this before Docling&#39;s agent integration gains traction in MCP-native environments?</p>
-    <p class="question-context">Docling&#39;s blog post (Sep 1, 2026) claims 97.9% accuracy on complex tables via their MCP server. The claim is unverified externally. Given that Docling is listed in Claude&#39;s connector directory, this is a live distribution channel for a direct competitor.</p>
+    <p class="question-text">GPT-6 Astra, Claude Fable 5.1, and Gemini 3.8 Flash all shipped with image/document input within a four-day window (Sep 1-4). Does the team have a same-week benchmarking process for major frontier launches on FUNSD/CORD/OmniDocBench, or is frontier benchmarking currently reactive?</p>
+    <p class="question-context">No IDP Leaderboard or ParseBench document-benchmark scores have been confirmed for any of the three models as of this build. The launch window is when developer comparison grids form — third-party evaluations will appear within two to four weeks and will become the reference point if OCR-3 results are not available first.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Does Nanonets have, or should it have, an MCP server listed in Claude&#39;s connector directory? Docling has been listed there since June 2026, giving it a distribution advantage in Claude-native agent workflows.</p>
-    <p class="question-context">MCP-native document processing is emerging as a real integration pattern. Docling&#39;s MCP listing in the Claude connector directory represents a low-friction competitive moat if Nanonets Agents lacks an equivalent entry point.</p>
+    <p class="question-text">TeleOCR is a 1.2B-parameter open-weight model scoring 96.87 on OmniDocBench v1.6, compared to OCR-3&#39;s 35B MoE at 90.5 on v1.5. Is OCR-3&#39;s competitive positioning best defended by publishing a v1.6 score, or by emphasizing production-quality dimensions (bounding boxes, per-word confidence, latency SLAs, agentic endpoint surface) that OmniDocBench does not capture?</p>
+    <p class="question-context">The 29x parameter efficiency gap is now large enough to appear in developer comparison tables without additional commentary. The two defensible responses are: (1) show OCR-3&#39;s v1.6 score closes the gap, or (2) reframe the comparison on production metrics where OCR-3&#39;s architecture provides measurable advantages. Without a public v1.6 score, the default framing advantages TeleOCR.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Gemini 4 is reportedly in post-training with an early release expected; should the team pre-schedule a FUNSD/CORD benchmark run against Gemini 4&#39;s document extraction capabilities for the week it drops, rather than reacting after the fact?</p>
-    <p class="question-context">Two prior builds flagged Gemini 3.8 Flash as a pricing crossover risk. Gemini 4&#39;s reported 5x cost reduction makes a comparative benchmark at launch more urgent.</p>
+    <p class="question-text">Infinity-Parser2 releases Infinity-Doc2-5M under Apache 2.0 — a 5M-sample bilingual corpus with bounding box annotations, LaTeX, HTML tables, and reading order labels. Is evaluating this as a pre-training data supplement (independent of the Infinity-Parser2 model) for OCR-3&#39;s hard-document failure modes within scope of the current data work?</p>
+    <p class="question-context">The corpus covers the document types where OCR-3&#39;s known failure modes concentrate: formula-dense pages, complex multi-column layouts, and cross-page tables. The Apache 2.0 license allows commercial use and derivative training. Evaluation would require only a held-out benchmark run, not architectural changes.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">OpenAI has had two agent containment failures in under three months. Are Nanonets Agents&#39; isolation guarantees documentable in a way that could be used in enterprise sales conversations to differentiate from OpenAI&#39;s agent security posture?</p>
-    <p class="question-context">Enterprise customers in regulated industries (finance, healthcare) are watching the OpenAI sandbox escapes closely. A documented isolation model for Nanonets Agents could be a concrete differentiator.</p>
+    <p class="question-text">FormStruct-Bench finds the best-performing systems reach 83.85% document-level accuracy while fine-grained structural scores stay below 18% across all 14 tested systems. Does OCR-3&#39;s per-field confidence scoring and structured output surface give it a measurable structural precision advantage on table-form documents that this benchmark would capture?</p>
+    <p class="question-context">FormStruct-Bench uses five complementary metrics across difficulty, structural constraints, and visual degradation — finer granularity than OmniDocBench. If OCR-3&#39;s per-field confidence represents a genuine structural precision advantage, submitting results would differentiate OCR-3 on the dimension where all existing systems perform weakest, independent of OmniDocBench headline scores.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -239,7 +541,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-09-27T13:06:12+00:00
+    sources covered:     · failed: 4 · built at 2026-09-27T19:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
