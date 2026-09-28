@@ -13531,3 +13531,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-28T01:30:00+00:00 (audit: partial)
+
+### Q: Does OCR-3's deployment expose per-field or per-cell confidence scores on the /extract endpoint, and if so, could those scores serve as the structural alignment prior in a PrismAlign-style Bayesian multi-view wrapper without requiring model changes?
+
+**Context:** PrismAlign (arXiv:2609.21351) achieves table-category SOTA on OmniDocBench 1.5 at inference time by decoupling structural alignment from cell content and applying a Bayesian decision strategy. The method's dependency is access to per-output confidence or agreement signals from the base VLM. Knowing the OCR-3 /extract endpoint's confidence output determines whether 'reproduce' is feasible or whether an ensemble wrapper at additional latency is required.
+
+**Answer:** _add reply here_
+
+### Q: Docling MCP has been listed in the Claude connector directory since June 2026 — four months without a Nanonets equivalent. Is pursuing a Nanonets MCP connector listing in the Claude or ChatGPT connector directories within the team's current scope, and if not, what would it take to add it?
+
+**Context:** Nanonets Agentic Data Extraction's five canonical endpoints (/parse, /extract, /split, /chunk, /vqa) map cleanly to MCP tool definitions. The Claude connector directory has 3,044 entries as of this build. Each build cycle without a Nanonets entry is a cycle where Docling's slash-command integration compounds as the default option in Claude-native agent workflows.
+
+**Answer:** _add reply here_
+
+### Q: WeVisDoc-4B achieves 95.38 on OmniDocBench v1.6 using ~40M records with residual-guided curation; Infinity-Doc2-5M provides 5M Apache 2.0 bilingual records with bounding boxes and reading-order labels. Does OCR-3's training corpus include multilingual non-digital document types (photographed documents, non-Latin scripts) at the coverage density MDPBench and Infinity-Doc2-5M represent?
+
+**Context:** MDPBench identifies photographed and non-digital multilingual documents as a systematic gap in current training data. Infinity-Doc2-5M covers Chinese/English bilingual documents with structured annotation. A coverage gap in OCR-3's training on these types would explain any performance gap on MDPBench-style evaluations even if aggregate OmniDocBench scores are strong.
+
+**Answer:** _add reply here_
+
+### Q: SciDocBench finds that the best general model (Claude Opus 5) scores 62.6/100 on scientific document understanding, with the worst gaps in evidence localization and structured information extraction. Has OCR-3 been evaluated on scientific PDFs — multi-column, equations, figures, cross-references — and if so, is there a publishable result that establishes OCR-3's advantage on structured extraction subtasks versus general-purpose VLMs?
+
+**Context:** The 62.6/100 ceiling for general VLMs on scientific documents represents headroom where a specialized extraction system should outperform. A published result on SciDocBench or an equivalent scientific-PDF evaluation surface would differentiate OCR-3's positioning on a benchmark where general models perform measurably below ceiling.
+
+**Answer:** _add reply here_
+
+### Q: Reducto r-1 ($0.01/page) and GPT-6 Luna ($0.10/$0.50/MTok with image input) together establish the new floor for commodity document-handling cost. Does the team have a model for the document density threshold — words per page, fields per document — at which OCR-3's specialized accuracy premium justifies a higher per-page or per-extraction rate versus Luna-level token pricing?
+
+**Context:** Four consecutive builds have recorded declining prices for the cheapest viable general-purpose and specialized document-handling options. Without a public cost-per-accurate-extraction model segmented by document type, customers encountering Luna at $0.10/MTok cannot independently assess whether OCR-3's accuracy advantage on dense documents justifies the pricing difference on their specific workload.
+
+**Answer:** _add reply here_
+
+---
