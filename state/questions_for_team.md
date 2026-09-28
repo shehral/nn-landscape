@@ -13565,3 +13565,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-28T06:57:00+00:00 (audit: partial)
+
+### Q: GPT-6 Sol/Luna and Claude Opus 5.5 both launched September 22, 2026 with vision input and no published IDP Leaderboard or OmniDocBench scores. Is there a standard benchmarking protocol for same-week frontier model releases, or does the team run ad hoc evaluations per model?
+
+**Context:** This is the third build cycle in which two or more frontier models launched with vision capabilities and no document-benchmark scores confirmed. Independent third-party evaluations typically publish within two to four weeks of a frontier launch, at which point they become the developer reference. A same-week OCR-3 comparison would preempt third-party framing.
+
+**Answer:** _add reply here_
+
+### Q: FinixDocBench (arXiv:2608.22842) is the first publicly available financial-document benchmark covering camera-captured insurance policies, reimbursement materials, and financial research reports. Is there a plan to evaluate OCR-3 on FinixDocBench before competitor scores appear on it?
+
+**Context:** FinixDocBench covers document types central to Nanonets' Accounts Payable and Healthcare RCM positioning that OmniDocBench does not include. The benchmark was published in August 2026 and currently has no published OCR-3 result. A first-mover score on a domain-relevant benchmark would differentiate OCR-3 positioning for financial-services and healthcare customers.
+
+**Answer:** _add reply here_
+
+### Q: Does the team view Mistral as a tier-1 threat (comparable to Reducto) given its 3B Series D at 21B valuation and Mistral OCR 4.1 at 93.07 on OmniDocBench, or tier-2 (general-purpose lab with a document product)?
+
+**Context:** Mistral OCR 4.1 benchmarks above OCR-3's published v1.5 score on OmniDocBench (93.07 vs 90.5), has self-hosted deployment at $4/1,000 pages, and now has Samsung-backed compute scale. The threat classification determines whether Mistral should be monitored at the same cadence as Reducto or tracked at the same level as GPT-6/Gemini.
+
+**Answer:** _add reply here_
+
+### Q: HunyuanOCR-1.5 open-sources its verl-based RL training stack alongside the model. FireRed-OCR-2B (arXiv:2603.01840) open-sourced GRPO with Format-Constrained GRPO for structural hallucination elimination. Does the team have a position on which open RL training framework better fits OCR-3's hallucination-reduction objectives?
+
+**Context:** Two production-grade open RL training stacks for OCR-VLMs are now publicly available: verl (HunyuanOCR-1.5) and Format-Constrained GRPO (FireRed-OCR-2B). A stated preference would let future builds prioritize reproduction work on the more relevant stack rather than flagging both each cycle.
+
+**Answer:** _add reply here_
+
+### Q: Extend's RealDoc-Bench and Reducto's LongExtractBench are both self-published benchmarks now used as competitive reference points in press and developer comparison grids. Does the team intend to publish OCR-3 results on either benchmark to appear on competitor-authored leaderboards?
+
+**Context:** Both benchmarks are open-sourced and independently audited (LongExtractBench by micro1). OCR-3 not appearing on a competitor-authored benchmark that is actively cited in press creates a visible gap in comparison grids. Appearing on the benchmark with strong results would convert a competitor-controlled surface into a favorable comparison.
+
+**Answer:** _add reply here_
+
+---
