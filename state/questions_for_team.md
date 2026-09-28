@@ -13599,3 +13599,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-28T12:58:48+00:00 (audit: partial)
+
+### Q: Does OCR-3 use VQ (vector-quantized) image tokenization or a continuous visual encoder (e.g., CLIP-style)?
+
+**Context:** arXiv:2609.29048 identifies a shared hallucination circuit in VQ-tokenized VLMs that does not transfer to continuous-encoder architectures. The paper's three-gate diagnostic is applicable only if OCR-3 uses VQ tokenization. This question appeared in the prior build; it is still unanswered and determines whether 'reproduce' is appropriate.
+
+**Answer:** _add reply here_
+
+### Q: Has OCR-3 been evaluated on OmniDocBench v1.6, and if so, is a public score available before TeleOCR (96.87) and WeVisDoc-4B (95.38) canonize as the developer reference points?
+
+**Context:** Two models now hold v1.6 scores above 95% with published open weights. OCR-3's last published score (90.5 on v1.5) is a static figure while competitor v1.6 scores are 5+ points higher. The benchmark versions are not directly comparable per nanonets_context.md, but comparison tables in developer tooling typically do not display version qualifiers. This question has appeared across three consecutive builds without an answer.
+
+**Answer:** _add reply here_
+
+### Q: Is pursuing a Nanonets MCP connector listing in the Claude or ChatGPT connector directories within scope?
+
+**Context:** Docling has been listed in the Claude connector directory since June 2026. Nanonets Agentic Data Extraction's five endpoints (/parse, /extract, /split, /chunk, /vqa) map cleanly to MCP tool definitions. Each build cycle without a Nanonets entry is a cycle where Docling's integration advantage compounds. This question appeared in prior builds without an answer.
+
+**Answer:** _add reply here_
+
+### Q: GPT-6 Sol, GPT-6 Luna, and Claude Opus 5.5 all launched September 22 with vision input and no document-benchmark scores. Is there a standard same-week benchmarking protocol for frontier model releases, or are evaluations run ad hoc?
+
+**Context:** This is the third build cycle in which two or more frontier models launched with vision capabilities and no IDP Leaderboard or OmniDocBench scores confirmed. Independent third-party evaluations on ParseBench are already appearing (GPT-6 Luna at #22, 66.59/100); those scores will become the default developer reference if OCR-3 comparison data is not available first.
+
+**Answer:** _add reply here_
+
+### Q: This is the 59th consecutive WebSearch-fallback build. Should WebSearch fallback be formally adopted as the permanent pipeline design, retiring the proxy-allowlist question from future builds?
+
+**Context:** The ingest pipeline has failed in every build since 2026-07-07 due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts in sources.yaml. WebSearch fallback covers roughly 5-10% of normal item volume. Formalizing it as the design would allow adjusting the CLI and retiring this standing question. Per previous build guidance, this question will continue to be asked until an answer is recorded.
+
+**Answer:** _add reply here_
+
+---
