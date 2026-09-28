@@ -13633,3 +13633,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-28T18:55:00+00:00 (audit: partial)
+
+### Q: This is the 60th consecutive WebSearch-fallback build. Should WebSearch fallback be formally adopted as the permanent pipeline design, retiring the proxy-allowlist question from future builds?
+
+**Context:** The ingest pipeline has failed in every build since 2026-07-07 due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts in sources.yaml. WebSearch fallback covers roughly 5-10% of normal item volume and systematically misses arXiv papers and HN posts. Formalizing the design would allow adjusting the CLI and retiring this question. Required allowlist for native ingestion: export.arxiv.org, hn.algolia.com, and all rss.feeds hosts in sources.yaml.
+
+**Answer:** _add reply here_
+
+### Q: GPT-6 Luna on ParseBench and Kimi K3 on OmniDocBench are the fifth and sixth builds in a row surfacing general-purpose models scoring at or above OCR-3's published v1.5 figure. Is OCR-3's competitive positioning best defended by publishing a v1.6 OmniDocBench score, or by emphasizing production-quality dimensions (bounding boxes, per-field confidence, endpoint surface) that OmniDocBench does not capture?
+
+**Context:** OCR-3's v1.5 score (90.5) remains the published reference while Kimi K3 (91.1% v1.5), TeleOCR (96.87 v1.6), WeVisDoc-4B (95.38 v1.6), and OvisOCR2 (96.58 v1.6) are all now at or above it on published benchmarks. Vendor comparison grids typically do not display version qualifiers. Without a v1.6 score or a reframe around production dimensions, the default grid comparison disadvantages OCR-3.
+
+**Answer:** _add reply here_
+
+### Q: ParseBench now has leaderboard entries for GPT-6 Sol/Luna, Reducto, LlamaParse Agentic, and Mistral OCR. OCR-3 is absent. Is submitting OCR-3 results to ParseBench within scope this quarter?
+
+**Context:** ParseBench is LlamaIndex-maintained, open-sourced, accepted at CVPR 2026, and is the document-parsing benchmark most likely to appear in developer tooling sidebars. Each build cycle without an OCR-3 entry is a cycle where Luna (62.38/86.74 table/chart) becomes the default affordable comparison point on the benchmark. The window before third-party evaluations populate comparison grids is typically two to four weeks from a model's first appearance.
+
+**Answer:** _add reply here_
+
+### Q: GPT-6 Luna ($0.10/$0.50/MTok), Reducto r-1 ($0.01/page), and Mistral OCR 4.1 ($4/1,000 pages) together establish three distinct price points for document handling at the commodity end. Does the team have a published or planned cost-per-accurate-extraction model segmented by document type (invoices, forms, tables, multi-page contracts) that would let enterprise customers independently assess whether OCR-3's accuracy premium justifies cost at their workload density?
+
+**Context:** Five consecutive builds have recorded declining prices for the cheapest viable general-purpose and specialized document-handling options. Customers encountering Luna at $0.10/MTok cannot independently assess OCR-3's value proposition without a public model of the accuracy-cost crossover point segmented by document complexity.
+
+**Answer:** _add reply here_
+
+### Q: Docling's Claude connector listing (since June 2026) occupies a directory of 439 connectors with slash-command integration. The MCPA certification launch this week signals MCP is maturing toward enterprise IT procurement requirements. Is pursuing a Nanonets MCP connector listing in the Claude or ChatGPT connector directories within scope, and if not, what is the blocking factor?
+
+**Context:** Nanonets Agentic Data Extraction's five endpoints (/parse, /extract, /split, /chunk, /vqa) map cleanly to MCP tool definitions. Each build cycle without a Nanonets entry is a cycle where Docling's integration advantage in Claude-native agent workflows compounds. This question has appeared in multiple consecutive builds without an answer.
+
+**Answer:** _add reply here_
+
+---
