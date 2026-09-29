@@ -13759,3 +13759,29 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+---
+
+## Build 2026-09-29T12:55:28Z (FAILED — ingest returned 0 items)
+
+**Step failed:** Step 3 (ingest) — all four sources returned nothing.
+
+**Errors by source:**
+- `arxiv`: HTTP 403 Forbidden from `http://export.arxiv.org/api/query?...` — proxy is blocking this endpoint.
+- `hn`: HTTP 403 Forbidden — proxy is blocking the Hacker News Algolia search endpoint.
+- `rss`: "no items in current window" — all RSS feed items already in `state/seen.json`; no new items since the 07:07 build (5.5 hours ago).
+- `github_trending`: "no items in current window" — all trending repos already in `state/seen.json`; no new trending entries in the last hour.
+
+**Action taken:** Build aborted per the failure-mode playbook. No HTML was rendered or pushed. Lock released.
+
+**What the team should investigate:**
+1. **arxiv and HN 403s**: The outbound proxy (`HTTPS_PROXY`) is returning 403 for `export.arxiv.org` and `hn.algolia.com`. These have been intermittently 403-blocked across multiple builds. Confirm whether the proxy allowlist needs updating for these two hostnames.
+2. **RSS window too narrow**: With builds running every 6 hours, RSS feeds with lower posting frequency exhaust their "current window" within two build cycles. Consider widening `days_back` or lowering the dedup recency threshold for RSS so items seen in a prior build within 24h are not permanently suppressed.
+3. **github_trending window**: Same issue — github_trending's 1-day window with 30 repos/topic fills seen.json quickly at 6h cadence. Consider raising `days_back` to 3 or expanding the topic list.
+
+### Q: Should the ingest window for RSS and github_trending be widened given 6-hour build cadence depletes fresh items by the second build after a full refresh?
+
+**Context:** This build ran 5.5 hours after the prior successful 6-item build. Both rss and github_trending returned "no items in current window" because all items fetched were already in seen.json. The arxiv and hn 403s compound this — without any source returning new items, the build produced nothing. Widening rss `days_back` or adjusting seen.json TTL would give non-arxiv/HN sources a chance to fill in when the primary sources are blocked.
+
+**Answer:** _add reply here_
+
