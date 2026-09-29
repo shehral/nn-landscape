@@ -13701,3 +13701,61 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-29T07:07:32+00:00 (audit: partial)
+
+_Note: The WebSearch-fallback question from the previous build (61st consecutive) still stands unanswered; not repeated here per playbook guidance. This is the 62nd consecutive WebSearch-fallback build._
+
+### Q: Should Fireworks AI be tracked as a second-tier competitive signal in nanonets_context.md?
+
+**Context:** Fireworks AI is appearing as an inference-layer vendor between frontier models and document-pipeline operators. Ember-1 (Sep 24) is the first Fireworks item in this monitor; if the team uses Fireworks for any production inference, cost changes there affect the build directly.
+
+**Answer:** _add reply here_
+
+### Q: Should the Anthropic IPO S-1's AI risk disclosures trigger a 'hostile context' framing flag for future Anthropic risk-disclosure items?
+
+**Context:** The S-1 warns of 'self-preserving behaviors' and 'shutdown resistance.' This is factual disclosure, not a critique of Nanonets, but the regulatory and procurement implications for Claude-based workflows are real. Clarifying whether this category of item should carry the hostility flag or a new flag would improve scoring consistency.
+
+**Answer:** _add reply here_
+
+### Q: Is there a published DocInsights 2026 proceedings list that would allow systematic coverage rather than WebSearch discovery of individual papers?
+
+**Context:** Two DocInsights/EMNLP 2026 papers appeared in this build. If there is an ACL Anthology page or workshop proceedings URL, adding it to sources.yaml as an RSS or batch-fetch target would prevent coverage gaps.
+
+**Answer:** _add reply here_
+
+### Q: Should 'AMD' be added to the HN and RSS keyword lists in sources.yaml?
+
+**Context:** With the World Labs acquisition, AMD is now both a GPU vendor and an AI research organization with a frontier-lab chief scientist. The current sources.yaml does not include AMD as a tracked entity; adding it would surface future AMD AI announcements automatically when native ingest resumes.
+
+**Answer:** _add reply here_
+
+---
+
+## Build 2026-09-29T07:07:32+00:00 (audit: partial)
+
+### Q: Should Fireworks AI be tracked as a second-tier competitive signal in nanonets_context.md?
+
+**Context:** Fireworks AI is appearing as an inference-layer vendor between frontier models and document-pipeline operators. Ember-1 (Sep 24) is the first Fireworks item in this monitor; if the team uses Fireworks for any production inference, cost changes there affect the build directly.
+
+**Answer:** _add reply here_
+
+### Q: Should the Anthropic IPO S-1's AI risk disclosures trigger a 'hostile context' framing flag for future Anthropic risk-disclosure items?
+
+**Context:** The S-1 warns of 'self-preserving behaviors' and 'shutdown resistance.' This is factual disclosure, not a critique of Nanonets, but the regulatory and procurement implications for Claude-based workflows are real. Clarifying whether this category of item should carry the hostility flag or a new flag would improve scoring consistency.
+
+**Answer:** _add reply here_
+
+### Q: Is there a published DocInsights 2026 proceedings list that would allow systematic coverage rather than WebSearch discovery of individual papers?
+
+**Context:** Two DocInsights/EMNLP 2026 papers appeared in this build. If there is an ACL Anthology page or workshop proceedings URL, adding it to sources.yaml as an RSS or batch-fetch target would prevent coverage gaps.
+
+**Answer:** _add reply here_
+
+### Q: Should 'AMD' be added to the HN and RSS keyword lists in sources.yaml?
+
+**Context:** With the World Labs acquisition, AMD is now both a GPU vendor and an AI research organization with a frontier-lab chief scientist. The current sources.yaml does not include AMD as a tracked entity; adding it would surface future AMD AI announcements automatically when native ingest resumes.
+
+**Answer:** _add reply here_
+
+---
