@@ -13667,3 +13667,37 @@ Zero items produced. Nothing to score, frame, or render. Build aborted per playb
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-29T06:00:00+00:00 (audit: partial)
+
+### Q: GravityOCR achieves 3.94x decode speedup on OCR region crops via self-speculative decoding (diffusion draft + AR verify). Does OCR-3's MoE architecture support a similar diffusion drafting head, and if so, is applying this technique to the /parse endpoint's latency SLA within scope?
+
+**Context:** The technique requires only a parallel drafting head on the existing AR model; no architecture change is needed if the model's attention stack is compatible. A 3.94x decode speedup would materially change OCR-3's latency positioning vs. LlamaParse Turbo.
+
+**Answer:** _add reply here_
+
+### Q: MiniMax M3 (428B MoE, open weights, 91.6% OmniDocBench) is not listed in the competitive set in data/nanonets_context.md. Should it be added, and should it be classified as competitive-primary (it benchmarks on OmniDocBench) or frontier (it is a general-purpose model)?
+
+**Context:** Per the strict disambiguation rule, OmniDocBench scoring routes to competitive-primary. MiniMax is a Chinese frontier lab and M3 is open-weight; it is a different threat profile than Reducto or LlamaParse but may appear in developer comparison grids.
+
+**Answer:** _add reply here_
+
+### Q: This is the 61st consecutive WebSearch-fallback build. Should WebSearch fallback be formally adopted as the permanent pipeline design, retiring the proxy-allowlist question from future builds?
+
+**Context:** The ingest pipeline has failed since 2026-07-07 due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. WebSearch fallback covers roughly 5-10% of normal item volume. Formalizing it would allow adjusting the CLI and retiring this standing question. Required allowlist for native ingestion: export.arxiv.org, hn.algolia.com, and all rss.feeds hosts in sources.yaml.
+
+**Answer:** _add reply here_
+
+### Q: TeleOCR (96.87 v1.6) and WeVisDoc-4B (95.38 v1.6) both exceed 95 on OmniDocBench v1.6 in this build. Is there a published OCR-3 v1.6 score available, or a planned run, before these models become the default developer comparison baseline?
+
+**Context:** This question has appeared across three consecutive builds without an answer. The v1.5 vs v1.6 version gap is not displayed in developer comparison grids. Each week without a v1.6 score widens the apparent gap. GravityOCR, MinerU2.5-Pro, and TeleOCR would be appropriate benchmarking peers on v1.6.
+
+**Answer:** _add reply here_
+
+### Q: SHROOM-Visions 2026 established character-level hallucination span detection as a community benchmark across 4 languages. Does OCR-3's inference pipeline expose per-token or per-span confidence scores that would allow it to be evaluated — or to submit results — on this benchmark?
+
+**Context:** SHROOM-Visions 2026 attracted 28+ teams and is an active shared-task series. The top-performing approaches use small-large ensembles or calibrated probes on existing VLM hidden states. Participation would establish OCR-3 on a hallucination benchmark distinct from OmniDocBench.
+
+**Answer:** _add reply here_
+
+---
