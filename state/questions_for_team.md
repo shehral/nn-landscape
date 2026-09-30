@@ -13829,3 +13829,31 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-09-30T07:00:01+00:00 (audit: partial)
+
+### Q: GPT-6.1 Sol claims near-Astra performance with image input at $2/$10/MTok but has no published IDP Leaderboard, ParseBench, or OmniDocBench scores. Should the team run a benchmarking pass before third-party comparisons establish default developer positioning?
+
+**Context:** The 01:15Z Sep 30 build also raised this. No answer provided. Each build cycle without a GPT-6.1 Sol entry on public document benchmarks is a cycle where the model's positioning on those benchmarks is shaped by others.
+
+**Answer:** _add reply here_
+
+### Q: This is the 65th consecutive WebSearch-fallback build. Native ingest (arxiv, hn, rss, github_trending) has been blocked by the outbound proxy since 2026-07-07. Should WebSearch fallback be formally adopted as the primary ingest pipeline?
+
+**Context:** WebSearch fallback retrieves 3-6 items per build versus the 40-100 expected from native ingest. Formalizing it would allow adjusting the CLI and retiring this standing question. Required proxy allowlist for native ingest: export.arxiv.org, hn.algolia.com, and all rss.feeds hosts in sources.yaml.
+
+**Answer:** _add reply here_
+
+### Q: OpenAI Agents API public beta (computer use, hosted execution, multi-agent support) overlaps Nanonets Agents' end-to-end workflow automation surface. Is it tracked as tier-1 competitive signal or as developer infrastructure?
+
+**Context:** If competitive, it should be added to nanonets_context.md. If infrastructure, the default framing (frontier) holds. The 01:15Z build asked this without receiving an answer.
+
+**Answer:** _add reply here_
+
+### Q: Ultrafast inference (300 tok/sec at 6x standard price) defines a new latency tier for interactive human-in-the-loop workflows. Does OCR-3's latency profile position well against Ultrafast on interactive document review, or does OCR-3 compete primarily in the throughput-batch segment?
+
+**Context:** If OCR-3 is positioned in the throughput-batch segment, Ultrafast is not a direct threat. If customers are also using OCR-3 for interactive use cases, the latency comparison becomes relevant for competitive framing.
+
+**Answer:** _add reply here_
+
+---
