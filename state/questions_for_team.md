@@ -13873,3 +13873,31 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Note:** Same failure mode as Sep 29 12:55Z and 18:54Z builds. The 07:00Z build succeeded; 6-hour cadence depletes RSS/github_trending before sources replenish. Standing questions from prior builds (ingest proxy allowlist, WebSearch fallback formalization, GPT-6.1 Sol benchmarks, Agents API classification) remain unanswered. Builds since Sep 23T13:30 were committed on a detached HEAD and never pushed to origin/main; this build restores the full commit history to main and pushes it.
 
 ---
+
+## Build 2026-09-30T18:30:00+00:00 (audit: partial)
+
+### Q: Should GPT-6 Sol and Claude Opus 5.5 be added to nanonets_context.md as tracked competitive entries with 'no document benchmark scores confirmed' placeholders, now that 8+ days have passed since their Sep 22, 2026 release with no IDP Leaderboard or OmniDocBench results?
+
+**Context:** Both models appear on the IDP Leaderboard comparables list and accept image input, but neither has a published document-benchmark score. Without those scores the competitive axis framing for these models relies on single-task blog comparisons (e.g., DataCamp's GDP.pdf test), which lack methodology disclosure.
+
+**Answer:** _add reply here_
+
+### Q: InSight-doc (arXiv:2608.10628) was submitted in August 2026 but surfaced today via WebSearch, 6 weeks after submission. Are there other high-relevance arXiv papers from August 2026 in cs.CV, cs.CL, or cs.LG that were missed due to the ongoing proxy block of export.arxiv.org?
+
+**Context:** The proxy block started July 7, 2026. A targeted WebSearch sweep of August 2026 arXiv papers matching sources.yaml keywords would close the coverage gap; this is a one-time backfill task rather than a process change.
+
+**Answer:** _add reply here_
+
+### Q: ScriptMoE covers 229 languages across 10 scripts; Mistral OCR 4 covers 170 languages. Does OCR-3 have a published language count, and if it falls below 170, is there a documented gap in writing systems that competing models already cover?
+
+**Context:** Nanonets context.md does not specify OCR-3's language coverage. If OCR-3's multilingual range is undocumented, the competitive comparison against ScriptMoE and Mistral OCR 4 on this axis cannot be made, which may become a customer-facing differentiator question.
+
+**Answer:** _add reply here_
+
+### Q: The BERT-to-Frontier-Agents survey documents a 50%/year cost-per-capability decline and finds GPT-6 Luna delivering near-flagship performance at $0.10/MTok input. At that price level, do the economics of specialized OCR APIs remain favorable compared to general-purpose frontier models for Nanonets' target customer volume tiers?
+
+**Context:** The cost gap between specialized extraction APIs and general frontier models is narrowing. Whether Nanonets' value proposition shifts from cost to accuracy, latency, schema control, or compliance depends on where customers sit on the volume-tier curve relative to frontier-model pricing.
+
+**Answer:** _add reply here_
+
+---
