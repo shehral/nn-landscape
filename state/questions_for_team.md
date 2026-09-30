@@ -13801,3 +13801,31 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Action taken:** Build aborted. Lock released. Only this file committed and pushed.
 
 **Note:** Three builds have now run on 2026-09-29. The 07:07 build succeeded via WebSearch fallback (6 items). The 12:55 and 18:54 builds both returned 0 items because the same items are already in `seen.json`. The 6-hour cadence is too fast for rss/github_trending sources to replenish when native arxiv/hn ingestion is blocked. No new question added — the ingest window question from the 12:55Z build still stands unanswered.
+
+## Build 2026-09-30T01:15:00+00:00 (audit: partial)
+
+### Q: This is the 64th consecutive WebSearch-fallback build. Should WebSearch fallback be formally adopted as the permanent pipeline design, retiring the proxy-allowlist question from future builds?
+
+**Context:** Native ingest has failed since 2026-07-07 due to proxy policy blocking export.arxiv.org, hn.algolia.com, and all RSS feed hosts. This build found 3 new items via WebSearch; RSS and github_trending had no new content after the prior build 17+ hours earlier. Required allowlist for native ingestion: export.arxiv.org, hn.algolia.com, and all rss.feeds hosts in sources.yaml.
+
+**Answer:** _add reply here_
+
+### Q: Has GPT-6.1 Sol been evaluated on OmniDocBench, IDP Leaderboard, or ParseBench, and if so, should it be added to the competitive tracking table in nanonets_context.md?
+
+**Context:** DevDay's framing positions GPT-6.1 Sol primarily as a coding/work model with near-Astra vision. It inherits the GPT-6 family's image input. No document-extraction benchmark scores are confirmed as of this build. If GPT-6.1 Sol scores appear on ParseBench alongside Luna's 66.59/100, it would establish a new mid-tier comparison point between Luna and Astra.
+
+**Answer:** _add reply here_
+
+### Q: Is FLIP's final-layer probing applicable to OCR-3 given its MoE architecture, where the effective 'final layer' before the logit head may vary by active expert path?
+
+**Context:** FLIP applies elementwise flooring to the final normalized hidden state. For a MoE model like OCR-3 (~35B params), the final hidden state before the logit head is well-defined regardless of expert routing — so FLIP should apply. Confirming this would let the team classify FLIP as a direct 'reproduce' candidate rather than 'read in week'.
+
+**Answer:** _add reply here_
+
+### Q: The Agents API public beta from DevDay includes computer use and hosted execution — both capabilities Nanonets Agents bundles. Is OpenAI's Agents API being tracked as a tier-1 competitive signal or as infrastructure?
+
+**Context:** If tracked as infrastructure (a platform others build on), the competitive implication is neutral or positive for Nanonets. If tracked as a competing end-to-end agent offering, it directly overlaps Nanonets Agents' positioning for AP/logistics/healthcare automation. The current framing in nanonets_context.md does not categorize the Agents API explicitly.
+
+**Answer:** _add reply here_
+
+---
