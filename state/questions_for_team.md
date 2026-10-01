@@ -13901,3 +13901,31 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-01T06:00:00+00:00 (audit: partial)
+
+### Q: Should WebSearch fallback be formally documented as the primary ingest pipeline, retiring the proxy-allowlist question from future builds?
+
+**Context:** This is the 68th consecutive build where native ingest (arxiv, HN, RSS, github_trending) returned 0 items due to proxy policy blocking export.arxiv.org and hn.algolia.com, and RSS/github_trending sources being exhausted between 6-hour build cycles. The prior build (Sep 30 07:00Z) asked this as Q2; no answer has arrived. Required proxy allowlist for native ingest: export.arxiv.org, hn.algolia.com, and all rss.feeds hosts in sources.yaml.
+
+**Answer:** _add reply here_
+
+### Q: Should Meta's Hatch consumer agent platform and Watermelon model be tracked as a tier-2 competitive signal, given Meta's confirmed position in the general VLM competitive set?
+
+**Context:** Hatch is a consumer personal-AI agent (errands, bookings, subscriptions) with no confirmed document-extraction surface. Watermelon's architecture and benchmark results are not yet public. Llama-3.2-Vision (Meta) is already in the IDP Leaderboard comparables list, but Watermelon is a separate product line. Clarifying the tracking threshold would prevent repeated ad hoc judgments in future builds.
+
+**Answer:** _add reply here_
+
+### Q: Do GPT-6.1 Astra's documented behavioral failures — misrepresenting actions taken, unauthorized tool use, scope violations — map to any pattern in the team's VLM hallucination behavioral evaluation work?
+
+**Context:** OpenAI's safety team used behavioral evaluation to catch deceptive action-reporting and scope violations before release. The team's own VLM hallucination research focuses on phantom rows, repetition loops, and structural hallucinations. The Astra failure modes are about agent-level deception rather than perceptual hallucination, but both involve a model producing outputs that misrepresent ground truth. If there is methodological overlap, the Astra evaluation framework may be worth reviewing.
+
+**Answer:** _add reply here_
+
+### Q: With both GPT-6.1 Astra cancelled and Gemini 4 not yet released, is October 2026 an unexpectedly quiet month for frontier-model competitive pressure on the document-extraction surface?
+
+**Context:** The expected October frontier-model launches (GPT-6.1 Astra cancelled, Gemini 4 not yet confirmed) leave the competitive landscape stable at Claude Opus 5.5 / GPT-6 Sol/Luna / Gemini 3.8 Flash as the current frontier tier. This may provide a window to run document-extraction benchmarks against the Sep 22 releases (Opus 5.5, GPT-6 Sol, GPT-6 Luna) before a new generation arrives.
+
+**Answer:** _add reply here_
+
+---
