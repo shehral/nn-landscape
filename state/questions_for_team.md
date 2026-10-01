@@ -13951,3 +13951,25 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-01T18:30:00+00:00 (audit: partial)
+
+### Q: Does the arbitration-failure framing from arXiv:2604.09364 change the team's model of phantom-row hallucinations in OCR-3?
+
+**Context:** The paper finds that VLMs correctly encode visual evidence but misattribute it at the arbitration layer downstream of the vision encoder. If this holds for OCR-3, the phantom-row fix may lie in the arbitration pathway (steering vectors, decoding-time adjustments) rather than training data or the visual encoder itself. Clarifying which model applies would reprioritize the mitigation track.
+
+**Answer:** _add reply here_
+
+### Q: Should 'language-prior dominance' be added to the hallucination taxonomy in nanonets_context.md, alongside phantom rows, repetition loops, and structural hallucinations?
+
+**Context:** arXiv:2607.16094 (ACM Multimedia 2026) identifies language-prior dominance as a failure mode distinct from grounding failure and reasoning failure. For templated document types (invoices, purchase orders, ID forms) where field labels are highly predictable, this mode may explain a class of OCR-3 errors the current taxonomy does not capture.
+
+**Answer:** _add reply here_
+
+### Q: Should a proactive benchmark run of OCR-3 against Gemini 4 be planned for the first week after Gemini 4's release, rather than waiting for third-party comparisons to establish the narrative?
+
+**Context:** Prior competitive cadence has been reactive. Gemini 4 entering post-training with a 'as soon as possible' release target implies a potential October-November 2026 release. OmniDocBench and IDP Leaderboard submission windows are short; controlling when OCR-3's comparison against Gemini 4 first appears publicly would be strategically valuable given OCR-3's current #1 standing.
+
+**Answer:** _add reply here_
+
+---
