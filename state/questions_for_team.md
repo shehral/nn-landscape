@@ -13929,3 +13929,25 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-01T12:30:00+00:00 (audit: partial)
+
+### Q: Should OCR-3 be submitted to LlamaIndex's ExtractBench before the benchmark establishes a default comparison baseline in developer tooling?
+
+**Context:** ExtractBench is open (HuggingFace + GitHub), benchmarks 14 systems on 370 enterprise documents across 67 document types, and uses deterministic scoring (no LLM judges). OCR-3 is absent. ParseBench submission was raised without an answer across builds 2026-09-28 through 2026-09-30; ExtractBench is a distinct benchmark from the same competitor with broader domain coverage.
+
+**Answer:** _add reply here_
+
+### Q: Does OCR-3's /parse endpoint include explicit mitigation for long-document output truncation (files past 50 pages), and if so, is there a published figure for recall on long-form documents?
+
+**Context:** ExtractBench finds that commercial VLMs fall below 35% recall on files past 50 pages due to silent list truncation — high precision but output attention degrades and table rows are dropped. If OCR-3 has mitigations (chunked output, streaming, list-continuation), surfacing this as a differentiated capability would be material for enterprise customer evaluations.
+
+**Answer:** _add reply here_
+
+### Q: Does the team track enterprise data platform players (Databricks, Snowflake, Microsoft Fabric) as competitive signals for the Nanonets Agents product line, distinct from dedicated OCR API competitors?
+
+**Context:** Databricks Genie Code and Microsoft Copilot Autopilot both announced document pipeline capabilities within the same week. Neither is an OCR API competitor, but both target enterprise workflows where Nanonets Agents also competes. The current nanonets_context.md competitive set covers dedicated document AI vendors but does not include data platform players.
+
+**Answer:** _add reply here_
+
+---
