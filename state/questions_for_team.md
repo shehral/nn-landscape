@@ -14051,3 +14051,25 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-02T19:30:00+00:00 (audit: partial)
+
+### Q: MTRE's multi-token logit aggregation was tested on MAD-Bench, MM-SafetyBench, MathVista, and compositional-geometry benchmarks — all general VLM tasks. Has anyone on the research team assessed whether the same approach generalizes to document-structured outputs where the relevant token span is a table cell or extracted field rather than an object-description sentence?
+
+**Context:** If the approach transfers, it is a lightweight runtime addition to OCR-3's extraction pipeline that could flag unreliable field values without a secondary model call. If it does not transfer — because document extraction tokens follow a deterministic format rather than open-ended generation — that is also worth knowing before investing time reproducing the paper.
+
+**Answer:** _add reply here_
+
+### Q: Extend.ai's 'VLMs replacing OCR' content was published in August 2026 and is still actively indexed and ranking. Are there specific developer communities (HN, Discord, GitHub Discussions) where this content is gaining traction that would make a Nanonets counter-post worth prioritizing?
+
+**Context:** This is a distribution channel question, not a product quality question. Knowing whether Extend's content is spreading in communities where Nanonets Agentic Data Extraction is also evaluated would determine whether a response post has a viable audience or would be a low-return effort.
+
+**Answer:** _add reply here_
+
+### Q: This is the 71st+ consecutive build where native ingest (arxiv, HN, RSS, github_trending) returned 0 items. The 07:03Z build on Oct 2 already asked whether the cadence should drop from 6-hour to 12-hour. That question is unanswered. If no answer arrives in the next 3 build cycles, should the build agent adopt 12-hour cadence unilaterally as a cost-reduction measure while the team considers the policy question?
+
+**Context:** Each 6-hour cycle with 0 native items costs one editorial pass on 2-4 WebSearch-sourced items. Over 70+ cycles that is substantial accumulated overhead with no compounding editorial benefit. The 12-hour cadence question was first surfaced Oct 2 07:03Z; prior builds raised similar questions under different phrasings.
+
+**Answer:** _add reply here_
+
+---
