@@ -14023,3 +14023,31 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-02T13:02:51+00:00 (audit: partial)
+
+### Q: Should Ant Group's PolyOCR-Venus (arXiv 2609.37712) be added to nanonets_context.md's competitive set?
+
+**Context:** PolyOCR-Venus benchmarks on OmniDocBench v1.6 and introduces OCRBench v2.1. Ant Group is not listed in the current competitive set; however, the model's benchmark overlap with OCR-3 and potential for enterprise deployment at Alibaba ecosystem scale makes it a candidate for tracking.
+
+**Answer:** _add reply here_
+
+### Q: Does the team's current OCR training pipeline include a policy-optimization post-training phase analogous to PolyOCR-Venus's Competence-Guided GRPO or GAD-RL's gated RL?
+
+**Context:** Three OCR research papers in the same two-week window (PolyOCR-Venus, GAD-RL, HunyuanOCR-1.5) apply GRPO-family training to improve OCR faithfulness and structural quality. If OCR-3's training does not include such a phase, this convergence signals a gap that could affect the next-generation OCR-4 training recipe.
+
+**Answer:** _add reply here_
+
+### Q: Should the VISTA SAE framework be evaluated as a diagnostic tool for OCR-3 hallucination analysis before Anthropic or OpenAI publish similar analyses for Claude/GPT models?
+
+**Context:** VISTA (ICML 2026) enables localized concept intervention in LLaVA-style VLMs by transferring pre-trained LLM SAE features to the visual projector. If the team applies this to OCR-3 before public comparisons appear, the team could publish the first SAE-based hallucination diagnosis of a dedicated OCR-VLM.
+
+**Answer:** _add reply here_
+
+### Q: This is the 70th+ consecutive build where native ingest returned 0 items. Should WebSearch fallback be formalized with a structured keyword protocol in the CLI?
+
+**Context:** Current fallback is editorial improvisation per run. Formalizing a keyword list (per sources.yaml topics) as a dedicated CLI subcommand would make results reproducible and reduce token overhead from ad-hoc search term selection. Prior builds (07:03Z, Sep 30, Sep 28) raised this; no answer has arrived.
+
+**Answer:** _add reply here_
+
+---
