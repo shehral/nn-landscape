@@ -13973,3 +13973,25 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-02T01:00:00+00:00 (audit: partial)
+
+### Q: Should OCR-3 be submitted to the OpenBenchmarks legal parser benchmark (updated Sep 27, 2026)?
+
+**Context:** The benchmark covers 94 redlined contracts and 1,500 questions with an independent answer key; methodology is public. LlamaParse agentic leads at 80.0%, Reducto second at 78.7%, task ceiling at 91.9%. OCR-3 is absent. This benchmark is likely to be cited in enterprise legal procurement. Three prior builds raised OCR-3's absence from independent benchmarks (ExtractBench, ParseBench, LongExtractBench) without receiving an answer.
+
+**Answer:** _add reply here_
+
+### Q: Should the team request early access to Gemini 4 Argon through Google's Fairwind Program or wait for the paid API rollout?
+
+**Context:** Gemini 4 Argon was announced Sep 30, 2026, with access limited to vetted cyber-defense organizations. No document-specific benchmark scores are yet published. The window between announcement and general API availability is when third-party comparisons establish developer positioning; controlling when OCR-3's comparison against Argon first appears publicly would be strategically valuable given OCR-3's current #1 standing on IDP Leaderboard.
+
+**Answer:** _add reply here_
+
+### Q: Does OCR-3 exhibit chart-degradation on long documents (50+ pages) on its /vqa endpoint, matching the pattern SynthDocBench documents across frontier VLMs?
+
+**Context:** SynthDocBench (arXiv:2607.10400) finds consistent chart-understanding degradation on long-document settings across all evaluated frontier VLMs — including models of comparable scale to OCR-3. If this pattern holds for OCR-3, the benchmark could be used as a diagnostic rather than a comparative ranking, and the finding would sharpen the team's research agenda on multi-page document hallucinations.
+
+**Answer:** _add reply here_
+
+---

@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Oct 01, 2026 · 18:30 UTC · 6 items scored</span>
+  <span class="built-at">Built Oct 02, 2026 · 01:00 UTC · 4 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,41 +53,92 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Three of four arXiv papers this build converge on the same finding: VLM hallucinations are an arbitration failure, not a perception failure. Models encode visual evidence correctly but fail to privilege it over linguistic priors at integration time.</li>
-    <li>Two independent groups propose training-free inference-time hallucination mitigations (steering vectors and VGS-Decoding), both achieving meaningful accuracy gains without weight updates—a practical pattern for deploying fixes to production models.</li>
-    <li>The frontier competitive window is compressing: Gemini 4 entering post-training follows GPT-6 Sol/Luna (Sep 22) and Claude Opus 5.5 (Sep 22) by under two weeks. OCR-3&#39;s IDP Leaderboard #1 position will face a new round of benchmark pressure before the end of October.</li>
-    <li>Competitive document parsing is converging on tiered ML/non-ML pipelines: LiteParse&#39;s is-complex routing API, Reducto r-1&#39;s single-model design, and LlamaParse Turbo mode all segment by document complexity rather than offering a single extraction path.</li>
+    <li>Independent document-parser benchmarks are proliferating as a procurement-influence strategy: OpenBenchmarks, SynthDocBench, LegalParseQA, ExtractBench, and RealDoc-Bench have all appeared within two months. The format — transparent methodology, open test sets, no vendor sponsorship — sets a credibility bar that vendor-run benchmarks cannot meet, and their results shape developer defaults before vendors can respond.</li>
+    <li>MCP is emerging as a parallel distribution channel for document AI services. Unstructured Transform MCP (July 2026) positions document parsing as a native agent capability, competing on integration convenience rather than accuracy — a different axis than traditional API pricing comparisons.</li>
+    <li>Frontier lab models continue entering limited-access tiers before API availability: Gemini 4 Argon follows GPT-6 Astra&#39;s pattern (limited-partner preview → paid API rollout). The window between announcement and general API availability is when third-party benchmarks establish default positioning — OCR-3 needs comparison data ready at API launch, not afterward.</li>
+    <li>OCR-3 is absent from multiple independent benchmarks now shaping enterprise procurement narratives: OpenBenchmarks legal parser (Sep 27), ExtractBench (LlamaIndex, July 2026), and LongExtractBench (Reducto-run, July 2026) none of them include OCR-3 in the tested set. The compounding absence across independent benchmarks risks establishing a market narrative without OCR-3 data.</li>
   </ul>
 </section>
 
 <section class="axes" aria-label="Items by axis">
   <div class="axis-col" data-axis="doc_ai">
     <h2>Document AI</h2>
-      <p class="item-summary">No top-N items this build.</p>
+<article class="item "
+         data-source="arxiv"
+         data-score="53">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 2 · frontier 1 · vlm_research 3 = 53 (this view's weighting)">53</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
   </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2607.10400" target="_blank" rel="nofollow noopener noreferrer">SynthDocBench: Controlled Benchmark for Long-Context Visual Document Understanding</a>
+  </p>
+  <p class="item-summary">SynthDocBench (arXiv:2607.10400): 200 synthetic 51-page reports, 1,788 Qs; exposes lost-in-middle bias and chart degradation as consistent frontier-VLM failure modes.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>The benchmark quantifies lost-in-middle degradation and chart-reading failure on documents past 50 pages — failure modes directly relevant to OCR-3 on enterprise invoice bundles and multi-page regulatory filings. The controlled combinatorial design (length, layout, modality varied independently) makes it a diagnostic tool rather than a comparative ranking, so results do not immediately place OCR-3 in a table.</dd>
+      <dt>Research</dt>
+      <dd>The three documented failure modes — positional bias, chart degradation, reasoning-complexity degradation — map onto hallucination subtypes the team already tracks. The synthetic generation pipeline (LLM-driven, six layout archetypes, 40% random layout override) could be adapted to extend the phantom-row evaluation set to longer multi-page documents.</dd>
+      <dt>Action</dt>
+      <dd>read in week</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: vlm_research</p>
+</article><article class="item "
+         data-source="hn"
+         data-score="46">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 4 · competitive 3 · frontier 0 · vlm_research 0 = 46 (this view's weighting)">46</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+    </span>
+    <span class="item-source">hn</span>
+  </div>
+  <p class="item-title">
+    <a href="https://openbenchmarks.com/document-processing/best-document-parsers-for-legal-rag" target="_blank" rel="nofollow noopener noreferrer">Best Document Parsers for Legal RAG, Independently Benchmarked, 2026</a>
+  </p>
+  <p class="item-summary">OpenBenchmarks (updated Sep 27): LlamaParse agentic leads 6 parsers at 80.0% on 94 redlined contracts; Reducto 2nd at 78.7%; OCR-3 absent from tested set.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>OCR-3 is absent from this benchmark, which is methodology-transparent (open test set, no vendor sponsorship, independent answer key from tracked Word changes) and will likely be cited in enterprise legal procurement. LlamaParse leads at 80.0% and Reducto second at 78.7%; the gap to the task ceiling (91.9% with perfect redline labeling) shows room for improvement and gives OCR-3 a differentiated entry point if submitted.</dd>
+      <dt>Research</dt>
+      <dd>No direct research implication. Redline-aware parsing tests strikethrough detection, a structural hallucination pattern — missed strikethroughs appear as live contract language to downstream systems.</dd>
+      <dt>Action</dt>
+      <dd>investigate</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: competitive</p>
+</article>  </div>
   <div class="axis-col" data-axis="competitive">
     <h2>Competitive</h2>
 <article class="item "
          data-source="rss"
-         data-score="64">
+         data-score="70">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 4 · frontier 4 · vlm_research 1 = 64 (this view's weighting)">64</span>
+          title="doc_ai 3 · competitive 5 · frontier 4 · vlm_research 1 = 70 (this view's weighting)">70</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
+      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://thenextweb.com/news/gemini-4-release-kavukcuoglu-post-training" target="_blank" rel="nofollow noopener noreferrer">Google DeepMind Confirms Gemini 4 Is in Post-Training, Targeting Year-End Release</a>
+    <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" target="_blank" rel="nofollow noopener noreferrer">Gemini 4 Argon: our next era of frontier intelligence</a>
   </p>
-  <p class="item-summary">Gemini 4 confirmed in post-training; DeepMind chief Kavukcuoglu targets release as soon as possible before year-end.</p>
+  <p class="item-summary">Google Gemini 4 Argon (Sep 30): multimodal MoE, beats GPT-6 Astra/Opus 5.5 on 13/19 benchmarks; $2/$10/MTok; limited Fairwind Program access only.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Gemini 4 will surface on OmniDocBench and IDP Leaderboard within weeks of release; the competitive tier above OCR-3 resets. Gemini 3.8 Flash is the current Google benchmark baseline at $0.75/$3.75 per million tokens; Gemini 4 will likely redefine that anchor.</dd>
+      <dd>Argon&#39;s confirmed chart, document, and video analysis capabilities place it directly on OCR-3&#39;s extraction surface; no IDP Leaderboard or OmniDocBench scores published yet, but Google claims wins over GPT-6 Astra and Claude Opus 5.5 on 13 of 19 benchmarks. Access is currently limited to vetted organizations via the Fairwind Program, with paid API expected to follow — creating a window to benchmark OCR-3 against it before developer positioning solidifies.</dd>
       <dt>Research</dt>
-      <dd>No research implication until architecture details are published post-release.</dd>
+      <dd>No architecture or training details disclosed. If document parsing benchmark scores surface on IDP Leaderboard or ParseBench, they establish the next frontier comparison baseline for the team&#39;s VLM hallucination evaluations.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
@@ -95,29 +146,30 @@
   <p class="secondary-axes">also: frontier</p>
 </article><article class="item "
          data-source="rss"
-         data-score="39">
+         data-score="49">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 3 · frontier 0 · vlm_research 0 = 39 (this view's weighting)">39</span>
+          title="doc_ai 3 · competitive 4 · frontier 1 · vlm_research 0 = 49 (this view's weighting)">49</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
+      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://www.llamaindex.ai/blog/liteparse-updates-september-2026" target="_blank" rel="nofollow noopener noreferrer">LiteParse Updates: September 2026</a>
+    <a href="https://unstructured.io/blog/introducing-unstructured-transform-mcp" target="_blank" rel="nofollow noopener noreferrer">Introducing Unstructured Transform MCP for AI Agents</a>
   </p>
-  <p class="item-summary">LiteParse 2.14.6 reaches 2.8ms/page text extraction via PDFium+mimalloc optimization; adds is-complex routing API for tiered pipeline design.</p>
+  <p class="item-summary">Unstructured launches Transform MCP (Jul 9, 2026): MCP-native document parsing across 60+ formats, claims #1 on 4 benchmarks; integrates with Claude, Codex, Cursor, Devin.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>LiteParse&#39;s 2.8ms/page ML-free tier competes with Nanonets Agentic Data Extraction&#39;s speed tier on simple documents. The is-complex routing API formalizes a tiered pipeline pattern—fast ML-free path for simple docs, VLM path for complex ones—that mirrors Nanonets&#39; own architecture.</dd>
+      <dd>Unstructured&#39;s MCP server gives agent builders a low-integration-cost path to document parsing across 60+ formats, positioning against OCR-3&#39;s Agentic Data Extraction API in LangChain and LlamaIndex pipelines. The MCP distribution channel bypasses direct API integration, which is the layer where OCR-3&#39;s `/parse` and `/extract` endpoints compete.</dd>
       <dt>Research</dt>
-      <dd>No research implication.</dd>
+      <dd>No direct research implication.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
+  <p class="secondary-axes">also: doc_ai</p>
 </article>  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
@@ -125,107 +177,8 @@
   </div>
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
-<article class="item "
-         data-source="arxiv"
-         data-score="29">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 5 = 29 (this view's weighting)">29</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
+      <p class="item-summary">No top-N items this build.</p>
   </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2604.09364" target="_blank" rel="nofollow noopener noreferrer">Arbitration Failure, Not Perceptual Blindness: How Vision-Language Models Resolve Visual-Linguistic Conflicts</a>
-  </p>
-  <p class="item-summary">VLMs correctly encode visual evidence but fail at arbitration; inference-time steering vectors improve visual grounding 3.8% without retraining.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Training-free 3.8% accuracy improvement via steering vectors is a deployable inference-wrapper path for OCR-3, contingent on the encoding-grounding dissociation pattern holding for document-extraction VLMs at OCR-3&#39;s scale.</dd>
-      <dt>Research</dt>
-      <dd>MAC analysis + causal activation patching reveals that phantom-row failures may reside in the arbitration pathway, not the visual encoder or training data. The dissociation finding—models that fail still encode visual evidence correctly—changes the search space for mitigation: steering-vector corrections should be tested before additional fine-tuning.</dd>
-      <dt>Action</dt>
-      <dd>reproduce</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="29">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 5 = 29 (this view's weighting)">29</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 100%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2608.10758" target="_blank" rel="nofollow noopener noreferrer">Where To Look? : Causal Tracing of Vision Encoders in VLM</a>
-  </p>
-  <p class="item-summary">Causal tracing of VLM vision encoders finds highly causal tokens often outside target regions; pattern holds across model architectures and scales.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product path. The finding that causal vision tokens often lie outside the target region could explain structural hallucination modes in document VLMs where non-target regions (adjacent rows, neighboring cells) contaminate extraction.</dd>
-      <dt>Research</dt>
-      <dd>The paper&#39;s activation patching framework applied to the vision encoder extends the team&#39;s existing causal patching methodology to the visual side of the pipeline. The cross-model consistency across MoE and dense architectures is directly relevant to OCR-3&#39;s MoE design.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="26">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 4 = 26 (this view's weighting)">26</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2607.16094" target="_blank" rel="nofollow noopener noreferrer">How Do VLMs Fail? Vision-Operation Misalignment in Compositional VQA</a>
-  </p>
-  <p class="item-summary">ACM Multimedia 2026: operation-centric framework identifies four VLM failure modes including language-prior dominance as a distinct type.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Attribute extraction failure—one of four identified modes—maps directly to document field extraction errors. Language-prior dominance on templated forms (e.g., invoices with standard field labels) could explain OCR-3 errors on common form layouts.</dd>
-      <dt>Research</dt>
-      <dd>The operation-centric taxonomy is more fine-grained than the team&#39;s current hallucination taxonomy. Worth assessing whether language-prior dominance should be added alongside phantom rows, repetition loops, and structural hallucinations in the public research framing.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article><article class="item "
-         data-source="arxiv"
-         data-score="26">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 2 · competitive 0 · frontier 0 · vlm_research 4 = 26 (this view's weighting)">26</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 0%"></span><span style="height: 80%"></span>
-    </span>
-    <span class="item-source">arxiv</span>
-  </div>
-  <p class="item-title">
-    <a href="https://arxiv.org/abs/2603.20314" target="_blank" rel="nofollow noopener noreferrer">VGS-Decoding: Visual Grounding Score Guided Decoding for Hallucination Mitigation in Medical VLMs</a>
-  </p>
-  <p class="item-summary">Training-free VGS-Decoding reweights token probabilities by per-token visual grounding score; +9.12% on medical VLM benchmarks at 2x inference overhead.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>No direct product path until tested on document VLMs. The training-free nature and 2x inference overhead make it viable as a post-deployment wrapper around OCR-3 for high-stakes extraction tasks where hallucination cost is high.</dd>
-      <dt>Research</dt>
-      <dd>The VGS method—comparing output distributions on original vs. visually degraded images—is a lightweight baseline for measuring per-token visual dependency, which would extend the team&#39;s behavioral hallucination evaluation with a grounding-rate signal.</dd>
-      <dt>Action</dt>
-      <dd>read in week</dd>
-    </dl>
-  </div>
-</article>  </div>
 </section>
 
 <aside class="ai-partner" aria-label="Questions from your AI partner">
@@ -237,18 +190,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Does the arbitration-failure framing from arXiv:2604.09364 change the team&#39;s model of phantom-row hallucinations in OCR-3?</p>
-    <p class="question-context">The paper finds that VLMs correctly encode visual evidence but misattribute it at the arbitration layer downstream of the vision encoder. If this holds for OCR-3, the phantom-row fix may lie in the arbitration pathway (steering vectors, decoding-time adjustments) rather than training data or the visual encoder itself. Clarifying which model applies would reprioritize the mitigation track.</p>
+    <p class="question-text">Should OCR-3 be submitted to the OpenBenchmarks legal parser benchmark (updated Sep 27, 2026)?</p>
+    <p class="question-context">The benchmark covers 94 redlined contracts and 1,500 questions with an independent answer key; methodology is public. LlamaParse agentic leads at 80.0%, Reducto second at 78.7%, task ceiling at 91.9%. OCR-3 is absent. This benchmark is likely to be cited in enterprise legal procurement. Three prior builds raised OCR-3&#39;s absence from independent benchmarks (ExtractBench, ParseBench, LongExtractBench) without receiving an answer.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should &#39;language-prior dominance&#39; be added to the hallucination taxonomy in nanonets_context.md, alongside phantom rows, repetition loops, and structural hallucinations?</p>
-    <p class="question-context">arXiv:2607.16094 (ACM Multimedia 2026) identifies language-prior dominance as a failure mode distinct from grounding failure and reasoning failure. For templated document types (invoices, purchase orders, ID forms) where field labels are highly predictable, this mode may explain a class of OCR-3 errors the current taxonomy does not capture.</p>
+    <p class="question-text">Should the team request early access to Gemini 4 Argon through Google&#39;s Fairwind Program or wait for the paid API rollout?</p>
+    <p class="question-context">Gemini 4 Argon was announced Sep 30, 2026, with access limited to vetted cyber-defense organizations. No document-specific benchmark scores are yet published. The window between announcement and general API availability is when third-party comparisons establish developer positioning; controlling when OCR-3&#39;s comparison against Argon first appears publicly would be strategically valuable given OCR-3&#39;s current #1 standing on IDP Leaderboard.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should a proactive benchmark run of OCR-3 against Gemini 4 be planned for the first week after Gemini 4&#39;s release, rather than waiting for third-party comparisons to establish the narrative?</p>
-    <p class="question-context">Prior competitive cadence has been reactive. Gemini 4 entering post-training with a &#39;as soon as possible&#39; release target implies a potential October-November 2026 release. OmniDocBench and IDP Leaderboard submission windows are short; controlling when OCR-3&#39;s comparison against Gemini 4 first appears publicly would be strategically valuable given OCR-3&#39;s current #1 standing.</p>
+    <p class="question-text">Does OCR-3 exhibit chart-degradation on long documents (50+ pages) on its /vqa endpoint, matching the pattern SynthDocBench documents across frontier VLMs?</p>
+    <p class="question-context">SynthDocBench (arXiv:2607.10400) finds consistent chart-understanding degradation on long-document settings across all evaluated frontier VLMs — including models of comparable scale to OCR-3. If this pattern holds for OCR-3, the benchmark could be used as a diagnostic rather than a comparative ranking, and the finding would sharpen the team&#39;s research agenda on multi-page document hallucinations.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -260,7 +213,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered: arxiv, rss    · failed: 2 · built at 2026-10-01T18:30:00+00:00
+    sources covered:     · failed: 4 · built at 2026-10-02T01:00:00+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>
