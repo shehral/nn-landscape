@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Oct 02, 2026 · 01:00 UTC · 4 items scored</span>
+  <span class="built-at">Built Oct 02, 2026 · 07:03 UTC · 2 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -53,73 +53,44 @@
 <section class="brief" aria-label="Today's brief">
   <h2>Patterns this build</h2>
   <ul>
-    <li>Independent document-parser benchmarks are proliferating as a procurement-influence strategy: OpenBenchmarks, SynthDocBench, LegalParseQA, ExtractBench, and RealDoc-Bench have all appeared within two months. The format — transparent methodology, open test sets, no vendor sponsorship — sets a credibility bar that vendor-run benchmarks cannot meet, and their results shape developer defaults before vendors can respond.</li>
-    <li>MCP is emerging as a parallel distribution channel for document AI services. Unstructured Transform MCP (July 2026) positions document parsing as a native agent capability, competing on integration convenience rather than accuracy — a different axis than traditional API pricing comparisons.</li>
-    <li>Frontier lab models continue entering limited-access tiers before API availability: Gemini 4 Argon follows GPT-6 Astra&#39;s pattern (limited-partner preview → paid API rollout). The window between announcement and general API availability is when third-party benchmarks establish default positioning — OCR-3 needs comparison data ready at API launch, not afterward.</li>
-    <li>OCR-3 is absent from multiple independent benchmarks now shaping enterprise procurement narratives: OpenBenchmarks legal parser (Sep 27), ExtractBench (LlamaIndex, July 2026), and LongExtractBench (Reducto-run, July 2026) none of them include OCR-3 in the tested set. The compounding absence across independent benchmarks risks establishing a market narrative without OCR-3 data.</li>
+    <li>Document extraction grounding is now a headline benchmark metric: LlamaIndex Extract v2.5 leads with 46.8→80.6 grounding F1, while arXiv:2609.38282 frames the same problem as visual-evidence faithfulness in post-training.</li>
+    <li>Product and research are converging on the same failure mode — VLMs defaulting to linguistic priors over visual evidence — approached from opposite ends: distillation gating in training (GAD-RL) and structural reasoning with cross-page context at inference time (LlamaIndex Extract v2.5).</li>
   </ul>
 </section>
 
 <section class="axes" aria-label="Items by axis">
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
-      <p class="item-summary">No top-N items this build.</p>
-  </div>
-  <div class="axis-col" data-axis="doc_ai">
-    <h2>Document AI</h2>
 <article class="item "
          data-source="arxiv"
          data-score="56">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 4 · competitive 2 · frontier 1 · vlm_research 3 = 56 (this view's weighting)">56</span>
+          title="doc_ai 2 · competitive 0 · frontier 1 · vlm_research 5 = 56 (this view's weighting)">56</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 40%"></span><span style="height: 20%"></span><span style="height: 60%"></span>
+      <span style="height: 40%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 100%"></span>
     </span>
     <span class="item-source">arxiv</span>
   </div>
   <p class="item-title">
-    <a href="https://arxiv.org/abs/2607.10400" target="_blank" rel="nofollow noopener noreferrer">SynthDocBench: Controlled Benchmark for Long-Context Visual Document Understanding</a>
+    <a href="https://arxiv.org/abs/2609.38282" target="_blank" rel="nofollow noopener noreferrer">Improving OCR Faithfulness via Gated and Attenuated On-Policy Distillation</a>
   </p>
-  <p class="item-summary">SynthDocBench (arXiv:2607.10400): 200 synthetic 51-page reports, 1,788 Qs; exposes lost-in-middle bias and chart degradation as consistent frontier-VLM failure modes.</p>
+  <p class="item-summary">GAD-RL gates teacher distillation during OCR post-training when task reward is high; +8.45pp Micro Recall on CHAOS-Bench over GRPO on Qwen3.5-2B.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>The benchmark quantifies lost-in-middle degradation and chart-reading failure on documents past 50 pages — failure modes directly relevant to OCR-3 on enterprise invoice bundles and multi-page regulatory filings. The controlled combinatorial design (length, layout, modality varied independently) makes it a diagnostic tool rather than a comparative ranking, so results do not immediately place OCR-3 in a table.</dd>
+      <dd>GAD-RL&#39;s distillation gate addresses the same visual-prior conflict underlying Nanonets&#39; phantom-row failures; the +8.45pp recall improvement on CHAOS-Bench is a meaningful signal for evaluating the post-training stack.</dd>
       <dt>Research</dt>
-      <dd>The three documented failure modes — positional bias, chart degradation, reasoning-complexity degradation — map onto hallucination subtypes the team already tracks. The synthetic generation pipeline (LLM-driven, six layout archetypes, 40% random layout override) could be adapted to extend the phantom-row evaluation set to longer multi-page documents.</dd>
+      <dd>The conditional gate mechanism (disable distillation when task reward ≥ 0.95) is a reusable post-training protocol for OCR faithfulness; CHAOS-Bench should be evaluated against the team&#39;s existing hallucination benchmarks to determine overlap.</dd>
       <dt>Action</dt>
-      <dd>read in week</dd>
+      <dd>reproduce</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: vlm_research</p>
-</article><article class="item "
-         data-source="hn"
-         data-score="30">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 4 · competitive 3 · frontier 0 · vlm_research 0 = 30 (this view's weighting)">30</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 80%"></span><span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">hn</span>
-  </div>
-  <p class="item-title">
-    <a href="https://openbenchmarks.com/document-processing/best-document-parsers-for-legal-rag" target="_blank" rel="nofollow noopener noreferrer">Best Document Parsers for Legal RAG, Independently Benchmarked, 2026</a>
-  </p>
-  <p class="item-summary">OpenBenchmarks (updated Sep 27): LlamaParse agentic leads 6 parsers at 80.0% on 94 redlined contracts; Reducto 2nd at 78.7%; OCR-3 absent from tested set.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>OCR-3 is absent from this benchmark, which is methodology-transparent (open test set, no vendor sponsorship, independent answer key from tracked Word changes) and will likely be cited in enterprise legal procurement. LlamaParse leads at 80.0% and Reducto second at 78.7%; the gap to the task ceiling (91.9% with perfect redline labeling) shows room for improvement and gives OCR-3 a differentiated entry point if submitted.</dd>
-      <dt>Research</dt>
-      <dd>No direct research implication. Redline-aware parsing tests strikethrough detection, a structural hallucination pattern — missed strikethroughs appear as live contract language to downstream systems.</dd>
-      <dt>Action</dt>
-      <dd>investigate</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: competitive</p>
 </article>  </div>
+  <div class="axis-col" data-axis="doc_ai">
+    <h2>Document AI</h2>
+      <p class="item-summary">No top-N items this build.</p>
+  </div>
   <div class="axis-col" data-axis="frontier">
     <h2>Frontier</h2>
       <p class="item-summary">No top-N items this build.</p>
@@ -128,56 +99,29 @@
     <h2>Competitive</h2>
 <article class="item "
          data-source="rss"
-         data-score="52">
+         data-score="28">
   <div class="item-meta">
     <span class="item-score"
-          title="doc_ai 3 · competitive 5 · frontier 4 · vlm_research 1 = 52 (this view's weighting)">52</span>
+          title="doc_ai 3 · competitive 5 · frontier 0 · vlm_research 0 = 28 (this view's weighting)">28</span>
     <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 80%"></span><span style="height: 20%"></span>
+      <span style="height: 60%"></span><span style="height: 100%"></span><span style="height: 0%"></span><span style="height: 0%"></span>
     </span>
     <span class="item-source">rss</span>
   </div>
   <p class="item-title">
-    <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" target="_blank" rel="nofollow noopener noreferrer">Gemini 4 Argon: our next era of frontier intelligence</a>
+    <a href="https://www.unite.ai/llamaindex-launches-extract-v2-5-with-accuracy-and-grounding-gains/" target="_blank" rel="nofollow noopener noreferrer">LlamaIndex Launches Extract v2.5 With Accuracy and Grounding Gains</a>
   </p>
-  <p class="item-summary">Google Gemini 4 Argon (Sep 30): multimodal MoE, beats GPT-6 Astra/Opus 5.5 on 13/19 benchmarks; $2/$10/MTok; limited Fairwind Program access only.</p>
+  <p class="item-summary">LlamaIndex Extract v2.5 raises structured extraction benchmarks with grounding F1 improving 46.8→80.6; supports schemas up to 3,200 fields.</p>
   <div class="framing">
     <dl>
       <dt>Product</dt>
-      <dd>Argon&#39;s confirmed chart, document, and video analysis capabilities place it directly on OCR-3&#39;s extraction surface; no IDP Leaderboard or OmniDocBench scores published yet, but Google claims wins over GPT-6 Astra and Claude Opus 5.5 on 13 of 19 benchmarks. Access is currently limited to vetted organizations via the Fairwind Program, with paid API expected to follow — creating a window to benchmark OCR-3 against it before developer positioning solidifies.</dd>
+      <dd>LlamaIndex Extract v2.5 benchmarks directly against Nanonets&#39; structured extraction tier; grounding F1 of 80.6 (up from 46.8) and 3,200-field schema support are claims that will surface in enterprise competitive evaluations. Customers comparing multi-source extraction pipelines will cite these numbers.</dd>
       <dt>Research</dt>
-      <dd>No architecture or training details disclosed. If document parsing benchmark scores surface on IDP Leaderboard or ParseBench, they establish the next frontier comparison baseline for the team&#39;s VLM hallucination evaluations.</dd>
+      <dd>The Structural Reasoning capability and cross-page context referencing address the same document coherence problem the team is studying; ExtractBench dataset and evaluation protocol are worth examining as a secondary public benchmark.</dd>
       <dt>Action</dt>
       <dd>monitor</dd>
     </dl>
   </div>
-  <p class="secondary-axes">also: frontier</p>
-</article><article class="item "
-         data-source="rss"
-         data-score="30">
-  <div class="item-meta">
-    <span class="item-score"
-          title="doc_ai 3 · competitive 4 · frontier 1 · vlm_research 0 = 30 (this view's weighting)">30</span>
-    <span class="sparkline" aria-hidden="true">
-      <span style="height: 60%"></span><span style="height: 80%"></span><span style="height: 20%"></span><span style="height: 0%"></span>
-    </span>
-    <span class="item-source">rss</span>
-  </div>
-  <p class="item-title">
-    <a href="https://unstructured.io/blog/introducing-unstructured-transform-mcp" target="_blank" rel="nofollow noopener noreferrer">Introducing Unstructured Transform MCP for AI Agents</a>
-  </p>
-  <p class="item-summary">Unstructured launches Transform MCP (Jul 9, 2026): MCP-native document parsing across 60+ formats, claims #1 on 4 benchmarks; integrates with Claude, Codex, Cursor, Devin.</p>
-  <div class="framing">
-    <dl>
-      <dt>Product</dt>
-      <dd>Unstructured&#39;s MCP server gives agent builders a low-integration-cost path to document parsing across 60+ formats, positioning against OCR-3&#39;s Agentic Data Extraction API in LangChain and LlamaIndex pipelines. The MCP distribution channel bypasses direct API integration, which is the layer where OCR-3&#39;s `/parse` and `/extract` endpoints compete.</dd>
-      <dt>Research</dt>
-      <dd>No direct research implication.</dd>
-      <dt>Action</dt>
-      <dd>monitor</dd>
-    </dl>
-  </div>
-  <p class="secondary-axes">also: doc_ai</p>
 </article>  </div>
 </section>
 
@@ -190,18 +134,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">Should OCR-3 be submitted to the OpenBenchmarks legal parser benchmark (updated Sep 27, 2026)?</p>
-    <p class="question-context">The benchmark covers 94 redlined contracts and 1,500 questions with an independent answer key; methodology is public. LlamaParse agentic leads at 80.0%, Reducto second at 78.7%, task ceiling at 91.9%. OCR-3 is absent. This benchmark is likely to be cited in enterprise legal procurement. Three prior builds raised OCR-3&#39;s absence from independent benchmarks (ExtractBench, ParseBench, LongExtractBench) without receiving an answer.</p>
+    <p class="question-text">Should the build cadence drop from 6-hour to 12-hour?</p>
+    <p class="question-context">Thin build (2 items). Proxy blocks and seen.json exhaustion are producing near-empty editions at 6-hour cadence; RSS and GitHub sources need more time to accumulate unseen content between runs.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the team request early access to Gemini 4 Argon through Google&#39;s Fairwind Program or wait for the paid API rollout?</p>
-    <p class="question-context">Gemini 4 Argon was announced Sep 30, 2026, with access limited to vetted cyber-defense organizations. No document-specific benchmark scores are yet published. The window between announcement and general API availability is when third-party comparisons establish developer positioning; controlling when OCR-3&#39;s comparison against Argon first appears publicly would be strategically valuable given OCR-3&#39;s current #1 standing on IDP Leaderboard.</p>
+    <p class="question-text">Should the WebSearch fallback be formalized in the CLI with a dedicated search budget?</p>
+    <p class="question-context">This is the 69th+ consecutive build using ad-hoc WebSearch since proxy blocks began July 7, 2026. The manual fallback is fragile and depends on the editorial agent improvising search terms each run.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Does OCR-3 exhibit chart-degradation on long documents (50+ pages) on its /vqa endpoint, matching the pattern SynthDocBench documents across frontier VLMs?</p>
-    <p class="question-context">SynthDocBench (arXiv:2607.10400) finds consistent chart-understanding degradation on long-document settings across all evaluated frontier VLMs — including models of comparable scale to OCR-3. If this pattern holds for OCR-3, the benchmark could be used as a diagnostic rather than a comparative ranking, and the finding would sharpen the team&#39;s research agenda on multi-page document hallucinations.</p>
+    <p class="question-text">Is CHAOS-Bench in the team&#39;s evaluation suite?</p>
+    <p class="question-context">arXiv:2609.38282 uses CHAOS-Bench as its primary OCR faithfulness benchmark. If the team plans to reproduce GAD-RL results, confirming whether CHAOS-Bench overlaps with existing hallucination benchmarks would scope the effort.</p>
+    <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
+  </div>
+  <div class="question">
+    <p class="question-text">Is ExtractBench (LlamaIndex Extract&#39;s benchmark) publicly accessible and comparable to Nanonets&#39; internal benchmarks?</p>
+    <p class="question-context">LlamaIndex Extract v2.5 uses ExtractBench F1 as its headline metric. If the dataset is public, it would be a useful external validation point for Nanonets&#39; structured extraction capabilities.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -213,7 +162,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-10-02T01:00:00+00:00
+    sources covered: rss, arxiv    · failed: 3 · built at 2026-10-02T07:03:52+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

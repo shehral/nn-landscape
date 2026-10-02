@@ -13995,3 +13995,31 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-02T07:03:52+00:00 (audit: partial)
+
+### Q: Should the build cadence drop from 6-hour to 12-hour?
+
+**Context:** Thin build (2 items). Proxy blocks and seen.json exhaustion are producing near-empty editions at 6-hour cadence; RSS and GitHub sources need more time to accumulate unseen content between runs.
+
+**Answer:** _add reply here_
+
+### Q: Should the WebSearch fallback be formalized in the CLI with a dedicated search budget?
+
+**Context:** This is the 69th+ consecutive build using ad-hoc WebSearch since proxy blocks began July 7, 2026. The manual fallback is fragile and depends on the editorial agent improvising search terms each run.
+
+**Answer:** _add reply here_
+
+### Q: Is CHAOS-Bench in the team's evaluation suite?
+
+**Context:** arXiv:2609.38282 uses CHAOS-Bench as its primary OCR faithfulness benchmark. If the team plans to reproduce GAD-RL results, confirming whether CHAOS-Bench overlaps with existing hallucination benchmarks would scope the effort.
+
+**Answer:** _add reply here_
+
+### Q: Is ExtractBench (LlamaIndex Extract's benchmark) publicly accessible and comparable to Nanonets' internal benchmarks?
+
+**Context:** LlamaIndex Extract v2.5 uses ExtractBench F1 as its headline metric. If the dataset is public, it would be a useful external validation point for Nanonets' structured extraction capabilities.
+
+**Answer:** _add reply here_
+
+---
