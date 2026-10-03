@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" class="current">Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Oct 03, 2026 · 06:54 UTC · 0 items scored</span>
+  <span class="built-at">Built Oct 03, 2026 · 12:55 UTC · 0 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -79,18 +79,18 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">All four sources failed this build — the first total-failure build in the log. Is the RSS window filter too narrow, or did the feeds change?</p>
-    <p class="question-context">Previous builds showed github_trending and RSS as the only surviving sources after arxiv/HN 403s. This build returned zero items from all four. The RSS failure message was &#39;no items in current window&#39;, suggesting a time-window configuration mismatch rather than a network block — but the github_trending failure is the same message, which is unusual.</p>
+    <p class="question-text">The arXiv and HN sources have returned 403 errors across multiple consecutive builds. Is the outbound proxy configuration intentionally blocking HTTP (non-HTTPS) traffic, and should the ingest URLs be updated to HTTPS?</p>
+    <p class="question-context">The arxiv API URL in sources.yaml uses http://export.arxiv.org/; the proxy CA bundle is configured for HTTPS. At least 4 of the last 6 builds have had 0 items from arxiv and HN due to 403 errors. Switching to https://export.arxiv.org/ may resolve the arxiv failure; the HN Algolia endpoint also uses http in some client configurations.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">The arxiv and HN 403 errors have now persisted for 15+ consecutive builds with no team action confirmed. Should the pipeline switch to Semantic Scholar or the HN Firebase API before the next scheduled build?</p>
-    <p class="question-context">Prior questions raised OAI-PMH (build 2026-05-22T00:17:49) and Semantic Scholar (build 2026-05-22T18:17:11) as alternatives, both unanswered. With all sources now failing, the vlm_research and doc_ai axes have no coverage at all. Each build without arXiv degrades the research signal; a complete blackout has no editorial value.</p>
+    <p class="question-text">The RSS and GitHub trending sources are returning &#39;no items in current window&#39; rather than 403 errors. Is the lookback window configuration appropriate given the 6-hour build cadence, or are the feeds genuinely quiet?</p>
+    <p class="question-context">RSS and GitHub trending fail silently with a &#39;no items&#39; result rather than a network error. This may indicate the time-window filter is set too tightly (e.g., only accepting items from the last N hours when the 6-hour cron sometimes runs late), or that the configured RSS feeds have low posting frequency. Widening the RSS window slightly (e.g., to 24 hours with dedup preventing re-surfacing) would reduce the chance of a fully-empty build.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">Should the github_trending source configuration increase days_back from 1 to 3 to reduce the chance of empty windows?</p>
-    <p class="question-context">github_trending with days_back=1 returned no items this build. Widening the window to 3 days would match the HN days_back setting and reduce blackout risk on quiet days. The tradeoff is surfacing older items that prior builds may have already seen — but dedup handles this.</p>
+    <p class="question-text">Should the build playbook define a minimum-item threshold below which the build is considered a hard abort (no render, no publish) rather than a soft partial build?</p>
+    <p class="question-context">A render of 0 items produces an empty dashboard that could mislead readers into thinking nothing is happening in the space. Four consecutive partial builds with 0 items suggest the current &#39;always render&#39; policy may need a floor (e.g., abort if 0 items AND all 4 sources failed). The alternative is a static &#39;last good edition&#39; page with a staleness banner.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -102,7 +102,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-10-03T06:54:52.808512+00:00
+    sources covered:     · failed: 4 · built at 2026-10-03T12:55:31+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

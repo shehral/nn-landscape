@@ -14117,3 +14117,25 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-03T12:55:31+00:00 (audit: partial)
+
+### Q: The arXiv and HN sources have returned 403 errors across multiple consecutive builds. Is the outbound proxy configuration intentionally blocking HTTP (non-HTTPS) traffic, and should the ingest URLs be updated to HTTPS?
+
+**Context:** The arxiv API URL in sources.yaml uses http://export.arxiv.org/; the proxy CA bundle is configured for HTTPS. At least 4 of the last 6 builds have had 0 items from arxiv and HN due to 403 errors. Switching to https://export.arxiv.org/ may resolve the arxiv failure; the HN Algolia endpoint also uses http in some client configurations.
+
+**Answer:** _add reply here_
+
+### Q: The RSS and GitHub trending sources are returning 'no items in current window' rather than 403 errors. Is the lookback window configuration appropriate given the 6-hour build cadence, or are the feeds genuinely quiet?
+
+**Context:** RSS and GitHub trending fail silently with a 'no items' result rather than a network error. This may indicate the time-window filter is set too tightly (e.g., only accepting items from the last N hours when the 6-hour cron sometimes runs late), or that the configured RSS feeds have low posting frequency. Widening the RSS window slightly (e.g., to 24 hours with dedup preventing re-surfacing) would reduce the chance of a fully-empty build.
+
+**Answer:** _add reply here_
+
+### Q: Should the build playbook define a minimum-item threshold below which the build is considered a hard abort (no render, no publish) rather than a soft partial build?
+
+**Context:** A render of 0 items produces an empty dashboard that could mislead readers into thinking nothing is happening in the space. Four consecutive partial builds with 0 items suggest the current 'always render' policy may need a floor (e.g., abort if 0 items AND all 4 sources failed). The alternative is a static 'last good edition' page with a staleness banner.
+
+**Answer:** _add reply here_
+
+---
