@@ -14095,3 +14095,25 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-03T06:54:52.808512+00:00 (audit: partial)
+
+### Q: All four sources failed this build — the first total-failure build in the log. Is the RSS window filter too narrow, or did the feeds change?
+
+**Context:** Previous builds showed github_trending and RSS as the only surviving sources after arxiv/HN 403s. This build returned zero items from all four. The RSS failure message was 'no items in current window', suggesting a time-window configuration mismatch rather than a network block — but the github_trending failure is the same message, which is unusual.
+
+**Answer:** _add reply here_
+
+### Q: The arxiv and HN 403 errors have now persisted for 15+ consecutive builds with no team action confirmed. Should the pipeline switch to Semantic Scholar or the HN Firebase API before the next scheduled build?
+
+**Context:** Prior questions raised OAI-PMH (build 2026-05-22T00:17:49) and Semantic Scholar (build 2026-05-22T18:17:11) as alternatives, both unanswered. With all sources now failing, the vlm_research and doc_ai axes have no coverage at all. Each build without arXiv degrades the research signal; a complete blackout has no editorial value.
+
+**Answer:** _add reply here_
+
+### Q: Should the github_trending source configuration increase days_back from 1 to 3 to reduce the chance of empty windows?
+
+**Context:** github_trending with days_back=1 returned no items this build. Widening the window to 3 days would match the HN days_back setting and reduce blackout risk on quiet days. The tradeoff is surfacing older items that prior builds may have already seen — but dedup handles this.
+
+**Answer:** _add reply here_
+
+---
