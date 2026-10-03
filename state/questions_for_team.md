@@ -14073,3 +14073,25 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-03T01:00:20+00:00 (audit: partial)
+
+### Q: Does Cohere Embed 5's multimodal retrieval capability (text + PDF pages in a shared vector space, leading ViDoRe V3) represent a competitive signal for Nanonets' Agentic Data Extraction pipeline customers who combine extraction with retrieval?
+
+**Context:** Cohere Embed 5 (announced Oct 2, 2026) handles document pages as embeddings alongside text, enabling retrieval without OCR pre-processing. For customers using Nanonets extraction as a preprocessing step before vector search, a retrieval model that accepts PDF pages natively could reduce the need for an upstream extraction step. Clarifying whether this is a tracking-worthy competitive signal would help scope future builds.
+
+**Answer:** _add reply here_
+
+### Q: With Gemini 4 Argon limited to vetted cyber teams (no IDP/OmniDocBench scores yet) and GPT-6.1 Sol's vision improvements unscored on document benchmarks, is October 2026 the practical window to submit OCR-3 to independent benchmarks before these models establish their document-extraction baseline?
+
+**Context:** Three recent model releases (Gemini 4 Argon, GPT-6.1 Sol, Claude Sonnet 5.5) all have vision improvements but no published IDP Leaderboard or OmniDocBench scores. The window before third-party comparisons appear is typically 2-6 weeks. OCR-3 is currently absent from ExtractBench, LlamaIndex's ParseBench, LongExtractBench, and OpenBenchmarks legal-parser benchmark. Prior builds raised each benchmark separately; this question is about the combined timing window.
+
+**Answer:** _add reply here_
+
+### Q: Is there a known document-AI development from early October 2026 that did not surface through public web search — for example, a private partnership, a conference paper not yet indexed, or an internal evaluation — that should be added to the context file?
+
+**Context:** This is the 73rd+ consecutive build where native ingest returned 0 items. WebSearch fallback found 1 new item (Cohere Embed 5) for this cycle. If there are known developments the team expects to appear in the dashboard but are not surfacing, identifying the source would help the editorial agent calibrate coverage and surface gaps proactively.
+
+**Answer:** _add reply here_
+
+---
