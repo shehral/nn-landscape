@@ -14139,3 +14139,25 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-03T18:59:22+00:00 (audit: partial)
+
+### Q: TeleOCR 1.2B claims 96.87 on OmniDocBench v1.6, above OCR-3's 90.5 on an earlier benchmark version. Is there a plan to run OCR-3 against v1.6 to establish whether a real gap exists or whether the scores are not comparable across versions?
+
+**Context:** OmniDocBench v1.5, v1.6, and v1.7 use different document sets and evaluation protocols; prior context.md notes that scores across versions are not directly comparable. Without an OCR-3 v1.6 score, TeleOCR's 96.87 vs OCR-3's 90.5 headline comparison will circulate without correction.
+
+**Answer:** _add reply here_
+
+### Q: IDP Leaderboard shows Gemini 3.1 Pro leading at 83.2 overall, while OCR-3 is cited at 85.9 — is this ordering consistent with the current live leaderboard, or has the leaderboard been updated since the last context refresh?
+
+**Context:** The Damus post cites 83.2 for Gemini 3.1 Pro as the leader across 16 VLMs, while the prior context confirms OCR-3 at 85.9 as #1. If the leaderboard was refreshed and now places a competitor above OCR-3, the nanonets_context.md ranking claim is stale.
+
+**Answer:** _add reply here_
+
+### Q: This is the 75th+ consecutive build where native ingest returned 0 items. Should the build playbook define a minimum-item threshold below which the edition is suppressed rather than published with a partial-build banner?
+
+**Context:** Editions with 2-5 WebSearch items have limited editorial value relative to the token cost per run. A configurable floor (e.g., 8 items) would prevent near-empty editions from reaching the DL team and Prathamesh without a meaningful signal.
+
+**Answer:** _add reply here_
+
+---
