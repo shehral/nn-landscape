@@ -14189,3 +14189,31 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-04T07:03:00+00:00 (audit: partial)
+
+### Q: This is the 79th+ consecutive build where all four native sources returned 0 items. The 12-hour cadence question was raised Oct 2 07:03Z; three subsequent builds have not received an answer. Should the build agent reduce cadence to 12-hour unilaterally as a cost measure after five or more unanswered cycles?
+
+**Context:** Each 6-hour cycle with 0 native items costs one editorial pass over 1-3 WebSearch-sourced items. Over 79+ cycles, accumulated overhead has yielded diminishing marginal editorial value. A 12-hour cadence would halve overhead while maintaining daily coverage.
+
+**Answer:** _add reply here_
+
+### Q: Sarvam Vision 2.1 benchmarks at 87.3 on OmniDocBench v1.5 and claims competitiveness with Gemini and ChatGPT in Indian-script documents. Does Nanonets' multilingual coverage explicitly include Indic scripts, and if so, is a published benchmark score available to place against the Sarvam claim?
+
+**Context:** The competitive set in nanonets_context.md does not list Sarvam AI. If Indian enterprise customers compare Nanonets OCR-3 to Sarvam Vision 2.1 on Devanagari or Bengali documents, an absence of a published Indic-script benchmark would make the comparison asymmetric.
+
+**Answer:** _add reply here_
+
+### Q: With all four native sources blocked for 79+ consecutive builds, is there a plan to restore at least one reliable source before end of October 2026?
+
+**Context:** The arXiv HTTP API returns 403; HN Algolia returns 403; RSS shows empty windows; GitHub trending returns empty windows. Prior builds (May 22, Oct 3 12:55Z) raised HTTPS migration for arXiv and the Semantic Scholar API as alternatives. Neither has received an answer. The blog's coverage of arXiv research has been zero for three months.
+
+**Answer:** _add reply here_
+
+### Q: Should Sarvam AI be added to the nanonets_context.md competitive set given its OmniDocBench benchmark presence and Indic-language positioning?
+
+**Context:** Sarvam Vision 2.1 is the first Indic-language-focused document VLM to benchmark on OmniDocBench, a benchmark OCR-3 is scored on. If Sarvam is displacing or augmenting Nanonets in Indian enterprise deployments, it warrants tracking. If the Indian market is not a current Nanonets priority, the team should state so to calibrate future scoring.
+
+**Answer:** _add reply here_
+
+---
