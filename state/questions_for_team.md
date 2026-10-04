@@ -14161,3 +14161,31 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-04T01:00:00+00:00 (audit: partial)
+
+### Q: PaddleOCR-VL (arXiv:2510.14528) scores 92.86 on OmniDocBench v1.5, while the PaddleOCR-VL-1.6 listed in context.md scored 96.33 on v1.6. Are these the same model family or a distinct variant? The discrepancy should be clarified before the context.md competitive entry is updated.
+
+**Context:** OmniDocBench v1.5 and v1.6 scores are not directly comparable per context.md. The arXiv paper (2510.14528) describes a NaViT + ERNIE-4.5-0.3B architecture with no mention of v1.6 scoring. If the paper formalizes a different model than PaddleOCR-VL-1.6, context.md needs a separate entry.
+
+**Answer:** _add reply here_
+
+### Q: This is the 78th+ consecutive build where all four native sources returned 0 items. The 12-hour cadence question was first raised Oct 2 07:03Z; 3 builds since then have received no answer. Does the team wish the build agent to reduce cadence to 12-hour unilaterally as a cost-reduction measure pending a policy decision?
+
+**Context:** Each 6-hour cycle with 0 native items requires an editorial pass over WebSearch-sourced items. Over 78+ cycles, the accumulated overhead yields minimal compounding editorial benefit. The 'always publish' policy with a partial-build banner has been in effect for every cycle since early July 2026.
+
+**Answer:** _add reply here_
+
+### Q: Is Alibaba's 'Logics Team' (the Logics-Parsing paper authors) the same group responsible for Qwen3-VL, or a separate enterprise-products team at Alibaba Group?
+
+**Context:** The competitive signal from Logics-Parsing depends on whether it feeds into public model releases (Qwen3-VL family, listed in context.md) or remains an internal enterprise product. Clarifying provenance would determine whether the paper warrants updating context.md or just monitoring.
+
+**Answer:** _add reply here_
+
+### Q: OCR-3's absence from OmniDocBench v1.6 scoring means that TeleOCR (96.87), OvisOCR2 (96.58), and MinerU2.5-Pro (95.69) — all surfaced in recent builds — circulate without an OCR-3 counterpoint on v1.6. Is there a plan to submit OCR-3 to OmniDocBench v1.6 before the leaderboard impression solidifies?
+
+**Context:** Three prior builds (Sep 18, Sep 20, Oct 3) surfaced models with v1.6 scores exceeding OCR-3's v1.5 score of 90.5. While scores across benchmark versions are not comparable per context.md, the headline comparisons in developer communities do not include this caveat. OCR-3's IDP Leaderboard #1 standing remains uncontested but OmniDocBench v1.6 has emerged as an independent evaluation surface.
+
+**Answer:** _add reply here_
+
+---
