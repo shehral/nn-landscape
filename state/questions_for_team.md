@@ -14245,3 +14245,25 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-04T19:02:50.095501+00:00 (audit: partial)
+
+### Q: Should Xiaomi be added to the nanonets_context.md competitive set given its OCR-0 paper, or is it classified as a research publication from a non-document-AI company?
+
+**Context:** Xiaomi is a consumer electronics and tech company, not a dedicated document-AI vendor. Xiaomi-OCR-0 (arXiv:2609.36136) introduces a structure-recognition-relation paradigm but has no published OmniDocBench or IDP Leaderboard scores. Whether Xiaomi is building a commercial OCR product or publishing research determines the appropriate tracking threshold for future builds.
+
+**Answer:** _add reply here_
+
+### Q: Has the research team assessed whether the GRPO-trained uncertainty-tagging approach from 'Teaching VLMs to Admit Uncertainty in OCR from Lossy Visual Inputs' (ICLR 2026) generalizes to document-structured outputs such as table cells or extracted fields?
+
+**Context:** The paper demonstrates uncertainty signaling on natural scene text and standard OCR datasets. If the method generalizes to structured document extraction outputs, it could serve as a lightweight quality signal for OCR-3's extraction endpoints on degraded documents (stamped forms, faxed invoices) without requiring a secondary model call. If it does not generalize, knowing this early avoids reproduction time.
+
+**Answer:** _add reply here_
+
+### Q: With Anthropic's IPO S-1 filed and first operating profit confirmed, has the team modeled how a potential post-IPO pricing shift on Claude APIs would affect the cost of any internal evaluation workflows that use Claude-family models as judges or comparison baselines?
+
+**Context:** Several document-benchmark evaluations use Claude-family models as comparison systems. Anthropic has explicitly stated it does not expect to sustain Q2 2026 profitability in subsequent quarters due to planned infrastructure spending; however, IPO price discovery and public-company margin expectations could still shift API pricing. This is a one-time planning question, not a monitoring item.
+
+**Answer:** _add reply here_
+
+---
