@@ -51,7 +51,7 @@ The team also publicly maintains the **IDP Leaderboard**
 (`idp-leaderboard.org` / `benchmarking.nanonets.com`), an academic
 benchmark on document AI co-developed with IIT Indore. Items that
 publish leaderboard results, contest its methodology, or are released by
-models near the top of it (GPT-5.4, GPT-5.5, GPT-5.6 Sol/Terra/Luna, GPT-6 Astra, GPT-6 Sol, GPT-6 Luna,
+models near the top of it (GPT-5.4, GPT-5.5, GPT-5.6 Sol/Terra/Luna, GPT-6 Astra, GPT-6 Sol, GPT-6 Luna, GPT-6.1 Sol,
 Gemini-3-Pro/Flash, Gemini 3.1 Pro, Gemini 3.5 Flash, Gemini 3.6 Flash, Gemini 3.8 Flash,
 Claude 4.6 family, Claude Fable 5, Claude Fable 5.1, Claude Mythos 5.1, Claude Sonnet 5,
 Claude Opus 4.8, Claude Opus 5, Claude Opus 5.5, Qwen3-VL, Qwen3.8-Max, Pixtral, GLM-OCR, Chandra OCR 2,
@@ -332,7 +332,12 @@ Examples that are **competitive-primary**:
   output; Sol at $2/$10 per million tokens (balance of intelligence and cost);
   Luna at $0.10/$0.50 per million tokens (high-volume efficient tier); API
   prices 50% lower than their GPT-5.6 counterparts; no IDP Leaderboard or
-  document-benchmark scores confirmed yet).
+  document-benchmark scores confirmed yet; GPT-6.1 Sol (September 29, 2026;
+  model ID gpt-6.1-sol) is a mid-tier reasoning model positioned as an upgrade
+  to GPT-6 Sol for agentic coding, computer use, and professional work; text
+  and image input; 1.05M-token context; 128K output; $2.60/$13.00 per million
+  input/output tokens; no IDP Leaderboard or document-benchmark scores
+  confirmed yet).
 - Mistral OCR is updated with new accuracy or pricing (Mistral OCR 4
   released June 23, 2026).
 - xAI ships Grok vision document handling; the Grok Collections API
@@ -1940,3 +1945,73 @@ not an extraction-API competitor; no change to competitive classification.
 - Mistral OCR 4.1, Reducto r-1, and all other competitive set entries
   confirmed current. No new entrants identified in the OCR/document-AI
   market this week.
+
+---
+
+**Date:** 2026-10-04
+
+**Sources consulted:**
+
+- WebSearch: "Nanonets OCR-3 IDP leaderboard October 2026 ranking" —
+  #1 at 85.9% confirmed unchanged (29 models evaluated); 87.4 OLM-OCR
+  and 90.5 OmniDocBench confirmed current; idp-leaderboard.org and
+  benchmarking.nanonets.com URLs confirmed resolving
+- WebSearch: "site:huggingface.co/nanonets 2026" — open-weight model
+  lineup unchanged (OCR-s, OCR2-3B, OCR2-1.5B-exp); OCR-3 remains
+  API-only
+- WebSearch: "nanonets arxiv 2026 research paper" — no team-authored
+  papers surfaced; Nanonets-KIE dataset referenced in third-party
+  papers (as in prior refreshes)
+- WebSearch: "Nanonets product announcement blog October 2026" — no new
+  October 2026 Nanonets product announcements indexed
+- WebSearch: "Mistral OCR new model October 2026" — no new model since
+  Mistral OCR 4.1 (full release August 13, 2026); all prior entries
+  confirmed current
+- WebSearch: "Reducto AI document processing October 2026" — Reducto r-1
+  (September 1, 2026) confirmed current; no new major October
+  announcements
+- WebSearch: "GPT-6.1 Sol OpenAI release date vision document capabilities" —
+  GPT-6.1 Sol (September 29, 2026) confirmed from vals.ai, datacamp.com,
+  ai.miraheze.org, aimlapi.com, releasebot.io (OpenAI release notes);
+  text and image input; 1.05M-token context; 128K output; $2.60/$13.00
+  per million tokens; mid-tier reasoning model in the GPT-6 family
+- WebSearch: "Anthropic Claude new model October 2026 document vision" —
+  no new models confirmed in October 2026; Claude Opus 5.5 (September
+  22, 2026) confirmed as most recent Anthropic release
+- WebSearch: "Google Gemini new model October 2026 document OCR" — no
+  new model confirmed in October 2026; Gemini 3.8 Flash (September 2,
+  2026) confirmed most recent
+- WebSearch: "xAI Grok document extraction OCR October 2026" — Grok
+  Collections API confirmed current; no new dedicated document extraction
+  product
+- WebSearch: "new OCR VLM model document AI October 2026 benchmark
+  OmniDocBench" — no new major entrants identified; PaddleOCR-VL-1.6,
+  MinerU2.5-Pro, and GLM-OCR confirmed at top of OmniDocBench v1.6
+  (96.34%, 95.75%, 95.22% respectively); market stable
+- WebSearch: "Qwen VLM new release October 2026" — no new release;
+  Qwen3.8-Max and Qwen3.8-27B confirmed current
+- WebSearch: "Chandra OCR LightOn OCR GLM-OCR DeepSeek-OCR new model
+  October 2026" — no new model versions; all confirmed operating
+- WebSearch: "LlamaParse LlamaIndex October 2026 new product" — no new
+  October 2026 products; August 2026 changelog entries (Extract Turbo
+  beta, .NET SDK) confirmed
+- WebSearch: "Rossum Docsumo ABBYY Kofax Tungsten Automation operating
+  October 2026" — all confirmed operating; no renames or closures
+- WebSearch: "Firecrawl Unstructured Docling Extend October 2026 new
+  update" — no major new product announcements; all prior entries
+  confirmed current
+
+**Material changes versus prior version (2026-09-27):**
+
+- Added **GPT-6.1 Sol** (OpenAI, September 29, 2026; model ID
+  gpt-6.1-sol) to the frontier-lab competitive-primary OpenAI example
+  and IDP Leaderboard comparables list; mid-tier reasoning model
+  positioned as upgrade to GPT-6 Sol for agentic coding, computer use,
+  and professional work; text and image input; 1.05M-token context;
+  128K output; $2.60/$13.00 per million input/output tokens; no IDP
+  Leaderboard or document-benchmark scores confirmed yet.
+- Nanonets OCR-3 #1 IDP Leaderboard ranking (85.9) confirmed unchanged.
+  No new Nanonets models on HuggingFace. No Nanonets-authored arXiv
+  papers found. No October 2026 Nanonets product announcements indexed.
+- All other competitive set members confirmed still operating; no
+  renames, closures, or significant new entrants identified this week.
