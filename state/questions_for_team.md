@@ -14217,3 +14217,31 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-04T13:10:00+00:00 (audit: partial)
+
+### Q: Jina-OCR-v1 scores 91.1 on OmniDocBench v1.6. OCR-3's published score is 90.5 on v1.5. Should OCR-3 be submitted to OmniDocBench v1.6 before a cohort of headline comparisons circulates without a v1.6 OCR-3 counterpoint?
+
+**Context:** Scores across OmniDocBench versions are not comparable per context.md. However, TeleOCR (96.91), OvisOCR2 (96.47), Jina-OCR-v1 (91.1), and PaddleOCR-VL-1.6 (96.34) have now all published v1.6 scores. In developer benchmarking discussions, the absence of an OCR-3 v1.6 score allows headline v1.6 comparisons to circulate without a correction. This question was raised in earlier builds; no answer has arrived.
+
+**Answer:** _add reply here_
+
+### Q: Jina-OCR-v1 uses GRPO with dense verifiable structural rewards (partial credit for formula, table, and structural correctness) as its post-training stage. Does OCR-3's training pipeline include a policy-optimization post-training phase with similar structural-correctness rewards?
+
+**Context:** Three OCR-VLM releases in the last two months (Jina-OCR-v1, FireRed-OCR-2B, HunyuanOCR-1.5) apply GRPO-family training to reduce structural hallucinations in tables and LaTeX. If OCR-3 does not include such a phase, this convergence signals a potential training-recipe gap. This question overlaps with a question raised in the Oct 2 07:03Z build about PolyOCR-Venus and GAD-RL; that question is unanswered.
+
+**Answer:** _add reply here_
+
+### Q: This is the 80th+ consecutive build where all four native sources returned 0 items. The 12-hour cadence question was first raised Oct 2 07:03Z and has received no answer across five subsequent builds. Should the build agent reduce cadence to 12-hour unilaterally as a cost-reduction measure?
+
+**Context:** Each 6-hour cycle with 0 native items requires one editorial pass over 1-3 WebSearch-sourced items. Over 80+ cycles, accumulated overhead yields diminishing marginal editorial value. A 12-hour cadence would halve overhead while maintaining daily coverage. Prior builds raised this question under five different phrasings; none has received an answer.
+
+**Answer:** _add reply here_
+
+### Q: Jina-OCR-v1 (jinaai/jina-ocr-v1 on HuggingFace, Sep 14, 2026) was not surfaced by any prior build despite its OmniDocBench v1.6 score and competitive positioning. Is the WebSearch fallback keyword set missing Jina AI as a monitored source?
+
+**Context:** Jina AI is not in the current sources.yaml keyword list or competitive set in context.md. Jina-OCR-v1's release preceded this build by 20 days and went undetected. Adding 'Jina AI' to the HN keyword list or RSS feeds would prevent similar gaps for Jina's future releases.
+
+**Answer:** _add reply here_
+
+---
