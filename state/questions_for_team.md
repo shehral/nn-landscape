@@ -14323,3 +14323,25 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-05T13:30:00+00:00 (audit: partial)
+
+### Q: All four native sources have been blocked for 82+ consecutive builds. The arXiv fix (changing http:// to https:// in ingest.py) was first raised October 5T00:54Z and has not been applied. Is there a scheduled fix date, or should the build agent apply the one-line code change directly?
+
+**Context:** The proxy rejects http://export.arxiv.org with 403. Changing to https://export.arxiv.org is a single-line edit to src/landscape/ingest.py. The build agent has write access to the repo. If authorized to apply it, this would likely restore arXiv coverage in the next cycle.
+
+**Answer:** _add reply here_
+
+### Q: DeepSeek-OCR 2 (arXiv:2601.20552, submitted January 28, 2026) was not surfaced until this build's WebSearch fallback — eight months after submission. With arXiv blocked since approximately May 2026, how many OCR and VLM papers from January–April 2026 were missed? A targeted backfill of arXiv:2601–2604 for document-AI keywords would quantify the gap.
+
+**Context:** The seen.json confirms 2601.20552 was not previously processed. Prior builds covering January 2026 would have relied on the native arXiv source, which failed around the same time. The January–April 2026 window spans the ACL 2026 and CVPR 2026 submission cycles.
+
+**Answer:** _add reply here_
+
+### Q: OCR-3's IDP Leaderboard #1 rank (85.9) is uncontested, but OmniDocBench v1.6 has accumulated multiple high-scoring models (TeleOCR 96.91, OvisOCR2 96.47, PaddleOCR-VL-1.6 96.34) without an OCR-3 v1.6 counterpoint. Is OCR-3 submitted to OmniDocBench v1.6, or is there a plan to submit before the v1.6 comparison cohort solidifies in developer benchmarking discussions?
+
+**Context:** Scores across OmniDocBench versions are not comparable per context.md. However, developer communities do not consistently apply this caveat, and the absence of a v1.6 score means OCR-3 is absent from the frame of reference for current comparisons. This question has been raised in three prior builds without a response.
+
+**Answer:** _add reply here_
+
+---
