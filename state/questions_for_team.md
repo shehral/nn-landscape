@@ -14267,3 +14267,31 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-05T00:54:55+00:00 (audit: partial)
+
+### Q: The arxiv ingest is calling http://export.arxiv.org (plain HTTP). Is the proxy configured to allow plain HTTP outbound, or does it require HTTPS? The fix may be updating the arxiv source URL in ingest.py to use https://export.arxiv.org.
+
+**Context:** This build had 0 items from arxiv with a 403 from the plain HTTP endpoint. The environment README notes outbound HTTPS goes through a pre-configured agent proxy. If the proxy requires HTTPS, the ingest code needs to be updated.
+
+**Answer:** _add reply here_
+
+### Q: HN (Algolia API) is also returning 403. Is there a proxy whitelist that needs to include hn.algolia.com? Or is the Algolia HN API endpoint blocked by policy?
+
+**Context:** The HN source failed with a generic 403 Forbidden. This is the second or third consecutive build with this failure pattern. Unblocking it would restore one of the four ingestion sources.
+
+**Answer:** _add reply here_
+
+### Q: RSS and github_trending returned 'no items in current window' rather than a network error — are those sources working but simply finding nothing recent, or is there a separate connectivity issue?
+
+**Context:** The error message differs from the 403 errors on arxiv and HN. 'No items in current window' could mean the feeds are reachable but the time-window filter eliminated all items, or that the feeds returned empty bodies without an HTTP error. Worth distinguishing to prioritize which sources to fix first.
+
+**Answer:** _add reply here_
+
+### Q: All four sources failed in this build, producing 0 items. Should the build agent write a minimal no-data edition and push (as done here) or skip the push entirely when coverage is zero?
+
+**Context:** The current behavior follows the SKILL.md partial-build path: produce edition.json with audit_passed=false and publish. An alternative would be to abort and only push the questions_for_team note, leaving the prior edition visible on the dashboard. The team should decide the preferred behavior.
+
+**Answer:** _add reply here_
+
+---
