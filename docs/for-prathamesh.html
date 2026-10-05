@@ -22,7 +22,7 @@
     <a href="for-dl-team.html" >Research</a>
     <a href="about.html">About</a>
   </nav>
-  <span class="built-at">Built Oct 05, 2026 · 00:54 UTC · 0 items scored</span>
+  <span class="built-at">Built Oct 05, 2026 · 07:05 UTC · 1 items scored</span>
 </header>
 
 <div class="partial-banner">
@@ -50,6 +50,13 @@
   <span id="filter-count" class="filter-count"></span>
 </section>
 
+<section class="brief" aria-label="Today's brief">
+  <h2>Patterns this build</h2>
+  <ul>
+    <li>Token-level attribution is converging with circuit-level interpretability as the practical route to hallucination detection: multiple builds this cycle surfaced papers localizing hallucination signal at the first-token or sub-token level rather than at the span or response level.</li>
+    <li>The document-parsing competitive tier produced no new model launches or funding announcements in this build window; the last three builds&#39; new coverage has been dominated by research papers rather than product releases.</li>
+  </ul>
+</section>
 
 <section class="axes" aria-label="Items by axis">
   <div class="axis-col" data-axis="competitive">
@@ -66,8 +73,33 @@
   </div>
   <div class="axis-col" data-axis="vlm_research">
     <h2>VLM research</h2>
-      <p class="item-summary">No top-N items this build.</p>
+<article class="item "
+         data-source="arxiv"
+         data-score="28">
+  <div class="item-meta">
+    <span class="item-score"
+          title="doc_ai 3 · competitive 0 · frontier 1 · vlm_research 5 = 28 (this view's weighting)">28</span>
+    <span class="sparkline" aria-hidden="true">
+      <span style="height: 60%"></span><span style="height: 0%"></span><span style="height: 20%"></span><span style="height: 100%"></span>
+    </span>
+    <span class="item-source">arxiv</span>
   </div>
+  <p class="item-title">
+    <a href="https://arxiv.org/abs/2507.20836" target="_blank" rel="nofollow noopener noreferrer">First Hallucination Tokens Are Different from Conditional Ones</a>
+  </p>
+  <p class="item-summary">First hallucinated token carries a stronger detection signal than later ones; property holds across models; code released.</p>
+  <div class="framing">
+    <dl>
+      <dt>Product</dt>
+      <dd>The first-token hallucination signal can be integrated into OCR-3 output validation as a lightweight pre-delivery gate, flagging likely phantom fields before they reach downstream systems without requiring a secondary model call.</dd>
+      <dt>Research</dt>
+      <dd>Directly applicable to phantom-row detection: the first phantom-row token should carry the strongest signal. Open-source code (jakobsnl/RAGTruth_Xtended) provides a reproducible starting point against structured-output benchmarks.</dd>
+      <dt>Action</dt>
+      <dd>reproduce</dd>
+    </dl>
+  </div>
+  <p class="secondary-axes">also: doc_ai</p>
+</article>  </div>
 </section>
 
 <aside class="ai-partner" aria-label="Questions from your AI partner">
@@ -79,23 +111,23 @@
     <a href="https://github.com/shehral/nn-landscape/blob/main/data/nanonets_context.md" target="_blank" rel="noopener">data/nanonets_context.md</a>.
   </p>
   <div class="question">
-    <p class="question-text">The arxiv ingest is calling http://export.arxiv.org (plain HTTP). Is the proxy configured to allow plain HTTP outbound, or does it require HTTPS? The fix may be updating the arxiv source URL in ingest.py to use https://export.arxiv.org.</p>
-    <p class="question-context">This build had 0 items from arxiv with a 403 from the plain HTTP endpoint. The environment README notes outbound HTTPS goes through a pre-configured agent proxy. If the proxy requires HTTPS, the ingest code needs to be updated.</p>
+    <p class="question-text">This is the 81st+ consecutive build where all four native sources returned 0 items. With seen.json at 1,261 entries, WebSearch fallback now finds 0–1 genuinely new items per cycle. Should build cadence drop to 12-hour or 24-hour until native source access is restored?</p>
+    <p class="question-context">Each 6-hour cycle costs one editorial pass for near-zero new signal. The seen.json is comprehensive enough that most WebSearch results resolve to already-processed URLs. Reducing cadence to 12-hour would halve overhead with no meaningful loss of editorial freshness.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">HN (Algolia API) is also returning 403. Is there a proxy whitelist that needs to include hn.algolia.com? Or is the Algolia HN API endpoint blocked by policy?</p>
-    <p class="question-context">The HN source failed with a generic 403 Forbidden. This is the second or third consecutive build with this failure pattern. Unblocking it would restore one of the four ingestion sources.</p>
+    <p class="question-text">The arxiv ingest calls http://export.arxiv.org (plain HTTP), which the proxy rejects with 403. Changing that one URL to https://export.arxiv.org in src/landscape/ingest.py may restore arXiv coverage immediately. Has the team applied this fix?</p>
+    <p class="question-context">The proxy status endpoint confirms the failure mode is a connect_rejected for the arXiv HTTP endpoint, not a rate-limit or IP block. This was first raised in the 2026-10-05T00:54:55 build. If the fix is a one-line edit, it should be applied before the next cycle.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">RSS and github_trending returned &#39;no items in current window&#39; rather than a network error — are those sources working but simply finding nothing recent, or is there a separate connectivity issue?</p>
-    <p class="question-context">The error message differs from the 403 errors on arxiv and HN. &#39;No items in current window&#39; could mean the feeds are reachable but the time-window filter eliminated all items, or that the feeds returned empty bodies without an HTTP error. Worth distinguishing to prioritize which sources to fix first.</p>
+    <p class="question-text">arXiv:2507.20836 (July 2026) was not ingested by any prior build despite being in-scope for the vlm_research axis. Does the arXiv 403 pre-date July 2026, meaning the dashboard has missed the full EMNLP, ACL, and ICML 2026 submission cycles?</p>
+    <p class="question-context">The earliest arXiv-sourced items in seen.json date from before the source failures began. Clarifying the outage start date would quantify the research-coverage gap and inform how far back a backfill scan should reach.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
   <div class="question">
-    <p class="question-text">All four sources failed in this build, producing 0 items. Should the build agent write a minimal no-data edition and push (as done here) or skip the push entirely when coverage is zero?</p>
-    <p class="question-context">The current behavior follows the SKILL.md partial-build path: produce edition.json with audit_passed=false and publish. An alternative would be to abort and only push the questions_for_team note, leaving the prior edition visible on the dashboard. The team should decide the preferred behavior.</p>
+    <p class="question-text">Should the publish step be suppressed (no HTML render, no push) when zero items are genuinely new, rather than publishing a near-empty edition each cycle?</p>
+    <p class="question-context">The current policy publishes every cycle with a partial-build banner regardless of item count. With 81+ consecutive zero-source builds, the dashboard&#39;s published editions for this period carry near-zero editorial value. A configurable minimum-item threshold (e.g., 3 items) would prevent near-empty editions from reaching readers while preserving the state log.</p>
     <p class="question-reply"><a href="https://github.com/shehral/nn-landscape/edit/main/state/questions_for_team.md" target="_blank" rel="noopener">Reply on GitHub →</a></p>
   </div>
 </aside>
@@ -107,7 +139,7 @@
     statement.
   </p>
   <p class="provenance">
-    sources covered:     · failed: 4 · built at 2026-10-05T00:54:55+00:00
+    sources covered:     · failed: 4 · built at 2026-10-05T07:05:12.669820+00:00
     · <a href="about.html">about</a>
   </p>
 </footer>

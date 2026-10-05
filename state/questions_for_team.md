@@ -14295,3 +14295,31 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-05T07:05:12.669820+00:00 (audit: partial)
+
+### Q: This is the 81st+ consecutive build where all four native sources returned 0 items. With seen.json at 1,261 entries, WebSearch fallback now finds 0–1 genuinely new items per cycle. Should build cadence drop to 12-hour or 24-hour until native source access is restored?
+
+**Context:** Each 6-hour cycle costs one editorial pass for near-zero new signal. The seen.json is comprehensive enough that most WebSearch results resolve to already-processed URLs. Reducing cadence to 12-hour would halve overhead with no meaningful loss of editorial freshness.
+
+**Answer:** _add reply here_
+
+### Q: The arxiv ingest calls http://export.arxiv.org (plain HTTP), which the proxy rejects with 403. Changing that one URL to https://export.arxiv.org in src/landscape/ingest.py may restore arXiv coverage immediately. Has the team applied this fix?
+
+**Context:** The proxy status endpoint confirms the failure mode is a connect_rejected for the arXiv HTTP endpoint, not a rate-limit or IP block. This was first raised in the 2026-10-05T00:54:55 build. If the fix is a one-line edit, it should be applied before the next cycle.
+
+**Answer:** _add reply here_
+
+### Q: arXiv:2507.20836 (July 2026) was not ingested by any prior build despite being in-scope for the vlm_research axis. Does the arXiv 403 pre-date July 2026, meaning the dashboard has missed the full EMNLP, ACL, and ICML 2026 submission cycles?
+
+**Context:** The earliest arXiv-sourced items in seen.json date from before the source failures began. Clarifying the outage start date would quantify the research-coverage gap and inform how far back a backfill scan should reach.
+
+**Answer:** _add reply here_
+
+### Q: Should the publish step be suppressed (no HTML render, no push) when zero items are genuinely new, rather than publishing a near-empty edition each cycle?
+
+**Context:** The current policy publishes every cycle with a partial-build banner regardless of item count. With 81+ consecutive zero-source builds, the dashboard's published editions for this period carry near-zero editorial value. A configurable minimum-item threshold (e.g., 3 items) would prevent near-empty editions from reaching readers while preserving the state log.
+
+**Answer:** _add reply here_
+
+---
