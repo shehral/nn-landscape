@@ -14345,3 +14345,25 @@ _Note: The WebSearch-fallback question from the previous build (61st consecutive
 **Answer:** _add reply here_
 
 ---
+
+## Build 2026-10-05T00:00:00+00:00 (audit: partial)
+
+### Q: All four sources (arxiv, HN, RSS, github_trending) returned 0 items this build. Are 403 errors from arxiv and HN a persistent network-level block in the scheduled execution environment, or are these transient failures?
+
+**Context:** Prior builds logged repeated 403s on arxiv and HN. This build adds RSS and github_trending failures. If the remote execution environment blocks outbound requests to these services, the pipeline needs an alternative ingestion path (proxy, pre-fetched mirror, or source substitution) before any edition with real content can be built.
+
+**Answer:** _add reply here_
+
+### Q: Should the build agent abort and write only a failure note when all four sources return zero items, rather than writing and pushing an empty edition?
+
+**Context:** An edition with zero items renders an empty dashboard, which may confuse readers. Suppressing the push on a zero-item build avoids publishing a blank edition while still recording the failure in questions_for_team.md.
+
+**Answer:** _add reply here_
+
+### Q: RSS feeds returned no items in the current window. Are the configured feed URLs still valid, or have any feeds changed their endpoint or pagination behavior since sources.yaml was last verified?
+
+**Context:** The feeds list includes anthropic.com, openai.com/blog, deepmind.google, huggingface.co/blog, latent.space, interconnects.ai, ainews, stratechery, importai, and blog.mistral.ai. A single stale URL in per_feed_limit logic could suppress all output if errors are swallowed silently.
+
+**Answer:** _add reply here_
+
+---
